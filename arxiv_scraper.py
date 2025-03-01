@@ -33,14 +33,14 @@ def arxiv_search_previous_day(query, max_results=20):
     return response.entries
 
 
-def save_results_as_html(entries):
+def save_results_as_html(entries, topic):
     
     today = datetime.datetime.now().strftime("%Y-%m-%d")
     os.makedirs("docs", exist_ok=True)
-    filename = f"docs/arxiv_{today}.html"
+    filename = f"docs/arxiv_{topic}_{today}.html"
    
     with open(filename, "w", encoding="utf-8") as f:
-        f.write(f"<!DOCTYPE html>\n<html lang='en'>\n<head>\n<meta charset='UTF-8'>\n<title>arXiv Papers - {today}</title>\n")
+        f.write(f"<!DOCTYPE html>\n<html lang='en'>\n<head>\n<meta charset='UTF-8'>\n<title>arXiv Papers - {topic} - {today}</title>\n")
         f.write(f"<link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css' rel='stylesheet'>\n")
         f.write(f"<link href='https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap' rel='stylesheet'>\n")
         f.write(f"<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'>\n")
@@ -63,7 +63,7 @@ def save_results_as_html(entries):
         f.write("}\n")  
         f.write(f"</style>\n</head>\n<body>\n") 
         f.write(f"<div class='container'>\n")
-        f.write(f"<h1 class='text-center my-4'><i class='fas fa-book'></i>arXiv Papers - {today}</h1>\n")
+        f.write(f"<h1 class='text-center my-4'><i class='fas fa-book'></i>arXiv Papers - {topic} - {today}</h1>\n")
         f.write(f"<div class='row'>\n")
 
 
@@ -74,7 +74,6 @@ def save_results_as_html(entries):
                 full_url = entry.id
                 arxiv_id=full_url.split('/abs/')[-1]
                 date = datetime.datetime.strptime(entry.published, "%Y-%m-%dT%H:%M:%SZ")
-                #date="20"+arxiv_id[:2]+"-"+arxiv_id[2:4]
                 authors = ', '.join(author.name for author in entry.authors)
                 f.write(f"<div class='col-md-6 mb-4'>\n")
                 f.write(f"<div class='card'>\n")
@@ -84,21 +83,16 @@ def save_results_as_html(entries):
                 f.write(f"<h6 class='card-subtitle mb-2 text-muted'>Date:{date}</h6>\n")
                 f.write(f"<p class='card-text'>{entry.summary}</p>\n")
                 f.write("</div>\n</div>\n</div>\n")
-                # f.write(f"<h2><a href='{entry.link}' target='_blank'>{entry.title}</a></h2>\n")
-                # f.write(f"<p><strong>ID:</strong> {date}</p>\n")
-                # f.write(f"<p><strong>Authors:</strong> {authors}</p>\n")
-                # f.write(f"<p><strong>Summary:</strong> {entry.summary}</p>\n")
-                # f.write("<hr>\n")
                 
         f.write("</div>\n</div>\n")
         f.write(f"<script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js'></script>\n")
         f.write("</body>\n</html>")
     
-    update_index(today)
+    update_index(today,topic)
     print(f"✅ Results saved to {filename}")
     
 
-def update_index(latest_date):
+def update_index(latest_date,topic):
     index_file = "docs/index.html"
     if not os.path.exists(index_file):
         with open(index_file, "w", encoding="utf-8") as f:
@@ -111,7 +105,7 @@ def update_index(latest_date):
     with open(index_file, "r", encoding="utf-8") as f:
         content = f.read()
 
-    new_entry = f'<li><a href="arxiv_{latest_date}.html">{latest_date} Papers</a></li>\n'
+    new_entry = f'<li><a href="arxiv_{topic}_{latest_date}.html">{latest_date} Papers</a></li>\n'
     if new_entry not in content:
         content = content.replace("<ul>\n", f"<ul>\n{new_entry}")
 
@@ -119,9 +113,13 @@ def update_index(latest_date):
         f.write(content)
 
 if __name__ == "__main__":
-    query = 'all:planning+AND+all:"reinforcement%20learning"'
-    results = arxiv_search(query, max_results=20)
-    #results = arxiv_search_today(query, max_results=20)
-    #results = arxiv_search_previous_day(query, max_results=100)
-    if results:
-        save_results_as_html(results)
+    max_num=10000
+    query = 'all:LLM+AND+all:"reinforcement%20learning"'
+    results = arxiv_search(query, max_results=max_num)
+    save_results_as_html(results,"LLM-RL")
+    query = 'all:LLM+AND+all:planning'
+    results = arxiv_search(query, max_results=max_num)
+    save_results_as_html(results,"LLM-planning")
+    query = 'all:LLM+AND+all:agent'
+    results = arxiv_search(query, max_results=max_num)
+    save_results_as_html(results,"LLM-agent")
