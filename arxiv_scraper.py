@@ -113,7 +113,7 @@ def update_index(latest_date,topic):
         f.write(content)
 
 if __name__ == "__main__":
-    max_num=20000
+    max_num=15000
     query = 'all:LLM+AND+all:"reinforcement%20learning"'
     results = arxiv_search(query, max_results=max_num)
     save_results_as_html(results,"LLM-RL")
