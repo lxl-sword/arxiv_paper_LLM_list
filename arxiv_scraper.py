@@ -40,7 +40,7 @@ def save_results_as_html(entries, topic):
     filename = f"docs/arxiv_{topic}_{today}.html"
    
     with open(filename, "w", encoding="utf-8") as f:
-        f.write(f"<!DOCTYPE html>\n<html lang='en'>\n<head>\n<meta charset='UTF-8'>\n<title>arXiv Papers - {topic} - {today}</title>\n")
+        f.write(f"<!DOCTYPE html>\n<html lang='en'>\n<head>\n<meta charset='UTF-8'>\n<title>{topic} - {today}</title>\n")
         f.write(f"<link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css' rel='stylesheet'>\n")
         f.write(f"<link href='https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap' rel='stylesheet'>\n")
         f.write(f"<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'>\n")
@@ -63,7 +63,7 @@ def save_results_as_html(entries, topic):
         f.write("}\n")  
         f.write(f"</style>\n</head>\n<body>\n") 
         f.write(f"<div class='container'>\n")
-        f.write(f"<h1 class='text-center my-4'><i class='fas fa-book'></i>arXiv Papers - {topic} - {today}</h1>\n")
+        f.write(f"<h1 class='text-center my-4'><i class='fas fa-book'></i>{topic} - {today}</h1>\n")
         f.write(f"<div class='row'>\n")
 
 
@@ -105,7 +105,7 @@ def update_index(latest_date,topic):
     with open(index_file, "r", encoding="utf-8") as f:
         content = f.read()
 
-    new_entry = f'<li><a href="arxiv_{topic}_{latest_date}.html">{latest_date} Papers</a></li>\n'
+    new_entry = f'<li><a href="arxiv_{topic}_{latest_date}.html">{topic} {latest_date} Papers</a></li>\n'
     if new_entry not in content:
         content = content.replace("<ul>\n", f"<ul>\n{new_entry}")
 
