@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<title>LLM-agent - 2025-03-14</title>
+<link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap' rel='stylesheet'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'>
+<style>
+body {
+font-family: 'Roboto', sans-serif;
+background-color: #f5f7fa;
+padding: 20px;
+}
+.card {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.card-title {
+    font-weight: 700;
+}
+.card:hover {
+    transform: scale(1.02);
+    transition: 0.3s ease-in-out;
+}
+</style>
+</head>
+<body>
+<div class='container'>
+<h1 class='text-center my-4'><i class='fas fa-book'></i>LLM-agent - 2025-03-14</h1>
+<div class='row'>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2503.10630v1' target='_blank'>UniGoal: Towards Universal Zero-shot Goal-oriented Navigation</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Hang Yin, Xiuwei Xu, Lingqing Zhao, Ziwei Wang, Jie Zhou, Jiwen Lu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-03-13 17:59:48</h6>
+<p class='card-text'>In this paper, we propose a general framework for universal zero-shot
+goal-oriented navigation. Existing zero-shot methods build inference framework
+upon large language models (LLM) for specific tasks, which differs a lot in
+overall pipeline and fails to generalize across different types of goal.
+Towards the aim of universal zero-shot navigation, we propose a uniform graph
+representation to unify different goals, including object category, instance
+image and text description. We also convert the observation of agent into an
+online maintained scene graph. With this consistent scene and goal
+representation, we preserve most structural information compared with pure text
+and are able to leverage LLM for explicit graph-based reasoning. Specifically,
+we conduct graph matching between the scene graph and goal graph at each time
+instant and propose different strategies to generate long-term goal of
+exploration according to different matching states. The agent first iteratively
+searches subgraph of goal when zero-matched. With partial matching, the agent
+then utilizes coordinate projection and anchor pair alignment to infer the goal
+location. Finally scene graph correction and goal verification are applied for
+perfect matching. We also present a blacklist mechanism to enable robust switch
+between stages. Extensive experiments on several benchmarks show that our
+UniGoal achieves state-of-the-art zero-shot performance on three studied
+navigation tasks with a single model, even outperforming task-specific
+zero-shot methods and supervised universal methods.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2503.10613v1' target='_blank'>CoSTA$\ast$: Cost-Sensitive Toolpath Agent for Multi-turn Image Editing</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Advait Gupta, NandaKiran Velaga, Dang Nguyen, Tianyi Zhou</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-03-13 17:55:45</h6>
+<p class='card-text'>Text-to-image models like stable diffusion and DALLE-3 still struggle with
+multi-turn image editing. We decompose such a task as an agentic workflow
+(path) of tool use that addresses a sequence of subtasks by AI tools of varying
+costs. Conventional search algorithms require expensive exploration to find
+tool paths. While large language models (LLMs) possess prior knowledge of
+subtask planning, they may lack accurate estimations of capabilities and costs
+of tools to determine which to apply in each subtask. Can we combine the
+strengths of both LLMs and graph search to find cost-efficient tool paths? We
+propose a three-stage approach "CoSTA*" that leverages LLMs to create a subtask
+tree, which helps prune a graph of AI tools for the given task, and then
+conducts A* search on the small subgraph to find a tool path. To better balance
+the total cost and quality, CoSTA* combines both metrics of each tool on every
+subtask to guide the A* search. Each subtask's output is then evaluated by a
+vision-language model (VLM), where a failure will trigger an update of the
+tool's cost and quality on the subtask. Hence, the A* search can recover from
+failures quickly to explore other paths. Moreover, CoSTA* can automatically
+switch between modalities across subtasks for a better cost-quality trade-off.
+We build a novel benchmark of challenging multi-turn image editing, on which
+CoSTA* outperforms state-of-the-art image-editing models or agents in terms of
+both cost and quality, and performs versatile trade-offs upon user preference.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2503.10509v1' target='_blank'>SySLLM: Generating Synthesized Policy Summaries for Reinforcement
+  Learning Agents Using Large Language Models</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Sahar Admoni, Omer Ben-Porat, Ofra Amir</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-03-13 16:10:14</h6>
+<p class='card-text'>Policies generated by Reinforcement Learning (RL) algorithms can be difficult
+to describe to users, as they result from the interplay between complex reward
+structures and neural network-based representations. This combination often
+leads to unpredictable behaviors, making policies challenging to analyze and
+posing significant obstacles to fostering human trust in real-world
+applications. Global policy summarization methods aim to describe agent
+behavior through a demonstration of actions in a subset of world-states.
+However, users can only watch a limited number of demonstrations, restricting
+their understanding of policies. Moreover, those methods overly rely on user
+interpretation, as they do not synthesize observations into coherent patterns.
+In this work, we present SySLLM (Synthesized Summary using LLMs), a novel
+method that employs synthesis summarization, utilizing large language models'
+(LLMs) extensive world knowledge and ability to capture patterns, to generate
+textual summaries of policies. Specifically, an expert evaluation demonstrates
+that the proposed approach generates summaries that capture the main insights
+generated by experts while not resulting in significant hallucinations.
+Additionally, a user study shows that SySLLM summaries are preferred over
+demonstration-based policy summaries and match or surpass their performance in
+objective agent identification tasks.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2503.10351v1' target='_blank'>New Trends for Modern Machine Translation with Large Reasoning Models</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Sinuo Liu, Chenyang Lyu, Minghao Wu, Longyue Wang, Weihua Luo, Kaifu Zhang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-03-13 13:27:53</h6>
+<p class='card-text'>Recent advances in Large Reasoning Models (LRMs), particularly those
+leveraging Chain-of-Thought reasoning (CoT), have opened brand new possibility
+for Machine Translation (MT). This position paper argues that LRMs
+substantially transformed traditional neural MT as well as LLMs-based MT
+paradigms by reframing translation as a dynamic reasoning task that requires
+contextual, cultural, and linguistic understanding and reasoning. We identify
+three foundational shifts: 1) contextual coherence, where LRMs resolve
+ambiguities and preserve discourse structure through explicit reasoning over
+cross-sentence and complex context or even lack of context; 2) cultural
+intentionality, enabling models to adapt outputs by inferring speaker intent,
+audience expectations, and socio-linguistic norms; 3) self-reflection, LRMs can
+perform self-reflection during the inference time to correct the potential
+errors in translation especially extremely noisy cases, showing better
+robustness compared to simply mapping X->Y translation. We explore various
+scenarios in translation including stylized translation, document-level
+translation and multimodal translation by showcasing empirical examples that
+demonstrate the superiority of LRMs in translation. We also identify several
+interesting phenomenons for LRMs for MT including auto-pivot translation as
+well as the critical challenges such as over-localisation in translation and
+inference efficiency. In conclusion, we think that LRMs redefine translation
+systems not merely as text converters but as multilingual cognitive agents
+capable of reasoning about meaning beyond the text. This paradigm shift reminds
+us to think of problems in translation beyond traditional translation scenarios
+in a much broader context with LRMs - what we can achieve on top of it.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2503.10310v1' target='_blank'>Capturing Semantic Flow of ML-based Systems</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Shin Yoo, Robert Feldt, Somin Kim, Naryeong Kim</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-03-13 12:39:04</h6>
+<p class='card-text'>ML-based systems are software systems that incorporates machine learning
+components such as Deep Neural Networks (DNNs) or Large Language Models (LLMs).
+While such systems enable advanced features such as high performance computer
+vision, natural language processing, and code generation, their internal
+behaviour remain largely opaque to traditional dynamic analysis such as
+testing: existing analysis typically concern only what is observable from the
+outside, such as input similarity or class label changes. We propose semantic
+flow, a concept designed to capture the internal behaviour of ML-based system
+and to provide a platform for traditional dynamic analysis techniques to be
+adapted to. Semantic flow combines the idea of control flow with internal
+states taken from executions of ML-based systems, such as activation values of
+a specific layer in a DNN, or embeddings of LLM responses at a specific
+inference step of LLM agents. The resulting representation, summarised as
+semantic flow graphs, can capture internal decisions that are not explicitly
+represented in the traditional control flow of ML-based systems. We propose the
+idea of semantic flow, introduce two examples using a DNN and an LLM agent, and
+finally sketch its properties and how it can be used to adapt existing dynamic
+analysis techniques for use in ML-based software systems.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2503.10248v1' target='_blank'>LLM Agents Display Human Biases but Exhibit Distinct Learning Patterns</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Idan Horowitz, Ori Plonsky</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-03-13 10:47:03</h6>
+<p class='card-text'>We investigate the choice patterns of Large Language Models (LLMs) in the
+context of Decisions from Experience tasks that involve repeated choice and
+learning from feedback, and compare their behavior to human participants. We
+find that on the aggregate, LLMs appear to display behavioral biases similar to
+humans: both exhibit underweighting rare events and correlation effects.
+However, more nuanced analyses of the choice patterns reveal that this happens
+for very different reasons. LLMs exhibit strong recency biases, unlike humans,
+who appear to respond in more sophisticated ways. While these different
+processes may lead to similar behavior on average, choice patterns contingent
+on recent events differ vastly between the two groups. Specifically, phenomena
+such as ``surprise triggers change" and the ``wavy recency effect of rare
+events" are robustly observed in humans, but entirely absent in LLMs. Our
+findings provide insights into the limitations of using LLMs to simulate and
+predict humans in learning environments and highlight the need for refined
+analyses of their behavior when investigating whether they replicate human
+decision making tendencies.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2503.10241v1' target='_blank'>SCOOP: A Framework for Proactive Collaboration and Social Continual
+  Learning through Natural Language Interaction andCausal Reasoning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Dimitri Ognibene, Sabrina Patania, Luca Annese, Cansu Koyuturk, Franca Garzotto, Giuseppe Vizzari, Azzurra Ruggeri, Simone Colombani</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-03-13 10:32:50</h6>
+<p class='card-text'>Multimodal information-gathering settings, where users collaborate with AI in
+dynamic environments, are increasingly common. These involve complex processes
+with textual and multimodal interactions, often requiring additional structural
+information via cost-incurring requests. AI helpers lack access to users' true
+goals, beliefs, and preferences and struggle to integrate diverse information
+effectively.
+  We propose a social continual learning framework for causal knowledge
+acquisition and collaborative decision-making. It focuses on autonomous agents
+learning through dialogues, question-asking, and interaction in open, partially
+observable environments. A key component is a natural language oracle that
+answers the agent's queries about environmental mechanisms and states, refining
+causal understanding while balancing exploration or learning, and exploitation
+or knowledge use.
+  Evaluation tasks inspired by developmental psychology emphasize causal
+reasoning and question-asking skills. They complement benchmarks by assessing
+the agent's ability to identify knowledge gaps, generate meaningful queries,
+and incrementally update reasoning. The framework also evaluates how knowledge
+acquisition costs are amortized across tasks within the same environment.
+  We propose two architectures: 1) a system combining Large Language Models
+(LLMs) with the ReAct framework and question-generation, and 2) an advanced
+system with a causal world model, symbolic, graph-based, or subsymbolic, for
+reasoning and decision-making. The latter builds a causal knowledge graph for
+efficient inference and adaptability under constraints. Challenges include
+integrating causal reasoning into ReAct and optimizing exploration and
+question-asking in error-prone scenarios. Beyond applications, this framework
+models developmental processes combining causal reasoning, question generation,
+and social learning.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2503.10120v1' target='_blank'>Hybrid Agents for Image Restoration</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Bingchen Li, Xin Li, Yiting Lu, Zhibo Chen</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-03-13 07:28:33</h6>
+<p class='card-text'>Existing Image Restoration (IR) studies typically focus on task-specific or
+universal modes individually, relying on the mode selection of users and
+lacking the cooperation between multiple task-specific/universal restoration
+modes. This leads to insufficient interaction for unprofessional users and
+limits their restoration capability for complicated real-world applications. In
+this work, we present HybridAgent, intending to incorporate multiple
+restoration modes into a unified image restoration model and achieve
+intelligent and efficient user interaction through our proposed hybrid agents.
+Concretely, we propose the hybrid rule of fast, slow, and feedback restoration
+agents. Here, the slow restoration agent optimizes the powerful multimodal
+large language model (MLLM) with our proposed instruction-tuning dataset to
+identify degradations within images with ambiguous user prompts and invokes
+proper restoration tools accordingly. The fast restoration agent is designed
+based on a lightweight large language model (LLM) via in-context learning to
+understand the user prompts with simple and clear requirements, which can
+obviate the unnecessary time/resource costs of MLLM. Moreover, we introduce the
+mixed distortion removal mode for our HybridAgents, which is crucial but not
+concerned in previous agent-based works. It can effectively prevent the error
+propagation of step-by-step image restoration and largely improve the
+efficiency of the agent system. We validate the effectiveness of HybridAgent
+with both synthetic and real-world IR tasks.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2503.10105v1' target='_blank'>StepMathAgent: A Step-Wise Agent for Evaluating Mathematical Processes
+  through Tree-of-Error</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Shu-Xun Yang, Cunxiang Wang, Yidong Wang, Xiaotao Gu, Minlie Huang, Jie Tang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-03-13 07:02:53</h6>
+<p class='card-text'>Evaluating mathematical capabilities is critical for assessing the overall
+performance of large language models (LLMs). However, existing evaluation
+methods often focus solely on final answers, resulting in highly inaccurate and
+uninterpretable evaluation outcomes, as well as their failure to assess proof
+or open-ended problems. To address these issues, we propose a novel
+mathematical process evaluation agent based on Tree-of-Error, called
+StepMathAgent. This agent incorporates four internal core operations: logical
+step segmentation, step scoring, score aggregation and error tree generation,
+along with four external extension modules: difficulty calibration, simplicity
+evaluation, completeness validation and format assessment. Furthermore, we
+introduce StepMathBench, a benchmark comprising 1,000 step-divided process
+evaluation instances, derived from 200 high-quality math problems grouped by
+problem type, subject category and difficulty level. Experiments on
+StepMathBench show that our proposed StepMathAgent outperforms all
+state-of-the-art methods, demonstrating human-aligned evaluation preferences
+and broad applicability to various scenarios. Our data and code are available
+at https://github.com/SHU-XUN/StepMathAgent.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2503.10071v1' target='_blank'>Advanced Tool Learning and Selection System (ATLASS): A Closed-Loop
+  Framework Using LLM</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Mohd Ariful Haque, Justin Williams, Sunzida Siddique, Md. Hujaifa Islam, Hasmot Ali, Kishor Datta Gupta, Roy George</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-03-13 05:39:00</h6>
+<p class='card-text'>The combination of LLM agents with external tools enables models to solve
+complex tasks beyond their knowledge base. Human-designed tools are inflexible
+and restricted to solutions within the scope of pre-existing tools created by
+experts. To address this problem, we propose ATLASS, an advanced tool learning
+and selection system designed as a closed-loop framework. It enables the LLM to
+solve problems by dynamically generating external tools on demand. In this
+framework, agents play a crucial role in orchestrating tool selection,
+execution, and refinement, ensuring adaptive problem-solving capabilities. The
+operation of ATLASS follows three phases: The first phase, Understanding Tool
+Requirements, involves the Agents determining whether tools are required and
+specifying their functionality; the second phase, Tool Retrieval/Generation,
+involves the Agents retrieving or generating tools based on their availability;
+and the third phase, Task Solving, involves combining all the component tools
+necessary to complete the initial task. The Tool Dataset stores the generated
+tools, ensuring reusability and minimizing inference cost. Current LLM-based
+tool generation systems have difficulty creating complex tools that need APIs
+or external packages. In ATLASS, we solve the problem by automatically setting
+up the environment, fetching relevant API documentation online, and using a
+Python interpreter to create a reliable, versatile tool that works in a wider
+range of situations. OpenAI GPT-4.0 is used as the LLM agent, and safety and
+ethical concerns are handled through human feedback before executing generated
+code. By addressing the limitations of predefined toolsets and enhancing
+adaptability, ATLASS serves as a real-world solution that empowers users with
+dynamically generated tools for complex problem-solving.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2503.10049v1' target='_blank'>Enhancing Multi-Agent Systems via Reinforcement Learning with LLM-based
+  Planner and Graph-based Policy</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Ziqi Jia, Junjie Li, Xiaoyang Qu, Jianzong Wang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-03-13 05:02:49</h6>
+<p class='card-text'>Multi-agent systems (MAS) have shown great potential in executing complex
+tasks, but coordination and safety remain significant challenges. Multi-Agent
+Reinforcement Learning (MARL) offers a promising framework for agent
+collaboration, but it faces difficulties in handling complex tasks and
+designing reward functions. The introduction of Large Language Models (LLMs)
+has brought stronger reasoning and cognitive abilities to MAS, but existing
+LLM-based systems struggle to respond quickly and accurately in dynamic
+environments. To address these challenges, we propose LLM-based Graph
+Collaboration MARL (LGC-MARL), a framework that efficiently combines LLMs and
+MARL. This framework decomposes complex tasks into executable subtasks and
+achieves efficient collaboration among multiple agents through graph-based
+coordination. Specifically, LGC-MARL consists of two main components: an LLM
+planner and a graph-based collaboration meta policy. The LLM planner transforms
+complex task instructions into a series of executable subtasks, evaluates the
+rationality of these subtasks using a critic model, and generates an action
+dependency graph. The graph-based collaboration meta policy facilitates
+communication and collaboration among agents based on the action dependency
+graph, and adapts to new task environments through meta-learning. Experimental
+results on the AI2-THOR simulation platform demonstrate the superior
+performance and scalability of LGC-MARL in completing various complex tasks.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2503.10009v1' target='_blank'>OR-LLM-Agent: Automating Modeling and Solving of Operations Research
+  Optimization Problem with Reasoning Large Language Model</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Bowen Zhang, Pengcheng Luo</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-03-13 03:40:50</h6>
+<p class='card-text'>Operations Research (OR) has been widely applied in various fields such as
+resource allocation, production planning, and supply chain management. However,
+addressing real-world OR problems requires OR experts to perform mathematical
+modeling and programmers to develop solution algorithms. This traditional
+method, heavily reliant on experts, is costly and has long development cycles,
+severely limiting the widespread adoption of OR techniques. Few have considered
+using Artificial Intelligence (AI) to replace professionals to achieve fully
+automated solutions for OR problems. We propose OR-LLM-Agent, the first AI
+agent that enables end-to-end automation for solving real-world OR problems.
+OR-LLM-Agent leverages the Chain-of-Thought (CoT) reasoning capabilities of
+Large Language Models (LLMs) to translate natural language problem descriptions
+into formal mathematical models and automatically generate Gurobi solver code.
+In OR-LLM-Agent, OR-CodeAgent is designed to automate code execution and repair
+within a sandbox environment, facilitating the derivation of the final
+solution. Due to the lack of dedicated benchmark datasets for evaluating the
+automated solving of OR problems, we construct a benchmark dataset comprising
+83 real-world OR problems described in natural language. We conduct comparative
+experiments with state-of-the-art (SOTA) reasoning LLMs, including GPT-o3-mini,
+DeepSeek-R1, and Gemini 2.0 Flash Thinking. The OR-LLM-Agent achieved the
+highest pass rate of 100% and the highest solution accuracy of 85%,
+demonstrating the feasibility of automated OR problem-solving. Data and code
+have been publicly available at https://github.com/bwz96sco/or_llm_agent.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2503.09780v1' target='_blank'>AgentDAM: Privacy Leakage Evaluation for Autonomous Web Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Arman Zharmagambetov, Chuan Guo, Ivan Evtimov, Maya Pavlova, Ruslan Salakhutdinov, Kamalika Chaudhuri</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-03-12 19:30:31</h6>
+<p class='card-text'>LLM-powered AI agents are an emerging frontier with tremendous potential to
+increase human productivity. However, empowering AI agents to take action on
+their user's behalf in day-to-day tasks involves giving them access to
+potentially sensitive and private information, which leads to a possible risk
+of inadvertent privacy leakage when the agent malfunctions. In this work, we
+propose one way to address that potential risk, by training AI agents to better
+satisfy the privacy principle of data minimization. For the purposes of this
+benchmark, by "data minimization" we mean instances where private information
+is shared only when it is necessary to fulfill a specific task-relevant
+purpose. We develop a benchmark called AgentDAM to evaluate how well existing
+and future AI agents can limit processing of potentially private information
+that we designate "necessary" to fulfill the task. Our benchmark simulates
+realistic web interaction scenarios and is adaptable to all existing web
+navigation agents. We use AgentDAM to evaluate how well AI agents built on top
+of GPT-4, Llama-3 and Claude can limit processing of potentially private
+information when unnecessary, and show that these agents are often prone to
+inadvertent use of unnecessary sensitive information. We finally propose a
+prompting-based approach that reduces this.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2503.09758v1' target='_blank'>Multi-Agent LLM Actor-Critic Framework for Social Robot Navigation</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Weizheng Wang, Ike Obi, Byung-Cheol Min</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-03-12 18:59:53</h6>
+<p class='card-text'>Recent advances in robotics and large language models (LLMs) have sparked
+growing interest in human-robot collaboration and embodied intelligence. To
+enable the broader deployment of robots in human-populated environments,
+socially-aware robot navigation (SAN) has become a key research area. While
+deep reinforcement learning approaches that integrate human-robot interaction
+(HRI) with path planning have demonstrated strong benchmark performance, they
+often struggle to adapt to new scenarios and environments. LLMs offer a
+promising avenue for zero-shot navigation through commonsense inference.
+However, most existing LLM-based frameworks rely on centralized
+decision-making, lack robust verification mechanisms, and face inconsistencies
+in translating macro-actions into precise low-level control signals. To address
+these challenges, we propose SAMALM, a decentralized multi-agent LLM
+actor-critic framework for multi-robot social navigation. In this framework, a
+set of parallel LLM actors, each reflecting distinct robot personalities or
+configurations, directly generate control signals. These actions undergo a
+two-tier verification process via a global critic that evaluates group-level
+behaviors and individual critics that assess each robot's context. An
+entropy-based score fusion mechanism further enhances self-verification and
+re-query, improving both robustness and coordination. Experimental results
+confirm that SAMALM effectively balances local autonomy with global oversight,
+yielding socially compliant behaviors and strong adaptability across diverse
+multi-robot scenarios. More details and videos about this work are available
+at: https://sites.google.com/view/SAMALM.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2503.09572v1' target='_blank'>Plan-and-Act: Improving Planning of Agents for Long-Horizon Tasks</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Lutfi Eren Erdogan, Nicholas Lee, Sehoon Kim, Suhong Moon, Hiroki Furuta, Gopala Anumanchipalli, Kurt Keutzer, Amir Gholami</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-03-12 17:40:52</h6>
+<p class='card-text'>Large language models (LLMs) have shown remarkable advancements in enabling
+language agents to tackle simple tasks. However, applying them for complex,
+multi-step, long-horizon tasks remains a challenge. Recent work have found
+success by separating high-level planning from low-level execution, which
+enables the model to effectively balance high-level planning objectives and
+low-level execution details. However, generating accurate plans remains
+difficult since LLMs are not inherently trained for this task. To address this,
+we propose Plan-and-Act, a novel framework that incorporates explicit planning
+into LLM-based agents and introduces a scalable method to enhance plan
+generation through a novel synthetic data generation method. Plan-and-Act
+consists of a Planner model which generates structured, high-level plans to
+achieve user goals, and an Executor model that translates these plans into
+environment-specific actions. To train the Planner effectively, we introduce a
+synthetic data generation method that annotates ground-truth trajectories with
+feasible plans, augmented with diverse and extensive examples to enhance
+generalization. We evaluate Plan-and-Act using web navigation as a
+representative long-horizon planning environment, demonstrating a state-of
+the-art 54% success rate on the WebArena-Lite benchmark.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2503.09533v2' target='_blank'>Large Language Models for Multi-Facility Location Mechanism Design</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Nguyen Thach, Fei Liu, Houyu Zhou, Hau Chan</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-03-12 16:49:56</h6>
+<p class='card-text'>Designing strategyproof mechanisms for multi-facility location that optimize
+social costs based on agent preferences had been challenging due to the
+extensive domain knowledge required and poor worst-case guarantees. Recently,
+deep learning models have been proposed as alternatives. However, these models
+require some domain knowledge and extensive hyperparameter tuning as well as
+lacking interpretability, which is crucial in practice when transparency of the
+learned mechanisms is mandatory. In this paper, we introduce a novel approach,
+named LLMMech, that addresses these limitations by incorporating large language
+models (LLMs) into an evolutionary framework for generating interpretable,
+hyperparameter-free, empirically strategyproof, and nearly optimal mechanisms.
+Our experimental results, evaluated on various problem settings where the
+social cost is arbitrarily weighted across agents and the agent preferences may
+not be uniformly distributed, demonstrate that the LLM-generated mechanisms
+generally outperform existing handcrafted baselines and deep learning models.
+Furthermore, the mechanisms exhibit impressive generalizability to
+out-of-distribution agent preferences and to larger instances with more agents.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2503.09501v1' target='_blank'>ReMA: Learning to Meta-think for LLMs with Multi-Agent Reinforcement
+  Learning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Ziyu Wan, Yunxiang Li, Yan Song, Hanjing Wang, Linyi Yang, Mark Schmidt, Jun Wang, Weinan Zhang, Shuyue Hu, Ying Wen</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-03-12 16:05:31</h6>
+<p class='card-text'>Recent research on Reasoning of Large Language Models (LLMs) has sought to
+further enhance their performance by integrating meta-thinking -- enabling
+models to monitor, evaluate, and control their reasoning processes for more
+adaptive and effective problem-solving. However, current single-agent work
+lacks a specialized design for acquiring meta-thinking, resulting in low
+efficacy. To address this challenge, we introduce Reinforced Meta-thinking
+Agents (ReMA), a novel framework that leverages Multi-Agent Reinforcement
+Learning (MARL) to elicit meta-thinking behaviors, encouraging LLMs to think
+about thinking. ReMA decouples the reasoning process into two hierarchical
+agents: a high-level meta-thinking agent responsible for generating strategic
+oversight and plans, and a low-level reasoning agent for detailed executions.
+Through iterative reinforcement learning with aligned objectives, these agents
+explore and learn collaboration, leading to improved generalization and
+robustness. Experimental results demonstrate that ReMA outperforms single-agent
+RL baselines on complex reasoning tasks, including competitive-level
+mathematical benchmarks and LLM-as-a-Judge benchmarks. Comprehensive ablation
+studies further illustrate the evolving dynamics of each distinct agent,
+providing valuable insights into how the meta-thinking reasoning process
+enhances the reasoning capabilities of LLMs.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2503.09263v1' target='_blank'>COLA: A Scalable Multi-Agent Framework For Windows UI Task Automation</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Di Zhao, Longhui Ma, Siwei Wang, Miao Wang, Zhao Lv</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-03-12 11:03:27</h6>
+<p class='card-text'>With the rapid advancements in Large Language Models (LLMs), an increasing
+number of studies have leveraged LLMs as the cognitive core of agents to
+address complex task decision-making challenges. Specially, recent research has
+demonstrated the potential of LLM-based agents on automating Windows GUI
+operations. However, existing methodologies exhibit two critical challenges:
+(1) static agent architectures fail to dynamically adapt to the heterogeneous
+requirements of OS-level tasks, leading to inadequate scenario
+generalization;(2) the agent workflows lack fault tolerance mechanism,
+necessitating complete process re-execution for UI agent decision error. To
+address these limitations, we introduce \textit{COLA}, a collaborative
+multi-agent framework for automating Windows UI operations. In this framework,
+a scenario-aware agent Task Scheduler decomposes task requirements into atomic
+capability units, dynamically selects the optimal agent from a decision agent
+pool, effectively responds to the capability requirements of diverse scenarios.
+The decision agent pool supports plug-and-play expansion for enhanced
+flexibility. In addition, we design a memory unit equipped to all agents for
+their self-evolution. Furthermore, we develop an interactive backtracking
+mechanism that enables human to intervene to trigger state rollbacks for
+non-destructive process repair. Our experimental results on the GAIA benchmark
+demonstrates that the \textit{COLA} framework achieves state-of-the-art
+performance with an average score of 31.89\%, significantly outperforming
+baseline approaches without web API integration. Ablation studies further
+validate the individual contributions of our dynamic scheduling. The code is
+available at https://github.com/Alokia/COLA-demo.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2503.09648v1' target='_blank'>A Survey on Trustworthy LLM Agents: Threats and Countermeasures</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Miao Yu, Fanci Meng, Xinyun Zhou, Shilong Wang, Junyuan Mao, Linsey Pang, Tianlong Chen, Kun Wang, Xinfeng Li, Yongfeng Zhang, Bo An, Qingsong Wen</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-03-12 08:42:05</h6>
+<p class='card-text'>With the rapid evolution of Large Language Models (LLMs), LLM-based agents
+and Multi-agent Systems (MAS) have significantly expanded the capabilities of
+LLM ecosystems. This evolution stems from empowering LLMs with additional
+modules such as memory, tools, environment, and even other agents. However,
+this advancement has also introduced more complex issues of trustworthiness,
+which previous research focused solely on LLMs could not cover. In this survey,
+we propose the TrustAgent framework, a comprehensive study on the
+trustworthiness of agents, characterized by modular taxonomy, multi-dimensional
+connotations, and technical implementation. By thoroughly investigating and
+summarizing newly emerged attacks, defenses, and evaluation methods for agents
+and MAS, we extend the concept of Trustworthy LLM to the emerging paradigm of
+Trustworthy Agent. In TrustAgent, we begin by deconstructing and introducing
+various components of the Agent and MAS. Then, we categorize their
+trustworthiness into intrinsic (brain, memory, and tool) and extrinsic (user,
+agent, and environment) aspects. Subsequently, we delineate the multifaceted
+meanings of trustworthiness and elaborate on the implementation techniques of
+existing research related to these internal and external modules. Finally, we
+present our insights and outlook on this domain, aiming to provide guidance for
+future endeavors.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2503.09150v1' target='_blank'>AdaptAI: A Personalized Solution to Sense Your Stress, Fix Your Mess,
+  and Boost Productivity</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Rushiraj Gadhvi, Soham Petkar, Priyansh Desai, Shreyas Ramachandran, Siddharth Siddharth</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-03-12 08:25:58</h6>
+<p class='card-text'>Personalization is a critical yet often overlooked factor in boosting
+productivity and wellbeing in knowledge-intensive workplaces to better address
+individual preferences. Existing tools typically offer uniform guidance whether
+auto-generating email responses or prompting break reminders without accounting
+for individual behavioral patterns or stress triggers. We introduce AdaptAI, a
+multimodal AI solution combining egocentric vision and audio, heart and motion
+activities, and the agentic workflow of Large Language Models LLMs to deliver
+highly personalized productivity support and context-aware well-being
+interventions. AdaptAI not only automates peripheral tasks (e.g. drafting
+succinct document summaries, replying to emails etc.) but also continuously
+monitors the users unique physiological and situational indicators to
+dynamically tailor interventions such as micro-break suggestions or exercise
+prompts, at the exact point of need. In a preliminary study with 15
+participants, AdaptAI demonstrated significant improvements in task throughput
+and user satisfaction by anticipating user stressors and streamlining daily
+workflows.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2503.09089v1' target='_blank'>LocAgent: Graph-Guided LLM Agents for Code Localization</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Zhaoling Chen, Xiangru Tang, Gangda Deng, Fang Wu, Jialong Wu, Zhiwei Jiang, Viktor Prasanna, Arman Cohan, Xingyao Wang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-03-12 05:55:01</h6>
+<p class='card-text'>Code localization--identifying precisely where in a codebase changes need to
+be made--is a fundamental yet challenging task in software maintenance.
+Existing approaches struggle to efficiently navigate complex codebases when
+identifying relevant code sections. The challenge lies in bridging natural
+language problem descriptions with the appropriate code elements, often
+requiring reasoning across hierarchical structures and multiple dependencies.
+We introduce LocAgent, a framework that addresses code localization through
+graph-based representation. By parsing codebases into directed heterogeneous
+graphs, LocAgent creates a lightweight representation that captures code
+structures (files, classes, functions) and their dependencies (imports,
+invocations, inheritance), enabling LLM agents to effectively search and locate
+relevant entities through powerful multi-hop reasoning. Experimental results on
+real-world benchmarks demonstrate that our approach significantly enhances
+accuracy in code localization. Notably, our method with the fine-tuned
+Qwen-2.5-Coder-Instruct-32B model achieves comparable results to SOTA
+proprietary models at greatly reduced cost (approximately 86% reduction),
+reaching up to 92.7% accuracy on file-level localization while improving
+downstream GitHub issue resolution success rates by 12% for multiple attempts
+(Pass@10). Our code is available at https://github.com/gersteinlab/LocAgent.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2503.09035v1' target='_blank'>ManeuverGPT Agentic Control for Safe Autonomous Stunt Maneuvers</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Shawn Azdam, Pranav Doma, Aliasghar Moj Arab</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-03-12 03:51:41</h6>
+<p class='card-text'>The next generation of active safety features in autonomous vehicles should
+be capable of safely executing evasive hazard-avoidance maneuvers akin to those
+performed by professional stunt drivers to achieve high-agility motion at the
+limits of vehicle handling. This paper presents a novel framework, ManeuverGPT,
+for generating and executing high-dynamic stunt maneuvers in autonomous
+vehicles using large language model (LLM)-based agents as controllers. We
+target aggressive maneuvers, such as J-turns, within the CARLA simulation
+environment and demonstrate an iterative, prompt-based approach to refine
+vehicle control parameters, starting tabula rasa without retraining model
+weights. We propose an agentic architecture comprised of three specialized
+agents (1) a Query Enricher Agent for contextualizing user commands, (2) a
+Driver Agent for generating maneuver parameters, and (3) a Parameter Validator
+Agent that enforces physics-based and safety constraints. Experimental results
+demonstrate successful J-turn execution across multiple vehicle models through
+textual prompts that adapt to differing vehicle dynamics. We evaluate
+performance via established success criteria and discuss limitations regarding
+numeric precision and scenario complexity. Our findings underscore the
+potential of LLM-driven control for flexible, high-dynamic maneuvers, while
+highlighting the importance of hybrid approaches that combine language-based
+reasoning with algorithmic validation.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2503.09639v1' target='_blank'>Can A Society of Generative Agents Simulate Human Behavior and Inform
+  Public Health Policy? A Case Study on Vaccine Hesitancy</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Abe Bohan Hou, Hongru Du, Yichen Wang, Jingyu Zhang, Zixiao Wang, Paul Pu Liang, Daniel Khashabi, Lauren Gardner, Tianxing He</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-03-12 02:54:15</h6>
+<p class='card-text'>Can we simulate a sandbox society with generative agents to model human
+behavior, thereby reducing the over-reliance on real human trials for assessing
+public policies? In this work, we investigate the feasibility of simulating
+health-related decision-making, using vaccine hesitancy, defined as the delay
+in acceptance or refusal of vaccines despite the availability of vaccination
+services (MacDonald, 2015), as a case study. To this end, we introduce the
+VacSim framework with 100 generative agents powered by Large Language Models
+(LLMs). VacSim simulates vaccine policy outcomes with the following steps: 1)
+instantiate a population of agents with demographics based on census data; 2)
+connect the agents via a social network and model vaccine attitudes as a
+function of social dynamics and disease-related information; 3) design and
+evaluate various public health interventions aimed at mitigating vaccine
+hesitancy. To align with real-world results, we also introduce simulation
+warmup and attitude modulation to adjust agents' attitudes. We propose a series
+of evaluations to assess the reliability of various LLM simulations.
+Experiments indicate that models like Llama and Qwen can simulate aspects of
+human behavior but also highlight real-world alignment challenges, such as
+inconsistent responses with demographic profiles. This early exploration of
+LLM-driven simulations is not meant to serve as definitive policy guidance;
+instead, it serves as a call for action to examine social simulation for policy
+development.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2503.08931v1' target='_blank'>ARCHED: A Human-Centered Framework for Transparent, Responsible, and
+  Collaborative AI-Assisted Instructional Design</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Hongming Li, Yizirui Fang, Shan Zhang, Seiyon M. Lee, Yiming Wang, Mark Trexler, Anthony F. Botelho</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-03-11 22:19:46</h6>
+<p class='card-text'>Integrating Large Language Models (LLMs) in educational technology presents
+unprecedented opportunities to improve instructional design (ID), yet existing
+approaches often prioritize automation over pedagogical rigor and human agency.
+This paper introduces ARCHED (AI for Responsible, Collaborative, Human-centered
+Education Instructional Design), a structured multi-stage framework that
+ensures human educators remain central in the design process while leveraging
+AI capabilities. Unlike traditional AI-generated instructional materials that
+lack transparency, ARCHED employs a cascaded workflow aligned with Bloom's
+taxonomy. The framework integrates specialized AI agents - one generating
+diverse pedagogical options and another evaluating alignment with learning
+objectives - while maintaining educators as primary decision-makers. This
+approach addresses key limitations in current AI-assisted instructional design,
+ensuring transparency, pedagogical foundation, and meaningful human agency.
+Empirical evaluations demonstrate that ARCHED enhances instructional design
+quality while preserving educator oversight, marking a step forward in
+responsible AI integration in education.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2503.08683v1' target='_blank'>CoLMDriver: LLM-based Negotiation Benefits Cooperative Autonomous
+  Driving</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Changxing Liu, Genjia Liu, Zijun Wang, Jinchang Yang, Siheng Chen</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-03-11 17:58:42</h6>
+<p class='card-text'>Vehicle-to-vehicle (V2V) cooperative autonomous driving holds great promise
+for improving safety by addressing the perception and prediction uncertainties
+inherent in single-agent systems. However, traditional cooperative methods are
+constrained by rigid collaboration protocols and limited generalization to
+unseen interactive scenarios. While LLM-based approaches offer generalized
+reasoning capabilities, their challenges in spatial planning and unstable
+inference latency hinder their direct application in cooperative driving. To
+address these limitations, we propose CoLMDriver, the first full-pipeline
+LLM-based cooperative driving system, enabling effective language-based
+negotiation and real-time driving control. CoLMDriver features a parallel
+driving pipeline with two key components: (i) an LLM-based negotiation module
+under an actor-critic paradigm, which continuously refines cooperation policies
+through feedback from previous decisions of all vehicles; and (ii) an
+intention-guided waypoint generator, which translates negotiation outcomes into
+executable waypoints. Additionally, we introduce InterDrive, a CARLA-based
+simulation benchmark comprising 10 challenging interactive driving scenarios
+for evaluating V2V cooperation. Experimental results demonstrate that
+CoLMDriver significantly outperforms existing approaches, achieving an 11%
+higher success rate across diverse highly interactive V2V driving scenarios.
+Code will be released on https://github.com/cxliu0314/CoLMDriver.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2503.08604v1' target='_blank'>EMMOE: A Comprehensive Benchmark for Embodied Mobile Manipulation in
+  Open Environments</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Dongping Li, Tielong Cai, Tianci Tang, Wenhao Chai, Katherine Rose Driggs-Campbell, Gaoang Wang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-03-11 16:42:36</h6>
+<p class='card-text'>Developing autonomous home robots controlled by natural language has long
+been a pursuit of human. While advancements in large language models (LLMs) and
+embodied intelligence make this goal closer, several challenges persist: the
+lack of a unified benchmark for more complex robot tasks, limited evaluation
+methods and metrics, data incompatibility between LLMs and mobile manipulation
+trajectories. To address these issues, we introduce Embodied Mobile
+Manipulation in Open Environments (EMMOE), which requires agents to interpret
+user instructions and execute long-horizon everyday tasks in continuous space.
+EMMOE seamlessly integrates high-level and low-level embodied tasks into a
+unified framework, along with three new metrics for more diverse assessment.
+Additionally, we collect EMMOE-100, which features in various task attributes,
+detailed process annotations, re-plans after failures, and two sub-datasets for
+LLM training. Furthermore, we design HomieBot, a sophisticated agent system
+consists of LLM with Direct Preference Optimization (DPO), light weighted
+navigation and manipulation models, and multiple error detection mechanisms.
+Finally, we demonstrate HomieBot's performance and the evaluation of different
+models and policies.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2503.08525v1' target='_blank'>GTR: Guided Thought Reinforcement Prevents Thought Collapse in RL-based
+  VLM Agent Training</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Tong Wei, Yijun Yang, Junliang Xing, Yuanchun Shi, Zongqing Lu, Deheng Ye</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-03-11 15:17:02</h6>
+<p class='card-text'>Reinforcement learning with verifiable outcome rewards (RLVR) has effectively
+scaled up chain-of-thought (CoT) reasoning in large language models (LLMs).
+Yet, its efficacy in training vision-language model (VLM) agents for
+goal-directed action reasoning in visual environments is less established. This
+work investigates this problem through extensive experiments on complex card
+games, such as 24 points, and embodied tasks from ALFWorld. We find that when
+rewards are based solely on action outcomes, RL fails to incentivize CoT
+reasoning in VLMs, instead leading to a phenomenon we termed thought collapse,
+characterized by a rapid loss of diversity in the agent's thoughts,
+state-irrelevant and incomplete reasoning, and subsequent invalid actions,
+resulting in negative rewards. To counteract thought collapse, we highlight the
+necessity of process guidance and propose an automated corrector that evaluates
+and refines the agent's reasoning at each RL step. This simple and scalable GTR
+(Guided Thought Reinforcement) framework trains reasoning and action
+simultaneously without the need for dense, per-step human labeling. Our
+experiments demonstrate that GTR significantly enhances the performance and
+generalization of the LLaVA-7b model across various visual environments,
+achieving 3-5 times higher task success rates compared to SoTA models with
+notably smaller model sizes.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2503.08506v1' target='_blank'>ReviewAgents: Bridging the Gap Between Human and AI-Generated Paper
+  Reviews</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Xian Gao, Jiacheng Ruan, Jingsheng Gao, Ting Liu, Yuzhuo Fu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-03-11 14:56:58</h6>
+<p class='card-text'>Academic paper review is a critical yet time-consuming task within the
+research community. With the increasing volume of academic publications,
+automating the review process has become a significant challenge. The primary
+issue lies in generating comprehensive, accurate, and reasoning-consistent
+review comments that align with human reviewers' judgments. In this paper, we
+address this challenge by proposing ReviewAgents, a framework that leverages
+large language models (LLMs) to generate academic paper reviews. We first
+introduce a novel dataset, Review-CoT, consisting of 142k review comments,
+designed for training LLM agents. This dataset emulates the structured
+reasoning process of human reviewers-summarizing the paper, referencing
+relevant works, identifying strengths and weaknesses, and generating a review
+conclusion. Building upon this, we train LLM reviewer agents capable of
+structured reasoning using a relevant-paper-aware training method. Furthermore,
+we construct ReviewAgents, a multi-role, multi-LLM agent review framework, to
+enhance the review comment generation process. Additionally, we propose
+ReviewBench, a benchmark for evaluating the review comments generated by LLMs.
+Our experimental results on ReviewBench demonstrate that while existing LLMs
+exhibit a certain degree of potential for automating the review process, there
+remains a gap when compared to human-generated reviews. Moreover, our
+ReviewAgents framework further narrows this gap, outperforming advanced LLMs in
+generating review comments.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2503.08308v1' target='_blank'>Seeing and Reasoning with Confidence: Supercharging Multimodal LLMs with
+  an Uncertainty-Aware Agentic Framework</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Zhuo Zhi, Chen Feng, Adam Daneshmend, Mine Orlu, Andreas Demosthenous, Lu Yin, Da Li, Ziquan Liu, Miguel R. D. Rodrigues</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-03-11 11:18:53</h6>
+<p class='card-text'>Multimodal large language models (MLLMs) show promise in tasks like visual
+question answering (VQA) but still face challenges in multimodal reasoning.
+Recent works adapt agentic frameworks or chain-of-thought (CoT) reasoning to
+improve performance. However, CoT-based multimodal reasoning often demands
+costly data annotation and fine-tuning, while agentic approaches relying on
+external tools risk introducing unreliable output from these tools. In this
+paper, we propose Seeing and Reasoning with Confidence (SRICE), a training-free
+multimodal reasoning framework that integrates external vision models with
+uncertainty quantification (UQ) into an MLLM to address these challenges.
+Specifically, SRICE guides the inference process by allowing MLLM to
+autonomously select regions of interest through multi-stage interactions with
+the help of external tools. We propose to use a conformal prediction-based
+approach to calibrate the output of external tools and select the optimal tool
+by estimating the uncertainty of an MLLM's output. Our experiment shows that
+the average improvement of SRICE over the base MLLM is 4.6% on five datasets
+and the performance on some datasets even outperforms fine-tuning-based
+methods, revealing the significance of ensuring reliable tool use in an MLLM
+agent.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2503.08302v1' target='_blank'>General-Purpose Aerial Intelligent Agents Empowered by Large Language
+  Models</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Ji Zhao, Xiao Lin</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-03-11 11:13:58</h6>
+<p class='card-text'>The emergence of large language models (LLMs) opens new frontiers for
+unmanned aerial vehicle (UAVs), yet existing systems remain confined to
+predefined tasks due to hardware-software co-design challenges. This paper
+presents the first aerial intelligent agent capable of open-world task
+execution through tight integration of LLM-based reasoning and robotic
+autonomy. Our hardware-software co-designed system addresses two fundamental
+limitations: (1) Onboard LLM operation via an edge-optimized computing
+platform, achieving 5-6 tokens/sec inference for 14B-parameter models at 220W
+peak power; (2) A bidirectional cognitive architecture that synergizes slow
+deliberative planning (LLM task planning) with fast reactive control (state
+estimation, mapping, obstacle avoidance, and motion planning). Validated
+through preliminary results using our prototype, the system demonstrates
+reliable task planning and scene understanding in communication-constrained
+environments, such as sugarcane monitoring, power grid inspection, mine tunnel
+exploration, and biological observation applications. This work establishes a
+novel framework for embodied aerial artificial intelligence, bridging the gap
+between task planning and robotic autonomy in open environments.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js'></script>
+</body>
+</html>
