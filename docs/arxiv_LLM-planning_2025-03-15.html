@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<title>LLM-planning - 2025-03-15</title>
+<link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap' rel='stylesheet'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'>
+<style>
+body {
+font-family: 'Roboto', sans-serif;
+background-color: #f5f7fa;
+padding: 20px;
+}
+.card {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.card-title {
+    font-weight: 700;
+}
+.card:hover {
+    transform: scale(1.02);
+    transition: 0.3s ease-in-out;
+}
+</style>
+</head>
+<body>
+<div class='container'>
+<h1 class='text-center my-4'><i class='fas fa-book'></i>LLM-planning - 2025-03-15</h1>
+<div class='row'>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2503.10613v1' target='_blank'>CoSTA$\ast$: Cost-Sensitive Toolpath Agent for Multi-turn Image Editing</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Advait Gupta, NandaKiran Velaga, Dang Nguyen, Tianyi Zhou</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-03-13 17:55:45</h6>
+<p class='card-text'>Text-to-image models like stable diffusion and DALLE-3 still struggle with
+multi-turn image editing. We decompose such a task as an agentic workflow
+(path) of tool use that addresses a sequence of subtasks by AI tools of varying
+costs. Conventional search algorithms require expensive exploration to find
+tool paths. While large language models (LLMs) possess prior knowledge of
+subtask planning, they may lack accurate estimations of capabilities and costs
+of tools to determine which to apply in each subtask. Can we combine the
+strengths of both LLMs and graph search to find cost-efficient tool paths? We
+propose a three-stage approach "CoSTA*" that leverages LLMs to create a subtask
+tree, which helps prune a graph of AI tools for the given task, and then
+conducts A* search on the small subgraph to find a tool path. To better balance
+the total cost and quality, CoSTA* combines both metrics of each tool on every
+subtask to guide the A* search. Each subtask's output is then evaluated by a
+vision-language model (VLM), where a failure will trigger an update of the
+tool's cost and quality on the subtask. Hence, the A* search can recover from
+failures quickly to explore other paths. Moreover, CoSTA* can automatically
+switch between modalities across subtasks for a better cost-quality trade-off.
+We build a novel benchmark of challenging multi-turn image editing, on which
+CoSTA* outperforms state-of-the-art image-editing models or agents in terms of
+both cost and quality, and performs versatile trade-offs upon user preference.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2503.10546v1' target='_blank'>KUDA: Keypoints to Unify Dynamics Learning and Visual Prompting for
+  Open-Vocabulary Robotic Manipulation</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Zixian Liu, Mingtong Zhang, Yunzhu Li</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-03-13 16:59:17</h6>
+<p class='card-text'>With the rapid advancement of large language models (LLMs) and
+vision-language models (VLMs), significant progress has been made in developing
+open-vocabulary robotic manipulation systems. However, many existing approaches
+overlook the importance of object dynamics, limiting their applicability to
+more complex, dynamic tasks. In this work, we introduce KUDA, an
+open-vocabulary manipulation system that integrates dynamics learning and
+visual prompting through keypoints, leveraging both VLMs and learning-based
+neural dynamics models. Our key insight is that a keypoint-based target
+specification is simultaneously interpretable by VLMs and can be efficiently
+translated into cost functions for model-based planning. Given language
+instructions and visual observations, KUDA first assigns keypoints to the RGB
+image and queries the VLM to generate target specifications. These abstract
+keypoint-based representations are then converted into cost functions, which
+are optimized using a learned dynamics model to produce robotic trajectories.
+We evaluate KUDA on a range of manipulation tasks, including free-form language
+instructions across diverse object categories, multi-object interactions, and
+deformable or granular objects, demonstrating the effectiveness of our
+framework. The project page is available at http://kuda-dynamics.github.io.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2503.10009v1' target='_blank'>OR-LLM-Agent: Automating Modeling and Solving of Operations Research
+  Optimization Problem with Reasoning Large Language Model</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Bowen Zhang, Pengcheng Luo</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-03-13 03:40:50</h6>
+<p class='card-text'>Operations Research (OR) has been widely applied in various fields such as
+resource allocation, production planning, and supply chain management. However,
+addressing real-world OR problems requires OR experts to perform mathematical
+modeling and programmers to develop solution algorithms. This traditional
+method, heavily reliant on experts, is costly and has long development cycles,
+severely limiting the widespread adoption of OR techniques. Few have considered
+using Artificial Intelligence (AI) to replace professionals to achieve fully
+automated solutions for OR problems. We propose OR-LLM-Agent, the first AI
+agent that enables end-to-end automation for solving real-world OR problems.
+OR-LLM-Agent leverages the Chain-of-Thought (CoT) reasoning capabilities of
+Large Language Models (LLMs) to translate natural language problem descriptions
+into formal mathematical models and automatically generate Gurobi solver code.
+In OR-LLM-Agent, OR-CodeAgent is designed to automate code execution and repair
+within a sandbox environment, facilitating the derivation of the final
+solution. Due to the lack of dedicated benchmark datasets for evaluating the
+automated solving of OR problems, we construct a benchmark dataset comprising
+83 real-world OR problems described in natural language. We conduct comparative
+experiments with state-of-the-art (SOTA) reasoning LLMs, including GPT-o3-mini,
+DeepSeek-R1, and Gemini 2.0 Flash Thinking. The OR-LLM-Agent achieved the
+highest pass rate of 100% and the highest solution accuracy of 85%,
+demonstrating the feasibility of automated OR problem-solving. Data and code
+have been publicly available at https://github.com/bwz96sco/or_llm_agent.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2503.09758v1' target='_blank'>Multi-Agent LLM Actor-Critic Framework for Social Robot Navigation</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Weizheng Wang, Ike Obi, Byung-Cheol Min</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-03-12 18:59:53</h6>
+<p class='card-text'>Recent advances in robotics and large language models (LLMs) have sparked
+growing interest in human-robot collaboration and embodied intelligence. To
+enable the broader deployment of robots in human-populated environments,
+socially-aware robot navigation (SAN) has become a key research area. While
+deep reinforcement learning approaches that integrate human-robot interaction
+(HRI) with path planning have demonstrated strong benchmark performance, they
+often struggle to adapt to new scenarios and environments. LLMs offer a
+promising avenue for zero-shot navigation through commonsense inference.
+However, most existing LLM-based frameworks rely on centralized
+decision-making, lack robust verification mechanisms, and face inconsistencies
+in translating macro-actions into precise low-level control signals. To address
+these challenges, we propose SAMALM, a decentralized multi-agent LLM
+actor-critic framework for multi-robot social navigation. In this framework, a
+set of parallel LLM actors, each reflecting distinct robot personalities or
+configurations, directly generate control signals. These actions undergo a
+two-tier verification process via a global critic that evaluates group-level
+behaviors and individual critics that assess each robot's context. An
+entropy-based score fusion mechanism further enhances self-verification and
+re-query, improving both robustness and coordination. Experimental results
+confirm that SAMALM effectively balances local autonomy with global oversight,
+yielding socially compliant behaviors and strong adaptability across diverse
+multi-robot scenarios. More details and videos about this work are available
+at: https://sites.google.com/view/SAMALM.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2503.09572v1' target='_blank'>Plan-and-Act: Improving Planning of Agents for Long-Horizon Tasks</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Lutfi Eren Erdogan, Nicholas Lee, Sehoon Kim, Suhong Moon, Hiroki Furuta, Gopala Anumanchipalli, Kurt Keutzer, Amir Gholami</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-03-12 17:40:52</h6>
+<p class='card-text'>Large language models (LLMs) have shown remarkable advancements in enabling
+language agents to tackle simple tasks. However, applying them for complex,
+multi-step, long-horizon tasks remains a challenge. Recent work have found
+success by separating high-level planning from low-level execution, which
+enables the model to effectively balance high-level planning objectives and
+low-level execution details. However, generating accurate plans remains
+difficult since LLMs are not inherently trained for this task. To address this,
+we propose Plan-and-Act, a novel framework that incorporates explicit planning
+into LLM-based agents and introduces a scalable method to enhance plan
+generation through a novel synthetic data generation method. Plan-and-Act
+consists of a Planner model which generates structured, high-level plans to
+achieve user goals, and an Executor model that translates these plans into
+environment-specific actions. To train the Planner effectively, we introduce a
+synthetic data generation method that annotates ground-truth trajectories with
+feasible plans, augmented with diverse and extensive examples to enhance
+generalization. We evaluate Plan-and-Act using web navigation as a
+representative long-horizon planning environment, demonstrating a state-of
+the-art 54% success rate on the WebArena-Lite benchmark.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2503.09501v1' target='_blank'>ReMA: Learning to Meta-think for LLMs with Multi-Agent Reinforcement
+  Learning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Ziyu Wan, Yunxiang Li, Yan Song, Hanjing Wang, Linyi Yang, Mark Schmidt, Jun Wang, Weinan Zhang, Shuyue Hu, Ying Wen</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-03-12 16:05:31</h6>
+<p class='card-text'>Recent research on Reasoning of Large Language Models (LLMs) has sought to
+further enhance their performance by integrating meta-thinking -- enabling
+models to monitor, evaluate, and control their reasoning processes for more
+adaptive and effective problem-solving. However, current single-agent work
+lacks a specialized design for acquiring meta-thinking, resulting in low
+efficacy. To address this challenge, we introduce Reinforced Meta-thinking
+Agents (ReMA), a novel framework that leverages Multi-Agent Reinforcement
+Learning (MARL) to elicit meta-thinking behaviors, encouraging LLMs to think
+about thinking. ReMA decouples the reasoning process into two hierarchical
+agents: a high-level meta-thinking agent responsible for generating strategic
+oversight and plans, and a low-level reasoning agent for detailed executions.
+Through iterative reinforcement learning with aligned objectives, these agents
+explore and learn collaboration, leading to improved generalization and
+robustness. Experimental results demonstrate that ReMA outperforms single-agent
+RL baselines on complex reasoning tasks, including competitive-level
+mathematical benchmarks and LLM-as-a-Judge benchmarks. Comprehensive ablation
+studies further illustrate the evolving dynamics of each distinct agent,
+providing valuable insights into how the meta-thinking reasoning process
+enhances the reasoning capabilities of LLMs.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2503.09656v1' target='_blank'>LLM-PS: Empowering Large Language Models for Time Series Forecasting
+  with Temporal Patterns and Semantics</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Jialiang Tang, Shuo Chen, Chen Gong, Jing Zhang, Dacheng Tao</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-03-12 11:45:11</h6>
+<p class='card-text'>Time Series Forecasting (TSF) is critical in many real-world domains like
+financial planning and health monitoring. Recent studies have revealed that
+Large Language Models (LLMs), with their powerful in-contextual modeling
+capabilities, hold significant potential for TSF. However, existing LLM-based
+methods usually perform suboptimally because they neglect the inherent
+characteristics of time series data. Unlike the textual data used in LLM
+pre-training, the time series data is semantically sparse and comprises
+distinctive temporal patterns. To address this problem, we propose LLM-PS to
+empower the LLM for TSF by learning the fundamental \textit{Patterns} and
+meaningful \textit{Semantics} from time series data. Our LLM-PS incorporates a
+new multi-scale convolutional neural network adept at capturing both short-term
+fluctuations and long-term trends within the time series. Meanwhile, we
+introduce a time-to-text module for extracting valuable semantics across
+continuous time intervals rather than isolated time points. By integrating
+these patterns and semantics, LLM-PS effectively models temporal dependencies,
+enabling a deep comprehension of time series and delivering accurate forecasts.
+Intensive experimental results demonstrate that LLM-PS achieves
+state-of-the-art performance in both short- and long-term forecasting tasks, as
+well as in few- and zero-shot settings.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2503.09276v1' target='_blank'>Fine-Tuning Large Language Models for Educational Support: Leveraging
+  Gagne's Nine Events of Instruction for Lesson Planning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Linzhao Jia, Changyong Qi, Yuang Wei, Han Sun, Xiaozhe Yang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-03-12 11:22:13</h6>
+<p class='card-text'>Effective lesson planning is crucial in education process, serving as the
+cornerstone for high-quality teaching and the cultivation of a conducive
+learning atmosphere. This study investigates how large language models (LLMs)
+can enhance teacher preparation by incorporating them with Gagne's Nine Events
+of Instruction, especially in the field of mathematics education in compulsory
+education. It investigates two distinct methodologies: the development of Chain
+of Thought (CoT) prompts to direct LLMs in generating content that aligns with
+instructional events, and the application of fine-tuning approaches like
+Low-Rank Adaptation (LoRA) to enhance model performance. This research starts
+with creating a comprehensive dataset based on math curriculum standards and
+Gagne's instructional events. The first method involves crafting CoT-optimized
+prompts to generate detailed, logically coherent responses from LLMs, improving
+their ability to create educationally relevant content. The second method uses
+specialized datasets to fine-tune open-source models, enhancing their
+educational content generation and analysis capabilities. This study
+contributes to the evolving dialogue on the integration of AI in education,
+illustrating innovative strategies for leveraging LLMs to bolster teaching and
+learning processes.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2503.08683v1' target='_blank'>CoLMDriver: LLM-based Negotiation Benefits Cooperative Autonomous
+  Driving</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Changxing Liu, Genjia Liu, Zijun Wang, Jinchang Yang, Siheng Chen</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-03-11 17:58:42</h6>
+<p class='card-text'>Vehicle-to-vehicle (V2V) cooperative autonomous driving holds great promise
+for improving safety by addressing the perception and prediction uncertainties
+inherent in single-agent systems. However, traditional cooperative methods are
+constrained by rigid collaboration protocols and limited generalization to
+unseen interactive scenarios. While LLM-based approaches offer generalized
+reasoning capabilities, their challenges in spatial planning and unstable
+inference latency hinder their direct application in cooperative driving. To
+address these limitations, we propose CoLMDriver, the first full-pipeline
+LLM-based cooperative driving system, enabling effective language-based
+negotiation and real-time driving control. CoLMDriver features a parallel
+driving pipeline with two key components: (i) an LLM-based negotiation module
+under an actor-critic paradigm, which continuously refines cooperation policies
+through feedback from previous decisions of all vehicles; and (ii) an
+intention-guided waypoint generator, which translates negotiation outcomes into
+executable waypoints. Additionally, we introduce InterDrive, a CARLA-based
+simulation benchmark comprising 10 challenging interactive driving scenarios
+for evaluating V2V cooperation. Experimental results demonstrate that
+CoLMDriver significantly outperforms existing approaches, achieving an 11%
+higher success rate across diverse highly interactive V2V driving scenarios.
+Code will be released on https://github.com/cxliu0314/CoLMDriver.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2503.08604v1' target='_blank'>EMMOE: A Comprehensive Benchmark for Embodied Mobile Manipulation in
+  Open Environments</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Dongping Li, Tielong Cai, Tianci Tang, Wenhao Chai, Katherine Rose Driggs-Campbell, Gaoang Wang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-03-11 16:42:36</h6>
+<p class='card-text'>Developing autonomous home robots controlled by natural language has long
+been a pursuit of human. While advancements in large language models (LLMs) and
+embodied intelligence make this goal closer, several challenges persist: the
+lack of a unified benchmark for more complex robot tasks, limited evaluation
+methods and metrics, data incompatibility between LLMs and mobile manipulation
+trajectories. To address these issues, we introduce Embodied Mobile
+Manipulation in Open Environments (EMMOE), which requires agents to interpret
+user instructions and execute long-horizon everyday tasks in continuous space.
+EMMOE seamlessly integrates high-level and low-level embodied tasks into a
+unified framework, along with three new metrics for more diverse assessment.
+Additionally, we collect EMMOE-100, which features in various task attributes,
+detailed process annotations, re-plans after failures, and two sub-datasets for
+LLM training. Furthermore, we design HomieBot, a sophisticated agent system
+consists of LLM with Direct Preference Optimization (DPO), light weighted
+navigation and manipulation models, and multiple error detection mechanisms.
+Finally, we demonstrate HomieBot's performance and the evaluation of different
+models and policies.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2503.08537v1' target='_blank'>Chemical reasoning in LLMs unlocks steerable synthesis planning and
+  reaction mechanism elucidation</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Andres M Bran, Theo A Neukomm, Daniel P Armstrong, Zlatko Jončev, Philippe Schwaller</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-03-11 15:27:17</h6>
+<p class='card-text'>While machine learning algorithms have been shown to excel at specific
+chemical tasks, they have struggled to capture the strategic thinking that
+characterizes expert chemical reasoning, limiting their widespread adoption.
+Here we demonstrate that large language models (LLMs) can serve as powerful
+chemical reasoning engines when integrated with traditional search algorithms,
+enabling a new approach to computer-aided chemistry that mirrors human expert
+thinking. Rather than using LLMs to directly manipulate chemical structures, we
+leverage their ability to evaluate chemical strategies and guide search
+algorithms toward chemically meaningful solutions. We demonstrate this paradigm
+through two fundamental challenges: strategy-aware retrosynthetic planning and
+mechanism elucidation. In retrosynthetic planning, our method allows chemists
+to specify desired synthetic strategies in natural language to find routes that
+satisfy these constraints in vast searches. In mechanism elucidation, LLMs
+guide the search for plausible reaction mechanisms by combining chemical
+principles with systematic exploration. Our approach shows strong performance
+across diverse chemical tasks, with larger models demonstrating increasingly
+sophisticated chemical reasoning. Our approach establishes a new paradigm for
+computer-aided chemistry that combines the strategic understanding of LLMs with
+the precision of traditional chemical tools, opening possibilities for more
+intuitive and powerful chemical reasoning systems.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2503.08508v1' target='_blank'>LightPlanner: Unleashing the Reasoning Capabilities of Lightweight Large
+  Language Models in Task Planning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Weijie Zhou, Yi Peng, Manli Tao, Chaoyang Zhao, Honghui Dong, Ming Tang, Jinqiao Wang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-03-11 14:57:53</h6>
+<p class='card-text'>In recent years, lightweight large language models (LLMs) have garnered
+significant attention in the robotics field due to their low computational
+resource requirements and suitability for edge deployment. However, in task
+planning -- particularly for complex tasks that involve dynamic semantic logic
+reasoning -- lightweight LLMs have underperformed. To address this limitation,
+we propose a novel task planner, LightPlanner, which enhances the performance
+of lightweight LLMs in complex task planning by fully leveraging their
+reasoning capabilities. Unlike conventional planners that use fixed skill
+templates, LightPlanner controls robot actions via parameterized function
+calls, dynamically generating parameter values. This approach allows for
+fine-grained skill control and improves task planning success rates in complex
+scenarios. Furthermore, we introduce hierarchical deep reasoning. Before
+generating each action decision step, LightPlanner thoroughly considers three
+levels: action execution (feedback verification), semantic parsing (goal
+consistency verification), and parameter generation (parameter validity
+verification). This ensures the correctness of subsequent action controls.
+Additionally, we incorporate a memory module to store historical actions,
+thereby reducing context length and enhancing planning efficiency for long-term
+tasks. We train the LightPlanner-1.5B model on our LightPlan-40k dataset, which
+comprises 40,000 action controls across tasks with 2 to 13 action steps.
+Experiments demonstrate that our model achieves the highest task success rate
+despite having the smallest number of parameters. In tasks involving spatial
+semantic reasoning, the success rate exceeds that of ReAct by 14.9 percent.
+Moreover, we demonstrate LightPlanner's potential to operate on edge devices.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2503.08338v1' target='_blank'>Trinity: A Modular Humanoid Robot AI System</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Jingkai Sun, Qiang Zhang, Gang Han, Wen Zhao, Zhe Yong, Yan He, Jiaxu Wang, Jiahang Cao, Yijie Guo, Renjing Xu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-03-11 11:50:36</h6>
+<p class='card-text'>In recent years, research on humanoid robots has garnered increasing
+attention. With breakthroughs in various types of artificial intelligence
+algorithms, embodied intelligence, exemplified by humanoid robots, has been
+highly anticipated. The advancements in reinforcement learning (RL) algorithms
+have significantly improved the motion control and generalization capabilities
+of humanoid robots. Simultaneously, the groundbreaking progress in large
+language models (LLM) and visual language models (VLM) has brought more
+possibilities and imagination to humanoid robots. LLM enables humanoid robots
+to understand complex tasks from language instructions and perform long-term
+task planning, while VLM greatly enhances the robots' understanding and
+interaction with their environment. This paper introduces
+\textcolor{magenta}{Trinity}, a novel AI system for humanoid robots that
+integrates RL, LLM, and VLM. By combining these technologies, Trinity enables
+efficient control of humanoid robots in complex environments. This innovative
+approach not only enhances the capabilities but also opens new avenues for
+future research and applications of humanoid robotics.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2503.08330v1' target='_blank'>KiteRunner: Language-Driven Cooperative Local-Global Navigation Policy
+  with UAV Mapping in Outdoor Environments</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Shibo Huang, Chenfan Shi, Jian Yang, Hanlin Dong, Jinpeng Mi, Ke Li, Jianfeng Zhang, Miao Ding, Peidong Liang, Xiong You, Xian Wei</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-03-11 11:44:29</h6>
+<p class='card-text'>Autonomous navigation in open-world outdoor environments faces challenges in
+integrating dynamic conditions, long-distance spatial reasoning, and semantic
+understanding. Traditional methods struggle to balance local planning, global
+planning, and semantic task execution, while existing large language models
+(LLMs) enhance semantic comprehension but lack spatial reasoning capabilities.
+Although diffusion models excel in local optimization, they fall short in
+large-scale long-distance navigation. To address these gaps, this paper
+proposes KiteRunner, a language-driven cooperative local-global navigation
+strategy that combines UAV orthophoto-based global planning with diffusion
+model-driven local path generation for long-distance navigation in open-world
+scenarios. Our method innovatively leverages real-time UAV orthophotography to
+construct a global probability map, providing traversability guidance for the
+local planner, while integrating large models like CLIP and GPT to interpret
+natural language instructions. Experiments demonstrate that KiteRunner achieves
+5.6% and 12.8% improvements in path efficiency over state-of-the-art methods in
+structured and unstructured environments, respectively, with significant
+reductions in human interventions and execution time.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2503.08302v1' target='_blank'>General-Purpose Aerial Intelligent Agents Empowered by Large Language
+  Models</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Ji Zhao, Xiao Lin</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-03-11 11:13:58</h6>
+<p class='card-text'>The emergence of large language models (LLMs) opens new frontiers for
+unmanned aerial vehicle (UAVs), yet existing systems remain confined to
+predefined tasks due to hardware-software co-design challenges. This paper
+presents the first aerial intelligent agent capable of open-world task
+execution through tight integration of LLM-based reasoning and robotic
+autonomy. Our hardware-software co-designed system addresses two fundamental
+limitations: (1) Onboard LLM operation via an edge-optimized computing
+platform, achieving 5-6 tokens/sec inference for 14B-parameter models at 220W
+peak power; (2) A bidirectional cognitive architecture that synergizes slow
+deliberative planning (LLM task planning) with fast reactive control (state
+estimation, mapping, obstacle avoidance, and motion planning). Validated
+through preliminary results using our prototype, the system demonstrates
+reliable task planning and scene understanding in communication-constrained
+environments, such as sugarcane monitoring, power grid inspection, mine tunnel
+exploration, and biological observation applications. This work establishes a
+novel framework for embodied aerial artificial intelligence, bridging the gap
+between task planning and robotic autonomy in open environments.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2503.08174v1' target='_blank'>Investigating the Effectiveness of a Socratic Chain-of-Thoughts
+  Reasoning Method for Task Planning in Robotics, A Case Study</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Veronica Bot, Zheyuan Xu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-03-11 08:36:37</h6>
+<p class='card-text'>Large language models (LLMs) have demonstrated unprecedented capability in
+reasoning with natural language. Coupled with this development is the emergence
+of embodied AI in robotics. Despite showing promise for verbal and written
+reasoning tasks, it remains unknown whether LLMs are capable of navigating
+complex spatial tasks with physical actions in the real world. To this end, it
+is of interest to investigate applying LLMs to robotics in zero-shot learning
+scenarios, and in the absence of fine-tuning - a feat which could significantly
+improve human-robot interaction, alleviate compute cost, and eliminate
+low-level programming tasks associated with robot tasks.
+  To explore this question, we apply GPT-4(Omni) with a simulated Tiago robot
+in Webots engine for an object search task. We evaluate the effectiveness of
+three reasoning strategies based on Chain-of-Thought (CoT) sub-task list
+generation with the Socratic method (SocraCoT) (in order of increasing rigor):
+(1) Non-CoT/Non-SocraCoT, (2) CoT only, and (3) SocraCoT. Performance was
+measured in terms of the proportion of tasks successfully completed and
+execution time (N = 20). Our preliminary results show that when combined with
+chain-of-thought reasoning, the Socratic method can be used for code generation
+for robotic tasks that require spatial awareness. In extension of this finding,
+we propose EVINCE-LoC; a modified EVINCE method that could further enhance
+performance in highly complex and or dynamic testing scenarios.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2503.08162v1' target='_blank'>FASIONAD++ : Integrating High-Level Instruction and Information
+  Bottleneck in FAt-Slow fusION Systems for Enhanced Safety in Autonomous
+  Driving with Adaptive Feedback</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Kangan Qian, Ziang Luo, Sicong Jiang, Zilin Huang, Jinyu Miao, Zhikun Ma, Tianze Zhu, Jiayin Li, Yangfan He, Zheng Fu, Yining Shi, Boyue Wang, Hezhe Lin, Ziyu Chen, Jiangbo Yu, Xinyu Jiao, Mengmeng Yang, Kun Jiang, Diange Yang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-03-11 08:27:01</h6>
+<p class='card-text'>Ensuring safe, comfortable, and efficient planning is crucial for autonomous
+driving systems. While end-to-end models trained on large datasets perform well
+in standard driving scenarios, they struggle with complex low-frequency events.
+Recent Large Language Models (LLMs) and Vision Language Models (VLMs)
+advancements offer enhanced reasoning but suffer from computational
+inefficiency. Inspired by the dual-process cognitive model "Thinking, Fast and
+Slow", we propose $\textbf{FASIONAD}$ -- a novel dual-system framework that
+synergizes a fast end-to-end planner with a VLM-based reasoning module. The
+fast system leverages end-to-end learning to achieve real-time trajectory
+generation in common scenarios, while the slow system activates through
+uncertainty estimation to perform contextual analysis and complex scenario
+resolution. Our architecture introduces three key innovations: (1) A dynamic
+switching mechanism enabling slow system intervention based on real-time
+uncertainty assessment; (2) An information bottleneck with high-level plan
+feedback that optimizes the slow system's guidance capability; (3) A
+bidirectional knowledge exchange where visual prompts enhance the slow system's
+reasoning while its feedback refines the fast planner's decision-making. To
+strengthen VLM reasoning, we develop a question-answering mechanism coupled
+with reward-instruct training strategy. In open-loop experiments, FASIONAD
+achieves a $6.7\%$ reduction in average $L2$ trajectory error and $28.1\%$
+lower collision rate.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2503.08084v1' target='_blank'>Instruction-Augmented Long-Horizon Planning: Embedding Grounding
+  Mechanisms in Embodied Mobile Manipulation</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Fangyuan Wang, Shipeng Lyu, Peng Zhou, Anqing Duan, Guodong Guo, David Navarro-Alarcon</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-03-11 06:37:33</h6>
+<p class='card-text'>Enabling humanoid robots to perform long-horizon mobile manipulation planning
+in real-world environments based on embodied perception and comprehension
+abilities has been a longstanding challenge. With the recent rise of large
+language models (LLMs), there has been a notable increase in the development of
+LLM-based planners. These approaches either utilize human-provided textual
+representations of the real world or heavily depend on prompt engineering to
+extract such representations, lacking the capability to quantitatively
+understand the environment, such as determining the feasibility of manipulating
+objects. To address these limitations, we present the Instruction-Augmented
+Long-Horizon Planning (IALP) system, a novel framework that employs LLMs to
+generate feasible and optimal actions based on real-time sensor feedback,
+including grounded knowledge of the environment, in a closed-loop interaction.
+Distinct from prior works, our approach augments user instructions into PDDL
+problems by leveraging both the abstract reasoning capabilities of LLMs and
+grounding mechanisms. By conducting various real-world long-horizon tasks, each
+consisting of seven distinct manipulatory skills, our results demonstrate that
+the IALP system can efficiently solve these tasks with an average success rate
+exceeding 80%. Our proposed method can operate as a high-level planner,
+equipping robots with substantial autonomy in unstructured environments through
+the utilization of multi-modal sensor inputs.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2503.07902v1' target='_blank'>LTLCodeGen: Code Generation of Syntactically Correct Temporal Logic for
+  Robot Task Planning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Behrad Rabiei, Mahesh Kumar A. R., Zhirui Dai, Surya L. S. R. Pilla, Qiyue Dong, Nikolay Atanasov</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-03-10 22:43:13</h6>
+<p class='card-text'>This paper focuses on planning robot navigation tasks from natural language
+specifications. We develop a modular approach, where a large language model
+(LLM) translates the natural language instructions into a linear temporal logic
+(LTL) formula with propositions defined by object classes in a semantic
+occupancy map. The LTL formula and the semantic occupancy map are provided to a
+motion planning algorithm to generate a collision-free robot path that
+satisfies the natural language instructions. Our main contribution is
+LTLCodeGen, a method to translate natural language to syntactically correct LTL
+using code generation. We demonstrate the complete task planning method in
+real-world experiments involving human speech to provide navigation
+instructions to a mobile robot. We also thoroughly evaluate our approach in
+simulated and real-world experiments in comparison to end-to-end LLM task
+planning and state-of-the-art LLM-to-LTL translation methods.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2503.07885v1' target='_blank'>Safety Guardrails for LLM-Enabled Robots</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Zachary Ravichandran, Alexander Robey, Vijay Kumar, George J. Pappas, Hamed Hassani</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-03-10 22:01:56</h6>
+<p class='card-text'>Although the integration of large language models (LLMs) into robotics has
+unlocked transformative capabilities, it has also introduced significant safety
+concerns, ranging from average-case LLM errors (e.g., hallucinations) to
+adversarial jailbreaking attacks, which can produce harmful robot behavior in
+real-world settings. Traditional robot safety approaches do not address the
+novel vulnerabilities of LLMs, and current LLM safety guardrails overlook the
+physical risks posed by robots operating in dynamic real-world environments. In
+this paper, we propose RoboGuard, a two-stage guardrail architecture to ensure
+the safety of LLM-enabled robots. RoboGuard first contextualizes pre-defined
+safety rules by grounding them in the robot's environment using a root-of-trust
+LLM, which employs chain-of-thought (CoT) reasoning to generate rigorous safety
+specifications, such as temporal logic constraints. RoboGuard then resolves
+potential conflicts between these contextual safety specifications and a
+possibly unsafe plan using temporal logic control synthesis, which ensures
+safety compliance while minimally violating user preferences. Through extensive
+simulation and real-world experiments that consider worst-case jailbreaking
+attacks, we demonstrate that RoboGuard reduces the execution of unsafe plans
+from 92% to below 2.5% without compromising performance on safe plans. We also
+demonstrate that RoboGuard is resource-efficient, robust against adaptive
+attacks, and significantly enhanced by enabling its root-of-trust LLM to
+perform CoT reasoning. These results underscore the potential of RoboGuard to
+mitigate the safety risks and enhance the reliability of LLM-enabled robots.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2503.07459v1' target='_blank'>MedAgentsBench: Benchmarking Thinking Models and Agent Frameworks for
+  Complex Medical Reasoning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Xiangru Tang, Daniel Shao, Jiwoong Sohn, Jiapeng Chen, Jiayi Zhang, Jinyu Xiang, Fang Wu, Yilun Zhao, Chenglin Wu, Wenqi Shi, Arman Cohan, Mark Gerstein</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-03-10 15:38:44</h6>
+<p class='card-text'>Large Language Models (LLMs) have shown impressive performance on existing
+medical question-answering benchmarks. This high performance makes it
+increasingly difficult to meaningfully evaluate and differentiate advanced
+methods. We present MedAgentsBench, a benchmark that focuses on challenging
+medical questions requiring multi-step clinical reasoning, diagnosis
+formulation, and treatment planning-scenarios where current models still
+struggle despite their strong performance on standard tests. Drawing from seven
+established medical datasets, our benchmark addresses three key limitations in
+existing evaluations: (1) the prevalence of straightforward questions where
+even base models achieve high performance, (2) inconsistent sampling and
+evaluation protocols across studies, and (3) lack of systematic analysis of the
+interplay between performance, cost, and inference time. Through experiments
+with various base models and reasoning methods, we demonstrate that the latest
+thinking models, DeepSeek R1 and OpenAI o3, exhibit exceptional performance in
+complex medical reasoning tasks. Additionally, advanced search-based agent
+methods offer promising performance-to-cost ratios compared to traditional
+approaches. Our analysis reveals substantial performance gaps between model
+families on complex questions and identifies optimal model selections for
+different computational constraints. Our benchmark and evaluation framework are
+publicly available at https://github.com/gersteinlab/medagents-benchmark.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2503.07323v1' target='_blank'>Dynamic Path Navigation for Motion Agents with LLM Reasoning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yubo Zhao, Qi Wu, Yifan Wang, Yu-Wing Tai, Chi-Keung Tang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-03-10 13:39:09</h6>
+<p class='card-text'>Large Language Models (LLMs) have demonstrated strong generalizable reasoning
+and planning capabilities. However, their efficacies in spatial path planning
+and obstacle-free trajectory generation remain underexplored. Leveraging LLMs
+for navigation holds significant potential, given LLMs' ability to handle
+unseen scenarios, support user-agent interactions, and provide global control
+across complex systems, making them well-suited for agentic planning and
+humanoid motion generation. As one of the first studies in this domain, we
+explore the zero-shot navigation and path generation capabilities of LLMs by
+constructing a dataset and proposing an evaluation protocol. Specifically, we
+represent paths using anchor points connected by straight lines, enabling
+movement in various directions. This approach offers greater flexibility and
+practicality compared to previous methods while remaining simple and intuitive
+for LLMs. We demonstrate that, when tasks are well-structured in this manner,
+modern LLMs exhibit substantial planning proficiency in avoiding obstacles
+while autonomously refining navigation with the generated motion to reach the
+target. Further, this spatial reasoning ability of a single LLM motion agent
+interacting in a static environment can be seamlessly generalized in
+multi-motion agents coordination in dynamic environments. Unlike traditional
+approaches that rely on single-step planning or local policies, our
+training-free LLM-based method enables global, dynamic, closed-loop planning,
+and autonomously resolving collision issues.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2503.07317v1' target='_blank'>Self-Corrective Task Planning by Inverse Prompting with Large Language
+  Models</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Jiho Lee, Hayun Lee, Jonghyeon Kim, Kyungjae Lee, Eunwoo Kim</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-03-10 13:35:51</h6>
+<p class='card-text'>In robot task planning, large language models (LLMs) have shown significant
+promise in generating complex and long-horizon action sequences. However, it is
+observed that LLMs often produce responses that sound plausible but are not
+accurate. To address these problems, existing methods typically employ
+predefined error sets or external knowledge sources, requiring human efforts
+and computation resources. Recently, self-correction approaches have emerged,
+where LLM generates and refines plans, identifying errors by itself. Despite
+their effectiveness, they are more prone to failures in correction due to
+insufficient reasoning. In this paper, we introduce InversePrompt, a novel
+self-corrective task planning approach that leverages inverse prompting to
+enhance interpretability. Our method incorporates reasoning steps to provide
+clear, interpretable feedback. It generates inverse actions corresponding to
+the initially generated actions and verifies whether these inverse actions can
+restore the system to its original state, explicitly validating the logical
+coherence of the generated plans. The results on benchmark datasets show an
+average 16.3% higher success rate over existing LLM-based task planning
+methods. Our approach offers clearer justifications for feedback in real-world
+environments, resulting in more successful task completion than existing
+self-correction approaches across various scenarios.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2503.07314v1' target='_blank'>Automated Movie Generation via Multi-Agent CoT Planning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Weijia Wu, Zeyu Zhu, Mike Zheng Shou</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-03-10 13:33:27</h6>
+<p class='card-text'>Existing long-form video generation frameworks lack automated planning,
+requiring manual input for storylines, scenes, cinematography, and character
+interactions, resulting in high costs and inefficiencies. To address these
+challenges, we present MovieAgent, an automated movie generation via
+multi-agent Chain of Thought (CoT) planning. MovieAgent offers two key
+advantages: 1) We firstly explore and define the paradigm of automated
+movie/long-video generation. Given a script and character bank, our MovieAgent
+can generates multi-scene, multi-shot long-form videos with a coherent
+narrative, while ensuring character consistency, synchronized subtitles, and
+stable audio throughout the film. 2) MovieAgent introduces a hierarchical
+CoT-based reasoning process to automatically structure scenes, camera settings,
+and cinematography, significantly reducing human effort. By employing multiple
+LLM agents to simulate the roles of a director, screenwriter, storyboard
+artist, and location manager, MovieAgent streamlines the production pipeline.
+Experiments demonstrate that MovieAgent achieves new state-of-the-art results
+in script faithfulness, character consistency, and narrative coherence. Our
+hierarchical framework takes a step forward and provides new insights into
+fully automated movie generation. The code and project website are available
+at: https://github.com/showlab/MovieAgent and
+https://weijiawu.github.io/MovieAgent.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2503.07282v1' target='_blank'>A Graph-based Verification Framework for Fact-Checking</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yani Huang, Richong Zhang, Zhijie Nie, Junfan Chen, Xuefeng Zhang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-03-10 13:02:29</h6>
+<p class='card-text'>Fact-checking plays a crucial role in combating misinformation. Existing
+methods using large language models (LLMs) for claim decomposition face two key
+limitations: (1) insufficient decomposition, introducing unnecessary complexity
+to the verification process, and (2) ambiguity of mentions, leading to
+incorrect verification results. To address these challenges, we suggest
+introducing a claim graph consisting of triplets to address the insufficient
+decomposition problem and reduce mention ambiguity through graph structure.
+Based on this core idea, we propose a graph-based framework, GraphFC, for
+fact-checking. The framework features three key components: graph construction,
+which builds both claim and evidence graphs; graph-guided planning, which
+prioritizes the triplet verification order; and graph-guided checking, which
+verifies the triples one by one between claim and evidence graphs. Extensive
+experiments show that GraphFC enables fine-grained decomposition while
+resolving referential ambiguities through relational constraints, achieving
+state-of-the-art performance across three datasets.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2503.07044v1' target='_blank'>DatawiseAgent: A Notebook-Centric LLM Agent Framework for Automated Data
+  Science</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Ziming You, Yumiao Zhang, Dexuan Xu, Yiwei Lou, Yandong Yan, Wei Wang, Huaming Zhang, Yu Huang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-03-10 08:32:33</h6>
+<p class='card-text'>Data Science tasks are multifaceted, dynamic, and often domain-specific.
+Existing LLM-based approaches largely concentrate on isolated phases,
+neglecting the interdependent nature of many data science tasks and limiting
+their capacity for comprehensive end-to-end support. We propose DatawiseAgent,
+a notebook-centric LLM agent framework that unifies interactions among user,
+agent and the computational environment through markdown and executable code
+cells, supporting flexible and adaptive automated data science. Built on a
+Finite State Transducer(FST), DatawiseAgent orchestrates four stages, including
+DSF-like planning, incremental execution, self-debugging, and post-filtering.
+Specifically, the DFS-like planning stage systematically explores the solution
+space, while incremental execution harnesses real-time feedback and
+accommodates LLM's limited capabilities to progressively complete tasks. The
+self-debugging and post-filtering modules further enhance reliability by
+diagnosing and correcting errors and pruning extraneous information. Extensive
+experiments on diverse tasks, including data analysis, visualization, and data
+modeling, show that DatawiseAgent consistently outperforms or matches
+state-of-the-art methods across multiple model settings. These results
+highlight its potential to generalize across data science scenarios and lay the
+groundwork for more efficient, fully automated workflows.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2503.07020v1' target='_blank'>Combating Partial Perception Deficit in Autonomous Driving with
+  Multimodal LLM Commonsense</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yuting Hu, Chenhui Xu, Ruiyang Qin, Dancheng Liu, Amir Nassereldine, Yiyu Shi, Jinjun Xiong</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-03-10 08:01:41</h6>
+<p class='card-text'>Partial perception deficits can compromise autonomous vehicle safety by
+disrupting environmental understanding. Current protocols typically respond
+with immediate stops or minimal-risk maneuvers, worsening traffic flow and
+lacking flexibility for rare driving scenarios. In this paper, we propose
+LLM-RCO, a framework leveraging large language models to integrate human-like
+driving commonsense into autonomous systems facing perception deficits. LLM-RCO
+features four key modules: hazard inference, short-term motion planner, action
+condition verifier, and safety constraint generator. These modules interact
+with the dynamic driving environment, enabling proactive and context-aware
+control actions to override the original control policy of autonomous agents.
+To improve safety in such challenging conditions, we construct DriveLM-Deficit,
+a dataset of 53,895 video clips featuring deficits of safety-critical objects,
+complete with annotations for LLM-based hazard inference and motion planning
+fine-tuning. Extensive experiments in adverse driving conditions with the CARLA
+simulator demonstrate that systems equipped with LLM-RCO significantly improve
+driving performance, highlighting its potential for enhancing autonomous
+driving resilience against adverse perception deficits. Our results also show
+that LLMs fine-tuned with DriveLM-Deficit can enable more proactive movements
+instead of conservative stops in the context of perception deficits.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2503.07006v1' target='_blank'>HELM: Human-Preferred Exploration with Language Models</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Shuhao Liao, Xuxin Lv, Yuhong Cao, Jeric Lew, Wenjun Wu, Guillaume Sartoretti</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-03-10 07:40:01</h6>
+<p class='card-text'>In autonomous exploration tasks, robots are required to explore and map
+unknown environments while efficiently planning in dynamic and uncertain
+conditions. Given the significant variability of environments, human operators
+often have specific preference requirements for exploration, such as
+prioritizing certain areas or optimizing for different aspects of efficiency.
+However, existing methods struggle to accommodate these human preferences
+adaptively, often requiring extensive parameter tuning or network retraining.
+With the recent advancements in Large Language Models (LLMs), which have been
+widely applied to text-based planning and complex reasoning, their potential
+for enhancing autonomous exploration is becoming increasingly promising.
+Motivated by this, we propose an LLM-based human-preferred exploration
+framework that seamlessly integrates a mobile robot system with LLMs. By
+leveraging the reasoning and adaptability of LLMs, our approach enables
+intuitive and flexible preference control through natural language while
+maintaining a task success rate comparable to state-of-the-art traditional
+methods. Experimental results demonstrate that our framework effectively
+bridges the gap between human intent and policy preference in autonomous
+exploration, offering a more user-friendly and adaptable solution for
+real-world robotic applications.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2503.06902v1' target='_blank'>A Query Optimization Method Utilizing Large Language Models</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Zhiming Yao, Haoyang Li, Jing Zhang, Cuiping Li, Hong Chen</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-03-10 04:07:56</h6>
+<p class='card-text'>Query optimization is a critical task in database systems, focused on
+determining the most efficient way to execute a query from an enormous set of
+possible strategies. Traditional approaches rely on heuristic search methods
+and cost predictions, but these often struggle with the complexity of the
+search space and inaccuracies in performance estimation, leading to suboptimal
+plan choices. This paper presents LLMOpt, a novel framework that leverages
+Large Language Models (LLMs) to address these challenges through two innovative
+components: (1) LLM for Plan Candidate Generation (LLMOpt(G)), which eliminates
+heuristic search by utilizing the reasoning abilities of LLMs to directly
+generate high-quality query plans, and (2) LLM for Plan Candidate Selection
+(LLMOpt(S)), a list-wise cost model that compares candidates globally to
+enhance selection accuracy. To adapt LLMs for query optimization, we propose
+fine-tuning pre-trained models using optimization data collected offline.
+Experimental results on the JOB, JOB-EXT, and Stack benchmarks show that
+LLMOpt(G) and LLMOpt(S) outperform state-of-the-art methods, including
+PostgreSQL, BAO, and HybridQO. Notably, LLMOpt(S) achieves the best practical
+performance, striking a balance between plan quality and inference efficiency.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2503.06892v1' target='_blank'>SafePlan: Leveraging Formal Logic and Chain-of-Thought Reasoning for
+  Enhanced Safety in LLM-based Robotic Task Planning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Ike Obi, Vishnunandan L. N. Venkatesh, Weizheng Wang, Ruiqi Wang, Dayoon Suh, Temitope I. Amosa, Wonse Jo, Byung-Cheol Min</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-03-10 03:37:36</h6>
+<p class='card-text'>Robotics researchers increasingly leverage large language models (LLM) in
+robotics systems, using them as interfaces to receive task commands, generate
+task plans, form team coalitions, and allocate tasks among multi-robot and
+human agents. However, despite their benefits, the growing adoption of LLM in
+robotics has raised several safety concerns, particularly regarding executing
+malicious or unsafe natural language prompts. In addition, ensuring that task
+plans, team formation, and task allocation outputs from LLMs are adequately
+examined, refined, or rejected is crucial for maintaining system integrity. In
+this paper, we introduce SafePlan, a multi-component framework that combines
+formal logic and chain-of-thought reasoners for enhancing the safety of
+LLM-based robotics systems. Using the components of SafePlan, including Prompt
+Sanity COT Reasoner and Invariant, Precondition, and Postcondition COT
+reasoners, we examined the safety of natural language task prompts, task plans,
+and task allocation outputs generated by LLM-based robotic systems as means of
+investigating and enhancing system safety profile. Our results show that
+SafePlan outperforms baseline models by leading to 90.5% reduction in harmful
+task prompt acceptance while still maintaining reasonable acceptance of safe
+tasks.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js'></script>
+</body>
+</html>
