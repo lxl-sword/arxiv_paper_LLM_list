@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<title>LLM-RL - 2025-04-12</title>
+<link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap' rel='stylesheet'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'>
+<style>
+body {
+font-family: 'Roboto', sans-serif;
+background-color: #f5f7fa;
+padding: 20px;
+}
+.card {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.card-title {
+    font-weight: 700;
+}
+.card:hover {
+    transform: scale(1.02);
+    transition: 0.3s ease-in-out;
+}
+</style>
+</head>
+<body>
+<div class='container'>
+<h1 class='text-center my-4'><i class='fas fa-book'></i>LLM-RL - 2025-04-12</h1>
+<div class='row'>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2504.07615v1' target='_blank'>VLM-R1: A Stable and Generalizable R1-style Large Vision-Language Model</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Haozhan Shen, Peng Liu, Jingcheng Li, Chunxin Fang, Yibo Ma, Jiajia Liao, Qiaoli Shen, Zilun Zhang, Kangjia Zhao, Qianqian Zhang, Ruochen Xu, Tiancheng Zhao</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-04-10 10:05:15</h6>
+<p class='card-text'>Recently DeepSeek R1 has shown that reinforcement learning (RL) can
+substantially improve the reasoning capabilities of Large Language Models
+(LLMs) through a simple yet effective design. The core of R1 lies in its
+rule-based reward formulation, which leverages tasks with deterministic
+ground-truth answers to enable precise and stable reward computation. In the
+visual domain, we similarly observe that a wide range of visual understanding
+tasks are inherently equipped with well-defined ground-truth annotations. This
+property makes them naturally compatible with rule-based reward mechanisms.
+Motivated by this observation, we investigate the extension of R1-style
+reinforcement learning to Vision-Language Models (VLMs), aiming to enhance
+their visual reasoning capabilities. To this end, we develop VLM-R1, a
+dedicated framework designed to harness RL for improving VLMs' performance on
+general vision-language tasks. Using this framework, we further explore the
+feasibility of applying RL to visual domain. Experimental results indicate that
+the RL-based model not only delivers competitive performance on visual
+understanding tasks but also surpasses Supervised Fine-Tuning (SFT) in
+generalization ability. Furthermore, we conduct comprehensive ablation studies
+that uncover a series of noteworthy insights, including the presence of reward
+hacking in object detection, the emergence of the "OD aha moment", the impact
+of training data quality, and the scaling behavior of RL across different model
+sizes. Through these analyses, we aim to deepen the understanding of how
+reinforcement learning enhances the capabilities of vision-language models, and
+we hope our findings and open-source contributions will support continued
+progress in the vision-language RL community. Our code and model are available
+at https://github.com/om-ai-lab/VLM-R1</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2504.07596v1' target='_blank'>Boosting Universal LLM Reward Design through the Heuristic Reward
+  Observation Space Evolution</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Zen Kit Heng, Zimeng Zhao, Tianhao Wu, Yuanfei Wang, Mingdong Wu, Yangang Wang, Hao Dong</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-04-10 09:48:56</h6>
+<p class='card-text'>Large Language Models (LLMs) are emerging as promising tools for automated
+reinforcement learning (RL) reward design, owing to their robust capabilities
+in commonsense reasoning and code generation. By engaging in dialogues with RL
+agents, LLMs construct a Reward Observation Space (ROS) by selecting relevant
+environment states and defining their internal operations. However, existing
+frameworks have not effectively leveraged historical exploration data or manual
+task descriptions to iteratively evolve this space. In this paper, we propose a
+novel heuristic framework that enhances LLM-driven reward design by evolving
+the ROS through a table-based exploration caching mechanism and a text-code
+reconciliation strategy. Our framework introduces a state execution table,
+which tracks the historical usage and success rates of environment states,
+overcoming the Markovian constraint typically found in LLM dialogues and
+facilitating more effective exploration. Furthermore, we reconcile
+user-provided task descriptions with expert-defined success criteria using
+structured prompts, ensuring alignment in reward design objectives.
+Comprehensive evaluations on benchmark RL tasks demonstrate the effectiveness
+and stability of the proposed framework. Code and video demos are available at
+jingjjjjjie.github.io/LLM2Reward.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2504.07527v1' target='_blank'>Supervised Optimism Correction: Be Confident When LLMs Are Sure</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Junjie Zhang, Rushuai Yang, Shunyu Liu, Ting-En Lin, Fei Huang, Yi Chen, Yongbin Li, Dacheng Tao</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-04-10 07:50:03</h6>
+<p class='card-text'>In this work, we establish a novel theoretical connection between supervised
+fine-tuning and offline reinforcement learning under the token-level Markov
+decision process, revealing that large language models indeed learn an implicit
+$Q$-function for inference. Through this theoretical lens, we demonstrate that
+the widely used beam search method suffers from unacceptable over-optimism,
+where inference errors are inevitably amplified due to inflated $Q$-value
+estimations of suboptimal steps. To address this limitation, we propose
+Supervised Optimism Correction(SOC), which introduces a simple yet effective
+auxiliary loss for token-level $Q$-value estimations during supervised
+fine-tuning. Specifically, the auxiliary loss employs implicit value
+regularization to boost model confidence in expert-demonstrated responses,
+thereby suppressing over-optimism toward insufficiently supervised responses.
+Extensive experiments on mathematical reasoning benchmarks, including GSM8K,
+MATH, and GAOKAO, showcase the superiority of the proposed SOC with beam search
+across a series of open-source models.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2504.07491v1' target='_blank'>Kimi-VL Technical Report</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Kimi Team, Angang Du, Bohong Yin, Bowei Xing, Bowen Qu, Bowen Wang, Cheng Chen, Chenlin Zhang, Chenzhuang Du, Chu Wei, Congcong Wang, Dehao Zhang, Dikang Du, Dongliang Wang, Enming Yuan, Enzhe Lu, Fang Li, Flood Sung, Guangda Wei, Guokun Lai, Han Zhu, Hao Ding, Hao Hu, Hao Yang, Hao Zhang, Haoning Wu, Haotian Yao, Haoyu Lu, Heng Wang, Hongcheng Gao, Huabin Zheng, Jiaming Li, Jianlin Su, Jianzhou Wang, Jiaqi Deng, Jiezhong Qiu, Jin Xie, Jinhong Wang, Jingyuan Liu, Junjie Yan, Kun Ouyang, Liang Chen, Lin Sui, Longhui Yu, Mengfan Dong, Mengnan Dong, Nuo Xu, Pengyu Cheng, Qizheng Gu, Runjie Zhou, Shaowei Liu, Sihan Cao, Tao Yu, Tianhui Song, Tongtong Bai, Wei Song, Weiran He, Weixiao Huang, Weixin Xu, Xiaokun Yuan, Xingcheng Yao, Xingzhe Wu, Xinxing Zu, Xinyu Zhou, Xinyuan Wang, Y. Charles, Yan Zhong, Yang Li, Yangyang Hu, Yanru Chen, Yejie Wang, Yibo Liu, Yibo Miao, Yidao Qin, Yimin Chen, Yiping Bao, Yiqin Wang, Yongsheng Kang, Yuanxin Liu, Yulun Du, Yuxin Wu, Yuzhi Wang, Yuzi Yan, Zaida Zhou, Zhaowei Li, Zhejun Jiang, Zheng Zhang, Zhilin Yang, Zhiqi Huang, Zihao Huang, Zijia Zhao, Ziwei Chen</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-04-10 06:48:26</h6>
+<p class='card-text'>We present Kimi-VL, an efficient open-source Mixture-of-Experts (MoE)
+vision-language model (VLM) that offers advanced multimodal reasoning,
+long-context understanding, and strong agent capabilities - all while
+activating only 2.8B parameters in its language decoder (Kimi-VL-A3B). Kimi-VL
+demonstrates strong performance across challenging domains: as a
+general-purpose VLM, Kimi-VL excels in multi-turn agent tasks (e.g., OSWorld),
+matching flagship models. Furthermore, it exhibits remarkable capabilities
+across diverse challenging vision language tasks, including college-level image
+and video comprehension, OCR, mathematical reasoning, and multi-image
+understanding. In comparative evaluations, it effectively competes with
+cutting-edge efficient VLMs such as GPT-4o-mini, Qwen2.5-VL-7B, and
+Gemma-3-12B-IT, while surpassing GPT-4o in several key domains. Kimi-VL also
+advances in processing long contexts and perceiving clearly. With a 128K
+extended context window, Kimi-VL can process diverse long inputs, achieving
+impressive scores of 64.5 on LongVideoBench and 35.1 on MMLongBench-Doc. Its
+native-resolution vision encoder, MoonViT, further allows it to see and
+understand ultra-high-resolution visual inputs, achieving 83.2 on InfoVQA and
+34.5 on ScreenSpot-Pro, while maintaining lower computational cost for common
+tasks. Building upon Kimi-VL, we introduce an advanced long-thinking variant:
+Kimi-VL-Thinking. Developed through long chain-of-thought (CoT) supervised
+fine-tuning (SFT) and reinforcement learning (RL), this model exhibits strong
+long-horizon reasoning capabilities. It achieves scores of 61.7 on MMMU, 36.8
+on MathVision, and 71.3 on MathVista while maintaining the compact 2.8B
+activated LLM parameters, setting a new standard for efficient multimodal
+thinking models. Code and models are publicly accessible at
+https://github.com/MoonshotAI/Kimi-VL.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2504.07425v1' target='_blank'>Enhancing Player Enjoyment with a Two-Tier DRL and LLM-Based Agent
+  System for Fighting Games</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Shouren Wang, Zehua Jiang, Fernando Sliva, Sam Earle, Julian Togelius</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-04-10 03:38:06</h6>
+<p class='card-text'>Deep reinforcement learning (DRL) has effectively enhanced gameplay
+experiences and game design across various game genres. However, few studies on
+fighting game agents have focused explicitly on enhancing player enjoyment, a
+critical factor for both developers and players. To address this gap and
+establish a practical baseline for designing enjoyability-focused agents, we
+propose a two-tier agent (TTA) system and conducted experiments in the classic
+fighting game Street Fighter II. The first tier of TTA employs a task-oriented
+network architecture, modularized reward functions, and hybrid training to
+produce diverse and skilled DRL agents. In the second tier of TTA, a Large
+Language Model Hyper-Agent, leveraging players' playing data and feedback,
+dynamically selects suitable DRL opponents. In addition, we investigate and
+model several key factors that affect the enjoyability of the opponent. The
+experiments demonstrate improvements from 64. 36% to 156. 36% in the execution
+of advanced skills over baseline methods. The trained agents also exhibit
+distinct game-playing styles. Additionally, we conducted a small-scale user
+study, and the overall enjoyment in the player's feedback validates the
+effectiveness of our TTA system.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2504.07257v1' target='_blank'>Better Decisions through the Right Causal World Model</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Elisabeth Dillies, Quentin Delfosse, Jannis Blüml, Raban Emunds, Florian Peter Busch, Kristian Kersting</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-04-09 20:29:13</h6>
+<p class='card-text'>Reinforcement learning (RL) agents have shown remarkable performances in
+various environments, where they can discover effective policies directly from
+sensory inputs. However, these agents often exploit spurious correlations in
+the training data, resulting in brittle behaviours that fail to generalize to
+new or slightly modified environments. To address this, we introduce the Causal
+Object-centric Model Extraction Tool (COMET), a novel algorithm designed to
+learn the exact interpretable causal world models (CWMs). COMET first extracts
+object-centric state descriptions from observations and identifies the
+environment's internal states related to the depicted objects' properties.
+Using symbolic regression, it models object-centric transitions and derives
+causal relationships governing object dynamics. COMET further incorporates
+large language models (LLMs) for semantic inference, annotating causal
+variables to enhance interpretability.
+  By leveraging these capabilities, COMET constructs CWMs that align with the
+true causal structure of the environment, enabling agents to focus on
+task-relevant features. The extracted CWMs mitigate the danger of shortcuts,
+permitting the development of RL systems capable of better planning and
+decision-making across dynamic scenarios. Our results, validated in Atari
+environments such as Pong and Freeway, demonstrate the accuracy and robustness
+of COMET, highlighting its potential to bridge the gap between object-centric
+reasoning and causal inference in reinforcement learning.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2504.07052v1' target='_blank'>To Backtrack or Not to Backtrack: When Sequential Search Limits Model
+  Reasoning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Tian Qin, David Alvarez-Melis, Samy Jelassi, Eran Malach</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-04-09 17:12:49</h6>
+<p class='card-text'>Recent advancements in large language models have significantly improved
+their reasoning abilities, particularly through techniques involving search and
+backtracking. Backtracking naturally scales test-time compute by enabling
+sequential, linearized exploration via long chain-of-thought (CoT) generation.
+However, this is not the only strategy for scaling test-time compute: parallel
+sampling with best-of-n selection provides an alternative that generates
+diverse solutions simultaneously. Despite the growing adoption of sequential
+search, its advantages over parallel sampling--especially under a fixed compute
+budget remain poorly understood. In this paper, we systematically compare these
+two approaches on two challenging reasoning tasks: CountDown and Sudoku.
+Surprisingly, we find that sequential search underperforms parallel sampling on
+CountDown but outperforms it on Sudoku, suggesting that backtracking is not
+universally beneficial. We identify two factors that can cause backtracking to
+degrade performance: (1) training on fixed search traces can lock models into
+suboptimal strategies, and (2) explicit CoT supervision can discourage
+"implicit" (non-verbalized) reasoning. Extending our analysis to reinforcement
+learning (RL), we show that models with backtracking capabilities benefit
+significantly from RL fine-tuning, while models without backtracking see
+limited, mixed gains. Together, these findings challenge the assumption that
+backtracking universally enhances LLM reasoning, instead revealing a complex
+interaction between task structure, training data, model scale, and learning
+paradigm.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2504.06659v1' target='_blank'>Bridging the Gap Between Preference Alignment and Machine Unlearning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Xiaohua Feng, Yuyuan Li, Huwei Ji, Jiaming Zhang, Li Zhang, Tianyu Du, Chaochao Chen</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-04-09 07:49:08</h6>
+<p class='card-text'>Despite advances in Preference Alignment (PA) for Large Language Models
+(LLMs), mainstream methods like Reinforcement Learning with Human Feedback
+(RLHF) face notable challenges. These approaches require high-quality datasets
+of positive preference examples, which are costly to obtain and computationally
+intensive due to training instability, limiting their use in low-resource
+scenarios. LLM unlearning technique presents a promising alternative, by
+directly removing the influence of negative examples. However, current research
+has primarily focused on empirical validation, lacking systematic quantitative
+analysis. To bridge this gap, we propose a framework to explore the
+relationship between PA and LLM unlearning. Specifically, we introduce a
+bi-level optimization-based method to quantify the impact of unlearning
+specific negative examples on PA performance. Our analysis reveals that not all
+negative examples contribute equally to alignment improvement when unlearned,
+and the effect varies significantly across examples. Building on this insight,
+we pose a crucial question: how can we optimally select and weight negative
+examples for unlearning to maximize PA performance? To answer this, we propose
+a framework called Unlearning to Align (U2A), which leverages bi-level
+optimization to efficiently select and unlearn examples for optimal PA
+performance. We validate the proposed method through extensive experiments,
+with results confirming its effectiveness.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2504.06564v1' target='_blank'>Do Reasoning Models Show Better Verbalized Calibration?</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Qingcheng Zeng, Weihao Xuan, Leyang Cui, Rob Voigt</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-04-09 03:58:19</h6>
+<p class='card-text'>Large reasoning models (LRMs) have recently shown impressive capabilities in
+complex reasoning by leveraging increased test-time computation and exhibiting
+behaviors akin to human-like deliberation. Despite these advances, it remains
+an open question whether LRMs are better calibrated - particularly in their
+verbalized confidence - compared to instruction-tuned counterparts. In this
+paper, we investigate the calibration properties of LRMs trained via supervised
+fine-tuning distillation on long reasoning traces (henceforth SFT reasoning
+models) and outcome-based reinforcement learning for reasoning (henceforth RL
+reasoning models) across diverse domains. Our findings reveal that LRMs
+significantly outperform instruction-tuned models on complex reasoning tasks in
+both accuracy and confidence calibration. In contrast, we find surprising
+trends in the domain of factuality in particular. On factuality tasks, while
+Deepseek-R1 shows strong calibration behavior, smaller QwQ-32B shows no
+improvement over instruct models; moreover, SFT reasoning models display worse
+calibration (greater overconfidence) compared to instruct models. Our results
+provide evidence for a potentially critical role of reasoning-oriented RL
+training in improving LLMs' capacity for generating trustworthy, self-aware
+outputs.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2504.06514v1' target='_blank'>Missing Premise exacerbates Overthinking: Are Reasoning Models losing
+  Critical Thinking Skill?</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Chenrui Fan, Ming Li, Lichao Sun, Tianyi Zhou</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-04-09 01:25:27</h6>
+<p class='card-text'>We find that the response length of reasoning LLMs, whether trained by
+reinforcement learning or supervised learning, drastically increases for
+ill-posed questions with missing premises (MiP), ending up with redundant and
+ineffective thinking. This newly introduced scenario exacerbates the general
+overthinking issue to a large extent, which we name as the MiP-Overthinking.
+Such failures are against the ``test-time scaling law'' but have been widely
+observed on multiple datasets we curated with MiP, indicating the harm of cheap
+overthinking and a lack of critical thinking. Surprisingly, LLMs not
+specifically trained for reasoning exhibit much better performance on the MiP
+scenario, producing much shorter responses that quickly identify ill-posed
+queries. This implies a critical flaw of the current training recipe for
+reasoning LLMs, which does not encourage efficient thinking adequately, leading
+to the abuse of thinking patterns. To further investigate the reasons behind
+such failures, we conduct fine-grained analyses of the reasoning length,
+overthinking patterns, and location of critical thinking on different types of
+LLMs. Moreover, our extended ablation study reveals that the overthinking is
+contagious through the distillation of reasoning models' responses. These
+results improve the understanding of overthinking and shed novel insights into
+mitigating the problem.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2504.06122v2' target='_blank'>Leanabell-Prover: Posttraining Scaling in Formal Reasoning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Jingyuan Zhang, Qi Wang, Xingguang Ji, Yahui Liu, Yang Yue, Fuzheng Zhang, Di Zhang, Guorui Zhou, Kun Gai</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-04-08 15:15:26</h6>
+<p class='card-text'>Recent advances in automated theorem proving (ATP) through LLMs have
+highlighted the potential of formal reasoning with Lean 4 codes. However, ATP
+has not yet be revolutionized by the recent posttraining scaling as
+demonstrated by Open AI O1/O3 and Deepseek R1. In this work, we investigate the
+entire posttraining of ATP, aiming to align it with breakthroughs in reasoning
+models in natural languages. To begin, we continual train current ATP models
+with a hybrid dataset, which consists of numerous statement-proof pairs, and
+additional data aimed at incorporating cognitive behaviors that emulate human
+reasoning and hypothesis refinement. Next, we explore reinforcement learning
+with the use of outcome reward returned by Lean 4 compiler. Through our
+designed continual training and reinforcement learning processes, we have
+successfully improved existing formal provers, including both
+DeepSeek-Prover-v1.5 and Goedel-Prover, achieving state-of-the-art performance
+in the field of whole-proof generation. For example, we achieve a 59.8% pass
+rate (pass@32) on MiniF2F. This is an on-going project and we will
+progressively update our findings, release our data and training details.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2504.06328v1' target='_blank'>A Geometric-Aware Perspective and Beyond: Hybrid Quantum-Classical
+  Machine Learning Methods</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Azadeh Alavia, Hossein Akhoundib, Fatemeh Kouchmeshkib, Mojtaba Mahmoodianc, Sanduni Jayasinghec, Yongli Rena, Abdolrahman Alavi</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-04-08 13:24:55</h6>
+<p class='card-text'>Geometric Machine Learning (GML) has shown that respecting non-Euclidean
+geometry in data spaces can significantly improve performance over naive
+Euclidean assumptions. In parallel, Quantum Machine Learning (QML) has emerged
+as a promising paradigm that leverages superposition, entanglement, and
+interference within quantum state manifolds for learning tasks. This paper
+offers a unifying perspective by casting QML as a specialized yet more
+expressive branch of GML. We argue that quantum states, whether pure or mixed,
+reside on curved manifolds (e.g., projective Hilbert spaces or density-operator
+manifolds), mirroring how covariance matrices inhabit the manifold of symmetric
+positive definite (SPD) matrices or how image sets occupy Grassmann manifolds.
+However, QML also benefits from purely quantum properties, such as
+entanglement-induced curvature, that can yield richer kernel structures and
+more nuanced data embeddings.
+  We illustrate these ideas with published and newly discussed results,
+including hybrid classical -quantum pipelines for diabetic foot ulcer
+classification and structural health monitoring. Despite near-term hardware
+limitations that constrain purely quantum solutions, hybrid architectures
+already demonstrate tangible benefits by combining classical manifold-based
+feature extraction with quantum embeddings. We present a detailed mathematical
+treatment of the geometrical underpinnings of quantum states, emphasizing
+parallels to classical Riemannian geometry and manifold-based optimization.
+Finally, we outline open research challenges and future directions, including
+Quantum Large Language Models (LLMs), quantum reinforcement learning, and
+emerging hardware approaches, demonstrating how synergizing GML and QML
+principles can unlock the next generation of machine intelligence.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2504.05812v1' target='_blank'>Right Question is Already Half the Answer: Fully Unsupervised LLM
+  Reasoning Incentivization</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Qingyang Zhang, Haitao Wu, Changqing Zhang, Peilin Zhao, Yatao Bian</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-04-08 08:48:51</h6>
+<p class='card-text'>While large language models (LLMs) have demonstrated exceptional capabilities
+in challenging tasks such as mathematical reasoning, existing methods to
+enhance reasoning ability predominantly rely on supervised fine-tuning (SFT)
+followed by reinforcement learning (RL) on reasoning-specific data after
+pre-training. However, these approaches critically depend on external
+supervisions--such as human labelled reasoning traces, verified golden answers,
+or pre-trained reward models--which limits scalability and practical
+applicability. In this work, we propose Entropy Minimized Policy Optimization
+(EMPO), which makes an early attempt at fully unsupervised LLM reasoning
+incentivization. EMPO does not require any supervised information for
+incentivizing reasoning capabilities (i.e., neither verifiable reasoning
+traces, problems with golden answers, nor additional pre-trained reward
+models). By continuously minimizing the predictive entropy of LLMs on unlabeled
+user queries in a latent semantic space, EMPO enables purely self-supervised
+evolution of reasoning capabilities with strong flexibility and practicality.
+Our experiments demonstrate competitive performance of EMPO on both
+mathematical reasoning and free-form commonsense reasoning tasks. Specifically,
+without any supervised signals, EMPO boosts the accuracy of Qwen2.5-Math-7B
+Base from 30.7\% to 48.1\% on mathematical benchmarks and improves truthfulness
+accuracy of Qwen2.5-7B Instruct from 87.16\% to 97.25\% on TruthfulQA.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2504.05605v1' target='_blank'>ShadowCoT: Cognitive Hijacking for Stealthy Reasoning Backdoors in LLMs</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Gejian Zhao, Hanzhou Wu, Xinpeng Zhang, Athanasios V. Vasilakos</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-04-08 01:36:16</h6>
+<p class='card-text'>Chain-of-Thought (CoT) enhances an LLM's ability to perform complex reasoning
+tasks, but it also introduces new security issues. In this work, we present
+ShadowCoT, a novel backdoor attack framework that targets the internal
+reasoning mechanism of LLMs. Unlike prior token-level or prompt-based attacks,
+ShadowCoT directly manipulates the model's cognitive reasoning path, enabling
+it to hijack multi-step reasoning chains and produce logically coherent but
+adversarial outcomes. By conditioning on internal reasoning states, ShadowCoT
+learns to recognize and selectively disrupt key reasoning steps, effectively
+mounting a self-reflective cognitive attack within the target model. Our
+approach introduces a lightweight yet effective multi-stage injection pipeline,
+which selectively rewires attention pathways and perturbs intermediate
+representations with minimal parameter overhead (only 0.15% updated). ShadowCoT
+further leverages reinforcement learning and reasoning chain pollution (RCP) to
+autonomously synthesize stealthy adversarial CoTs that remain undetectable to
+advanced defenses. Extensive experiments across diverse reasoning benchmarks
+and LLMs show that ShadowCoT consistently achieves high Attack Success Rate
+(94.4%) and Hijacking Success Rate (88.4%) while preserving benign performance.
+These results reveal an emergent class of cognition-level threats and highlight
+the urgent need for defenses beyond shallow surface-level consistency.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2504.05185v1' target='_blank'>Concise Reasoning via Reinforcement Learning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Mehdi Fatemi, Banafsheh Rafiee, Mingjie Tang, Kartik Talamadupula</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-04-07 15:35:54</h6>
+<p class='card-text'>Despite significant advancements in large language models (LLMs), a major
+drawback of reasoning models is their enormous token usage, which increases
+computational cost, resource requirements, and response time. In this work, we
+revisit the core principles of reinforcement learning (RL) and, through
+mathematical analysis, demonstrate that the tendency to generate lengthy
+responses arises inherently from RL-based optimization during training. This
+finding questions the prevailing assumption that longer responses inherently
+improve reasoning accuracy. Instead, we uncover a natural correlation between
+conciseness and accuracy that has been largely overlooked. Moreover, we show
+that introducing a secondary phase of RL post-training, using a small set of
+problems and limited resources, can significantly reduce a model's chain of
+thought while maintaining or even enhancing accuracy. Finally, we validate our
+conclusions through extensive experimental results.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2504.05108v2' target='_blank'>Algorithm Discovery With LLMs: Evolutionary Search Meets Reinforcement
+  Learning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Anja Surina, Amin Mansouri, Lars Quaedvlieg, Amal Seddas, Maryna Viazovska, Emmanuel Abbe, Caglar Gulcehre</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-04-07 14:14:15</h6>
+<p class='card-text'>Discovering efficient algorithms for solving complex problems has been an
+outstanding challenge in mathematics and computer science, requiring
+substantial human expertise over the years. Recent advancements in evolutionary
+search with large language models (LLMs) have shown promise in accelerating the
+discovery of algorithms across various domains, particularly in mathematics and
+optimization. However, existing approaches treat the LLM as a static generator,
+missing the opportunity to update the model with the signal obtained from
+evolutionary exploration. In this work, we propose to augment LLM-based
+evolutionary search by continuously refining the search operator - the LLM -
+through reinforcement learning (RL) fine-tuning. Our method leverages
+evolutionary search as an exploration strategy to discover improved algorithms,
+while RL optimizes the LLM policy based on these discoveries. Our experiments
+on three combinatorial optimization tasks - bin packing, traveling salesman,
+and the flatpack problem - show that combining RL and evolutionary search
+improves discovery efficiency of improved algorithms, showcasing the potential
+of RL-enhanced evolutionary strategies to assist computer scientists and
+mathematicians for more efficient algorithm design.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2504.04950v1' target='_blank'>A Unified Pairwise Framework for RLHF: Bridging Generative Reward
+  Modeling and Policy Optimization</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Wenyuan Xu, Xiaochen Zuo, Chao Xin, Yu Yue, Lin Yan, Yonghui Wu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-04-07 11:34:48</h6>
+<p class='card-text'>Reinforcement Learning from Human Feedback (RLHF) has emerged as a important
+paradigm for aligning large language models (LLMs) with human preferences
+during post-training. This framework typically involves two stages: first,
+training a reward model on human preference data, followed by optimizing the
+language model using reinforcement learning algorithms. However, current RLHF
+approaches may constrained by two limitations. First, existing RLHF frameworks
+often rely on Bradley-Terry models to assign scalar rewards based on pairwise
+comparisons of individual responses. However, this approach imposes significant
+challenges on reward model (RM), as the inherent variability in prompt-response
+pairs across different contexts demands robust calibration capabilities from
+the RM. Second, reward models are typically initialized from generative
+foundation models, such as pre-trained or supervised fine-tuned models, despite
+the fact that reward models perform discriminative tasks, creating a mismatch.
+This paper introduces Pairwise-RL, a RLHF framework that addresses these
+challenges through a combination of generative reward modeling and a pairwise
+proximal policy optimization (PPO) algorithm. Pairwise-RL unifies reward model
+training and its application during reinforcement learning within a consistent
+pairwise paradigm, leveraging generative modeling techniques to enhance reward
+model performance and score calibration. Experimental evaluations demonstrate
+that Pairwise-RL outperforms traditional RLHF frameworks across both internal
+evaluation datasets and standard public benchmarks, underscoring its
+effectiveness in improving alignment and model behavior.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2504.04785v1' target='_blank'>Weak-for-Strong: Training Weak Meta-Agent to Harness Strong Executors</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Fan Nie, Lan Feng, Haotian Ye, Weixin Liang, Pan Lu, Huaxiu Yao, Alexandre Alahi, James Zou</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-04-07 07:27:31</h6>
+<p class='card-text'>Efficiently leveraging of the capabilities of contemporary large language
+models (LLMs) is increasingly challenging, particularly when direct fine-tuning
+is expensive and often impractical. Existing training-free methods, including
+manually or automated designed workflows, typically demand substantial human
+effort or yield suboptimal results. This paper proposes Weak-for-Strong
+Harnessing (W4S), a novel framework that customizes smaller, cost-efficient
+language models to design and optimize workflows for harnessing stronger
+models. W4S formulates workflow design as a multi-turn markov decision process
+and introduces reinforcement learning for agentic workflow optimization (RLAO)
+to train a weak meta-agent. Through iterative interaction with the environment,
+the meta-agent learns to design increasingly effective workflows without manual
+intervention. Empirical results demonstrate the superiority of W4S that our 7B
+meta-agent, trained with just one GPU hour, outperforms the strongest baseline
+by 2.9% ~ 24.6% across eleven benchmarks, successfully elevating the
+performance of state-of-the-art models such as GPT-3.5-Turbo and GPT-4o.
+Notably, W4S exhibits strong generalization capabilities across both seen and
+unseen tasks, offering an efficient, high-performing alternative to directly
+fine-tuning strong models.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2504.04717v2' target='_blank'>Beyond Single-Turn: A Survey on Multi-Turn Interactions with Large
+  Language Models</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yubo Li, Xiaobin Shen, Xinyu Yao, Xueying Ding, Yidi Miao, Ramayya Krishnan, Rema Padman</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-04-07 04:00:08</h6>
+<p class='card-text'>Recent advancements in large language models (LLMs) have revolutionized their
+ability to handle single-turn tasks, yet real-world applications demand
+sophisticated multi-turn interactions. This survey provides a comprehensive
+review of recent advancements in evaluating and enhancing multi-turn
+interactions in LLMs. Focusing on task-specific scenarios, from instruction
+following in diverse domains such as math and coding to complex conversational
+engagements in roleplay, healthcare, education, and even adversarial jailbreak
+settings, we systematically examine the challenges of maintaining context,
+coherence, fairness, and responsiveness over prolonged dialogues. The paper
+organizes current benchmarks and datasets into coherent categories that reflect
+the evolving landscape of multi-turn dialogue evaluation. In addition, we
+review a range of enhancement methodologies under multi-turn settings,
+including model-centric strategies (contextual learning, supervised
+fine-tuning, reinforcement learning, and new architectures), external
+integration approaches (memory-augmented, retrieval-based methods, and
+knowledge graph), and agent-based techniques for collaborative interactions.
+Finally, we discuss open challenges and propose future directions for research
+to further advance the robustness and effectiveness of multi-turn interactions
+in LLMs. Related resources and papers are available at
+https://github.com/yubol-cmu/Awesome-Multi-Turn-LLMs.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2504.04699v1' target='_blank'>R2Vul: Learning to Reason about Software Vulnerabilities with
+  Reinforcement Learning and Structured Reasoning Distillation</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Martin Weyssow, Chengran Yang, Junkai Chen, Yikun Li, Huihui Huang, Ratnadira Widyasari, Han Wei Ang, Frank Liauw, Eng Lieh Ouh, Lwin Khin Shar, David Lo</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-04-07 03:04:16</h6>
+<p class='card-text'>Large language models (LLMs) have shown promising performance in software
+vulnerability detection (SVD), yet their reasoning capabilities remain
+unreliable. Existing approaches relying on chain-of-thought (CoT) struggle to
+provide relevant and actionable security assessments. Additionally, effective
+SVD requires not only generating coherent reasoning but also differentiating
+between well-founded and misleading yet plausible security assessments, an
+aspect overlooked in prior work. To this end, we introduce R2Vul, a novel
+approach that distills structured reasoning into small LLMs using reinforcement
+learning from AI feedback (RLAIF). Through RLAIF, R2Vul enables LLMs to produce
+structured, security-aware reasoning that is actionable and reliable while
+explicitly learning to distinguish valid assessments from misleading ones. We
+evaluate R2Vul across five languages against SAST tools, CoT, instruction
+tuning, and classification-based baselines. Our results show that R2Vul with
+structured reasoning distillation enables a 1.5B student LLM to rival larger
+models while improving generalization to out-of-distribution vulnerabilities.
+Beyond model improvements, we contribute a large-scale, multilingual preference
+dataset featuring structured reasoning to support future research in SVD.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2504.04657v1' target='_blank'>ACE-RLHF: Automated Code Evaluation and Socratic Feedback Generation
+  Tool using Large Language Models and Reinforcement Learning with Human
+  Feedback</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Tasnia Rahman, Sathish A. P. Kumar, Sumit Jha, Arvind Ramanathan</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-04-07 01:11:22</h6>
+<p class='card-text'>Automated Program Repair tools are developed for generating feedback and
+suggesting a repair method for erroneous code. State of the art (SOTA) code
+repair methods rely on data-driven approaches and often fail to deliver
+solution for complicated programming questions. To interpret the natural
+language of unprecedented programming problems, using Large Language Models
+(LLMs) for code-feedback generation is crucial. LLMs generate more
+comprehensible feedback than compiler-generated error messages, and
+Reinforcement Learning with Human Feedback (RLHF) further enhances quality by
+integrating human-in-the-loop which helps novice students to lean programming
+from scratch interactively. We are applying RLHF fine-tuning technique for an
+expected Socratic response such as a question with hint to solve the
+programming issue. We are proposing code feedback generation tool by
+fine-tuning LLM with RLHF, Automated Code Evaluation with RLHF (ACE-RLHF),
+combining two open-source LLM models with two different SOTA optimization
+techniques. The quality of feedback is evaluated on two benchmark datasets
+containing basic and competition-level programming questions where the later is
+proposed by us. We achieved 2-5% higher accuracy than RL-free SOTA techniques
+using Llama-3-7B-Proximal-policy optimization in automated evaluation and
+similar or slightly higher accuracy compared to reward model-free RL with AI
+Feedback (RLAIF). We achieved almost 40% higher accuracy with GPT-3.5 Best-of-n
+optimization while performing manual evaluation.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2504.04524v1' target='_blank'>Trust Region Preference Approximation: A simple and stable reinforcement
+  learning algorithm for LLM reasoning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Xuerui Su, Shufang Xie, Guoqing Liu, Yingce Xia, Renqian Luo, Peiran Jin, Zhiming Ma, Yue Wang, Zun Wang, Yuting Liu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-04-06 15:48:26</h6>
+<p class='card-text'>Recently, Large Language Models (LLMs) have rapidly evolved, approaching
+Artificial General Intelligence (AGI) while benefiting from large-scale
+reinforcement learning to enhance Human Alignment (HA) and Reasoning. Recent
+reward-based optimization algorithms, such as Proximal Policy Optimization
+(PPO) and Group Relative Policy Optimization (GRPO) have achieved significant
+performance on reasoning tasks, whereas preference-based optimization
+algorithms such as Direct Preference Optimization (DPO) significantly improve
+the performance of LLMs on human alignment. However, despite the strong
+performance of reward-based optimization methods in alignment tasks , they
+remain vulnerable to reward hacking. Furthermore, preference-based algorithms
+(such as Online DPO) haven't yet matched the performance of reward-based
+optimization algorithms (like PPO) on reasoning tasks, making their exploration
+in this specific area still a worthwhile pursuit. Motivated by these
+challenges, we propose the Trust Region Preference Approximation (TRPA)
+algorithm, which integrates rule-based optimization with preference-based
+optimization for reasoning tasks. As a preference-based algorithm, TRPA
+naturally eliminates the reward hacking issue. TRPA constructs preference
+levels using predefined rules, forms corresponding preference pairs, and
+leverages a novel optimization algorithm for RL training with a theoretical
+monotonic improvement guarantee. Experimental results demonstrate that TRPA not
+only achieves competitive performance on reasoning tasks but also exhibits
+robust stability. The code of this paper are released and updating on
+https://github.com/XueruiSu/Trust-Region-Preference-Approximation.git.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2504.04395v1' target='_blank'>Human-Level Competitive Pokémon via Scalable Offline Reinforcement
+  Learning with Transformers</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Jake Grigsby, Yuqi Xie, Justin Sasek, Steven Zheng, Yuke Zhu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-04-06 07:35:15</h6>
+<p class='card-text'>Competitive Pok\'emon Singles (CPS) is a popular strategy game where players
+learn to exploit their opponent based on imperfect information in battles that
+can last more than one hundred stochastic turns. AI research in CPS has been
+led by heuristic tree search and online self-play, but the game may also create
+a platform to study adaptive policies trained offline on large datasets. We
+develop a pipeline to reconstruct the first-person perspective of an agent from
+logs saved from the third-person perspective of a spectator, thereby unlocking
+a dataset of real human battles spanning more than a decade that grows larger
+every day. This dataset enables a black-box approach where we train large
+sequence models to adapt to their opponent based solely on their input
+trajectory while selecting moves without explicit search of any kind. We study
+a progression from imitation learning to offline RL and offline fine-tuning on
+self-play data in the hardcore competitive setting of Pok\'emon's four oldest
+(and most partially observed) game generations. The resulting agents outperform
+a recent LLM Agent approach and a strong heuristic search engine. While playing
+anonymously in online battles against humans, our best agents climb to rankings
+inside the top 10% of active players.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2504.04191v1' target='_blank'>GROVE: A Generalized Reward for Learning Open-Vocabulary Physical Skill</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Jieming Cui, Tengyu Liu, Ziyu Meng, Jiale Yu, Ran Song, Wei Zhang, Yixin Zhu, Siyuan Huang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-04-05 14:44:47</h6>
+<p class='card-text'>Learning open-vocabulary physical skills for simulated agents presents a
+significant challenge in artificial intelligence. Current reinforcement
+learning approaches face critical limitations: manually designed rewards lack
+scalability across diverse tasks, while demonstration-based methods struggle to
+generalize beyond their training distribution. We introduce GROVE, a
+generalized reward framework that enables open-vocabulary physical skill
+learning without manual engineering or task-specific demonstrations. Our key
+insight is that Large Language Models(LLMs) and Vision Language Models(VLMs)
+provide complementary guidance -- LLMs generate precise physical constraints
+capturing task requirements, while VLMs evaluate motion semantics and
+naturalness. Through an iterative design process, VLM-based feedback
+continuously refines LLM-generated constraints, creating a self-improving
+reward system. To bridge the domain gap between simulation and natural images,
+we develop Pose2CLIP, a lightweight mapper that efficiently projects agent
+poses directly into semantic feature space without computationally expensive
+rendering. Extensive experiments across diverse embodiments and learning
+paradigms demonstrate GROVE's effectiveness, achieving 22.2% higher motion
+naturalness and 25.7% better task completion scores while training 8.4x faster
+than previous methods. These results establish a new foundation for scalable
+physical skill acquisition in simulated environments.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2504.04042v1' target='_blank'>SyLeR: A Framework for Explicit Syllogistic Legal Reasoning in Large
+  Language Models</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Kepu Zhang, Weijie Yu, Zhongxiang Sun, Jun Xu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-04-05 03:34:51</h6>
+<p class='card-text'>Syllogistic reasoning is a fundamental aspect of legal decision-making,
+enabling logical conclusions by connecting general legal principles with
+specific case facts. Although existing large language models (LLMs) can
+generate responses to legal questions, they fail to perform explicit
+syllogistic reasoning, often producing implicit and unstructured answers that
+lack explainability and trustworthiness. To address this limitation, we propose
+SyLeR, a novel framework that empowers LLMs to engage in explicit syllogistic
+legal reasoning. SyLeR integrates a tree-structured hierarchical retrieval
+mechanism to effectively combine relevant legal statutes and precedent cases,
+forming comprehensive major premises. This is followed by a two-stage
+fine-tuning process: supervised fine-tuning warm-up establishes a foundational
+understanding of syllogistic reasoning, while reinforcement learning with a
+structure-aware reward mechanism refines the ability of the model to generate
+diverse logically sound and well-structured reasoning paths. We conducted
+extensive experiments across various dimensions, including in-domain and
+cross-domain user groups (legal laypersons and practitioners), multiple
+languages (Chinese and French), and different LLM backbones (legal-specific and
+open-domain LLMs). The results show that SyLeR significantly improves response
+accuracy and consistently delivers explicit, explainable, and trustworthy legal
+reasoning.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2504.03991v1' target='_blank'>Algorithmic Prompt Generation for Diverse Human-like Teaming and
+  Communication with Large Language Models</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Siddharth Srikanth, Varun Bhatt, Boshen Zhang, Werner Hager, Charles Michael Lewis, Katia P. Sycara, Aaquib Tabrez, Stefanos Nikolaidis</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-04-04 23:09:40</h6>
+<p class='card-text'>Understanding how humans collaborate and communicate in teams is essential
+for improving human-agent teaming and AI-assisted decision-making. However,
+relying solely on data from large-scale user studies is impractical due to
+logistical, ethical, and practical constraints, necessitating synthetic models
+of multiple diverse human behaviors. Recently, agents powered by Large Language
+Models (LLMs) have been shown to emulate human-like behavior in social
+settings. But, obtaining a large set of diverse behaviors requires manual
+effort in the form of designing prompts. On the other hand, Quality Diversity
+(QD) optimization has been shown to be capable of generating diverse
+Reinforcement Learning (RL) agent behavior. In this work, we combine QD
+optimization with LLM-powered agents to iteratively search for prompts that
+generate diverse team behavior in a long-horizon, multi-step collaborative
+environment. We first show, through a human-subjects experiment (n=54
+participants), that humans exhibit diverse coordination and communication
+behavior in this domain. We then show that our approach can effectively
+replicate trends from human teaming data and also capture behaviors that are
+not easily observed without collecting large amounts of data. Our findings
+highlight the combination of QD and LLM-powered agents as an effective tool for
+studying teaming and communication strategies in multi-agent collaboration.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2504.03947v1' target='_blank'>Distillation and Refinement of Reasoning in Small Language Models for
+  Document Re-ranking</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Chris Samarinas, Hamed Zamani</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-04-04 21:27:48</h6>
+<p class='card-text'>We present a novel approach for training small language models for
+reasoning-intensive document ranking that combines knowledge distillation with
+reinforcement learning optimization. While existing methods often rely on
+expensive human annotations or large black-box language models, our methodology
+leverages web data and a teacher LLM to automatically generate high-quality
+training examples with relevance explanations. By framing document ranking as a
+reinforcement learning problem and incentivizing explicit reasoning
+capabilities, we train a compact 3B parameter language model that achieves
+state-of-the-art performance on the BRIGHT benchmark. Our model ranks third on
+the leaderboard while using substantially fewer parameters than other
+approaches, outperforming models that are over 20 times larger. Through
+extensive experiments, we demonstrate that generating explanations during
+inference, rather than directly predicting relevance scores, enables more
+effective reasoning with smaller language models. The self-supervised nature of
+our method offers a scalable and interpretable solution for modern information
+retrieval systems.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2504.03622v1' target='_blank'>Align to Structure: Aligning Large Language Models with Structural
+  Information</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Zae Myung Kim, Anand Ramachandran, Farideh Tavazoee, Joo-Kyung Kim, Oleg Rokhlenko, Dongyeop Kang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-04-04 17:40:04</h6>
+<p class='card-text'>Generating long, coherent text remains a challenge for large language models
+(LLMs), as they lack hierarchical planning and structured organization in
+discourse generation. We introduce Structural Alignment, a novel method that
+aligns LLMs with human-like discourse structures to enhance long-form text
+generation. By integrating linguistically grounded discourse frameworks into
+reinforcement learning, our approach guides models to produce coherent and
+well-organized outputs. We employ a dense reward scheme within a Proximal
+Policy Optimization framework, assigning fine-grained, token-level rewards
+based on the discourse distinctiveness relative to human writing. Two
+complementary reward models are evaluated: the first improves readability by
+scoring surface-level textual features to provide explicit structuring, while
+the second reinforces deeper coherence and rhetorical sophistication by
+analyzing global discourse patterns through hierarchical discourse motifs,
+outperforming both standard and RLHF-enhanced models in tasks such as essay
+generation and long-document summarization. All training data and code will be
+publicly shared at https://github.com/minnesotanlp/struct_align.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2504.03380v1' target='_blank'>Online Difficulty Filtering for Reasoning Oriented Reinforcement
+  Learning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Sanghwan Bae, Jiwoo Hong, Min Young Lee, Hanbyul Kim, JeongYeon Nam, Donghyun Kwak</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-04-04 11:52:05</h6>
+<p class='card-text'>Reasoning-Oriented Reinforcement Learning (RORL) enhances the reasoning
+ability of Large Language Models (LLMs). However, due to the sparsity of
+rewards in RORL, effective training is highly dependent on the selection of
+problems of appropriate difficulty. Although curriculum learning attempts to
+address this by adjusting difficulty, it often relies on static schedules, and
+even recent online filtering methods lack theoretical grounding and a
+systematic understanding of their effectiveness. In this work, we theoretically
+and empirically show that curating the batch with the problems that the
+training model achieves intermediate accuracy on the fly can maximize the
+effectiveness of RORL training, namely balanced online difficulty filtering. We
+first derive that the lower bound of the KL divergence between the initial and
+the optimal policy can be expressed with the variance of the sampled accuracy.
+Building on those insights, we show that balanced filtering can maximize the
+lower bound, leading to better performance. Experimental results across five
+challenging math reasoning benchmarks show that balanced online filtering
+yields an additional 10% in AIME and 4% improvements in average over plain
+GRPO. Moreover, further analysis shows the gains in sample efficiency and
+training time efficiency, exceeding the maximum reward of plain GRPO within 60%
+training time and the volume of the training set.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2504.03206v1' target='_blank'>Enhancing Personalized Multi-Turn Dialogue with Curiosity Reward</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yanming Wan, Jiaxing Wu, Marwa Abdulhai, Lior Shani, Natasha Jaques</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-04-04 06:35:02</h6>
+<p class='card-text'>Effective conversational agents must be able to personalize their behavior to
+suit a user's preferences, personality, and attributes, whether they are
+assisting with writing tasks or operating in domains like education or
+healthcare. Current training methods like Reinforcement Learning from Human
+Feedback (RLHF) prioritize helpfulness and safety but fall short in fostering
+truly empathetic, adaptive, and personalized interactions. Traditional
+approaches to personalization often rely on extensive user history, limiting
+their effectiveness for new or context-limited users. To overcome these
+limitations, we propose to incorporate an intrinsic motivation to improve the
+conversational agents's model of the user as an additional reward alongside
+multi-turn RLHF. This reward mechanism encourages the agent to actively elicit
+user traits by optimizing conversations to increase the accuracy of its user
+model. Consequently, the policy agent can deliver more personalized
+interactions through obtaining more information about the user. We applied our
+method both education and fitness settings, where LLMs teach concepts or
+recommend personalized strategies based on users' hidden learning style or
+lifestyle attributes. Using LLM-simulated users, our approach outperformed a
+multi-turn RLHF baseline in revealing information about the users' preferences,
+and adapting to them.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js'></script>
+</body>
+</html>
