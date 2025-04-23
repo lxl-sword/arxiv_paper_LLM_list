@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<title>LLM-agent - 2025-04-23</title>
+<link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap' rel='stylesheet'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'>
+<style>
+body {
+font-family: 'Roboto', sans-serif;
+background-color: #f5f7fa;
+padding: 20px;
+}
+.card {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.card-title {
+    font-weight: 700;
+}
+.card:hover {
+    transform: scale(1.02);
+    transition: 0.3s ease-in-out;
+}
+</style>
+</head>
+<body>
+<div class='container'>
+<h1 class='text-center my-4'><i class='fas fa-book'></i>LLM-agent - 2025-04-23</h1>
+<div class='row'>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2504.16082v1' target='_blank'>MR. Video: "MapReduce" is the Principle for Long Video Understanding</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Ziqi Pang, Yu-Xiong Wang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-04-22 17:59:41</h6>
+<p class='card-text'>We propose MR. Video, an agentic long video understanding framework that
+demonstrates the simple yet effective MapReduce principle for processing long
+videos: (1) Map: independently and densely perceiving short video clips, and
+(2) Reduce: jointly aggregating information from all clips. Compared with
+sequence-to-sequence vision-language models (VLMs), MR. Video performs detailed
+short video perception without being limited by context length. Compared with
+existing video agents that typically rely on sequential key segment selection,
+the Map operation enables simpler and more scalable sequence parallel
+perception of short video segments. Its Reduce step allows for more
+comprehensive context aggregation and reasoning, surpassing explicit key
+segment retrieval. This MapReduce principle is applicable to both VLMs and
+video agents, and we use LLM agents to validate its effectiveness.
+  In practice, MR. Video employs two MapReduce stages: (A) Captioning:
+generating captions for short video clips (map), then standardizing repeated
+characters and objects into shared names (reduce); (B) Analysis: for each user
+question, analyzing relevant information from individual short videos (map),
+and integrating them into a final answer (reduce). MR. Video achieves over 10%
+accuracy improvement on the challenging LVBench compared to state-of-the-art
+VLMs and video agents.
+  Code is available at: https://github.com/ziqipang/MR-Video</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2504.16078v1' target='_blank'>LLMs are Greedy Agents: Effects of RL Fine-tuning on Decision-Making
+  Abilities</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Thomas Schmied, Jörg Bornschein, Jordi Grau-Moya, Markus Wulfmeier, Razvan Pascanu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-04-22 17:57:14</h6>
+<p class='card-text'>The success of Large Language Models (LLMs) has sparked interest in various
+agentic applications. A key hypothesis is that LLMs, leveraging common sense
+and Chain-of-Thought (CoT) reasoning, can effectively explore and efficiently
+solve complex domains. However, LLM agents have been found to suffer from
+sub-optimal exploration and the knowing-doing gap, the inability to effectively
+act on knowledge present in the model. In this work, we systematically study
+why LLMs perform sub-optimally in decision-making scenarios. In particular, we
+closely examine three prevalent failure modes: greediness, frequency bias, and
+the knowing-doing gap. We propose mitigation of these shortcomings by
+fine-tuning via Reinforcement Learning (RL) on self-generated CoT rationales.
+Our experiments across multi-armed bandits, contextual bandits, and
+Tic-tac-toe, demonstrate that RL fine-tuning enhances the decision-making
+abilities of LLMs by increasing exploration and narrowing the knowing-doing
+gap. Finally, we study both classic exploration mechanisms, such as
+$\epsilon$-greedy, and LLM-specific approaches, such as self-correction and
+self-consistency, to enable more effective fine-tuning of LLMs for
+decision-making.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2504.15917v1' target='_blank'>Towards Test Generation from Task Description for Mobile Testing with
+  Multi-modal Reasoning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Hieu Huynh, Hai Phung, Hao Pham, Tien N. Nguyen, Vu Nguyen</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-04-22 14:02:57</h6>
+<p class='card-text'>In Android GUI testing, generating an action sequence for a task that can be
+replayed as a test script is common. Generating sequences of actions and
+respective test scripts from task goals described in natural language can
+eliminate the need for manually writing test scripts. However, existing
+approaches based on large language models (LLM) often struggle with identifying
+the final action, and either end prematurely or continue past the final screen.
+In this paper, we introduce VisiDroid, a multi-modal, LLM-based, multi-agent
+framework that iteratively determines the next action and leverages visual
+images of screens to detect the task's completeness. The multi-modal approach
+enhances our model in two significant ways. First, this approach enables it to
+avoid prematurely terminating a task when textual content alone provides
+misleading indications of task completion. Additionally, visual input helps the
+tool avoid errors when changes in the GUI do not directly affect functionality
+toward task completion, such as adjustments to font sizes or colors. Second,
+the multi-modal approach also ensures the tool not progress beyond the final
+screen, which might lack explicit textual indicators of task completion but
+could display a visual element indicating task completion, which is common in
+GUI apps. Our evaluation shows that VisiDroid achieves an accuracy of 87.3%,
+outperforming the best baseline relatively by 23.5%. We also demonstrate that
+our multi-modal framework with images and texts enables the LLM to better
+determine when a task is completed.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2504.15801v1' target='_blank'>A closer look at how large language models trust humans: patterns and
+  biases</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Valeria Lerman, Yaniv Dover</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-04-22 11:31:50</h6>
+<p class='card-text'>As large language models (LLMs) and LLM-based agents increasingly interact
+with humans in decision-making contexts, understanding the trust dynamics
+between humans and AI agents becomes a central concern. While considerable
+literature studies how humans trust AI agents, it is much less understood how
+LLM-based agents develop effective trust in humans. LLM-based agents likely
+rely on some sort of implicit effective trust in trust-related contexts (e.g.,
+evaluating individual loan applications) to assist and affect decision making.
+Using established behavioral theories, we develop an approach that studies
+whether LLMs trust depends on the three major trustworthiness dimensions:
+competence, benevolence and integrity of the human subject. We also study how
+demographic variables affect effective trust. Across 43,200 simulated
+experiments, for five popular language models, across five different scenarios
+we find that LLM trust development shows an overall similarity to human trust
+development. We find that in most, but not all cases, LLM trust is strongly
+predicted by trustworthiness, and in some cases also biased by age, religion
+and gender, especially in financial scenarios. This is particularly true for
+scenarios common in the literature and for newer models. While the overall
+patterns align with human-like mechanisms of effective trust formation,
+different models exhibit variation in how they estimate trust; in some cases,
+trustworthiness and demographic factors are weak predictors of effective trust.
+These findings call for a better understanding of AI-to-human trust dynamics
+and monitoring of biases and trust development patterns to prevent unintended
+and potentially harmful outcomes in trust-sensitive applications of AI.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2504.15785v1' target='_blank'>WALL-E 2.0: World Alignment by NeuroSymbolic Learning improves World
+  Model-based LLM Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Siyu Zhou, Tianyi Zhou, Yijun Yang, Guodong Long, Deheng Ye, Jing Jiang, Chengqi Zhang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-04-22 10:58:27</h6>
+<p class='card-text'>Can we build accurate world models out of large language models (LLMs)? How
+can world models benefit LLM agents? The gap between the prior knowledge of
+LLMs and the specified environment's dynamics usually bottlenecks LLMs'
+performance as world models. To bridge the gap, we propose a training-free
+"world alignment" that learns an environment's symbolic knowledge complementary
+to LLMs. The symbolic knowledge covers action rules, knowledge graphs, and
+scene graphs, which are extracted by LLMs from exploration trajectories and
+encoded into executable codes to regulate LLM agents' policies. We further
+propose an RL-free, model-based agent "WALL-E 2.0" through the model-predictive
+control (MPC) framework. Unlike classical MPC requiring costly optimization on
+the fly, we adopt an LLM agent as an efficient look-ahead optimizer of future
+steps' actions by interacting with the neurosymbolic world model. While the LLM
+agent's strong heuristics make it an efficient planner in MPC, the quality of
+its planned actions is also secured by the accurate predictions of the aligned
+world model. They together considerably improve learning efficiency in a new
+environment. On open-world challenges in Mars (Minecraft like) and ALFWorld
+(embodied indoor environments), WALL-E 2.0 significantly outperforms existing
+methods, e.g., surpassing baselines in Mars by 16.1%-51.6% of success rate and
+by at least 61.7% in score. In ALFWorld, it achieves a new record 98% success
+rate after only 4 iterations.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2504.15719v1' target='_blank'>Implementing Rational Choice Functions with LLMs and Measuring their
+  Alignment with User Preferences</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Anna Karnysheva, Christian Drescher, Dietrich Klakow</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-04-22 09:08:21</h6>
+<p class='card-text'>As large language models (LLMs) become integral to intelligent user
+interfaces (IUIs), their role as decision-making agents raises critical
+concerns about alignment. Although extensive research has addressed issues such
+as factuality, bias, and toxicity, comparatively little attention has been paid
+to measuring alignment to preferences, i.e., the relative desirability of
+different alternatives, a concept used in decision making, economics, and
+social choice theory. However, a reliable decision-making agent makes choices
+that align well with user preferences.
+  In this paper, we generalize existing methods that exploit LLMs for ranking
+alternative outcomes by addressing alignment with the broader and more flexible
+concept of user preferences, which includes both strict preferences and
+indifference among alternatives. To this end, we put forward design principles
+for using LLMs to implement rational choice functions, and provide the
+necessary tools to measure preference satisfaction. We demonstrate the
+applicability of our approach through an empirical study in a practical
+application of an IUI in the automotive domain.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2504.15716v1' target='_blank'>DianJin-R1: Evaluating and Enhancing Financial Reasoning in Large
+  Language Models</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Jie Zhu, Qian Chen, Huaixia Dou, Junhui Li, Lifan Guo, Feng Chen, Chi Zhang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-04-22 09:01:04</h6>
+<p class='card-text'>Effective reasoning remains a core challenge for large language models (LLMs)
+in the financial domain, where tasks often require domain-specific knowledge,
+precise numerical calculations, and strict adherence to compliance rules. We
+propose DianJin-R1, a reasoning-enhanced framework designed to address these
+challenges through reasoning-augmented supervision and reinforcement learning.
+Central to our approach is DianJin-R1-Data, a high-quality dataset constructed
+from CFLUE, FinQA, and a proprietary compliance corpus (Chinese Compliance
+Check, CCC), combining diverse financial reasoning scenarios with verified
+annotations. Our models, DianJin-R1-7B and DianJin-R1-32B, are fine-tuned from
+Qwen2.5-7B-Instruct and Qwen2.5-32B-Instruct using a structured format that
+generates both reasoning steps and final answers. To further refine reasoning
+quality, we apply Group Relative Policy Optimization (GRPO), a reinforcement
+learning method that incorporates dual reward signals: one encouraging
+structured outputs and another rewarding answer correctness. We evaluate our
+models on five benchmarks: three financial datasets (CFLUE, FinQA, and CCC) and
+two general reasoning benchmarks (MATH-500 and GPQA-Diamond). Experimental
+results show that DianJin-R1 models consistently outperform their non-reasoning
+counterparts, especially on complex financial tasks. Moreover, on the
+real-world CCC dataset, our single-call reasoning models match or even surpass
+the performance of multi-agent systems that require significantly more
+computational cost. These findings demonstrate the effectiveness of DianJin-R1
+in enhancing financial reasoning through structured supervision and
+reward-aligned learning, offering a scalable and practical solution for
+real-world applications.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2504.15585v1' target='_blank'>A Comprehensive Survey in LLM(-Agent) Full Stack Safety: Data, Training
+  and Deployment</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Kun Wang, Guibin Zhang, Zhenhong Zhou, Jiahao Wu, Miao Yu, Shiqian Zhao, Chenlong Yin, Jinhu Fu, Yibo Yan, Hanjun Luo, Liang Lin, Zhihao Xu, Haolang Lu, Xinye Cao, Xinyun Zhou, Weifei Jin, Fanci Meng, Junyuan Mao, Hao Wu, Minghe Wang, Fan Zhang, Junfeng Fang, Chengwei Liu, Yifan Zhang, Qiankun Li, Chongye Guo, Yalan Qin, Yi Ding, Donghai Hong, Jiaming Ji, Xinfeng Li, Yifan Jiang, Dongxia Wang, Yihao Huang, Yufei Guo, Jen-tse Huang, Yanwei Yue, Wenke Huang, Guancheng Wan, Tianlin Li, Lei Bai, Jie Zhang, Qing Guo, Jingyi Wang, Tianlong Chen, Joey Tianyi Zhou, Xiaojun Jia, Weisong Sun, Cong Wu, Jing Chen, Xuming Hu, Yiming Li, Xiao Wang, Ningyu Zhang, Luu Anh Tuan, Guowen Xu, Tianwei Zhang, Xingjun Ma, Xiang Wang, Bo An, Jun Sun, Mohit Bansal, Shirui Pan, Yuval Elovici, Bhavya Kailkhura, Bo Li, Yaodong Yang, Hongwei Li, Wenyuan Xu, Yizhou Sun, Wei Wang, Qing Li, Ke Tang, Yu-Gang Jiang, Felix Juefei-Xu, Hui Xiong, Xiaofeng Wang, Shuicheng Yan, Dacheng Tao, Philip S. Yu, Qingsong Wen, Yang Liu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-04-22 05:02:49</h6>
+<p class='card-text'>The remarkable success of Large Language Models (LLMs) has illuminated a
+promising pathway toward achieving Artificial General Intelligence for both
+academic and industrial communities, owing to their unprecedented performance
+across various applications. As LLMs continue to gain prominence in both
+research and commercial domains, their security and safety implications have
+become a growing concern, not only for researchers and corporations but also
+for every nation. Currently, existing surveys on LLM safety primarily focus on
+specific stages of the LLM lifecycle, e.g., deployment phase or fine-tuning
+phase, lacking a comprehensive understanding of the entire "lifechain" of LLMs.
+To address this gap, this paper introduces, for the first time, the concept of
+"full-stack" safety to systematically consider safety issues throughout the
+entire process of LLM training, deployment, and eventual commercialization.
+Compared to the off-the-shelf LLM safety surveys, our work demonstrates several
+distinctive advantages: (I) Comprehensive Perspective. We define the complete
+LLM lifecycle as encompassing data preparation, pre-training, post-training,
+deployment and final commercialization. To our knowledge, this represents the
+first safety survey to encompass the entire lifecycle of LLMs. (II) Extensive
+Literature Support. Our research is grounded in an exhaustive review of over
+800+ papers, ensuring comprehensive coverage and systematic organization of
+security issues within a more holistic understanding. (III) Unique Insights.
+Through systematic literature analysis, we have developed reliable roadmaps and
+perspectives for each chapter. Our work identifies promising research
+directions, including safety in data generation, alignment techniques, model
+editing, and LLM-based agent systems. These insights provide valuable guidance
+for researchers pursuing future work in this field.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2504.15552v1' target='_blank'>A Multi-Agent Framework for Automated Qinqiang Opera Script Generation
+  Using Large Language Models</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Gengxian Cao, Fengyuan Li, Hong Duan, Ye Yang, Bofeng Wang, Donghe Li</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-04-22 03:14:29</h6>
+<p class='card-text'>This paper introduces a novel multi-Agent framework that automates the end to
+end production of Qinqiang opera by integrating Large Language Models , visual
+generation, and Text to Speech synthesis. Three specialized agents collaborate
+in sequence: Agent1 uses an LLM to craft coherent, culturally grounded
+scripts;Agent2 employs visual generation models to render contextually accurate
+stage scenes; and Agent3 leverages TTS to produce synchronized, emotionally
+expressive vocal performances. In a case study on Dou E Yuan, the system
+achieved expert ratings of 3.8 for script fidelity, 3.5 for visual coherence,
+and 3.8 for speech accuracy-culminating in an overall score of 3.6, a 0.3 point
+improvement over a Single Agent baseline. Ablation experiments demonstrate that
+removing Agent2 or Agent3 leads to drops of 0.4 and 0.5 points, respectively,
+underscoring the value of modular collaboration. This work showcases how AI
+driven pipelines can streamline and scale the preservation of traditional
+performing arts, and points toward future enhancements in cross modal
+alignment, richer emotional nuance, and support for additional opera genres.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2504.15546v1' target='_blank'>A Framework for Testing and Adapting REST APIs as LLM Tools</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Jayachandu Bandlamudi, Ritwik Chaudhuri, Neelamadhav Gantayat, Kushal Mukherjee, Prerna Agarwal, Renuka Sindhgatta, Sameep Mehta</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-04-22 02:52:08</h6>
+<p class='card-text'>Large Language Models (LLMs) are enabling autonomous agents to perform
+complex workflows using external tools or functions, often provided via REST
+APIs in enterprise systems. However, directly utilizing these APIs as tools
+poses challenges due to their complex input schemas, elaborate responses, and
+often ambiguous documentation. Current benchmarks for tool testing do not
+adequately address these complexities, leading to a critical gap in evaluating
+API readiness for agent-driven automation. In this work, we present a novel
+testing framework aimed at evaluating and enhancing the readiness of REST APIs
+to function as tools for LLM-based agents. Our framework transforms apis as
+tools, generates comprehensive test cases for the APIs, translates tests cases
+into natural language instructions suitable for agents, enriches tool
+definitions and evaluates the agent's ability t correctly invoke the API and
+process its inputs and responses. To provide actionable insights, we analyze
+the outcomes of 750 test cases, presenting a detailed taxonomy of errors,
+including input misinterpretation, output handling inconsistencies, and schema
+mismatches. Additionally, we classify these test cases to streamline debugging
+and refinement of tool integrations. This work offers a foundational step
+toward enabling enterprise APIs as tools, improving their usability in
+agent-based applications.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2504.15477v1' target='_blank'>In-context Ranking Preference Optimization</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Junda Wu, Rohan Surana, Zhouhang Xie, Yiran Shen, Yu Xia, Tong Yu, Ryan A. Rossi, Prithviraj Ammanabrolu, Julian McAuley</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-04-21 23:06:12</h6>
+<p class='card-text'>Recent developments in Direct Preference Optimization (DPO) allow large
+language models (LLMs) to function as implicit ranking models by maximizing the
+margin between preferred and non-preferred responses. In practice, user
+feedback on such lists typically involves identifying a few relevant items in
+context rather than providing detailed pairwise comparisons for every possible
+item pair. Moreover, many complex information retrieval tasks, such as
+conversational agents and summarization systems, critically depend on ranking
+the highest-quality outputs at the top, emphasizing the need to support natural
+and flexible forms of user feedback. To address the challenge of limited and
+sparse pairwise feedback in the in-context setting, we propose an In-context
+Ranking Preference Optimization (IRPO) framework that directly optimizes LLMs
+based on ranking lists constructed during inference. To further capture
+flexible forms of feedback, IRPO extends the DPO objective by incorporating
+both the relevance of items and their positions in the list. Modeling these
+aspects jointly is non-trivial, as ranking metrics are inherently discrete and
+non-differentiable, making direct optimization difficult. To overcome this,
+IRPO introduces a differentiable objective based on positional aggregation of
+pairwise item preferences, enabling effective gradient-based optimization of
+discrete ranking metrics. We further provide theoretical insights showing that
+IRPO (i) automatically emphasizes items with greater disagreement between the
+model and the reference ranking, and (ii) links its gradient to an importance
+sampling estimator, yielding an unbiased estimator with reduced variance.
+Empirical results show IRPO outperforms standard DPO approaches in ranking
+performance, highlighting its effectiveness in aligning LLMs with direct
+in-context ranking preferences.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2504.15474v1' target='_blank'>Agent for User: Testing Multi-User Interactive Features in TikTok</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Sidong Feng, Changhao Du, Huaxiao Liu, Qingnan Wang, Zhengwei Lv, Gang Huo, Xu Yang, Chunyang Chen</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-04-21 22:50:31</h6>
+<p class='card-text'>TikTok, a widely-used social media app boasting over a billion monthly active
+users, requires effective app quality assurance for its intricate features.
+Feature testing is crucial in achieving this goal. However, the multi-user
+interactive features within the app, such as live streaming, voice calls, etc.,
+pose significant challenges for developers, who must handle simultaneous device
+management and user interaction coordination. To address this, we introduce a
+novel multi-agent approach, powered by the Large Language Models (LLMs), to
+automate the testing of multi-user interactive app features. In detail, we
+build a virtual device farm that allocates the necessary number of devices for
+a given multi-user interactive task. For each device, we deploy an LLM-based
+agent that simulates a user, thereby mimicking user interactions to
+collaboratively automate the testing process. The evaluations on 24 multi-user
+interactive tasks within the TikTok app, showcase its capability to cover 75%
+of tasks with 85.9% action similarity and offer 87% time savings for
+developers. Additionally, we have also integrated our approach into the
+real-world TikTok testing platform, aiding in the detection of 26 multi-user
+interactive bugs.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2504.15424v1' target='_blank'>LLM-Assisted Translation of Legacy FORTRAN Codes to C++: A
+  Cross-Platform Study</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Nishath Rajiv Ranasinghe, Shawn M. Jones, Michal Kucer, Ayan Biswas, Daniel O'Malley, Alexander Buschmann Most, Selma Liliane Wanna, Ajay Sreekumar</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-04-21 20:34:37</h6>
+<p class='card-text'>Large Language Models (LLMs) are increasingly being leveraged for generating
+and translating scientific computer codes by both domain-experts and non-domain
+experts. Fortran has served as one of the go to programming languages in legacy
+high-performance computing (HPC) for scientific discoveries. Despite growing
+adoption, LLM-based code translation of legacy code-bases has not been
+thoroughly assessed or quantified for its usability. Here, we studied the
+applicability of LLM-based translation of Fortran to C++ as a step towards
+building an agentic-workflow using open-weight LLMs on two different
+computational platforms. We statistically quantified the compilation accuracy
+of the translated C++ codes, measured the similarity of the LLM translated code
+to the human translated C++ code, and statistically quantified the output
+similarity of the Fortran to C++ translation.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2504.15263v1' target='_blank'>Interpretable Locomotion Prediction in Construction Using a
+  Memory-Driven LLM Agent With Chain-of-Thought Reasoning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Ehsan Ahmadi, Chao Wang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-04-21 17:45:21</h6>
+<p class='card-text'>Construction tasks are inherently unpredictable, with dynamic environments
+and safety-critical demands posing significant risks to workers. Exoskeletons
+offer potential assistance but falter without accurate intent recognition
+across diverse locomotion modes. This paper presents a locomotion prediction
+agent leveraging Large Language Models (LLMs) augmented with memory systems,
+aimed at improving exoskeleton assistance in such settings. Using multimodal
+inputs - spoken commands and visual data from smart glasses - the agent
+integrates a Perception Module, Short-Term Memory (STM), Long-Term Memory
+(LTM), and Refinement Module to predict locomotion modes effectively.
+Evaluation reveals a baseline weighted F1-score of 0.73 without memory, rising
+to 0.81 with STM, and reaching 0.90 with both STM and LTM, excelling with vague
+and safety-critical commands. Calibration metrics, including a Brier Score drop
+from 0.244 to 0.090 and ECE from 0.222 to 0.044, affirm improved reliability.
+This framework supports safer, high-level human-exoskeleton collaboration, with
+promise for adaptive assistive systems in dynamic industries.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2504.15228v1' target='_blank'>A Self-Improving Coding Agent</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Maxime Robeyns, Martin Szummer, Laurence Aitchison</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-04-21 16:58:18</h6>
+<p class='card-text'>We demonstrate that an LLM coding agent, equipped with basic coding tools,
+can autonomously edit itself, and thereby improve its performance on benchmark
+tasks. We find performance gains from 17% to 53% on a random subset of SWE
+Bench Verified, with additional performance gains on LiveCodeBench, as well as
+synthetically generated agent benchmarks. Our work represents an advancement in
+the automated and open-ended design of agentic systems, and provides a
+reference agent framework for those seeking to post-train LLMs on tool use and
+other agentic tasks.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2504.15027v1' target='_blank'>DistilQwen2.5: Industrial Practices of Training Distilled Open
+  Lightweight Language Models</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Chengyu Wang, Junbing Yan, Yuanhao Yue, Jun Huang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-04-21 11:26:02</h6>
+<p class='card-text'>Enhancing computational efficiency and reducing deployment costs for large
+language models (LLMs) have become critical challenges in various
+resource-constrained scenarios. In this work, we present DistilQwen2.5, a
+family of distilled, lightweight LLMs derived from the public Qwen2.5 models.
+These distilled models exhibit enhanced instruction-following capabilities
+compared to the original models based on a series of distillation techniques
+that incorporate knowledge from much larger LLMs. In our industrial practice,
+we first leverage powerful proprietary LLMs with varying capacities as
+multi-agent teachers to select, rewrite, and refine instruction-response pairs
+that are more suitable for student LLMs to learn. After standard fine-tuning,
+we further leverage a computationally efficient model fusion approach that
+enables student models to progressively integrate fine-grained hidden knowledge
+from their teachers. Experimental evaluations demonstrate that the distilled
+models possess significantly stronger capabilities than their original
+checkpoints. Additionally, we present use cases to illustrate the applications
+of our framework in real-world scenarios. To facilitate practical use, we have
+released all the DistilQwen2.5 models to the open-source community.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2504.14928v1' target='_blank'>EducationQ: Evaluating LLMs' Teaching Capabilities Through Multi-Agent
+  Dialogue Framework</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yao Shi, Rongkeng Liang, Yong Xu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-04-21 07:48:20</h6>
+<p class='card-text'>Large language models (LLMs) increasingly serve as educational tools, yet
+evaluating their teaching capabilities remains challenging due to the
+resource-intensive, context-dependent, and methodologically complex nature of
+teacher-student interactions. We introduce EducationQ, a multi-agent dialogue
+framework that efficiently assesses teaching capabilities through simulated
+dynamic educational scenarios, featuring specialized agents for teaching,
+learning, and evaluation. Testing 14 LLMs across major AI Organizations
+(OpenAI, Meta, Google, Anthropic, and others) on 1,498 questions spanning 13
+disciplines and 10 difficulty levels reveals that teaching effectiveness does
+not correlate linearly with model scale or general reasoning capabilities -
+with some smaller open-source models outperforming larger commercial
+counterparts in teaching contexts. This finding highlights a critical gap in
+current evaluations that prioritize knowledge recall over interactive pedagogy.
+Our mixed-methods evaluation, combining quantitative metrics with qualitative
+analysis and expert case studies, identifies distinct pedagogical strengths
+employed by top-performing models (e.g., sophisticated questioning strategies,
+adaptive feedback mechanisms). Human expert evaluations show 78% agreement with
+our automated qualitative analysis of effective teaching behaviors, validating
+our methodology. EducationQ demonstrates that LLMs-as-teachers require
+specialized optimization beyond simple scaling, suggesting next-generation
+educational AI prioritize targeted enhancement of specific pedagogical
+effectiveness.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2504.14773v1' target='_blank'>PLANET: A Collection of Benchmarks for Evaluating LLMs' Planning
+  Capabilities</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Haoming Li, Zhaoliang Chen, Jonathan Zhang, Fei Liu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-04-21 00:02:50</h6>
+<p class='card-text'>Planning is central to agents and agentic AI. The ability to plan, e.g.,
+creating travel itineraries within a budget, holds immense potential in both
+scientific and commercial contexts. Moreover, optimal plans tend to require
+fewer resources compared to ad-hoc methods. To date, a comprehensive
+understanding of existing planning benchmarks appears to be lacking. Without
+it, comparing planning algorithms' performance across domains or selecting
+suitable algorithms for new scenarios remains challenging. In this paper, we
+examine a range of planning benchmarks to identify commonly used testbeds for
+algorithm development and highlight potential gaps. These benchmarks are
+categorized into embodied environments, web navigation, scheduling, games and
+puzzles, and everyday task automation. Our study recommends the most
+appropriate benchmarks for various algorithms and offers insights to guide
+future benchmark development.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2504.14757v1' target='_blank'>SWE-Synth: Synthesizing Verifiable Bug-Fix Data to Enable Large Language
+  Models in Resolving Real-World Bugs</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Minh V. T. Pham, Huy N. Phan, Hoang N. Phan, Cuong Le Chi, Tien N. Nguyen, Nghi D. Q. Bui</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-04-20 22:37:43</h6>
+<p class='card-text'>Large language models (LLMs) are transforming automated program repair (APR)
+through agent-based approaches that localize bugs, generate patches, and verify
+fixes. However, the lack of high-quality, scalable training datasets,
+especially those with verifiable outputs and intermediate reasoning
+traces-limits progress, particularly for open-source models. In this work, we
+present SWE-Synth, a framework for synthesizing realistic, verifiable, and
+process-aware bug-fix datasets at the repository level. SWE-Synth leverages LLM
+agents to simulate debugging workflows, producing not only bug-fix pairs but
+also test cases and structured repair trajectories. Compared to manually
+curated datasets, our method scales with minimal human effort while preserving
+contextual richness and correctness. Experiments show that models trained on
+SWE-Synth outperform those trained on real-world datasets by 2.3% on SWE-Bench
+Lite. Our results highlight the potential of synthetic, agent-generated data to
+advance the state of the art in APR and software engineering automation.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2504.14706v2' target='_blank'>AI with Emotions: Exploring Emotional Expressions in Large Language
+  Models</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Shin-nosuke Ishikawa, Atsushi Yoshino</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-04-20 18:49:25</h6>
+<p class='card-text'>The human-level performance of Large Language Models (LLMs) across various
+tasks has raised expectations for the potential of Artificial Intelligence (AI)
+to possess emotions someday. To explore the capability of current LLMs to
+express emotions in their outputs, we conducted an experiment using several
+LLMs (OpenAI GPT, Google Gemini, Meta Llama3, and Cohere Command R+) to
+role-play as agents answering questions with specified emotional states. We
+defined the emotional states using Russell's Circumplex model, a
+well-established framework that characterizes emotions along the
+sleepy-activated (arousal) and pleasure-displeasure (valence) axes. We chose
+this model for its simplicity, utilizing two continuous parameters, which
+allows for better controllability in applications involving continuous changes
+in emotional states. The responses generated were evaluated using a sentiment
+analysis model, independent of the LLMs, trained on the GoEmotions dataset. The
+evaluation showed that the emotional states of the generated answers were
+consistent with the specifications, demonstrating the LLMs' capability for
+emotional expression. This indicates the potential for LLM-based AI agents to
+simulate emotions, opening up a wide range of applications for emotion-based
+interactions, such as advisors or consultants who can provide advice or
+opinions with a personal touch.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2504.14681v1' target='_blank'>An LLM-enabled Multi-Agent Autonomous Mechatronics Design Framework</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Zeyu Wang, Frank P. -W. Lo, Qian Chen, Yongqi Zhang, Chen Lin, Xu Chen, Zhenhua Yu, Alexander J. Thompson, Eric M. Yeatman, Benny P. L. Lo</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-04-20 16:57:45</h6>
+<p class='card-text'>Existing LLM-enabled multi-agent frameworks are predominantly limited to
+digital or simulated environments and confined to narrowly focused knowledge
+domain, constraining their applicability to complex engineering tasks that
+require the design of physical embodiment, cross-disciplinary integration, and
+constraint-aware reasoning. This work proposes a multi-agent autonomous
+mechatronics design framework, integrating expertise across mechanical design,
+optimization, electronics, and software engineering to autonomously generate
+functional prototypes with minimal direct human design input. Operating
+primarily through a language-driven workflow, the framework incorporates
+structured human feedback to ensure robust performance under real-world
+constraints. To validate its capabilities, the framework is applied to a
+real-world challenge involving autonomous water-quality monitoring and
+sampling, where traditional methods are labor-intensive and ecologically
+disruptive. Leveraging the proposed system, a fully functional autonomous
+vessel was developed with optimized propulsion, cost-effective electronics, and
+advanced control. The design process was carried out by specialized agents,
+including a high-level planning agent responsible for problem abstraction and
+dedicated agents for structural, electronics, control, and software
+development. This approach demonstrates the potential of LLM-based multi-agent
+systems to automate real-world engineering workflows and reduce reliance on
+extensive domain expertise.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2504.14650v1' target='_blank'>A Framework for Benchmarking and Aligning Task-Planning Safety in
+  LLM-Based Embodied Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yuting Huang, Leilei Ding, Zhipeng Tang, Tianfu Wang, Xinrui Lin, Wuyang Zhang, Mingxiao Ma, Yanyong Zhang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-04-20 15:12:14</h6>
+<p class='card-text'>Large Language Models (LLMs) exhibit substantial promise in enhancing
+task-planning capabilities within embodied agents due to their advanced
+reasoning and comprehension. However, the systemic safety of these agents
+remains an underexplored frontier. In this study, we present Safe-BeAl, an
+integrated framework for the measurement (SafePlan-Bench) and alignment
+(Safe-Align) of LLM-based embodied agents' behaviors. SafePlan-Bench
+establishes a comprehensive benchmark for evaluating task-planning safety,
+encompassing 2,027 daily tasks and corresponding environments distributed
+across 8 distinct hazard categories (e.g., Fire Hazard). Our empirical analysis
+reveals that even in the absence of adversarial inputs or malicious intent,
+LLM-based agents can exhibit unsafe behaviors. To mitigate these hazards, we
+propose Safe-Align, a method designed to integrate physical-world safety
+knowledge into LLM-based embodied agents while maintaining task-specific
+performance. Experiments across a variety of settings demonstrate that
+Safe-BeAl provides comprehensive safety validation, improving safety by 8.55 -
+15.22%, compared to embodied agents based on GPT-4, while ensuring successful
+task completion.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2504.14625v1' target='_blank'>Towards Optimal Circuit Generation: Multi-Agent Collaboration Meets
+  Collective Intelligence</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Haiyan Qin, Jiahao Feng, Xiaotong Feng, Wei W. Xing, Wang Kang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-04-20 14:05:17</h6>
+<p class='card-text'>Large language models (LLMs) have transformed code generation, yet their
+application in hardware design produces gate counts 38\%--1075\% higher than
+human designs. We present CircuitMind, a multi-agent framework that achieves
+human-competitive efficiency through three key innovations: syntax locking
+(constraining generation to basic logic gates), retrieval-augmented generation
+(enabling knowledge-driven design), and dual-reward optimization (balancing
+correctness with efficiency). To evaluate our approach, we introduce TC-Bench,
+the first gate-level benchmark harnessing collective intelligence from the
+TuringComplete ecosystem -- a competitive circuit design platform with hundreds
+of thousands of players. Experiments show CircuitMind enables 55.6\% of model
+implementations to match or exceed top-tier human experts in composite
+efficiency metrics. Most remarkably, our framework elevates the 14B Phi-4 model
+to outperform both GPT-4o mini and Gemini 2.0 Flash, achieving efficiency
+comparable to the top 25\% of human experts without requiring specialized
+training. These innovations establish a new paradigm for hardware optimization
+where collaborative AI systems leverage collective human expertise to achieve
+optimal circuit designs. Our model, data, and code are open-source at
+https://github.com/BUAA-CLab/CircuitMind.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2504.14603v1' target='_blank'>UFO2: The Desktop AgentOS</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Chaoyun Zhang, He Huang, Chiming Ni, Jian Mu, Si Qin, Shilin He, Lu Wang, Fangkai Yang, Pu Zhao, Chao Du, Liqun Li, Yu Kang, Zhao Jiang, Suzhen Zheng, Rujia Wang, Jiaxu Qian, Minghua Ma, Jian-Guang Lou, Qingwei Lin, Saravan Rajmohan, Dongmei Zhang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-04-20 13:04:43</h6>
+<p class='card-text'>Recent Computer-Using Agents (CUAs), powered by multimodal large language
+models (LLMs), offer a promising direction for automating complex desktop
+workflows through natural language. However, most existing CUAs remain
+conceptual prototypes, hindered by shallow OS integration, fragile
+screenshot-based interaction, and disruptive execution.
+  We present UFO2, a multiagent AgentOS for Windows desktops that elevates CUAs
+into practical, system-level automation. UFO2 features a centralized HostAgent
+for task decomposition and coordination, alongside a collection of
+application-specialized AppAgent equipped with native APIs, domain-specific
+knowledge, and a unified GUI--API action layer. This architecture enables
+robust task execution while preserving modularity and extensibility. A hybrid
+control detection pipeline fuses Windows UI Automation (UIA) with vision-based
+parsing to support diverse interface styles. Runtime efficiency is further
+enhanced through speculative multi-action planning, reducing per-step LLM
+overhead. Finally, a Picture-in-Picture (PiP) interface enables automation
+within an isolated virtual desktop, allowing agents and users to operate
+concurrently without interference.
+  We evaluate UFO2 across over 20 real-world Windows applications,
+demonstrating substantial improvements in robustness and execution accuracy
+over prior CUAs. Our results show that deep OS integration unlocks a scalable
+path toward reliable, user-aligned desktop automation.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2504.14557v1' target='_blank'>Enhancing LLM-based Quantum Code Generation with Multi-Agent
+  Optimization and Quantum Error Correction</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Charlie Campbell, Hao Mark Chen, Wayne Luk, Hongxiang Fan</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-04-20 10:06:37</h6>
+<p class='card-text'>Multi-agent frameworks with Large Language Models (LLMs) have become
+promising tools for generating general-purpose programming languages using
+test-driven development, allowing developers to create more accurate and robust
+code. However, their potential has not been fully unleashed for domain-specific
+programming languages, where specific domain exhibits unique optimization
+opportunities for customized improvement. In this paper, we take the first step
+in exploring multi-agent code generation for quantum programs. By identifying
+the unique optimizations in quantum designs such as quantum error correction,
+we introduce a novel multi-agent framework tailored to generating accurate,
+fault-tolerant quantum code. Each agent in the framework focuses on distinct
+optimizations, iteratively refining the code using a semantic analyzer with
+multi-pass inference, alongside an error correction code decoder. We also
+examine the effectiveness of inference-time techniques, like Chain-of-Thought
+(CoT) and Retrieval-Augmented Generation (RAG) in the context of quantum
+programming, uncovering observations that are different from general-purpose
+code generation. To evaluate our approach, we develop a test suite to measure
+the impact each optimization has on the accuracy of the generated code. Our
+findings indicate that techniques such as structured CoT significantly improve
+the generation of quantum algorithms by up to 50%. In contrast, we have also
+found that certain techniques such as RAG show limited improvement, yielding an
+accuracy increase of only 4%. Moreover, we showcase examples of AI-assisted
+quantum error prediction and correction, demonstrating the effectiveness of our
+multi-agent framework in reducing the quantum errors of generated quantum
+programs.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2504.14538v1' target='_blank'>BookWorld: From Novels to Interactive Agent Societies for Creative Story
+  Generation</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yiting Ran, Xintao Wang, Tian Qiu, Jiaqing Liang, Yanghua Xiao, Deqing Yang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-04-20 08:56:27</h6>
+<p class='card-text'>Recent advances in large language models (LLMs) have enabled social
+simulation through multi-agent systems. Prior efforts focus on agent societies
+created from scratch, assigning agents with newly defined personas. However,
+simulating established fictional worlds and characters remain largely
+underexplored, despite its significant practical value. In this paper, we
+introduce BookWorld, a comprehensive system for constructing and simulating
+book-based multi-agent societies. BookWorld's design covers comprehensive
+real-world intricacies, including diverse and dynamic characters, fictional
+worldviews, geographical constraints and changes, e.t.c. BookWorld enables
+diverse applications including story generation, interactive games and social
+simulation, offering novel ways to extend and explore beloved fictional works.
+Through extensive experiments, we demonstrate that BookWorld generates
+creative, high-quality stories while maintaining fidelity to the source books,
+surpassing previous methods with a win rate of 75.36%. The code of this paper
+can be found at the project page: https://bookworld2025.github.io/.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2504.14520v1' target='_blank'>Meta-Thinking in LLMs via Multi-Agent Reinforcement Learning: A Survey</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Ahsan Bilal, Muhammad Ahmed Mohsin, Muhammad Umer, Muhammad Awais Khan Bangash, Muhammad Ali Jamshed</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-04-20 07:34:26</h6>
+<p class='card-text'>This survey explores the development of meta-thinking capabilities in Large
+Language Models (LLMs) from a Multi-Agent Reinforcement Learning (MARL)
+perspective. Meta-thinking self-reflection, assessment, and control of thinking
+processes is an important next step in enhancing LLM reliability, flexibility,
+and performance, particularly for complex or high-stakes tasks. The survey
+begins by analyzing current LLM limitations, such as hallucinations and the
+lack of internal self-assessment mechanisms. It then talks about newer methods,
+including RL from human feedback (RLHF), self-distillation, and
+chain-of-thought prompting, and each of their limitations. The crux of the
+survey is to talk about how multi-agent architectures, namely supervisor-agent
+hierarchies, agent debates, and theory of mind frameworks, can emulate
+human-like introspective behavior and enhance LLM robustness. By exploring
+reward mechanisms, self-play, and continuous learning methods in MARL, this
+survey gives a comprehensive roadmap to building introspective, adaptive, and
+trustworthy LLMs. Evaluation metrics, datasets, and future research avenues,
+including neuroscience-inspired architectures and hybrid symbolic reasoning,
+are also discussed.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2504.15313v1' target='_blank'>PolicyEvol-Agent: Evolving Policy via Environment Perception and
+  Self-Awareness with Theory of Mind</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yajie Yu, Yue Feng</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-04-20 06:43:23</h6>
+<p class='card-text'>Multi-agents has exhibited significant intelligence in real-word simulations
+with Large language models (LLMs) due to the capabilities of social cognition
+and knowledge retrieval. However, existing research on agents equipped with
+effective cognition chains including reasoning, planning, decision-making and
+reflecting remains limited, especially in the dynamically interactive
+scenarios. In addition, unlike human, prompt-based responses face challenges in
+psychological state perception and empirical calibration during uncertain
+gaming process, which can inevitably lead to cognition bias. In light of above,
+we introduce PolicyEvol-Agent, a comprehensive LLM-empowered framework
+characterized by systematically acquiring intentions of others and adaptively
+optimizing irrational strategies for continual enhancement. Specifically,
+PolicyEvol-Agent first obtains reflective expertise patterns and then
+integrates a range of cognitive operations with Theory of Mind alongside
+internal and external perspectives. Simulation results, outperforming RL-based
+models and agent-based methods, demonstrate the superiority of PolicyEvol-Agent
+for final gaming victory. Moreover, the policy evolution mechanism reveals the
+effectiveness of dynamic guideline adjustments in both automatic and human
+evaluation.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2504.14507v1' target='_blank'>VizTA: Enhancing Comprehension of Distributional Visualization with
+  Visual-Lexical Fused Conversational Interface</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Liangwei Wang, Zhan Wang, Shishi Xiao, Le Liu, Fugee Tsung, Wei Zeng</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-04-20 06:40:58</h6>
+<p class='card-text'>Comprehending visualizations requires readers to interpret visual encoding
+and the underlying meanings actively. This poses challenges for visualization
+novices, particularly when interpreting distributional visualizations that
+depict statistical uncertainty. Advancements in LLM-based conversational
+interfaces show promise in promoting visualization comprehension. However, they
+fail to provide contextual explanations at fine-grained granularity, and chart
+readers are still required to mentally bridge visual information and textual
+explanations during conversations. Our formative study highlights the
+expectations for both lexical and visual feedback, as well as the importance of
+explicitly linking these two modalities throughout the conversation. The
+findings motivate the design of VizTA, a visualization teaching assistant that
+leverages the fusion of visual and lexical feedback to help readers better
+comprehend visualization. VizTA features a semantic-aware conversational agent
+capable of explaining contextual information within visualizations and employs
+a visual-lexical fusion design to facilitate chart-centered conversation. A
+between-subject study with 24 participants demonstrates the effectiveness of
+VizTA in supporting the understanding and reasoning tasks of distributional
+visualization across multiple scenarios.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2504.14326v1' target='_blank'>Diffusion-based Dynamic Contract for Federated AI Agent Construction in
+  Mobile Metaverses</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Jinbo Wen, Jiawen Kang, Yang Zhang, Yue Zhong, Dusit Niyato, Jie Xu, Jianhang Tang, Chau Yuen</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-04-19 15:34:00</h6>
+<p class='card-text'>Mobile metaverses have attracted significant attention from both academia and
+industry, which are envisioned as the next-generation Internet, providing users
+with immersive and ubiquitous metaverse services through mobile devices. Driven
+by Large Language Models (LLMs) and Vision-Language Models (VLMs), Artificial
+Intelligence (AI) agents hold the potential to empower the creation,
+maintenance, and evolution of mobile metaverses. Currently, AI agents are
+primarily constructed using cloud-based LLMs and VLMs. However, several
+challenges hinder their effective implementation, including high service
+latency and potential sensitive data leakage during perception and processing.
+In this paper, we develop an edge-cloud collaboration-based federated AI agent
+construction framework in mobile metaverses. Specifically, Edge Servers (ESs),
+acting as agent infrastructures, collaboratively create agent modules in a
+distributed manner. The cloud server then integrates these modules into AI
+agents and deploys them at the edge, thereby enabling low-latency AI agent
+services for users. Considering that ESs may exhibit dynamic levels of
+willingness to participate in federated AI agent construction, we design a
+two-period dynamic contract model to continuously motivate ESs to participate
+in agent module creation, effectively addressing the dynamic information
+asymmetry between the cloud server and the ESs. Furthermore, we propose an
+Enhanced Diffusion Model-based Soft Actor-Critic (EDMSAC) algorithm to
+efficiently generate optimal dynamic contracts, in which dynamic structured
+pruning is applied to DM-based actor networks to enhance denoising efficiency
+and policy learning performance. Extensive simulations demonstrate the
+effectiveness and superiority of the EDMSAC algorithm and the proposed contract
+model.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js'></script>
+</body>
+</html>
