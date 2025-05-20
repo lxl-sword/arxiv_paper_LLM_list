@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<title>LLM-RL - 2025-05-20</title>
+<link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap' rel='stylesheet'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'>
+<style>
+body {
+font-family: 'Roboto', sans-serif;
+background-color: #f5f7fa;
+padding: 20px;
+}
+.card {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.card-title {
+    font-weight: 700;
+}
+.card:hover {
+    transform: scale(1.02);
+    transition: 0.3s ease-in-out;
+}
+</style>
+</head>
+<body>
+<div class='container'>
+<h1 class='text-center my-4'><i class='fas fa-book'></i>LLM-RL - 2025-05-20</h1>
+<div class='row'>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2505.13445v1' target='_blank'>Trust, But Verify: A Self-Verification Approach to Reinforcement
+  Learning with Verifiable Rewards</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Xiaoyuan Liu, Tian Liang, Zhiwei He, Jiahao Xu, Wenxuan Wang, Pinjia He, Zhaopeng Tu, Haitao Mi, Dong Yu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-05-19 17:59:31</h6>
+<p class='card-text'>Large Language Models (LLMs) show great promise in complex reasoning, with
+Reinforcement Learning with Verifiable Rewards (RLVR) being a key enhancement
+strategy. However, a prevalent issue is ``superficial self-reflection'', where
+models fail to robustly verify their own outputs. We introduce RISE
+(Reinforcing Reasoning with Self-Verification), a novel online RL framework
+designed to tackle this. RISE explicitly and simultaneously trains an LLM to
+improve both its problem-solving and self-verification abilities within a
+single, integrated RL process. The core mechanism involves leveraging
+verifiable rewards from an outcome verifier to provide on-the-fly feedback for
+both solution generation and self-verification tasks. In each iteration, the
+model generates solutions, then critiques its own on-policy generated
+solutions, with both trajectories contributing to the policy update. Extensive
+experiments on diverse mathematical reasoning benchmarks show that RISE
+consistently improves model's problem-solving accuracy while concurrently
+fostering strong self-verification skills. Our analyses highlight the
+advantages of online verification and the benefits of increased verification
+compute. Additionally, RISE models exhibit more frequent and accurate
+self-verification behaviors during reasoning. These advantages reinforce RISE
+as a flexible and effective path towards developing more robust and self-aware
+reasoners.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2505.13438v1' target='_blank'>Optimizing Anytime Reasoning via Budget Relative Policy Optimization</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Penghui Qi, Zichen Liu, Tianyu Pang, Chao Du, Wee Sun Lee, Min Lin</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-05-19 17:58:44</h6>
+<p class='card-text'>Scaling test-time compute is crucial for enhancing the reasoning capabilities
+of large language models (LLMs). Existing approaches typically employ
+reinforcement learning (RL) to maximize a verifiable reward obtained at the end
+of reasoning traces. However, such methods optimize only the final performance
+under a large and fixed token budget, which hinders efficiency in both training
+and deployment. In this work, we present a novel framework, AnytimeReasoner, to
+optimize anytime reasoning performance, which aims to improve token efficiency
+and the flexibility of reasoning under varying token budget constraints. To
+achieve this, we truncate the complete thinking process to fit within sampled
+token budgets from a prior distribution, compelling the model to summarize the
+optimal answer for each truncated thinking for verification. This introduces
+verifiable dense rewards into the reasoning process, facilitating more
+effective credit assignment in RL optimization. We then optimize the thinking
+and summary policies in a decoupled manner to maximize the cumulative reward.
+Additionally, we introduce a novel variance reduction technique, Budget
+Relative Policy Optimization (BRPO), to enhance the robustness and efficiency
+of the learning process when reinforcing the thinking policy. Empirical results
+in mathematical reasoning tasks demonstrate that our method consistently
+outperforms GRPO across all thinking budgets under various prior distributions,
+enhancing both training and token efficiency.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2505.13379v1' target='_blank'>Thinkless: LLM Learns When to Think</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Gongfan Fang, Xinyin Ma, Xinchao Wang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-05-19 17:24:16</h6>
+<p class='card-text'>Reasoning Language Models, capable of extended chain-of-thought reasoning,
+have demonstrated remarkable performance on tasks requiring complex logical
+inference. However, applying elaborate reasoning for all queries often results
+in substantial computational inefficiencies, particularly when many problems
+admit straightforward solutions. This motivates an open question: Can LLMs
+learn when to think? To answer this, we propose Thinkless, a learnable
+framework that empowers an LLM to adaptively select between short-form and
+long-form reasoning, based on both task complexity and the model's ability.
+Thinkless is trained under a reinforcement learning paradigm and employs two
+control tokens, <short> for concise responses and <think> for detailed
+reasoning. At the core of our method is a Decoupled Group Relative Policy
+Optimization (DeGRPO) algorithm, which decomposes the learning objective of
+hybrid reasoning into two components: (1) a control token loss that governs the
+selection of the reasoning mode, and (2) a response loss that improves the
+accuracy of the generated answers. This decoupled formulation enables
+fine-grained control over the contributions of each objective, stabilizing
+training and effectively preventing collapse observed in vanilla GRPO.
+Empirically, on several benchmarks such as Minerva Algebra, MATH-500, and
+GSM8K, Thinkless is able to reduce the usage of long-chain thinking by 50% -
+90%, significantly improving the efficiency of Reasoning Language Models. The
+code is available at https://github.com/VainF/Thinkless</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2505.13346v1' target='_blank'>J4R: Learning to Judge with Equivalent Initial State Group Relative
+  Preference Optimization</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Austin Xu, Yilun Zhou, Xuan-Phi Nguyen, Caiming Xiong, Shafiq Joty</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-05-19 16:50:35</h6>
+<p class='card-text'>To keep pace with the increasing pace of large language models (LLM)
+development, model output evaluation has transitioned away from time-consuming
+human evaluation to automatic evaluation, where LLMs themselves are tasked with
+assessing and critiquing other model outputs. LLM-as-judge models are a class
+of generative evaluators that excel in evaluating relatively simple domains,
+like chat quality, but struggle in reasoning intensive domains where model
+responses contain more substantive and challenging content. To remedy existing
+judge shortcomings, we explore training judges with reinforcement learning
+(RL). We make three key contributions: (1) We propose the Equivalent Initial
+State Group Relative Policy Optimization (EIS-GRPO) algorithm, which allows us
+to train our judge to be robust to positional biases that arise in more complex
+evaluation settings. (2) We introduce ReasoningJudgeBench, a benchmark that
+evaluates judges in diverse reasoning settings not covered by prior work. (3)
+We train Judge for Reasoning (J4R), a 7B judge trained with EIS-GRPO that
+outperforms GPT-4o and the next best small judge by 6.7% and 9%, matching or
+exceeding the performance of larger GRPO-trained judges on both JudgeBench and
+ReasoningJudgeBench.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2505.13271v1' target='_blank'>CSC-SQL: Corrective Self-Consistency in Text-to-SQL via Reinforcement
+  Learning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Lei Sheng, Shuai-Shuai Xu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-05-19 15:52:19</h6>
+<p class='card-text'>Large language models (LLMs) have demonstrated strong capabilities in
+translating natural language questions about relational databases into SQL
+queries. In particular, test-time scaling techniques such as Self-Consistency
+and Self-Correction can enhance SQL generation accuracy by increasing
+computational effort during inference. However, these methods have notable
+limitations: Self-Consistency may select suboptimal outputs despite majority
+votes, while Self-Correction typically addresses only syntactic errors. To
+leverage the strengths of both approaches, we propose CSC-SQL, a novel method
+that integrates Self-Consistency and Self-Correction. CSC-SQL selects the two
+most frequently occurring outputs from parallel sampling and feeds them into a
+merge revision model for correction. Additionally, we employ the Group Relative
+Policy Optimization (GRPO) algorithm to fine-tune both the SQL generation and
+revision models via reinforcement learning, significantly enhancing output
+quality. Experimental results confirm the effectiveness and generalizability of
+CSC-SQL. On the BIRD development set, our 3B model achieves 65.28% execution
+accuracy, while the 7B model achieves 69.19%. The code will be open sourced at
+https://github.com/CycloneBoy/csc_sql.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2505.13258v1' target='_blank'>Effective and Transparent RAG: Adaptive-Reward Reinforcement Learning
+  for Decision Traceability</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Jingyi Ren, Yekun Xu, Xiaolong Wang, Weitao Li, Weizhi Ma, Yang Liu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-05-19 15:40:29</h6>
+<p class='card-text'>Retrieval-Augmented Generation (RAG) has significantly improved the
+performance of large language models (LLMs) on knowledge-intensive domains.
+However, although RAG achieved successes across distinct domains, there are
+still some unsolved challenges: 1) Effectiveness. Existing research mainly
+focuses on developing more powerful RAG retrievers, but how to enhance the
+generator's (LLM's) ability to utilize the retrieved information for reasoning
+and generation? 2) Transparency. Most RAG methods ignore which retrieved
+content actually contributes to the reasoning process, resulting in a lack of
+interpretability and visibility. To address this, we propose ARENA
+(Adaptive-Rewarded Evidence Navigation Agent), a transparent RAG generator
+framework trained via reinforcement learning (RL) with our proposed rewards.
+Based on the structured generation and adaptive reward calculation, our
+RL-based training enables the model to identify key evidence, perform
+structured reasoning, and generate answers with interpretable decision traces.
+Applied to Qwen2.5-7B-Instruct and Llama3.1-8B-Instruct, abundant experiments
+with various RAG baselines demonstrate that our model achieves 10-30%
+improvements on all multi-hop QA datasets, which is comparable with the SOTA
+Commercially-developed LLMs (e.g., OpenAI-o1, DeepSeek-R1). Further analyses
+show that ARENA has strong flexibility to be adopted on new datasets without
+extra training. Our models and codes are publicly released.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2505.13026v1' target='_blank'>Step-wise Adaptive Integration of Supervised Fine-tuning and
+  Reinforcement Learning for Task-Specific LLMs</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Jack Chen, Fazhong Liu, Naruto Liu, Yuhan Luo, Erqu Qin, Harry Zheng, Tian Dong, Haojin Zhu, Yan Meng, Xiao Wang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-05-19 12:10:17</h6>
+<p class='card-text'>Large language models (LLMs) excel at mathematical reasoning and logical
+problem-solving. The current popular training paradigms primarily use
+supervised fine-tuning (SFT) and reinforcement learning (RL) to enhance the
+models' reasoning abilities. However, when using SFT or RL alone, there are
+respective challenges: SFT may suffer from overfitting, while RL is prone to
+mode collapse. The state-of-the-art methods have proposed hybrid training
+schemes. However, static switching faces challenges such as poor generalization
+across different tasks and high dependence on data quality. In response to
+these challenges, inspired by the curriculum learning-quiz mechanism in human
+reasoning cultivation, We propose SASR, a step-wise adaptive hybrid training
+framework that theoretically unifies SFT and RL and dynamically balances the
+two throughout optimization. SASR uses SFT for initial warm-up to establish
+basic reasoning skills, and then uses an adaptive dynamic adjustment algorithm
+based on gradient norm and divergence relative to the original distribution to
+seamlessly integrate SFT with the online RL method GRPO. By monitoring the
+training status of LLMs and adjusting the training process in sequence, SASR
+ensures a smooth transition between training schemes, maintaining core
+reasoning abilities while exploring different paths. Experimental results
+demonstrate that SASR outperforms SFT, RL, and static hybrid training methods.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2505.12951v1' target='_blank'>DGRO: Enhancing LLM Reasoning via Exploration-Exploitation Control and
+  Reward Variance Management</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Xuerui Su, Liya Guo, Yue Wang, Yi Zhu, Zhiming Ma, Zun Wang, Yuting Liu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-05-19 10:44:49</h6>
+<p class='card-text'>Inference scaling further accelerates Large Language Models (LLMs) toward
+Artificial General Intelligence (AGI), with large-scale Reinforcement Learning
+(RL) to unleash long Chain-of-Thought reasoning. Most contemporary reasoning
+approaches usually rely on handcrafted rule-based reward functions. However,
+the tarde-offs of exploration and exploitation in RL algorithms involves
+multiple complex considerations, and the theoretical and empirical impacts of
+manually designed reward functions remain insufficiently explored. In this
+paper, we propose Decoupled Group Reward Optimization (DGRO), a general RL
+algorithm for LLM reasoning. On the one hand, DGRO decouples the traditional
+regularization coefficient into two independent hyperparameters: one scales the
+policy gradient term, and the other regulates the distance from the sampling
+policy. This decoupling not only enables precise control over balancing
+exploration and exploitation, but also can be seamlessly extended to Online
+Policy Mirror Descent (OPMD) algorithms in Kimi k1.5 and Direct Reward
+Optimization. On the other hand, we observe that reward variance significantly
+affects both convergence speed and final model performance. We conduct both
+theoretical analysis and extensive empirical validation to assess DGRO,
+including a detailed ablation study that investigates its performance and
+optimization dynamics. Experimental results show that DGRO achieves
+state-of-the-art performance on the Logic dataset with an average accuracy of
+96.9\%, and demonstrates strong generalization across mathematical benchmarks.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2505.12929v1' target='_blank'>Do Not Let Low-Probability Tokens Over-Dominate in RL for LLMs</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Zhihe Yang, Xufang Luo, Zilong Wang, Dongqi Han, Zhiyuan He, Dongsheng Li, Yunjian Xu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-05-19 10:14:08</h6>
+<p class='card-text'>Reinforcement learning (RL) has become a cornerstone for enhancing the
+reasoning capabilities of large language models (LLMs), with recent innovations
+such as Group Relative Policy Optimization (GRPO) demonstrating exceptional
+effectiveness. In this study, we identify a critical yet underexplored issue in
+RL training: low-probability tokens disproportionately influence model updates
+due to their large gradient magnitudes. This dominance hinders the effective
+learning of high-probability tokens, whose gradients are essential for LLMs'
+performance but are substantially suppressed. To mitigate this interference, we
+propose two novel methods: Advantage Reweighting and Low-Probability Token
+Isolation (Lopti), both of which effectively attenuate gradients from
+low-probability tokens while emphasizing parameter updates driven by
+high-probability tokens. Our approaches promote balanced updates across tokens
+with varying probabilities, thereby enhancing the efficiency of RL training.
+Experimental results demonstrate that they substantially improve the
+performance of GRPO-trained LLMs, achieving up to a 46.2% improvement in K&K
+Logic Puzzle reasoning tasks. Our implementation is available at
+https://github.com/zhyang2226/AR-Lopti.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2505.12833v1' target='_blank'>Reasoning BO: Enhancing Bayesian Optimization with Long-Context
+  Reasoning Power of LLMs</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Zhuo Yang, Lingli Ge, Dong Han, Tianfan Fu, Yuqiang Li</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-05-19 08:20:40</h6>
+<p class='card-text'>Many real-world scientific and industrial applications require the
+optimization of expensive black-box functions. Bayesian Optimization (BO)
+provides an effective framework for such problems. However, traditional BO
+methods are prone to get trapped in local optima and often lack interpretable
+insights. To address this issue, this paper designs Reasoning BO, a novel
+framework that leverages reasoning models to guide the sampling process in BO
+while incorporating multi-agent systems and knowledge graphs for online
+knowledge accumulation. By integrating the reasoning and contextual
+understanding capabilities of Large Language Models (LLMs), we can provide
+strong guidance to enhance the BO process. As the optimization progresses,
+Reasoning BO provides real-time sampling recommendations along with critical
+insights grounded in plausible scientific theories, aiding in the discovery of
+superior solutions within the search space. We systematically evaluate our
+approach across 10 diverse tasks encompassing synthetic mathematical functions
+and complex real-world applications. The framework demonstrates its capability
+to progressively refine sampling strategies through real-time insights and
+hypothesis evolution, effectively identifying higher-performing regions of the
+search space for focused exploration. This process highlights the powerful
+reasoning and context-learning abilities of LLMs in optimization scenarios. For
+example, in the Direct Arylation task, our method increased the yield to 60.7%,
+whereas traditional BO achieved only a 25.2% yield. Furthermore, our
+investigation reveals that smaller LLMs, when fine-tuned through reinforcement
+learning, can attain comparable performance to their larger counterparts. This
+enhanced reasoning capability paves the way for more efficient automated
+scientific experimentation while maintaining computational feasibility.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2505.12768v1' target='_blank'>ReEx-SQL: Reasoning with Execution-Aware Reinforcement Learning for
+  Text-to-SQL</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yaxun Dai, Wenxuan Xie, Xialie Zhuang, Tianyu Yang, Yiying Yang, Haiqin Yang, Yuhang Zhao, Pingfu Chao, Wenhao Jiang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-05-19 06:46:47</h6>
+<p class='card-text'>In Text-to-SQL, execution feedback is essential for guiding large language
+models (LLMs) to reason accurately and generate reliable SQL queries. However,
+existing methods treat execution feedback solely as a post-hoc signal for
+correction or selection, failing to integrate it into the generation process.
+This limitation hinders their ability to address reasoning errors as they
+occur, ultimately reducing query accuracy and robustness. To address this
+issue, we propose ReEx-SQL (Reasoning with Execution-Aware Reinforcement
+Learning), a framework for Text-to-SQL that enables models to interact with the
+database during decoding and dynamically adjust their reasoning based on
+execution feedback. ReEx-SQL introduces an execution-aware reasoning paradigm
+that interleaves intermediate SQL execution into reasoning paths, facilitating
+context-sensitive revisions. It achieves this through structured prompts with
+markup tags and a stepwise rollout strategy that integrates execution feedback
+into each stage of generation. To supervise policy learning, we develop a
+composite reward function that includes an exploration reward, explicitly
+encouraging effective database interaction. Additionally, ReEx-SQL adopts a
+tree-based decoding strategy to support exploratory reasoning, enabling dynamic
+expansion of alternative reasoning paths. Notably, ReEx-SQL achieves 88.8% on
+Spider and 64.9% on BIRD at the 7B scale, surpassing the standard reasoning
+baseline by 2.7% and 2.6%, respectively. It also shows robustness, achieving
+85.2% on Spider-Realistic with leading performance. In addition, its
+tree-structured decoding improves efficiency and performance over linear
+decoding, reducing inference time by 51.9% on the BIRD development set.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2505.12723v1' target='_blank'>On-Policy Optimization with Group Equivalent Preference for
+  Multi-Programming Language Understanding</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Haoyuan Wu, Rui Ming, Jilong Gao, Hangyu Zhao, Xueyi Chen, Yikai Yang, Haisheng Zheng, Zhuolun He, Bei Yu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-05-19 05:25:29</h6>
+<p class='card-text'>Large language models (LLMs) achieve remarkable performance in code
+generation tasks. However, a significant performance disparity persists between
+popular programming languages (e.g., Python, C++) and others. To address this
+capability gap, we leverage the code translation task to train LLMs, thereby
+facilitating the transfer of coding proficiency across diverse programming
+languages. Moreover, we introduce OORL for training, a novel reinforcement
+learning (RL) framework that integrates on-policy and off-policy strategies.
+Within OORL, on-policy RL is applied during code translation, guided by a
+rule-based reward signal derived from unit tests. Complementing this
+coarse-grained rule-based reward, we propose Group Equivalent Preference
+Optimization (GEPO), a novel preference optimization method. Specifically, GEPO
+trains the LLM using intermediate representations (IRs) groups. LLMs can be
+guided to discern IRs equivalent to the source code from inequivalent ones,
+while also utilizing signals about the mutual equivalence between IRs within
+the group. This process allows LLMs to capture nuanced aspects of code
+functionality. By employing OORL for training with code translation tasks, LLMs
+improve their recognition of code functionality and their understanding of the
+relationships between code implemented in different languages. Extensive
+experiments demonstrate that our OORL for LLMs training with code translation
+tasks achieves significant performance improvements on code benchmarks across
+multiple programming languages.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2505.12717v1' target='_blank'>ToTRL: Unlock LLM Tree-of-Thoughts Reasoning Potential through Puzzles
+  Solving</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Haoyuan Wu, Xueyi Chen, Rui Ming, Jilong Gao, Shoubo Hu, Zhuolun He, Bei Yu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-05-19 05:18:58</h6>
+<p class='card-text'>Large language models (LLMs) demonstrate significant reasoning capabilities,
+particularly through long chain-of-thought (CoT) processes, which can be
+elicited by reinforcement learning (RL). However, prolonged CoT reasoning
+presents limitations, primarily verbose outputs due to excessive introspection.
+The reasoning process in these LLMs often appears to follow a trial-and-error
+methodology rather than a systematic, logical deduction. In contrast,
+tree-of-thoughts (ToT) offers a conceptually more advanced approach by modeling
+reasoning as an exploration within a tree structure. This reasoning structure
+facilitates the parallel generation and evaluation of multiple reasoning
+branches, allowing for the active identification, assessment, and pruning of
+unproductive paths. This process can potentially lead to improved performance
+and reduced token costs. Building upon the long CoT capability of LLMs, we
+introduce tree-of-thoughts RL (ToTRL), a novel on-policy RL framework with a
+rule-based reward. ToTRL is designed to guide LLMs in developing the parallel
+ToT strategy based on the sequential CoT strategy. Furthermore, we employ LLMs
+as players in a puzzle game during the ToTRL training process. Solving puzzle
+games inherently necessitates exploring interdependent choices and managing
+multiple constraints, which requires the construction and exploration of a
+thought tree, providing challenging tasks for cultivating the ToT reasoning
+capability. Our empirical evaluations demonstrate that our ToTQwen3-8B model,
+trained with our ToTRL, achieves significant improvement in performance and
+reasoning efficiency on complex reasoning tasks.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2505.12584v1' target='_blank'>Improving Multilingual Language Models by Aligning Representations
+  through Steering</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Omar Mahmoud, Buddhika Laknath Semage, Thommen George Karimpanal, Santu Rana</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-05-19 00:14:43</h6>
+<p class='card-text'>In this paper, we investigate how large language models (LLMS) process
+non-English tokens within their layer representations, an open question despite
+significant advancements in the field. Using representation steering,
+specifically by adding a learned vector to a single model layer's activations,
+we demonstrate that steering a single model layer can notably enhance
+performance. Our analysis shows that this approach achieves results comparable
+to translation baselines and surpasses state of the art prompt optimization
+methods. Additionally, we highlight how advanced techniques like supervised
+fine tuning (\textsc{sft}) and reinforcement learning from human feedback
+(\textsc{rlhf}) improve multilingual capabilities by altering representation
+spaces. We further illustrate how these methods align with our approach to
+reshaping LLMS layer representations.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2505.12457v1' target='_blank'>UFO-RL: Uncertainty-Focused Optimization for Efficient Reinforcement
+  Learning Data Selection</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yang Zhao, Kai Xiong, Xiao Ding, Li Du, YangouOuyang, Zhouhao Sun, Jiannan Guan, Wenbin Zhang, Bin Liu, Dong Hu, Bing Qin, Ting Liu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-05-18 15:14:58</h6>
+<p class='card-text'>Scaling RL for LLMs is computationally expensive, largely due to
+multi-sampling for policy optimization and evaluation, making efficient data
+selection crucial. Inspired by the Zone of Proximal Development (ZPD) theory,
+we hypothesize LLMs learn best from data within their potential comprehension
+zone. Addressing the limitation of conventional, computationally intensive
+multi-sampling methods for data assessment, we introduce UFO-RL. This novel
+framework uses a computationally efficient single-pass uncertainty estimation
+to identify informative data instances, achieving up to 185x faster data
+evaluation. UFO-RL leverages this metric to select data within the estimated
+ZPD for training. Experiments show that training with just 10% of data selected
+by UFO-RL yields performance comparable to or surpassing full-data training,
+reducing overall training time by up to 16x while enhancing stability and
+generalization. UFO-RL offers a practical and highly efficient strategy for
+scaling RL fine-tuning of LLMs by focusing learning on valuable data.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2505.12434v1' target='_blank'>VideoRFT: Incentivizing Video Reasoning Capability in MLLMs via
+  Reinforced Fine-Tuning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Qi Wang, Yanrui Yu, Ye Yuan, Rui Mao, Tianfei Zhou</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-05-18 14:14:35</h6>
+<p class='card-text'>Reinforcement fine-tuning (RFT) has shown great promise in achieving
+humanlevel reasoning capabilities of Large Language Models (LLMs), and has
+recently been extended to MLLMs. Nevertheless, reasoning about videos, which is
+a fundamental aspect of human intelligence, remains a persistent challenge due
+to the complex logic, temporal and causal structures inherent in video data. To
+fill this gap, we propose VIDEORFT, a novel approach that extends the RFT
+paradigm to cultivate human-like video reasoning capabilities in MLLMs.
+VIDEORFT follows the standard two-stage scheme in RFT: supervised fine-tuning
+(SFT) with chain-of-thought (CoT) annotations, followed by reinforcement
+learning (RL) to improve generalization. A central challenge to achieve this in
+the video domain lies in the scarcity of large-scale, high-quality video CoT
+datasets. We address this by building a fully automatic CoT curation pipeline.
+First, we devise a cognitioninspired prompting strategy to elicit a reasoning
+LLM to generate preliminary CoTs based solely on rich, structured, and literal
+representations of video content. Subsequently, these CoTs are revised by a
+visual-language model conditioned on the actual video, ensuring visual
+consistency and reducing visual hallucinations. This pipeline results in two
+new datasets - VideoRFT-CoT-102K for SFT and VideoRFT-RL-310K for RL. To
+further strength the RL phase, we introduce a novel semantic-consistency reward
+that explicitly promotes the alignment between textual reasoning with visual
+evidence. This reward encourages the model to produce coherent, context-aware
+reasoning outputs grounded in visual input. Extensive experiments show that
+VIDEORFT achieves state-of-the-art performance on six video reasoning
+benchmarks.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2505.12432v1' target='_blank'>Observe-R1: Unlocking Reasoning Abilities of MLLMs with Dynamic
+  Progressive Reinforcement Learning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Zirun Guo, Minjie Hong, Tao Jin</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-05-18 14:08:03</h6>
+<p class='card-text'>Reinforcement Learning (RL) has shown promise in improving the reasoning
+abilities of Large Language Models (LLMs). However, the specific challenges of
+adapting RL to multimodal data and formats remain relatively unexplored. In
+this work, we present Observe-R1, a novel framework aimed at enhancing the
+reasoning capabilities of multimodal large language models (MLLMs). We draw
+inspirations from human learning progression--from simple to complex and easy
+to difficult, and propose a gradual learning paradigm for MLLMs. To this end,
+we construct the NeuraLadder dataset, which is organized and sampled according
+to the difficulty and complexity of data samples for RL training. To tackle
+multimodal tasks, we introduce a multimodal format constraint that encourages
+careful observation of images, resulting in enhanced visual abilities and
+clearer and more structured responses. Additionally, we implement a bonus
+reward system that favors concise, correct answers within a length constraint,
+alongside a dynamic weighting mechanism that prioritizes uncertain and
+medium-difficulty problems, ensuring that more informative samples have a
+greater impact on training. Our experiments with the Qwen2.5-VL-3B and
+Qwen2.5-VL-7B models on 20k samples from the NeuraLadder dataset show that
+Observe-R1 outperforms a series of larger reasoning models on both reasoning
+and general benchmarks, achieving superior clarity and conciseness in reasoning
+chains. Ablation studies validate the effectiveness of our strategies,
+highlighting the robustness and generalization of our approach. The dataset and
+code will be released at https://github.com/zrguo/Observe-R1.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2505.12415v1' target='_blank'>Table-R1: Region-based Reinforcement Learning for Table Understanding</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Zhenhe Wu, Jian Yang, Jiaheng Liu, Xianjie Wu, Changzai Pan, Jie Zhang, Yu Zhao, Shuangyong Song, Yongxiang Li, Zhoujun Li</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-05-18 13:40:18</h6>
+<p class='card-text'>Tables present unique challenges for language models due to their structured
+row-column interactions, necessitating specialized approaches for effective
+comprehension. While large language models (LLMs) have demonstrated potential
+in table reasoning through prompting and techniques like chain-of-thought (CoT)
+and program-of-thought (PoT), optimizing their performance for table question
+answering remains underexplored. In this paper, we introduce region-based
+Table-R1, a novel reinforcement learning approach that enhances LLM table
+understanding by integrating region evidence into reasoning steps. Our method
+employs Region-Enhanced Supervised Fine-Tuning (RE-SFT) to guide models in
+identifying relevant table regions before generating answers, incorporating
+textual, symbolic, and program-based reasoning. Additionally, Table-Aware Group
+Relative Policy Optimization (TARPO) introduces a mixed reward system to
+dynamically balance region accuracy and answer correctness, with decaying
+region rewards and consistency penalties to align reasoning steps. Experiments
+show that Table-R1 achieves an average performance improvement of 14.36 points
+across multiple base models on three benchmark datasets, even outperforming
+baseline models with ten times the parameters, while TARPO reduces response
+token consumption by 67.5% compared to GRPO, significantly advancing LLM
+capabilities in efficient tabular reasoning.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2505.12396v1' target='_blank'>LLM-CoT Enhanced Graph Neural Recommendation with Harmonized Group
+  Policy Optimization</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Hailong Luo, Bin Wu, Hongyong Jia, Qingqing Zhu, Lianlei Shan</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-05-18 12:50:36</h6>
+<p class='card-text'>Graph neural networks (GNNs) have advanced recommender systems by modeling
+interaction relationships. However, existing graph-based recommenders rely on
+sparse ID features and do not fully exploit textual information, resulting in
+low information density within representations. Furthermore, graph contrastive
+learning faces challenges. Random negative sampling can introduce false
+negative samples, while fixed temperature coefficients cannot adapt to the
+heterogeneity of different nodes. In addition, current efforts to enhance
+recommendations with large language models (LLMs) have not fully utilized their
+Chain-of-Thought (CoT) reasoning capabilities to guide representation learning.
+To address these limitations, we introduces LGHRec (LLM-CoT Enhanced Graph
+Neural Recommendation with Harmonized Group Policy Optimization). This
+framework leverages the CoT reasoning ability of LLMs to generate semantic IDs,
+enriching reasoning processes and improving information density and semantic
+quality of representations. Moreover, we design a reinforcement learning
+algorithm, Harmonized Group Policy Optimization (HGPO), to optimize negative
+sampling strategies and temperature coefficients in contrastive learning. This
+approach enhances long-tail recommendation performance and ensures optimization
+consistency across different groups. Experimental results on three datasets
+demonstrate that LGHRec improves representation quality through semantic IDs
+generated by LLM's CoT reasoning and effectively boosts contrastive learning
+with HGPO. Our method outperforms several baseline models. The code is
+available at: https://anonymous.4open.science/r/LLM-Rec.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2505.12380v1' target='_blank'>Graph-Reward-SQL: Execution-Free Reinforcement Learning for Text-to-SQL
+  via Graph Matching and Stepwise Reward</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Han Weng, Boyi Liu, Yuanfeng Song, Dun Zeng, Yingxiang Yang, Yi Zhan, Longjie Cui, Xiaoming Yin, Yang Sun</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-05-18 11:53:01</h6>
+<p class='card-text'>Reinforcement learning (RL) has been widely adopted to enhance the
+performance of large language models (LLMs) on Text-to-SQL tasks. However,
+existing methods often rely on execution-based or LLM-based Bradley-Terry
+reward models. The former suffers from high execution latency caused by
+repeated database calls, whereas the latter imposes substantial GPU memory
+overhead, both of which significantly hinder the efficiency and scalability of
+RL pipelines. To this end, we propose a novel Text-to-SQL RL fine-tuning
+framework named Graph-Reward-SQL, which employs the GMNScore outcome reward
+model. We leverage SQL graph representations to provide accurate reward signals
+while significantly reducing inference time and GPU memory usage. Building on
+this foundation, we further introduce StepRTM, a stepwise reward model that
+provides intermediate supervision over Common Table Expression (CTE)
+subqueries. This encourages both functional correctness and structural clarity
+of SQL. Extensive comparative and ablation experiments on standard benchmarks,
+including Spider and BIRD, demonstrate that our method consistently outperforms
+existing reward models.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2505.12285v1' target='_blank'>CALM: Co-evolution of Algorithms and Language Model for Automatic
+  Heuristic Design</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Ziyao Huang, Weiwei Wu, Kui Wu, Jianping Wang, Wei-Bin Lee</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-05-18 07:48:47</h6>
+<p class='card-text'>Tackling complex optimization problems often relies on expert-designed
+heuristics, typically crafted through extensive trial and error. Recent
+advances demonstrate that large language models (LLMs), when integrated into
+well-designed evolutionary search frameworks, can autonomously discover
+high-performing heuristics at a fraction of the traditional cost. However,
+existing approaches predominantly rely on verbal guidance, i.e., manipulating
+the prompt generation process, to steer the evolution of heuristics, without
+adapting the underlying LLM. We propose a hybrid framework that combines verbal
+and numerical guidance, the latter achieved by fine-tuning the LLM via
+reinforcement learning based on the quality of generated heuristics. This joint
+optimization allows the LLM to co-evolve with the search process. Our method
+outperforms state-of-the-art (SOTA) baselines across various optimization
+tasks, running locally on a single 24GB GPU using a 7B model with INT4
+quantization. It surpasses methods that rely solely on verbal guidance, even
+when those use significantly more powerful API-based models.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2505.11896v1' target='_blank'>AdaCoT: Pareto-Optimal Adaptive Chain-of-Thought Triggering via
+  Reinforcement Learning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Chenwei Lou, Zewei Sun, Xinnian Liang, Meng Qu, Wei Shen, Wenqi Wang, Yuntao Li, Qingping Yang, Shuangzhi Wu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-05-17 08:27:00</h6>
+<p class='card-text'>Large Language Models (LLMs) have demonstrated remarkable capabilities but
+often face challenges with tasks requiring sophisticated reasoning. While
+Chain-of-Thought (CoT) prompting significantly enhances reasoning, it
+indiscriminately generates lengthy reasoning steps for all queries, leading to
+substantial computational costs and inefficiency, especially for simpler
+inputs. To address this critical issue, we introduce AdaCoT (Adaptive
+Chain-of-Thought), a novel framework enabling LLMs to adaptively decide when to
+invoke CoT. AdaCoT framed adaptive reasoning as a Pareto optimization problem
+that seeks to balance model performance with the costs associated with CoT
+invocation (both frequency and computational overhead). We propose a
+reinforcement learning (RL) based method, specifically utilizing Proximal
+Policy Optimization (PPO), to dynamically control the CoT triggering decision
+boundary by adjusting penalty coefficients, thereby allowing the model to
+determine CoT necessity based on implicit query complexity. A key technical
+contribution is Selective Loss Masking (SLM), designed to counteract decision
+boundary collapse during multi-stage RL training, ensuring robust and stable
+adaptive triggering. Experimental results demonstrate that AdaCoT successfully
+navigates the Pareto frontier, achieving substantial reductions in CoT usage
+for queries not requiring elaborate reasoning. For instance, on our production
+traffic testset, AdaCoT reduced CoT triggering rates to as low as 3.18\% and
+decreased average response tokens by 69.06%, while maintaining high performance
+on complex tasks.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2505.11893v1' target='_blank'>RLAP: A Reinforcement Learning Enhanced Adaptive Planning Framework for
+  Multi-step NLP Task Solving</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Zepeng Ding, Dixuan Wang, Ziqin Luo, Guochao Jiang, Deqing Yang, Jiaqing Liang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-05-17 08:06:14</h6>
+<p class='card-text'>Multi-step planning has been widely employed to enhance the performance of
+large language models (LLMs) on downstream natural language processing (NLP)
+tasks, which decomposes the original task into multiple subtasks and guide LLMs
+to solve them sequentially without additional training. When addressing task
+instances, existing methods either preset the order of steps or attempt
+multiple paths at each step. However, these methods overlook instances'
+linguistic features and rely on the intrinsic planning capabilities of LLMs to
+evaluate intermediate feedback and then select subtasks, resulting in
+suboptimal outcomes. To better solve multi-step NLP tasks with LLMs, in this
+paper we propose a Reinforcement Learning enhanced Adaptive Planning framework
+(RLAP). In our framework, we model an NLP task as a Markov decision process
+(MDP) and employ an LLM directly into the environment. In particular, a
+lightweight Actor model is trained to estimate Q-values for natural language
+sequences consisting of states and actions through reinforcement learning.
+Therefore, during sequential planning, the linguistic features of each sequence
+in the MDP can be taken into account, and the Actor model interacts with the
+LLM to determine the optimal order of subtasks for each task instance. We apply
+RLAP on three different types of NLP tasks and conduct extensive experiments on
+multiple datasets to verify RLAP's effectiveness and robustness.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2505.11875v1' target='_blank'>J1: Exploring Simple Test-Time Scaling for LLM-as-a-Judge</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Chi-Min Chan, Chunpu Xu, Jiaming Ji, Zhen Ye, Pengcheng Wen, Chunyang Jiang, Yaodong Yang, Wei Xue, Sirui Han, Yike Guo</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-05-17 06:58:42</h6>
+<p class='card-text'>The current focus of AI research is shifting from emphasizing model training
+towards enhancing evaluation quality, a transition that is crucial for driving
+further advancements in AI systems. Traditional evaluation methods typically
+rely on reward models assigning scalar preference scores to outputs. Although
+effective, such approaches lack interpretability, leaving users often uncertain
+about why a reward model rates a particular response as high or low. The advent
+of LLM-as-a-Judge provides a more scalable and interpretable method of
+supervision, offering insights into the decision-making process. Moreover, with
+the emergence of large reasoning models, which consume more tokens for deeper
+thinking and answer refinement, scaling test-time computation in the
+LLM-as-a-Judge paradigm presents an avenue for further boosting performance and
+providing more interpretability through reasoning traces. In this paper, we
+introduce $\textbf{J1-7B}$, which is first supervised fine-tuned on
+reflection-enhanced datasets collected via rejection-sampling and subsequently
+trained using Reinforcement Learning (RL) with verifiable rewards. At inference
+time, we apply Simple Test-Time Scaling (STTS) strategies for additional
+performance improvement. Experimental results demonstrate that $\textbf{J1-7B}$
+surpasses the previous state-of-the-art LLM-as-a-Judge by $ \textbf{4.8}$\% and
+exhibits a $ \textbf{5.1}$\% stronger scaling trend under STTS. Additionally,
+we present three key findings: (1) Existing LLM-as-a-Judge does not inherently
+exhibit such scaling trend. (2) Model simply fine-tuned on reflection-enhanced
+datasets continues to demonstrate similarly weak scaling behavior. (3)
+Significant scaling trend emerges primarily during the RL phase, suggesting
+that effective STTS capability is acquired predominantly through RL training.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2505.11854v1' target='_blank'>Evaluating the Logical Reasoning Abilities of Large Reasoning Models</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Hanmeng Liu, Yiran Ding, Zhizhang Fu, Chaoli Zhang, Xiaozhang Liu, Yue Zhang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-05-17 05:36:14</h6>
+<p class='card-text'>Large reasoning models, often post-trained on long chain-of-thought (long
+CoT) data with reinforcement learning, achieve state-of-the-art performance on
+mathematical, coding, and domain-specific reasoning benchmarks. However, their
+logical reasoning capabilities - fundamental to human cognition and independent
+of domain knowledge - remain understudied. To address this gap, we introduce
+LogiEval, a holistic benchmark for evaluating logical reasoning in large
+reasoning models. LogiEval spans diverse reasoning types (deductive, inductive,
+analogical, and abductive) and task formats (e.g., logical sequence, argument
+analysis), sourced from high-quality human examinations (e.g., LSAT, GMAT). Our
+experiments demonstrate that modern reasoning models excel at 4-choice argument
+analysis problems and analogical reasoning, surpassing human performance, yet
+exhibit uneven capabilities across reasoning types and formats, highlighting
+limitations in their generalization. Our analysis reveals that human
+performance does not mirror model failure distributions. To foster further
+research, we curate LogiEval-Hard, a challenging subset identified through a
+novel screening paradigm where small-model failures (Qwen3-30B-A3B) reliably
+predict difficulties for larger models. Modern models show striking, consistent
+failures on LogiEval-Hard. This demonstrates that fundamental reasoning
+bottlenecks persist across model scales, and establishes LogiEval-Hard as both
+a diagnostic tool and a rigorous testbed for advancing logical reasoning in
+LLMs.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2505.11849v1' target='_blank'>VeriReason: Reinforcement Learning with Testbench Feedback for
+  Reasoning-Enhanced Verilog Generation</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yiting Wang, Guoheng Sun, Wanghao Ye, Gang Qu, Ang Li</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-05-17 05:25:01</h6>
+<p class='card-text'>Automating Register Transfer Level (RTL) code generation using Large Language
+Models (LLMs) offers substantial promise for streamlining digital circuit
+design and reducing human effort. However, current LLM-based approaches face
+significant challenges with training data scarcity, poor specification-code
+alignment, lack of verification mechanisms, and balancing generalization with
+specialization. Inspired by DeepSeek-R1, we introduce VeriReason, a framework
+integrating supervised fine-tuning with Guided Reward Proximal Optimization
+(GRPO) reinforcement learning for RTL generation. Using curated training
+examples and a feedback-driven reward model, VeriReason combines testbench
+evaluations with structural heuristics while embedding self-checking
+capabilities for autonomous error correction. On the VerilogEval Benchmark,
+VeriReason delivers significant improvements: achieving 83.1% functional
+correctness on the VerilogEval Machine benchmark, substantially outperforming
+both comparable-sized models and much larger commercial systems like GPT-4
+Turbo. Additionally, our approach demonstrates up to a 2.8X increase in
+first-attempt functional correctness compared to baseline methods and exhibits
+robust generalization to unseen designs. To our knowledge, VeriReason
+represents the first system to successfully integrate explicit reasoning
+capabilities with reinforcement learning for Verilog generation, establishing a
+new state-of-the-art for automated RTL synthesis. The models and datasets are
+available at: https://huggingface.co/collections/AI4EDA-CASE Code is Available
+at: https://github.com/NellyW8/VeriReason</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2505.11827v1' target='_blank'>Not All Thoughts are Generated Equal: Efficient LLM Reasoning via
+  Multi-Turn Reinforcement Learning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yansong Ning, Wei Li, Jun Fang, Naiqiang Tan, Hao Liu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-05-17 04:26:39</h6>
+<p class='card-text'>Compressing long chain-of-thought (CoT) from large language models (LLMs) is
+an emerging strategy to improve the reasoning efficiency of LLMs. Despite its
+promising benefits, existing studies equally compress all thoughts within a
+long CoT, hindering more concise and effective reasoning. To this end, we first
+investigate the importance of different thoughts by examining their
+effectiveness and efficiency in contributing to reasoning through automatic
+long CoT chunking and Monte Carlo rollouts. Building upon the insights, we
+propose a theoretically bounded metric to jointly measure the effectiveness and
+efficiency of different thoughts. We then propose Long$\otimes$Short, an
+efficient reasoning framework that enables two LLMs to collaboratively solve
+the problem: a long-thought LLM for more effectively generating important
+thoughts, while a short-thought LLM for efficiently generating remaining
+thoughts. Specifically, we begin by synthesizing a small amount of cold-start
+data to fine-tune LLMs for long-thought and short-thought reasoning styles,
+respectively. Furthermore, we propose a synergizing-oriented multi-turn
+reinforcement learning, focusing on the model self-evolution and collaboration
+between long-thought and short-thought LLMs. Experimental results show that our
+method enables Qwen2.5-7B and Llama3.1-8B to achieve comparable performance
+compared to DeepSeek-R1-Distill-Qwen-7B and DeepSeek-R1-Distill-Llama-8B, while
+reducing token length by over 80% across the MATH500, AIME24/25, AMC23, and
+GPQA Diamond benchmarks. Our data and code are available at
+https://github.com/yasNing/Long-otimes-Short/.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2505.11821v1' target='_blank'>Reinforcing Multi-Turn Reasoning in LLM Agents via Turn-Level Credit
+  Assignment</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Siliang Zeng, Quan Wei, William Brown, Oana Frunza, Yuriy Nevmyvaka, Mingyi Hong</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-05-17 04:09:46</h6>
+<p class='card-text'>This paper investigates approaches to enhance the reasoning capabilities of
+Large Language Model (LLM) agents using Reinforcement Learning (RL).
+Specifically, we focus on multi-turn tool-use scenarios, which can be naturally
+modeled as Markov Decision Processes (MDPs). While existing approaches often
+train multi-turn LLM agents with trajectory-level advantage estimation in
+bandit settings, they struggle with turn-level credit assignment across
+multiple decision steps, limiting their performance on multi-turn reasoning
+tasks. To address this, we introduce a fine-grained turn-level advantage
+estimation strategy to enable more precise credit assignment in multi-turn
+agent interactions. The strategy is general and can be incorporated into
+various RL algorithms such as Group Relative Preference Optimization (GRPO).
+Our experimental evaluation on multi-turn reasoning and search-based tool-use
+tasks with GRPO implementations highlights the effectiveness of the MDP
+framework and the turn-level credit assignment in advancing the multi-turn
+reasoning capabilities of LLM agents in complex decision-making settings. Our
+method achieves 100% success in tool execution and 50% accuracy in exact answer
+matching, significantly outperforming baselines, which fail to invoke tools and
+achieve only 20-30% exact match accuracy.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2505.11807v1' target='_blank'>Retrospex: Language Agent Meets Offline Reinforcement Learning Critic</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yufei Xiang, Yiqun Shen, Yeqin Zhang, Cam-Tu Nguyen</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-05-17 03:28:24</h6>
+<p class='card-text'>Large Language Models (LLMs) possess extensive knowledge and commonsense
+reasoning capabilities, making them valuable for creating powerful agents.
+However, existing LLM agent frameworks have not fully utilized past experiences
+for improvement. This work introduces a new LLM-based agent framework called
+Retrospex, which addresses this challenge by analyzing past experiences in
+depth. Unlike previous approaches, Retrospex does not directly integrate
+experiences into the LLM's context. Instead, it combines the LLM's action
+likelihood with action values estimated by a Reinforcement Learning (RL)
+Critic, which is trained on past experiences through an offline
+''retrospection'' process. Additionally, Retrospex employs a dynamic action
+rescoring mechanism that increases the importance of experience-based values
+for tasks that require more interaction with the environment. We evaluate
+Retrospex in ScienceWorld, ALFWorld and Webshop environments, demonstrating its
+advantages over strong, contemporary baselines.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2505.11792v1' target='_blank'>Solver-Informed RL: Grounding Large Language Models for Authentic
+  Optimization Modeling</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yitian Chen, Jingfan Xia, Siyu Shao, Dongdong Ge, Yinyu Ye</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-05-17 02:32:03</h6>
+<p class='card-text'>Optimization modeling is fundamental to decision-making across diverse
+domains.Despite progress in automating optimization formulation from natural
+language descriptions, Large Language Models (LLMs) often struggle to generate
+formally correct and usable models due to hallucinations, posing a challenge
+for reliable automation. Inspired by the success of Reinforcement Learning (RL)
+in enhancing Large Reasoning Models, we present Solver-Informed Reinforcement
+Learning (SIRL).This novel framework leverages external optimization solvers as
+verifiable reward mechanisms to significantly improve the authenticity of LLMs
+for optimization modeling.Acting as precise verifiers, these solvers
+automatically assess the executable code and the instance-level mathematical
+model represented by the associated LP file, yielding precise and comprehensive
+feedback signals -- including syntax, feasibility, and solution quality that
+directly inform the RL process. This automated verification process, powered by
+classic optimization solvers, also underpins our instance-enhanced
+self-consistency method to synthesize high-quality training data. Extensive
+experiments on diverse public benchmarks demonstrate that SIRL achieves
+state-of-the-art performance, substantially outperforming existing methods in
+generating accurate and executable optimization models.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js'></script>
+</body>
+</html>
