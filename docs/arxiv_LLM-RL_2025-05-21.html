@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<title>LLM-RL - 2025-05-21</title>
+<link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap' rel='stylesheet'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'>
+<style>
+body {
+font-family: 'Roboto', sans-serif;
+background-color: #f5f7fa;
+padding: 20px;
+}
+.card {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.card-title {
+    font-weight: 700;
+}
+.card:hover {
+    transform: scale(1.02);
+    transition: 0.3s ease-in-out;
+}
+</style>
+</head>
+<body>
+<div class='container'>
+<h1 class='text-center my-4'><i class='fas fa-book'></i>LLM-RL - 2025-05-21</h1>
+<div class='row'>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2505.14684v1' target='_blank'>Mind the Gap: Bridging Thought Leap for Improved Chain-of-Thought Tuning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Haolei Xu, Yuchen Yan, Yongliang Shen, Wenqi Zhang, Guiyang Hou, Shengpei Jiang, Kaitao Song, Weiming Lu, Jun Xiao, Yueting Zhuang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-05-20 17:59:31</h6>
+<p class='card-text'>Large language models (LLMs) have achieved remarkable progress on
+mathemati-cal tasks through Chain-of-Thought (CoT) reasoning. However, existing
+mathematical CoT datasets often suffer from Thought Leaps due to experts
+omitting intermediate steps, which negatively impacts model learning and
+generalization. We propose the CoT Thought Leap Bridge Task, which aims to
+automatically detect leaps and generate missing intermediate reasoning steps to
+restore the completeness and coherence of CoT. To facilitate this, we
+constructed a specialized training dataset called ScaleQM+, based on the
+structured ScaleQuestMath dataset, and trained CoT-Bridge to bridge thought
+leaps. Through comprehensive experiments on mathematical reasoning benchmarks,
+we demonstrate that models fine-tuned on bridged datasets consistently
+outperform those trained on original datasets, with improvements of up to
++5.87% on NuminaMath. Our approach effectively enhances distilled data (+3.02%)
+and provides better starting points for reinforcement learning (+3.1%),
+functioning as a plug-and-play module compatible with existing optimization
+techniques. Furthermore, CoT-Bridge demonstrate improved generalization to
+out-of-domain logical reasoning tasks, confirming that enhancing reasoning
+completeness yields broadly applicable benefits.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2505.14677v1' target='_blank'>Visionary-R1: Mitigating Shortcuts in Visual Reasoning with
+  Reinforcement Learning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Jiaer Xia, Yuhang Zang, Peng Gao, Yixuan Li, Kaiyang Zhou</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-05-20 17:58:35</h6>
+<p class='card-text'>Learning general-purpose reasoning capabilities has long been a challenging
+problem in AI. Recent research in large language models (LLMs), such as
+DeepSeek-R1, has shown that reinforcement learning techniques like GRPO can
+enable pre-trained LLMs to develop reasoning capabilities using simple
+question-answer pairs. In this paper, we aim to train visual language models
+(VLMs) to perform reasoning on image data through reinforcement learning and
+visual question-answer pairs, without any explicit chain-of-thought (CoT)
+supervision. Our findings indicate that simply applying reinforcement learning
+to a VLM -- by prompting the model to produce a reasoning chain before
+providing an answer -- can lead the model to develop shortcuts from easy
+questions, thereby reducing its ability to generalize across unseen data
+distributions. We argue that the key to mitigating shortcut learning is to
+encourage the model to interpret images prior to reasoning. Therefore, we train
+the model to adhere to a caption-reason-answer output format: initially
+generating a detailed caption for an image, followed by constructing an
+extensive reasoning chain. When trained on 273K CoT-free visual question-answer
+pairs and using only reinforcement learning, our model, named Visionary-R1,
+outperforms strong multimodal models, such as GPT-4o, Claude3.5-Sonnet, and
+Gemini-1.5-Pro, on multiple visual reasoning benchmarks.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2505.14652v1' target='_blank'>General-Reasoner: Advancing LLM Reasoning Across All Domains</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Xueguang Ma, Qian Liu, Dongfu Jiang, Ge Zhang, Zejun Ma, Wenhu Chen</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-05-20 17:41:33</h6>
+<p class='card-text'>Reinforcement learning (RL) has recently demonstrated strong potential in
+enhancing the reasoning capabilities of large language models (LLMs).
+Particularly, the "Zero" reinforcement learning introduced by Deepseek-R1-Zero,
+enables direct RL training of base LLMs without relying on an intermediate
+supervised fine-tuning stage. Despite these advancements, current works for LLM
+reasoning mainly focus on mathematical and coding domains, largely due to data
+abundance and the ease of answer verification. This limits the applicability
+and generalization of such models to broader domains, where questions often
+have diverse answer representations, and data is more scarce. In this paper, we
+propose General-Reasoner, a novel training paradigm designed to enhance LLM
+reasoning capabilities across diverse domains. Our key contributions include:
+(1) constructing a large-scale, high-quality dataset of questions with
+verifiable answers curated by web crawling, covering a wide range of
+disciplines; and (2) developing a generative model-based answer verifier, which
+replaces traditional rule-based verification with the capability of
+chain-of-thought and context-awareness. We train a series of models and
+evaluate them on a wide range of datasets covering wide domains like physics,
+chemistry, finance, electronics etc. Our comprehensive evaluation across these
+12 benchmarks (e.g. MMLU-Pro, GPQA, SuperGPQA, TheoremQA, BBEH and MATH AMC)
+demonstrates that General-Reasoner outperforms existing baseline methods,
+achieving robust and generalizable reasoning performance while maintaining
+superior effectiveness in mathematical reasoning tasks.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2505.14631v1' target='_blank'>Think Only When You Need with Large Hybrid-Reasoning Models</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Lingjie Jiang, Xun Wu, Shaohan Huang, Qingxiu Dong, Zewen Chi, Li Dong, Xingxing Zhang, Tengchao Lv, Lei Cui, Furu Wei</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-05-20 17:23:25</h6>
+<p class='card-text'>Recent Large Reasoning Models (LRMs) have shown substantially improved
+reasoning capabilities over traditional Large Language Models (LLMs) by
+incorporating extended thinking processes prior to producing final responses.
+However, excessively lengthy thinking introduces substantial overhead in terms
+of token consumption and latency, which is particularly unnecessary for simple
+queries. In this work, we introduce Large Hybrid-Reasoning Models (LHRMs), the
+first kind of model capable of adaptively determining whether to perform
+thinking based on the contextual information of user queries. To achieve this,
+we propose a two-stage training pipeline comprising Hybrid Fine-Tuning (HFT) as
+a cold start, followed by online reinforcement learning with the proposed
+Hybrid Group Policy Optimization (HGPO) to implicitly learn to select the
+appropriate thinking mode. Furthermore, we introduce a metric called Hybrid
+Accuracy to quantitatively assess the model's capability for hybrid thinking.
+Extensive experimental results show that LHRMs can adaptively perform hybrid
+thinking on queries of varying difficulty and type. It outperforms existing
+LRMs and LLMs in reasoning and general capabilities while significantly
+improving efficiency. Together, our work advocates for a reconsideration of the
+appropriate use of extended thinking processes and provides a solid starting
+point for building hybrid thinking systems.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2505.14625v1' target='_blank'>TinyV: Reducing False Negatives in Verification Improves RL for LLM
+  Reasoning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Zhangchen Xu, Yuetai Li, Fengqing Jiang, Bhaskar Ramasubramanian, Luyao Niu, Bill Yuchen Lin, Radha Poovendran</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-05-20 17:16:44</h6>
+<p class='card-text'>Reinforcement Learning (RL) has become a powerful tool for enhancing the
+reasoning abilities of large language models (LLMs) by optimizing their
+policies with reward signals. Yet, RL's success relies on the reliability of
+rewards, which are provided by verifiers. In this paper, we expose and analyze
+a widespread problem--false negatives--where verifiers wrongly reject correct
+model outputs. Our in-depth study of the Big-Math-RL-Verified dataset reveals
+that over 38% of model-generated responses suffer from false negatives, where
+the verifier fails to recognize correct answers. We show, both empirically and
+theoretically, that these false negatives severely impair RL training by
+depriving the model of informative gradient signals and slowing convergence. To
+mitigate this, we propose tinyV, a lightweight LLM-based verifier that augments
+existing rule-based methods, which dynamically identifies potential false
+negatives and recovers valid responses to produce more accurate reward
+estimates. Across multiple math-reasoning benchmarks, integrating TinyV boosts
+pass rates by up to 10% and accelerates convergence relative to the baseline.
+Our findings highlight the critical importance of addressing verifier false
+negatives and offer a practical approach to improve RL-based fine-tuning of
+LLMs. Our code is available at https://github.com/uw-nsl/TinyV.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2505.14585v1' target='_blank'>Context Reasoner: Incentivizing Reasoning Capability for Contextualized
+  Privacy and Safety Compliance via Reinforcement Learning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Wenbin Hu, Haoran Li, Huihao Jing, Qi Hu, Ziqian Zeng, Sirui Han, Heli Xu, Tianshu Chu, Peizhao Hu, Yangqiu Song</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-05-20 16:40:09</h6>
+<p class='card-text'>While Large Language Models (LLMs) exhibit remarkable capabilities, they also
+introduce significant safety and privacy risks. Current mitigation strategies
+often fail to preserve contextual reasoning capabilities in risky scenarios.
+Instead, they rely heavily on sensitive pattern matching to protect LLMs, which
+limits the scope. Furthermore, they overlook established safety and privacy
+standards, leading to systemic risks for legal compliance. To address these
+gaps, we formulate safety and privacy issues into contextualized compliance
+problems following the Contextual Integrity (CI) theory. Under the CI
+framework, we align our model with three critical regulatory standards: GDPR,
+EU AI Act, and HIPAA. Specifically, we employ reinforcement learning (RL) with
+a rule-based reward to incentivize contextual reasoning capabilities while
+enhancing compliance with safety and privacy norms. Through extensive
+experiments, we demonstrate that our method not only significantly enhances
+legal compliance (achieving a +17.64% accuracy improvement in safety/privacy
+benchmarks) but also further improves general reasoning capability. For
+OpenThinker-7B, a strong reasoning model that significantly outperforms its
+base model Qwen2.5-7B-Instruct across diverse subjects, our method enhances its
+general reasoning capabilities, with +2.05% and +8.98% accuracy improvement on
+the MMLU and LegalBench benchmark, respectively.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2505.14552v1' target='_blank'>KORGym: A Dynamic Game Platform for LLM Reasoning Evaluation</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Jiajun Shi, Jian Yang, Jiaheng Liu, Xingyuan Bu, Jiangjie Chen, Junting Zhou, Kaijing Ma, Zhoufutu Wen, Bingli Wang, Yancheng He, Liang Song, Hualei Zhu, Shilong Li, Xingjian Wang, Wei Zhang, Ruibin Yuan, Yifan Yao, Wenjun Yang, Yunli Wang, Siyuan Fang, Siyu Yuan, Qianyu He, Xiangru Tang, Yingshui Tan, Wangchunshu Zhou, Zhaoxiang Zhang, Zhoujun Li, Wenhao Huang, Ge Zhang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-05-20 16:06:32</h6>
+<p class='card-text'>Recent advancements in large language models (LLMs) underscore the need for
+more comprehensive evaluation methods to accurately assess their reasoning
+capabilities. Existing benchmarks are often domain-specific and thus cannot
+fully capture an LLM's general reasoning potential. To address this limitation,
+we introduce the Knowledge Orthogonal Reasoning Gymnasium (KORGym), a dynamic
+evaluation platform inspired by KOR-Bench and Gymnasium. KORGym offers over
+fifty games in either textual or visual formats and supports interactive,
+multi-turn assessments with reinforcement learning scenarios. Using KORGym, we
+conduct extensive experiments on 19 LLMs and 8 VLMs, revealing consistent
+reasoning patterns within model families and demonstrating the superior
+performance of closed-source models. Further analysis examines the effects of
+modality, reasoning strategies, reinforcement learning techniques, and response
+length on model performance. We expect KORGym to become a valuable resource for
+advancing LLM reasoning research and developing evaluation methodologies suited
+to complex, interactive environments.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2505.14460v1' target='_blank'>VisualQuality-R1: Reasoning-Induced Image Quality Assessment via
+  Reinforcement Learning to Rank</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Tianhe Wu, Jian Zou, Jie Liang, Lei Zhang, Kede Ma</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-05-20 14:56:50</h6>
+<p class='card-text'>DeepSeek-R1 has demonstrated remarkable effectiveness in incentivizing
+reasoning and generalization capabilities of large language models (LLMs)
+through reinforcement learning. Nevertheless, the potential of
+reasoning-induced computational modeling has not been thoroughly explored in
+the context of image quality assessment (IQA), a task critically dependent on
+visual reasoning. In this paper, we introduce VisualQuality-R1, a
+reasoning-induced no-reference IQA (NR-IQA) model, and we train it with
+reinforcement learning to rank, a learning algorithm tailored to the
+intrinsically relative nature of visual quality. Specifically, for a pair of
+images, we employ group relative policy optimization to generate multiple
+quality scores for each image. These estimates are then used to compute
+comparative probabilities of one image having higher quality than the other
+under the Thurstone model. Rewards for each quality estimate are defined using
+continuous fidelity measures rather than discretized binary labels. Extensive
+experiments show that the proposed VisualQuality-R1 consistently outperforms
+discriminative deep learning-based NR-IQA models as well as a recent
+reasoning-induced quality regression method. Moreover, VisualQuality-R1 is
+capable of generating contextually rich, human-aligned quality descriptions,
+and supports multi-dataset training without requiring perceptual scale
+realignment. These features make VisualQuality-R1 especially well-suited for
+reliably measuring progress in a wide range of image processing tasks like
+super-resolution and image generation.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2505.14412v1' target='_blank'>PRL: Prompts from Reinforcement Learning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Paweł Batorski, Adrian Kosmala, Paul Swoboda</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-05-20 14:26:19</h6>
+<p class='card-text'>Effective prompt engineering remains a central challenge in fully harnessing
+the capabilities of LLMs. While well-designed prompts can dramatically enhance
+performance, crafting them typically demands expert intuition and a nuanced
+understanding of the task. Moreover, the most impactful prompts often hinge on
+subtle semantic cues, ones that may elude human perception but are crucial for
+guiding LLM behavior. In this paper, we introduce PRL (Prompts from
+Reinforcement Learning), a novel RL-based approach for automatic prompt
+generation. Unlike previous methods, PRL can produce novel few-shot examples
+that were not seen during training. Our approach achieves state-of-the-art
+performance across a range of benchmarks, including text classification,
+simplification, and summarization. On the classification task, it surpasses
+prior methods by 2.58% over APE and 1.00% over EvoPrompt. Additionally, it
+improves the average ROUGE scores on the summarization task by 4.32 over APE
+and by 2.12 over EvoPrompt and the SARI score on simplification by 6.93 over
+APE and by 6.01 over EvoPrompt. Our code is available at
+https://github.com/Batorskq/prl .</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2505.14279v1' target='_blank'>YESciEval: Robust LLM-as-a-Judge for Scientific Question Answering</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Jennifer D'Souza, Hamed Babaei Giglou, Quentin Münch</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-05-20 12:30:46</h6>
+<p class='card-text'>Large Language Models (LLMs) drive scientific question-answering on modern
+search engines, yet their evaluation robustness remains underexplored. We
+introduce YESciEval, an open-source framework that combines fine-grained
+rubric-based assessment with reinforcement learning to mitigate optimism bias
+in LLM evaluators. We release multidisciplinary scienceQ&A datasets, including
+adversarial variants, with evaluation scores from multiple LLMs. Independent of
+proprietary models and human feedback, our approach enables scalable, cost-free
+evaluation. By advancing reliable LLM-as-a-judge models, this work supports AI
+alignment and fosters robust, transparent evaluation essential for scientific
+inquiry and artificial general intelligence.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2505.14268v1' target='_blank'>Think-J: Learning to Think for Generative LLM-as-a-Judge</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Hui Huang, Yancheng He, Hongli Zhou, Rui Zhang, Wei Liu, Weixun Wang, Wenbo Su, Bo Zheng, Jiaheng Liu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-05-20 12:19:10</h6>
+<p class='card-text'>LLM-as-a-Judge refers to the automatic modeling of preferences for responses
+generated by Large Language Models (LLMs), which is of significant importance
+for both LLM evaluation and reward modeling. Although generative LLMs have made
+substantial progress in various tasks, their performance as LLM-Judge still
+falls short of expectations. In this work, we propose Think-J, which improves
+generative LLM-as-a-Judge by learning how to think. We first utilized a small
+amount of curated data to develop the model with initial judgment thinking
+capabilities. Subsequently, we optimize the judgment thinking traces based on
+reinforcement learning (RL). We propose two methods for judgment thinking
+optimization, based on offline and online RL, respectively. The offline RL
+requires training a critic model to construct positive and negative examples
+for learning. The online method defines rule-based reward as feedback for
+optimization. Experimental results showed that our approach can significantly
+enhance the evaluation capability of generative LLM-Judge, surpassing both
+generative and classifier-based LLM-Judge without requiring extra human
+annotations.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2505.14264v1' target='_blank'>AAPO: Enhance the Reasoning Capabilities of LLMs with Advantage Momentum</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Jian Xiong, Jingbo Zhou, Jingyong Ye, Dejing Dou</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-05-20 12:13:44</h6>
+<p class='card-text'>Reinforcement learning (RL) has emerged as an effective approach for
+enhancing the reasoning capabilities of large language models (LLMs),
+especially in scenarios where supervised fine-tuning (SFT) falls short due to
+limited chain-of-thought (CoT) data. Among RL-based post-training methods,
+group relative advantage estimation, as exemplified by Group Relative Policy
+Optimization (GRPO), has attracted considerable attention for eliminating the
+dependency on the value model, thereby simplifying training compared to
+traditional approaches like Proximal Policy Optimization (PPO). However, we
+observe that exsiting group relative advantage estimation method still suffers
+from training inefficiencies, particularly when the estimated advantage
+approaches zero. To address this limitation, we propose Advantage-Augmented
+Policy Optimization (AAPO), a novel RL algorithm that optimizes the
+cross-entropy (CE) loss using advantages enhanced through a momentum-based
+estimation scheme. This approach effectively mitigates the inefficiencies
+associated with group relative advantage estimation. Experimental results on
+multiple mathematical reasoning benchmarks demonstrate the superior performance
+of AAPO.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2505.14216v1' target='_blank'>Reinforcement Learning vs. Distillation: Understanding Accuracy and
+  Capability in LLM Reasoning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Minwu Kim, Anubhav Shrestha, Safal Shrestha, Aadim Nepal, Keith Ross</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-05-20 11:22:34</h6>
+<p class='card-text'>Recent studies have shown that reinforcement learning with verifiable rewards
+(RLVR) enhances overall accuracy but fails to improve capability, while
+distillation can improve both. In this paper, we investigate the mechanisms
+behind these phenomena. First, we demonstrate that RLVR does not improve
+capability because it focuses on improving the accuracy of the less-difficult
+questions to the detriment of the accuracy of the most difficult questions,
+thereby leading to no improvement in capability. Second, we find that RLVR does
+not merely increase the success probability for the less difficult questions,
+but in our small model settings produces quality responses that were absent in
+its output distribution before training. In addition, we show these responses
+are neither noticeably longer nor feature more reflection-related keywords,
+underscoring the need for more reliable indicators of response quality. Third,
+we show that while distillation reliably improves accuracy by learning strong
+reasoning patterns, it only improves capability when new knowledge is
+introduced. Moreover, when distilling only with reasoning patterns and no new
+knowledge, the accuracy of the less-difficult questions improves to the
+detriment of the most difficult questions, similar to RLVR. Together, these
+findings offer a clearer understanding of how RLVR and distillation shape
+reasoning behavior in language models.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2505.14185v1' target='_blank'>Safety Subspaces are Not Distinct: A Fine-Tuning Case Study</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Kaustubh Ponkshe, Shaan Shah, Raghav Singhal, Praneeth Vepakomma</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-05-20 10:41:49</h6>
+<p class='card-text'>Large Language Models (LLMs) rely on safety alignment to produce socially
+acceptable responses. This is typically achieved through instruction tuning and
+reinforcement learning from human feedback. However, this alignment is known to
+be brittle: further fine-tuning, even on benign or lightly contaminated data,
+can degrade safety and reintroduce harmful behaviors. A growing body of work
+suggests that alignment may correspond to identifiable geometric directions in
+weight space, forming subspaces that could, in principle, be isolated or
+preserved to defend against misalignment. In this work, we conduct a
+comprehensive empirical study of this geometric perspective. We examine whether
+safety-relevant behavior is concentrated in specific subspaces, whether it can
+be separated from general-purpose learning, and whether harmfulness arises from
+distinguishable patterns in internal representations. Across both parameter and
+activation space, our findings are consistent: subspaces that amplify safe
+behaviors also amplify unsafe ones, and prompts with different safety
+implications activate overlapping representations. We find no evidence of a
+subspace that selectively governs safety. These results challenge the
+assumption that alignment is geometrically localized. Rather than residing in
+distinct directions, safety appears to emerge from entangled, high-impact
+components of the model's broader learning dynamics. This suggests that
+subspace-based defenses may face fundamental limitations and underscores the
+need for alternative strategies to preserve alignment under continued training.
+We corroborate these findings through multiple experiments on five open-source
+LLMs. Our code is publicly available at:
+https://github.com/CERT-Lab/safety-subspaces.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2505.14146v1' target='_blank'>s3: You Don't Need That Much Data to Train a Search Agent via RL</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Pengcheng Jiang, Xueqiang Xu, Jiacheng Lin, Jinfeng Xiao, Zifeng Wang, Jimeng Sun, Jiawei Han</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-05-20 09:53:56</h6>
+<p class='card-text'>Retrieval-augmented generation (RAG) systems empower large language models
+(LLMs) to access external knowledge during inference. Recent advances have
+enabled LLMs to act as search agents via reinforcement learning (RL), improving
+information acquisition through multi-turn interactions with retrieval engines.
+However, existing approaches either optimize retrieval using search-only
+metrics (e.g., NDCG) that ignore downstream utility or fine-tune the entire LLM
+to jointly reason and retrieve-entangling retrieval with generation and
+limiting the real search utility and compatibility with frozen or proprietary
+models. In this work, we propose s3, a lightweight, model-agnostic framework
+that decouples the searcher from the generator and trains the searcher using a
+Gain Beyond RAG reward: the improvement in generation accuracy over naive RAG.
+s3 requires only 2.4k training samples to outperform baselines trained on over
+70x more data, consistently delivering stronger downstream performance across
+six general QA and five medical QA benchmarks.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2505.14140v1' target='_blank'>RL of Thoughts: Navigating LLM Reasoning with Inference-time
+  Reinforcement Learning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Qianyue Hao, Sibo Li, Jian Yuan, Yong Li</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-05-20 09:43:33</h6>
+<p class='card-text'>Despite rapid advancements in large language models (LLMs), the token-level
+autoregressive nature constrains their complex reasoning capabilities. To
+enhance LLM reasoning, inference-time techniques, including
+Chain/Tree/Graph-of-Thought(s), successfully improve the performance, as they
+are fairly cost-effective by guiding reasoning through sophisticated logical
+structures without modifying LLMs' parameters. However, these manually
+predefined, task-agnostic frameworks are applied uniformly across diverse
+tasks, lacking adaptability. To improve this, we propose RL-of-Thoughts (RLoT),
+where we train a lightweight navigator model with reinforcement learning (RL)
+to adaptively enhance LLM reasoning at inference time. Specifically, we design
+five basic logic blocks from the perspective of human cognition. During the
+reasoning process, the trained RL navigator dynamically selects the suitable
+logic blocks and combines them into task-specific logical structures according
+to problem characteristics. Experiments across multiple reasoning benchmarks
+(AIME, MATH, GPQA, etc.) with multiple LLMs (GPT, Llama, Qwen, and DeepSeek)
+illustrate that RLoT outperforms established inference-time techniques by up to
+13.4%. Remarkably, with less than 3K parameters, our RL navigator is able to
+make sub-10B LLMs comparable to 100B-scale counterparts. Moreover, the RL
+navigator demonstrates strong transferability: a model trained on one specific
+LLM-task pair can effectively generalize to unseen LLMs and tasks. Our code is
+open-source at https://anonymous.4open.science/r/RL-LLM-Reasoning-1A30 for
+reproducibility.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2505.14069v1' target='_blank'>Process vs. Outcome Reward: Which is Better for Agentic RAG
+  Reinforcement Learning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Wenlin Zhang, Xiangyang Li, Kuicai Dong, Yichao Wang, Pengyue Jia, Xiaopeng Li, Yingyi Zhang, Derong Xu, Zhaocheng Du, Huifeng Guo, Ruiming Tang, Xiangyu Zhao</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-05-20 08:21:00</h6>
+<p class='card-text'>Retrieval-augmented generation (RAG) enhances the text generation
+capabilities of large language models (LLMs) by integrating external knowledge
+and up-to-date information. However, traditional RAG systems are limited by
+static workflows and lack the adaptability required for multistep reasoning and
+complex task management. To address these limitations, agentic RAG systems
+(e.g., DeepResearch) have been proposed, enabling dynamic retrieval strategies,
+iterative context refinement, and adaptive workflows for handling complex
+search queries beyond the capabilities of conventional RAG. Recent advances,
+such as Search-R1, have demonstrated promising gains using outcome-based
+reinforcement learning, where the correctness of the final answer serves as the
+reward signal. Nevertheless, such outcome-supervised agentic RAG methods face
+challenges including low exploration efficiency, gradient conflict, and sparse
+reward signals. To overcome these challenges, we propose to utilize
+fine-grained, process-level rewards to improve training stability, reduce
+computational costs, and enhance efficiency. Specifically, we introduce a novel
+method ReasonRAG that automatically constructs RAG-ProGuide, a high-quality
+dataset providing process-level rewards for (i) query generation, (ii) evidence
+extraction, and (iii) answer generation, thereby enhancing model inherent
+capabilities via process-supervised reinforcement learning. With the
+process-level policy optimization, the proposed framework empowers LLMs to
+autonomously invoke search, generate queries, extract relevant evidence, and
+produce final answers. Compared to existing approaches such as Search-R1 and
+traditional RAG systems, ReasonRAG, leveraging RAG-ProGuide, achieves superior
+performance on five benchmark datasets using only 5k training instances,
+significantly fewer than the 90k training instances required by Search-R1.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2505.13921v1' target='_blank'>APEX: Empowering LLMs with Physics-Based Task Planning for Real-time
+  Insight</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Wanjing Huang, Weixiang Yan, Zhen Zhang, Ambuj Singh</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-05-20 04:34:58</h6>
+<p class='card-text'>Large Language Models (LLMs) demonstrate strong reasoning and task planning
+capabilities but remain fundamentally limited in physical interaction modeling.
+Existing approaches integrate perception via Vision-Language Models (VLMs) or
+adaptive decision-making through Reinforcement Learning (RL), but they fail to
+capture dynamic object interactions or require task-specific training, limiting
+their real-world applicability. We introduce APEX (Anticipatory
+Physics-Enhanced Execution), a framework that equips LLMs with physics-driven
+foresight for real-time task planning. APEX constructs structured graphs to
+identify and model the most relevant dynamic interactions in the environment,
+providing LLMs with explicit physical state updates. Simultaneously, APEX
+provides low-latency forward simulations of physically feasible actions,
+allowing LLMs to select optimal strategies based on predictive outcomes rather
+than static observations. We evaluate APEX on three benchmarks designed to
+assess perception, prediction, and decision-making: (1) Physics Reasoning
+Benchmark, testing causal inference and object motion prediction; (2) Tetris,
+evaluating whether physics-informed prediction enhances decision-making
+performance in long-horizon planning tasks; (3) Dynamic Obstacle Avoidance,
+assessing the immediate integration of perception and action feasibility
+analysis. APEX significantly outperforms standard LLMs and VLM-based models,
+demonstrating the necessity of explicit physics reasoning for bridging the gap
+between language-based intelligence and real-world task execution. The source
+code and experiment setup are publicly available at
+https://github.com/hwj20/APEX_EXP .</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2505.13831v1' target='_blank'>TelePlanNet: An AI-Driven Framework for Efficient Telecom Network
+  Planning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Zongyuan Deng, Yujie Cai, Qing Liu, Shiyao Mu, Bin Lyu, Zhen Yang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-05-20 02:19:10</h6>
+<p class='card-text'>The selection of base station sites is a critical challenge in 5G network
+planning, which requires efficient optimization of coverage, cost, user
+satisfaction, and practical constraints. Traditional manual methods, reliant on
+human expertise, suffer from inefficiencies and are limited to an unsatisfied
+planning-construction consistency. Existing AI tools, despite improving
+efficiency in certain aspects, still struggle to meet the dynamic network
+conditions and multi-objective needs of telecom operators' networks. To address
+these challenges, we propose TelePlanNet, an AI-driven framework tailored for
+the selection of base station sites, integrating a three-layer architecture for
+efficient planning and large-scale automation. By leveraging large language
+models (LLMs) for real-time user input processing and intent alignment with
+base station planning, combined with training the planning model using the
+improved group relative policy optimization (GRPO) reinforcement learning, the
+proposed TelePlanNet can effectively address multi-objective optimization,
+evaluates candidate sites, and delivers practical solutions. Experiments
+results show that the proposed TelePlanNet can improve the consistency to 78%,
+which is superior to the manual methods, providing telecom operators with an
+efficient and scalable tool that significantly advances cellular network
+planning.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2505.13778v1' target='_blank'>CoIn: Counting the Invisible Reasoning Tokens in Commercial Opaque LLM
+  APIs</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Guoheng Sun, Ziyao Wang, Bowei Tian, Meng Liu, Zheyu Shen, Shwai He, Yexiao He, Wanghao Ye, Yiting Wang, Ang Li</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-05-19 23:39:23</h6>
+<p class='card-text'>As post-training techniques evolve, large language models (LLMs) are
+increasingly augmented with structured multi-step reasoning abilities, often
+optimized through reinforcement learning. These reasoning-enhanced models
+outperform standard LLMs on complex tasks and now underpin many commercial LLM
+APIs. However, to protect proprietary behavior and reduce verbosity, providers
+typically conceal the reasoning traces while returning only the final answer.
+This opacity introduces a critical transparency gap: users are billed for
+invisible reasoning tokens, which often account for the majority of the cost,
+yet have no means to verify their authenticity. This opens the door to token
+count inflation, where providers may overreport token usage or inject
+synthetic, low-effort tokens to inflate charges. To address this issue, we
+propose CoIn, a verification framework that audits both the quantity and
+semantic validity of hidden tokens. CoIn constructs a verifiable hash tree from
+token embedding fingerprints to check token counts, and uses embedding-based
+relevance matching to detect fabricated reasoning content. Experiments
+demonstrate that CoIn, when deployed as a trusted third-party auditor, can
+effectively detect token count inflation with a success rate reaching up to
+94.7%, showing the strong ability to restore billing transparency in opaque LLM
+services. The dataset and code are available at
+https://github.com/CASE-Lab-UMD/LLM-Auditing-CoIn.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2505.13718v1' target='_blank'>Warm Up Before You Train: Unlocking General Reasoning in
+  Resource-Constrained Settings</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Safal Shrestha, Minwu Kim, Aadim Nepal, Anubhav Shrestha, Keith Ross</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-05-19 20:29:15</h6>
+<p class='card-text'>Designing effective reasoning-capable LLMs typically requires training using
+Reinforcement Learning with Verifiable Rewards (RLVR) or distillation with
+carefully curated Long Chain of Thoughts (CoT), both of which depend heavily on
+extensive training data. This creates a major challenge when the amount of
+quality training data is scarce. We propose a sample-efficient, two-stage
+training strategy to develop reasoning LLMs under limited supervision. In the
+first stage, we "warm up" the model by distilling Long CoTs from a toy domain,
+namely, Knights \& Knaves (K\&K) logic puzzles to acquire general reasoning
+skills. In the second stage, we apply RLVR to the warmed-up model using a
+limited set of target-domain examples. Our experiments demonstrate that this
+two-phase approach offers several benefits: $(i)$ the warmup phase alone
+facilitates generalized reasoning, leading to performance improvements across a
+range of tasks, including MATH, HumanEval$^{+}$, and MMLU-Pro. $(ii)$ When both
+the base model and the warmed-up model are RLVR trained on the same small
+dataset ($\leq100$ examples), the warmed-up model consistently outperforms the
+base model; $(iii)$ Warming up before RLVR training allows a model to maintain
+cross-domain generalizability even after training on a specific domain; $(iv)$
+Introducing warmup in the pipeline improves not only accuracy but also overall
+sample efficiency during RLVR training. The results in this paper highlight the
+promise of warmup for building robust reasoning LLMs in data-scarce
+environments.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2505.13697v1' target='_blank'>RL in Name Only? Analyzing the Structural Assumptions in RL
+  post-training for LLMs</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Soumya Rani Samineni, Durgesh Kalwar, Karthik Valmeekam, Kaya Stechly, Subbarao Kambhampati</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-05-19 19:57:15</h6>
+<p class='card-text'>Reinforcement learning-based post-training of large language models (LLMs)
+has recently gained attention, particularly following the release of DeepSeek
+R1, which applied GRPO for fine-tuning. Amid the growing hype around improved
+reasoning abilities attributed to RL post-training, we critically examine the
+formulation and assumptions underlying these methods. We start by highlighting
+the popular structural assumptions made in modeling LLM training as a Markov
+Decision Process (MDP), and show how they lead to a degenerate MDP that doesn't
+quite need the RL/GRPO apparatus. The two critical structural assumptions
+include (1) making the MDP states be just a concatenation of the actions-with
+states becoming the context window and the actions becoming the tokens in LLMs
+and (2) splitting the reward of a state-action trajectory uniformly across the
+trajectory. Through a comprehensive analysis, we demonstrate that these
+simplifying assumptions make the approach effectively equivalent to an
+outcome-driven supervised learning. Our experiments on benchmarks including
+GSM8K and Countdown using Qwen-2.5 base models show that iterative supervised
+fine-tuning, incorporating both positive and negative samples, achieves
+performance comparable to GRPO-based training. We will also argue that the
+structural assumptions indirectly incentivize the RL to generate longer
+sequences of intermediate tokens-which in turn feeds into the narrative of "RL
+generating longer thinking traces." While RL may well be a very useful
+technique for improving the reasoning abilities of LLMs, our analysis shows
+that the simplistic structural assumptions made in modeling the underlying MDP
+render the popular LLM RL frameworks and their interpretations questionable.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2505.13638v1' target='_blank'>4Hammer: a board-game reinforcement learning environment for the hour
+  long time frame</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Massimo Fioravanti, Giovanni Agosta</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-05-19 18:19:22</h6>
+<p class='card-text'>Large Language Models (LLMs) have demonstrated strong performance on tasks
+with short time frames, but struggle with tasks requiring longer durations.
+While datasets covering extended-duration tasks, such as software engineering
+tasks or video games, do exist, there are currently few implementations of
+complex board games specifically designed for reinforcement learning and LLM
+evaluation. To address this gap, we propose the 4Hammer reinforcement learning
+environment, a digital twin simulation of a subset of Warhammer 40,000-a
+complex, zero-sum board game. Warhammer 40,000 features intricate rules,
+requiring human players to thoroughly read and understand over 50 pages of
+detailed natural language rules, grasp the interactions between their game
+pieces and those of their opponents, and independently track and communicate
+the evolving game state.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2505.13445v1' target='_blank'>Trust, But Verify: A Self-Verification Approach to Reinforcement
+  Learning with Verifiable Rewards</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Xiaoyuan Liu, Tian Liang, Zhiwei He, Jiahao Xu, Wenxuan Wang, Pinjia He, Zhaopeng Tu, Haitao Mi, Dong Yu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-05-19 17:59:31</h6>
+<p class='card-text'>Large Language Models (LLMs) show great promise in complex reasoning, with
+Reinforcement Learning with Verifiable Rewards (RLVR) being a key enhancement
+strategy. However, a prevalent issue is ``superficial self-reflection'', where
+models fail to robustly verify their own outputs. We introduce RISE
+(Reinforcing Reasoning with Self-Verification), a novel online RL framework
+designed to tackle this. RISE explicitly and simultaneously trains an LLM to
+improve both its problem-solving and self-verification abilities within a
+single, integrated RL process. The core mechanism involves leveraging
+verifiable rewards from an outcome verifier to provide on-the-fly feedback for
+both solution generation and self-verification tasks. In each iteration, the
+model generates solutions, then critiques its own on-policy generated
+solutions, with both trajectories contributing to the policy update. Extensive
+experiments on diverse mathematical reasoning benchmarks show that RISE
+consistently improves model's problem-solving accuracy while concurrently
+fostering strong self-verification skills. Our analyses highlight the
+advantages of online verification and the benefits of increased verification
+compute. Additionally, RISE models exhibit more frequent and accurate
+self-verification behaviors during reasoning. These advantages reinforce RISE
+as a flexible and effective path towards developing more robust and self-aware
+reasoners.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2505.13438v1' target='_blank'>Optimizing Anytime Reasoning via Budget Relative Policy Optimization</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Penghui Qi, Zichen Liu, Tianyu Pang, Chao Du, Wee Sun Lee, Min Lin</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-05-19 17:58:44</h6>
+<p class='card-text'>Scaling test-time compute is crucial for enhancing the reasoning capabilities
+of large language models (LLMs). Existing approaches typically employ
+reinforcement learning (RL) to maximize a verifiable reward obtained at the end
+of reasoning traces. However, such methods optimize only the final performance
+under a large and fixed token budget, which hinders efficiency in both training
+and deployment. In this work, we present a novel framework, AnytimeReasoner, to
+optimize anytime reasoning performance, which aims to improve token efficiency
+and the flexibility of reasoning under varying token budget constraints. To
+achieve this, we truncate the complete thinking process to fit within sampled
+token budgets from a prior distribution, compelling the model to summarize the
+optimal answer for each truncated thinking for verification. This introduces
+verifiable dense rewards into the reasoning process, facilitating more
+effective credit assignment in RL optimization. We then optimize the thinking
+and summary policies in a decoupled manner to maximize the cumulative reward.
+Additionally, we introduce a novel variance reduction technique, Budget
+Relative Policy Optimization (BRPO), to enhance the robustness and efficiency
+of the learning process when reinforcing the thinking policy. Empirical results
+in mathematical reasoning tasks demonstrate that our method consistently
+outperforms GRPO across all thinking budgets under various prior distributions,
+enhancing both training and token efficiency.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2505.13379v1' target='_blank'>Thinkless: LLM Learns When to Think</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Gongfan Fang, Xinyin Ma, Xinchao Wang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-05-19 17:24:16</h6>
+<p class='card-text'>Reasoning Language Models, capable of extended chain-of-thought reasoning,
+have demonstrated remarkable performance on tasks requiring complex logical
+inference. However, applying elaborate reasoning for all queries often results
+in substantial computational inefficiencies, particularly when many problems
+admit straightforward solutions. This motivates an open question: Can LLMs
+learn when to think? To answer this, we propose Thinkless, a learnable
+framework that empowers an LLM to adaptively select between short-form and
+long-form reasoning, based on both task complexity and the model's ability.
+Thinkless is trained under a reinforcement learning paradigm and employs two
+control tokens, <short> for concise responses and <think> for detailed
+reasoning. At the core of our method is a Decoupled Group Relative Policy
+Optimization (DeGRPO) algorithm, which decomposes the learning objective of
+hybrid reasoning into two components: (1) a control token loss that governs the
+selection of the reasoning mode, and (2) a response loss that improves the
+accuracy of the generated answers. This decoupled formulation enables
+fine-grained control over the contributions of each objective, stabilizing
+training and effectively preventing collapse observed in vanilla GRPO.
+Empirically, on several benchmarks such as Minerva Algebra, MATH-500, and
+GSM8K, Thinkless is able to reduce the usage of long-chain thinking by 50% -
+90%, significantly improving the efficiency of Reasoning Language Models. The
+code is available at https://github.com/VainF/Thinkless</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2505.13346v2' target='_blank'>J4R: Learning to Judge with Equivalent Initial State Group Relative
+  Policy Optimization</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Austin Xu, Yilun Zhou, Xuan-Phi Nguyen, Caiming Xiong, Shafiq Joty</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-05-19 16:50:35</h6>
+<p class='card-text'>To keep pace with the increasing pace of large language models (LLM)
+development, model output evaluation has transitioned away from time-consuming
+human evaluation to automatic evaluation, where LLMs themselves are tasked with
+assessing and critiquing other model outputs. LLM-as-judge models are a class
+of generative evaluators that excel in evaluating relatively simple domains,
+like chat quality, but struggle in reasoning intensive domains where model
+responses contain more substantive and challenging content. To remedy existing
+judge shortcomings, we explore training judges with reinforcement learning
+(RL). We make three key contributions: (1) We propose the Equivalent Initial
+State Group Relative Policy Optimization (EIS-GRPO) algorithm, which allows us
+to train our judge to be robust to positional biases that arise in more complex
+evaluation settings. (2) We introduce ReasoningJudgeBench, a benchmark that
+evaluates judges in diverse reasoning settings not covered by prior work. (3)
+We train Judge for Reasoning (J4R), a 7B judge trained with EIS-GRPO that
+outperforms GPT-4o and the next best small judge by 6.7% and 9%, matching or
+exceeding the performance of larger GRPO-trained judges on both JudgeBench and
+ReasoningJudgeBench.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2505.13271v1' target='_blank'>CSC-SQL: Corrective Self-Consistency in Text-to-SQL via Reinforcement
+  Learning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Lei Sheng, Shuai-Shuai Xu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-05-19 15:52:19</h6>
+<p class='card-text'>Large language models (LLMs) have demonstrated strong capabilities in
+translating natural language questions about relational databases into SQL
+queries. In particular, test-time scaling techniques such as Self-Consistency
+and Self-Correction can enhance SQL generation accuracy by increasing
+computational effort during inference. However, these methods have notable
+limitations: Self-Consistency may select suboptimal outputs despite majority
+votes, while Self-Correction typically addresses only syntactic errors. To
+leverage the strengths of both approaches, we propose CSC-SQL, a novel method
+that integrates Self-Consistency and Self-Correction. CSC-SQL selects the two
+most frequently occurring outputs from parallel sampling and feeds them into a
+merge revision model for correction. Additionally, we employ the Group Relative
+Policy Optimization (GRPO) algorithm to fine-tune both the SQL generation and
+revision models via reinforcement learning, significantly enhancing output
+quality. Experimental results confirm the effectiveness and generalizability of
+CSC-SQL. On the BIRD development set, our 3B model achieves 65.28% execution
+accuracy, while the 7B model achieves 69.19%. The code will be open sourced at
+https://github.com/CycloneBoy/csc_sql.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2505.13258v1' target='_blank'>Effective and Transparent RAG: Adaptive-Reward Reinforcement Learning
+  for Decision Traceability</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Jingyi Ren, Yekun Xu, Xiaolong Wang, Weitao Li, Weizhi Ma, Yang Liu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-05-19 15:40:29</h6>
+<p class='card-text'>Retrieval-Augmented Generation (RAG) has significantly improved the
+performance of large language models (LLMs) on knowledge-intensive domains.
+However, although RAG achieved successes across distinct domains, there are
+still some unsolved challenges: 1) Effectiveness. Existing research mainly
+focuses on developing more powerful RAG retrievers, but how to enhance the
+generator's (LLM's) ability to utilize the retrieved information for reasoning
+and generation? 2) Transparency. Most RAG methods ignore which retrieved
+content actually contributes to the reasoning process, resulting in a lack of
+interpretability and visibility. To address this, we propose ARENA
+(Adaptive-Rewarded Evidence Navigation Agent), a transparent RAG generator
+framework trained via reinforcement learning (RL) with our proposed rewards.
+Based on the structured generation and adaptive reward calculation, our
+RL-based training enables the model to identify key evidence, perform
+structured reasoning, and generate answers with interpretable decision traces.
+Applied to Qwen2.5-7B-Instruct and Llama3.1-8B-Instruct, abundant experiments
+with various RAG baselines demonstrate that our model achieves 10-30%
+improvements on all multi-hop QA datasets, which is comparable with the SOTA
+Commercially-developed LLMs (e.g., OpenAI-o1, DeepSeek-R1). Further analyses
+show that ARENA has strong flexibility to be adopted on new datasets without
+extra training. Our models and codes are publicly released.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2505.13026v1' target='_blank'>Step-wise Adaptive Integration of Supervised Fine-tuning and
+  Reinforcement Learning for Task-Specific LLMs</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Jack Chen, Fazhong Liu, Naruto Liu, Yuhan Luo, Erqu Qin, Harry Zheng, Tian Dong, Haojin Zhu, Yan Meng, Xiao Wang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-05-19 12:10:17</h6>
+<p class='card-text'>Large language models (LLMs) excel at mathematical reasoning and logical
+problem-solving. The current popular training paradigms primarily use
+supervised fine-tuning (SFT) and reinforcement learning (RL) to enhance the
+models' reasoning abilities. However, when using SFT or RL alone, there are
+respective challenges: SFT may suffer from overfitting, while RL is prone to
+mode collapse. The state-of-the-art methods have proposed hybrid training
+schemes. However, static switching faces challenges such as poor generalization
+across different tasks and high dependence on data quality. In response to
+these challenges, inspired by the curriculum learning-quiz mechanism in human
+reasoning cultivation, We propose SASR, a step-wise adaptive hybrid training
+framework that theoretically unifies SFT and RL and dynamically balances the
+two throughout optimization. SASR uses SFT for initial warm-up to establish
+basic reasoning skills, and then uses an adaptive dynamic adjustment algorithm
+based on gradient norm and divergence relative to the original distribution to
+seamlessly integrate SFT with the online RL method GRPO. By monitoring the
+training status of LLMs and adjusting the training process in sequence, SASR
+ensures a smooth transition between training schemes, maintaining core
+reasoning abilities while exploring different paths. Experimental results
+demonstrate that SASR outperforms SFT, RL, and static hybrid training methods.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js'></script>
+</body>
+</html>
