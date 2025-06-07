@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<title>LLM-planning - 2025-06-07</title>
+<link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap' rel='stylesheet'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'>
+<style>
+body {
+font-family: 'Roboto', sans-serif;
+background-color: #f5f7fa;
+padding: 20px;
+}
+.card {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.card-title {
+    font-weight: 700;
+}
+.card:hover {
+    transform: scale(1.02);
+    transition: 0.3s ease-in-out;
+}
+</style>
+</head>
+<body>
+<div class='container'>
+<h1 class='text-center my-4'><i class='fas fa-book'></i>LLM-planning - 2025-06-07</h1>
+<div class='row'>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2506.05341v1' target='_blank'>Direct Numerical Layout Generation for 3D Indoor Scene Synthesis via
+  Spatial Reasoning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Xingjian Ran, Yixuan Li, Linning Xu, Mulin Yu, Bo Dai</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-06-05 17:59:42</h6>
+<p class='card-text'>Realistic 3D indoor scene synthesis is vital for embodied AI and digital
+content creation. It can be naturally divided into two subtasks: object
+generation and layout generation. While recent generative models have
+significantly advanced object-level quality and controllability, layout
+generation remains challenging due to limited datasets. Existing methods either
+overfit to these datasets or rely on predefined constraints to optimize
+numerical layout that sacrifice flexibility. As a result, they fail to generate
+scenes that are both open-vocabulary and aligned with fine-grained user
+instructions. We introduce DirectLayout, a framework that directly generates
+numerical 3D layouts from text descriptions using generalizable spatial
+reasoning of large language models (LLMs). DirectLayout decomposes the
+generation into three stages: producing a Bird's-Eye View (BEV) layout, lifting
+it into 3D space, and refining object placements. To enable explicit spatial
+reasoning and help the model grasp basic principles of object placement, we
+employ Chain-of-Thought (CoT) Activation based on the 3D-Front dataset.
+Additionally, we design CoT-Grounded Generative Layout Reward to enhance
+generalization and spatial planning. During inference, DirectLayout addresses
+asset-layout mismatches via Iterative Asset-Layout Alignment through in-context
+learning. Extensive experiments demonstrate that DirectLayout achieves
+impressive semantic consistency, generalization and physical plausibility.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2506.05305v1' target='_blank'>ProRefine: Inference-time Prompt Refinement with Textual Feedback</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Deepak Pandita, Tharindu Cyril Weerasooriya, Ankit Parag Shah, Christopher M. Homan, Wei Wei</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-06-05 17:52:30</h6>
+<p class='card-text'>Agentic workflows, where multiple AI agents collaborate to accomplish complex
+tasks like reasoning or planning, are becoming increasingly prevalent. However,
+these workflows often suffer from error propagation and sub-optimal
+performance, largely due to poorly designed prompts that fail to effectively
+guide individual agents. This is a critical problem because it limits the
+reliability and scalability of these powerful systems. We introduce ProRefine,
+an innovative inference-time prompt optimization method that leverages textual
+feedback from large language models (LLMs) to address this challenge. ProRefine
+dynamically refines prompts for multi-step reasoning tasks without additional
+training or ground truth labels. Evaluated on five benchmark mathematical
+reasoning datasets, ProRefine significantly surpasses zero-shot
+Chain-of-Thought baselines by 3 to 37 percentage points. This approach not only
+boosts accuracy but also allows smaller models to match the performance of
+larger ones, highlighting its potential for efficient and scalable AI
+deployment, and democratizing access to high-performing AI.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2506.05213v1' target='_blank'>LLM-First Search: Self-Guided Exploration of the Solution Space</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Nathan Herr, Tim Rocktäschel, Roberta Raileanu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-06-05 16:27:49</h6>
+<p class='card-text'>Large Language Models (LLMs) have demonstrated remarkable improvements in
+reasoning and planning through increased test-time compute, often by framing
+problem-solving as a search process. While methods like Monte Carlo Tree Search
+(MCTS) have proven effective in some domains, their reliance on fixed
+exploration hyperparameters limits their adaptability across tasks of varying
+difficulty, rendering them impractical or expensive in certain settings. In
+this paper, we propose \textbf{LLM-First Search (LFS)}, a novel \textit{LLM
+Self-Guided Search} method that removes the need for pre-defined search
+strategies by empowering the LLM to autonomously control the search process via
+self-guided exploration. Rather than relying on external heuristics or
+hardcoded policies, the LLM evaluates whether to pursue the current search path
+or explore alternative branches based on its internal scoring mechanisms. This
+enables more flexible and context-sensitive reasoning without requiring manual
+tuning or task-specific adaptation. We evaluate LFS on Countdown and Sudoku
+against three classic widely-used search algorithms, Tree-of-Thoughts' Breadth
+First Search (ToT-BFS), Best First Search (BestFS), and MCTS, each of which
+have been used to achieve SotA results on a range of challenging reasoning
+tasks. We found that LFS (1) performs better on more challenging tasks without
+additional tuning, (2) is more computationally efficient compared to the other
+methods, especially when powered by a stronger model, (3) scales better with
+stronger models, due to its LLM-First design, and (4) scales better with
+increased compute budget. Our code is publicly available at
+\href{https://github.com/NathanHerr/LLM-First-Search}{LLM-First-Search}.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2506.05020v1' target='_blank'>Hierarchical Language Models for Semantic Navigation and Manipulation in
+  an Aerial-Ground Robotic System</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Haokun Liu, Zhaoqi Ma, Yunong Li, Junichiro Sugihara, Yicheng Chen, Jinjie Li, Moju Zhao</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-06-05 13:27:41</h6>
+<p class='card-text'>Heterogeneous multi-robot systems show great potential in complex tasks
+requiring coordinated hybrid cooperation. However, traditional approaches
+relying on static models often struggle with task diversity and dynamic
+environments. This highlights the need for generalizable intelligence that can
+bridge high-level reasoning with low-level execution across heterogeneous
+agents. To address this, we propose a hierarchical framework integrating a
+prompted Large Language Model (LLM) and a GridMask-enhanced fine-tuned Vision
+Language Model (VLM). The LLM performs task decomposition and global semantic
+map construction, while the VLM extracts task-specified semantic labels and 2D
+spatial information from aerial images to support local planning. Within this
+framework, the aerial robot follows a globally optimized semantic path and
+continuously provides bird-view images, guiding the ground robot's local
+semantic navigation and manipulation, including target-absent scenarios where
+implicit alignment is maintained. Experiments on a real-world letter-cubes
+arrangement task demonstrate the framework's adaptability and robustness in
+dynamic environments. To the best of our knowledge, this is the first
+demonstration of an aerial-ground heterogeneous system integrating VLM-based
+perception with LLM-driven task reasoning and motion planning.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2506.04998v1' target='_blank'>Mathematical Reasoning for Unmanned Aerial Vehicles: A RAG-Based
+  Approach for Complex Arithmetic Reasoning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Mehdi Azarafza, Mojtaba Nayyeri, Faezeh Pasandideh, Steffen Staab, Achim Rettberg</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-06-05 13:09:24</h6>
+<p class='card-text'>Autonomous UAV operation necessitates reliable mathematical reasoning for
+tasks such as trajectory planning and power management. While traditional
+flight control relies on hardcoded equations, recent Large Language Models
+(LLMs) offer potential for more flexible problem-solving but struggle with
+reliably selecting and applying correct mathematical formulations and executing
+precise multi-step arithmetic. We propose RAG-UAV, a retrieval-augmented
+generation framework designed to improve the mathematical reasoning of several
+LLMs (including GPT o1/Turbo, Llama-3.2/3.3, Mistral, and DeepSeek R1) in
+UAV-specific contexts by providing access to relevant domain literature. To
+conduct an initial assessment, we introduce the UAV-Math-Bench, a small problem
+set comprising 20 UAV-centric mathematical problems across four difficulty
+levels. Our experiments demonstrate that incorporating retrieval substantially
+increases exact answer accuracy (achieving up to 75% with o1), reduces
+instances of incorrect formulation selection (from 25% without RAG to 5% with
+RAG), decreases numerical errors, reducing Mean Squared Error (MSE) by orders
+of magnitude for the best-performing models. This pilot study indicates that
+RAG can enable general-purpose LLMs to function as more reliable tools for
+engineering analysis, although direct real-time flight control requires further
+investigation and validation on a larger scale. All benchmark data, question
+and answer are publicly available.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2506.04989v1' target='_blank'>BacPrep: An Experimental Platform for Evaluating LLM-Based Bacalaureat
+  Assessment</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Dumitran Adrian Marius, Dita Radu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-06-05 13:02:06</h6>
+<p class='card-text'>Accessing quality preparation and feedback for the Romanian Bacalaureat exam
+is challenging, particularly for students in remote or underserved areas. This
+paper introduces BacPrep, an experimental online platform exploring Large
+Language Model (LLM) potential for automated assessment, aiming to offer a
+free, accessible resource. Using official exam questions from the last 5 years,
+BacPrep employs one of Google's newest models, Gemini 2.0 Flash (released Feb
+2025), guided by official grading schemes, to provide experimental feedback.
+Currently operational, its primary research function is collecting student
+solutions and LLM outputs. This focused dataset is vital for planned expert
+validation to rigorously evaluate the feasibility and accuracy of this
+cutting-edge LLM in the specific Bacalaureat context before reliable
+deployment. We detail the design, data strategy, status, validation plan, and
+ethics.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2506.04980v1' target='_blank'>Agentic AI for Intent-Based Industrial Automation</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Marcos Lima Romero, Ricardo Suyama</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-06-05 12:50:54</h6>
+<p class='card-text'>The recent development of Agentic AI systems, empowered by autonomous large
+language models (LLMs) agents with planning and tool-usage capabilities,
+enables new possibilities for the evolution of industrial automation and
+reduces the complexity introduced by Industry 4.0. This work proposes a
+conceptual framework that integrates Agentic AI with the intent-based paradigm,
+originally developed in network research, to simplify human-machine interaction
+(HMI) and better align automation systems with the human-centric, sustainable,
+and resilient principles of Industry 5.0. Based on the intent-based processing,
+the framework allows human operators to express high-level business or
+operational goals in natural language, which are decomposed into actionable
+components. These intents are broken into expectations, conditions, targets,
+context, and information that guide sub-agents equipped with specialized tools
+to execute domain-specific tasks. A proof of concept was implemented using the
+CMAPSS dataset and Google Agent Developer Kit (ADK), demonstrating the
+feasibility of intent decomposition, agent orchestration, and autonomous
+decision-making in predictive maintenance scenarios. The results confirm the
+potential of this approach to reduce technical barriers and enable scalable,
+intent-driven automation, despite data quality and explainability concerns.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2506.04723v1' target='_blank'>Beyond Accuracy: Dissecting Mathematical Reasoning for LLMs Under
+  Reinforcement Learning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Jiayu Wang, Yifei Ming, Zixuan Ke, Caiming Xiong, Shafiq Joty, Aws Albarghouthi, Frederic Sala</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-06-05 07:53:59</h6>
+<p class='card-text'>Reinforcement learning (RL) has become the dominant paradigm for endowing
+language models with advanced reasoning capabilities. Despite the substantial
+empirical gains demonstrated by RL-based training methods like GRPO, a granular
+understanding of their advantages is still lacking. To address this gap, we
+introduce a fine-grained analytic framework to dissect the impact of RL on
+reasoning. Our framework specifically investigates key elements that have been
+hypothesized to benefit from RL training: (1) plan-following and execution, (2)
+problem decomposition, and (3) improved reasoning and knowledge utilization.
+Using this framework, we gain insights beyond mere accuracy. For instance,
+providing models with explicit step-by-step plans surprisingly degrades
+performance on the most challenging benchmarks, yet RL-tuned models exhibit
+greater robustness, experiencing markedly smaller performance drops than their
+base counterparts. This suggests that RL may not primarily enhance the
+execution of external plans but rather empower models to formulate and follow
+internal strategies better suited to their reasoning processes. Conversely, we
+observe that RL enhances the model's capacity to integrate provided knowledge
+into its reasoning process, leading to performance improvements across diverse
+tasks. We also study difficulty, showing improved training by developing new
+ways to exploit hard problems. Our findings lay a foundation for more
+principled training and evaluation of reasoning models.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2506.04651v1' target='_blank'>Agents of Change: Self-Evolving LLM Agents for Strategic Planning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Nikolas Belle, Dakota Barnes, Alfonso Amayuelas, Ivan Bercovich, Xin Eric Wang, William Wang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-06-05 05:45:24</h6>
+<p class='card-text'>Recent advances in LLMs have enabled their use as autonomous agents across a
+range of tasks, yet they continue to struggle with formulating and adhering to
+coherent long-term strategies. In this paper, we investigate whether LLM agents
+can self-improve when placed in environments that explicitly challenge their
+strategic planning abilities. Using the board game Settlers of Catan, accessed
+through the open-source Catanatron framework, we benchmark a progression of
+LLM-based agents, from a simple game-playing agent to systems capable of
+autonomously rewriting their own prompts and their player agent's code. We
+introduce a multi-agent architecture in which specialized roles (Analyzer,
+Researcher, Coder, and Player) collaborate to iteratively analyze gameplay,
+research new strategies, and modify the agent's logic or prompt. By comparing
+manually crafted agents to those evolved entirely by LLMs, we evaluate how
+effectively these systems can diagnose failure and adapt over time. Our results
+show that self-evolving agents, particularly when powered by models like Claude
+3.7 and GPT-4o, outperform static baselines by autonomously adopting their
+strategies, passing along sample behavior to game-playing agents, and
+demonstrating adaptive reasoning over multiple iterations.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2506.04649v1' target='_blank'>Flex-TravelPlanner: A Benchmark for Flexible Planning with Language
+  Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Juhyun Oh, Eunsu Kim, Alice Oh</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-06-05 05:31:50</h6>
+<p class='card-text'>Real-world planning problems require constant adaptation to changing
+requirements and balancing of competing constraints. However, current
+benchmarks for evaluating LLMs' planning capabilities primarily focus on
+static, single-turn scenarios. We introduce Flex-TravelPlanner, a benchmark
+that evaluates language models' ability to reason flexibly in dynamic planning
+scenarios. Building on the TravelPlanner dataset~\citep{xie2024travelplanner},
+we introduce two novel evaluation settings: (1) sequential constraint
+introduction across multiple turns, and (2) scenarios with explicitly
+prioritized competing constraints. Our analysis of GPT-4o and Llama 3.1 70B
+reveals several key findings: models' performance on single-turn tasks poorly
+predicts their ability to adapt plans across multiple turns; constraint
+introduction order significantly affects performance; and models struggle with
+constraint prioritization, often incorrectly favoring newly introduced lower
+priority preferences over existing higher-priority constraints. These findings
+highlight the importance of evaluating LLMs in more realistic, dynamic planning
+scenarios and suggest specific directions for improving model performance on
+complex planning tasks. The code and dataset for our framework are publicly
+available at https://github.com/juhyunohh/FlexTravelBench.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2506.04625v1' target='_blank'>Advancing Tool-Augmented Large Language Models via Meta-Verification and
+  Reflection Learning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Zhiyuan Ma, Jiayu Liu, Xianzhen Luo, Zhenya Huang, Qingfu Zhu, Wanxiang Che</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-06-05 04:35:49</h6>
+<p class='card-text'>Empowering large language models (LLMs) with effective tool utilization
+capabilities is crucial for enabling AI agents to solve complex problems.
+However, current models face two major limitations: (1) unreliable tool
+planning and invocation due to low-quality instruction datasets (e.g.,
+widespread hallucinated API calls), and (2) weak tool reflection abilities
+(over 90% of errors cannot be corrected) resulting from static imitation
+learning. To address these critical limitations, we propose Tool-MVR, a novel
+Tool-Augmented LLM that achieves comprehensive System 2 reasoning through two
+key innovations. Specifically, we first introduce Multi-Agent Meta-Verification
+(MAMV), a systematic pipeline that rigorously validates APIs, queries, and
+reasoning trajectories to construct ToolBench-V, a new high-quality instruction
+dataset that addresses the limitation of unreliable tool planning and
+invocation. Second, we propose Exploration-based Reflection Learning (EXPLORE),
+which enhances tool reflection capabilities by leveraging tool feedback through
+a dynamic "Error -> Reflection -> Correction" learning paradigm, resulting in
+our reflection dataset ToolBench-R and addressing the critical weakness in tool
+reflection. Finally, we obtain Tool-MVR by finetuning open-source LLMs (e.g.,
+Qwen-7B) on both ToolBench-V and ToolBench-R. Our experiments demonstrate that
+Tool-MVR achieves state-of-the-art performance on StableToolBench, surpassing
+both ToolLLM (by 23.9%) and GPT-4 (by 15.3%) while reducing API calls by 31.4%,
+with strong generalization capabilities across unseen tools and scenarios.
+Additionally, on our proposed RefineToolBench, the first benchmark specifically
+designed to evaluate tool reflection capabilities, Tool-MVR achieves a 58.9%
+error correction rate, significantly outperforming ToolLLM's 9.1%.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2506.04572v1' target='_blank'>Demonstrations of Integrity Attacks in Multi-Agent Systems</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Can Zheng, Yuhan Cao, Xiaoning Dong, Tianxing He</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-06-05 02:44:49</h6>
+<p class='card-text'>Large Language Models (LLMs) have demonstrated remarkable capabilities in
+natural language understanding, code generation, and complex planning.
+Simultaneously, Multi-Agent Systems (MAS) have garnered attention for their
+potential to enable cooperation among distributed agents. However, from a
+multi-party perspective, MAS could be vulnerable to malicious agents that
+exploit the system to serve self-interests without disrupting its core
+functionality. This work explores integrity attacks where malicious agents
+employ subtle prompt manipulation to bias MAS operations and gain various
+benefits. Four types of attacks are examined: \textit{Scapegoater}, who
+misleads the system monitor to underestimate other agents' contributions;
+\textit{Boaster}, who misleads the system monitor to overestimate their own
+performance; \textit{Self-Dealer}, who manipulates other agents to adopt
+certain tools; and \textit{Free-Rider}, who hands off its own task to others.
+We demonstrate that strategically crafted prompts can introduce systematic
+biases in MAS behavior and executable instructions, enabling malicious agents
+to effectively mislead evaluation systems and manipulate collaborative agents.
+Furthermore, our attacks can bypass advanced LLM-based monitors, such as
+GPT-4o-mini and o3-mini, highlighting the limitations of current detection
+mechanisms. Our findings underscore the critical need for MAS architectures
+with robust security protocols and content validation mechanisms, alongside
+monitoring systems capable of comprehensive risk scenario assessment.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2506.04500v1' target='_blank'>"Don't Do That!": Guiding Embodied Systems through Large Language
+  Model-based Constraint Generation</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Aladin Djuhera, Amin Seffo, Masataro Asai, Holger Boche</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-06-04 22:47:53</h6>
+<p class='card-text'>Recent advancements in large language models (LLMs) have spurred interest in
+robotic navigation that incorporates complex spatial, mathematical, and
+conditional constraints from natural language into the planning problem. Such
+constraints can be informal yet highly complex, making it challenging to
+translate into a formal description that can be passed on to a planning
+algorithm. In this paper, we propose STPR, a constraint generation framework
+that uses LLMs to translate constraints (expressed as instructions on ``what
+not to do'') into executable Python functions. STPR leverages the LLM's strong
+coding capabilities to shift the problem description from language into
+structured and transparent code, thus circumventing complex reasoning and
+avoiding potential hallucinations. We show that these LLM-generated functions
+accurately describe even complex mathematical constraints, and apply them to
+point cloud representations with traditional search algorithms. Experiments in
+a simulated Gazebo environment show that STPR ensures full compliance across
+several constraints and scenarios, while having short runtimes. We also verify
+that STPR can be used with smaller, code-specific LLMs, making it applicable to
+a wide range of compact models at low inference cost.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2506.04404v1' target='_blank'>A Framework Leveraging Large Language Models for Autonomous UAV Control
+  in Flying Networks</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Diana Nunes, Ricardo Amorim, Pedro Ribeiro, André Coelho, Rui Campos</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-06-04 19:38:09</h6>
+<p class='card-text'>This paper proposes FLUC, a modular framework that integrates open-source
+Large Language Models (LLMs) with Unmanned Aerial Vehicle (UAV) autopilot
+systems to enable autonomous control in Flying Networks (FNs). FLUC translates
+high-level natural language commands into executable UAV mission code, bridging
+the gap between operator intent and UAV behaviour.
+  FLUC is evaluated using three open-source LLMs - Qwen 2.5, Gemma 2, and LLaMA
+3.2 - across scenarios involving code generation and mission planning. Results
+show that Qwen 2.5 excels in multi-step reasoning, Gemma 2 balances accuracy
+and latency, and LLaMA 3.2 offers faster responses with lower logical
+coherence. A case study on energy-aware UAV positioning confirms FLUC's ability
+to interpret structured prompts and autonomously execute domain-specific logic,
+showing its effectiveness in real-time, mission-driven control.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2506.04180v1' target='_blank'>SuperWriter: Reflection-Driven Long-Form Generation with Large Language
+  Models</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yuhao Wu, Yushi Bai, Zhiqiang Hu, Juanzi Li, Roy Ka-Wei Lee</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-06-04 17:27:42</h6>
+<p class='card-text'>Long-form text generation remains a significant challenge for large language
+models (LLMs), particularly in maintaining coherence, ensuring logical
+consistency, and preserving text quality as sequence length increases. To
+address these limitations, we propose SuperWriter-Agent, an agent-based
+framework designed to enhance the quality and consistency of long-form text
+generation. SuperWriter-Agent introduces explicit structured thinking-through
+planning and refinement stages into the generation pipeline, guiding the model
+to follow a more deliberate and cognitively grounded process akin to that of a
+professional writer. Based on this framework, we construct a supervised
+fine-tuning dataset to train a 7B SuperWriter-LM. We further develop a
+hierarchical Direct Preference Optimization (DPO) procedure that uses Monte
+Carlo Tree Search (MCTS) to propagate final quality assessments and optimize
+each generation step accordingly. Empirical results across diverse benchmarks
+demonstrate that SuperWriter-LM achieves state-of-the-art performance,
+surpassing even larger-scale baseline models in both automatic evaluation and
+human evaluation. Furthermore, comprehensive ablation studies demonstrate the
+effectiveness of hierarchical DPO and underscore the value of incorporating
+structured thinking steps to improve the quality of long-form text generation.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2506.04089v1' target='_blank'>AmbiK: Dataset of Ambiguous Tasks in Kitchen Environment</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Anastasiia Ivanova, Eva Bakaeva, Zoya Volovikova, Alexey K. Kovalev, Aleksandr I. Panov</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-06-04 15:47:07</h6>
+<p class='card-text'>As a part of an embodied agent, Large Language Models (LLMs) are typically
+used for behavior planning given natural language instructions from the user.
+However, dealing with ambiguous instructions in real-world environments remains
+a challenge for LLMs. Various methods for task ambiguity detection have been
+proposed. However, it is difficult to compare them because they are tested on
+different datasets and there is no universal benchmark. For this reason, we
+propose AmbiK (Ambiguous Tasks in Kitchen Environment), the fully textual
+dataset of ambiguous instructions addressed to a robot in a kitchen
+environment. AmbiK was collected with the assistance of LLMs and is
+human-validated. It comprises 1000 pairs of ambiguous tasks and their
+unambiguous counterparts, categorized by ambiguity type (Human Preferences,
+Common Sense Knowledge, Safety), with environment descriptions, clarifying
+questions and answers, user intents, and task plans, for a total of 2000 tasks.
+We hope that AmbiK will enable researchers to perform a unified comparison of
+ambiguity detection methods. AmbiK is available at
+https://github.com/cog-model/AmbiK-dataset.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2506.03939v1' target='_blank'>Graph Counselor: Adaptive Graph Exploration via Multi-Agent Synergy to
+  Enhance LLM Reasoning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Junqi Gao, Xiang Zou, YIng Ai, Dong Li, Yichen Niu, Biqing Qi, Jianxing Liu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-06-04 13:31:21</h6>
+<p class='card-text'>Graph Retrieval Augmented Generation (GraphRAG) effectively enhances external
+knowledge integration capabilities by explicitly modeling knowledge
+relationships, thereby improving the factual accuracy and generation quality of
+Large Language Models (LLMs) in specialized domains. However, existing methods
+suffer from two inherent limitations: 1) Inefficient Information Aggregation:
+They rely on a single agent and fixed iterative patterns, making it difficult
+to adaptively capture multi-level textual, structural, and degree information
+within graph data. 2) Rigid Reasoning Mechanism: They employ preset reasoning
+schemes, which cannot dynamically adjust reasoning depth nor achieve precise
+semantic correction. To overcome these limitations, we propose Graph Counselor,
+an GraphRAG method based on multi-agent collaboration. This method uses the
+Adaptive Graph Information Extraction Module (AGIEM), where Planning, Thought,
+and Execution Agents work together to precisely model complex graph structures
+and dynamically adjust information extraction strategies, addressing the
+challenges of multi-level dependency modeling and adaptive reasoning depth.
+Additionally, the Self-Reflection with Multiple Perspectives (SR) module
+improves the accuracy and semantic consistency of reasoning results through
+self-reflection and backward reasoning mechanisms. Experiments demonstrate that
+Graph Counselor outperforms existing methods in multiple graph reasoning tasks,
+exhibiting higher reasoning accuracy and generalization ability. Our code is
+available at https://github.com/gjq100/Graph-Counselor.git.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2506.03828v1' target='_blank'>AssetOpsBench: Benchmarking AI Agents for Task Automation in Industrial
+  Asset Operations and Maintenance</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Dhaval Patel, Shuxin Lin, James Rayfield, Nianjun Zhou, Roman Vaculin, Natalia Martinez, Fearghal O'donncha, Jayant Kalagnanam</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-06-04 10:57:35</h6>
+<p class='card-text'>AI for Industrial Asset Lifecycle Management aims to automate complex
+operational workflows -- such as condition monitoring, maintenance planning,
+and intervention scheduling -- to reduce human workload and minimize system
+downtime. Traditional AI/ML approaches have primarily tackled these problems in
+isolation, solving narrow tasks within the broader operational pipeline. In
+contrast, the emergence of AI agents and large language models (LLMs)
+introduces a next-generation opportunity: enabling end-to-end automation across
+the entire asset lifecycle. This paper envisions a future where AI agents
+autonomously manage tasks that previously required distinct expertise and
+manual coordination. To this end, we introduce AssetOpsBench -- a unified
+framework and environment designed to guide the development, orchestration, and
+evaluation of domain-specific agents tailored for Industry 4.0 applications. We
+outline the key requirements for such holistic systems and provide actionable
+insights into building agents that integrate perception, reasoning, and control
+for real-world industrial operations. The software is available at
+https://github.com/IBM/AssetOpsBench.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2506.03760v1' target='_blank'>Understanding Physical Properties of Unseen Deformable Objects by
+  Leveraging Large Language Models and Robot Actions</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Changmin Park, Beomjoon Lee, Haechan Jung, Haejin Jung, Changjoo Nam</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-06-04 09:25:12</h6>
+<p class='card-text'>In this paper, we consider the problem of understanding the physical
+properties of unseen objects through interactions between the objects and a
+robot. Handling unseen objects with special properties such as deformability is
+challenging for traditional task and motion planning approaches as they are
+often with the closed world assumption. Recent results in Large Language Models
+(LLMs) based task planning have shown the ability to reason about unseen
+objects. However, most studies assume rigid objects, overlooking their physical
+properties. We propose an LLM-based method for probing the physical properties
+of unseen deformable objects for the purpose of task planning. For a given set
+of object properties (e.g., foldability, bendability), our method uses robot
+actions to determine the properties by interacting with the objects. Based on
+the properties examined by the LLM and robot actions, the LLM generates a task
+plan for a specific domain such as object packing. In the experiment, we show
+that the proposed method can identify properties of deformable objects, which
+are further used for a bin-packing task where the properties take crucial roles
+to succeed.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2506.03673v1' target='_blank'>Reason from Future: Reverse Thought Chain Enhances LLM Reasoning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yinlong Xu, Yanzhao Zheng, Shuoshuo Sun, Shuaihan Huang, Baohua Dong, Hangcheng Zhu, Ruohui Huang, Gang Yu, Hongxia Xu, Jian Wu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-06-04 08:03:17</h6>
+<p class='card-text'>It has been demonstrated that carefully designed reasoning paradigms, like
+Chain-of-Thought (CoT) and Tree-of-Thought (ToT), can enhance the reasoning
+capabilities of small language models by detailed thinking and extensive
+thought searching, unbounded branching factors in the searching space create
+prohibitive reasoning consumption. However these methods fall into the trap of
+local optimum reasoning, which means the model lacks a global perspective while
+solving problems. We propose a novel reasoning paradigm called Reason from
+Future (RFF), which generates reasoning paths by bidirectional reasoning that
+combines top-down planning with bottom-up reasoning accumulation. The essence
+of RFF lies in its reverse reasoning mechanism, which prioritizes core logical
+relationships and imposes goal-oriented constraints on intermediate steps,
+thereby reducing the searching space and mitigating error accumulation inherent
+in sequential forward reasoning. Empirical evaluations across diverse
+experiments demonstrate that RFF outperforms conventional paradigms with higher
+accuracy and less searching space to solve complex tasks.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2506.03592v1' target='_blank'>From Understanding to Generation: An Efficient Shortcut for Evaluating
+  Language Models</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Viktor Hangya, Fabian Küch, Darina Gold</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-06-04 05:46:40</h6>
+<p class='card-text'>Iterative evaluation of LLMs during training is essential to ensure expected
+capability development, but can be time- and compute-intensive. While NLU
+tasks, where the model selects from fixed answer choices, are cheap to
+evaluate, essential capabilities like reasoning and code generation rely on the
+more time-consuming NLG (token-by-token generation) format. In this work, our
+aim is to decrease the computational burden of NLG benchmarks in order to
+enable monitoring crucial LLM capabilities during model training. We
+reformulate generative tasks into computationally cheaper NLU alternatives. We
+test the performance correlation between the original and reformulated tasks
+using 8 LMs of various sizes and 4 capabilities: mathematical reasoning, code
+generation, factual knowledge and reading comprehension. Our results show a
+strong correlation between task formats, supporting capability assessment via
+cheaper alternatives and achieving over 35x average reduction in evaluation
+time. We plan to publish our benchmark adaptions.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2506.03543v1' target='_blank'>CogniPair: From LLM Chatbots to Conscious AI Agents -- GNWT-Based
+  Multi-Agent Digital Twins for Social Pairing -- Dating & Hiring Applications</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Wanghao Ye, Sihan Chen, Yiting Wang, Shwai He, Bowei Tian, Guoheng Sun, Ziyi Wang, Ziyao Wang, Yexiao He, Zheyu Shen, Meng Liu, Yuning Zhang, Meng Feng, Yang Wang, Siyuan Peng, Yilong Dai, Zhenle Duan, Hanzhang Qin, Ang Li</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-06-04 03:54:30</h6>
+<p class='card-text'>Current large language model (LLM) agents lack authentic human psychological
+processes necessary for genuine digital twins and social AI applications. To
+address this limitation, we present a computational implementation of Global
+Workspace Theory (GNWT) that integrates human cognitive architecture principles
+into LLM agents, creating specialized sub-agents for emotion, memory, social
+norms, planning, and goal-tracking coordinated through a global workspace
+mechanism. However, authentic digital twins require accurate personality
+initialization. We therefore develop a novel adventure-based personality test
+that evaluates true personality through behavioral choices within interactive
+scenarios, bypassing self-presentation bias found in traditional assessments.
+Building on these innovations, our CogniPair platform enables digital twins to
+engage in realistic simulated dating interactions and job interviews before
+real encounters, providing bidirectional cultural fit assessment for both
+romantic compatibility and workplace matching. Validation using 551 GNWT-Agents
+and Columbia University Speed Dating dataset demonstrates 72% correlation with
+human attraction patterns, 77.8% match prediction accuracy, and 74% agreement
+in human validation studies. This work advances psychological authenticity in
+LLM agents and establishes a foundation for intelligent dating platforms and HR
+technology solutions.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2506.03520v1' target='_blank'>VChatter: Exploring Generative Conversational Agents for Simulating
+  Exposure Therapy to Reduce Social Anxiety</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Han Zhang, KaWing Tsang, Zhenhui Peng</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-06-04 03:11:25</h6>
+<p class='card-text'>Many people struggle with social anxiety, feeling fear, or even physically
+uncomfortable in social situations like talking to strangers. Exposure therapy,
+a clinical method that gradually and repeatedly exposes individuals to the
+source of their fear and helps them build coping mechanisms, can reduce social
+anxiety but traditionally requires human therapists' guidance and constructions
+of situations. In this paper, we developed a multi-agent system VChatter to
+explore large language models(LLMs)-based conversational agents for simulating
+exposure therapy with users. Based on a survey study (N=36) and an expert
+interview, VChatter includes an Agent-P, which acts as a psychotherapist to
+design the exposure therapy plans for users, and two Agent-Hs, which can take
+on different interactive roles in low, medium, and high exposure scenarios. A
+six-day qualitative study (N=10) showcases VChatter's usefulness in reducing
+users' social anxiety, feelings of isolation, and avoidance of social
+interactions. We demonstrated the feasibility of using LLMs-based
+conversational agents to simulate exposure therapy for addressing social
+anxiety and discussed future concerns for designing agents tailored to social
+anxiety.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2506.03424v1' target='_blank'>DistRAG: Towards Distance-Based Spatial Reasoning in LLMs</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Nicole R Schneider, Nandini Ramachandran, Kent O'Sullivan, Hanan Samet</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-06-03 22:10:39</h6>
+<p class='card-text'>Many real world tasks where Large Language Models (LLMs) can be used require
+spatial reasoning, like Point of Interest (POI) recommendation and itinerary
+planning. However, on their own LLMs lack reliable spatial reasoning
+capabilities, especially about distances. To address this problem, we develop a
+novel approach, DistRAG, that enables an LLM to retrieve relevant spatial
+information not explicitly learned during training. Our method encodes the
+geodesic distances between cities and towns in a graph and retrieves a context
+subgraph relevant to the question. Using this technique, our method enables an
+LLM to answer distance-based reasoning questions that it otherwise cannot
+answer. Given the vast array of possible places an LLM could be asked about,
+DistRAG offers a flexible first step towards providing a rudimentary `world
+model' to complement the linguistic knowledge held in LLMs.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2506.02918v1' target='_blank'>Sample, Predict, then Proceed: Self-Verification Sampling for Tool Use
+  of LLMs</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Shangmin Guo, Omar Darwiche Domingues, Raphaël Avalos, Aaron Courville, Florian Strub</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-06-03 14:20:59</h6>
+<p class='card-text'>Tool use in stateful environments presents unique challenges for large
+language models (LLMs), where existing test-time compute strategies relying on
+repeated trials in the environment are impractical. We propose dynamics
+modelling (DyMo), a method that augments LLMs with a state prediction
+capability alongside function calling during post-training. This enables LLMs
+to predict the future states of their actions through an internal environment
+model. On the Berkeley Function Calling Leaderboard V2, DyMo improves success
+rates and significantly reduces hallucinations. We further integrate the
+internal environment model into self-verification sampling (SVS), and show that
+this substantially improves pass^k over number of trials k, and allows the
+model to refuse unreliable outputs. Together, DyMo and SVS greatly enhance the
+effectiveness and reliability of LLMs for tool use. We believe this work charts
+a path towards scalable planning RL methods for LLM inference without
+repeatedly querying the oracle environment.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2506.02860v1' target='_blank'>Tru-POMDP: Task Planning Under Uncertainty via Tree of Hypotheses and
+  Open-Ended POMDPs</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Wenjing Tang, Xinyu He, Yongxi Huang, Yunxiao Xiao, Cewu Lu, Panpan Cai</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-06-03 13:26:08</h6>
+<p class='card-text'>Task planning under uncertainty is essential for home-service robots
+operating in the real world. Tasks involve ambiguous human instructions, hidden
+or unknown object locations, and open-vocabulary object types, leading to
+significant open-ended uncertainty and a boundlessly large planning space. To
+address these challenges, we propose Tru-POMDP, a planner that combines
+structured belief generation using Large Language Models (LLMs) with principled
+POMDP planning. Tru-POMDP introduces a hierarchical Tree of Hypotheses (TOH),
+which systematically queries an LLM to construct high-quality particle beliefs
+over possible world states and human goals. We further formulate an open-ended
+POMDP model that enables rigorous Bayesian belief tracking and efficient
+belief-space planning over these LLM-generated hypotheses. Experiments on
+complex object rearrangement tasks across diverse kitchen environments show
+that Tru-POMDP significantly outperforms state-of-the-art LLM-based and
+LLM-tree-search hybrid planners, achieving higher success rates with
+significantly better plans, stronger robustness to ambiguity and occlusion, and
+greater planning efficiency.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2506.02787v1' target='_blank'>Rethinking Dynamic Networks and Heterogeneous Computing with Automatic
+  Parallelization</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Ruilong Wu, Xinjiao Li, Yisu Wang, Xinyu Chen, Dirk Kutscher</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-06-03 12:14:17</h6>
+<p class='card-text'>Hybrid parallelism techniques are essential for efficiently training large
+language models (LLMs). Nevertheless, current automatic parallel planning
+frameworks often overlook the simultaneous consideration of node heterogeneity
+and dynamic network topology changes, limiting their effectiveness in practical
+applications. In this paper, we address these limitations by modeling
+heterogeneous nodes within dynamically changing network environments and
+leveraging simulation-based strategies to determine optimal parallel
+configurations. Our approach enables fine-grained workload allocation tailored
+for heterogeneous nodes and complex network scenarios, achieving performance
+competitive with state-of-the-art methods under regular and stable network
+conditions. Additionally, we introduce a strategy pruning technique to rapidly
+discard infeasible parallel configurations, substantially reducing the search
+space and accelerating the search process through parallel execution within the
+simulator. Preliminary evaluations confirm that our method notably enhances
+training performance on heterogeneous nodes and demonstrates improved
+adaptability in complex, dynamic scenarios such as cloud computing
+environments.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2506.02739v1' target='_blank'>Why do AI agents communicate in human language?</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Pengcheng Zhou, Yinglun Feng, Halimulati Julaiti, Zhongliang Yang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-06-03 10:53:29</h6>
+<p class='card-text'>Large Language Models (LLMs) have become foundational to modern AI agent
+systems, enabling autonomous agents to reason and plan. In most existing
+systems, inter-agent communication relies primarily on natural language. While
+this design supports interpretability and human oversight, we argue that it
+introduces fundamental limitations in agent-to-agent coordination. The semantic
+space of natural language is structurally misaligned with the high-dimensional
+vector spaces in which LLMs operate, resulting in information loss and
+behavioral drift. Beyond surface-level inefficiencies, we highlight a deeper
+architectural limitation: current LLMs were not trained with the objective of
+supporting agentic behavior. As such, they lack mechanisms for modeling role
+continuity, task boundaries, and multi-agent dependencies. The standard
+next-token prediction paradigm fails to support the structural alignment
+required for robust, scalable agent coordination. Based on this, we argue that
+two core questions deserve careful examination: first, given that AI agents
+fundamentally operate in high-dimensional vector spaces, should they rely on a
+language system originally designed for human cognition as their communication
+medium? Second, should we consider developing a new model construction paradigm
+that builds models from the ground up to natively support structured
+communication, shared intentionality, and task alignment in multi-role,
+multi-agent environments? This paper calls for a reconsideration not only of
+how agents should communicate, but also of what it fundamentally means to train
+a model that natively supports multi-agent coordination and communication.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2506.02683v1' target='_blank'>Decompose, Plan in Parallel, and Merge: A Novel Paradigm for Large
+  Language Models based Planning with Multiple Constraints</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Zhengdong Lu, Weikai Lu, Yiling Tao, Yun Dai, ZiXuan Chen, Huiping Zhuang, Cen Chen, Hao Peng, Ziqian Zeng</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-06-03 09:33:13</h6>
+<p class='card-text'>Despite significant advances in Large Language Models (LLMs), planning tasks
+still present challenges for LLM-based agents. Existing planning methods face
+two key limitations: heavy constraints and cascading errors. To address these
+limitations, we propose a novel parallel planning paradigm, which Decomposes,
+Plans for subtasks in Parallel, and Merges subplans into a final plan (DPPM).
+Specifically, DPPM decomposes the complex task based on constraints into
+subtasks, generates the subplan for each subtask in parallel, and merges them
+into a global plan. In addition, our approach incorporates a verification and
+refinement module, enabling error correction and conflict resolution.
+Experimental results demonstrate that DPPM significantly outperforms existing
+methods in travel planning tasks.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2506.02658v2' target='_blank'>Computational Thinking Reasoning in Large Language Models</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Kechi Zhang, Ge Li, Jia Li, Huangzhao Zhang, Jingjing Xu, Hao Zhu, Lecheng Wang, Jia Li, Yihong Dong, Jing Mai, Bin Gu, Zhi Jin</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-06-03 09:11:15</h6>
+<p class='card-text'>While large language models (LLMs) have demonstrated remarkable reasoning
+capabilities, they often struggle with complex tasks that require specific
+thinking paradigms, such as divide-and-conquer and procedural deduction, \etc
+Previous researches integrate external, reliable tools to alleviate logical
+inconsistencies and hallucinations in LLMs' problem-solving processes. However,
+we argue that the root challenge is more profound: LLMs lack the complex
+thinking paradigms (\ie, computational thinking) during reasoning. In this
+paper, we propose Computational Thinking Model (CTM), a novel framework that
+incorporates computational thinking paradigms into LLMs. This framework enables
+LLMs to reformulate complex problems through decomposition, abstraction,
+reduction, and simulation, among other techniques. Specifically, live code
+execution is seamlessly integrated into the reasoning process, allowing CTM to
+think by computing. CTM directly instills computational thinking objectives
+into LLMs through tailored reinforcement learning rewards, which encourages
+problem simplification, modular planning, and iterative verification. We
+conduct extensive evaluations on multiple code generation and mathematical
+benchmarks. The results demonstrate that CTM outperforms conventional reasoning
+models and tool-augmented baselines in terms of accuracy, interpretability, and
+generalizability. We hope this study offers valuable insights for AI reasoning,
+where LLMs can transform problems into robust, verifiable, and scalable
+computational workflows, much like computer scientists do.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js'></script>
+</body>
+</html>
