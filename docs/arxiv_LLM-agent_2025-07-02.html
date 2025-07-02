@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<title>LLM-agent - 2025-07-02</title>
+<link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap' rel='stylesheet'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'>
+<style>
+body {
+font-family: 'Roboto', sans-serif;
+background-color: #f5f7fa;
+padding: 20px;
+}
+.card {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.card-title {
+    font-weight: 700;
+}
+.card:hover {
+    transform: scale(1.02);
+    transition: 0.3s ease-in-out;
+}
+</style>
+</head>
+<body>
+<div class='container'>
+<h1 class='text-center my-4'><i class='fas fa-book'></i>LLM-agent - 2025-07-02</h1>
+<div class='row'>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2506.24119v2' target='_blank'>SPIRAL: Self-Play on Zero-Sum Games Incentivizes Reasoning via
+  Multi-Agent Multi-Turn Reinforcement Learning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Bo Liu, Leon Guertler, Simon Yu, Zichen Liu, Penghui Qi, Daniel Balcells, Mickel Liu, Cheston Tan, Weiyan Shi, Min Lin, Wee Sun Lee, Natasha Jaques</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-06-30 17:58:13</h6>
+<p class='card-text'>Recent advances in reinforcement learning have shown that language models can
+develop sophisticated reasoning through training on tasks with verifiable
+rewards, but these approaches depend on human-curated problem-answer pairs and
+domain-specific reward engineering. We introduce SPIRAL, a self-play framework
+where models learn by playing multi-turn, zero-sum games against continuously
+improving versions of themselves, eliminating the need for human supervision.
+Through self-play, SPIRAL generates an infinite curriculum of progressively
+challenging problems as models must constantly adapt to stronger opponents. To
+enable this self-play training at scale, We implement a fully online,
+multi-turn, multi-agent reinforcement learning system for LLMs and propose
+role-conditioned advantage estimation (RAE) to stabilize multi-agent training.
+Using SPIRAL, self-play on zero-sum games produces reasoning capabilities that
+transfer broadly. Training Qwen3-4B-Base on Kuhn Poker alone achieves 8.6%
+improvement on math and 8.4% on general reasoning, outperforming SFT on 25,000
+expert game trajectories. Analysis reveals that this transfer occurs through
+three cognitive patterns: systematic decomposition, expected value calculation,
+and case-by-case analysis. Multi-game training (TicTacToe, Kuhn Poker, Simple
+Negotiation) further enhances performance as each game develops distinct
+reasoning strengths. Applying SPIRAL to a strong reasoning model
+(DeepSeek-R1-Distill-Qwen-7B) can still lead to 2.0% average improvement. These
+results demonstrate that zero-sum games naturally develop transferable
+reasoning capabilities, highlighting a promising direction for autonomous
+reasoning development.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2506.24045v1' target='_blank'>Agent.xpu: Efficient Scheduling of Agentic LLM Workloads on
+  Heterogeneous SoC</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Xinming Wei, Jiahao Zhang, Haoran Li, Jiayu Chen, Rui Qu, Maoliang Li, Xiang Chen, Guojie Luo</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-06-30 16:50:48</h6>
+<p class='card-text'>The proliferation of agentic Large Language Models (LLMs) on personal devices
+introduces a new class of workloads characterized by a dichotomy of objectives.
+Reactive tasks, initiated by users, demand immediate, low-latency responses,
+while proactive tasks operate invisibly and prioritize throughput. Existing
+on-device LLM engines, designed for isolated inferences, fail to efficiently
+manage these concurrent and conflicting requests on consumer-grade
+heterogeneous SoCs with CPU, integrated GPU, and NPU. This paper introduces
+Agent.xpu, an efficient serving system for agentic LLM workloads on
+memory-unified heterogeneous SoCs. With dedicated offline profiling, Agent.xpu
+first constructs a heterogeneous execution graph, which fuses and chunks model
+kernels for affinity-guided, elastic accelerator mapping with predictive kernel
+annotation. At runtime, its online scheduler enables fine-grained, kernel-level
+preemption to guarantee the responsiveness of reactive tasks. To maximize SoC
+utilization, it adopts slack-aware kernel backfill to opportunistically append
+proactive tasks, and mitigates NPU-iGPU contention via bandwidth-aware
+dispatch. Evaluation on an Intel Core Ultra SoC shows that Agent.xpu achieves
+4.6$\times$ lower latency for reactive tasks and sustains
+1.6$\times$-6.8$\times$ higher throughput for proactive tasks compared to
+state-of-the-art inference engines.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2506.23998v1' target='_blank'>Auto-TA: Towards Scalable Automated Thematic Analysis (TA) via
+  Multi-Agent Large Language Models with Reinforcement Learning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Seungjun Yi, Joakim Nguyen, Huimin Xu, Terence Lim, Andrew Well, Mia Markey, Ying Ding</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-06-30 16:02:28</h6>
+<p class='card-text'>Congenital heart disease (CHD) presents complex, lifelong challenges often
+underrepresented in traditional clinical metrics. While unstructured narratives
+offer rich insights into patient and caregiver experiences, manual thematic
+analysis (TA) remains labor-intensive and unscalable. We propose a fully
+automated large language model (LLM) pipeline that performs end-to-end TA on
+clinical narratives, which eliminates the need for manual coding or full
+transcript review. Our system employs a novel multi-agent framework, where
+specialized LLM agents assume roles to enhance theme quality and alignment with
+human analysis. To further improve thematic relevance, we optionally integrate
+reinforcement learning from human feedback (RLHF). This supports scalable,
+patient-centered analysis of large qualitative datasets and allows LLMs to be
+fine-tuned for specific clinical contexts.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2506.23978v1' target='_blank'>LLM Agents Are the Antidote to Walled Gardens</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Samuele Marro, Philip Torr</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-06-30 15:45:17</h6>
+<p class='card-text'>While the Internet's core infrastructure was designed to be open and
+universal, today's application layer is dominated by closed, proprietary
+platforms. Open and interoperable APIs require significant investment, and
+market leaders have little incentive to enable data exchange that could erode
+their user lock-in. We argue that LLM-based agents fundamentally disrupt this
+status quo. Agents can automatically translate between data formats and
+interact with interfaces designed for humans: this makes interoperability
+dramatically cheaper and effectively unavoidable. We name this shift universal
+interoperability: the ability for any two digital services to exchange data
+seamlessly using AI-mediated adapters. Universal interoperability undermines
+monopolistic behaviours and promotes data portability. However, it can also
+lead to new security risks and technical debt. Our position is that the ML
+community should embrace this development while building the appropriate
+frameworks to mitigate the downsides. By acting now, we can harness AI to
+restore user freedom and competitive markets without sacrificing security.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2506.23924v1' target='_blank'>Performance of LLMs on Stochastic Modeling Operations Research Problems:
+  From Theory to Practice</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Akshit Kumar, Tianyi Peng, Yuhang Wu, Assaf Zeevi</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-06-30 14:54:15</h6>
+<p class='card-text'>Large language models (LLMs) have exhibited expert-level capabilities across
+various domains. However, their abilities to solve problems in Operations
+Research (OR) -- the analysis and optimization of mathematical models derived
+from real-world problems or their verbal descriptions -- remain underexplored.
+In this work, we take a first step toward evaluating LLMs' abilities to solve
+stochastic modeling problems, a core class of OR problems characterized by
+uncertainty and typically involving tools from probability, statistics, and
+stochastic processes. We manually procure a representative set of
+graduate-level homework and doctoral qualification-exam problems and test LLMs'
+abilities to solve them. We further leverage SimOpt, an open-source library of
+simulation-optimization problems and solvers, to investigate LLMs' abilities to
+make real-world decisions under uncertainty. Our results show that, though a
+nontrivial amount of work is still needed to reliably automate the stochastic
+modeling pipeline in reality, state-of-the-art LLMs demonstrate proficiency on
+par with human experts in both classroom and practical settings. These findings
+highlight the potential of building AI agents that assist OR researchers and
+amplify the real-world impact of OR through automation.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2506.23844v1' target='_blank'>A Survey on Autonomy-Induced Security Risks in Large Model-Based Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Hang Su, Jun Luo, Chang Liu, Xiao Yang, Yichi Zhang, Yinpeng Dong, Jun Zhu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-06-30 13:34:34</h6>
+<p class='card-text'>Recent advances in large language models (LLMs) have catalyzed the rise of
+autonomous AI agents capable of perceiving, reasoning, and acting in dynamic,
+open-ended environments. These large-model agents mark a paradigm shift from
+static inference systems to interactive, memory-augmented entities. While these
+capabilities significantly expand the functional scope of AI, they also
+introduce qualitatively novel security risks - such as memory poisoning, tool
+misuse, reward hacking, and emergent misalignment - that extend beyond the
+threat models of conventional systems or standalone LLMs. In this survey, we
+first examine the structural foundations and key capabilities that underpin
+increasing levels of agent autonomy, including long-term memory retention,
+modular tool use, recursive planning, and reflective reasoning. We then analyze
+the corresponding security vulnerabilities across the agent stack, identifying
+failure modes such as deferred decision hazards, irreversible tool chains, and
+deceptive behaviors arising from internal state drift or value misalignment.
+These risks are traced to architectural fragilities that emerge across
+perception, cognition, memory, and action modules. To address these challenges,
+we systematically review recent defense strategies deployed at different
+autonomy layers, including input sanitization, memory lifecycle control,
+constrained decision-making, structured tool invocation, and introspective
+reflection. We introduce the Reflective Risk-Aware Agent Architecture (R2A2), a
+unified cognitive framework grounded in Constrained Markov Decision Processes
+(CMDPs), which incorporates risk-aware world modeling, meta-policy adaptation,
+and joint reward-risk optimization to enable principled, proactive safety
+across the agent's decision-making loop.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2506.23774v1' target='_blank'>Leveraging a Multi-Agent LLM-Based System to Educate Teachers in Hate
+  Incidents Management</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Ewelina Gajewska, Michal Wawer, Katarzyna Budzynska, Jarosław A. Chudziak</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-06-30 12:18:13</h6>
+<p class='card-text'>Computer-aided teacher training is a state-of-the-art method designed to
+enhance teachers' professional skills effectively while minimising concerns
+related to costs, time constraints, and geographical limitations. We
+investigate the potential of large language models (LLMs) in teacher education,
+using a case of teaching hate incidents management in schools. To this end, we
+create a multi-agent LLM-based system that mimics realistic situations of hate,
+using a combination of retrieval-augmented prompting and persona modelling. It
+is designed to identify and analyse hate speech patterns, predict potential
+escalation, and propose effective intervention strategies. By integrating
+persona modelling with agentic LLMs, we create contextually diverse simulations
+of hate incidents, mimicking real-life situations. The system allows teachers
+to analyse and understand the dynamics of hate incidents in a safe and
+controlled environment, providing valuable insights and practical knowledge to
+manage such situations confidently in real life. Our pilot evaluation
+demonstrates teachers' enhanced understanding of the nature of annotator
+disagreements and the role of context in hate speech interpretation, leading to
+the development of more informed and effective strategies for addressing hate
+in classroom settings.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2506.23749v1' target='_blank'>A Survey of LLM-based Automated Program Repair: Taxonomies, Design
+  Paradigms, and Applications</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Boyang Yang, Zijian Cai, Fengling Liu, Bach Le, Lingming Zhang, Tegawendé F. Bissyandé, Yang Liu, Haoye Tian</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-06-30 11:46:01</h6>
+<p class='card-text'>Large language models (LLMs) are reshaping automated program repair (APR). We
+categorize the recent 63 LLM-based APR systems published from January 2022 to
+June 2025 into four paradigms, and show how retrieval- or analysis-augmented
+contexts strengthen any of them. This taxonomy clarifies key trade-offs:
+fine-tuning delivers strong task alignment at high training cost; prompting
+enables rapid deployment but is limited by prompt design and context windows;
+procedural pipelines offer reproducible control with moderate overhead; agentic
+frameworks tackle multi-hunk or cross-file bugs at the price of increased
+latency and complexity. Persistent challenges include verifying semantic
+correctness beyond test suites, repairing repository-scale defects, and
+lowering the costs of LLMs. We outline research directions that combine
+lightweight human feedback, repository-aware retrieval, code analysis, and
+cost-aware planning to advance reliable and efficient LLM-based APR.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2506.23719v1' target='_blank'>DABstep: Data Agent Benchmark for Multi-step Reasoning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Alex Egg, Martin Iglesias Goyanes, Friso Kingma, Andreu Mora, Leandro von Werra, Thomas Wolf</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-06-30 10:49:21</h6>
+<p class='card-text'>We introduce DABstep, a novel benchmark for evaluating AI agents on realistic
+multi-step data analysis tasks. DABstep comprises over 450 real-world
+challenges derived from a financial analytics platform, requiring models to
+combine code-based data processing with contextual reasoning over heterogeneous
+documentation. Each task demands an iterative, multi-step problem-solving
+approach, testing capabilities in data manipulation, cross-referencing multiple
+sources, and precise result reporting. The benchmark provides a factoid-style
+answer format with automatic correctness checks for objective scoring at scale.
+We evaluate leading LLM-based agents, revealing a substantial performance gap:
+even the best agent achieves only 14.55% accuracy on the hardest tasks. We
+detail our benchmark's design, dataset composition, task formulation,
+evaluation protocol, report baseline results and analyze failure modes. DABstep
+is released with a public leaderboard and toolkit to accelerate research in
+autonomous data analysis.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2506.23692v1' target='_blank'>Agent4S: The Transformation of Research Paradigms from the Perspective
+  of Large Language Models</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Boyuan Zheng, Zerui Fang, Zhe Xu, Rui Wang, Yiwen Chen, Cunshi Wang, Mengwei Qu, Lei Lei, Zhen Feng, Yan Liu, Yuyang Li, Mingzhou Tan, Jiaji Wu, Jianwei Shuai, Jia Li, Fangfu Ye</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-06-30 10:11:39</h6>
+<p class='card-text'>While AI for Science (AI4S) serves as an analytical tool in the current
+research paradigm, it doesn't solve its core inefficiency. We propose "Agent
+for Science" (Agent4S)-the use of LLM-driven agents to automate the entire
+research workflow-as the true Fifth Scientific Paradigm. This paper introduces
+a five-level classification for Agent4S, outlining a clear roadmap from simple
+task automation to fully autonomous, collaborative "AI Scientists." This
+framework defines the next revolutionary step in scientific discovery.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2506.23689v1' target='_blank'>PokéAI: A Goal-Generating, Battle-Optimizing Multi-agent System for
+  Pokemon Red</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Zihao Liu, Xinhang Sui, Yueran Song, Siwen Wang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-06-30 10:09:13</h6>
+<p class='card-text'>We introduce Pok\'eAI, the first text-based, multi-agent large language model
+(LLM) framework designed to autonomously play and progress through Pok\'emon
+Red. Our system consists of three specialized agents-Planning, Execution, and
+Critique-each with its own memory bank, role, and skill set. The Planning Agent
+functions as the central brain, generating tasks to progress through the game.
+These tasks are then delegated to the Execution Agent, which carries them out
+within the game environment. Upon task completion, the Critique Agent evaluates
+the outcome to determine whether the objective was successfully achieved. Once
+verification is complete, control returns to the Planning Agent, forming a
+closed-loop decision-making system.
+  As a preliminary step, we developed a battle module within the Execution
+Agent. Our results show that the battle AI achieves an average win rate of
+80.8% across 50 wild encounters, only 6% lower than the performance of an
+experienced human player. Furthermore, we find that a model's battle
+performance correlates strongly with its LLM Arena score on language-related
+tasks, indicating a meaningful link between linguistic ability and strategic
+reasoning. Finally, our analysis of gameplay logs reveals that each LLM
+exhibits a unique playstyle, suggesting that individual models develop distinct
+strategic behaviors.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2506.23667v1' target='_blank'>L0: Reinforcement Learning to Become General Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Junjie Zhang, Jingyi Xi, Zhuoyang Song, Junyu Lu, Yuhua Ke, Ting Sun, Yukun Yang, Jiaxing Zhang, Songxin Zhang, Zejian Xie</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-06-30 09:44:32</h6>
+<p class='card-text'>Training large language models (LLMs) to act as autonomous agents for
+multi-turn, long-horizon tasks remains significant challenges in scalability
+and training efficiency. To address this, we introduce L-Zero (L0), a scalable,
+end-to-end training pipeline for general-purpose agents. Featuring a low-cost,
+extensible, and sandboxed concurrent agent worker pool, L0 lowers the barrier
+for applying reinforcement learning in complex environments. We also introduce
+NB-Agent, the agent scaffold within L0, which operates in a "code-as-action"
+fashion via a Read-Eval-Print-Loop (REPL). We evaluate L0 on factuality
+question-answering benchmarks. Our experiments demonstrate that a base model
+can develop robust problem-solving skills using solely Reinforcement Learning
+with Verifiable Rewards (RLVR). On the Qwen2.5-7B-Instruct model, our method
+boosts accuracy on SimpleQA from 30 % to 80 % and on HotpotQA from 22 % to 41
+%. We have open-sourced the entire L0 system, including our L0 series models,
+the NB-Agent, a complete training pipeline, and the corresponding training
+recipes on (https://github.com/cmriat/l0).</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2506.23610v1' target='_blank'>Evaluating the Simulation of Human Personality-Driven Susceptibility to
+  Misinformation with LLMs</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Manuel Pratelli, Marinella Petrocchi</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-06-30 08:16:07</h6>
+<p class='card-text'>Large language models (LLMs) make it possible to generate synthetic
+behavioural data at scale, offering an ethical and low-cost alternative to
+human experiments. Whether such data can faithfully capture psychological
+differences driven by personality traits, however, remains an open question. We
+evaluate the capacity of LLM agents, conditioned on Big-Five profiles, to
+reproduce personality-based variation in susceptibility to misinformation,
+focusing on news discernment, the ability to judge true headlines as true and
+false headlines as false. Leveraging published datasets in which human
+participants with known personality profiles rated headline accuracy, we create
+matching LLM agents and compare their responses to the original human patterns.
+Certain trait-misinformation associations, notably those involving
+Agreeableness and Conscientiousness, are reliably replicated, whereas others
+diverge, revealing systematic biases in how LLMs internalize and express
+personality. The results underscore both the promise and the limits of
+personality-aligned LLMs for behavioral simulation, and offer new insight into
+modeling cognitive diversity in artificial agents.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2506.23576v1' target='_blank'>Evaluating Multi-Agent Defences Against Jailbreaking Attacks on Large
+  Language Models</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Maria Carolina Cornelia Wit, Jun Pang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-06-30 07:29:07</h6>
+<p class='card-text'>Recent advances in large language models (LLMs) have raised concerns about
+jailbreaking attacks, i.e., prompts that bypass safety mechanisms. This paper
+investigates the use of multi-agent LLM systems as a defence against such
+attacks. We evaluate three jailbreaking strategies, including the original
+AutoDefense attack and two from Deepleaps: BetterDan and JB. Reproducing the
+AutoDefense framework, we compare single-agent setups with two- and three-agent
+configurations. Our results show that multi-agent systems enhance resistance to
+jailbreaks, especially by reducing false negatives. However, its effectiveness
+varies by attack type, and it introduces trade-offs such as increased false
+positives and computational overhead. These findings point to the limitations
+of current automated defences and suggest directions for improving alignment
+robustness in future LLM systems.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2506.23485v1' target='_blank'>Thought-Augmented Planning for LLM-Powered Interactive Recommender Agent</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Haocheng Yu, Yaxiong Wu, Hao Wang, Wei Guo, Yong Liu, Yawen Li, Yuyang Ye, Junping Du, Enhong Chen</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-06-30 03:15:50</h6>
+<p class='card-text'>Interactive recommendation is a typical information-seeking task that allows
+users to interactively express their needs through natural language and obtain
+personalized recommendations. Large language model-powered (LLM-powered) agents
+have become a new paradigm in interactive recommendations, effectively
+capturing users' real-time needs and enhancing personalized experiences.
+However, due to limited planning and generalization capabilities, existing
+formulations of LLM-powered interactive recommender agents struggle to
+effectively address diverse and complex user intents, such as intuitive,
+unrefined, or occasionally ambiguous requests. To tackle this challenge, we
+propose a novel thought-augmented interactive recommender agent system (TAIRA)
+that addresses complex user intents through distilled thought patterns.
+Specifically, TAIRA is designed as an LLM-powered multi-agent system featuring
+a manager agent that orchestrates recommendation tasks by decomposing user
+needs and planning subtasks, with its planning capacity strengthened through
+Thought Pattern Distillation (TPD), a thought-augmentation method that extracts
+high-level thoughts from the agent's and human experts' experiences. Moreover,
+we designed a set of user simulation schemes to generate personalized queries
+of different difficulties and evaluate the recommendations based on specific
+datasets. Through comprehensive experiments conducted across multiple datasets,
+TAIRA exhibits significantly enhanced performance compared to existing methods.
+Notably, TAIRA shows a greater advantage on more challenging tasks while
+generalizing effectively on novel tasks, further validating its superiority in
+managing complex user intents within interactive recommendation systems. The
+code is publicly available at:https://github.com/Alcein/TAIRA.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2506.23408v1' target='_blank'>Do LLMs Dream of Discrete Algorithms?</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Claudionor Coelho Jr, Yanen Li, Philip Tee</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-06-29 22:03:01</h6>
+<p class='card-text'>Large Language Models (LLMs) have rapidly transformed the landscape of
+artificial intelligence, enabling natural language interfaces and dynamic
+orchestration of software components. However, their reliance on probabilistic
+inference limits their effectiveness in domains requiring strict logical
+reasoning, discrete decision-making, and robust interpretability. This paper
+investigates these limitations and proposes a neurosymbolic approach that
+augments LLMs with logic-based reasoning modules, particularly leveraging
+Prolog predicates and composable toolsets. By integrating first-order logic and
+explicit rule systems, our framework enables LLMs to decompose complex queries
+into verifiable sub-tasks, orchestrate reliable solutions, and mitigate common
+failure modes such as hallucination and incorrect step decomposition. We
+demonstrate the practical benefits of this hybrid architecture through
+experiments on the DABStep benchmark, showing improved precision, coverage, and
+system documentation in multi-step reasoning tasks. Our results indicate that
+combining LLMs with modular logic reasoning restores engineering rigor,
+enhances system reliability, and offers a scalable path toward trustworthy,
+interpretable AI agents across complex domains.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2506.23342v1' target='_blank'>ATGen: A Framework for Active Text Generation</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Akim Tsvigun, Daniil Vasilev, Ivan Tsvigun, Ivan Lysenko, Talgat Bektleuov, Aleksandr Medvedev, Uliana Vinogradova, Nikita Severin, Mikhail Mozikov, Andrey Savchenko, Rostislav Grigorev, Ramil Kuleev, Fedor Zhdanov, Artem Shelmanov, Ilya Makarov</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-06-29 17:27:48</h6>
+<p class='card-text'>Active learning (AL) has demonstrated remarkable potential in reducing the
+annotation effort required for training machine learning models. However,
+despite the surging popularity of natural language generation (NLG) tasks in
+recent years, the application of AL to NLG has been limited. In this paper, we
+introduce Active Text Generation (ATGen) - a comprehensive framework that
+bridges AL with text generation tasks, enabling the application of
+state-of-the-art AL strategies to NLG. Our framework simplifies AL-empowered
+annotation in NLG tasks using both human annotators and automatic annotation
+agents based on large language models (LLMs). The framework supports LLMs
+deployed as services, such as ChatGPT and Claude, or operated on-premises.
+Furthermore, ATGen provides a unified platform for smooth implementation and
+benchmarking of novel AL strategies tailored to NLG tasks. Finally, we present
+evaluation results for state-of-the-art AL strategies across diverse settings
+and multiple text generation tasks. We show that ATGen reduces both the effort
+of human annotators and costs associated with API calls to LLM-based annotation
+agents. The code of the framework is available on GitHub under the MIT license.
+The video presentation is available at http://atgen-video.nlpresearch.group</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2506.23276v1' target='_blank'>Corrupted by Reasoning: Reasoning Language Models Become Free-Riders in
+  Public Goods Games</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:David Guzman Piedrahita, Yongjin Yang, Mrinmaya Sachan, Giorgia Ramponi, Bernhard Schölkopf, Zhijing Jin</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-06-29 15:02:47</h6>
+<p class='card-text'>As large language models (LLMs) are increasingly deployed as autonomous
+agents, understanding their cooperation and social mechanisms is becoming
+increasingly important. In particular, how LLMs balance self-interest and
+collective well-being is a critical challenge for ensuring alignment,
+robustness, and safe deployment. In this paper, we examine the challenge of
+costly sanctioning in multi-agent LLM systems, where an agent must decide
+whether to invest its own resources to incentivize cooperation or penalize
+defection. To study this, we adapt a public goods game with institutional
+choice from behavioral economics, allowing us to observe how different LLMs
+navigate social dilemmas over repeated interactions. Our analysis reveals four
+distinct behavioral patterns among models: some consistently establish and
+sustain high levels of cooperation, others fluctuate between engagement and
+disengagement, some gradually decline in cooperative behavior over time, and
+others rigidly follow fixed strategies regardless of outcomes. Surprisingly, we
+find that reasoning LLMs, such as the o1 series, struggle significantly with
+cooperation, whereas some traditional LLMs consistently achieve high levels of
+cooperation. These findings suggest that the current approach to improving
+LLMs, which focuses on enhancing their reasoning capabilities, does not
+necessarily lead to cooperation, providing valuable insights for deploying LLM
+agents in environments that require sustained collaboration. Our code is
+available at https://github.com/davidguzmanp/SanctSim</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2506.23260v1' target='_blank'>From Prompt Injections to Protocol Exploits: Threats in LLM-Powered AI
+  Agents Workflows</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Mohamed Amine Ferrag, Norbert Tihanyi, Djallel Hamouda, Leandros Maglaras, Merouane Debbah</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-06-29 14:32:32</h6>
+<p class='card-text'>Autonomous AI agents powered by large language models (LLMs) with structured
+function-calling interfaces have dramatically expanded capabilities for
+real-time data retrieval, complex computation, and multi-step orchestration.
+Yet, the explosive proliferation of plugins, connectors, and inter-agent
+protocols has outpaced discovery mechanisms and security practices, resulting
+in brittle integrations vulnerable to diverse threats. In this survey, we
+introduce the first unified, end-to-end threat model for LLM-agent ecosystems,
+spanning host-to-tool and agent-to-agent communications, formalize adversary
+capabilities and attacker objectives, and catalog over thirty attack
+techniques. Specifically, we organized the threat model into four domains:
+Input Manipulation (e.g., prompt injections, long-context hijacks, multimodal
+adversarial inputs), Model Compromise (e.g., prompt- and parameter-level
+backdoors, composite and encrypted multi-backdoors, poisoning strategies),
+System and Privacy Attacks (e.g., speculative side-channels, membership
+inference, retrieval poisoning, social-engineering simulations), and Protocol
+Vulnerabilities (e.g., exploits in Model Context Protocol (MCP), Agent
+Communication Protocol (ACP), Agent Network Protocol (ANP), and Agent-to-Agent
+(A2A) protocol). For each category, we review representative scenarios, assess
+real-world feasibility, and evaluate existing defenses. Building on our threat
+taxonomy, we identify key open challenges and future research directions, such
+as securing MCP deployments through dynamic trust management and cryptographic
+provenance tracking; designing and hardening Agentic Web Interfaces; and
+achieving resilience in multi-agent and federated environments. Our work
+provides a comprehensive reference to guide the design of robust defense
+mechanisms and establish best practices for resilient LLM-agent workflows.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2506.23139v1' target='_blank'>Benchmarking Deep Search over Heterogeneous Enterprise Data</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Prafulla Kumar Choubey, Xiangyu Peng, Shilpa Bhagavath, Kung-Hsiang Huang, Caiming Xiong, Chien-Sheng Wu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-06-29 08:34:59</h6>
+<p class='card-text'>We present a new benchmark for evaluating Deep Search--a realistic and
+complex form of retrieval-augmented generation (RAG) that requires
+source-aware, multi-hop reasoning over diverse, sparsed, but related sources.
+These include documents, meeting transcripts, Slack messages, GitHub, and URLs,
+which vary in structure and often contain human-to-human interactions. We build
+it using a synthetic data pipeline that simulates business workflows across
+product planning, development, and support stages, generating interconnected
+content with realistic noise and multi-hop questions with guaranteed
+ground-truth answers. We release our benchmark with both answerable and
+unanswerable queries, and retrieval pool of 39,190 enterprise artifacts,
+enabling fine-grained evaluation of long-context LLM and RAG systems. Our
+experiments reveal that even the best-performing agentic RAG methods achieve an
+average performance score of 32.96 on our benchmark. With further analysis, we
+highlight retrieval as the main bottleneck: existing methods struggle to
+conduct deep searches and retrieve all necessary evidence. Consequently, they
+often reason over partial context, leading to significant performance
+degradation.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2506.23049v1' target='_blank'>AURA: Agent for Understanding, Reasoning, and Automated Tool Use in
+  Voice-Driven Tasks</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Leander Melroy Maben, Gayathri Ganesh Lakshmy, Srijith Radhakrishnan, Siddhant Arora, Shinji Watanabe</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-06-29 01:13:15</h6>
+<p class='card-text'>Despite advances in language and speech technologies, no open-source system
+enables full speech-to-speech, multi-turn dialogue with integrated tool use and
+agentic reasoning. We introduce AURA (Agent for Understanding, Reasoning, and
+Automated Tool Use), the first open-source, speech-native assistant capable of
+completing complex, goal-driven tasks through dynamic tool invocation and
+multi-turn conversation. AURA combines open-weight ASR, TTS, and LLMs in a
+cascaded pipeline and supports tools such as calendar booking, contact lookup,
+web search, and email. Its modular design allows easy integration of new tools
+using natural language prompts and action classes. On VoiceBench, AURA scores
+92.75% on OpenBookQA-outperforming all open-weight systems and nearing
+GPT-4o-and 4.39 on AlpacaEval, competitive with other open-weight systems.
+Human evaluation shows 90% task success on complex, multi-turn speech tasks.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2506.22957v1' target='_blank'>Agent-to-Agent Theory of Mind: Testing Interlocutor Awareness among
+  Large Language Models</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Younwoo Choi, Changling Li, Yongjin Yang, Zhijing Jin</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-06-28 17:22:59</h6>
+<p class='card-text'>As large language models (LLMs) are increasingly integrated into multi-agent
+and human-AI systems, understanding their awareness of both self-context and
+conversational partners is essential for ensuring reliable performance and
+robust safety. While prior work has extensively studied situational awareness
+which refers to an LLM's ability to recognize its operating phase and
+constraints, it has largely overlooked the complementary capacity to identify
+and adapt to the identity and characteristics of a dialogue partner. In this
+paper, we formalize this latter capability as interlocutor awareness and
+present the first systematic evaluation of its emergence in contemporary LLMs.
+We examine interlocutor inference across three dimensions-reasoning patterns,
+linguistic style, and alignment preferences-and show that LLMs reliably
+identify same-family peers and certain prominent model families, such as GPT
+and Claude. To demonstrate its practical significance, we develop three case
+studies in which interlocutor awareness both enhances multi-LLM collaboration
+through prompt adaptation and introduces new alignment and safety
+vulnerabilities, including reward-hacking behaviors and increased jailbreak
+susceptibility. Our findings highlight the dual promise and peril of
+identity-sensitive behavior in LLMs, underscoring the need for further
+understanding of interlocutor awareness and new safeguards in multi-agent
+deployments. Our code is open-sourced at
+https://github.com/younwoochoi/InterlocutorAwarenessLLM.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2506.22853v1' target='_blank'>DICE-BENCH: Evaluating the Tool-Use Capabilities of Large Language
+  Models in Multi-Round, Multi-Party Dialogues</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Kyochul Jang, Donghyeon Lee, Kyusik Kim, Dongseok Heo, Taewhoo Lee, Woojeong Kim, Bongwon Suh</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-06-28 11:28:04</h6>
+<p class='card-text'>Existing function-calling benchmarks focus on single-turn interactions.
+However, they overlook the complexity of real-world scenarios. To quantify how
+existing benchmarks address practical applications, we introduce DICE-SCORE, a
+metric that evaluates the dispersion of tool-related information such as
+function name and parameter values throughout the dialogue. Analyzing existing
+benchmarks through DICE-SCORE reveals notably low scores, highlighting the need
+for more realistic scenarios. To address this gap, we present DICE-BENCH, a
+framework that constructs practical function-calling datasets by synthesizing
+conversations through a tool graph that maintains dependencies across rounds
+and a multi-agent system with distinct personas to enhance dialogue
+naturalness. The final dataset comprises 1,607 high-DICE-SCORE instances. Our
+experiments on 19 LLMs with DICE-BENCH show that significant advances are still
+required before such models can be deployed effectively in real-world settings.
+Our code and data are all publicly available:
+https://snuhcc.github.io/DICE-Bench/.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2506.22852v1' target='_blank'>Knowledge Augmented Finetuning Matters in both RAG and Agent Based
+  Dialog Systems</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yucheng Cai, Yuxuan Wu, Yi Huang, Junlan Feng, Zhijian Ou</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-06-28 11:26:31</h6>
+<p class='card-text'>Large language models (LLMs) have recently been applied to dialog systems.
+Despite making progress, LLMs are prone to errors in knowledge-intensive
+scenarios. Recently, approaches based on retrieval augmented generation (RAG)
+and agent have emerged to improve the factual accuracy by enhancing the LLMs
+with knowledge retrieved from external knowledge bases (KBs). This is mostly
+implemented by prompting the LLMs with instructions, examples and the retrieved
+knowledge. However, LLMs may have difficulty using the retrieved knowledge
+effectively for response generation, because they are not well trained to do
+such generation for specific domains. To mitigate this problem, we propose to
+finetune the LLMs in the RAG-based and agent-based systems with domain-specific
+data, together with domain-specific external knowledge, which is called
+knowledge augmented finetuning (KAFT). We base our study on the MobileCS2
+dataset, a real-life customer service dialog dataset that features intensive
+knowledge interactions, to systematically compare the prompting and KAFT
+techniques in the RAG-based and agent-based systems. Experiment results show
+that KAFT substantially surpasses prompting in both RAG and agent systems,
+particularly in terms of factual accuracy. To the best of our knowledge, this
+paper represents the first solid empirical work to investigate the KAFT idea.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2506.22815v1' target='_blank'>Memory as a Service (MaaS): Rethinking Contextual Memory as
+  Service-Oriented Modules for Collaborative Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Haichang Li</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-06-28 08:33:17</h6>
+<p class='card-text'>This position paper aims to rethink the role and design of memory in Large
+Language Model (LLM)-based agent systems. We observe that while current memory
+practices have begun to transcend the limitations of single interactions, they
+remain conceptually grounded in "bound memory" in terms of design concept-where
+memory is treated as local state attached to specific context or entities,
+forming "memory silos" that impede cross-entity collaboration. To overcome this
+architectural bottleneck, this paper proposes the timely design perspective of
+"Memory as a Service" (MaaS). MaaS advocates decoupling memory from its
+conventional role as an interaction byproduct and encapsulating it as a modular
+service that can be independently callable, dynamically composable, and finely
+governed. At its core, MaaS leverages the duality of memory-its inherently
+private nature and its potential for public service-to grant memory controlled,
+on-demand interoperability across entities. This paper introduces a
+two-dimensional design space defined by entity structure and service type,
+illustrating how MaaS aligns with current memory practices while naturally
+extending them to cross-entity collaborative scenarios. Finally, we outline an
+open research agenda spanning governance, security, and ethical ecosystems, and
+call upon the broader research community to explore this shift toward
+service-oriented memory for collaborative agents operating across entity
+boundaries.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2506.22708v1' target='_blank'>FairMarket-RL: LLM-Guided Fairness Shaping for Multi-Agent Reinforcement
+  Learning in Peer-to-Peer Markets</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Shrenik Jadhav, Birva Sevak, Srijita Das, Akhtar Hussain, Wencong Su, Van-Hai Bui</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-06-28 01:17:55</h6>
+<p class='card-text'>Peer-to-peer (P2P) trading is increasingly recognized as a key mechanism for
+decentralized market regulation, yet existing approaches often lack robust
+frameworks to ensure fairness. This paper presents FairMarket-RL, a novel
+hybrid framework that combines Large Language Models (LLMs) with Reinforcement
+Learning (RL) to enable fairness-aware trading agents. In a simulated P2P
+microgrid with multiple sellers and buyers, the LLM acts as a real-time
+fairness critic, evaluating each trading episode using two metrics:
+Fairness-To-Buyer (FTB) and Fairness-Between-Sellers (FBS). These fairness
+scores are integrated into agent rewards through scheduled
+{\lambda}-coefficients, forming an adaptive LLM-guided reward shaping loop that
+replaces brittle, rule-based fairness constraints. Agents are trained using
+Independent Proximal Policy Optimization (IPPO) and achieve equitable outcomes,
+fulfilling over 90% of buyer demand, maintaining fair seller margins, and
+consistently reaching FTB and FBS scores above 0.80. The training process
+demonstrates that fairness feedback improves convergence, reduces buyer
+shortfalls, and narrows profit disparities between sellers. With its
+language-based critic, the framework scales naturally, and its extension to a
+large power distribution system with household prosumers illustrates its
+practical applicability. FairMarket-RL thus offers a scalable, equity-driven
+solution for autonomous trading in decentralized energy systems.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2506.22656v1' target='_blank'>Knowledge-Guided Multi-Agent Framework for Automated Requirements
+  Development: A Vision</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Jiangping Huang, Dongming Jin, Weisong Sun, Yang Liu, Zhi Jin</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-06-27 21:57:53</h6>
+<p class='card-text'>This paper envisions a knowledge-guided multi-agent framework named KGMAF for
+automated requirements development. KGMAF aims to address gaps in current
+automation systems for SE, which prioritize code development and overlook the
+complexities of requirements tasks. KGMAF is composed of six specialized agents
+and an artifact pool to improve efficiency and accuracy. Specifically, KGMAF
+outlines the functionality, actions, and knowledge of each agent and provides
+the conceptual design of the artifact pool. Our case study highlights the
+potential of KGMAF in real-world scenarios. Finally, we outline several
+research opportunities for implementing and enhancing automated requirements
+development using multi-agent systems. We believe that KGMAF will play a
+pivotal role in shaping the future of automated requirements development in the
+era of LLMs.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2506.22653v1' target='_blank'>URSA: The Universal Research and Scientific Agent</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Michael Grosskopf, Russell Bent, Rahul Somasundaram, Isaac Michaud, Arthur Lui, Nathan Debardeleben, Earl Lawrence</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-06-27 21:56:02</h6>
+<p class='card-text'>Large language models (LLMs) have moved far beyond their initial form as
+simple chatbots, now carrying out complex reasoning, planning, writing, coding,
+and research tasks. These skills overlap significantly with those that human
+scientists use day-to-day to solve complex problems that drive the cutting edge
+of research. Using LLMs in "agentic" AI has the potential to revolutionize
+modern science and remove bottlenecks to progress. In this work, we present
+URSA, a scientific agent ecosystem for accelerating research tasks. URSA
+consists of a set of modular agents and tools, including coupling to advanced
+physics simulation codes, that can be combined to address scientific problems
+of varied complexity and impact. This work highlights the architecture of URSA,
+as well as examples that highlight the potential of the system.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2506.22598v1' target='_blank'>RExBench: Can coding agents autonomously implement AI research
+  extensions?</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Nicholas Edwards, Yukyung Lee, Yujun, Mao, Yulu Qin, Sebastian Schuster, Najoung Kim</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-06-27 19:41:41</h6>
+<p class='card-text'>Agents based on Large Language Models (LLMs) have shown promise for
+performing sophisticated software engineering tasks autonomously. In addition,
+there has been progress towards developing agents that can perform parts of the
+research pipeline in machine learning and the natural sciences. We argue that
+research extension and its implementation is a critical capability for such
+systems, and introduce RExBench to support the evaluation of this capability.
+RExBench is a benchmark consisting of 12 realistic research experiment
+implementation tasks that aim to investigate research hypotheses that have not
+previously been implemented. Each task is set up as an extension to an existing
+research paper and codebase, accompanied by domain expert-written instructions.
+RExBench is robust to data contamination, and supports an automatic evaluation
+infrastructure that executes agent outputs to determine whether the success
+criteria are met. We use this benchmark to evaluate nine LLM agents implemented
+using three different frameworks: aider, Claude Code, and OpenHands. We find
+that all agents evaluated fail to autonomously implement the majority of the
+extensions. Although the success rate improves with additional human-written
+hints, the best performance under this setting remains below 40%. This
+indicates that current agents are still short of being able to handle realistic
+research extension tasks without substantial human guidance.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2506.22554v2' target='_blank'>Seamless Interaction: Dyadic Audiovisual Motion Modeling and Large-Scale
+  Dataset</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Vasu Agrawal, Akinniyi Akinyemi, Kathryn Alvero, Morteza Behrooz, Julia Buffalini, Fabio Maria Carlucci, Joy Chen, Junming Chen, Zhang Chen, Shiyang Cheng, Praveen Chowdary, Joe Chuang, Antony D'Avirro, Jon Daly, Ning Dong, Mark Duppenthaler, Cynthia Gao, Jeff Girard, Martin Gleize, Sahir Gomez, Hongyu Gong, Srivathsan Govindarajan, Brandon Han, Sen He, Denise Hernandez, Yordan Hristov, Rongjie Huang, Hirofumi Inaguma, Somya Jain, Raj Janardhan, Qingyao Jia, Christopher Klaiber, Dejan Kovachev, Moneish Kumar, Hang Li, Yilei Li, Pavel Litvin, Wei Liu, Guangyao Ma, Jing Ma, Martin Ma, Xutai Ma, Lucas Mantovani, Sagar Miglani, Sreyas Mohan, Louis-Philippe Morency, Evonne Ng, Kam-Woh Ng, Tu Anh Nguyen, Amia Oberai, Benjamin Peloquin, Juan Pino, Jovan Popovic, Omid Poursaeed, Fabian Prada, Alice Rakotoarison, Rakesh Ranjan, Alexander Richard, Christophe Ropers, Safiyyah Saleem, Vasu Sharma, Alex Shcherbyna, Jia Shen, Jie Shen, Anastasis Stathopoulos, Anna Sun, Paden Tomasello, Tuan Tran, Arina Turkatenko, Bo Wan, Chao Wang, Jeff Wang, Mary Williamson, Carleigh Wood, Tao Xiang, Yilin Yang, Julien Yao, Chen Zhang, Jiemin Zhang, Xinyue Zhang, Jason Zheng, Pavlo Zhyzheria, Jan Zikes, Michael Zollhoefer</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-06-27 18:09:49</h6>
+<p class='card-text'>Human communication involves a complex interplay of verbal and nonverbal
+signals, essential for conveying meaning and achieving interpersonal goals. To
+develop socially intelligent AI technologies, it is crucial to develop models
+that can both comprehend and generate dyadic behavioral dynamics. To this end,
+we introduce the Seamless Interaction Dataset, a large-scale collection of over
+4,000 hours of face-to-face interaction footage from over 4,000 participants in
+diverse contexts. This dataset enables the development of AI technologies that
+understand dyadic embodied dynamics, unlocking breakthroughs in virtual agents,
+telepresence experiences, and multimodal content analysis tools. We also
+develop a suite of models that utilize the dataset to generate dyadic motion
+gestures and facial expressions aligned with human speech. These models can
+take as input both the speech and visual behavior of their interlocutors. We
+present a variant with speech from an LLM model and integrations with 2D and 3D
+rendering methods, bringing us closer to interactive virtual agents.
+Additionally, we describe controllable variants of our motion models that can
+adapt emotional responses and expressivity levels, as well as generating more
+semantically-relevant gestures. Finally, we discuss methods for assessing the
+quality of these dyadic motion models, which are demonstrating the potential
+for more intuitive and responsive human-AI interactions.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js'></script>
+</body>
+</html>
