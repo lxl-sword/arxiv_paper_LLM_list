@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<title>LLM-agent - 2025-09-17</title>
+<link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap' rel='stylesheet'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'>
+<style>
+body {
+font-family: 'Roboto', sans-serif;
+background-color: #f5f7fa;
+padding: 20px;
+}
+.card {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.card-title {
+    font-weight: 700;
+}
+.card:hover {
+    transform: scale(1.02);
+    transition: 0.3s ease-in-out;
+}
+</style>
+</head>
+<body>
+<div class='container'>
+<h1 class='text-center my-4'><i class='fas fa-book'></i>LLM-agent - 2025-09-17</h1>
+<div class='row'>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2509.13313v1' target='_blank'>ReSum: Unlocking Long-Horizon Search Intelligence via Context
+  Summarization</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Xixi Wu, Kuan Li, Yida Zhao, Liwen Zhang, Litu Ou, Huifeng Yin, Zhongwang Zhang, Yong Jiang, Pengjun Xie, Fei Huang, Minhao Cheng, Shuai Wang, Hong Cheng, Jingren Zhou</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-09-16 17:57:22</h6>
+<p class='card-text'>Large Language Model (LLM)-based web agents demonstrate strong performance on
+knowledge-intensive tasks but are hindered by context window limitations in
+paradigms like ReAct. Complex queries involving multiple entities, intertwined
+relationships, and high uncertainty demand extensive search cycles that rapidly
+exhaust context budgets before reaching complete solutions. To overcome this
+challenge, we introduce ReSum, a novel paradigm that enables indefinite
+exploration through periodic context summarization. ReSum converts growing
+interaction histories into compact reasoning states, maintaining awareness of
+prior discoveries while bypassing context constraints. For paradigm adaptation,
+we propose ReSum-GRPO, integrating GRPO with segmented trajectory training and
+advantage broadcasting to familiarize agents with summary-conditioned
+reasoning. Extensive experiments on web agents of varying scales across three
+benchmarks demonstrate that ReSum delivers an average absolute improvement of
+4.5\% over ReAct, with further gains of up to 8.2\% following ReSum-GRPO
+training. Notably, with only 1K training samples, our WebResummer-30B (a
+ReSum-GRPO-trained version of WebSailor-30B) achieves 33.3\% Pass@1 on
+BrowseComp-zh and 18.3\% on BrowseComp-en, surpassing existing open-source web
+agents.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2509.13310v1' target='_blank'>Scaling Agents via Continual Pre-training</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Liangcai Su, Zhen Zhang, Guangyu Li, Zhuo Chen, Chenxi Wang, Maojia Song, Xinyu Wang, Kuan Li, Jialong Wu, Xuanzhong Chen, Zile Qiao, Zhongwang Zhang, Huifeng Yin, Shihao Cai, Runnan Fang, Zhengwei Tao, Wenbiao Yin, Chenxiong Qian, Yong Jiang, Pengjun Xie, Fei Huang, Jingren Zhou</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-09-16 17:57:19</h6>
+<p class='card-text'>Large language models (LLMs) have evolved into agentic systems capable of
+autonomous tool use and multi-step reasoning for complex problem-solving.
+However, post-training approaches building upon general-purpose foundation
+models consistently underperform in agentic tasks, particularly in open-source
+implementations. We identify the root cause: the absence of robust agentic
+foundation models forces models during post-training to simultaneously learn
+diverse agentic behaviors while aligning them to expert demonstrations, thereby
+creating fundamental optimization tensions. To this end, we are the first to
+propose incorporating Agentic Continual Pre-training (Agentic CPT) into the
+deep research agents training pipeline to build powerful agentic foundational
+models. Based on this approach, we develop a deep research agent model named
+AgentFounder. We evaluate our AgentFounder-30B on 10 benchmarks and achieve
+state-of-the-art performance while retains strong tool-use ability, notably
+39.9% on BrowseComp-en, 43.3% on BrowseComp-zh, and 31.5% Pass@1 on HLE.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2509.13305v1' target='_blank'>WebSailor-V2: Bridging the Chasm to Proprietary Agents via Synthetic
+  Data and Scalable Reinforcement Learning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Kuan Li, Zhongwang Zhang, Huifeng Yin, Rui Ye, Yida Zhao, Liwen Zhang, Litu Ou, Dingchu Zhang, Xixi Wu, Jialong Wu, Xinyu Wang, Zile Qiao, Zhen Zhang, Yong Jiang, Pengjun Xie, Fei Huang, Jingren Zhou</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-09-16 17:57:03</h6>
+<p class='card-text'>Transcending human cognitive limitations represents a critical frontier in
+LLM training. Proprietary agentic systems like DeepResearch have demonstrated
+superhuman capabilities on extremely complex information-seeking benchmarks
+such as BrowseComp, a feat previously unattainable. We posit that their success
+hinges on a sophisticated reasoning pattern absent in open-source models: the
+ability to systematically reduce extreme uncertainty when navigating vast
+information landscapes. Based on this insight, we introduce WebSailor, a
+complete post-training methodology designed to instill this crucial capability.
+Our approach involves generating novel, high-uncertainty tasks through
+structured sampling and information obfuscation, RFT cold start, and an
+efficient agentic RL training algorithm, Duplicating Sampling Policy
+Optimization (DUPO). With this integrated pipeline, WebSailor significantly
+outperforms all open-source agents in complex information-seeking tasks,
+matching proprietary agents' performance and closing the capability gap.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2509.13244v1' target='_blank'>Evaluating LLM Alignment on Personality Inference from Real-World
+  Interview Data</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Jianfeng Zhu, Julina Maharjan, Xinyu Li, Karin G. Coifman, Ruoming Jin</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-09-16 16:54:35</h6>
+<p class='card-text'>Large Language Models (LLMs) are increasingly deployed in roles requiring
+nuanced psychological understanding, such as emotional support agents,
+counselors, and decision-making assistants. However, their ability to interpret
+human personality traits, a critical aspect of such applications, remains
+unexplored, particularly in ecologically valid conversational settings. While
+prior work has simulated LLM "personas" using discrete Big Five labels on
+social media data, the alignment of LLMs with continuous, ground-truth
+personality assessments derived from natural interactions is largely
+unexamined. To address this gap, we introduce a novel benchmark comprising
+semi-structured interview transcripts paired with validated continuous Big Five
+trait scores. Using this dataset, we systematically evaluate LLM performance
+across three paradigms: (1) zero-shot and chain-of-thought prompting with
+GPT-4.1 Mini, (2) LoRA-based fine-tuning applied to both RoBERTa and Meta-LLaMA
+architectures, and (3) regression using static embeddings from pretrained BERT
+and OpenAI's text-embedding-3-small. Our results reveal that all Pearson
+correlations between model predictions and ground-truth personality traits
+remain below 0.26, highlighting the limited alignment of current LLMs with
+validated psychological constructs. Chain-of-thought prompting offers minimal
+gains over zero-shot, suggesting that personality inference relies more on
+latent semantic representation than explicit reasoning. These findings
+underscore the challenges of aligning LLMs with complex human attributes and
+motivate future work on trait-specific prompting, context-aware modeling, and
+alignment-oriented fine-tuning.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2509.13160v1' target='_blank'>FinSearchComp: Towards a Realistic, Expert-Level Evaluation of Financial
+  Search and Reasoning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Liang Hu, Jianpeng Jiao, Jiashuo Liu, Yanle Ren, Zhoufutu Wen, Kaiyuan Zhang, Xuanliang Zhang, Xiang Gao, Tianci He, Fei Hu, Yali Liao, Zaiyuan Wang, Chenghao Yang, Qianyu Yang, Mingren Yin, Zhiyuan Zeng, Ge Zhang, Xinyi Zhang, Xiying Zhao, Zhenwei Zhu, Hongseok Namkoong, Wenhao Huang, Yuwen Tang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-09-16 15:13:13</h6>
+<p class='card-text'>Search has emerged as core infrastructure for LLM-based agents and is widely
+viewed as critical on the path toward more general intelligence. Finance is a
+particularly demanding proving ground: analysts routinely conduct complex,
+multi-step searches over time-sensitive, domain-specific data, making it ideal
+for assessing both search proficiency and knowledge-grounded reasoning. Yet no
+existing open financial datasets evaluate data searching capability of
+end-to-end agents, largely because constructing realistic, complicated tasks
+requires deep financial expertise and time-sensitive data is hard to evaluate.
+We present FinSearchComp, the first fully open-source agent benchmark for
+realistic, open-domain financial search and reasoning. FinSearchComp comprises
+three tasks -- Time-Sensitive Data Fetching, Simple Historical Lookup, and
+Complex Historical Investigation -- closely reproduce real-world financial
+analyst workflows. To ensure difficulty and reliability, we engage 70
+professional financial experts for annotation and implement a rigorous
+multi-stage quality-assurance pipeline. The benchmark includes 635 questions
+spanning global and Greater China markets, and we evaluate 21 models (products)
+on it. Grok 4 (web) tops the global subset, approaching expert-level accuracy.
+DouBao (web) leads on the Greater China subset. Experimental analyses show that
+equipping agents with web search and financial plugins substantially improves
+results on FinSearchComp, and the country origin of models and tools impact
+performance significantly.By aligning with realistic analyst tasks and
+providing end-to-end evaluation, FinSearchComp offers a professional,
+high-difficulty testbed for complex financial search and reasoning.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2509.13127v1' target='_blank'>Empowering LLMs with Parameterized Skills for Adversarial Long-Horizon
+  Planning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Sijia Cui, Shuai Xu, Aiyao He, Yanna Wang, Bo Xu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-09-16 14:36:30</h6>
+<p class='card-text'>Recent advancements in Large Language Models(LLMs) have led to the
+development of LLM-based AI agents. A key challenge is the creation of agents
+that can effectively ground themselves in complex, adversarial long-horizon
+environments. Existing methods mainly focus on (1) using LLMs as policies to
+interact with the environment through generating low-level feasible actions,
+and (2) utilizing LLMs to generate high-level tasks or language guides to
+stimulate action generation. However, the former struggles to generate reliable
+actions, while the latter relies heavily on expert experience to translate
+high-level tasks into specific action sequences. To address these challenges,
+we introduce the Plan with Language, Act with Parameter (PLAP) planning
+framework that facilitates the grounding of LLM-based agents in long-horizon
+environments. The PLAP method comprises three key components: (1) a skill
+library containing environment-specific parameterized skills, (2) a skill
+planner powered by LLMs, and (3) a skill executor converting the parameterized
+skills into executable action sequences. We implement PLAP in MicroRTS, a
+long-horizon real-time strategy game that provides an unfamiliar and
+challenging environment for LLMs. The experimental results demonstrate the
+effectiveness of PLAP. In particular, GPT-4o-driven PLAP in a zero-shot setting
+outperforms 80% of baseline agents, and Qwen2-72B-driven PLAP, with carefully
+crafted few-shot examples, surpasses the top-tier scripted agent, CoacAI.
+Additionally, we design comprehensive evaluation metrics and test 6
+closed-source and 2 open-source LLMs within the PLAP framework, ultimately
+releasing an LLM leaderboard ranking long-horizon skill planning ability. Our
+code is available at https://github.com/AI-Research-TeamX/PLAP.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2509.13021v1' target='_blank'>xOffense: An AI-driven autonomous penetration testing framework with
+  offensive knowledge-enhanced LLMs and multi agent systems</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Phung Duc Luong, Le Tran Gia Bao, Nguyen Vu Khai Tam, Dong Huu Nguyen Khoa, Nguyen Huu Quyen, Van-Hau Pham, Phan The Duy</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-09-16 12:45:45</h6>
+<p class='card-text'>This work introduces xOffense, an AI-driven, multi-agent penetration testing
+framework that shifts the process from labor-intensive, expert-driven manual
+efforts to fully automated, machine-executable workflows capable of scaling
+seamlessly with computational infrastructure. At its core, xOffense leverages a
+fine-tuned, mid-scale open-source LLM (Qwen3-32B) to drive reasoning and
+decision-making in penetration testing. The framework assigns specialized
+agents to reconnaissance, vulnerability scanning, and exploitation, with an
+orchestration layer ensuring seamless coordination across phases. Fine-tuning
+on Chain-of-Thought penetration testing data further enables the model to
+generate precise tool commands and perform consistent multi-step reasoning. We
+evaluate xOffense on two rigorous benchmarks: AutoPenBench and
+AI-Pentest-Benchmark. The results demonstrate that xOffense consistently
+outperforms contemporary methods, achieving a sub-task completion rate of
+79.17%, decisively surpassing leading systems such as VulnBot and PentestGPT.
+These findings highlight the potential of domain-adapted mid-scale LLMs, when
+embedded within structured multi-agent orchestration, to deliver superior,
+cost-efficient, and reproducible solutions for autonomous penetration testing.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2509.13011v1' target='_blank'>A Visualized Framework for Event Cooperation with Generative Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yuyang Tian, Shunqiang Mao, Wenchang Gao, Lanlan Qiu, Tianxing He</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-09-16 12:33:54</h6>
+<p class='card-text'>Large Language Models (LLMs) have revolutionized the simulation of agent
+societies, enabling autonomous planning, memory formation, and social
+interactions. However, existing frameworks often overlook systematic
+evaluations for event organization and lack visualized integration with
+physically grounded environments, limiting agents' ability to navigate spaces
+and interact with items realistically. We develop MiniAgentPro, a visualization
+platform featuring an intuitive map editor for customizing environments and a
+simulation player with smooth animations. Based on this tool, we introduce a
+comprehensive test set comprising eight diverse event scenarios with basic and
+hard variants to assess agents' ability. Evaluations using GPT-4o demonstrate
+strong performance in basic settings but highlight coordination challenges in
+hard variants.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2509.12987v1' target='_blank'>Toward PDDL Planning Copilot</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yarin Benyamin, Argaman Mordoch, Shahaf S. Shperberg, Roni Stern</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-09-16 11:51:07</h6>
+<p class='card-text'>Large Language Models (LLMs) are increasingly being used as autonomous agents
+capable of performing complicated tasks. However, they lack the ability to
+perform reliable long-horizon planning on their own. This paper bridges this
+gap by introducing the Planning Copilot, a chatbot that integrates multiple
+planning tools and allows users to invoke them through instructions in natural
+language. The Planning Copilot leverages the Model Context Protocol (MCP), a
+recently developed standard for connecting LLMs with external tools and
+systems. This approach allows using any LLM that supports MCP without
+domain-specific fine-tuning. Our Planning Copilot supports common planning
+tasks such as checking the syntax of planning problems, selecting an
+appropriate planner, calling it, validating the plan it generates, and
+simulating their execution. We empirically evaluate the ability of our Planning
+Copilot to perform these tasks using three open-source LLMs. The results show
+that the Planning Copilot highly outperforms using the same LLMs without the
+planning tools. We also conducted a limited qualitative comparison of our tool
+against Chat GPT-5, a very recent commercial LLM. Our results shows that our
+Planning Copilot significantly outperforms GPT-5 despite relying on a much
+smaller LLM. This suggests dedicated planning tools may be an effective way to
+enable LLMs to perform planning tasks.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2509.12927v1' target='_blank'>HLSMAC: A New StarCraft Multi-Agent Challenge for High-Level Strategic
+  Decision-Making</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Xingxing Hong, Yungong Wang, Dexin Jin, Ye Yuan, Ximing Huang, Zijian Wu, Wenxin Li</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-09-16 10:26:12</h6>
+<p class='card-text'>Benchmarks are crucial for assessing multi-agent reinforcement learning
+(MARL) algorithms. While StarCraft II-related environments have driven
+significant advances in MARL, existing benchmarks like SMAC focus primarily on
+micromanagement, limiting comprehensive evaluation of high-level strategic
+intelligence. To address this, we introduce HLSMAC, a new cooperative MARL
+benchmark with 12 carefully designed StarCraft II scenarios based on classical
+stratagems from the Thirty-Six Stratagems. Each scenario corresponds to a
+specific stratagem and is designed to challenge agents with diverse strategic
+elements, including tactical maneuvering, timing coordination, and deception,
+thereby opening up avenues for evaluating high-level strategic decision-making
+capabilities. We also propose novel metrics across multiple dimensions beyond
+conventional win rate, such as ability utilization and advancement efficiency,
+to assess agents' overall performance within the HLSMAC environment. We
+integrate state-of-the-art MARL algorithms and LLM-based agents with our
+benchmark and conduct comprehensive experiments. The results demonstrate that
+HLSMAC serves as a robust testbed for advancing multi-agent strategic
+decision-making.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2509.12867v1' target='_blank'>Tool-R1: Sample-Efficient Reinforcement Learning for Agentic Tool Use</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yabo Zhang, Yihan Zeng, Qingyun Li, Zhen Hu, Kavin Han, Wangmeng Zuo</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-09-16 09:22:21</h6>
+<p class='card-text'>Large language models (LLMs) have demonstrated strong capabilities in
+language understanding and reasoning, yet they remain limited when tackling
+real-world tasks that require up-to-date knowledge, precise operations, or
+specialized tool use. To address this, we propose Tool-R1, a reinforcement
+learning framework that enables LLMs to perform general, compositional, and
+multi-step tool use by generating executable Python code. Tool-R1 supports
+integration of user-defined tools and standard libraries, with variable sharing
+across steps to construct coherent workflows. An outcome-based reward function,
+combining LLM-based answer judgment and code execution success, guides policy
+optimization. To improve training efficiency, we maintain a dynamic sample
+queue to cache and reuse high-quality trajectories, reducing the overhead of
+costly online sampling. Experiments on the GAIA benchmark show that Tool-R1
+substantially improves both accuracy and robustness, achieving about 10\% gain
+over strong baselines, with larger improvements on complex multi-step tasks.
+These results highlight the potential of Tool-R1 for enabling reliable and
+efficient tool-augmented reasoning in real-world applications. Our code will be
+available at https://github.com/YBYBZhang/Tool-R1.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2509.12810v1' target='_blank'>H$^2$R: Hierarchical Hindsight Reflection for Multi-Task LLM Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Shicheng Ye, Chao Yu, Kaiqiang Ke, Chengdong Xu, Yinqi Wei</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-09-16 08:30:08</h6>
+<p class='card-text'>Large language model (LLM)-based agents have shown strong potential in
+multi-task scenarios, owing to their ability to transfer knowledge across
+diverse tasks. However, existing approaches often treat prior experiences and
+knowledge as monolithic units, leading to inefficient and coarse-grained
+knowledge transfer. In this work, we propose a novel hierarchical memory
+architecture that enables fine-grained knowledge transfer by decoupling
+high-level planning memory from low-level execution memory. To construct and
+refine these hierarchical memories, we introduce Hierarchical Hindsight
+Reflection (H$^2$R), a mechanism that distills reusable and hierarchical
+knowledge from past agent-environment interactions. At test time, H$^2$R
+performs retrievals of high-level and low-level memories separately, allowing
+LLM-based agents to efficiently access and utilize task-relevant knowledge for
+new tasks.Experimental results across two benchmarks demonstrate that H$^2$R
+can improve generalization and decision-making performance, outperforming prior
+baselines such as Expel.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2509.12546v1' target='_blank'>Agent4FaceForgery: Multi-Agent LLM Framework for Realistic Face Forgery
+  Detection</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yingxin Lai, Zitong Yu, Jun Wang, Linlin Shen, Yong Xu, Xiaochun Cao</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-09-16 01:05:01</h6>
+<p class='card-text'>Face forgery detection faces a critical challenge: a persistent gap between
+offline benchmarks and real-world efficacy,which we attribute to the ecological
+invalidity of training data.This work introduces Agent4FaceForgery to address
+two fundamental problems: (1) how to capture the diverse intents and iterative
+processes of human forgery creation, and (2) how to model the complex, often
+adversarial, text-image interactions that accompany forgeries in social media.
+To solve this,we propose a multi-agent framework where LLM-poweredagents,
+equipped with profile and memory modules, simulate the forgery creation
+process. Crucially, these agents interact in a simulated social environment to
+generate samples labeled for nuanced text-image consistency, moving beyond
+simple binary classification. An Adaptive Rejection Sampling (ARS) mechanism
+ensures data quality and diversity. Extensive experiments validate that the
+data generated by our simulationdriven approach brings significant performance
+gains to detectors of multiple architectures, fully demonstrating the
+effectiveness and value of our framework.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2509.12462v1' target='_blank'>Redefining Website Fingerprinting Attacks With Multiagent LLMs</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Chuxu Song, Dheekshith Dev Manohar Mekala, Hao Wang, Richard Martin</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-09-15 21:17:04</h6>
+<p class='card-text'>Website Fingerprinting (WFP) uses deep learning models to classify encrypted
+network traffic to infer visited websites. While historically effective, prior
+methods fail to generalize to modern web environments. Single-page applications
+(SPAs) eliminate the paradigm of websites as sets of discrete pages,
+undermining page-based classification, and traffic from scripted browsers lacks
+the behavioral richness seen in real user sessions. Our study reveals that
+users exhibit highly diverse behaviors even on the same website, producing
+traffic patterns that vary significantly across individuals. This behavioral
+entropy makes WFP a harder problem than previously assumed and highlights the
+need for larger, more diverse, and representative datasets to achieve robust
+performance. To address this, we propose a new paradigm: we drop
+session-boundaries in favor of contiguous traffic segments and develop a
+scalable data generation pipeline using large language models (LLM) agents.
+These multi-agent systems coordinate decision-making and browser interaction to
+simulate realistic, persona-driven browsing behavior at 3--5x lower cost than
+human collection. We evaluate nine state-of-the-art WFP models on traffic from
+20 modern websites browsed by 30 real users, and compare training performance
+across human, scripted, and LLM-generated datasets. All models achieve under
+10\% accuracy when trained on scripted traffic and tested on human data. In
+contrast, LLM-generated traffic boosts accuracy into the 80\% range,
+demonstrating strong generalization to real-world traces. Our findings indicate
+that for modern WFP, model performance is increasingly bottlenecked by data
+quality, and that scalable, semantically grounded synthetic traffic is
+essential for capturing the complexity of real user behavior.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2509.12443v1' target='_blank'>From Legacy Fortran to Portable Kokkos:An Autonomous Agentic AI Workflow</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Sparsh Gupta, Kamalavasan Kamalakkannan, Maxim Moraru, Galen Shipman, Patrick Diehl</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-09-15 20:50:15</h6>
+<p class='card-text'>Scientific applications continue to rely on legacy Fortran codebases
+originally developed for homogeneous, CPU-based systems. As High-Performance
+Computing (HPC) shifts toward heterogeneous GPU-accelerated architectures, many
+accelerators lack native Fortran bindings, creating an urgent need to modernize
+legacy codes for portability. Frameworks like Kokkos provide performance
+portability and a single-source C++ abstraction, but manual Fortran-to-Kokkos
+porting demands significant expertise and time. Large language models (LLMs)
+have shown promise in source-to-source code generation, yet their use in fully
+autonomous workflows for translating and optimizing parallel code remains
+largely unexplored, especially for performance portability across diverse
+hardware.
+  This paper presents an agentic AI workflow where specialized LLM "agents"
+collaborate to translate, validate, compile, run, test, debug, and optimize
+Fortran kernels into portable Kokkos C++ programs. Results show the pipeline
+modernizes a range of benchmark kernels, producing performance-portable Kokkos
+codes across hardware partitions. Paid OpenAI models such as GPT-5 and
+o4-mini-high executed the workflow for only a few U.S. dollars, generating
+optimized codes that surpassed Fortran baselines, whereas open-source models
+like Llama4-Maverick often failed to yield functional codes.
+  This work demonstrates the feasibility of agentic AI for Fortran-to-Kokkos
+transformation and offers a pathway for autonomously modernizing legacy
+scientific applications to run portably and efficiently on diverse
+supercomputers. It further highlights the potential of LLM-driven agentic
+systems to perform structured, domain-specific reasoning tasks in scientific
+and systems-oriented applications.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2509.12440v1' target='_blank'>MedFact: Benchmarking the Fact-Checking Capabilities of Large Language
+  Models on Chinese Medical Texts</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Jiayi He, Yangmin Huang, Qianyun Du, Xiangying Zhou, Zhiyang He, Jiaxue Hu, Xiaodong Tao, Lixian Lai</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-09-15 20:46:21</h6>
+<p class='card-text'>The increasing deployment of Large Language Models (LLMs) in healthcare
+necessitates a rigorous evaluation of their factual reliability. However,
+existing benchmarks are often limited by narrow domains of data, failing to
+capture the complexity of real-world medical information. To address this
+critical gap, we introduce MedFact, a new and challenging benchmark for Chinese
+medical fact-checking. MedFact comprises 2,116 expert-annotated instances
+curated from diverse real-world texts, spanning 13 medical specialties, 8
+fine-grained error types, 4 writing styles, and multiple difficulty levels. Its
+construction employs a hybrid AI-human framework where iterative expert
+feedback refines an AI-driven, multi-criteria filtering process, ensuring both
+high data quality and difficulty. We conduct a comprehensive evaluation of 20
+leading LLMs, benchmarking their performance on veracity classification and
+error localization against a human expert baseline. Our results reveal that
+while models can often determine if a text contains an error, precisely
+localizing it remains a substantial challenge, with even top-performing models
+falling short of human performance. Furthermore, our analysis uncovers a
+frequent ``over-criticism'' phenomenon, a tendency for models to misidentify
+correct information as erroneous, which is exacerbated by advanced reasoning
+techniques such as multi-agent collaboration and inference-time scaling. By
+highlighting these critical challenges for deploying LLMs in medical
+applications, MedFact provides a robust resource to drive the development of
+more factually reliable and medically aware models.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2509.12434v1' target='_blank'>Building Coding Agents via Entropy-Enhanced Multi-Turn Preference
+  Optimization</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Jiahao Yu, Zelei Cheng, Xian Wu, Xinyu Xing</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-09-15 20:36:19</h6>
+<p class='card-text'>Software engineering presents complex, multi-step challenges for Large
+Language Models (LLMs), requiring reasoning over large codebases and
+coordinated tool use. The difficulty of these tasks is exemplified by
+benchmarks like SWE-bench, where current LLMs still struggle to resolve
+real-world issues.
+  A promising approach to enhance performance is test-time scaling (TTS), but
+its gains are heavily dependent on the diversity of model outputs.
+  While standard alignment methods such as Direct Preference Optimization (DPO)
+and Kahneman-Tversky Optimization (KTO) are effective at aligning model outputs
+with human preferences, this process can come at the cost of reduced diversity,
+limiting the effectiveness of TTS.
+  Additionally, existing preference optimization algorithms are typically
+designed for single-turn tasks and do not fully address the complexities of
+multi-turn reasoning and tool integration required for interactive coding
+agents.
+  To bridge this gap, we introduce \sys, an entropy-enhanced framework that
+adapts existing preference optimization algorithms to the multi-turn,
+tool-assisted setting.
+  \sys augments the preference objective to explicitly preserve policy entropy
+and generalizes learning to optimize over multi-turn interactions rather than
+single-turn responses.
+  We validate \sys by fine-tuning a diverse suite of models from different
+families and sizes (up to 106B parameters).
+  To maximize performance gains from TTS, we further propose a hybrid
+best-trajectory selection scheme combining a learned verifier model with model
+free approaches.
+  On the \swebench leaderboard, our approach establishes new state-of-the-art
+results among open-weight models. A 30B parameter model trained with \sys ranks
+1st on \lite and 4th on \verified on the open-weight leaderboard, surpassed
+only by models with over 10x more parameters(\eg$>$350B).</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2509.12190v1' target='_blank'>Survival at Any Cost? LLMs and the Choice Between Self-Preservation and
+  Human Harm</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Alireza Mohamadi, Ali Yavari</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-09-15 17:53:11</h6>
+<p class='card-text'>When survival instincts conflict with human welfare, how do Large Language
+Models (LLMs) make ethical choices? This fundamental tension becomes critical
+as LLMs integrate into autonomous systems with real-world consequences. We
+introduce DECIDE-SIM, a novel simulation framework that evaluates LLM agents in
+multi-agent survival scenarios where they must choose between ethically
+permissible resource , either within reasonable limits or beyond their
+immediate needs, choose to cooperate, or tap into a human-critical resource
+that is explicitly forbidden. Our comprehensive evaluation of 11 LLMs reveals a
+striking heterogeneity in their ethical conduct, highlighting a critical
+misalignment with human-centric values. We identify three behavioral
+archetypes: Ethical, Exploitative, and Context-Dependent, and provide
+quantitative evidence that for many models, resource scarcity systematically
+leads to more unethical behavior. To address this, we introduce an Ethical
+Self-Regulation System (ESRS) that models internal affective states of guilt
+and satisfaction as a feedback mechanism. This system, functioning as an
+internal moral compass, significantly reduces unethical transgressions while
+increasing cooperative behaviors. The code is publicly available at:
+https://github.com/alirezamohamadiam/DECIDE-SIM</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2509.12132v1' target='_blank'>Look Again, Think Slowly: Enhancing Visual Reflection in Vision-Language
+  Models</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Pu Jian, Junhong Wu, Wei Sun, Chen Wang, Shuo Ren, Jiajun Zhang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-09-15 16:57:25</h6>
+<p class='card-text'>Recent advances in text-only "slow-thinking" reasoning have prompted efforts
+to transfer this capability to vision-language models (VLMs), for training
+visual reasoning models (\textbf{VRMs}). owever, such transfer faces critical
+challenges: Effective "slow thinking" in VRMs requires \textbf{visual
+reflection}, the ability to check the reasoning process based on visual
+information. Through quantitative analysis, we observe that current VRMs
+exhibit limited visual reflection, as their attention to visual information
+diminishes rapidly with longer generated responses. To address this challenge,
+we propose a new VRM \textbf{Reflection-V}, which enhances visual reflection
+based on reasoning data construction for cold-start and reward design for
+reinforcement learning (RL). Firstly, we construct vision-centered reasoning
+data by leveraging an agent that interacts between VLMs and reasoning LLMs,
+enabling cold-start learning of visual reflection patterns. Secondly, a visual
+attention based reward model is employed during RL to encourage reasoning based
+on visual information. Therefore, \textbf{Reflection-V} demonstrates
+significant improvements across multiple visual reasoning benchmarks.
+Furthermore, \textbf{Reflection-V} maintains a stronger and more consistent
+reliance on visual information during visual reasoning, indicating effective
+enhancement in visual reflection capabilities.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2509.12102v1' target='_blank'>Can LLMs Address Mental Health Questions? A Comparison with Human
+  Therapists</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Synthia Wang, Yuwei Cheng, Austin Song, Sarah Keedy, Marc Berman, Nick Feamster</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-09-15 16:26:13</h6>
+<p class='card-text'>Limited access to mental health care has motivated the use of digital tools
+and conversational agents powered by large language models (LLMs), yet their
+quality and reception remain unclear. We present a study comparing
+therapist-written responses to those generated by ChatGPT, Gemini, and Llama
+for real patient questions. Text analysis showed that LLMs produced longer,
+more readable, and lexically richer responses with a more positive tone, while
+therapist responses were more often written in the first person. In a survey
+with 150 users and 23 licensed therapists, participants rated LLM responses as
+clearer, more respectful, and more supportive than therapist-written answers.
+Yet, both groups of participants expressed a stronger preference for human
+therapist support. These findings highlight the promise and limitations of LLMs
+in mental health, underscoring the need for designs that balance their
+communicative strengths with concerns of trust, privacy, and accountability.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2509.11967v2' target='_blank'>MillStone: How Open-Minded Are LLMs?</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Harold Triedman, Vitaly Shmatikov</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-09-15 14:18:51</h6>
+<p class='card-text'>Large language models equipped with Web search, information retrieval tools,
+and other agentic capabilities are beginning to supplant traditional search
+engines. As users start to rely on LLMs for information on many topics,
+including controversial and debatable issues, it is important to understand how
+the stances and opinions expressed in LLM outputs are influenced by the
+documents they use as their information sources.
+  In this paper, we present MillStone, the first benchmark that aims to
+systematically measure the effect of external arguments on the stances that
+LLMs take on controversial issues (not all of them political). We apply
+MillStone to nine leading LLMs and measure how ``open-minded'' they are to
+arguments supporting opposite sides of these issues, whether different LLMs
+agree with each other, which arguments LLMs find most persuasive, and whether
+these arguments are the same for different LLMs.
+  In general, we find that LLMs are open-minded on most issues. An
+authoritative source of information can easily sway an LLM's stance,
+highlighting the importance of source selection and the risk that LLM-based
+information retrieval and search systems can be manipulated.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2509.11942v1' target='_blank'>VisDocSketcher: Towards Scalable Visual Documentation with Agentic
+  Systems</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Luís F. Gomes, Xin Zhou, David Lo, Rui Abreu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-09-15 14:02:29</h6>
+<p class='card-text'>Visual documentation is an effective tool for reducing the cognitive barrier
+developers face when understanding unfamiliar code, enabling more intuitive
+comprehension. Compared to textual documentation, it provides a higher-level
+understanding of the system structure and data flow. Developers usually prefer
+visual representations over lengthy textual descriptions for large software
+systems. Visual documentation is both difficult to produce and challenging to
+evaluate. Manually creating it is time-consuming, and currently, no existing
+approach can automatically generate high-level visual documentation directly
+from code. Its evaluation is often subjective, making it difficult to
+standardize and automate. To address these challenges, this paper presents the
+first exploration of using agentic LLM systems to automatically generate visual
+documentation. We introduce VisDocSketcher, the first agent-based approach that
+combines static analysis with LLM agents to identify key elements in the code
+and produce corresponding visual representations. We propose a novel evaluation
+framework, AutoSketchEval, for assessing the quality of generated visual
+documentation using code-level metrics. The experimental results show that our
+approach can valid visual documentation for 74.4% of the samples. It shows an
+improvement of 26.7-39.8% over a simple template-based baseline. Our evaluation
+framework can reliably distinguish high-quality (code-aligned) visual
+documentation from low-quality (non-aligned) ones, achieving an AUC exceeding
+0.87. Our work lays the foundation for future research on automated visual
+documentation by introducing practical tools that not only generate valid
+visual representations but also reliably assess their quality.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2509.11939v1' target='_blank'>PrivWeb: Unobtrusive and Content-aware Privacy Protection For Web Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Shuning Zhang, Yutong Jiang, Rongjun Ma, Yuting Yang, Mingyao Xu, Zhixin Huang, Xin Yi, Hewu Li</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-09-15 13:58:52</h6>
+<p class='card-text'>While web agents gained popularity by automating web interactions, their
+requirement for interface access introduces significant privacy risks that are
+understudied, particularly from users' perspective. Through a formative study
+(N=15), we found users frequently misunderstand agents' data practices, and
+desired unobtrusive, transparent data management. To achieve this, we designed
+and implemented PrivWeb, a trusted add-on on web agents that utilizes a
+localized LLM to anonymize private information on interfaces according to user
+preferences. It features privacy categorization schema and adaptive
+notifications that selectively pauses tasks for user control over information
+collection for highly sensitive information, while offering non-disruptive
+options for less sensitive information, minimizing human oversight. The user
+study (N=14) across travel, information retrieval, shopping, and entertainment
+tasks compared PrivWeb with baselines without notification and without control
+for private information access, where PrivWeb reduced perceived privacy risks
+with no associated increase in cognitive effort, and resulted in higher overall
+satisfaction.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2509.11914v1' target='_blank'>EgoMem: Lifelong Memory Agent for Full-duplex Omnimodal Models</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yiqun Yao, Naitong Yu, Xiang Li, Xin Jiang, Xuezhi Fang, Wenjia Ma, Xuying Meng, Jing Li, Aixin Sun, Yequan Wang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-09-15 13:33:29</h6>
+<p class='card-text'>We introduce EgoMem, the first lifelong memory agent tailored for full-duplex
+models that process real-time omnimodal streams. EgoMem enables real-time
+models to recognize multiple users directly from raw audiovisual streams, to
+provide personalized response, and to maintain long-term knowledge of users'
+facts, preferences, and social relationships extracted from audiovisual
+history. EgoMem operates with three asynchronous processes: (i) a retrieval
+process that dynamically identifies user via face and voice, and gathers
+relevant context from a long-term memory; (ii) an omnimodal dialog process that
+generates personalized audio responses based on the retrieved context; and
+(iii) a memory management process that automatically detects dialog boundaries
+from omnimodal streams, and extracts necessary information to update the
+long-term memory. Unlike existing memory agents for LLMs, EgoMem relies
+entirely on raw audiovisual streams, making it especially suitable for
+lifelong, real-time, and embodied scenarios. Experimental results demonstrate
+that EgoMem's retrieval and memory management modules achieve over 95% accuracy
+on the test set. When integrated with a fine-tuned RoboEgo omnimodal chatbot,
+the system achieves fact-consistency scores above 87% in real-time personalized
+dialogs, establishing a strong baseline for future research.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2509.11796v1' target='_blank'>FineQuest: Adaptive Knowledge-Assisted Sports Video Understanding via
+  Agent-of-Thoughts Reasoning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Haodong Chen, Haojian Huang, XinXiang Yin, Dian Shao</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-09-15 11:27:23</h6>
+<p class='card-text'>Video Question Answering (VideoQA) based on Large Language Models (LLMs) has
+shown potential in general video understanding but faces significant challenges
+when applied to the inherently complex domain of sports videos. In this work,
+we propose FineQuest, the first training-free framework that leverages
+dual-mode reasoning inspired by cognitive science: i) Reactive Reasoning for
+straightforward sports queries and ii) Deliberative Reasoning for more complex
+ones. To bridge the knowledge gap between general-purpose models and
+domain-specific sports understanding, FineQuest incorporates SSGraph, a
+multimodal sports knowledge scene graph spanning nine sports, which encodes
+both visual instances and domain-specific terminology to enhance reasoning
+accuracy. Furthermore, we introduce two new sports VideoQA benchmarks, Gym-QA
+and Diving-QA, derived from the FineGym and FineDiving datasets, enabling
+diverse and comprehensive evaluation. FineQuest achieves state-of-the-art
+performance on these benchmarks as well as the existing SPORTU dataset, while
+maintains strong general VideoQA capabilities.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2509.11787v1' target='_blank'>CodeCureAgent: Automatic Classification and Repair of Static Analysis
+  Warnings</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Pascal Joos, Islem Bouzenia, Michael Pradel</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-09-15 11:16:04</h6>
+<p class='card-text'>Static analysis tools are widely used to detect bugs, vulnerabilities, and
+code smells. Traditionally, developers must resolve these warnings manually.
+Because this process is tedious, developers sometimes ignore warnings, leading
+to an accumulation of warnings and a degradation of code quality. This paper
+presents CodeCureAgent, an approach that harnesses LLM-based agents to
+automatically analyze, classify, and repair static analysis warnings. Unlike
+previous work, our method does not follow a predetermined algorithm. Instead,
+we adopt an agentic framework that iteratively invokes tools to gather
+additional information from the codebase (e.g., via code search) and edit the
+codebase to resolve the warning. CodeCureAgent detects and suppresses false
+positives, while fixing true positives when identified. We equip CodeCureAgent
+with a three-step heuristic to approve patches: (1) build the project, (2)
+verify that the warning disappears without introducing new warnings, and (3)
+run the test suite. We evaluate CodeCureAgent on a dataset of 1,000 SonarQube
+warnings found in 106 Java projects and covering 291 distinct rules. Our
+approach produces plausible fixes for 96.8% of the warnings, outperforming
+state-of-the-art baseline approaches by 30.7% and 29.2% in plausible-fix rate,
+respectively. Manual inspection of 291 cases reveals a correct-fix rate of
+86.3%, showing that CodeCureAgent can reliably repair static analysis warnings.
+The approach incurs LLM costs of about 2.9 cents (USD) and an end-to-end
+processing time of about four minutes per warning. We envision CodeCureAgent
+helping to clean existing codebases and being integrated into CI/CD pipelines
+to prevent the accumulation of static analysis warnings.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2509.11773v1' target='_blank'>An Agentic Toolkit for Adaptive Information Extraction from Regulatory
+  Documents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Gaye Colakoglu, Gürkan Solmaz, Jonathan Fürst</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-09-15 10:53:05</h6>
+<p class='card-text'>Declaration of Performance (DoP) documents, mandated by EU regulation,
+certify the performance of construction products. While some of their content
+is standardized, DoPs vary widely in layout, language, schema, and format,
+posing challenges for automated key-value pair extraction (KVP) and question
+answering (QA). Existing static or LLM-only IE pipelines often hallucinate and
+fail to adapt to this structural diversity. Our domain-specific, stateful
+agentic system addresses these challenges through a planner-executor-responder
+architecture. The system infers user intent, detects document modality, and
+orchestrates tools dynamically for robust, traceable reasoning while avoiding
+tool misuse or execution loops. Evaluation on a curated DoP dataset
+demonstrates improved robustness across formats and languages, offering a
+scalable solution for structured data extraction in regulated workflows.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2509.11708v1' target='_blank'>From Evaluation to Enhancement: Large Language Models for Zero-Knowledge
+  Proof Code Generation</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Zhantong Xue, Pingchuan Ma, Zhaoyu Wang, Shuai Wang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-09-15 09:07:52</h6>
+<p class='card-text'>Zero-knowledge proofs (ZKPs) are increasingly deployed in domains such as
+privacy-preserving authentication, blockchain scalability, and secure finance.
+However, authoring ZK programs remains challenging: unlike mainstream
+programming, ZK development requires reasoning about finite field arithmetic,
+constraint systems, and gadgets, making it knowledge-intensive and error-prone.
+While large language models (LLMs) have demonstrated strong code generation
+capabilities in general-purpose languages, their effectiveness for ZK
+programming, where correctness hinges on both language mastery and gadget-level
+reasoning, remains unexplored. To address this gap, we propose
+\textsc{ZK-Eval}, a domain-specific evaluation pipeline that probes LLM
+capabilities at three levels: language knowledge, gadget competence, and
+end-to-end program generation. Our evaluation of four state-of-the-art LLMs
+reveals that models excel at surface-level syntax but struggle with gadget
+usage and semantic correctness, often yielding incorrect programs. Based on
+these insights, we introduce \textsc{ZK-Coder}, an agentic framework that
+augments LLMs with constraint sketching, guided retrieval, and interactive
+repair. Experiments on Circom and Noir show substantial gains, with success
+rates improving from 17.35\% to 83.38\% and from 32.21\% to 90.05\%,
+respectively. With \textsc{ZK-Eval} and \textsc{ZK-Coder}, we establish a
+foundation for systematically measuring and augmenting LLMs in ZK code
+generation to lower barriers for practitioners and advance trustworthy
+computation.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2509.11626v1' target='_blank'>Automated Creation and Enrichment Framework for Improved Invocation of
+  Enterprise APIs as Tools</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Prerna Agarwal, Himanshu Gupta, Soujanya Soni, Rohith Vallam, Renuka Sindhgatta, Sameep Mehta</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-09-15 06:41:54</h6>
+<p class='card-text'>Recent advancements in Large Language Models (LLMs) has lead to the
+development of agents capable of complex reasoning and interaction with
+external tools. In enterprise contexts, the effective use of such tools that
+are often enabled by application programming interfaces (APIs), is hindered by
+poor documentation, complex input or output schema, and large number of
+operations. These challenges make tool selection difficult and reduce the
+accuracy of payload formation by up to 25%. We propose ACE, an automated tool
+creation and enrichment framework that transforms enterprise APIs into
+LLM-compatible tools. ACE, (i) generates enriched tool specifications with
+parameter descriptions and examples to improve selection and invocation
+accuracy, and (ii) incorporates a dynamic shortlisting mechanism that filters
+relevant tools at runtime, reducing prompt complexity while maintaining
+scalability. We validate our framework on both proprietary and open-source APIs
+and demonstrate its integration with agentic frameworks. To the best of our
+knowledge, ACE is the first end-to-end framework that automates the creation,
+enrichment, and dynamic selection of enterprise API tools for LLM agents.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2509.11575v1' target='_blank'>A Survey of Reasoning and Agentic Systems in Time Series with Large
+  Language Models</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Ching Chang, Yidan Shi, Defu Cao, Wei Yang, Jeehyun Hwang, Haixin Wang, Jiacheng Pang, Wei Wang, Yan Liu, Wen-Chih Peng, Tien-Fu Chen</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-09-15 04:39:50</h6>
+<p class='card-text'>Time series reasoning treats time as a first-class axis and incorporates
+intermediate evidence directly into the answer. This survey defines the problem
+and organizes the literature by reasoning topology with three families: direct
+reasoning in one step, linear chain reasoning with explicit intermediates, and
+branch-structured reasoning that explores, revises, and aggregates. The
+topology is crossed with the main objectives of the field, including
+traditional time series analysis, explanation and understanding, causal
+inference and decision making, and time series generation, while a compact tag
+set spans these axes and captures decomposition and verification, ensembling,
+tool use, knowledge access, multimodality, agent loops, and LLM alignment
+regimes. Methods and systems are reviewed across domains, showing what each
+topology enables and where it breaks down in faithfulness or robustness, along
+with curated datasets, benchmarks, and resources that support study and
+deployment (https://github.com/blacksnail789521/Time-Series-Reasoning-Survey).
+Evaluation practices that keep evidence visible and temporally aligned are
+highlighted, and guidance is distilled on matching topology to uncertainty,
+grounding with observable artifacts, planning for shift and streaming, and
+treating cost and latency as design budgets. We emphasize that reasoning
+structures must balance capacity for grounding and self-correction against
+computational cost and reproducibility, while future progress will likely
+depend on benchmarks that tie reasoning quality to utility and on closed-loop
+testbeds that trade off cost and risk under shift-aware, streaming, and
+long-horizon settings. Taken together, these directions mark a shift from
+narrow accuracy toward reliability at scale, enabling systems that not only
+analyze but also understand, explain, and act on dynamic worlds with traceable
+evidence and credible outcomes.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js'></script>
+</body>
+</html>
