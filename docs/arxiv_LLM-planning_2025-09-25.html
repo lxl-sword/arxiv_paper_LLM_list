@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<title>LLM-planning - 2025-09-25</title>
+<link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap' rel='stylesheet'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'>
+<style>
+body {
+font-family: 'Roboto', sans-serif;
+background-color: #f5f7fa;
+padding: 20px;
+}
+.card {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.card-title {
+    font-weight: 700;
+}
+.card:hover {
+    transform: scale(1.02);
+    transition: 0.3s ease-in-out;
+}
+</style>
+</head>
+<body>
+<div class='container'>
+<h1 class='text-center my-4'><i class='fas fa-book'></i>LLM-planning - 2025-09-25</h1>
+<div class='row'>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2509.20241v1' target='_blank'>Energy Use of AI Inference: Efficiency Pathways and Test-Time Compute</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Felipe Oviedo, Fiodar Kazhamiaka, Esha Choukse, Allen Kim, Amy Luers, Melanie Nakagawa, Ricardo Bianchini, Juan M. Lavista Ferres</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-09-24 15:32:01</h6>
+<p class='card-text'>As AI inference scales to billions of queries and emerging reasoning and
+agentic workflows increase token demand, reliable estimates of per-query energy
+use are increasingly important for capacity planning, emissions accounting, and
+efficiency prioritization. Many public estimates are inconsistent and overstate
+energy use, because they extrapolate from limited benchmarks and fail to
+reflect efficiency gains achievable at scale. In this perspective, we introduce
+a bottom-up methodology to estimate the per-query energy of large-scale LLM
+systems based on token throughput. For models running on an H100 node under
+realistic workloads, GPU utilization and PUE constraints, we estimate a median
+energy per query of 0.34 Wh (IQR: 0.18-0.67) for frontier-scale models (>200
+billion parameters). These results are consistent with measurements using
+production-scale configurations and show that non-production estimates and
+assumptions can overstate energy use by 4-20x. Extending to test-time scaling
+scenarios with 15x more tokens per typical query, the median energy rises 13x
+to 4.32 Wh, indicating that targeting efficiency in this regime will deliver
+the largest fleet-wide savings. We quantify achievable efficiency gains at the
+model, serving platform, and hardware levels, finding individual median
+reductions of 1.5-3.5x in energy per query, while combined advances can
+plausibly deliver 8-20x reductions. To illustrate the system-level impact, we
+estimate the baseline daily energy use of a deployment serving 1 billion
+queries to be 0.8 GWh/day. If 10% are long queries, demand could grow to 1.8
+GWh/day. With targeted efficiency interventions, it falls to 0.9 GWh/day,
+similar to the energy footprint of web search at that scale. This echoes how
+data centers historically tempered energy growth through efficiency gains
+during the internet and cloud build-up.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2509.20070v1' target='_blank'>LLM Trainer: Automated Robotic Data Generating via Demonstration
+  Augmentation using LLMs</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Abraham George, Amir Barati Farimani</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-09-24 12:40:57</h6>
+<p class='card-text'>We present LLM Trainer, a fully automated pipeline that leverages the world
+knowledge of Large Language Models (LLMs) to transform a small number of human
+demonstrations (as few as one) into a large robot dataset for imitation
+learning. Our approach decomposes demonstration generation into two steps: (1)
+offline demonstration annotation that extracts keyframes, salient objects, and
+pose-object relations; and (2) online keypose retargeting that adapts those
+keyframes to a new scene, given an initial observation. Using these modified
+keypoints, our system warps the original demonstration to generate a new
+trajectory, which is then executed, and the resulting demo, if successful, is
+saved. Because the annotation is reusable across scenes, we use Thompson
+sampling to optimize the annotation, significantly improving generation success
+rate. We evaluate our method on a range of tasks, and find that our data
+annotation method consistently outperforms expert-engineered baselines. We
+further show an ensemble policy that combines the optimized LLM feed-forward
+plan with a learned feedback imitation learning controller. Finally, we
+demonstrate hardware feasibility on a Franka Emika Panda robot. For additional
+materials and demonstration videos, please see the project website:
+https://sites.google.com/andrew.cmu.edu/llm-trainer</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2509.19931v1' target='_blank'>Documentation Retrieval Improves Planning Language Generation</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Renxiang Wang, Li Zhang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-09-24 09:38:48</h6>
+<p class='card-text'>Certain strong LLMs have shown promise for zero-shot formal planning by
+generating planning languages like PDDL. Yet, performance of most open-source
+models under 50B parameters has been reported to be close to zero due to the
+low-resource nature of these languages. We significantly improve their
+performance via a series of lightweight pipelines that integrates documentation
+retrieval with modular code generation and error refinement. With models like
+Llama-4-Maverick, our best pipeline improves plan correctness from 0\% to over
+80\% on the common BlocksWorld domain. However, while syntactic errors are
+substantially reduced, semantic errors persist in more challenging domains,
+revealing fundamental limitations in current models' reasoning
+capabilities.\footnote{Our code and data can be found at
+https://github.com/Nangxxxxx/PDDL-RAG</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2509.19077v1' target='_blank'>Code Driven Planning with Domain-Adaptive Critic</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Zikang Tian, Shaohui Peng, Du Huang, Jiaming Guo, Ruizhi Chen, Rui Zhang, Xishan Zhang, Yuxuan Guo, Zidong Du, Qi Guo, Ling Li, Yewen Pu, Xing Hu, Yunji Chen</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-09-23 14:36:12</h6>
+<p class='card-text'>Large Language Models (LLMs) have been widely adopted as task planners for AI
+agents in sequential decision-making problems, leveraging their extensive world
+knowledge. However, the gap between their general knowledge and
+environment-specific requirements often leads to inaccurate plans. To address
+this, existing approaches rely on frequent LLM queries to iteratively refine
+plans based on immediate environmental feedback, which incurs substantial query
+costs. However, this refinement is typically guided by short-term environmental
+feedback, limiting LLMs from developing plans aligned with long-term rewards.
+We propose Code Driven Planning with Domain-Adaptive Critic (CoPiC). Instead of
+relying on frequent queries, CoPiC employs LLMs to generate a diverse set of
+high-level planning programs, which iteratively produce and refine candidate
+plans. A trained domain-adaptive critic then evaluates these candidates and
+selects the one most aligned with long-term rewards for execution. Using
+high-level planning programs as planner and domain-adaptive critic as
+estimator, CoPiC improves planning while significantly reducing query costs.
+Results in ALFWorld, NetHack, and StarCraft II Unit Building show that CoPiC
+outperforms advanced LLM-based baselines, AdaPlanner and Reflexion, achieving
+an average (1) 23.33% improvement in success rate and (2) 91.27% reduction in
+query costs.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2509.18710v1' target='_blank'>Autonomous Data Agents: A New Opportunity for Smart Data</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yanjie Fu, Dongjie Wang, Wangyang Ying, Xiangliang Zhang, Huan Liu, Jian Pei</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-09-23 06:46:41</h6>
+<p class='card-text'>As data continues to grow in scale and complexity, preparing, transforming,
+and analyzing it remains labor-intensive, repetitive, and difficult to scale.
+Since data contains knowledge and AI learns knowledge from it, the alignment
+between AI and data is essential. However, data is often not structured in ways
+that are optimal for AI utilization. Moreover, an important question arises:
+how much knowledge can we pack into data through intensive data operations?
+Autonomous data agents (DataAgents), which integrate LLM reasoning with task
+decomposition, action reasoning and grounding, and tool calling, can
+autonomously interpret data task descriptions, decompose tasks into subtasks,
+reason over actions, ground actions into python code or tool calling, and
+execute operations. Unlike traditional data management and engineering tools,
+DataAgents dynamically plan workflows, call powerful tools, and adapt to
+diverse data tasks at scale. This report argues that DataAgents represent a
+paradigm shift toward autonomous data-to-knowledge systems. DataAgents are
+capable of handling collection, integration, preprocessing, selection,
+transformation, reweighing, augmentation, reprogramming, repairs, and
+retrieval. Through these capabilities, DataAgents transform complex and
+unstructured data into coherent and actionable knowledge. We first examine why
+the convergence of agentic AI and data-to-knowledge systems has emerged as a
+critical trend. We then define the concept of DataAgents and discuss their
+architectural design, training strategies, as well as the new skills and
+capabilities they enable. Finally, we call for concerted efforts to advance
+action workflow optimization, establish open datasets and benchmark ecosystems,
+safeguard privacy, balance efficiency with scalability, and develop trustworthy
+DataAgent guardrails to prevent malicious actions.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2509.18632v1' target='_blank'>A Good Plan is Hard to Find: Aligning Models with Preferences is
+  Misaligned with What Helps Users</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Nishant Balepur, Matthew Shu, Yoo Yeon Sung, Seraphina Goldfarb-Tarrant, Shi Feng, Fumeng Yang, Rachel Rudinger, Jordan Lee Boyd-Graber</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-09-23 04:33:30</h6>
+<p class='card-text'>To assist users in complex tasks, LLMs generate plans: step-by-step
+instructions towards a goal. While alignment methods aim to ensure LLM plans
+are helpful, they train (RLHF) or evaluate (ChatbotArena) on what users prefer,
+assuming this reflects what helps them. We test this with Planorama: an
+interface where 126 users answer 300 multi-step questions with LLM plans. We
+get 4388 plan executions and 5584 comparisons to measure plan helpfulness (QA
+success) and user preferences on plans, and recreate the setup in agents and
+reward models to see if they simulate or prefer what helps users. We expose: 1)
+user/model preferences and agent success do not accurately predict which plans
+help users, so common alignment feedback can misalign with helpfulness; 2) this
+gap is not due to user-specific preferences, as users are similarly successful
+when using plans they prefer/disprefer; 3) surface-level cues like brevity and
+question similarity strongly link to preferences, but such biases fail to
+predict helpfulness. In all, we argue aligning helpful LLMs needs feedback from
+real user interactions, not just preferences of what looks helpful, so we
+discuss the plan NLP researchers can execute to solve this problem.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2509.18597v1' target='_blank'>Growing with Your Embodied Agent: A Human-in-the-Loop Lifelong Code
+  Generation Framework for Long-Horizon Manipulation Skills</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yuan Meng, Zhenguo Sun, Max Fest, Xukun Li, Zhenshan Bing, Alois Knoll</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-09-23 03:34:19</h6>
+<p class='card-text'>Large language models (LLMs)-based code generation for robotic manipulation
+has recently shown promise by directly translating human instructions into
+executable code, but existing methods remain noisy, constrained by fixed
+primitives and limited context windows, and struggle with long-horizon tasks.
+While closed-loop feedback has been explored, corrected knowledge is often
+stored in improper formats, restricting generalization and causing catastrophic
+forgetting, which highlights the need for learning reusable skills. Moreover,
+approaches that rely solely on LLM guidance frequently fail in extremely
+long-horizon scenarios due to LLMs' limited reasoning capability in the robotic
+domain, where such issues are often straightforward for humans to identify. To
+address these challenges, we propose a human-in-the-loop framework that encodes
+corrections into reusable skills, supported by external memory and
+Retrieval-Augmented Generation with a hint mechanism for dynamic reuse.
+Experiments on Ravens, Franka Kitchen, and MetaWorld, as well as real-world
+settings, show that our framework achieves a 0.93 success rate (up to 27%
+higher than baselines) and a 42% efficiency improvement in correction rounds.
+It can robustly solve extremely long-horizon tasks such as "build a house",
+which requires planning over 20 primitives.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2509.18384v1' target='_blank'>AD-VF: LLM-Automatic Differentiation Enables Fine-Tuning-Free Robot
+  Planning from Formal Methods Feedback</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yunhao Yang, Junyuan Hong, Gabriel Jacob Perin, Zhiwen Fan, Li Yin, Zhangyang Wang, Ufuk Topcu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-09-22 20:14:32</h6>
+<p class='card-text'>Large language models (LLMs) can translate natural language instructions into
+executable action plans for robotics, autonomous driving, and other domains.
+Yet, deploying LLM-driven planning in the physical world demands strict
+adherence to safety and regulatory constraints, which current models often
+violate due to hallucination or weak alignment. Traditional data-driven
+alignment methods, such as Direct Preference Optimization (DPO), require costly
+human labeling, while recent formal-feedback approaches still depend on
+resource-intensive fine-tuning. In this paper, we propose LAD-VF, a
+fine-tuning-free framework that leverages formal verification feedback for
+automated prompt engineering. By introducing a formal-verification-informed
+text loss integrated with LLM-AutoDiff, LAD-VF iteratively refines prompts
+rather than model parameters. This yields three key benefits: (i) scalable
+adaptation without fine-tuning; (ii) compatibility with modular LLM
+architectures; and (iii) interpretable refinement via auditable prompts.
+Experiments in robot navigation and manipulation tasks demonstrate that LAD-VF
+substantially enhances specification compliance, improving success rates from
+60% to over 90%. Our method thus presents a scalable and interpretable pathway
+toward trustworthy, formally-verified LLM-driven control systems.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2509.18083v1' target='_blank'>Reasoning Core: A Scalable RL Environment for LLM Symbolic Reasoning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Valentin Lacombe, Valentin Quesnel, Damien Sileo</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-09-22 17:56:38</h6>
+<p class='card-text'>We introduce Reasoning Core, a new scalable environment for Reinforcement
+Learning with Verifiable Rewards (RLVR), designed to advance foundational
+symbolic reasoning in Large Language Models (LLMs). Unlike existing benchmarks
+that focus on games or isolated puzzles, Reasoning Core procedurally generates
+problems across core formal domains, including PDDL planning, first-order
+logic, context-free grammar parsing, causal reasoning, and system equation
+solving. The environment is built on key design principles of high-generality
+problem distributions, verification via external tools, and continuous
+difficulty control, which together provide a virtually infinite supply of novel
+training instances. Initial zero-shot evaluations with frontier LLMs confirm
+the difficulty of Reasoning Core's tasks, positioning it as a promising
+resource to improve the reasoning capabilities of future models.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2509.17832v1' target='_blank'>AEAS: Actionable Exploit Assessment System</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Xiangmin Shen, Wenyuan Cheng, Yan Chen, Zhenyuan Li, Yuqiao Gu, Lingzhi Wang, Wencheng Zhao, Dawei Sun, Jiashui Wang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-09-22 14:23:04</h6>
+<p class='card-text'>Security practitioners face growing challenges in exploit assessment, as
+public vulnerability repositories are increasingly populated with inconsistent
+and low-quality exploit artifacts. Existing scoring systems, such as CVSS and
+EPSS, offer limited support for this task. They either rely on theoretical
+metrics or produce opaque probability estimates without assessing whether
+usable exploit code exists. In practice, security teams often resort to manual
+triage of exploit repositories, which is time-consuming, error-prone, and
+difficult to scale. We present AEAS, an automated system designed to assess and
+prioritize actionable exploits through static analysis. AEAS analyzes both
+exploit code and associated documentation to extract a structured set of
+features reflecting exploit availability, functionality, and setup complexity.
+It then computes an actionability score for each exploit and produces ranked
+exploit recommendations. We evaluate AEAS on a dataset of over 5,000
+vulnerabilities derived from 600+ real-world applications frequently
+encountered by red teams. Manual validation and expert review on representative
+subsets show that AEAS achieves a 100% top-3 success rate in recommending
+functional exploits and shows strong alignment with expert-validated rankings.
+These results demonstrate the effectiveness of AEAS in supporting
+exploit-driven vulnerability prioritization.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2509.17489v1' target='_blank'>MapCoder-Lite: Squeezing Multi-Agent Coding into a Single Small LLM</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Woongkyu Lee, Junhee Cho, Jungwook Choi</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-09-22 08:19:11</h6>
+<p class='card-text'>Large language models (LLMs) have advanced code generation from
+single-function tasks to competitive-programming problems, but existing
+multi-agent solutions either rely on costly large-scale ($>$ 30B) models or
+collapse when downsized to small open-source models. We present MapCoder-Lite,
+which upgrades a single 7B model into four role-specialised agents-retriever,
+planner, coder, and debugger-using only rank-32, role-specific LoRA adapters
+($<3\%$ extra parameters). Three lightweight techniques make this possible: (i)
+trajectory distillation from strong LLMs fixes format fragility in retrieval
+and debugging, (ii) supervisor-guided correction strengthens planning and
+coding agents, and (iii) agent-wise LoRA fine-tuning delivers memory-efficient
+specialisation. Comprehensive evaluation on xCodeEval, APPS, and CodeContests
+shows that MapCoder-Lite more than doubles xCodeEval accuracy (from $13.2\%$ to
+$28.3\%$), eliminates all format failures, and closes to within six points of a
+32B baseline while cutting GPU memory and token-generation time by $4\times$.
+These results demonstrate that careful agent-wise fine-tuning unleashes
+high-quality multi-agent coding on a small language model.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2509.17459v1' target='_blank'>PRINCIPLES: Synthetic Strategy Memory for Proactive Dialogue Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Namyoung Kim, Kai Tzu-iunn Ong, Yeonjun Hwang, Minseok Kang, Iiseo Jihn, Gayoung Kim, Minju Kim, Jinyoung Yeo</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-09-22 07:53:59</h6>
+<p class='card-text'>Dialogue agents based on large language models (LLMs) have shown promising
+performance in proactive dialogue, which requires effective strategy planning.
+However, existing approaches to strategy planning for proactive dialogue face
+several limitations: limited strategy coverage, preference bias in planning,
+and reliance on costly additional training. To address these, we propose
+PRINCIPLES: a synthetic strategy memory for proactive dialogue agents.
+PRINCIPLES is derived through offline self-play simulations and serves as
+reusable knowledge that guides strategy planning during inference, eliminating
+the need for additional training and data annotation. We evaluate PRINCIPLES in
+both emotional support and persuasion domains, demonstrating consistent
+improvements over strong baselines. Furthermore, PRINCIPLES maintains its
+robustness across extended and more diverse evaluation settings. See our
+project page at https://huggingface.co/spaces/kimnamssya/Principles.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2509.17283v1' target='_blank'>Automated Facility Enumeration for Building Compliance Checking using
+  Door Detection and Large Language Models</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Licheng Zhan, Bach Le, Naveed Akhtar, Tuan Ngo</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-09-21 23:41:44</h6>
+<p class='card-text'>Building compliance checking (BCC) is a critical process for ensuring that
+constructed facilities meet regulatory standards. A core component of BCC is
+the accurate enumeration of facility types and their spatial distribution.
+Despite its importance, this problem has been largely overlooked in the
+literature, posing a significant challenge for BCC and leaving a critical gap
+in existing workflows. Performing this task manually is time-consuming and
+labor-intensive. Recent advances in large language models (LLMs) offer new
+opportunities to enhance automation by combining visual recognition with
+reasoning capabilities. In this paper, we introduce a new task for BCC:
+automated facility enumeration, which involves validating the quantity of each
+facility type against statutory requirements. To address it, we propose a novel
+method that integrates door detection with LLM-based reasoning. We are the
+first to apply LLMs to this task and further enhance their performance through
+a Chain-of-Thought (CoT) pipeline. Our approach generalizes well across diverse
+datasets and facility types. Experiments on both real-world and synthetic floor
+plan data demonstrate the effectiveness and robustness of our method.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2509.17197v1' target='_blank'>SignalLLM: A General-Purpose LLM Agent Framework for Automated Signal
+  Processing</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Junlong Ke, Qiying Hu, Shenghai Yuan, Yuecong Xu, Jianfei Yang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-09-21 18:54:54</h6>
+<p class='card-text'>Modern signal processing (SP) pipelines, whether model-based or data-driven,
+often constrained by complex and fragmented workflow, rely heavily on expert
+knowledge and manual engineering, and struggle with adaptability and
+generalization under limited data. In contrast, Large Language Models (LLMs)
+offer strong reasoning capabilities, broad general-purpose knowledge,
+in-context learning, and cross-modal transfer abilities, positioning them as
+powerful tools for automating and generalizing SP workflows. Motivated by these
+potentials, we introduce SignalLLM, the first general-purpose LLM-based agent
+framework for general SP tasks. Unlike prior LLM-based SP approaches that are
+limited to narrow applications or tricky prompting, SignalLLM introduces a
+principled, modular architecture. It decomposes high-level SP goals into
+structured subtasks via in-context learning and domain-specific retrieval,
+followed by hierarchical planning through adaptive retrieval-augmented
+generation (RAG) and refinement; these subtasks are then executed through
+prompt-based reasoning, cross-modal reasoning, code synthesis, model
+invocation, or data-driven LLM-assisted modeling. Its generalizable design
+enables the flexible selection of problem solving strategies across different
+signal modalities, task types, and data conditions. We demonstrate the
+versatility and effectiveness of SignalLLM through five representative tasks in
+communication and sensing, such as radar target detection, human activity
+recognition, and text compression. Experimental results show superior
+performance over traditional and existing LLM-based methods, particularly in
+few-shot and zero-shot settings.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2509.17116v1' target='_blank'>MCTS-EP: Empowering Embodied Planning with Online Preference
+  Optimization</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Hang Xu, Zang Yu, Yehui Tang, Pengbo Hu, Yuhao Tang, Hao Dong</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-09-21 15:17:44</h6>
+<p class='card-text'>This paper introduces MCTS-EP, an online learning framework that combines
+large language models (LLM) with Monte Carlo Tree Search (MCTS) for training
+embodied agents. MCTS-EP integrates three key components: MCTS-guided
+exploration for preference data collection, efficient multi-modal reasoning
+mechanism, and iterative training pipeline based on preference optimization. We
+theoretically prove that MCTS-EP achieves better performance bounds than
+conventional on-policy algorithms when the loss function is strongly convex,
+and demonstrate that it can be formulated as a search-enhanced variant of GAIL.
+MCTS-EP achieves state-of-the-art performace across serval benchmarks. In
+ALFWorld, it achieves 92% and 87% success rates for textual and visual tasks.
+In WebShop, it reaches an average reward of 0.81. MTCS-EP also reduces average
+interaction steps from from 18.7/19.5 to 10.2/9.9 steps in visual ALFWorld.Code
+available at: https://github.com/xuhang-2/Embodied-Agent-Planning</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2509.16998v1' target='_blank'>IDfRA: Self-Verification for Iterative Design in Robotic Assembly</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Nishka Khendry, Christos Margadji, Sebastian W. Pattinson</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-09-21 09:31:49</h6>
+<p class='card-text'>As robots proliferate in manufacturing, Design for Robotic Assembly (DfRA),
+which is designing products for efficient automated assembly, is increasingly
+important. Traditional approaches to DfRA rely on manual planning, which is
+time-consuming, expensive and potentially impractical for complex objects.
+Large language models (LLM) have exhibited proficiency in semantic
+interpretation and robotic task planning, stimulating interest in their
+application to the automation of DfRA. But existing methodologies typically
+rely on heuristic strategies and rigid, hard-coded physics simulators that may
+not translate into real-world assembly contexts. In this work, we present
+Iterative Design for Robotic Assembly (IDfRA), a framework using iterative
+cycles of planning, execution, verification, and re-planning, each informed by
+self-assessment, to progressively enhance design quality within a fixed yet
+initially under-specified environment, thereby eliminating the physics
+simulation with the real world itself. The framework accepts as input a target
+structure together with a partial environmental representation. Through
+successive refinement, it converges toward solutions that reconcile semantic
+fidelity with physical feasibility. Empirical evaluation demonstrates that
+IDfRA attains 73.3\% top-1 accuracy in semantic recognisability, surpassing the
+baseline on this metric. Moreover, the resulting assembly plans exhibit robust
+physical feasibility, achieving an overall 86.9\% construction success rate,
+with design quality improving across iterations, albeit not always
+monotonically. Pairwise human evaluation further corroborates the advantages of
+IDfRA relative to alternative approaches. By integrating self-verification with
+context-aware adaptation, the framework evidences strong potential for
+deployment in unstructured manufacturing scenarios.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2509.16891v1' target='_blank'>LLMs as Layout Designers: A Spatial Reasoning Perspective</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Sha Li</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-09-21 03:02:59</h6>
+<p class='card-text'>While Large Language Models (LLMs) have demonstrated impressive reasoning and
+planning abilities in textual domains and can effectively follow instructions
+for complex tasks, their capacity for spatial understanding and reasoning
+remains limited. Such capabilities, however, are critical for applications like
+content-aware graphic layout design, which demands precise placement,
+alignment, and structural organization of multiple elements within constrained
+visual spaces. To address this gap, we propose LaySPA, a reinforcement
+learning-based framework that augments LLM agents with explicit spatial
+reasoning capabilities. LaySPA leverages hybrid reward signals that capture
+geometric validity, structural fidelity, and visual quality, enabling agents to
+model inter-element relationships, navigate the canvas, and optimize spatial
+arrangements. Through iterative self-exploration and adaptive policy
+optimization, LaySPA produces both interpretable reasoning traces and
+structured layouts. Experimental results demonstrate that LaySPA generates
+structurally sound and visually appealing layouts, outperforming larger
+general-purpose LLMs and achieving results on par with state-of-the-art
+specialized layout models.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2509.16736v1' target='_blank'>Towards Transparent and Incentive-Compatible Collaboration in
+  Decentralized LLM Multi-Agent Systems: A Blockchain-Driven Approach</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Minfeng Qi, Tianqing Zhu, Lefeng Zhang, Ningran Li, Wanlei Zhou</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-09-20 16:00:24</h6>
+<p class='card-text'>Large Language Models (LLMs) have enabled the emergence of autonomous agents
+capable of complex reasoning, planning, and interaction. However, coordinating
+such agents at scale remains a fundamental challenge, particularly in
+decentralized environments where communication lacks transparency and agent
+behavior cannot be shaped through centralized incentives. We propose a
+blockchain-based framework that enables transparent agent registration,
+verifiable task allocation, and dynamic reputation tracking through smart
+contracts. The core of our design lies in two mechanisms: a matching
+score-based task allocation protocol that evaluates agents by reputation,
+capability match, and workload; and a behavior-shaping incentive mechanism that
+adjusts agent behavior via feedback on performance and reward. Our
+implementation integrates GPT-4 agents with Solidity contracts and
+demonstrates, through 50-round simulations, strong task success rates, stable
+utility distribution, and emergent agent specialization. The results underscore
+the potential for trustworthy, incentive-compatible multi-agent coordination in
+open environments.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2509.16615v1' target='_blank'>LLM-Guided Task- and Affordance-Level Exploration in Reinforcement
+  Learning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Jelle Luijkx, Runyu Ma, Zlatan Ajanović, Jens Kober</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-09-20 10:37:47</h6>
+<p class='card-text'>Reinforcement learning (RL) is a promising approach for robotic manipulation,
+but it can suffer from low sample efficiency and requires extensive exploration
+of large state-action spaces. Recent methods leverage the commonsense knowledge
+and reasoning abilities of large language models (LLMs) to guide exploration
+toward more meaningful states. However, LLMs can produce plans that are
+semantically plausible yet physically infeasible, yielding unreliable behavior.
+We introduce LLM-TALE, a framework that uses LLMs' planning to directly steer
+RL exploration. LLM-TALE integrates planning at both the task level and the
+affordance level, improving learning efficiency by directing agents toward
+semantically meaningful actions. Unlike prior approaches that assume optimal
+LLM-generated plans or rewards, LLM-TALE corrects suboptimality online and
+explores multimodal affordance-level plans without human supervision. We
+evaluate LLM-TALE on pick-and-place tasks in standard RL benchmarks, observing
+improvements in both sample efficiency and success rates over strong baselines.
+Real-robot experiments indicate promising zero-shot sim-to-real transfer. Code
+and supplementary material are available at https://llm-tale.github.io.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2509.16578v1' target='_blank'>Zero-Shot Human Mobility Forecasting via Large Language Model with
+  Hierarchical Reasoning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Wenyao Li, Ran Zhang, Pengyang Wang, Yuanchun Zhou, Pengfei Wang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-09-20 08:46:38</h6>
+<p class='card-text'>Human mobility forecasting is important for applications such as
+transportation planning, urban management, and personalized recommendations.
+However, existing methods often fail to generalize to unseen users or locations
+and struggle to capture dynamic intent due to limited labeled data and the
+complexity of mobility patterns. We propose ZHMF, a framework for zero-shot
+human mobility forecasting that combines a semantic enhanced retrieval and
+reflection mechanism with a hierarchical language model based reasoning system.
+The task is reformulated as a natural language question answering paradigm.
+Leveraging LLMs semantic understanding of user histories and context, our
+approach handles previously unseen prediction scenarios. We further introduce a
+hierarchical reflection mechanism for iterative reasoning and refinement by
+decomposing forecasting into an activity level planner and a location level
+selector, enabling collaborative modeling of long term user intentions and
+short term contextual preferences. Experiments on standard human mobility
+datasets show that our approach outperforms existing models. Ablation studies
+reveal the contribution of each module, and case studies illustrate how the
+method captures user intentions and adapts to diverse contextual scenarios.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2509.16543v1' target='_blank'>ChemOrch: Empowering LLMs with Chemical Intelligence via Synthetic
+  Instructions</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yue Huang, Zhengzhe Jiang, Xiaonan Luo, Kehan Guo, Haomin Zhuang, Yujun Zhou, Zhengqing Yuan, Xiaoqi Sun, Jules Schleinitz, Yanbo Wang, Shuhao Zhang, Mihir Surve, Nitesh V Chawla, Olaf Wiest, Xiangliang Zhang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-09-20 05:43:58</h6>
+<p class='card-text'>Empowering large language models (LLMs) with chemical intelligence remains a
+challenge due to the scarcity of high-quality, domain-specific
+instruction-response datasets and the misalignment of existing synthetic data
+generation pipelines with the inherently hierarchical and rule-governed
+structure of chemical information. To address this, we propose ChemOrch, a
+framework that synthesizes chemically grounded instruction-response pairs
+through a two-stage process: task-controlled instruction generation and
+tool-aware response construction. ChemOrch enables controllable diversity and
+levels of difficulty for the generated tasks, and ensures response precision
+through tool planning and distillation, and tool-based self-repair mechanisms.
+The effectiveness of ChemOrch is evaluated based on: 1) the high quality of
+generated instruction data, demonstrating superior diversity and strong
+alignment with chemical constraints; 2) the reliable generation of evaluation
+tasks that more effectively reveal LLM weaknesses in chemistry; and 3) the
+significant improvement of LLM chemistry capabilities when the generated
+instruction data are used for fine-tuning. Our work thus represents a critical
+step toward scalable and verifiable chemical intelligence in LLMs.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2509.16534v1' target='_blank'>InteGround: On the Evaluation of Verification and Retrieval Planning in
+  Integrative Grounding</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Cheng Jiayang, Qianqian Zhuang, Haoran Li, Chunkit Chan, Xin Liu, Lin Qiu, Yangqiu Song</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-09-20 04:48:24</h6>
+<p class='card-text'>Grounding large language models (LLMs) in external knowledge sources is a
+promising method for faithful prediction. While existing grounding approaches
+work well for simple queries, many real-world information needs require
+synthesizing multiple pieces of evidence. We introduce "integrative grounding"
+-- the challenge of retrieving and verifying multiple inter-dependent pieces of
+evidence to support a hypothesis query. To systematically study this problem,
+we repurpose data from four domains for evaluating integrative grounding
+capabilities. Our investigation reveals two critical findings: First, in
+groundedness verification, while LLMs are robust to redundant evidence, they
+tend to rationalize using internal knowledge when information is incomplete.
+Second, in examining retrieval planning strategies, we find that undirected
+planning can degrade performance through noise introduction, while premise
+abduction emerges as a promising approach due to its logical constraints.
+Additionally, LLMs' zero-shot self-reflection capabilities consistently improve
+grounding quality. These insights provide valuable direction for developing
+more effective integrative grounding systems.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2509.16325v1' target='_blank'>Overhearing LLM Agents: A Survey, Taxonomy, and Roadmap</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Andrew Zhu, Chris Callison-Burch</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-09-19 18:11:04</h6>
+<p class='card-text'>Imagine AI assistants that enhance conversations without interrupting them:
+quietly providing relevant information during a medical consultation,
+seamlessly preparing materials as teachers discuss lesson plans, or
+unobtrusively scheduling meetings as colleagues debate calendars. While modern
+conversational LLM agents directly assist human users with tasks through a chat
+interface, we study this alternative paradigm for interacting with LLM agents,
+which we call "overhearing agents." Rather than demanding the user's attention,
+overhearing agents continuously monitor ambient activity and intervene only
+when they can provide contextual assistance. In this paper, we present the
+first analysis of overhearing LLM agents as a distinct paradigm in human-AI
+interaction and establish a taxonomy of overhearing agent interactions and
+tasks grounded in a survey of works on prior LLM-powered agents and exploratory
+HCI studies. Based on this taxonomy, we create a list of best practices for
+researchers and developers building overhearing agent systems. Finally, we
+outline the remaining research gaps and reveal opportunities for future
+research in the overhearing paradigm.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2509.16198v2' target='_blank'>RPG: A Repository Planning Graph for Unified and Scalable Codebase
+  Generation</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Jane Luo, Xin Zhang, Steven Liu, Jie Wu, Yiming Huang, Yangyu Huang, Chengyu Yin, Ying Xin, Jianfeng Liu, Yuefeng Zhan, Hao Sun, Qi Chen, Scarlett Li, Mao Yang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-09-19 17:58:14</h6>
+<p class='card-text'>Large language models excel at function- and file-level code generation, yet
+generating complete repositories from scratch remains a fundamental challenge.
+This process demands coherent and reliable planning across proposal- and
+implementation-level stages, while natural language, due to its ambiguity and
+verbosity, is ill-suited for faithfully representing complex software
+structures. To address this, we introduce the Repository Planning Graph (RPG),
+a persistent representation that unifies proposal- and implementation-level
+planning by encoding capabilities, file structures, data flows, and functions
+in one graph. RPG replaces ambiguous natural language with an explicit
+blueprint, enabling long-horizon planning and scalable repository generation.
+Building on RPG, we develop ZeroRepo, a graph-driven framework for repository
+generation from scratch. It operates in three stages: proposal-level planning
+and implementation-level refinement to construct the graph, followed by
+graph-guided code generation with test validation. To evaluate this setting, we
+construct RepoCraft, a benchmark of six real-world projects with 1,052 tasks.
+On RepoCraft, ZeroRepo generates repositories averaging 36K Code Lines, roughly
+3.9$\times$ the strongest baseline (Claude Code) and about 64$\times$ other
+baselines. It attains 81.5% functional coverage and a 69.7% pass rate,
+exceeding Claude Code by 27.3 and 35.8 percentage points, respectively. Further
+analysis shows that RPG models complex dependencies, enables progressively more
+sophisticated planning through near-linear scaling, and enhances LLM
+understanding of repositories, thereby accelerating agent localization.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2509.16006v1' target='_blank'>Defining and Monitoring Complex Robot Activities via LLMs and Symbolic
+  Reasoning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Francesco Argenziano, Elena Umili, Francesco Leotta, Daniele Nardi</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-09-19 14:19:44</h6>
+<p class='card-text'>Recent years have witnessed a growing interest in automating labor-intensive
+and complex activities, i.e., those consisting of multiple atomic tasks, by
+deploying robots in dynamic and unpredictable environments such as industrial
+and agricultural settings. A key characteristic of these contexts is that
+activities are not predefined: while they involve a limited set of possible
+tasks, their combinations may vary depending on the situation. Moreover,
+despite recent advances in robotics, the ability for humans to monitor the
+progress of high-level activities - in terms of past, present, and future
+actions - remains fundamental to ensure the correct execution of
+safety-critical processes. In this paper, we introduce a general architecture
+that integrates Large Language Models (LLMs) with automated planning, enabling
+humans to specify high-level activities (also referred to as processes) using
+natural language, and to monitor their execution by querying a robot. We also
+present an implementation of this architecture using state-of-the-art
+components and quantitatively evaluate the approach in a real-world precision
+agriculture scenario.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2509.15927v1' target='_blank'>Enhancing Generative Auto-bidding with Offline Reward Evaluation and
+  Policy Search</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Zhiyu Mou, Yiqin Lv, Miao Xu, Cheems Wang, Yixiu Mao, Qichen Ye, Chao Li, Rongquan Bai, Chuan Yu, Jian Xu, Bo Zheng</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-09-19 12:30:26</h6>
+<p class='card-text'>Auto-bidding is an essential tool for advertisers to enhance their
+advertising performance. Recent progress has shown that AI-Generated Bidding
+(AIGB), which formulates the auto-bidding as a trajectory generation task and
+trains a conditional diffusion-based planner on offline data, achieves superior
+and stable performance compared to typical offline reinforcement learning
+(RL)-based auto-bidding methods. However, existing AIGB methods still encounter
+a performance bottleneck due to their neglect of fine-grained generation
+quality evaluation and inability to explore beyond static datasets. To address
+this, we propose AIGB-Pearl (\emph{Planning with EvAluator via RL}), a novel
+method that integrates generative planning and policy optimization. The key to
+AIGB-Pearl is to construct a non-bootstrapped \emph{trajectory evaluator} to
+assign rewards and guide policy search, enabling the planner to optimize its
+generation quality iteratively through interaction. Furthermore, to enhance
+trajectory evaluator accuracy in offline settings, we incorporate three key
+techniques: (i) a Large Language Model (LLM)-based architecture for better
+representational capacity, (ii) hybrid point-wise and pair-wise losses for
+better score learning, and (iii) adaptive integration of expert feedback for
+better generalization ability. Extensive experiments on both simulated and
+real-world advertising systems demonstrate the state-of-the-art performance of
+our approach.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2509.19369v1' target='_blank'>SLM-Based Agentic AI with P-C-G: Optimized for Korean Tool Use</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Changhyun Jeon, Jinhee Park, Jungwoo Choi, Keonwoo Kim, Jisu Kim, Minji Hong</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-09-19 06:25:23</h6>
+<p class='card-text'>We propose a small-scale language model (SLM) based agent architecture,
+Planner-Caller-Generator (P-C-G), optimized for Korean tool use. P-C-G
+separates planning, calling, and generation by role: the Planner produces an
+initial batch plan with limited on-demand replanning; the Caller returns a
+normalized call object after joint schema-value validation; and the Generator
+integrates tool outputs to produce the final answer. We apply a Korean-first
+value policy to reduce execution failures caused by frequent Korean-to-English
+code switching in Korean settings. Evaluation assumes Korean queries and Korean
+tool/parameter specifications; it covers single-chain, multi-chain,
+missing-parameters, and missing-functions scenarios, and is conducted via an
+LLM-as-a-Judge protocol averaged over five runs under a unified I/O interface.
+Results show that P-C-G delivers competitive tool-use accuracy and end-to-end
+quality while reducing tokens and maintaining acceptable latency, indicating
+that role-specialized SLMs are a cost-effective alternative for Korean tool-use
+agents.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2509.15366v1' target='_blank'>Diagnostics of cognitive failures in multi-agent expert systems using
+  dynamic evaluation protocols and subsequent mutation of the processing
+  context</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Andrejs Sorstkins, Josh Bailey, Dr Alistair Baron</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-09-18 19:08:03</h6>
+<p class='card-text'>The rapid evolution of neural architectures - from multilayer perceptrons to
+large-scale Transformer-based models - has enabled language models (LLMs) to
+exhibit emergent agentic behaviours when equipped with memory, planning, and
+external tool use. However, their inherent stochasticity and multi-step
+decision processes render classical evaluation methods inadequate for
+diagnosing agentic performance. This work introduces a diagnostic framework for
+expert systems that not only evaluates but also facilitates the transfer of
+expert behaviour into LLM-powered agents. The framework integrates (i) curated
+golden datasets of expert annotations, (ii) silver datasets generated through
+controlled behavioural mutation, and (iii) an LLM-based Agent Judge that scores
+and prescribes targeted improvements. These prescriptions are embedded into a
+vectorized recommendation map, allowing expert interventions to propagate as
+reusable improvement trajectories across multiple system instances. We
+demonstrate the framework on a multi-agent recruiter-assistant system, showing
+that it uncovers latent cognitive failures - such as biased phrasing,
+extraction drift, and tool misrouting - while simultaneously steering agents
+toward expert-level reasoning and style. The results establish a foundation for
+standardized, reproducible expert behaviour transfer in stochastic,
+tool-augmented LLM agents, moving beyond static evaluation to active expert
+system refinement.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2509.15273v2' target='_blank'>Embodied Arena: A Comprehensive, Unified, and Evolving Evaluation
+  Platform for Embodied AI</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Fei Ni, Min Zhang, Pengyi Li, Yifu Yuan, Lingfeng Zhang, Yuecheng Liu, Peilong Han, Longxin Kou, Shaojin Ma, Jinbin Qiao, David Gamaliel Arcos Bravo, Yuening Wang, Xiao Hu, Zhanguang Zhang, Xianze Yao, Yutong Li, Zhao Zhang, Ying Wen, Ying-Cong Chen, Xiaodan Liang, Liang Lin, Bin He, Haitham Bou-Ammar, He Wang, Huazhe Xu, Jiankang Deng, Shan Luo, Shuqiang Jiang, Wei Pan, Yang Gao, Stefanos Zafeiriou, Jan Peters, Yuzheng Zhuang, Yingxue Zhang, Yan Zheng, Hongyao Tang, Jianye Hao</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-09-18 11:53:37</h6>
+<p class='card-text'>Embodied AI development significantly lags behind large foundation models due
+to three critical challenges: (1) lack of systematic understanding of core
+capabilities needed for Embodied AI, making research lack clear objectives; (2)
+absence of unified and standardized evaluation systems, rendering
+cross-benchmark evaluation infeasible; and (3) underdeveloped automated and
+scalable acquisition methods for embodied data, creating critical bottlenecks
+for model scaling. To address these obstacles, we present Embodied Arena, a
+comprehensive, unified, and evolving evaluation platform for Embodied AI. Our
+platform establishes a systematic embodied capability taxonomy spanning three
+levels (perception, reasoning, task execution), seven core capabilities, and 25
+fine-grained dimensions, enabling unified evaluation with systematic research
+objectives. We introduce a standardized evaluation system built upon unified
+infrastructure supporting flexible integration of 22 diverse benchmarks across
+three domains (2D/3D Embodied Q&A, Navigation, Task Planning) and 30+ advanced
+models from 20+ worldwide institutes. Additionally, we develop a novel
+LLM-driven automated generation pipeline ensuring scalable embodied evaluation
+data with continuous evolution for diversity and comprehensiveness. Embodied
+Arena publishes three real-time leaderboards (Embodied Q&A, Navigation, Task
+Planning) with dual perspectives (benchmark view and capability view),
+providing comprehensive overviews of advanced model capabilities. Especially,
+we present nine findings summarized from the evaluation results on the
+leaderboards of Embodied Arena. This helps to establish clear research veins
+and pinpoint critical research problems, thereby driving forward progress in
+the field of Embodied AI.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2509.19354v1' target='_blank'>RoadMind: Towards a Geospatial AI Expert for Disaster Response</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Ahmed El Fekih Zguir, Ferda Ofli, Muhammad Imran</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-09-18 09:46:55</h6>
+<p class='card-text'>Large Language Models (LLMs) have shown impressive performance across a range
+of natural language tasks, but remain limited in their ability to reason about
+geospatial data, particularly road networks, distances, and directions. This
+gap poses challenges in disaster scenarios, where spatial understanding is
+critical for tasks such as evacuation planning and resource allocation. In this
+work, we present RoadMind, a self-supervised framework that enhances the
+geospatial reasoning capabilities of LLMs using structured data from
+OpenStreetMap (OSM). Our automated pipeline extracts road infrastructure data
+for a given city and converts it into multiple supervision formats tailored to
+key spatial tasks. We pretrain and fine-tune LLMs on these representations
+using QLoRA adapters and 4-bit quantized models. We evaluate our approach on
+three disaster-prone cities with varying global representation, Los Angeles,
+Christchurch, and Manila, across tasks such as road segment identification,
+nearest road retrieval, and distance/direction estimation. Our results show
+that models trained via RoadMind significantly outperform strong baselines,
+including state-of-the-art LLMs equipped with advanced prompt engineering. This
+demonstrates the potential of structured geospatial data to enhance language
+models with robust spatial reasoning, enabling more effective offline AI
+systems for disaster response.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js'></script>
+</body>
+</html>
