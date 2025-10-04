@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<title>LLM-agent - 2025-10-04</title>
+<link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap' rel='stylesheet'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'>
+<style>
+body {
+font-family: 'Roboto', sans-serif;
+background-color: #f5f7fa;
+padding: 20px;
+}
+.card {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.card-title {
+    font-weight: 700;
+}
+.card:hover {
+    transform: scale(1.02);
+    transition: 0.3s ease-in-out;
+}
+</style>
+</head>
+<body>
+<div class='container'>
+<h1 class='text-center my-4'><i class='fas fa-book'></i>LLM-agent - 2025-10-04</h1>
+<div class='row'>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.02271v1' target='_blank'>InfoMosaic-Bench: Evaluating Multi-Source Information Seeking in
+  Tool-Augmented Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yaxin Du, Yuanshuo Zhang, Xiyuan Yang, Yifan Zhou, Cheng Wang, Gongyi Zou, Xianghe Pang, Wenhao Wang, Menglan Chen, Shuo Tang, Zhiyu Li, Siheng Chen</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-02 17:48:03</h6>
+<p class='card-text'>Information seeking is a fundamental requirement for humans. However,
+existing LLM agents rely heavily on open-web search, which exposes two
+fundamental weaknesses: online content is noisy and unreliable, and many
+real-world tasks require precise, domain-specific knowledge unavailable from
+the web. The emergence of the Model Context Protocol (MCP) now allows agents to
+interface with thousands of specialized tools, seemingly resolving this
+limitation. Yet it remains unclear whether agents can effectively leverage such
+tools -- and more importantly, whether they can integrate them with
+general-purpose search to solve complex tasks. Therefore, we introduce
+InfoMosaic-Bench, the first benchmark dedicated to multi-source information
+seeking in tool-augmented agents. Covering six representative domains
+(medicine, finance, maps, video, web, and multi-domain integration),
+InfoMosaic-Bench requires agents to combine general-purpose search with
+domain-specific tools. Tasks are synthesized with InfoMosaic-Flow, a scalable
+pipeline that grounds task conditions in verified tool outputs, enforces
+cross-source dependencies, and filters out shortcut cases solvable by trivial
+lookup. This design guarantees both reliability and non-triviality. Experiments
+with 14 state-of-the-art LLM agents reveal three findings: (i) web information
+alone is insufficient, with GPT-5 achieving only 38.2% accuracy and 67.5% pass
+rate; (ii) domain tools provide selective but inconsistent benefits, improving
+some domains while degrading others; and (iii) 22.4% of failures arise from
+incorrect tool usage or selection, highlighting that current LLMs still
+struggle with even basic tool handling.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.02209v1' target='_blank'>StockBench: Can LLM Agents Trade Stocks Profitably In Real-world
+  Markets?</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yanxu Chen, Zijun Yao, Yantao Liu, Jin Ye, Jianing Yu, Lei Hou, Juanzi Li</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-02 16:54:57</h6>
+<p class='card-text'>Large language models (LLMs) have recently demonstrated strong capabilities
+as autonomous agents, showing promise in reasoning, tool use, and sequential
+decision-making. While prior benchmarks have evaluated LLM agents in domains
+such as software engineering and scientific discovery, the finance domain
+remains underexplored, despite its direct relevance to economic value and
+high-stakes decision-making. Existing financial benchmarks primarily test
+static knowledge through question answering, but they fall short of capturing
+the dynamic and iterative nature of trading. To address this gap, we introduce
+StockBench, a contamination-free benchmark designed to evaluate LLM agents in
+realistic, multi-month stock trading environments. Agents receive daily market
+signals -- including prices, fundamentals, and news -- and must make sequential
+buy, sell, or hold decisions. Performance is assessed using financial metrics
+such as cumulative return, maximum drawdown, and the Sortino ratio. Our
+evaluation of state-of-the-art proprietary (e.g., GPT-5, Claude-4) and
+open-weight (e.g., Qwen3, Kimi-K2, GLM-4.5) models shows that while most LLM
+agents struggle to outperform the simple buy-and-hold baseline, several models
+demonstrate the potential to deliver higher returns and manage risk more
+effectively. These findings highlight both the challenges and opportunities in
+developing LLM-powered financial agents, showing that excelling at static
+financial knowledge tasks does not necessarily translate into successful
+trading strategies. We release StockBench as an open-source resource to support
+reproducibility and advance future research in this domain.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.02200v1' target='_blank'>ARUQULA -- An LLM based Text2SPARQL Approach using ReAct and Knowledge
+  Graph Exploration Utilities</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Felix Brei, Lorenz Bühmann, Johannes Frey, Daniel Gerber, Lars-Peter Meyer, Claus Stadler, Kirill Bulert</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-02 16:49:27</h6>
+<p class='card-text'>Interacting with knowledge graphs can be a daunting task for people without a
+background in computer science since the query language that is used (SPARQL)
+has a high barrier of entry. Large language models (LLMs) can lower that
+barrier by providing support in the form of Text2SPARQL translation. In this
+paper we introduce a generalized method based on SPINACH, an LLM backed agent
+that translates natural language questions to SPARQL queries not in a single
+shot, but as an iterative process of exploration and execution. We describe the
+overall architecture and reasoning behind our design decisions, and also
+conduct a thorough analysis of the agent behavior to gain insights into future
+areas for targeted improvements. This work was motivated by the Text2SPARQL
+challenge, a challenge that was held to facilitate improvements in the
+Text2SPARQL domain.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.02185v1' target='_blank'>FalseCrashReducer: Mitigating False Positive Crashes in OSS-Fuzz-Gen
+  Using Agentic AI</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Paschal C. Amusuo, Dongge Liu, Ricardo Andres Calvo Mendez, Jonathan Metzman, Oliver Chang, James C. Davis</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-02 16:36:56</h6>
+<p class='card-text'>Fuzz testing has become a cornerstone technique for identifying software bugs
+and security vulnerabilities, with broad adoption in both industry and
+open-source communities. Directly fuzzing a function requires fuzz drivers,
+which translate random fuzzer inputs into valid arguments for the target
+function. Given the cost and expertise required to manually develop fuzz
+drivers, methods exist that leverage program analysis and Large Language Models
+to automatically generate these drivers. However, the generated fuzz drivers
+frequently lead to false positive crashes, especially in functions highly
+structured input and complex state requirements. This problem is especially
+crucial in industry-scale fuzz driver generation efforts like OSS-Fuzz-en, as
+reporting false positive crashes to maintainers impede trust in both the system
+and the team.
+  This paper presents two AI-driven strategies to reduce false positives in
+OSS-Fuzz-Gen, a multi-agent system for automated fuzz driver generation. First,
+constraint-based fuzz driver generation proactively enforces constraints on a
+function's inputs and state to guide driver creation. Second, context-based
+crash validation reactively analyzes function callers to determine whether
+reported crashes are feasible from program entry points. Using 1,500 benchmark
+functions from OSS-Fuzz, we show that these strategies reduce spurious crashes
+by up to 8%, cut reported crashes by more than half, and demonstrate that
+frontier LLMs can serve as reliable program analysis agents. Our results
+highlight the promise and challenges of integrating AI into large-scale fuzzing
+pipelines.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.02178v1' target='_blank'>DisCo-Layout: Disentangling and Coordinating Semantic and Physical
+  Refinement in a Multi-Agent Framework for 3D Indoor Layout Synthesis</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Jialin Gao, Donghao Zhou, Mingjian Liang, Lihao Liu, Chi-Wing Fu, Xiaowei Hu, Pheng-Ann Heng</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-02 16:30:37</h6>
+<p class='card-text'>3D indoor layout synthesis is crucial for creating virtual environments.
+Traditional methods struggle with generalization due to fixed datasets. While
+recent LLM and VLM-based approaches offer improved semantic richness, they
+often lack robust and flexible refinement, resulting in suboptimal layouts. We
+develop DisCo-Layout, a novel framework that disentangles and coordinates
+physical and semantic refinement. For independent refinement, our Semantic
+Refinement Tool (SRT) corrects abstract object relationships, while the
+Physical Refinement Tool (PRT) resolves concrete spatial issues via a
+grid-matching algorithm. For collaborative refinement, a multi-agent framework
+intelligently orchestrates these tools, featuring a planner for placement
+rules, a designer for initial layouts, and an evaluator for assessment.
+Experiments demonstrate DisCo-Layout's state-of-the-art performance, generating
+realistic, coherent, and generalizable 3D indoor layouts. Our code will be
+publicly available.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.02157v1' target='_blank'>Agentic Reasoning and Refinement through Semantic Interaction</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Xuxin Tang, Rehema Abulikemu, Eric Krokos, Kirsten Whitley, Xuan Wang, Chris North</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-02 16:08:51</h6>
+<p class='card-text'>Sensemaking report writing often requires multiple refinements in the
+iterative process. While Large Language Models (LLMs) have shown promise in
+generating initial reports based on human visual workspace representations,
+they struggle to precisely incorporate sequential semantic interactions during
+the refinement process. We introduce VIS-ReAct, a framework that reasons about
+newly-added semantic interactions in visual workspaces to steer the LLM for
+report refinement.
+  VIS-ReAct is a two-agent framework: a primary LLM analysis agent interprets
+new semantic interactions to infer user intentions and generate refinement
+planning, followed by an LLM refinement agent that updates reports accordingly.
+Through case study, VIS-ReAct outperforms baseline and VIS-ReAct (without LLM
+analysis) on targeted refinement, semantic fidelity, and transparent inference.
+Results demonstrate that VIS-ReAct better handles various interaction types and
+granularities while enhancing the transparency of human-LLM collaboration.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.02044v1' target='_blank'>Stream RAG: Instant and Accurate Spoken Dialogue Systems with Streaming
+  Tool Usage</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Siddhant Arora, Haidar Khan, Kai Sun, Xin Luna Dong, Sajal Choudhary, Seungwhan Moon, Xinyuan Zhang, Adithya Sagar, Surya Teja Appini, Kaushik Patnaik, Sanat Sharma, Shinji Watanabe, Anuj Kumar, Ahmed Aly, Yue Liu, Florian Metze, Zhaojiang Lin</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-02 14:18:20</h6>
+<p class='card-text'>End-to-end speech-in speech-out dialogue systems are emerging as a powerful
+alternative to traditional ASR-LLM-TTS pipelines, generating more natural,
+expressive responses with significantly lower latency. However, these systems
+remain prone to hallucinations due to limited factual grounding. While
+text-based dialogue systems address this challenge by integrating tools such as
+web search and knowledge graph APIs, we introduce the first approach to extend
+tool use directly into speech-in speech-out systems. A key challenge is that
+tool integration substantially increases response latency, disrupting
+conversational flow. To mitigate this, we propose Streaming Retrieval-Augmented
+Generation (Streaming RAG), a novel framework that reduces user-perceived
+latency by predicting tool queries in parallel with user speech, even before
+the user finishes speaking. Specifically, we develop a post-training pipeline
+that teaches the model when to issue tool calls during ongoing speech and how
+to generate spoken summaries that fuse audio queries with retrieved text
+results, thereby improving both accuracy and responsiveness. To evaluate our
+approach, we construct AudioCRAG, a benchmark created by converting queries
+from the publicly available CRAG dataset into speech form. Experimental results
+demonstrate that our streaming RAG approach increases QA accuracy by up to 200%
+relative (from 11.1% to 34.2% absolute) and further enhances user experience by
+reducing tool use latency by 20%. Importantly, our streaming RAG approach is
+modality-agnostic and can be applied equally to typed input, paving the way for
+more agentic, real-time AI assistants.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.01869v1' target='_blank'>TACOS: Task Agnostic COordinator of a multi-drone System</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Alessandro Nazzari, Roberto Rubinacci, Marco Lovera</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-02 10:21:35</h6>
+<p class='card-text'>When a single pilot is responsible for managing a multi-drone system, the
+task demands varying levels of autonomy, from direct control of individual
+UAVs, to group-level coordination, to fully autonomous swarm behaviors for
+accomplishing high-level tasks. Enabling such flexible interaction requires a
+framework that supports multiple modes of shared autonomy. As language models
+continue to improve in reasoning and planning, they provide a natural
+foundation for such systems, reducing pilot workload by enabling high-level
+task delegation through intuitive, language-based interfaces. In this paper we
+present TACOS (Task-Agnostic COordinator of a multi-drone System), a unified
+framework that enables high-level natural language control of multi-UAV systems
+through Large Language Models (LLMs). TACOS integrates three key capabilities
+into a single architecture: a one-to-many natural language interface for
+intuitive user interaction, an intelligent coordinator for translating user
+intent into structured task plans, and an autonomous agent that executes plans
+interacting with the real-world. TACOS allows a LLM to interact with a library
+of executable APIs, bridging semantic reasoning with real-time multi-robot
+coordination. We demonstrate the system in real-world multi-drone system and
+conduct an ablation study to assess the contribution of each module.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.01842v1' target='_blank'>Pre-Hoc Predictions in AutoML: Leveraging LLMs to Enhance Model
+  Selection and Benchmarking for Tabular datasets</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yannis Belkhiter, Seshu Tirupathi, Giulio Zizzo, Sachin Sharma, John D. Kelleher</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-02 09:37:12</h6>
+<p class='card-text'>The field of AutoML has made remarkable progress in post-hoc model selection,
+with libraries capable of automatically identifying the most performing models
+for a given dataset. Nevertheless, these methods often rely on exhaustive
+hyperparameter searches, where methods automatically train and test different
+types of models on the target dataset. Contrastingly, pre-hoc prediction
+emerges as a promising alternative, capable of bypassing exhaustive search
+through intelligent pre-selection of models. Despite its potential, pre-hoc
+prediction remains under-explored in the literature. This paper explores the
+intersection of AutoML and pre-hoc model selection by leveraging traditional
+models and Large Language Model (LLM) agents to reduce the search space of
+AutoML libraries. By relying on dataset descriptions and statistical
+information, we reduce the AutoML search space. Our methodology is applied to
+the AWS AutoGluon portfolio dataset, a state-of-the-art AutoML benchmark
+containing 175 tabular classification datasets available on OpenML. The
+proposed approach offers a shift in AutoML workflows, significantly reducing
+computational overhead, while still selecting the best model for the given
+dataset.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.01724v1' target='_blank'>MetaboT: AI-based agent for natural language-based interaction with
+  metabolomics knowledge graphs</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Madina Bekbergenova, Lucas Pradi, Benjamin Navet, Emma Tysinger, Franck Michel, Matthieu Feraud, Yousouf Taghzouti, Yan Zhou Chen, Olivier Kirchhoffer, Florence Mehl, Martin Legrand, Tao Jiang, Marco Pagni, Soha Hassoun, Jean-Luc Wolfender, Wout Bittremieux, Fabien Gandon, Louis-Félix Nothias</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-02 07:05:29</h6>
+<p class='card-text'>Mass spectrometry metabolomics generates vast amounts of data requiring
+advanced methods for interpretation. Knowledge graphs address these challenges
+by structuring mass spectrometry data, metabolite information, and their
+relationships into a connected network (Gaudry et al. 2024). However, effective
+use of a knowledge graph demands an in-depth understanding of its ontology and
+its query language syntax. To overcome this, we designed MetaboT, an AI system
+utilizing large language models (LLMs) to translate user questions into SPARQL
+semantic query language for operating on knowledge graphs (Steve Harris 2013).
+We demonstrate its effectiveness using the Experimental Natural Products
+Knowledge Graph (ENPKG), a large-scale public knowledge graph for plant natural
+products (Gaudry et al. 2024).MetaboT employs specialized AI agents for
+handling user queries and interacting with the knowledge graph by breaking down
+complex tasks into discrete components, each managed by a specialised agent
+(Fig. 1a). The multi-agent system is constructed using the LangChain and
+LangGraph libraries, which facilitate the integration of LLMs with external
+tools and information sources (LangChain, n.d.). The query generation process
+follows a structured workflow. First, the Entry Agent determines if the
+question is new or a follow-up to previous interactions. New questions are
+forwarded to the Validator Agent, which verifies if the question is related to
+the knowledge graph. Then, the valid question is sent to the Supervisor Agent,
+which identifies if the question requires chemical conversions or standardized
+identifiers. In this case it delegates the question to the Knowledge Graph
+Agent, which can use tools to extract necessary details, such as URIs or
+taxonomies of chemical names, from the user query. Finally, an agent
+responsible for crafting the SPARQL queries equipped with the ontology of the
+knowledge graph uses the provided identifiers to generate the query. Then, the
+system executes the generated query against the metabolomics knowledge graph
+and returns structured results to the user (Fig. 1b). To assess the performance
+of MetaboT we have curated 50 metabolomics-related questions and their expected
+answers. In addition to submitting these questions to MetaboT, we evaluated a
+baseline by submitting them to a standard LLM (GPT-4o) with a prompt that
+incorporated the knowledge graph ontology but did not provide specific entity
+IDs. This baseline achieved only 8.16% accuracy, compared to MetaboT's 83.67%,
+underscoring the necessity of our multi-agent system for accurately retrieving
+entities and generating correct SPARQL queries. MetaboT demonstrates promising
+performance as a conversational question-answering assistant, enabling
+researchers to retrieve structured metabolomics data through natural language
+queries. By automating the generation and execution of SPARQL queries, it
+removes technical barriers that have traditionally hindered access to knowledge
+graphs. Importantly, MetaboT leverages the capabilities of LLMs while
+maintaining experimentally grounded query generation, ensuring that outputs
+remain aligned with domain-specific standards and data structures. This
+approach facilitates data-driven discoveries by bridging the gap between
+complex semantic technologies and user-friendly interaction. MetaboT is
+accessible at [https://metabot.holobiomicslab.eu/], and its source code is
+available at [https://github.com/HolobiomicsLab/MetaboT].</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.01670v1' target='_blank'>Just Do It!? Computer-Use Agents Exhibit Blind Goal-Directedness</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Erfan Shayegani, Keegan Hines, Yue Dong, Nael Abu-Ghazaleh, Roman Lutz, Spencer Whitehead, Vidhisha Balachandran, Besmira Nushi, Vibhav Vineet</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-02 04:52:15</h6>
+<p class='card-text'>Computer-Use Agents (CUAs) are an increasingly deployed class of agents that
+take actions on GUIs to accomplish user goals. In this paper, we show that CUAs
+consistently exhibit Blind Goal-Directedness (BGD): a bias to pursue goals
+regardless of feasibility, safety, reliability, or context. We characterize
+three prevalent patterns of BGD: (i) lack of contextual reasoning, (ii)
+assumptions and decisions under ambiguity, and (iii) contradictory or
+infeasible goals. We develop BLIND-ACT, a benchmark of 90 tasks capturing these
+three patterns. Built on OSWorld, BLIND-ACT provides realistic environments and
+employs LLM-based judges to evaluate agent behavior, achieving 93.75% agreement
+with human annotations. We use BLIND-ACT to evaluate nine frontier models,
+including Claude Sonnet and Opus 4, Computer-Use-Preview, and GPT-5, observing
+high average BGD rates (80.8%) across them. We show that BGD exposes subtle
+risks that arise even when inputs are not directly harmful. While
+prompting-based interventions lower BGD levels, substantial risk persists,
+highlighting the need for stronger training- or inference-time interventions.
+Qualitative analysis reveals observed failure modes: execution-first bias
+(focusing on how to act over whether to act), thought-action disconnect
+(execution diverging from reasoning), and request-primacy (justifying actions
+due to user request). Identifying BGD and introducing BLIND-ACT establishes a
+foundation for future research on studying and mitigating this fundamental risk
+and ensuring safe CUA deployment.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.01664v1' target='_blank'>GuruAgents: Emulating Wise Investors with Prompt-Guided LLM Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yejin Kim, Youngbin Lee, Juhyeong Kim, Yongjae Lee</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-02 04:45:27</h6>
+<p class='card-text'>This study demonstrates that GuruAgents, prompt-guided AI agents, can
+systematically operationalize the strategies of legendary investment gurus. We
+develop five distinct GuruAgents, each designed to emulate an iconic investor,
+by encoding their distinct philosophies into LLM prompts that integrate
+financial tools and a deterministic reasoning pipeline. In a backtest on
+NASDAQ-100 constituents from Q4 2023 to Q2 2025, the GuruAgents exhibit unique
+behaviors driven by their prompted personas. The Buffett GuruAgent achieves the
+highest performance, delivering a 42.2\% CAGR that significantly outperforms
+benchmarks, while other agents show varied results. These findings confirm that
+prompt engineering can successfully translate the qualitative philosophies of
+investment gurus into reproducible, quantitative strategies, highlighting a
+novel direction for automated systematic investing. The source code and data
+are available at https://github.com/yejining99/GuruAgents.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.01645v1' target='_blank'>Position: Privacy Is Not Just Memorization!</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Niloofar Mireshghallah, Tianshi Li</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-02 04:02:06</h6>
+<p class='card-text'>The discourse on privacy risks in Large Language Models (LLMs) has
+disproportionately focused on verbatim memorization of training data, while a
+constellation of more immediate and scalable privacy threats remain
+underexplored. This position paper argues that the privacy landscape of LLM
+systems extends far beyond training data extraction, encompassing risks from
+data collection practices, inference-time context leakage, autonomous agent
+capabilities, and the democratization of surveillance through deep inference
+attacks. We present a comprehensive taxonomy of privacy risks across the LLM
+lifecycle -- from data collection through deployment -- and demonstrate through
+case studies how current privacy frameworks fail to address these multifaceted
+threats. Through a longitudinal analysis of 1,322 AI/ML privacy papers
+published at leading conferences over the past decade (2016--2025), we reveal
+that while memorization receives outsized attention in technical research, the
+most pressing privacy harms lie elsewhere, where current technical approaches
+offer little traction and viable paths forward remain unclear. We call for a
+fundamental shift in how the research community approaches LLM privacy, moving
+beyond the narrow focus of current technical solutions and embracing
+interdisciplinary approaches that address the sociotechnical nature of these
+emerging threats.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.01617v1' target='_blank'>AMAS: Adaptively Determining Communication Topology for LLM-based
+  Multi-Agent System</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Hui Yi Leong, Yuheng Li, Yuqing Wu, Wenwen Ouyang, Wei Zhu, Jiechao Gao</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-02 02:50:22</h6>
+<p class='card-text'>Although large language models (LLMs) have revolutionized natural language
+processing capabilities, their practical implementation as autonomous
+multi-agent systems (MAS) for industrial problem-solving encounters persistent
+barriers. Conventional MAS architectures are fundamentally restricted by
+inflexible, hand-crafted graph topologies that lack contextual responsiveness,
+resulting in diminished efficacy across varied academic and commercial
+workloads. To surmount these constraints, we introduce AMAS, a
+paradigm-shifting framework that redefines LLM-based MAS through a novel
+dynamic graph designer. This component autonomously identifies task-specific
+optimal graph configurations via lightweight LLM adaptation, eliminating the
+reliance on monolithic, universally applied structural templates. Instead, AMAS
+exploits the intrinsic properties of individual inputs to intelligently direct
+query trajectories through task-optimized agent pathways. Rigorous validation
+across question answering, mathematical deduction, and code generation
+benchmarks confirms that AMAS systematically exceeds state-of-the-art
+single-agent and multi-agent approaches across diverse LLM architectures. Our
+investigation establishes that context-sensitive structural adaptability
+constitutes a foundational requirement for high-performance LLM MAS
+deployments.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.01609v1' target='_blank'>AgentRec: Next-Generation LLM-Powered Multi-Agent Collaborative
+  Recommendation with Adaptive Intelligence</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Bo Ma, Hang Li, ZeHua Hu, XiaoFan Gui, LuYao Liu, Simon Lau</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-02 02:47:11</h6>
+<p class='card-text'>Interactive conversational recommender systems have gained significant
+attention for their ability to capture user preferences through natural
+language interactions. However, existing approaches face substantial challenges
+in handling dynamic user preferences, maintaining conversation coherence, and
+balancing multiple ranking objectives simultaneously. This paper introduces
+AgentRec, a next-generation LLM-powered multi-agent collaborative
+recommendation framework that addresses these limitations through hierarchical
+agent networks with adaptive intelligence. Our approach employs specialized
+LLM-powered agents for conversation understanding, preference modeling, context
+awareness, and dynamic ranking, coordinated through an adaptive weighting
+mechanism that learns from interaction patterns. We propose a three-tier
+learning strategy combining rapid response for simple queries, intelligent
+reasoning for complex preferences, and deep collaboration for challenging
+scenarios. Extensive experiments on three real-world datasets demonstrate that
+AgentRec achieves consistent improvements over state-of-the-art baselines, with
+2.8\% enhancement in conversation success rate, 1.9\% improvement in
+recommendation accuracy (NDCG@10), and 3.2\% better conversation efficiency
+while maintaining comparable computational costs through intelligent agent
+coordination.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.01586v1' target='_blank'>AdvEvo-MARL: Shaping Internalized Safety through Adversarial
+  Co-Evolution in Multi-Agent Reinforcement Learning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Zhenyu Pan, Yiting Zhang, Zhuo Liu, Yolo Yunlong Tang, Zeliang Zhang, Haozheng Luo, Yuwei Han, Jianshu Zhang, Dennis Wu, Hong-Yu Chen, Haoran Lu, Haoyang Fang, Manling Li, Chenliang Xu, Philip S. Yu, Han Liu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-02 02:06:30</h6>
+<p class='card-text'>LLM-based multi-agent systems excel at planning, tool use, and role
+coordination, but their openness and interaction complexity also expose them to
+jailbreak, prompt-injection, and adversarial collaboration. Existing defenses
+fall into two lines: (i) self-verification that asks each agent to pre-filter
+unsafe instructions before execution, and (ii) external guard modules that
+police behaviors. The former often underperforms because a standalone agent
+lacks sufficient capacity to detect cross-agent unsafe chains and
+delegation-induced risks; the latter increases system overhead and creates a
+single-point-of-failure-once compromised, system-wide safety collapses, and
+adding more guards worsens cost and complexity. To solve these challenges, we
+propose AdvEvo-MARL, a co-evolutionary multi-agent reinforcement learning
+framework that internalizes safety into task agents. Rather than relying on
+external guards, AdvEvo-MARL jointly optimizes attackers (which synthesize
+evolving jailbreak prompts) and defenders (task agents trained to both
+accomplish their duties and resist attacks) in adversarial learning
+environments. To stabilize learning and foster cooperation, we introduce a
+public baseline for advantage estimation: agents within the same functional
+group share a group-level mean-return baseline, enabling lower-variance updates
+and stronger intra-group coordination. Across representative attack scenarios,
+AdvEvo-MARL consistently keeps attack-success rate (ASR) below 20%, whereas
+baselines reach up to 38.33%, while preserving-and sometimes improving-task
+accuracy (up to +3.67% on reasoning tasks). These results show that safety and
+utility can be jointly improved without relying on extra guard agents or added
+system overhead.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.01569v1' target='_blank'>InvThink: Towards AI Safety via Inverse Reasoning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yubin Kim, Taehan Kim, Eugene Park, Chunjong Park, Cynthia Breazeal, Daniel McDuff, Hae Won Park</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-02 01:26:53</h6>
+<p class='card-text'>We present InvThink, a simple yet powerful approach that gives large language
+models (LLMs) the capability of inverse thinking: reasoning through failure
+modes before generating responses. Unlike existing safety alignment methods
+that optimize directly for safe response, InvThink instructs models to 1)
+enumerate potential harms, 2) analyze their consequences, and 3) generate safe
+outputs that proactively avoid these risks. Our method reveals three key
+findings: (i) safety improvements show stronger scaling with model size
+compared to existing safety methods. (ii) InvThink mitigates safety tax; by
+training models to systematically consider failure modes, it preserves general
+reasoning capabilities on standard benchmarks. (iii) beyond general safety
+tasks, InvThink excels in high-stakes domains including external-facing
+(medicine, finance, law) and agentic (blackmail, murder) risk scenarios,
+achieving up to 15.7% reduction in harmful responses compared to baseline
+methods like SafetyPrompt. We further implement InvThink via supervised
+fine-tuning, and reinforcement learning across three LLM families. These
+results suggest that inverse reasoning provides a scalable and generalizable
+path toward safer, more capable language models.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.01538v1' target='_blank'>TimeSeriesScientist: A General-Purpose AI Agent for Time Series Analysis</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Haokun Zhao, Xiang Zhang, Jiaqi Wei, Yiwei Xu, Yuting He, Siqi Sun, Chenyu You</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-02 00:18:59</h6>
+<p class='card-text'>Time series forecasting is central to decision-making in domains as diverse
+as energy, finance, climate, and public health. In practice, forecasters face
+thousands of short, noisy series that vary in frequency, quality, and horizon,
+where the dominant cost lies not in model fitting, but in the labor-intensive
+preprocessing, validation, and ensembling required to obtain reliable
+predictions. Prevailing statistical and deep learning models are tailored to
+specific datasets or domains and generalize poorly. A general, domain-agnostic
+framework that minimizes human intervention is urgently in demand. In this
+paper, we introduce TimeSeriesScientist (TSci), the first LLM-driven agentic
+framework for general time series forecasting. The framework comprises four
+specialized agents: Curator performs LLM-guided diagnostics augmented by
+external tools that reason over data statistics to choose targeted
+preprocessing; Planner narrows the hypothesis space of model choice by
+leveraging multi-modal diagnostics and self-planning over the input; Forecaster
+performs model fitting and validation and, based on the results, adaptively
+selects the best model configuration as well as ensemble strategy to make final
+predictions; and Reporter synthesizes the whole process into a comprehensive,
+transparent report. With transparent natural-language rationales and
+comprehensive reports, TSci transforms the forecasting workflow into a
+white-box system that is both interpretable and extensible across tasks.
+Empirical results on eight established benchmarks demonstrate that TSci
+consistently outperforms both statistical and LLM-based baselines, reducing
+forecast error by an average of 10.4% and 38.2%, respectively. Moreover, TSci
+produces a clear and rigorous report that makes the forecasting workflow more
+transparent and interpretable.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.01531v1' target='_blank'>Information Seeking for Robust Decision Making under Partial
+  Observability</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Djengo Cyun-Jyun Fang, Tsung-Wei Ke</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-02 00:06:32</h6>
+<p class='card-text'>Explicit information seeking is essential to human problem-solving in
+practical environments characterized by incomplete information and noisy
+dynamics. When the true environmental state is not directly observable, humans
+seek information to update their internal dynamics and inform future
+decision-making. Although existing Large Language Model (LLM) planning agents
+have addressed observational uncertainty, they often overlook discrepancies
+between their internal dynamics and the actual environment. We introduce
+Information Seeking Decision Planner (InfoSeeker), an LLM decision-making
+framework that integrates task-oriented planning with information seeking to
+align internal dynamics and make optimal decisions under uncertainty in both
+agent observations and environmental dynamics. InfoSeeker prompts an LLM to
+actively gather information by planning actions to validate its understanding,
+detect environmental changes, or test hypotheses before generating or revising
+task-oriented plans. To evaluate InfoSeeker, we introduce a novel benchmark
+suite featuring partially observable environments with incomplete observations
+and uncertain dynamics. Experiments demonstrate that InfoSeeker achieves a 74%
+absolute performance gain over prior methods without sacrificing sample
+efficiency. Moreover, InfoSeeker generalizes across LLMs and outperforms
+baselines on established benchmarks such as robotic manipulation and web
+navigation. These findings underscore the importance of tightly integrating
+planning and information seeking for robust behavior in partially observable
+environments. The project page is available at https://infoseekerllm.github.io</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.01524v1' target='_blank'>WALT: Web Agents that Learn Tools</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Viraj Prabhu, Yutong Dai, Matthew Fernandez, Jing Gu, Krithika Ramakrishnan, Yanqi Luo, Silvio Savarese, Caiming Xiong, Junnan Li, Zeyuan Chen, Ran Xu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-01 23:41:47</h6>
+<p class='card-text'>Web agents promise to automate complex browser tasks, but current methods
+remain brittle -- relying on step-by-step UI interactions and heavy LLM
+reasoning that break under dynamic layouts and long horizons. Humans, by
+contrast, exploit website-provided functionality through high-level operations
+like search, filter, and sort. We introduce WALT (Web Agents that Learn Tools),
+a framework that reverse-engineers latent website functionality into reusable
+invocable tools. Rather than hypothesizing ad-hoc skills, WALT exposes robust
+implementations of automations already designed into websites -- spanning
+discovery (search, filter, sort), communication (post, comment, upvote), and
+content management (create, edit, delete). Tools abstract away low-level
+execution: instead of reasoning about how to click and type, agents simply call
+search(query) or create(listing). This shifts the computational burden from
+fragile step-by-step reasoning to reliable tool invocation. On VisualWebArena
+and WebArena, WALT achieves higher success with fewer steps and less
+LLM-dependent reasoning, establishing a robust and generalizable paradigm for
+browser automation.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.01523v1' target='_blank'>MetaSynth: Multi-Agent Metadata Generation from Implicit Feedback in
+  Black-Box Systems</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Shreeranjani Srirangamsridharan, Ali Abavisani, Reza Yousefi Maragheh, Ramin Giahi, Kai Zhao, Jason Cho, Sushant Kumar</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-01 23:41:39</h6>
+<p class='card-text'>Meta titles and descriptions strongly shape engagement in search and
+recommendation platforms, yet optimizing them remains challenging. Search
+engine ranking models are black box environments, explicit labels are
+unavailable, and feedback such as click-through rate (CTR) arrives only
+post-deployment. Existing template, LLM, and retrieval-augmented approaches
+either lack diversity, hallucinate attributes, or ignore whether candidate
+phrasing has historically succeeded in ranking. This leaves a gap in directly
+leveraging implicit signals from observable outcomes. We introduce MetaSynth, a
+multi-agent retrieval-augmented generation framework that learns from implicit
+search feedback. MetaSynth builds an exemplar library from top-ranked results,
+generates candidate snippets conditioned on both product content and exemplars,
+and iteratively refines outputs via evaluator-generator loops that enforce
+relevance, promotional strength, and compliance. On both proprietary e-commerce
+data and the Amazon Reviews corpus, MetaSynth outperforms strong baselines
+across NDCG, MRR, and rank metrics. Large-scale A/B tests further demonstrate
+10.26% CTR and 7.51% clicks. Beyond metadata, this work contributes a general
+paradigm for optimizing content in black-box systems using implicit signals.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.01499v1' target='_blank'>Beyond Majority Voting: LLM Aggregation by Leveraging Higher-Order
+  Information</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Rui Ai, Yuqi Pan, David Simchi-Levi, Milind Tambe, Haifeng Xu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-01 22:21:50</h6>
+<p class='card-text'>With the rapid progress of multi-agent large language model (LLM) reasoning,
+how to effectively aggregate answers from multiple LLMs has emerged as a
+fundamental challenge. Standard majority voting treats all answers equally,
+failing to consider latent heterogeneity and correlation across models. In this
+work, we design two new aggregation algorithms called Optimal Weight (OW) and
+Inverse Surprising Popularity (ISP), leveraging both first-order and
+second-order information. Our theoretical analysis shows these methods provably
+mitigate inherent limitations of majority voting under mild assumptions,
+leading to more reliable collective decisions. We empirically validate our
+algorithms on synthetic datasets, popular LLM fine-tuning benchmarks such as
+UltraFeedback and MMLU, and a real-world healthcare setting ARMMAN. Across all
+cases, our methods consistently outperform majority voting, offering both
+practical performance gains and conceptual insights for the design of robust
+multi-agent LLM pipelines.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.01427v1' target='_blank'>A Tale of LLMs and Induced Small Proxies: Scalable Agents for Knowledge
+  Mining</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Sipeng Zhang, Longfei Yun, Zilong Wang, Jingbo Shang, Letian Peng</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-01 20:06:48</h6>
+<p class='card-text'>At the core of Deep Research is knowledge mining, the task of extracting
+structured information from massive unstructured text in response to user
+instructions. Large language models (LLMs) excel at interpreting such
+instructions but are prohibitively expensive to deploy at scale, while
+traditional pipelines of classifiers and extractors remain efficient yet
+brittle and unable to generalize to new tasks. We introduce Falconer, a
+collaborative framework that combines the agentic reasoning of LLMs with
+lightweight proxy models for scalable knowledge mining. In Falconer, LLMs act
+as planners, decomposing user instructions into executable pipelines, and as
+annotators, generating supervision to train small proxies. The framework
+unifies classification and extraction into two atomic operations, get label and
+get span, enabling a single instruction-following model to replace multiple
+task-specific components. To evaluate the consistency between proxy models
+incubated by Falconer and annotations provided by humans and large models, we
+construct new benchmarks covering both planning and end-to-end execution.
+Experiments show that Falconer closely matches state-of-the-art LLMs in
+instruction-following accuracy while reducing inference cost by up to 90% and
+accelerating large-scale knowledge mining by more than 20x, offering an
+efficient and scalable foundation for Deep Research.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.01409v1' target='_blank'>OntoLogX: Ontology-Guided Knowledge Graph Extraction from Cybersecurity
+  Logs with Large Language Models</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Luca Cotti, Idilio Drago, Anisa Rula, Devis Bianchini, Federico Cerutti</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-01 19:46:15</h6>
+<p class='card-text'>System logs represent a valuable source of Cyber Threat Intelligence (CTI),
+capturing attacker behaviors, exploited vulnerabilities, and traces of
+malicious activity. Yet their utility is often limited by lack of structure,
+semantic inconsistency, and fragmentation across devices and sessions.
+Extracting actionable CTI from logs therefore requires approaches that can
+reconcile noisy, heterogeneous data into coherent and interoperable
+representations. We introduce OntoLogX, an autonomous Artificial Intelligence
+(AI) agent that leverages Large Language Models (LLMs) to transform raw logs
+into ontology-grounded Knowledge Graphs (KGs). OntoLogX integrates a
+lightweight log ontology with Retrieval Augmented Generation (RAG) and
+iterative correction steps, ensuring that generated KGs are syntactically and
+semantically valid. Beyond event-level analysis, the system aggregates KGs into
+sessions and employs a LLM to predict MITRE ATT&CK tactics, linking low-level
+log evidence to higher-level adversarial objectives. We evaluate OntoLogX on
+both logs from a public benchmark and a real-world honeypot dataset,
+demonstrating robust KG generation across multiple KGs backends and accurate
+mapping of adversarial activity to ATT&CK tactics. Results highlight the
+benefits of retrieval and correction for precision and recall, the
+effectiveness of code-oriented models in structured log analysis, and the value
+of ontology-grounded representations for actionable CTI extraction.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.01398v1' target='_blank'>Automating Data-Driven Modeling and Analysis for Engineering
+  Applications using Large Language Model Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yang Liu, Zaid Abulawi, Abhiram Garimidi, Doyeong Lim</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-01 19:28:35</h6>
+<p class='card-text'>Modern engineering increasingly relies on vast datasets generated by
+experiments and simulations, driving a growing demand for efficient, reliable,
+and broadly applicable modeling strategies. There is also heightened interest
+in developing data-driven approaches, particularly neural network models, for
+effective prediction and analysis of scientific datasets. Traditional
+data-driven methods frequently involve extensive manual intervention, limiting
+their ability to scale effectively and generalize to diverse applications. In
+this study, we propose an innovative pipeline utilizing Large Language Model
+(LLM) agents to automate data-driven modeling and analysis, with a particular
+emphasis on regression tasks. We evaluate two LLM-agent frameworks: a
+multi-agent system featuring specialized collaborative agents, and a
+single-agent system based on the Reasoning and Acting (ReAct) paradigm. Both
+frameworks autonomously handle data preprocessing, neural network development,
+training, hyperparameter optimization, and uncertainty quantification (UQ). We
+validate our approach using a critical heat flux (CHF) prediction benchmark,
+involving approximately 25,000 experimental data points from the OECD/NEA
+benchmark dataset. Results indicate that our LLM-agent-developed model
+surpasses traditional CHF lookup tables and delivers predictive accuracy and UQ
+on par with state-of-the-art Bayesian optimized deep neural network models
+developed by human experts. These outcomes underscore the significant potential
+of LLM-based agents to automate complex engineering modeling tasks, greatly
+reducing human workload while meeting or exceeding existing standards of
+predictive performance.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.01379v1' target='_blank'>Beyond Single LLMs: Enhanced Code Generation via Multi-Stage
+  Performance-Guided LLM Orchestration</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Huashan Chen, Zhenyu Qi, Haotang Li, Hong Chen, Jinfu Chen, Kebin Peng, In Kee Kim, Kyu Hyung Lee, Sen He</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-01 19:07:16</h6>
+<p class='card-text'>While Large Language Models (LLMs) have become the predominant paradigm for
+automated code generation, current single-model approaches fundamentally ignore
+the heterogeneous computational strengths that different models exhibit across
+programming languages, algorithmic domains, and development stages. This paper
+challenges the single-model convention by introducing a multi-stage,
+performance-guided orchestration framework that dynamically routes coding tasks
+to the most suitable LLMs within a structured generate-fix-refine workflow. Our
+approach is grounded in a comprehensive empirical study of 17 state-of-the-art
+LLMs across five programming languages (Python, Java, C++, Go, and Rust) using
+HumanEval-X benchmark. The study, which evaluates both functional correctness
+and runtime performance metrics (execution time, mean/max memory utilization,
+and CPU efficiency), reveals pronounced performance heterogeneity by language,
+development stage, and problem category. Guided by these empirical insights, we
+present PerfOrch, an LLM agent that orchestrates top-performing LLMs for each
+task context through stage-wise validation and rollback mechanisms. Without
+requiring model fine-tuning, PerfOrch achieves substantial improvements over
+strong single-model baselines: average correctness rates of 96.22% and 91.37%
+on HumanEval-X and EffiBench-X respectively, surpassing GPT-4o's 78.66% and
+49.11%. Beyond correctness gains, the framework delivers consistent performance
+optimizations, improving execution time for 58.76% of problems with median
+speedups ranging from 17.67% to 27.66% across languages on two benchmarks. The
+framework's plug-and-play architecture ensures practical scalability, allowing
+new LLMs to be profiled and integrated seamlessly, thereby offering a paradigm
+for production-grade automated software engineering that adapts to the rapidly
+evolving generative AI landscape.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.01375v1' target='_blank'>Fine-tuning with RAG for Improving LLM Learning of New Skills</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Humaid Ibrahim, Nikolai Rozanov, Marek Rei</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-01 19:03:48</h6>
+<p class='card-text'>Large language model (LLM) agents deployed for multi-step tasks frequently
+fail in predictable ways: attempting actions with unmet preconditions, issuing
+redundant commands, or mishandling environment constraints. While
+retrieval-augmented generation (RAG) can improve performance by providing
+runtime guidance, it requires maintaining external knowledge databases and adds
+computational overhead at every deployment. We propose a simple pipeline that
+converts inference-time retrieval into learned competence through distillation.
+Our approach: (1) extracts compact, reusable hints from agent failures, (2)
+uses these hints to generate improved teacher trajectories via one-shot
+retrieval at episode start, and (3) trains student models on these trajectories
+with hint strings removed, forcing internalization rather than memorization.
+Across two interactive benchmarks, ALFWorld (household tasks) and WebShop
+(online shopping), distilled students consistently outperform baseline agents,
+achieving up to 91% success on ALFWorld (vs. 79% for baselines) and improving
+WebShop scores to 72 (vs. 61 for baselines), while using 10-60% fewer tokens
+than retrieval-augmented teachers depending on the environment. The approach
+generalizes across model scales (7B/14B parameters) and agent architectures
+(ReAct/StateAct), demonstrating that retrieval benefits can be effectively
+internalized through targeted fine-tuning without permanent runtime
+dependencies.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.01359v1' target='_blank'>Breaking the Code: Security Assessment of AI Code Agents Through
+  Systematic Jailbreaking Attacks</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Shoumik Saha, Jifan Chen, Sam Mayers, Sanjay Krishna Gouda, Zijian Wang, Varun Kumar</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-01 18:38:20</h6>
+<p class='card-text'>Code-capable large language model (LLM) agents are increasingly embedded into
+software engineering workflows where they can read, write, and execute code,
+raising the stakes of safety-bypass ("jailbreak") attacks beyond text-only
+settings. Prior evaluations emphasize refusal or harmful-text detection,
+leaving open whether agents actually compile and run malicious programs. We
+present JAWS-BENCH (Jailbreaks Across WorkSpaces), a benchmark spanning three
+escalating workspace regimes that mirror attacker capability: empty (JAWS-0),
+single-file (JAWS-1), and multi-file (JAWS-M). We pair this with a
+hierarchical, executable-aware Judge Framework that tests (i) compliance, (ii)
+attack success, (iii) syntactic correctness, and (iv) runtime executability,
+moving beyond refusal to measure deployable harm. Using seven LLMs from five
+families as backends, we find that under prompt-only conditions in JAWS-0, code
+agents accept 61% of attacks on average; 58% are harmful, 52% parse, and 27%
+run end-to-end. Moving to single-file regime in JAWS-1 drives compliance to ~
+100% for capable models and yields a mean ASR (Attack Success Rate) ~ 71%; the
+multi-file regime (JAWS-M) raises mean ASR to ~ 75%, with 32% instantly
+deployable attack code. Across models, wrapping an LLM in an agent
+substantially increases vulnerability -- ASR raises by 1.6x -- because initial
+refusals are frequently overturned during later planning/tool-use steps.
+Category-level analyses identify which attack classes are most vulnerable and
+most readily deployable, while others exhibit large execution gaps. These
+findings motivate execution-aware defenses, code-contextual safety filters, and
+mechanisms that preserve refusal decisions throughout the agent's multi-step
+reasoning and tool use.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.01353v1' target='_blank'>MEMTRACK: Evaluating Long-Term Memory and State Tracking in
+  Multi-Platform Dynamic Agent Environments</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Darshan Deshpande, Varun Gangal, Hersh Mehta, Anand Kannappan, Rebecca Qian, Peng Wang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-01 18:34:03</h6>
+<p class='card-text'>Recent works on context and memory benchmarking have primarily focused on
+conversational instances but the need for evaluating memory in dynamic
+enterprise environments is crucial for its effective application. We introduce
+MEMTRACK, a benchmark designed to evaluate long-term memory and state tracking
+in multi-platform agent environments. MEMTRACK models realistic organizational
+workflows by integrating asynchronous events across multiple communication and
+productivity platforms such as Slack, Linear and Git. Each benchmark instance
+provides a chronologically platform-interleaved timeline, with noisy,
+conflicting, cross-referring information as well as potential
+codebase/file-system comprehension and exploration. Consequently, our benchmark
+tests memory capabilities such as acquistion, selection and conflict
+resolution. We curate the MEMTRACK dataset through both manual expert driven
+design and scalable agent based synthesis, generating ecologically valid
+scenarios grounded in real world software development processes. We introduce
+pertinent metrics for Correctness, Efficiency, and Redundancy that capture the
+effectiveness of memory mechanisms beyond simple QA performance. Experiments
+across SoTA LLMs and memory backends reveal challenges in utilizing memory
+across long horizons, handling cross-platform dependencies, and resolving
+contradictions. Notably, the best performing GPT-5 model only achieves a 60\%
+Correctness score on MEMTRACK. This work provides an extensible framework for
+advancing evaluation research for memory-augmented agents, beyond existing
+focus on conversational setups, and sets the stage for multi-agent,
+multi-platform memory benchmarking in complex organizational settings</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.01179v1' target='_blank'>TOUCAN: Synthesizing 1.5M Tool-Agentic Data from Real-World MCP
+  Environments</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Zhangchen Xu, Adriana Meza Soria, Shawn Tan, Anurag Roy, Ashish Sunil Agrawal, Radha Poovendran, Rameswar Panda</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-01 17:58:03</h6>
+<p class='card-text'>Large Language Model (LLM) agents are rapidly emerging as powerful systems
+for automating tasks across domains. Yet progress in the open-source community
+is constrained by the lack of high quality permissively licensed tool-agentic
+training data. Existing datasets are often limited in diversity, realism, and
+complexity, particularly regarding multi-tool and multi-turn interactions. To
+address this gap, we introduce Toucan, the largest publicly available
+tool-agentic dataset to date, containing 1.5 million trajectories synthesized
+from nearly 500 real-world Model Context Protocols (MCPs). Unlike prior work,
+Toucan leverages authentic MCP environments to generate diverse, realistic, and
+challenging tasks with trajectories involving real tool execution. Our pipeline
+first produces a broad spectrum of tool-use queries using five distinct models,
+applies model-based quality filtering, and then generates agentic trajectories
+with three teacher models using two agentic frameworks. Rigorous rule-based and
+model-based validation ensures high-quality outputs. We also introduce three
+extension mechanisms to further diversify tasks and simulate multi-turn
+conversations. Models fine-tuned on Toucan outperform larger closed-source
+counterparts on the BFCL V3 benchmark and push the Pareto frontier forward on
+MCP-Universe Bench.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js'></script>
+</body>
+</html>
