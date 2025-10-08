@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<title>LLM-agent - 2025-10-08</title>
+<link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap' rel='stylesheet'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'>
+<style>
+body {
+font-family: 'Roboto', sans-serif;
+background-color: #f5f7fa;
+padding: 20px;
+}
+.card {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.card-title {
+    font-weight: 700;
+}
+.card:hover {
+    transform: scale(1.02);
+    transition: 0.3s ease-in-out;
+}
+</style>
+</head>
+<body>
+<div class='container'>
+<h1 class='text-center my-4'><i class='fas fa-book'></i>LLM-agent - 2025-10-08</h1>
+<div class='row'>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.06214v1' target='_blank'>Stratified GRPO: Handling Structural Heterogeneity in Reinforcement
+  Learning of LLM Search Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Mingkang Zhu, Xi Chen, Bei Yu, Hengshuang Zhao, Jiaya Jia</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-07 17:59:13</h6>
+<p class='card-text'>Large language model (LLM) agents increasingly rely on external tools such as
+search engines to solve complex, multi-step problems, and reinforcement
+learning (RL) has become a key paradigm for training them. However, the
+trajectories of search agents are structurally heterogeneous, where variations
+in the number, placement, and outcomes of search calls lead to fundamentally
+different answer directions and reward distributions. Standard policy gradient
+methods, which use a single global baseline, suffer from what we identify and
+formalize as cross-stratum bias-an "apples-to-oranges" comparison of
+heterogeneous trajectories. This cross-stratum bias distorts credit assignment
+and hinders exploration of complex, multi-step search strategies. To address
+this, we propose Stratified GRPO, whose central component, Stratified Advantage
+Normalization (SAN), partitions trajectories into homogeneous strata based on
+their structural properties and computes advantages locally within each
+stratum. This ensures that trajectories are evaluated only against their true
+peers. Our analysis proves that SAN eliminates cross-stratum bias, yields
+conditionally unbiased unit-variance estimates inside each stratum, and retains
+the global unbiasedness and unit-variance properties enjoyed by standard
+normalization, resulting in a more pure and scale-stable learning signal. To
+improve practical stability under finite-sample regimes, we further linearly
+blend SAN with the global estimator. Extensive experiments on diverse
+single-hop and multi-hop question-answering benchmarks demonstrate that
+Stratified GRPO consistently and substantially outperforms GRPO by up to 11.3
+points, achieving higher training rewards, greater training stability, and more
+effective search policies. These results establish stratification as a
+principled remedy for structural heterogeneity in RL for LLM search agents.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.06187v1' target='_blank'>Automated Program Repair of Uncompilable Student Code</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Griffin Pitts, Aum Pandya, Darsh Rank, Tirth Bhatt, Muntasir Hoq, Bita Akram</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-07 17:46:33</h6>
+<p class='card-text'>A significant portion of student programming submissions in CS1 learning
+environments are uncompilable, limiting their use in student modeling and
+downstream knowledge tracing. Traditional modeling pipelines often exclude
+these cases, discarding observations of student learning. This study
+investigates automated program repair as a strategy to recover uncompilable
+code while preserving students' structural intent for use in student modeling.
+Within this framework, we assess large language models (LLMs) as repair agents,
+including GPT-5 (OpenAI), Claude 3.5 Haiku (Anthropic), and Gemini 2.5 Flash
+(Google), under high- and low-context prompting conditions. Repairs were
+evaluated for compilability, edit distance, and preservation of students'
+original structure and logic. We find that while all three LLMs are capable of
+producing compilable repairs, their behavior diverges in how well they preserve
+students' control flow and code structure, which affects their pedagogical
+utility. By recovering uncompilable submissions, this work enables richer and
+more comprehensive analyses of learners' coding processes and development over
+time.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.06186v1' target='_blank'>RECODE-H: A Benchmark for Research Code Development with Interactive
+  Human Feedback</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Chunyu Miao, Henry Peng Zou, Yangning Li, Yankai Chen, Yibo Wang, Fangxin Wang, Yifan Li, Wooseong Yang, Bowei He, Xinni Zhang, Dianzhi Yu, Hanchen Yang, Hoang H Nguyen, Yue Zhou, Jie Yang, Jizhou Guo, Wenzhe Fan, Chin-Yuan Yeh, Panpan Meng, Liancheng Fang, Jinhu Qi, Wei-Chieh Huang, Zhengyao Gu, Yuwei Han, Langzhou He, Yuyao Yang, Xue Liu, Irwin King, Philip S. Yu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-07 17:45:35</h6>
+<p class='card-text'>Large language models (LLMs) show the promise in supporting scientific
+research implementation, yet their ability to generate correct and executable
+code remains limited. Existing works largely adopt one-shot settings, ignoring
+the iterative and feedback-driven nature of realistic workflows of scientific
+research development. To address this gap, we present RECODE-H, a benchmark of
+102 tasks from research papers and repositories that evaluates LLM agents
+through multi-turn interactions with LLM-simulated human feedback. It includes
+structured instructions,unit tests, and a five-level feedback hierarchy to
+reflect realistic researcher-agent collaboration. We further present
+ReCodeAgent, a framework that integrates feedback into iterative code
+generation. Experiments with leading LLMs, including GPT-5, Claude-Sonnet-4,
+DeepSeek-V3.1, and Gemini 2.5, show substantial performance gains with richer
+feedback, while also highlighting ongoing challenges in the generation of
+complex research code. RECODE-H establishes a foundation for developing
+adaptive, feedback-driven LLM agents in scientific research implementation</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.06151v1' target='_blank'>LLMs as Policy-Agnostic Teammates: A Case Study in Human Proxy Design
+  for Heterogeneous Agent Teams</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Aju Ani Justus, Chris Baber</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-07 17:21:20</h6>
+<p class='card-text'>A critical challenge in modelling Heterogeneous-Agent Teams is training
+agents to collaborate with teammates whose policies are inaccessible or
+non-stationary, such as humans. Traditional approaches rely on expensive
+human-in-the-loop data, which limits scalability. We propose using Large
+Language Models (LLMs) as policy-agnostic human proxies to generate synthetic
+data that mimics human decision-making. To evaluate this, we conduct three
+experiments in a grid-world capture game inspired by Stag Hunt, a game theory
+paradigm that balances risk and reward. In Experiment 1, we compare decisions
+from 30 human participants and 2 expert judges with outputs from LLaMA 3.1 and
+Mixtral 8x22B models. LLMs, prompted with game-state observations and reward
+structures, align more closely with experts than participants, demonstrating
+consistency in applying underlying decision criteria. Experiment 2 modifies
+prompts to induce risk-sensitive strategies (e.g. "be risk averse"). LLM
+outputs mirror human participants' variability, shifting between risk-averse
+and risk-seeking behaviours. Finally, Experiment 3 tests LLMs in a dynamic
+grid-world where the LLM agents generate movement actions. LLMs produce
+trajectories resembling human participants' paths. While LLMs cannot yet fully
+replicate human adaptability, their prompt-guided diversity offers a scalable
+foundation for simulating policy-agnostic teammates.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.06078v1' target='_blank'>Constraint-Aware Route Recommendation from Natural Language via
+  Hierarchical LLM Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Tao Zhe, Rui Liu, Fateme Memar, Xiao Luo, Wei Fan, Xinyue Ye, Zhongren Peng, Dongjie Wang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-07 16:03:57</h6>
+<p class='card-text'>Route recommendation aims to provide users with optimal travel plans that
+satisfy diverse and complex requirements. Classical routing algorithms (e.g.,
+shortest-path and constraint-aware search) are efficient but assume structured
+inputs and fixed objectives, limiting adaptability to natural-language queries.
+Recent LLM-based approaches enhance flexibility but struggle with spatial
+reasoning and the joint modeling of route-level and POI-level preferences. To
+address these limitations, we propose RouteLLM, a hierarchical multi-agent
+framework that grounds natural-language intents into constraint-aware routes.
+It first parses user queries into structured intents including POIs, paths, and
+constraints. A manager agent then coordinates specialized sub-agents: a
+constraint agent that resolves and formally check constraints, a POI agent that
+retrieves and ranks candidate POIs, and a path refinement agent that refines
+routes via a routing engine with preference-conditioned costs. A final verifier
+agent ensures constraint satisfaction and produces the final route with an
+interpretable rationale. This design bridges linguistic flexibility and spatial
+structure, enabling reasoning over route feasibility and user preferences.
+Experiments show that our method reliably grounds textual preferences into
+constraint-aware routes, improving route quality and preference satisfaction
+over classical methods.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.06056v1' target='_blank'>Scientific Algorithm Discovery by Augmenting AlphaEvolve with Deep
+  Research</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Gang Liu, Yihan Zhu, Jie Chen, Meng Jiang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-07 15:49:51</h6>
+<p class='card-text'>Large language models hold promise as scientific assistants, yet existing
+agents either rely solely on algorithm evolution or on deep research in
+isolation, both of which face critical limitations. Pure algorithm evolution,
+as in AlphaEvolve, depends only on the internal knowledge of LLMs and quickly
+plateaus in complex domains, while pure deep research proposes ideas without
+validation, resulting in unrealistic or unimplementable solutions. We present
+DeepEvolve, an agent that integrates deep research with algorithm evolution,
+uniting external knowledge retrieval, cross-file code editing, and systematic
+debugging under a feedback-driven iterative loop. Each iteration not only
+proposes new hypotheses but also refines, implements, and tests them, avoiding
+both shallow improvements and unproductive over-refinements. Across nine
+benchmarks in chemistry, mathematics, biology, materials, and patents,
+DeepEvolve consistently improves the initial algorithm, producing executable
+new algorithms with sustained gains. By bridging the gap between unguided
+evolution and research without grounding, DeepEvolve provides a reliable
+framework for advancing scientific algorithm discovery. Our code is available
+at https://github.com/liugangcode/deepevolve.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.06042v1' target='_blank'>Agent+P: Guiding UI Agents via Symbolic Planning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Shang Ma, Xusheng Xiao, Yanfang Ye</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-07 15:36:04</h6>
+<p class='card-text'>Large Language Model (LLM)-based UI agents show great promise for UI
+automation but often hallucinate in long-horizon tasks due to their lack of
+understanding of the global UI transition structure. To address this, we
+introduce AGENT+P, a novel framework that leverages symbolic planning to guide
+LLM-based UI agents. Specifically, we model an app's UI transition structure as
+a UI Transition Graph (UTG), which allows us to reformulate the UI automation
+task as a pathfinding problem on the UTG. This further enables an off-the-shelf
+symbolic planner to generate a provably correct and optimal high-level plan,
+preventing the agent from redundant exploration and guiding the agent to
+achieve the automation goals. AGENT+P is designed as a plug-and-play framework
+to enhance existing UI agents. Evaluation on the AndroidWorld benchmark
+demonstrates that AGENT+P improves the success rates of state-of-the-art UI
+agents by up to 14% and reduces the action steps by 37.7%.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.05950v1' target='_blank'>Training-Free Time Series Classification via In-Context Reasoning with
+  LLM Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Songyuan Sui, Zihang Xu, Yu-Neng Chuang, Kwei-Herng Lai, Xia Hu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-07 14:07:43</h6>
+<p class='card-text'>Time series classification (TSC) spans diverse application scenarios, yet
+labeled data are often scarce, making task-specific training costly and
+inflexible. Recent reasoning-oriented large language models (LLMs) show promise
+in understanding temporal patterns, but purely zero-shot usage remains
+suboptimal. We propose FETA, a multi-agent framework for training-free TSC via
+exemplar-based in-context reasoning. FETA decomposes a multivariate series into
+channel-wise subproblems, retrieves a few structurally similar labeled examples
+for each channel, and leverages a reasoning LLM to compare the query against
+these exemplars, producing channel-level labels with self-assessed confidences;
+a confidence-weighted aggregator then fuses all channel decisions. This design
+eliminates the need for pretraining or fine-tuning, improves efficiency by
+pruning irrelevant channels and controlling input length, and enhances
+interpretability through exemplar grounding and confidence estimation. On nine
+challenging UEA datasets, FETA achieves strong accuracy under a fully
+training-free setting, surpassing multiple trained baselines. These results
+demonstrate that a multi-agent in-context reasoning framework can transform
+LLMs into competitive, plug-and-play TSC solvers without any parameter
+training. The code is available at https://github.com/SongyuanSui/FETATSC.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.05943v1' target='_blank'>EARL: Efficient Agentic Reinforcement Learning Systems for Large
+  Language Models</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Zheyue Tan, Mustapha Abdullahi, Tuo Shi, Huining Yuan, Zelai Xu, Chao Yu, Boxun Li, Bo Zhao</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-07 13:52:51</h6>
+<p class='card-text'>Reinforcement learning (RL) has become a pivotal component of large language
+model (LLM) post-training, and agentic RL extends this paradigm to operate as
+agents through multi-turn interaction and tool use. Scaling such systems
+exposes two practical bottlenecks: (1) context length grows rapidly during
+training, inflating memory usage and latency, and triggering out-of-memory
+(OOM) failures; and (2) intermediate tensors accumulate with context length,
+making cross-device data movement a major system bottleneck.
+  We present EARL, a scalable system for efficient agentic RL. EARL designs a
+parallelism selector that dynamically adapts model and training parallelism
+across RL stages based on sequence length and system load, and a data
+dispatcher that performs layout-aware, decentralized exchange of intermediate
+data batches. Together, these components increase throughput, reduce
+long-context failures, and enable stable large-scale training of agentic LLMs
+without relying on hard limits or penalties of context length.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.05935v1' target='_blank'>LLM-FS-Agent: A Deliberative Role-based Large Language Model
+  Architecture for Transparent Feature Selection</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Mohamed Bal-Ghaoui, Fayssal Sabri</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-07 13:46:06</h6>
+<p class='card-text'>High-dimensional data remains a pervasive challenge in machine learning,
+often undermining model interpretability and computational efficiency. While
+Large Language Models (LLMs) have shown promise for dimensionality reduction
+through feature selection, existing LLM-based approaches frequently lack
+structured reasoning and transparent justification for their decisions. This
+paper introduces LLM-FS-Agent, a novel multi-agent architecture designed for
+interpretable and robust feature selection. The system orchestrates a
+deliberative "debate" among multiple LLM agents, each assigned a specific role,
+enabling collective evaluation of feature relevance and generation of detailed
+justifications. We evaluate LLM-FS-Agent in the cybersecurity domain using the
+CIC-DIAD 2024 IoT intrusion detection dataset and compare its performance
+against strong baselines, including LLM-Select and traditional methods such as
+PCA. Experimental results demonstrate that LLM-FS-Agent consistently achieves
+superior or comparable classification performance while reducing downstream
+training time by an average of 46% (statistically significant improvement, p =
+0.028 for XGBoost). These findings highlight that the proposed deliberative
+architecture enhances both decision transparency and computational efficiency,
+establishing LLM-FS-Agent as a practical and reliable solution for real-world
+applications.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.05921v1' target='_blank'>Prompt reinforcing for long-term planning of large language models</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Hsien-Chin Lin, Benjamin Matthias Ruppik, Carel van Niekerk, Chia-Hao Shen, Michael Heck, Nurul Lubis, Renato Vukovic, Shutong Feng, Milica Gašić</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-07 13:30:18</h6>
+<p class='card-text'>Large language models (LLMs) have achieved remarkable success in a wide range
+of natural language processing tasks and can be adapted through prompting.
+However, they remain suboptimal in multi-turn interactions, often relying on
+incorrect early assumptions and failing to track user goals over time, which
+makes such tasks particularly challenging. Prior works in dialogue systems have
+shown that long-term planning is essential for handling interactive tasks. In
+this work, we propose a prompt optimisation framework inspired by reinforcement
+learning, which enables such planning to take place by only modifying the task
+instruction prompt of the LLM-based agent. By generating turn-by-turn feedback
+and leveraging experience replay for prompt rewriting, our proposed method
+shows significant improvement in multi-turn tasks such as text-to-SQL and
+task-oriented dialogue. Moreover, it generalises across different LLM-based
+agents and can leverage diverse LLMs as meta-prompting agents. This warrants
+future research in reinforcement learning-inspired parameter-free optimisation
+methods.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.05748v1' target='_blank'>Communication Enables Cooperation in LLM Agents: A Comparison with
+  Curriculum-Based Approaches</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Hachem Madmoun, Salem Lahlou</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-07 10:06:29</h6>
+<p class='card-text'>Eliciting cooperation in multi-agent LLM systems is critical for AI
+alignment. We investigate two approaches: direct communication and curriculum
+learning. In a 4-player Stag Hunt, a one-word "cheap talk" channel increases
+cooperation from 0% to 48.3%, demonstrating communication as a robust
+coordination mechanism. In contrast, we find that curriculum learning is highly
+sensitive to design choices: our pedagogical curriculum through progressively
+complex games reduced agent payoffs by 27.4% in an Iterated Public Goods Game
+with Punishment. Qualitative analysis reveals that curricula emphasizing
+defection-equilibrium games can induce "learned pessimism" in agents. These
+findings suggest that for coordination problems, simple communication protocols
+may be more reliable than experience-based training, and that curriculum design
+for social dilemmas requires careful attention to the strategic lessons
+embedded in game sequences.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.05746v1' target='_blank'>ARM: Discovering Agentic Reasoning Modules for Generalizable Multi-Agent
+  Systems</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Bohan Yao, Shiva Krishna Reddy Malay, Vikas Yadav</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-07 10:04:48</h6>
+<p class='card-text'>Large Language Model (LLM)-powered Multi-agent systems (MAS) have achieved
+state-of-the-art results on various complex reasoning tasks. Recent works have
+proposed techniques to automate the design of MASes, eliminating the need for
+manual engineering. However, these techniques perform poorly, often achieving
+similar or inferior performance to simple baselines. Furthermore, they require
+computationally expensive re-discovery of architectures for each new task
+domain and expensive data annotation on domains without existing labeled
+validation sets. A critical insight is that simple Chain of Thought (CoT)
+reasoning often performs competitively with these complex systems, suggesting
+that the fundamental reasoning unit of MASes, CoT, warrants further
+investigation. To this end, we present a new paradigm for automatic MAS design
+that pivots the focus to optimizing CoT reasoning. We introduce the Agentic
+Reasoning Module (ARM), an agentic generalization of CoT where each granular
+reasoning step is executed by a specialized reasoning module. This module is
+discovered through a tree search over the code space, starting from a simple
+CoT module and evolved using mutations informed by reflection on execution
+traces. The resulting ARM acts as a versatile reasoning building block which
+can be utilized as a direct recursive loop or as a subroutine in a learned
+meta-orchestrator. Our approach significantly outperforms both manually
+designed MASes and state-of-the-art automatic MAS design methods. Crucially,
+MASes built with ARM exhibit superb generalization, maintaining high
+performance across different foundation models and task domains without further
+optimization.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.05710v1' target='_blank'>FinReflectKG - EvalBench: Benchmarking Financial KG with
+  Multi-Dimensional Evaluation</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Fabrizio Dimino, Abhinav Arun, Bhaskarjit Sarmah, Stefano Pasquali</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-07 09:22:48</h6>
+<p class='card-text'>Large language models (LLMs) are increasingly being used to extract
+structured knowledge from unstructured financial text. Although prior studies
+have explored various extraction methods, there is no universal benchmark or
+unified evaluation framework for the construction of financial knowledge graphs
+(KG). We introduce FinReflectKG - EvalBench, a benchmark and evaluation
+framework for KG extraction from SEC 10-K filings. Building on the agentic and
+holistic evaluation principles of FinReflectKG - a financial KG linking audited
+triples to source chunks from S&P 100 filings and supporting single-pass,
+multi-pass, and reflection-agent-based extraction modes - EvalBench implements
+a deterministic commit-then-justify judging protocol with explicit bias
+controls, mitigating position effects, leniency, verbosity and world-knowledge
+reliance. Each candidate triple is evaluated with binary judgments of
+faithfulness, precision, and relevance, while comprehensiveness is assessed on
+a three-level ordinal scale (good, partial, bad) at the chunk level. Our
+findings suggest that, when equipped with explicit bias controls, LLM-as-Judge
+protocols provide a reliable and cost-efficient alternative to human
+annotation, while also enabling structured error analysis. Reflection-based
+extraction emerges as the superior approach, achieving best performance in
+comprehensiveness, precision, and relevance, while single-pass extraction
+maintains the highest faithfulness. By aggregating these complementary
+dimensions, FinReflectKG - EvalBench enables fine-grained benchmarking and
+bias-aware evaluation, advancing transparency and governance in financial AI
+applications.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.05691v1' target='_blank'>DecEx-RAG: Boosting Agentic Retrieval-Augmented Generation with Decision
+  and Execution Optimization via Process Supervision</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yongqi Leng, Yikun Lei, Xikai Liu, Meizhi Zhong, Bojian Xiong, Yurong Zhang, Yan Gao, Yi Wu, Yao Hu, Deyi Xiong</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-07 08:49:22</h6>
+<p class='card-text'>Agentic Retrieval-Augmented Generation (Agentic RAG) enhances the processing
+capability for complex tasks through dynamic retrieval and adaptive workflows.
+Recent advances (e.g., Search-R1) have shown that outcome-supervised
+reinforcement learning demonstrate strong performance. However, this approach
+still suffers from inefficient exploration, sparse reward signals, and
+ambiguous global reward feedback. To address these challenges, we propose
+DecEx-RAG, which models RAG as a Markov Decision Process (MDP) incorporating
+decision-making and execution, while introducing an efficient pruning strategy
+to optimize data expansion. Through comprehensive process-level policy
+optimization, DecEx-RAG significantly enhances the autonomous task
+decomposition, dynamic retrieval, and high-quality answer generation
+capabilities of large language models (LLMs). Experiments show that DecEx-RAG
+achieves an average absolute performance improvement of $6.2\%$ across six
+datasets, significantly outperforming existing baselines. Moreover, the pruning
+strategy improves data construction efficiency by nearly $6 \times$, providing
+an efficient solution for process-supervised RAG training. The code is
+available at https://github.com/sdsxdxl/DecEx-RAG.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.05608v1' target='_blank'>A Goal Without a Plan Is Just a Wish: Efficient and Effective Global
+  Planner Training for Long-Horizon Agent Tasks</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Shuzheng Si, Haozhe Zhao, Kangyang Luo, Gang Chen, Fanchao Qi, Minjia Zhang, Baobao Chang, Maosong Sun</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-07 06:10:53</h6>
+<p class='card-text'>Agents based on large language models (LLMs) struggle with brainless
+trial-and-error and generating hallucinatory actions due to a lack of global
+planning in long-horizon tasks. In this paper, we introduce a plan-and-execute
+framework and propose EAGLET, an efficient and effective planner training
+method to enhance the executor agent's planning abilities without human effort.
+Specifically, we train a plug-and-play global planner through a two-step
+process: we first synthesize high-quality plans from an advanced LLM using our
+proposed homologous consensus filtering strategy, and apply fine-tuning as a
+cold start. Moreover, we further improve the planner with a rule-based
+reinforcement learning stage using a novel executor capability gain reward,
+ensuring it can handle task instructions of varying difficulty. Experiments on
+three long-horizon agent tasks show that executor agents equipped with our
+planner outperform existing methods, achieving new state-of-the-art
+performance. Meanwhile, EAGLET reduces training costs by 8x compared to
+RL-based baselines, and it does not require manual effort or extra training
+data, offering an efficient and effective solution.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.05605v1' target='_blank'>AutoPentester: An LLM Agent-based Framework for Automated Pentesting</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yasod Ginige, Akila Niroshan, Sajal Jain, Suranga Seneviratne</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-07 06:02:26</h6>
+<p class='card-text'>Penetration testing and vulnerability assessment are essential industry
+practices for safeguarding computer systems. As cyber threats grow in scale and
+complexity, the demand for pentesting has surged, surpassing the capacity of
+human professionals to meet it effectively. With advances in AI, particularly
+Large Language Models (LLMs), there have been attempts to automate the
+pentesting process. However, existing tools such as PentestGPT are still
+semi-manual, requiring significant professional human interaction to conduct
+pentests. To this end, we propose a novel LLM agent-based framework,
+AutoPentester, which automates the pentesting process. Given a target IP,
+AutoPentester automatically conducts pentesting steps using common security
+tools in an iterative process. It can dynamically generate attack strategies
+based on the tool outputs from the previous iteration, mimicking the human
+pentester approach. We evaluate AutoPentester using Hack The Box and
+custom-made VMs, comparing the results with the state-of-the-art PentestGPT.
+Results show that AutoPentester achieves a 27.0% better subtask completion rate
+and 39.5% more vulnerability coverage with fewer steps. Most importantly, it
+requires significantly fewer human interactions and interventions compared to
+PentestGPT. Furthermore, we recruit a group of security industry professional
+volunteers for a user survey and perform a qualitative analysis to evaluate
+AutoPentester against industry practices and compare it with PentestGPT. On
+average, AutoPentester received a score of 3.93 out of 5 based on user reviews,
+which was 19.8% higher than PentestGPT.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.05598v1' target='_blank'>AgentDR Dynamic Recommendation with Implicit Item-Item Relations via
+  LLM-based Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Mingdai Yang, Nurendra Choudhary, Jiangshu Du, Edward W. Huang, Philip S. Yu, Karthik Subbian, Danai Kourta</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-07 05:48:05</h6>
+<p class='card-text'>Recent agent-based recommendation frameworks aim to simulate user behaviors
+by incorporating memory mechanisms and prompting strategies, but they struggle
+with hallucinating non-existent items and full-catalog ranking. Besides, a
+largely underexplored opportunity lies in leveraging LLMs'commonsense reasoning
+to capture user intent through substitute and complement relationships between
+items, which are usually implicit in datasets and difficult for traditional
+ID-based recommenders to capture. In this work, we propose a novel LLM-agent
+framework, AgenDR, which bridges LLM reasoning with scalable recommendation
+tools. Our approach delegates full-ranking tasks to traditional models while
+utilizing LLMs to (i) integrate multiple recommendation outputs based on
+personalized tool suitability and (ii) reason over substitute and complement
+relationships grounded in user history. This design mitigates hallucination,
+scales to large catalogs, and enhances recommendation relevance through
+relational reasoning. Through extensive experiments on three public grocery
+datasets, we show that our framework achieves superior full-ranking
+performance, yielding on average a twofold improvement over its underlying
+tools. We also introduce a new LLM-based evaluation metric that jointly
+measures semantic alignment and ranking correctness.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.05596v1' target='_blank'>From Agentification to Self-Evolving Agentic AI for Wireless Networks:
+  Concepts, Approaches, and Future Research Directions</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Changyuan Zhao, Ruichen Zhang, Jiacheng Wang, Dusit Niyato, Geng Sun, Xianbin Wang, Shiwen Mao, Abbas Jamalipour</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-07 05:45:25</h6>
+<p class='card-text'>Self-evolving agentic artificial intelligence (AI) offers a new paradigm for
+future wireless systems by enabling autonomous agents to continually adapt and
+improve without human intervention. Unlike static AI models, self-evolving
+agents embed an autonomous evolution cycle that updates models, tools, and
+workflows in response to environmental dynamics. This paper presents a
+comprehensive overview of self-evolving agentic AI, highlighting its layered
+architecture, life cycle, and key techniques, including tool intelligence,
+workflow optimization, self-reflection, and evolutionary learning. We further
+propose a multi-agent cooperative self-evolving agentic AI framework, where
+multiple large language models (LLMs) are assigned role-specialized prompts
+under the coordination of a supervisor agent. Through structured dialogue,
+iterative feedback, and systematic validation, the system autonomously executes
+the entire life cycle without human intervention. A case study on antenna
+evolution in low-altitude wireless networks (LAWNs) demonstrates how the
+framework autonomously upgrades fixed antenna optimization into movable antenna
+optimization. Experimental results show that the proposed self-evolving agentic
+AI autonomously improves beam gain and restores degraded performance by up to
+52.02%, consistently surpassing the fixed baseline with little to no human
+intervention and validating its adaptability and robustness for next-generation
+wireless intelligence.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.05592v1' target='_blank'>In-the-Flow Agentic System Optimization for Effective Planning and Tool
+  Use</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Zhuofeng Li, Haoxiang Zhang, Seungju Han, Sheng Liu, Jianwen Xie, Yu Zhang, Yejin Choi, James Zou, Pan Lu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-07 05:32:44</h6>
+<p class='card-text'>Outcome-driven reinforcement learning has advanced reasoning in large
+language models (LLMs), but prevailing tool-augmented approaches train a
+single, monolithic policy that interleaves thoughts and tool calls under full
+context; this scales poorly with long horizons and diverse tools and
+generalizes weakly to new scenarios. Agentic systems offer a promising
+alternative by decomposing work across specialized modules, yet most remain
+training-free or rely on offline training decoupled from the live dynamics of
+multi-turn interaction. We introduce AgentFlow, a trainable, in-the-flow
+agentic framework that coordinates four modules (planner, executor, verifier,
+generator) through an evolving memory and directly optimizes its planner inside
+the multi-turn loop. To train on-policy in live environments, we propose
+Flow-based Group Refined Policy Optimization (Flow-GRPO), which tackles
+long-horizon, sparse-reward credit assignment by converting multi-turn
+optimization into a sequence of tractable single-turn policy updates. It
+broadcasts a single, verifiable trajectory-level outcome to every turn to align
+local planner decisions with global success and stabilizes learning with
+group-normalized advantages. Across ten benchmarks, AgentFlow with a 7B-scale
+backbone outperforms top-performing baselines with average accuracy gains of
+14.9% on search, 14.0% on agentic, 14.5% on mathematical, and 4.1% on
+scientific tasks, even surpassing larger proprietary models like GPT-4o.
+Further analyses confirm the benefits of in-the-flow optimization, showing
+improved planning, enhanced tool-calling reliability, and positive scaling with
+model size and reasoning turns.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.05577v1' target='_blank'>Mission Impossible: Feedback-Guided Dynamic Interactive Planning for
+  Improving Reasoning on LLMs</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Dong Yan, Gaochen Wu, Bowen Zhou</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-07 04:46:58</h6>
+<p class='card-text'>Recent advancements in language agents have led to significant improvements
+in multi-hop reasoning tasks. However, existing approaches often struggle with
+handling open-domain problems, which require massive information retrieval due
+to their reliance on a fixed sequence of actions. To address this, we propose
+Feedback-Guided Dynamic Interactive Planning (FGDIP), a novel framework
+tailored to enhance reasoning in LLMs by utilizing dynamic and adaptive
+strategies for information exploration in open-domain multi-hop reasoning
+tasks. Our approach begins by identifying key entities relevant to the problem,
+which serve as the initial nodes in the reasoning process. From these initial
+nodes, we then generate reasoning child nodes with the process being refined
+through a combination of historical error analysis and real-time feedback,
+which allows the framework to dynamically adjust and optimize its reasoning
+strategies. By integrating depth-first search with an innovative node
+generation technique, our framework adapts based on both prior error paths and
+concurrently generated nodes at the same hierarchical level. This dynamic
+strategy effectively expands the search space while ensuring the reasoning
+process systematically converges toward accurate solutions. Experimental
+results show that FGDIP achieved up to 54.47% F1 score on the HotpotQA dataset
+and 70.05% on the StrategyQA dataset, surpassing the best baseline by 5.03% and
+7.25% respectively, highlighting its versatility and potential to enhance
+language agents in multi-hop reasoning tasks.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.05556v1' target='_blank'>Toward Systems Foundations for Agentic Exploration</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Jiakai Xu, Tianle Zhou, Eugene Wu, Kostis Kaffes</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-07 03:57:23</h6>
+<p class='card-text'>Agentic exploration, letting LLM-powered agents branch, backtrack, and search
+across many execution paths, demands systems support well beyond today's
+pass-at-k resets. Our benchmark of six snapshot/restore mechanisms shows that
+generic tools such as CRIU or container commits are not fast enough even in
+isolated testbeds, and they crumble entirely in real deployments where agents
+share files, sockets, and cloud APIs with other agents and human users. In this
+talk, we pinpoint three open fundamental challenges: fork semantics, which
+concerns how branches reveal or hide tentative updates; external side-effects,
+where fork awareness must be added to services or their calls intercepted; and
+native forking, which requires cloning databases and runtimes in microseconds
+without bulk copying.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.05520v1' target='_blank'>CAM: A Constructivist View of Agentic Memory for LLM-Based Reading
+  Comprehension</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Rui Li, Zeyu Zhang, Xiaohe Bo, Zihang Tian, Xu Chen, Quanyu Dai, Zhenhua Dong, Ruiming Tang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-07 02:16:30</h6>
+<p class='card-text'>Current Large Language Models (LLMs) are confronted with overwhelming
+information volume when comprehending long-form documents. This challenge
+raises the imperative of a cohesive memory module, which can elevate vanilla
+LLMs into autonomous reading agents. Despite the emergence of some heuristic
+approaches, a systematic design principle remains absent. To fill this void, we
+draw inspiration from Jean Piaget's Constructivist Theory, illuminating three
+traits of the agentic memory -- structured schemata, flexible assimilation, and
+dynamic accommodation. This blueprint forges a clear path toward a more robust
+and efficient memory system for LLM-based reading comprehension. To this end,
+we develop CAM, a prototype implementation of Constructivist Agentic Memory
+that simultaneously embodies the structurality, flexibility, and dynamicity. At
+its core, CAM is endowed with an incremental overlapping clustering algorithm
+for structured memory development, supporting both coherent hierarchical
+summarization and online batch integration. During inference, CAM adaptively
+explores the memory structure to activate query-relevant information for
+contextual response, akin to the human associative process. Compared to
+existing approaches, our design demonstrates dual advantages in both
+performance and efficiency across diverse long-text reading comprehension
+tasks, including question answering, query-based summarization, and claim
+verification.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.05484v1' target='_blank'>Evaluating LLM Safety Across Child Development Stages: A Simulated Agent
+  Approach</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Abhejay Murali, Saleh Afroogh, Kevin Chen, David Atkinson, Amit Dhurandhar, Junfeng Jiao</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-07 01:01:04</h6>
+<p class='card-text'>Large Language Models (LLMs) are rapidly becoming part of tools used by
+children; however, existing benchmarks fail to capture how these models manage
+language, reasoning, and safety needs that are specific to various ages. We
+present ChildSafe, a benchmark that evaluates LLM safety through simulated
+child agents that embody four developmental stages. These agents, grounded in
+developmental psychology, enable a systematic study of child safety without the
+ethical implications of involving real children. ChildSafe assesses responses
+across nine safety dimensions (including privacy, misinformation, and emotional
+support) using age-weighted scoring in both sensitive and neutral contexts.
+Multi-turn experiments with multiple LLMs uncover consistent vulnerabilities
+that vary by simulated age, exposing shortcomings in existing alignment
+practices. By releasing agent templates, evaluation protocols, and an
+experimental corpus, we provide a reproducible framework for age-aware safety
+research. We encourage the community to expand this work with real
+child-centered data and studies, advancing the development of LLMs that are
+genuinely safe and developmentally aligned.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.05445v1' target='_blank'>AgentRouter: A Knowledge-Graph-Guided LLM Router for Collaborative
+  Multi-Agent Question Answering</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Zheyuan Zhang, Kaiwen Shi, Zhengqing Yuan, Zehong Wang, Tianyi Ma, Keerthiram Murugesan, Vincent Galassi, Chuxu Zhang, Yanfang Ye</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-06 23:20:49</h6>
+<p class='card-text'>Large language models (LLMs) and agent-based frameworks have advanced
+rapidly, enabling diverse applications. Yet, with the proliferation of models
+and agentic strategies, practitioners face substantial uncertainty in selecting
+the best configuration for a downstream task. Prior studies show that different
+agents and backbones exhibit complementary strengths, and that larger models
+are not always superior, underscoring the need for adaptive routing mechanisms.
+Existing approaches to agent routing, however, often emphasize cost efficiency
+while overlooking the fine-grained contextual and relational structure inherent
+in QA tasks. In this paper, we propose tAgentRouter, a framework that
+formulates multi-agent QA as a knowledge-graph-guided routing problem
+supervised by empirical performance signals. Specifically, we convert QA
+instance into a knowledge graph that jointly encodes queries, contextual
+entities, and agents, and then train a heterogeneous graph neural network (GNN)
+to propagate information across node types and produce task-aware routing
+distributions over agents. By leveraging soft supervision and weighted
+aggregation of agent outputs, AgentRouter learns principled collaboration
+schemes that capture the complementary strengths of diverse agents. Extensive
+experiments demonstrate that our framework consistently outperforms
+single-agent and ensemble baselines, while generalizing across benchmarks and
+LLM backbones. These results highlight the effectiveness and robustness of
+graph-supervised multi-agent routing for question answering.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.05442v1' target='_blank'>Adversarial Reinforcement Learning for Large Language Model Agent Safety</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Zizhao Wang, Dingcheng Li, Vaishakh Keshava, Phillip Wallis, Ananth Balashankar, Peter Stone, Lukas Rutishauser</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-06 23:09:18</h6>
+<p class='card-text'>Large Language Model (LLM) agents can leverage tools such as Google Search to
+complete complex tasks. However, this tool usage introduces the risk of
+indirect prompt injections, where malicious instructions hidden in tool outputs
+can manipulate the agent, posing security risks like data leakage. Current
+defense strategies typically rely on fine-tuning LLM agents on datasets of
+known attacks. However, the generation of these datasets relies on manually
+crafted attack patterns, which limits their diversity and leaves agents
+vulnerable to novel prompt injections. To address this limitation, we propose
+Adversarial Reinforcement Learning for Agent Safety (ARLAS), a novel framework
+that leverages adversarial reinforcement learning (RL) by formulating the
+problem as a two-player zero-sum game. ARLAS co-trains two LLMs: an attacker
+that learns to autonomously generate diverse prompt injections and an agent
+that learns to defend against them while completing its assigned tasks. To
+ensure robustness against a wide range of attacks and to prevent cyclic
+learning, we employ a population-based learning framework that trains the agent
+to defend against all previous attacker checkpoints. Evaluated on BrowserGym
+and AgentDojo, agents fine-tuned with ARLAS achieve a significantly lower
+attack success rate than the original model while also improving their task
+success rate. Our analysis further confirms that the adversarial process
+generates a diverse and challenging set of attacks, leading to a more robust
+agent compared to the base model.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.05441v1' target='_blank'>UnitTenX: Generating Tests for Legacy Packages with AI Agents Powered by
+  Formal Verification</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yiannis Charalambous, Claudionor N. Coelho Jr, Luis Lamb, Lucas C. Cordeiro</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-06 23:08:23</h6>
+<p class='card-text'>This paper introduces UnitTenX, a state-of-the-art open-source AI multi-agent
+system designed to generate unit tests for legacy code, enhancing test coverage
+and critical value testing. UnitTenX leverages a combination of AI agents,
+formal methods, and Large Language Models (LLMs) to automate test generation,
+addressing the challenges posed by complex and legacy codebases. Despite the
+limitations of LLMs in bug detection, UnitTenX offers a robust framework for
+improving software reliability and maintainability. Our results demonstrate the
+effectiveness of this approach in generating high-quality tests and identifying
+potential issues. Additionally, our approach enhances the readability and
+documentation of legacy code.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.05432v1' target='_blank'>AInstein: Assessing the Feasibility of AI-Generated Approaches to
+  Research Problems</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Shambhavi Mishra, Gaurav Sahu, Marco Pedersoli, Laurent Charlin, Jose Dolz, Christopher Pal</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-06 22:50:41</h6>
+<p class='card-text'>Large language models (LLMs) demonstrate impressive capabilities across a
+wide range of tasks, yet it remains unclear whether such success reflects
+genuine reasoning or sophisticated recall. We introduce AInstein, a framework
+for testing whether LLMs can generate valid solutions to AI research problems
+using only their pretrained parametric knowledge -- without domain-specific
+fine-tuning, retrieval augmentation, or other external aids. Our approach
+extracts distilled problem statements from high-quality ICLR 2025 submissions,
+then tasks specialized solver agents with proposing and refining technical
+solutions through iterative critique loops, mimicking the cycles of proposal,
+review, and revision central to scientific inquiry. We evaluate AInstein on
+1,214 ICLR papers stratified by acceptance tier (Oral, Spotlight, Poster),
+using an LLM-as-a-judge paradigm guided by a structured rubric, complemented by
+targeted manual checks. Performance is assessed with three metrics: Success
+Rate (does the solution address the problem?), Rediscovery (does it align with
+human-proposed methods?), and Novelty (does it yield valid, original
+approaches?). Our results reveal that while LLMs can rediscover feasible
+solutions and occasionally propose creative alternatives, their problem-solving
+ability remains fragile and highly sensitive to framing. These findings provide
+the first large-scale evidence on the extent to which LLMs can act as
+autonomous scientific problem-solvers, highlighting both their latent potential
+and their current limitations.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.05414v1' target='_blank'>A Lightweight Large Language Model-Based Multi-Agent System for 2D Frame
+  Structural Analysis</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Ziheng Geng, Jiachen Liu, Ran Cao, Lu Cheng, Haifeng Wang, Minghui Cheng</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-06 22:12:52</h6>
+<p class='card-text'>Large language models (LLMs) have recently been used to empower autonomous
+agents in engineering, significantly improving automation and efficiency in
+labor-intensive workflows. However, their potential remains underexplored in
+structural engineering, particularly for finite element modeling tasks
+requiring geometric modeling, complex reasoning, and domain knowledge. To
+bridge this gap, this paper develops a LLM-based multi-agent system to automate
+finite element modeling of 2D frames. The system decomposes structural analysis
+into subtasks, each managed by a specialized agent powered by the lightweight
+Llama-3.3 70B Instruct model. The workflow begins with a Problem Analysis
+Agent, which extracts geometry, boundary, and material parameters from the user
+input. Next, a Geometry Agent incrementally derives node coordinates and
+element connectivity by applying expert-defined rules. These structured outputs
+are converted into executable OpenSeesPy code by a Translation Agent and
+refined by a Model Validation Agent through consistency checks. Then, a Load
+Agent applies load conditions into the assembled structural model. Experimental
+evaluations on 20 benchmark problems demonstrate that the system achieves
+accuracy over 80% in most cases across 10 repeated trials, outperforming
+Gemini-2.5 Pro and ChatGPT-4o models.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.05379v1' target='_blank'>AutoDAN-Reasoning: Enhancing Strategies Exploration based Jailbreak
+  Attacks with Test-Time Scaling</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Xiaogeng Liu, Chaowei Xiao</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-06 21:16:09</h6>
+<p class='card-text'>Recent advancements in jailbreaking large language models (LLMs), such as
+AutoDAN-Turbo, have demonstrated the power of automated strategy discovery.
+AutoDAN-Turbo employs a lifelong learning agent to build a rich library of
+attack strategies from scratch. While highly effective, its test-time
+generation process involves sampling a strategy and generating a single
+corresponding attack prompt, which may not fully exploit the potential of the
+learned strategy library. In this paper, we propose to further improve the
+attack performance of AutoDAN-Turbo through test-time scaling. We introduce two
+distinct scaling methods: Best-of-N and Beam Search. The Best-of-N method
+generates N candidate attack prompts from a sampled strategy and selects the
+most effective one based on a scorer model. The Beam Search method conducts a
+more exhaustive search by exploring combinations of strategies from the library
+to discover more potent and synergistic attack vectors. According to the
+experiments, the proposed methods significantly boost performance, with Beam
+Search increasing the attack success rate by up to 15.6 percentage points on
+Llama-3.1-70B-Instruct and achieving a nearly 60\% relative improvement against
+the highly robust GPT-o4-mini compared to the vanilla method.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js'></script>
+</body>
+</html>
