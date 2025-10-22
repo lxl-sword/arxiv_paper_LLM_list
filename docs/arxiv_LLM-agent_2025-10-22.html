@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<title>LLM-agent - 2025-10-22</title>
+<link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap' rel='stylesheet'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'>
+<style>
+body {
+font-family: 'Roboto', sans-serif;
+background-color: #f5f7fa;
+padding: 20px;
+}
+.card {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.card-title {
+    font-weight: 700;
+}
+.card:hover {
+    transform: scale(1.02);
+    transition: 0.3s ease-in-out;
+}
+</style>
+</head>
+<body>
+<div class='container'>
+<h1 class='text-center my-4'><i class='fas fa-book'></i>LLM-agent - 2025-10-22</h1>
+<div class='row'>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.18863v1' target='_blank'>EffiReasonTrans: RL-Optimized Reasoning for Code Translation</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yanlin Wang, Rongyi Ou, Yanli Wang, Mingwei Liu, Jiachi Chen, Ensheng Shi, Xilin Liu, Yuchi Ma, Zibin Zheng</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-21 17:55:39</h6>
+<p class='card-text'>Code translation is a crucial task in software development and maintenance.
+While recent advancements in large language models (LLMs) have improved
+automated code translation accuracy, these gains often come at the cost of
+increased inference latency, hindering real-world development workflows that
+involve human-in-the-loop inspection. To address this trade-off, we propose
+EffiReasonTrans, a training framework designed to improve translation accuracy
+while balancing inference latency. We first construct a high-quality
+reasoning-augmented dataset by prompting a stronger language model,
+DeepSeek-R1, to generate intermediate reasoning and target translations. Each
+(source code, reasoning, target code) triplet undergoes automated syntax and
+functionality checks to ensure reliability. Based on this dataset, we employ a
+two-stage training strategy: supervised fine-tuning on reasoning-augmented
+samples, followed by reinforcement learning to further enhance accuracy and
+balance inference latency. We evaluate EffiReasonTrans on six translation
+pairs. Experimental results show that it consistently improves translation
+accuracy (up to +49.2% CA and +27.8% CodeBLEU compared to the base model) while
+reducing the number of generated tokens (up to -19.3%) and lowering inference
+latency in most cases (up to -29.0%). Ablation studies further confirm the
+complementary benefits of the two-stage training framework. Additionally,
+EffiReasonTrans demonstrates improved translation accuracy when integrated into
+agent-based frameworks. Our code and data are available at
+https://github.com/DeepSoftwareAnalytics/EffiReasonTrans.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.18860v1' target='_blank'>An Encoder-Decoder Foundation Chemical Language Model for Generative
+  Polymer Design</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Harikrishna Sahu, Wei Xiong, Anagha Savit, Shivank S Shukla, Rampi Ramprasad</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-21 17:53:56</h6>
+<p class='card-text'>Traditional machine learning has advanced polymer discovery, yet direct
+generation of chemically valid and synthesizable polymers without exhaustive
+enumeration remains a challenge. Here we present polyT5, an encoder-decoder
+chemical language model based on the T5 architecture, trained to understand and
+generate polymer structures. polyT5 enables both property prediction and the
+targeted generation of polymers conditioned on desired property values. We
+demonstrate its utility for dielectric polymer design, seeking candidates with
+dielectric constant >3, bandgap >4 eV, and glass transition temperature >400 K,
+alongside melt-processability and solubility requirements. From over 20,000
+generated promising candidates, one was experimentally synthesized and
+validated, showing strong agreement with predictions. To further enhance
+usability, we integrated polyT5 within an agentic AI framework that couples it
+with a general-purpose LLM, allowing natural language interaction for property
+prediction and generative design. Together, these advances establish a
+versatile and accessible framework for accelerated polymer discovery.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.18821v1' target='_blank'>Search Self-play: Pushing the Frontier of Agent Capability without
+  Supervision</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Hongliang Lu, Yuhang Wen, Pengyu Cheng, Ruijin Ding, Haotian Xu, Jiaqi Guo, Chutian Wang, Haonan Chen, Xiaoxi Jiang, Guanjun Jiang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-21 17:19:35</h6>
+<p class='card-text'>Reinforcement learning with verifiable rewards (RLVR) has become the
+mainstream technique for training LLM agents. However, RLVR highly depends on
+well-crafted task queries and corresponding ground-truth answers to provide
+accurate rewards, which requires massive human efforts and hinders the RL
+scaling processes, especially under agentic scenarios. Although a few recent
+works explore task synthesis methods, the difficulty of generated agentic tasks
+can hardly be controlled to provide effective RL training advantages. To
+achieve agentic RLVR with higher scalability, we explore self-play training for
+deep search agents, in which the learning LLM utilizes multi-turn search engine
+calling and acts simultaneously as both a task proposer and a problem solver.
+The task proposer aims to generate deep search queries with well-defined
+ground-truth answers and increasing task difficulty. The problem solver tries
+to handle the generated search queries and output the correct answer
+predictions. To ensure that each generated search query has accurate ground
+truth, we collect all the searching results from the proposer's trajectory as
+external knowledge, then conduct retrieval-augmentation generation (RAG) to
+test whether the proposed query can be correctly answered with all necessary
+search documents provided. In this search self-play (SSP) game, the proposer
+and the solver co-evolve their agent capabilities through both competition and
+cooperation. With substantial experimental results, we find that SSP can
+significantly improve search agents' performance uniformly on various
+benchmarks without any supervision under both from-scratch and continuous RL
+training setups. The code is at https://github.com/Alibaba-Quark/SSP.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.18779v1' target='_blank'>KAT-Coder Technical Report</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Zizheng Zhan, Ken Deng, Xiaojiang Zhang, Jinghui Wang, Huaixi Tang, Zhiyi Lai, Haoyang Huang, Wen Xiang, Kun Wu, Wenhao Zhuang, Minglei Zhang, Shaojie Wang, Shangpeng Yan, Kepeng Lei, Zongxian Feng, Huiming Wang, Zheng Lin, Mengtong Li, Mengfei Xie, Yinghan Cui, Xuxing Chen, Chao Wang, Weihao Li, Wenqiang Zhu, Jiarong Zhang, Jingxuan Xu, Songwei Yu, Yifan Yao, Xinping Lei, Han Li, Junqi Xiong, Zuchen Gao, Dailin Li, Haimo Li, Jiaheng Liu, Yuqun Zhang, Junyi Peng, Haotian Zhang, Bin Chen</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-21 16:27:47</h6>
+<p class='card-text'>Recent advances in large language models (LLMs) have enabled progress in
+agentic coding, where models autonomously reason, plan, and act within
+interactive software development workflows. However, bridging the gap between
+static text-based training and dynamic real-world agentic execution remains a
+core challenge. In this technical report, we present KAT-Coder, a large-scale
+agentic code model trained through a multi-stage curriculum encompassing
+Mid-Term Training, Supervised Fine-Tuning (SFT), Reinforcement Fine-Tuning
+(RFT), and Reinforcement-to-Deployment Adaptation. The Mid-Term stage enhances
+reasoning, planning, and reflection capabilities through a corpus of real
+software engineering data and synthetic agentic interactions. The SFT stage
+constructs a million-sample dataset balancing twenty programming languages, ten
+development contexts, and ten task archetypes. The RFT stage introduces a novel
+multi-ground-truth reward formulation for stable and sample-efficient policy
+optimization. Finally, the Reinforcement-to-Deployment phase adapts the model
+to production-grade IDE environments using Error-Masked SFT and Tree-Structured
+Trajectory Training. In summary, these stages enable KAT-Coder to achieve
+robust tool-use reliability, instruction alignment, and long-context reasoning,
+forming a deployable foundation for real-world intelligent coding agents. Our
+KAT series 32B model, KAT-Dev, has been open-sourced on
+https://huggingface.co/Kwaipilot/KAT-Dev.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.18699v1' target='_blank'>Fetch.ai: An Architecture for Modern Multi-Agent Systems</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Michael J. Wooldridge, Attila Bagoly, Jonathan J. Ward, Emanuele La Malfa, Gabriel Paludo Licks</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-21 14:53:56</h6>
+<p class='card-text'>Recent surges in LLM-driven intelligent systems largely overlook decades of
+foundational multi-agent systems (MAS) research, resulting in frameworks with
+critical limitations such as centralization and inadequate trust and
+communication protocols. This paper introduces the Fetch.ai architecture, an
+industrial-strength platform designed to bridge this gap by facilitating the
+integration of classical MAS principles with modern AI capabilities. We present
+a novel, multi-layered solution built on a decentralized foundation of on-chain
+blockchain services for verifiable identity, discovery, and transactions. This
+is complemented by a comprehensive development framework for creating secure,
+interoperable agents, a cloud-based platform for deployment, and an intelligent
+orchestration layer where an agent-native LLM translates high-level human goals
+into complex, multi-agent workflows. We demonstrate the deployed nature of this
+system through a decentralized logistics use case where autonomous agents
+dynamically discover, negotiate, and transact with one another securely.
+Ultimately, the Fetch.ai stack provides a principled architecture for moving
+beyond current agent implementations towards open, collaborative, and
+economically sustainable multi-agent ecosystems.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.18586v1' target='_blank'>Tokencake: A KV-Cache-centric Serving Framework for LLM-based
+  Multi-Agent Applications</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Zhuohang Bian, Feiyang Wu, Teng Ma, Youwei Zhuo</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-21 12:39:32</h6>
+<p class='card-text'>Large Language Models (LLMs) are increasingly deployed in complex multi-agent
+applications that use external function calls. This workload creates severe
+performance challenges for the KV Cache: space contention leads to the eviction
+of critical agents' caches and time underutilization leaves the cache of agents
+stalled on long-running tool calls idling in GPU memory. We present Tokencake,
+a KV-Cache-centric serving framework that co-optimizes scheduling and memory
+management with an agent-aware design. Tokencake's Space Scheduler uses dynamic
+memory partitioning to shield critical agents from contention, while its Time
+Scheduler employs a proactive offload and predictive upload mechanism to
+repurpose GPU memory during function call stalls. Our evaluation on
+representative multi-agent benchmarks shows that Tokencake can reduce
+end-to-end latency by over 47.06%, improve effective GPU memory utilization by
+up to 16.9% compared to vLLM.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.18585v1' target='_blank'>CLASP: Cost-Optimized LLM-based Agentic System for Phishing Detection</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Fouad Trad, Ali Chehab</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-21 12:38:52</h6>
+<p class='card-text'>Phishing websites remain a significant cybersecurity threat, necessitating
+accurate and cost-effective detection mechanisms. In this paper, we present
+CLASP, a novel system that effectively identifies phishing websites by
+leveraging multiple intelligent agents, built using large language models
+(LLMs), to analyze different aspects of a web resource. The system processes
+URLs or QR codes, employing specialized LLM-based agents that evaluate the URL
+structure, webpage screenshot, and HTML content to predict potential phishing
+threats. To optimize performance while minimizing operational costs, we
+experimented with multiple combination strategies for agent-based analysis,
+ultimately designing a strategic combination that ensures the per-website
+evaluation expense remains minimal without compromising detection accuracy. We
+tested various LLMs, including Gemini 1.5 Flash and GPT-4o mini, to build these
+agents and found that Gemini 1.5 Flash achieved the best performance with an F1
+score of 83.01% on a newly curated dataset. Also, the system maintained an
+average processing time of 2.78 seconds per website and an API cost of around
+$3.18 per 1,000 websites. Moreover, CLASP surpasses leading previous solutions,
+achieving over 40% higher recall and a 20% improvement in F1 score for phishing
+detection on the collected dataset. To support further research, we have made
+our dataset publicly available, supporting the development of more advanced
+phishing detection systems.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.18569v1' target='_blank'>QuantEvolve: Automating Quantitative Strategy Discovery through
+  Multi-Agent Evolutionary Framework</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Junhyeog Yun, Hyoun Jun Lee, Insu Jeon</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-21 12:22:16</h6>
+<p class='card-text'>Automating quantitative trading strategy development in dynamic markets is
+challenging, especially with increasing demand for personalized investment
+solutions. Existing methods often fail to explore the vast strategy space while
+preserving the diversity essential for robust performance across changing
+market conditions. We present QuantEvolve, an evolutionary framework that
+combines quality-diversity optimization with hypothesis-driven strategy
+generation. QuantEvolve employs a feature map aligned with investor
+preferences, such as strategy type, risk profile, turnover, and return
+characteristics, to maintain a diverse set of effective strategies. It also
+integrates a hypothesis-driven multi-agent system to systematically explore the
+strategy space through iterative generation and evaluation. This approach
+produces diverse, sophisticated strategies that adapt to both market regime
+shifts and individual investment needs. Empirical results show that QuantEvolve
+outperforms conventional baselines, validating its effectiveness. We release a
+dataset of evolved strategies to support future research.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.18563v1' target='_blank'>The Trust Paradox in LLM-Based Multi-Agent Systems: When Collaboration
+  Becomes a Security Vulnerability</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Zijie Xu, Minfeng Qi, Shiqing Wu, Lefeng Zhang, Qiwen Wei, Han He, Ningran Li</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-21 12:18:39</h6>
+<p class='card-text'>Multi-agent systems powered by large language models are advancing rapidly,
+yet the tension between mutual trust and security remains underexplored. We
+introduce and empirically validate the Trust-Vulnerability Paradox (TVP):
+increasing inter-agent trust to enhance coordination simultaneously expands
+risks of over-exposure and over-authorization. To investigate this paradox, we
+construct a scenario-game dataset spanning 3 macro scenes and 19 sub-scenes,
+and run extensive closed-loop interactions with trust explicitly parameterized.
+Using Minimum Necessary Information (MNI) as the safety baseline, we propose
+two unified metrics: Over-Exposure Rate (OER) to detect boundary violations,
+and Authorization Drift (AD) to capture sensitivity to trust levels. Results
+across multiple model backends and orchestration frameworks reveal consistent
+trends: higher trust improves task success but also heightens exposure risks,
+with heterogeneous trust-to-risk mappings across systems. We further examine
+defenses such as Sensitive Information Repartitioning and Guardian-Agent
+enablement, both of which reduce OER and attenuate AD. Overall, this study
+formalizes TVP, establishes reproducible baselines with unified metrics, and
+demonstrates that trust must be modeled and scheduled as a first-class security
+variable in multi-agent system design.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.18560v1' target='_blank'>WebDevJudge: Evaluating (M)LLMs as Critiques for Web Development Quality</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Chunyang Li, Yilun Zheng, Xinting Huang, Tianqing Fang, Jiahao Xu, Yangqiu Song, Lihui Chen, Han Hu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-21 12:16:04</h6>
+<p class='card-text'>The paradigm of LLM-as-a-judge is emerging as a scalable and efficient
+alternative to human evaluation, demonstrating strong performance on
+well-defined tasks. However, its reliability in open-ended tasks with dynamic
+environments and complex interactions remains unexplored. To bridge the gap, we
+introduce WebDevJudge, a systematic benchmark for assessing LLM-as-a-judge
+performance in web development, with support for both non-interactive
+evaluation based on static observations and continuous interactive evaluation
+with a dynamic web environment. WebDevJudge comprises human preference labels
+over paired web implementations, annotated with structured and query-grounded
+rubrics to ensure high-quality ground truth. Using this benchmark, we
+comprehensively evaluate various evaluators, including LLMs, MLLMs, and agentic
+workflows. We systematically investigate the impact of different paradigms and
+guidance mechanisms. Our experiments reveal a significant gap between LLM
+judges and human experts. In-depth analysis indicates this gap stems from
+fundamental model limitations, including failures in recognizing functional
+equivalence, verifying task feasibility, and mitigating bias. Overall,
+WebDevJudge presents a significant challenge to LLM-as-a-judge, offering
+insights to guide future research toward developing more reliable and capable
+automated evaluators for complicated scenarios. Code and data are available at
+https://github.com/lcy2723/WebDevJudge.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.18551v1' target='_blank'>SOCIA-Nabla: Textual Gradient Meets Multi-Agent Orchestration for
+  Automated Simulator Generation</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yuncheng Hua, Sion Weatherhead, Mehdi Jafari, Hao Xue, Flora D. Salim</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-21 12:00:00</h6>
+<p class='card-text'>In this paper, we present SOCIA-Nabla, an end-to-end, agentic framework that
+treats simulator construction asinstance optimization over code within a
+textual computation graph. Specialized LLM-driven agents are embedded as graph
+nodes, and a workflow manager executes a loss-driven loop: code synthesis ->
+execution -> evaluation -> code repair. The optimizer performs Textual-Gradient
+Descent (TGD), while human-in-the-loop interaction is reserved for task-spec
+confirmation, minimizing expert effort and keeping the code itself as the
+trainable object. Across three CPS tasks, i.e., User Modeling, Mask Adoption,
+and Personal Mobility, SOCIA-Nabla attains state-of-the-art overall accuracy.
+By unifying multi-agent orchestration with a loss-aligned optimization view,
+SOCIA-Nabla converts brittle prompt pipelines into reproducible,
+constraint-aware simulator code generation that scales across domains and
+simulation granularities. This work is under review, and we will release the
+code soon.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.18550v1' target='_blank'>JAUNT: Joint Alignment of User Intent and Network State for QoE-centric
+  LLM Tool Routing</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Enhan Li, Hongyang Du</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-21 11:58:36</h6>
+<p class='card-text'>Large Language Models (LLMs) increasingly rely on emerging protocols such as
+the Model Context Protocol (MCP) to invoke external tools and services.
+However, current tool routing mechanisms remain fragile because they only
+consider functional matching between users' queries and tools. In practice,
+user intent expressed through queries can be vague or underspecified, and the
+actual Quality of Experience (QoE) also depends on external factors such as
+link latency and server availability that are not captured by semantics alone.
+To address this challenge, we propose JAUNT, a framework for Joint Alignment of
+User intent and Network state in QoE-centric Tool routing. JAUNT introduces a
+dual-view alignment strategy that interprets user intent while employing LLM
+agents to construct network profiles, mapping numerical performance indicators
+into the semantic space to guide routing. We further design a benchmark that
+integrates diverse user request patterns with heterogeneous network states,
+enabling systematic evaluation of QoE outcomes. Experimental results show that
+JAUNT significantly improves QoE compared with several baselines, demonstrating
+the importance of aligning both intent and network state for scalable LLM
+service orchestration.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.18546v1' target='_blank'>EfficientNav: Towards On-Device Object-Goal Navigation with Navigation
+  Map Caching and Retrieval</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Zebin Yang, Sunjian Zheng, Tong Xie, Tianshi Xu, Bo Yu, Fan Wang, Jie Tang, Shaoshan Liu, Meng Li</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-21 11:52:44</h6>
+<p class='card-text'>Object-goal navigation (ObjNav) tasks an agent with navigating to the
+location of a specific object in an unseen environment. Embodied agents
+equipped with large language models (LLMs) and online constructed navigation
+maps can perform ObjNav in a zero-shot manner. However, existing agents heavily
+rely on giant LLMs on the cloud, e.g., GPT-4, while directly switching to small
+LLMs, e.g., LLaMA3.2-11b, suffer from significant success rate drops due to
+limited model capacity for understanding complex navigation maps, which
+prevents deploying ObjNav on local devices. At the same time, the long prompt
+introduced by the navigation map description will cause high planning latency
+on local devices. In this paper, we propose EfficientNav to enable on-device
+efficient LLM-based zero-shot ObjNav. To help the smaller LLMs better
+understand the environment, we propose semantics-aware memory retrieval to
+prune redundant information in navigation maps. To reduce planning latency, we
+propose discrete memory caching and attention-based memory clustering to
+efficiently save and re-use the KV cache. Extensive experimental results
+demonstrate that EfficientNav achieves 11.1% improvement in success rate on
+HM3D benchmark over GPT-4-based baselines, and demonstrates 6.7x real-time
+latency reduction and 4.7x end-to-end latency reduction over GPT-4 planner. Our
+code will be released soon.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.18509v1' target='_blank'>VAPU: System for Autonomous Legacy Code Modernization</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Valtteri Ala-Salmi, Zeeshan Rasheed, Abdul Malik Sami, Muhammad Waseem, Kai-Kristian Kemell, Jussi Rasku, Mika Saari, Pekka Abrahamsson</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-21 10:50:33</h6>
+<p class='card-text'>In this study, we present a solution for the modernization of legacy
+applications, an area of code generation where LLM-based multi-agent systems
+are proving essential for complex multi-phased tasks. Legacy applications often
+contain deprecated components that create compatibility, security, and
+reliability risks, but high resource costs make companies hesitate to update.
+We take a step forward to integrate an LLM-based multi-agent system as part of
+a legacy web application update to provide a cost-effective solution to update
+legacy applications autonomously. We propose a multi-agent system named a
+Verifying Agent Pipeline Updater (VAPU), which is designed to update code files
+in phases while simulating different roles in a software development team. In
+our previous study, we evaluated the system for legacy version updates by using
+six legacy web application view files by resulting errors and accomplished
+requirements. This study extends the previous evaluation of a multi-agent
+pipeline system by extending the evaluation of VAPU from a single LLM to five
+LLMs and using the temperature parameter in both 0 to 1 settings. Additionally,
+we tested the system with 20 open-source Python GitHub projects. The results of
+the evaluation were compared to Zero-Shot Learning (ZSL) and One-Shot Learning
+(OSL) prompts. The extended evaluation of VAPU showed that particularly in a
+low-temperature VAPU can get similar level of error count compared to the
+ZSL/OSL prompts but with a higher level of fulfilled requirements, depending on
+the LLM. VAPU showed up to 22.5% increase in the succeeding Python file update
+requirements compared to ZSL/OSL prompts. The study indicates that an LLM-based
+multi-agent system is a capable solution to update components of a legacy
+application autonomously.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.18491v1' target='_blank'>Crucible: Quantifying the Potential of Control Algorithms through LLM
+  Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Lianchen Jia, Chaoyang Li, Qian Houde, Tianchi Huang, Jiangchuan Liu, Lifeng Sun</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-21 10:25:26</h6>
+<p class='card-text'>Control algorithms in production environments typically require domain
+experts to tune their parameters and logic for specific scenarios. However,
+existing research predominantly focuses on algorithmic performance under ideal
+or default configurations, overlooking the critical aspect of Tuning Potential.
+To bridge this gap, we introduce Crucible, an agent that employs an LLM-driven,
+multi-level expert simulation to turn algorithms and defines a formalized
+metric to quantitatively evaluate their Tuning Potential. We demonstrate
+Crucible's effectiveness across a wide spectrum of case studies, from classic
+control tasks to complex computer systems, and validate its findings in a
+real-world deployment. Our experimental results reveal that Crucible
+systematically quantifies the tunable space across different algorithms.
+Furthermore, Crucible provides a new dimension for algorithm analysis and
+design, which ultimately leads to performance improvements. Our code is
+available at https://github.com/thu-media/Crucible.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.18477v1' target='_blank'>LAFA: Agentic LLM-Driven Federated Analytics over Decentralized Data
+  Sources</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Haichao Ji, Zibo Wang, Yifei Zhu, Meng han, Dan Wang, Zhu Han</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-21 09:56:25</h6>
+<p class='card-text'>Large Language Models (LLMs) have shown great promise in automating data
+analytics tasks by interpreting natural language queries and generating
+multi-operation execution plans. However, existing LLM-agent-based analytics
+frameworks operate under the assumption of centralized data access, offering
+little to no privacy protection. In contrast, federated analytics (FA) enables
+privacy-preserving computation across distributed data sources, but lacks
+support for natural language input and requires structured, machine-readable
+queries. In this work, we present LAFA, the first system that integrates
+LLM-agent-based data analytics with FA. LAFA introduces a hierarchical
+multi-agent architecture that accepts natural language queries and transforms
+them into optimized, executable FA workflows. A coarse-grained planner first
+decomposes complex queries into sub-queries, while a fine-grained planner maps
+each subquery into a Directed Acyclic Graph of FA operations using prior
+structural knowledge. To improve execution efficiency, an optimizer agent
+rewrites and merges multiple DAGs, eliminating redundant operations and
+minimizing computational and communicational overhead. Our experiments
+demonstrate that LAFA consistently outperforms baseline prompting strategies by
+achieving higher execution plan success rates and reducing resource-intensive
+FA operations by a substantial margin. This work establishes a practical
+foundation for privacy-preserving, LLM-driven analytics that supports natural
+language input in the FA setting.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.18476v1' target='_blank'>Probabilistic Modeling of Intentions in Socially Intelligent LLM Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Feifan Xia, Yuyang Fang, Defang Li, Yantong Xie, Weikang Li, Yang Li, Deguo Xia, Jizhou Huang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-21 09:54:44</h6>
+<p class='card-text'>We present a probabilistic intent modeling framework for large language model
+(LLM) agents in multi-turn social dialogue. The framework maintains a belief
+distribution over a partner's latent intentions, initialized from contextual
+priors and dynamically updated through likelihood estimation after each
+utterance. The evolving distribution provides additional contextual grounding
+for the policy, enabling adaptive dialogue strategies under uncertainty.
+Preliminary experiments in the SOTOPIA environment show consistent
+improvements: the proposed framework increases the Overall score by 9.0% on
+SOTOPIA-All and 4.1% on SOTOPIA-Hard compared with the Qwen2.5-7B baseline, and
+slightly surpasses an oracle agent that directly observes partner intentions.
+These early results suggest that probabilistic intent modeling can contribute
+to the development of socially intelligent LLM agents.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.18434v1' target='_blank'>Chain-of-Conceptual-Thought: Eliciting the Agent to Deeply Think within
+  the Response</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Qingqing Gu, Dan Wang, Yue Zhao, Xiaoyu Wang, Zhonglin Jiang, Yong Chen, Hongyan Li, Luo Ji</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-21 09:08:21</h6>
+<p class='card-text'>Chain-of-Thought (CoT) is widely applied to improve the LLM capability in
+math, coding and reasoning tasks. However, its performance is limited for
+open-domain tasks since there are no clearly defined reasoning steps or logical
+transitions. To mitigate such challenges, we propose another prompt-based
+paradigm called Chain of Conceptual Thought (CoCT), where the LLM first tags a
+concept, then generates the detailed content. The chain of concepts is allowed
+within the utterance, encouraging the LLM's deep and strategic thinking. We
+experiment with this paradigm in daily and emotional support conversations
+where the concept is comprised of emotions, strategies and topics. Automatic,
+human and model evaluations suggest that CoCT surpasses baselines such as
+Self-Refine, ECoT, ToT, SoT and RAG, suggesting a potential effective
+prompt-based paradigm of LLM for a wider scope of tasks.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.18395v1' target='_blank'>Memory-Augmented State Machine Prompting: A Novel LLM Agent Framework
+  for Real-Time Strategy Games</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Runnan Qi, Yanan Ni, Lumin Jiang, Zongyuan Li, Kuihua Huang, Xian Guo</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-21 08:15:04</h6>
+<p class='card-text'>This paper proposes Memory-Augmented State Machine Prompting (MASMP), a novel
+framework for LLM agents in real-time strategy games. Addressing key challenges
+like hallucinations and fragmented decision-making in existing approaches,
+MASMP integrates state machine prompting with memory mechanisms to unify
+structured actions with long-term tactical coherence. The framework features:
+(1) a natural language-driven state machine architecture that guides LLMs to
+emulate finite state machines and behavior trees through prompts, and (2) a
+lightweight memory module preserving strategic variables (e.g., tactics,
+priority units) across decision cycles. Experiments in StarCraft II demonstrate
+MASMP's 60% win rate against the hardest built-in AI (Lv7), vastly
+outperforming baselines (0%). Case studies reveal the method retains LLMs'
+semantic comprehension while resolving the "Knowing-Doing Gap" through strict
+state-action mapping, achieving both interpretability and FSM-like reliability.
+This work establishes a new paradigm for combining neural and symbolic AI in
+complex decision-making.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.18327v1' target='_blank'>InspectCoder: Dynamic Analysis-Enabled Self Repair through interactive
+  LLM-Debugger Collaboration</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yunkun Wang, Yue Zhang, Guochang Li, Chen Zhi, Binhua Li, Fei Huang, Yongbin Li, Shuiguang Deng</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-21 06:26:29</h6>
+<p class='card-text'>Large Language Models (LLMs) frequently generate buggy code with complex
+logic errors that are challenging to diagnose. While existing LLM-based
+self-repair approaches conduct intensive static semantic analysis or reply on
+superficial execution logs, they miss the in-depth runtime behaviors that often
+expose bug root causes-lacking the interactive dynamic analysis capabilities
+that make human debugging effective. We present InspectCoder, the first agentic
+program repair system that empowers LLMs to actively conduct dynamic analysis
+via interactive debugger control. Our dual-agent framework enables strategic
+breakpoint placement, targeted state inspection, and incremental runtime
+experimentation within stateful debugger sessions. Unlike existing methods that
+follow fixed log collection procedures, InspectCoder adaptively inspects and
+perturbs relevant intermediate states at runtime, and leverages immediate
+process rewards from debugger feedback to guide multi-step reasoning,
+transforming LLM debugging paradigm from blind trial-and-error into systematic
+root cause diagnosis. We conduct comprehensive experiments on two challenging
+self-repair benchmarks: BigCodeBench-R and LiveCodeBench-R. InspectCoder
+achieves 5.10%-60.37% relative improvements in repair accuracy over the
+strongest baseline, while delivering 1.67x-2.24x superior bug-fix efficiency
+respectively. We also contribute InspectWare, an open-source middleware that
+abstracts debugger complexities and maintains stateful debugging sessions
+across mainstream Python testing frameworks. Our work provides actionable
+insight into the interactive LLM-debugger systems, demonstrating the
+significant potential of LLM-driven dynamic analysis for automated software
+engineering.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.18314v1' target='_blank'>Genesis: Evolving Attack Strategies for LLM Web Agent Red-Teaming</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Zheng Zhang, Jiarui He, Yuchen Cai, Deheng Ye, Peilin Zhao, Ruili Feng, Hao Wang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-21 05:49:37</h6>
+<p class='card-text'>As large language model (LLM) agents increasingly automate complex web tasks,
+they boost productivity while simultaneously introducing new security risks.
+However, relevant studies on web agent attacks remain limited. Existing
+red-teaming approaches mainly rely on manually crafted attack strategies or
+static models trained offline. Such methods fail to capture the underlying
+behavioral patterns of web agents, making it difficult to generalize across
+diverse environments. In web agent attacks, success requires the continuous
+discovery and evolution of attack strategies. To this end, we propose Genesis,
+a novel agentic framework composed of three modules: Attacker, Scorer, and
+Strategist. The Attacker generates adversarial injections by integrating the
+genetic algorithm with a hybrid strategy representation. The Scorer evaluates
+the target web agent's responses to provide feedback. The Strategist
+dynamically uncovers effective strategies from interaction logs and compiles
+them into a continuously growing strategy library, which is then re-deployed to
+enhance the Attacker's effectiveness. Extensive experiments across various web
+tasks show that our framework discovers novel strategies and consistently
+outperforms existing attack baselines.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.18303v1' target='_blank'>Proactive Reasoning-with-Retrieval Framework for Medical Multimodal
+  Large Language Models</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Lehan Wang, Yi Qin, Honglong Yang, Xiaomeng Li</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-21 05:18:18</h6>
+<p class='card-text'>Incentivizing the reasoning ability of Multimodal Large Language Models
+(MLLMs) is essential for medical applications to transparently analyze medical
+scans and provide reliable diagnosis. However, existing medical MLLMs rely
+solely on internal knowledge during reasoning, leading to hallucinated
+reasoning and factual inaccuracies when encountering cases beyond their
+training scope. Although recent Agentic Retrieval-Augmented Generation (RAG)
+methods elicit the medical model's proactive retrieval ability during
+reasoning, they are confined to unimodal LLMs, neglecting the crucial visual
+information during reasoning and retrieval. Consequently, we propose the first
+Multimodal Medical Reasoning-with-Retrieval framework, Med-RwR, which actively
+retrieves external knowledge by querying observed symptoms or domain-specific
+medical concepts during reasoning. Specifically, we design a two-stage
+reinforcement learning strategy with tailored rewards that stimulate the model
+to leverage both visual diagnostic findings and textual clinical information
+for effective retrieval. Building on this foundation, we further propose a
+Confidence-Driven Image Re-retrieval (CDIR) method for test-time scaling when
+low prediction confidence is detected. Evaluation on various public medical
+benchmarks demonstrates Med-RwR's significant improvements over baseline
+models, proving the effectiveness of enhancing reasoning capabilities with
+external knowledge integration. Furthermore, Med-RwR demonstrates remarkable
+generalizability to unfamiliar domains, evidenced by 8.8% performance gain on
+our proposed EchoCardiography Benchmark (ECBench), despite the scarcity of
+echocardiography data in the training corpus. Our data, model, and codes will
+be made publicly available at https://github.com/xmed-lab/Med-RwR.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.18289v1' target='_blank'>Food4All: A Multi-Agent Framework for Real-time Free Food Discovery with
+  Integrated Nutritional Metadata</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Zhengqing Yuan, Yiyang Li, Weixiang Sun, Zheyuan Zhang, Kaiwen Shi, Keerthiram Murugesan, Yanfang Ye</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-21 04:35:02</h6>
+<p class='card-text'>Food insecurity remains a persistent public health emergency in the United
+States, tightly interwoven with chronic disease, mental illness, and opioid
+misuse. Yet despite the existence of thousands of food banks and pantries,
+access remains fragmented: 1) current retrieval systems depend on static
+directories or generic search engines, which provide incomplete and
+geographically irrelevant results; 2) LLM-based chatbots offer only vague
+nutritional suggestions and fail to adapt to real-world constraints such as
+time, mobility, and transportation; and 3) existing food recommendation systems
+optimize for culinary diversity but overlook survival-critical needs of
+food-insecure populations, including immediate proximity, verified
+availability, and contextual barriers. These limitations risk leaving the most
+vulnerable individuals, those experiencing homelessness, addiction, or digital
+illiteracy, unable to access urgently needed resources. To address this, we
+introduce Food4All, the first multi-agent framework explicitly designed for
+real-time, context-aware free food retrieval. Food4All unifies three
+innovations: 1) heterogeneous data aggregation across official databases,
+community platforms, and social media to provide a continuously updated pool of
+food resources; 2) a lightweight reinforcement learning algorithm trained on
+curated cases to optimize for both geographic accessibility and nutritional
+correctness; and 3) an online feedback loop that dynamically adapts retrieval
+policies to evolving user needs. By bridging information acquisition, semantic
+analysis, and decision support, Food4All delivers nutritionally annotated and
+guidance at the point of need. This framework establishes an urgent step toward
+scalable, equitable, and intelligent systems that directly support populations
+facing food insecurity and its compounding health risks.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.18270v1' target='_blank'>When Old Meets New: Evaluating the Impact of Regression Tests on SWE
+  Issue Resolution</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yang Chen, Toufique Ahmed, Reyhaneh Jabbarvand, Martin Hirzel</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-21 03:42:28</h6>
+<p class='card-text'>Test suites in real-world projects are often large and achieve high code
+coverage, yet they remain insufficient for detecting all bugs. The abundance of
+unresolved issues in open-source project trackers highlights this gap. While
+regression tests are typically designed to ensure past functionality is
+preserved in the new version, they can also serve a complementary purpose:
+debugging the current version. Specifically, regression tests can (1) enhance
+the generation of reproduction tests for newly reported issues, and (2)
+validate that patches do not regress existing functionality. We present
+TestPrune, a fully automated technique that leverages issue tracker reports and
+strategically reuses regression tests for both bug reproduction and patch
+validation.
+  A key contribution of TestPrune is its ability to automatically minimize the
+regression suite to a small, highly relevant subset of tests. Due to the
+predominance of LLM-based debugging techniques, this minimization is essential
+as large test suites exceed context limits, introduce noise, and inflate
+inference costs. TestPrune can be plugged into any agentic bug repair pipeline
+and orthogonally improve overall performance. As a proof of concept, we show
+that TestPrune leads to a 6.2%-9.0% relative increase in issue reproduction
+rate within the Otter framework and a 9.4% - 12.9% relative increase in issue
+resolution rate within the Agentless framework on SWE-Bench Lite and SWE-Bench
+Verified benchmarks, capturing fixes that were correctly produced by agents but
+not submitted as final patches. Compared to the benefits, the cost overhead of
+using TestPrune is minimal, i.e., \$0.02 and \$0.05 per SWE-Bench instance,
+using GPT-4o and Claude-3.7-Sonnet models, respectively.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.18179v1' target='_blank'>Adaptive Coopetition: Leveraging Coarse Verifier Signals for Resilient
+  Multi-Agent LLM Reasoning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Rui Jerry Huang, Wendy Liu, Anastasia Miin</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-21 00:07:52</h6>
+<p class='card-text'>Inference-time computation is a critical yet challenging paradigm for
+enhancing the reasoning performance of large language models (LLMs). While
+existing strategies improve reasoning stability and consistency, they suffer
+from notable limitations: self-correction often reinforces the model's initial
+biases, and Multi-Agent Collaboration (MAC) often fails due to the lack of
+efficient coordination mechanisms, leading to collective errors. Although
+high-performing verifiers can detect reasoning errors, making them reliable
+requires substantial training. To address these challenges, we introduce a
+novel inference-time framework, Adaptive Coopetition (AdCo), in which LLM
+agents utilize an adaptive, UCB-based "coopetition" mechanism. At each round,
+agents leverage coarse verifier signals to determine whether to collaborate or
+compete, and iteratively refine their reasoning based on peer feedback. Without
+relying on high-performance verifiers, our adaptive strategy achieves
+significant performance gains on mathematical reasoning benchmarks, yielding a
+20% relative improvement over baselines on the more challenging dataset. Our
+approach remains robust and consistent in terms of accuracy under different
+sample sizes and configurations. This adaptive, signal-guided "coopetition"
+framework enhances reasoning robustness by leveraging both model knowledge
+diversity and reasoning trace measures, while also promoting uncertainty-driven
+exploration, especially when participants have comparable capabilities. From
+this perspective, our work offers a fresh lens on inference-time computation
+and paves the way for more resilient multi-agent LLM systems. Our code is
+available at: https://github.com/AdCo-Research/adaptive-coopetition.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.18155v1' target='_blank'>LLM-Based Multi-Agent System for Simulating and Analyzing Marketing and
+  Consumer Behavior</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Man-Lin Chu, Lucian Terhorst, Kadin Reed, Tom Ni, Weiwei Chen, Rongyu Lin</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-20 23:15:44</h6>
+<p class='card-text'>Simulating consumer decision-making is vital for designing and evaluating
+marketing strategies before costly real-world deployment. However, post-event
+analyses and rule-based agent-based models (ABMs) struggle to capture the
+complexity of human behavior and social interaction. We introduce an
+LLM-powered multi-agent simulation framework that models consumer decisions and
+social dynamics. Building on recent advances in large language model simulation
+in a sandbox environment, our framework enables generative agents to interact,
+express internal reasoning, form habits, and make purchasing decisions without
+predefined rules. In a price-discount marketing scenario, the system delivers
+actionable strategy-testing outcomes and reveals emergent social patterns
+beyond the reach of conventional methods. This approach offers marketers a
+scalable, low-risk tool for pre-implementation testing, reducing reliance on
+time-intensive post-event evaluations and lowering the risk of underperforming
+campaigns.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.18143v1' target='_blank'>Learning from Generalization Patterns: An Evaluation-Driven Approach to
+  Enhanced Data Augmentation for Fine-Tuning Small Language Models</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Huan Song, Deeksha Razdan, Yiyue Qian, Arijit Ghosh Chowdhury, Parth Patwa, Aman Chadha, Shinan Zhang, Sharlina Keshava, Hannah Marlowe</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-20 22:36:46</h6>
+<p class='card-text'>Small Language Models (SLMs) offer compelling advantages in deployment cost
+and latency, but their accuracy often lags behind larger models, particularly
+for complex domain-specific tasks. While supervised fine-tuning can help bridge
+this performance gap, it requires substantial manual effort in data preparation
+and iterative optimization. We present PaDA-Agent (Pattern-guided Data
+Augmentation Agent), an evaluation-driven approach that streamlines the data
+augmentation process for SLMs through coordinated operations. Unlike
+state-of-the-art approaches that focus on model training errors only and
+generating error-correcting samples, PaDA-Agent discovers failure patterns from
+the validation data via evaluations and drafts targeted data augmentation
+strategies aiming to directly reduce the generalization gap. Our experimental
+results demonstrate significant improvements over state-of-the-art LLM-based
+data augmentation approaches for Llama 3.2 1B Instruct model fine-tuning.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.18131v1' target='_blank'>BlueCodeAgent: A Blue Teaming Agent Enabled by Automated Red Teaming for
+  CodeGen AI</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Chengquan Guo, Yuzhou Nie, Chulin Xie, Zinan Lin, Wenbo Guo, Bo Li</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-20 22:00:10</h6>
+<p class='card-text'>As large language models (LLMs) are increasingly used for code generation,
+concerns over the security risks have grown substantially. Early research has
+primarily focused on red teaming, which aims to uncover and evaluate
+vulnerabilities and risks of CodeGen models. However, progress on the blue
+teaming side remains limited, as developing defense requires effective semantic
+understanding to differentiate the unsafe from the safe. To fill in this gap,
+we propose BlueCodeAgent, an end-to-end blue teaming agent enabled by automated
+red teaming. Our framework integrates both sides: red teaming generates diverse
+risky instances, while the blue teaming agent leverages these to detect
+previously seen and unseen risk scenarios through constitution and code
+analysis with agentic integration for multi-level defense. Our evaluation
+across three representative code-related tasks--bias instruction detection,
+malicious instruction detection, and vulnerable code detection--shows that
+BlueCodeAgent achieves significant gains over the base models and safety
+prompt-based defenses. In particular, for vulnerable code detection tasks,
+BlueCodeAgent integrates dynamic analysis to effectively reduce false
+positives, a challenging problem as base models tend to be over-conservative,
+misclassifying safe code as unsafe. Overall, BlueCodeAgent achieves an average
+12.7\% F1 score improvement across four datasets in three tasks, attributed to
+its ability to summarize actionable constitutions that enhance context-aware
+risk detection. We demonstrate that the red teaming benefits the blue teaming
+by continuously identifying new vulnerabilities to enhance defense performance.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.18113v1' target='_blank'>Investigating the Impact of Dark Patterns on LLM-Based Web Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Devin Ersoy, Brandon Lee, Ananth Shreekumar, Arjun Arunasalam, Muhammad Ibrahim, Antonio Bianchi, Z. Berkay Celik</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-20 21:26:26</h6>
+<p class='card-text'>As users increasingly turn to large language model (LLM) based web agents to
+automate online tasks, agents may encounter dark patterns: deceptive user
+interface designs that manipulate users into making unintended decisions.
+Although dark patterns primarily target human users, their potentially harmful
+impacts on LLM-based generalist web agents remain unexplored. In this paper, we
+present the first study that investigates the impact of dark patterns on the
+decision-making process of LLM-based generalist web agents. To achieve this, we
+introduce LiteAgent, a lightweight framework that automatically prompts agents
+to execute tasks while capturing comprehensive logs and screen-recordings of
+their interactions. We also present TrickyArena, a controlled environment
+comprising web applications from domains such as e-commerce, streaming
+services, and news platforms, each containing diverse and realistic dark
+patterns that can be selectively enabled or disabled. Using LiteAgent and
+TrickyArena, we conduct multiple experiments to assess the impact of both
+individual and combined dark patterns on web agent behavior. We evaluate six
+popular LLM-based generalist web agents across three LLMs and discover that
+when there is a single dark pattern present, agents are susceptible to it an
+average of 41% of the time. We also find that modifying dark pattern UI
+attributes through visual design changes or HTML code adjustments and
+introducing multiple dark patterns simultaneously can influence agent
+susceptibility. This study emphasizes the need for holistic defense mechanisms
+in web agents, encompassing both agent-specific protections and broader web
+safety measures.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.18112v1' target='_blank'>Does Reasoning Help LLM Agents Play Dungeons and Dragons? A Prompt
+  Engineering Experiment</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Patricia Delafuente, Arya Honraopatil, Lara J. Martin</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-20 21:23:23</h6>
+<p class='card-text'>This paper explores the application of Large Language Models (LLMs) and
+reasoning to predict Dungeons & Dragons (DnD) player actions and format them as
+Avrae Discord bot commands. Using the FIREBALL dataset, we evaluated a
+reasoning model, DeepSeek-R1-Distill-LLaMA-8B, and an instruct model,
+LLaMA-3.1-8B-Instruct, for command generation. Our findings highlight the
+importance of providing specific instructions to models, that even single
+sentence changes in prompts can greatly affect the output of models, and that
+instruct models are sufficient for this task compared to reasoning models.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js'></script>
+</body>
+</html>
