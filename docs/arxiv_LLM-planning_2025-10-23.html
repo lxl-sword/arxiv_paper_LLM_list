@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<title>LLM-planning - 2025-10-23</title>
+<link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap' rel='stylesheet'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'>
+<style>
+body {
+font-family: 'Roboto', sans-serif;
+background-color: #f5f7fa;
+padding: 20px;
+}
+.card {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.card-title {
+    font-weight: 700;
+}
+.card:hover {
+    transform: scale(1.02);
+    transition: 0.3s ease-in-out;
+}
+</style>
+</head>
+<body>
+<div class='container'>
+<h1 class='text-center my-4'><i class='fas fa-book'></i>LLM-planning - 2025-10-23</h1>
+<div class='row'>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.19423v1' target='_blank'>MSC-Bench: A Rigorous Benchmark for Multi-Server Tool Orchestration</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Jia-Kai Dong, I-Wei Huang, Chun-Tin Wu, Yi-Tien Tsai</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-22 09:45:11</h6>
+<p class='card-text'>We introduce MSC-Bench, a large-scale benchmark for evaluating multi-hop,
+end-to-end tool orchestration by LLM agents in a hierarchical Model-Context
+Protocol (MCP) ecosystem. Existing benchmarks often evaluate tools in
+isolation, ignoring challenges such as functional overlap and cross-server
+orchestration, leading to overly optimistic assessments. MSC-Bench addresses
+these gaps by constructing ground truth through 'equal function sets', allowing
+objective metrics such as F1 score and reducing the dependency on
+LLM-as-a-judge evaluation. Organized as a five-level curriculum, it
+systematically tests agent capabilities from single-tool orchestration to
+complex cross-server planning, and robustness to out-of-scope requests.
+Experiments reveal that rigid hierarchies can hinder performance without
+co-designed strategies, and even state-of-the-art agents exhibit systemic
+weaknesses in robustness. MSC-Bench provides a diagnostic framework to expose
+these limitations and guide the development of more capable and efficient
+tool-using agents. The benchmark and resources are publicly available at
+https://github.com/snooow1029/MSC_Bench.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.19001v1' target='_blank'>Robust Driving QA through Metadata-Grounded Context and Task-Specific
+  Prompts</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Seungjun Yu, Junsung Park, Youngsun Lim, Hyunjung Shim</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-21 18:24:59</h6>
+<p class='card-text'>We present a two-phase vision-language QA system for autonomous driving that
+answers high-level perception, prediction, and planning questions. In Phase-1,
+a large multimodal LLM (Qwen2.5-VL-32B) is conditioned on six-camera inputs, a
+short temporal window of history, and a chain-of-thought prompt with few-shot
+exemplars. A self-consistency ensemble (multiple sampled reasoning chains)
+further improves answer reliability. In Phase-2, we augment the prompt with
+nuScenes scene metadata (object annotations, ego-vehicle state, etc.) and
+category-specific question instructions (separate prompts for perception,
+prediction, planning tasks). In experiments on a driving QA benchmark, our
+approach significantly outperforms the baseline Qwen2.5 models. For example,
+using 5 history frames and 10-shot prompting in Phase-1 yields 65.1% overall
+accuracy (vs.62.61% with zero-shot); applying self-consistency raises this to
+66.85%. Phase-2 achieves 67.37% overall. Notably, the system maintains 96%
+accuracy under severe visual corruption. These results demonstrate that
+carefully engineered prompts and contextual grounding can greatly enhance
+high-level driving QA with pretrained vision-language models.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.18779v1' target='_blank'>KAT-Coder Technical Report</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Zizheng Zhan, Ken Deng, Xiaojiang Zhang, Jinghui Wang, Huaixi Tang, Zhiyi Lai, Haoyang Huang, Wen Xiang, Kun Wu, Wenhao Zhuang, Minglei Zhang, Shaojie Wang, Shangpeng Yan, Kepeng Lei, Zongxian Feng, Huiming Wang, Zheng Lin, Mengtong Li, Mengfei Xie, Yinghan Cui, Xuxing Chen, Chao Wang, Weihao Li, Wenqiang Zhu, Jiarong Zhang, Jingxuan Xu, Songwei Yu, Yifan Yao, Xinping Lei, Han Li, Junqi Xiong, Zuchen Gao, Dailin Li, Haimo Li, Jiaheng Liu, Yuqun Zhang, Junyi Peng, Haotian Zhang, Bin Chen</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-21 16:27:47</h6>
+<p class='card-text'>Recent advances in large language models (LLMs) have enabled progress in
+agentic coding, where models autonomously reason, plan, and act within
+interactive software development workflows. However, bridging the gap between
+static text-based training and dynamic real-world agentic execution remains a
+core challenge. In this technical report, we present KAT-Coder, a large-scale
+agentic code model trained through a multi-stage curriculum encompassing
+Mid-Term Training, Supervised Fine-Tuning (SFT), Reinforcement Fine-Tuning
+(RFT), and Reinforcement-to-Deployment Adaptation. The Mid-Term stage enhances
+reasoning, planning, and reflection capabilities through a corpus of real
+software engineering data and synthetic agentic interactions. The SFT stage
+constructs a million-sample dataset balancing twenty programming languages, ten
+development contexts, and ten task archetypes. The RFT stage introduces a novel
+multi-ground-truth reward formulation for stable and sample-efficient policy
+optimization. Finally, the Reinforcement-to-Deployment phase adapts the model
+to production-grade IDE environments using Error-Masked SFT and Tree-Structured
+Trajectory Training. In summary, these stages enable KAT-Coder to achieve
+robust tool-use reliability, instruction alignment, and long-context reasoning,
+forming a deployable foundation for real-world intelligent coding agents. Our
+KAT series 32B model, KAT-Dev, has been open-sourced on
+https://huggingface.co/Kwaipilot/KAT-Dev.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.18546v1' target='_blank'>EfficientNav: Towards On-Device Object-Goal Navigation with Navigation
+  Map Caching and Retrieval</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Zebin Yang, Sunjian Zheng, Tong Xie, Tianshi Xu, Bo Yu, Fan Wang, Jie Tang, Shaoshan Liu, Meng Li</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-21 11:52:44</h6>
+<p class='card-text'>Object-goal navigation (ObjNav) tasks an agent with navigating to the
+location of a specific object in an unseen environment. Embodied agents
+equipped with large language models (LLMs) and online constructed navigation
+maps can perform ObjNav in a zero-shot manner. However, existing agents heavily
+rely on giant LLMs on the cloud, e.g., GPT-4, while directly switching to small
+LLMs, e.g., LLaMA3.2-11b, suffer from significant success rate drops due to
+limited model capacity for understanding complex navigation maps, which
+prevents deploying ObjNav on local devices. At the same time, the long prompt
+introduced by the navigation map description will cause high planning latency
+on local devices. In this paper, we propose EfficientNav to enable on-device
+efficient LLM-based zero-shot ObjNav. To help the smaller LLMs better
+understand the environment, we propose semantics-aware memory retrieval to
+prune redundant information in navigation maps. To reduce planning latency, we
+propose discrete memory caching and attention-based memory clustering to
+efficiently save and re-use the KV cache. Extensive experimental results
+demonstrate that EfficientNav achieves 11.1% improvement in success rate on
+HM3D benchmark over GPT-4-based baselines, and demonstrates 6.7x real-time
+latency reduction and 4.7x end-to-end latency reduction over GPT-4 planner. Our
+code will be released soon.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.18544v1' target='_blank'>SLICE: SLO-Driven Scheduling for LLM Inference on Edge Computing Devices</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Pan Zhou, Yiming Lei, Ling Liu, Xiaoqiong Xu, Ying Cai, Daji Ergu, Hongfang Yu, Yueyue Dai</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-21 11:47:42</h6>
+<p class='card-text'>Large Language Models (LLMs), as the foundational architecture for
+next-generation interactive AI applications, not only power intelligent
+dialogue systems but also drive the evolution of embodied intelligence on edge
+devices, including humanoid robots, smart vehicles, and other scenarios. The
+applications running on these edge devices impose differentiated Service Level
+Objectives (SLO) requirements on LLM services, specifically manifested as
+distinct constraints on Time to First Token (TTFT) and Time Per Output Token
+(TPOT) as well as end-to-end latency. Notably, edge devices typically handle
+real-time tasks that are extremely sensitive to latency, such as machine
+control and navigation planning. However, existing scheduling service systems
+still prioritize maximizing output token throughput as the sole optimization
+objective, failing to adequately address the diversity of SLO requirements.
+This ultimately results in persistently high violation rates for end-to-end
+latency or TPOT related SLOs.
+  This paper proposes SLICE, an innovative scheduling solution designed for
+edge computing scenarios with differentiated SLO requirements. By combining a
+utility-maximizing request scheduling algorithm with a dynamic iterative
+control mechanism for generation rates, SLICE significantly improves LLM
+inference service SLO attainment. Experimental results demonstrate that
+compared to state-of-the-art solutions Orca and FastServe, SLICE achieves up to
+35x higher SLO attainment and 3.4x advantage in task completion time than the
+other two solutions.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.18477v1' target='_blank'>LAFA: Agentic LLM-Driven Federated Analytics over Decentralized Data
+  Sources</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Haichao Ji, Zibo Wang, Yifei Zhu, Meng han, Dan Wang, Zhu Han</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-21 09:56:25</h6>
+<p class='card-text'>Large Language Models (LLMs) have shown great promise in automating data
+analytics tasks by interpreting natural language queries and generating
+multi-operation execution plans. However, existing LLM-agent-based analytics
+frameworks operate under the assumption of centralized data access, offering
+little to no privacy protection. In contrast, federated analytics (FA) enables
+privacy-preserving computation across distributed data sources, but lacks
+support for natural language input and requires structured, machine-readable
+queries. In this work, we present LAFA, the first system that integrates
+LLM-agent-based data analytics with FA. LAFA introduces a hierarchical
+multi-agent architecture that accepts natural language queries and transforms
+them into optimized, executable FA workflows. A coarse-grained planner first
+decomposes complex queries into sub-queries, while a fine-grained planner maps
+each subquery into a Directed Acyclic Graph of FA operations using prior
+structural knowledge. To improve execution efficiency, an optimizer agent
+rewrites and merges multiple DAGs, eliminating redundant operations and
+minimizing computational and communicational overhead. Our experiments
+demonstrate that LAFA consistently outperforms baseline prompting strategies by
+achieving higher execution plan success rates and reducing resource-intensive
+FA operations by a substantial margin. This work establishes a practical
+foundation for privacy-preserving, LLM-driven analytics that supports natural
+language input in the FA setting.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.18442v1' target='_blank'>PlanU: Large Language Model Decision Making through Planning under
+  Uncertainty</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Ziwei Deng, Mian Deng, Chenjing Liang, Zeming Gao, Chennan Ma, Chenxing Lin, Haipeng Zhang, Songzhu Mei, Cheng Wang, Siqi Shen</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-21 09:17:50</h6>
+<p class='card-text'>Large Language Models (LLMs) are increasingly being explored across a range
+of decision-making tasks. However, LLMs sometimes struggle with decision-making
+tasks under uncertainty that are relatively easy for humans, such as planning
+actions in stochastic environments. The adoption of LLMs for decision-making is
+impeded by uncertainty challenges, such as LLM uncertainty and environmental
+uncertainty. LLM uncertainty arises from the stochastic sampling process
+inherent to LLMs. Most LLM-based Decision-Making (LDM) approaches address LLM
+uncertainty through multiple reasoning chains or search trees. However, these
+approaches overlook environmental uncertainty, which leads to poor performance
+in environments with stochastic state transitions. Some recent LDM approaches
+deal with uncertainty by forecasting the probability of unknown variables.
+However, they are not designed for multi-step decision-making tasks that
+require interaction with the environment. To address uncertainty in LLM
+decision-making, we introduce PlanU, an LLM-based planning method that captures
+uncertainty within Monte Carlo Tree Search (MCTS). PlanU models the return of
+each node in the MCTS as a quantile distribution, which uses a set of quantiles
+to represent the return distribution. To balance exploration and exploitation
+during tree search, PlanU introduces an Upper Confidence Bounds with Curiosity
+(UCC) score which estimates the uncertainty of MCTS nodes. Through extensive
+experiments, we demonstrate the effectiveness of PlanU in LLM-based
+decision-making tasks under uncertainty.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.18169v1' target='_blank'>Hearing Health in Home Healthcare: Leveraging LLMs for Illness Scoring
+  and ALMs for Vocal Biomarker Extraction</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yu-Wen Chen, William Ho, Sasha M. Vergez, Grace Flaherty, Pallavi Gupta, Zhihong Zhang, Maryam Zolnoori, Margaret V. McDonald, Maxim Topaz, Zoran Kostic, Julia Hirschberg</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-20 23:46:46</h6>
+<p class='card-text'>The growing demand for home healthcare calls for tools that can support care
+delivery. In this study, we explore automatic health assessment from voice
+using real-world home care visit data, leveraging the diverse patient
+information it contains. First, we utilize Large Language Models (LLMs) to
+integrate Subjective, Objective, Assessment, and Plan (SOAP) notes derived from
+unstructured audio transcripts and structured vital signs into a holistic
+illness score that reflects a patient's overall health. This compact
+representation facilitates cross-visit health status comparisons and downstream
+analysis. Next, we design a multi-stage preprocessing pipeline to extract short
+speech segments from target speakers in home care recordings for acoustic
+analysis. We then employ an Audio Language Model (ALM) to produce
+plain-language descriptions of vocal biomarkers and examine their association
+with individuals' health status. Our experimental results benchmark both
+commercial and open-source LLMs in estimating illness scores, demonstrating
+their alignment with actual clinical outcomes, and revealing that SOAP notes
+are substantially more informative than vital signs. Building on the illness
+scores, we provide the first evidence that ALMs can identify health-related
+acoustic patterns from home care recordings and present them in a
+human-readable form. Together, these findings highlight the potential of LLMs
+and ALMs to harness heterogeneous in-home visit data for better patient
+monitoring and care.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.18095v1' target='_blank'>SMaRT: Select, Mix, and ReinvenT -- A Strategy Fusion Framework for
+  LLM-Driven Reasoning and Planning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Nikhil Verma, Manasa Bharadwaj, Wonjun Jang, Harmanpreet Singh, Yixiao Wang, Homa Fashandi, Chul Lee</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-20 20:42:24</h6>
+<p class='card-text'>Large Language Models (LLMs) have redefined complex task automation with
+exceptional generalization capabilities. Despite these advancements,
+state-of-the-art methods rely on single-strategy prompting, missing the synergy
+of diverse reasoning approaches. No single strategy excels universally,
+highlighting the need for frameworks that fuse strategies to maximize
+performance and ensure robustness. We introduce the Select, Mix, and ReinvenT
+(SMaRT) framework, an innovative strategy fusion approach designed to overcome
+this constraint by creating balanced and efficient solutions through the
+seamless integration of diverse reasoning strategies. Unlike existing methods,
+which employ LLMs merely as evaluators, SMaRT uses them as intelligent
+integrators, unlocking the "best of all worlds" across tasks. Extensive
+empirical evaluations across benchmarks in reasoning, planning, and sequential
+decision-making highlight the robustness and adaptability of SMaRT. The
+framework consistently outperforms state-of-the-art baselines in solution
+quality, constraint adherence, and performance metrics. This work redefines
+LLM-driven decision-making by pioneering a new paradigm in cross-strategy
+calibration, unlocking superior outcomes for reasoning systems and advancing
+the boundaries of self-refining methodologies.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.18029v1' target='_blank'>DynaQuery: A Self-Adapting Framework for Querying Structured and
+  Multimodal Data</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Aymane Hassini</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-20 19:02:35</h6>
+<p class='card-text'>The rise of Large Language Models (LLMs) has accelerated the long-standing
+goal of enabling natural language querying over complex, hybrid databases. Yet,
+this ambition exposes a dual challenge: reasoning jointly over structured,
+multi-relational schemas and the semantic content of linked unstructured
+assets. To overcome this, we present DynaQuery - a unified, self-adapting
+framework that serves as a practical blueprint for next-generation "Unbound
+Databases." At the heart of DynaQuery lies the Schema Introspection and Linking
+Engine (SILE), a novel systems primitive that elevates schema linking to a
+first-class query planning phase. We conduct a rigorous, multi-benchmark
+empirical evaluation of this structure-aware architecture against the prevalent
+unstructured Retrieval-Augmented Generation (RAG) paradigm. Our results
+demonstrate that the unstructured retrieval paradigm is architecturally
+susceptible to catastrophic contextual failures, such as SCHEMA_HALLUCINATION,
+leading to unreliable query generation. In contrast, our SILE-based design
+establishes a substantially more robust foundation, nearly eliminating this
+failure mode. Moreover, end-to-end validation on a complex, newly curated
+benchmark uncovers a key generalization principle: the transition from pure
+schema-awareness to holistic semantics-awareness. Taken together, our findings
+provide a validated architectural basis for developing natural language
+database interfaces that are robust, adaptable, and predictably consistent.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.17947v2' target='_blank'>PLAGUE: Plug-and-play framework for Lifelong Adaptive Generation of
+  Multi-turn Exploits</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Neeladri Bhuiya, Madhav Aggarwal, Diptanshu Purwar</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-20 17:37:03</h6>
+<p class='card-text'>Large Language Models (LLMs) are improving at an exceptional rate. With the
+advent of agentic workflows, multi-turn dialogue has become the de facto mode
+of interaction with LLMs for completing long and complex tasks. While LLM
+capabilities continue to improve, they remain increasingly susceptible to
+jailbreaking, especially in multi-turn scenarios where harmful intent can be
+subtly injected across the conversation to produce nefarious outcomes. While
+single-turn attacks have been extensively explored, adaptability, efficiency
+and effectiveness continue to remain key challenges for their multi-turn
+counterparts. To address these gaps, we present PLAGUE, a novel plug-and-play
+framework for designing multi-turn attacks inspired by lifelong-learning
+agents. PLAGUE dissects the lifetime of a multi-turn attack into three
+carefully designed phases (Primer, Planner and Finisher) that enable a
+systematic and information-rich exploration of the multi-turn attack family.
+Evaluations show that red-teaming agents designed using PLAGUE achieve
+state-of-the-art jailbreaking results, improving attack success rates (ASR) by
+more than 30% across leading models in a lesser or comparable query budget.
+Particularly, PLAGUE enables an ASR (based on StrongReject) of 81.4% on
+OpenAI's o3 and 67.3% on Claude's Opus 4.1, two models that are considered
+highly resistant to jailbreaks in safety literature. Our work offers tools and
+insights to understand the importance of plan initialization, context
+optimization and lifelong learning in crafting multi-turn attacks for a
+comprehensive model vulnerability evaluation.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.17576v1' target='_blank'>Intent-Driven LLM Ensemble Planning for Flexible Multi-Robot
+  Disassembly: Demonstration on EV Batteries</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Cansu Erdogan, Cesar Alan Contreras, Alireza Rastegarpanah, Manolis Chiou, Rustam Stolkin</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-20 14:24:39</h6>
+<p class='card-text'>This paper addresses the problem of planning complex manipulation tasks, in
+which multiple robots with different end-effectors and capabilities, informed
+by computer vision, must plan and execute concatenated sequences of actions on
+a variety of objects that can appear in arbitrary positions and configurations
+in unstructured scenes. We propose an intent-driven planning pipeline which can
+robustly construct such action sequences with varying degrees of supervisory
+input from a human using simple language instructions. The pipeline integrates:
+(i) perception-to-text scene encoding, (ii) an ensemble of large language
+models (LLMs) that generate candidate removal sequences based on the operator's
+intent, (iii) an LLM-based verifier that enforces formatting and precedence
+constraints, and (iv) a deterministic consistency filter that rejects
+hallucinated objects. The pipeline is evaluated on an example task in which two
+robot arms work collaboratively to dismantle an Electric Vehicle battery for
+recycling applications. A variety of components must be grasped and removed in
+specific sequences, determined by human instructions and/or by task-order
+feasibility decisions made by the autonomous system. On 200 real scenes with
+600 operator prompts across five component classes, we used metrics of
+full-sequence correctness and next-task correctness to evaluate and compare
+five LLM-based planners (including ablation analyses of pipeline components).
+We also evaluated the LLM-based human interface in terms of time to execution
+and NASA TLX with human participant experiments. Results indicate that our
+ensemble-with-verification approach reliably maps operator intent to safe,
+executable multi-robot plans while maintaining low user effort.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.17491v1' target='_blank'>Empowering Real-World: A Survey on the Technology, Practice, and
+  Evaluation of LLM-driven Industry Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yihong Tang, Kehai Chen, Liang Yue, Jinxin Fan, Caishen Zhou, Xiaoguang Li, Yuyang Zhang, Mingming Zhao, Shixiong Kai, Kaiyang Guo, Xingshan Zeng, Wenjing Cun, Lifeng Shang, Min Zhang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-20 12:46:55</h6>
+<p class='card-text'>With the rise of large language models (LLMs), LLM agents capable of
+autonomous reasoning, planning, and executing complex tasks have become a
+frontier in artificial intelligence. However, how to translate the research on
+general agents into productivity that drives industry transformations remains a
+significant challenge. To address this, this paper systematically reviews the
+technologies, applications, and evaluation methods of industry agents based on
+LLMs. Using an industry agent capability maturity framework, it outlines the
+evolution of agents in industry applications, from "process execution systems"
+to "adaptive social systems." First, we examine the three key technological
+pillars that support the advancement of agent capabilities: Memory, Planning,
+and Tool Use. We discuss how these technologies evolve from supporting simple
+tasks in their early forms to enabling complex autonomous systems and
+collective intelligence in more advanced forms. Then, we provide an overview of
+the application of industry agents in real-world domains such as digital
+engineering, scientific discovery, embodied intelligence, collaborative
+business execution, and complex system simulation. Additionally, this paper
+reviews the evaluation benchmarks and methods for both fundamental and
+specialized capabilities, identifying the challenges existing evaluation
+systems face regarding authenticity, safety, and industry specificity. Finally,
+we focus on the practical challenges faced by industry agents, exploring their
+capability boundaries, developmental potential, and governance issues in
+various scenarios, while providing insights into future directions. By
+combining technological evolution with industry practices, this review aims to
+clarify the current state and offer a clear roadmap and theoretical foundation
+for understanding and building the next generation of industry agents.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.17922v1' target='_blank'>Select-Then-Decompose: From Empirical Analysis to Adaptive Selection
+  Strategy for Task Decomposition in Large Language Models</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Shuodi Liu, Yingzhuo Liu, Zi Wang, Yusheng Wang, Huijia Wu, Liuyu Xiang, Zhaofeng He</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-20 07:28:15</h6>
+<p class='card-text'>Large language models (LLMs) have demonstrated remarkable reasoning and
+planning capabilities, driving extensive research into task decomposition.
+Existing task decomposition methods focus primarily on memory, tool usage, and
+feedback mechanisms, achieving notable success in specific domains, but they
+often overlook the trade-off between performance and cost. In this study, we
+first conduct a comprehensive investigation on task decomposition, identifying
+six categorization schemes. Then, we perform an empirical analysis of three
+factors that influence the performance and cost of task decomposition:
+categories of approaches, characteristics of tasks, and configuration of
+decomposition and execution models, uncovering three critical insights and
+summarizing a set of practical principles. Building on this analysis, we
+propose the Select-Then-Decompose strategy, which establishes a closed-loop
+problem-solving process composed of three stages: selection, execution, and
+verification. This strategy dynamically selects the most suitable decomposition
+approach based on task characteristics and enhances the reliability of the
+results through a verification module. Comprehensive evaluations across
+multiple benchmarks show that the Select-Then-Decompose consistently lies on
+the Pareto frontier, demonstrating an optimal balance between performance and
+cost. Our code is publicly available at
+https://github.com/summervvind/Select-Then-Decompose.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.17235v1' target='_blank'>Coinvisor: An RL-Enhanced Chatbot Agent for Interactive Cryptocurrency
+  Investment Analysis</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Chong Chen, Ze Liu, Lingfeng Bao, Yanlin Wang, Ting Chen, Daoyuan Wu, Jiachi Chen</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-20 07:23:49</h6>
+<p class='card-text'>The cryptocurrency market offers significant investment opportunities but
+faces challenges including high volatility and fragmented information. Data
+integration and analysis are essential for informed investment decisions.
+Currently, investors use three main approaches: (1) Manual analysis across
+various sources, which depends heavily on individual experience and is
+time-consuming and prone to bias; (2) Data aggregation platforms-limited in
+functionality and depth of analysis; (3) Large language model agents-based on
+static pretrained models, lacking real-time data integration and multi-step
+reasoning capabilities. To address these limitations, we present Coinvisor, a
+reinforcement learning-based chatbot that provides comprehensive analytical
+support for cryptocurrency investment through a multi-agent framework.
+Coinvisor integrates diverse analytical capabilities through specialized tools.
+Its key innovation is a reinforcement learning-based tool selection mechanism
+that enables multi-step planning and flexible integration of diverse data
+sources. This design supports real-time interaction and adaptive analysis of
+dynamic content, delivering accurate and actionable investment insights. We
+evaluated Coinvisor through automated benchmarks on tool calling accuracy and
+user studies with 20 cryptocurrency investors using our interface. Results show
+that Coinvisor improves recall by 40.7% and F1 score by 26.6% over the base
+model in tool orchestration. User studies show high satisfaction (4.64/5), with
+participants preferring Coinvisor to both general LLMs and existing crypto
+platforms (4.62/5).</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.17132v1' target='_blank'>Do LLMs Recognize Your Latent Preferences? A Benchmark for Latent
+  Information Discovery in Personalized Interaction</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Ioannis Tsaknakis, Bingqing Song, Shuyu Gan, Dongyeop Kang, Alfredo Garcia, Gaowen Liu, Charles Fleming, Mingyi Hong</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-20 03:58:49</h6>
+<p class='card-text'>Large Language Models (LLMs) excel at producing broadly relevant text, but
+this generality becomes a limitation when user-specific preferences are
+required, such as recommending restaurants or planning travel. In these
+scenarios, users rarely articulate every preference explicitly; instead, much
+of what they care about remains latent, waiting to be inferred. This raises a
+fundamental question: Can LLMs uncover and reason about such latent information
+through conversation?
+  We address this problem by introducing a unified benchmark for evaluating
+latent information discovery - the ability of LLMs to reveal and utilize hidden
+user attributes through multi-turn interaction. The benchmark spans three
+progressively realistic settings: the classic 20 Questions game, Personalized
+Question Answering, and Personalized Text Summarization. All tasks share a
+tri-agent framework (User, Assistant, Judge) enabling turn-level evaluation of
+elicitation and adaptation. Our results reveal that while LLMs can indeed
+surface latent information through dialogue, their success varies dramatically
+with context: from 32% to 98%, depending on task complexity, topic, and number
+of hidden attributes. This benchmark provides the first systematic framework
+for studying latent information discovery in personalized interaction,
+highlighting that effective preference inference remains an open frontier for
+building truly adaptive AI systems.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.17130v1' target='_blank'>SEER: Enhancing Chain-of-Thought Code Generation through Self-Exploring
+  Deep Reasoning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Shuzheng Gao, Chaozheng Wang, Cuiyun Gao, Michael R. Lyu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-20 03:51:17</h6>
+<p class='card-text'>Code generation, the task of creating executable programs from natural
+language requirements, has recently seen tremendous advances through
+Chain-of-Thought (CoT) reasoning, which enables Large Language Models (LLMs) to
+develop high-level reasoning plans before writing code. Recent research has
+proposed various methods to enhance models' CoT reasoning for code generation
+such as prompt engineering and supervised fine-tuning. However, existing
+approaches still face three critical limitations: (1) limited exploration of
+diverse reasoning paths, which constrains generalization across various
+programming scenarios, (2) lack of quality assessment for intermediate
+reasoning steps, which hampers the reliability of the generated plans and code,
+and (3) the potential negative impact of "overthinking", potentially leading to
+unnecessarily complex and incorrect solutions. To address these limitations, we
+frame CoT code generation as a decision making problem and present SEER, a
+SElf-Exploring deep Reasoning framework that enables accurate and adaptive
+reasoning for code generation. SEER introduces three key components: (1)
+Diverse reasoning path exploration, which aims at exploring diverse reasoning
+paths and annotating intermediate steps without relying on manual experts or
+closed-source proprietary models; (2) Reasoning quality-aware model training,
+which trains a policy model for generating candidate reasoning steps and a
+value model for assessing their quality; and (3) Adaptive CoT reasoning, which
+dynamically switches between direct generation and step-by-step reasoning for
+different problems.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.17109v1' target='_blank'>Verification-Aware Planning for Multi-Agent Systems</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Tianyang Xu, Dan Zhang, Kushan Mitra, Estevam Hruschka</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-20 02:54:29</h6>
+<p class='card-text'>Large language model (LLM) agents are increasingly deployed to tackle complex
+tasks, often necessitating collaboration among multiple specialized agents.
+However, multi-agent collaboration introduces new challenges in planning,
+coordination, and verification. Execution failures frequently arise not from
+flawed reasoning alone, but from subtle misalignments in task interpretation,
+output format, or inter-agent handoffs. To address these challenges, we present
+VeriMAP, a framework for multi-agent collaboration with verification-aware
+planning. The VeriMAP planner decomposes tasks, models subtask dependencies,
+and encodes planner-defined passing criteria as subtask verification functions
+(VFs) in Python and natural language. We evaluate VeriMAP on diverse datasets,
+demonstrating that it outperforms both single- and multi-agent baselines while
+enhancing system robustness and interpretability. Our analysis highlights how
+verification-aware planning enables reliable coordination and iterative
+refinement in multi-agent systems, without relying on external labels or
+annotations.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.16767v1' target='_blank'>T3 Planner: A Self-Correcting LLM Framework for Robotic Motion Planning
+  with Temporal Logic</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Jia Li, Guoxiang Zhao</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-19 09:12:53</h6>
+<p class='card-text'>Translating natural language instructions into executable motion plans is a
+fundamental challenge in robotics. Traditional approaches are typically
+constrained by their reliance on domain-specific expertise to customize
+planners, and often struggle with spatio-temporal couplings that usually lead
+to infeasible motions or discrepancies between task planning and motion
+execution. Despite the proficiency of Large Language Models (LLMs) in
+high-level semantic reasoning, hallucination could result in infeasible motion
+plans. In this paper, we introduce the T3 Planner, an LLM-enabled robotic
+motion planning framework that self-corrects it output with formal methods. The
+framework decomposes spatio-temporal task constraints via three cascaded
+modules, each of which stimulates an LLM to generate candidate trajectory
+sequences and examines their feasibility via a Signal Temporal Logic (STL)
+verifier until one that satisfies complex spatial, temporal, and logical
+constraints is found.Experiments across different scenarios show that T3
+Planner significantly outperforms the baselines. The required reasoning can be
+distilled into a lightweight Qwen3-4B model that enables efficient deployment.
+All supplementary materials are accessible at
+https://github.com/leeejia/T3_Planner.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.16724v1' target='_blank'>A Comprehensive Survey on Reinforcement Learning-based Agentic Search:
+  Foundations, Roles, Optimizations, Evaluations, and Applications</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Minhua Lin, Zongyu Wu, Zhichao Xu, Hui Liu, Xianfeng Tang, Qi He, Charu Aggarwal, Hui Liu, Xiang Zhang, Suhang Wang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-19 06:04:53</h6>
+<p class='card-text'>The advent of large language models (LLMs) has transformed information access
+and reasoning through open-ended natural language interaction. However, LLMs
+remain limited by static knowledge, factual hallucinations, and the inability
+to retrieve real-time or domain-specific information. Retrieval-Augmented
+Generation (RAG) mitigates these issues by grounding model outputs in external
+evidence, but traditional RAG pipelines are often single turn and heuristic,
+lacking adaptive control over retrieval and reasoning. Recent advances in
+agentic search address these limitations by enabling LLMs to plan, retrieve,
+and reflect through multi-step interaction with search environments. Within
+this paradigm, reinforcement learning (RL) offers a powerful mechanism for
+adaptive and self-improving search behavior. This survey provides the first
+comprehensive overview of \emph{RL-based agentic search}, organizing the
+emerging field along three complementary dimensions: (i) What RL is for
+(functional roles), (ii) How RL is used (optimization strategies), and (iii)
+Where RL is applied (scope of optimization). We summarize representative
+methods, evaluation protocols, and applications, and discuss open challenges
+and future directions toward building reliable and scalable RL driven agentic
+search systems. We hope this survey will inspire future research on the
+integration of RL and agentic search. Our repository is available at
+https://github.com/ventr1c/Awesome-RL-based-Agentic-Search-Papers.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.16720v1' target='_blank'>Beyond Pipelines: A Survey of the Paradigm Shift toward Model-Native
+  Agentic AI</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Jitao Sang, Jinlin Xiao, Jiarun Han, Jilin Chen, Xiaoyi Chen, Shuyu Wei, Yongjie Sun, Yuhang Wang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-19 05:23:43</h6>
+<p class='card-text'>The rapid evolution of agentic AI marks a new phase in artificial
+intelligence, where Large Language Models (LLMs) no longer merely respond but
+act, reason, and adapt. This survey traces the paradigm shift in building
+agentic AI: from Pipeline-based systems, where planning, tool use, and memory
+are orchestrated by external logic, to the emerging Model-native paradigm,
+where these capabilities are internalized within the model's parameters. We
+first position Reinforcement Learning (RL) as the algorithmic engine enabling
+this paradigm shift. By reframing learning from imitating static data to
+outcome-driven exploration, RL underpins a unified solution of LLM + RL + Task
+across language, vision and embodied domains. Building on this, the survey
+systematically reviews how each capability -- Planning, Tool use, and Memory --
+has evolved from externally scripted modules to end-to-end learned behaviors.
+Furthermore, it examines how this paradigm shift has reshaped major agent
+applications, specifically the Deep Research agent emphasizing long-horizon
+reasoning and the GUI agent emphasizing embodied interaction. We conclude by
+discussing the continued internalization of agentic capabilities like
+Multi-agent collaboration and Reflection, alongside the evolving roles of the
+system and model layers in future agentic AI. Together, these developments
+outline a coherent trajectory toward model-native agentic AI as an integrated
+learning and interaction framework, marking the transition from constructing
+systems that apply intelligence to developing models that grow intelligence
+through experience.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.16374v1' target='_blank'>Before you <think>, monitor: Implementing Flavell's metacognitive
+  framework in LLMs</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Nick Oh</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-18 06:52:42</h6>
+<p class='card-text'>Current approaches to enhancing LLM reasoning follows two isolated paradigms:
+Monitor-Generate methods like Plan-and-Solve (Wang et al., 2023) and
+SELF-DISCOVER (Zhou et al., 2024) excel at strategic planning but lack
+mechanisms to verify whether selected strategies succeed; while Generate-Verify
+approaches like Self-Verification (Weng et al., 2022) and SELF-REFINE (Madaan
+et al., 2023) iteratively refine outputs but commence generation blindly
+without task assessment. This separation creates inefficiencies -- strategies
+fail without feedback, and refinement occurs without strategic grounding. We
+address this gap by implementing Flavell's cognitive monitoring model (1979)
+from the broader Monitor-Generate-Verify framework (Oh and Gobet, 2025),
+operationalising it as a three-phase iterative system. On GSM8K, preliminary
+results show 75.42% accuracy versus 68.44% for SELF-REFINE and 67.07% for
+Self-Verification, while requiring fewer attempts (1.3 vs 2.0) at 27-37%
+increased inference cost. These initial findings suggest upfront monitoring
+produces higher-quality initial solutions that reduce refinement needs, though
+evaluation beyond arithmetic reasoning is needed to establish generalisability.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.16340v1' target='_blank'>Thinking About Thinking: Evaluating Reasoning in Post-Trained Language
+  Models</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Pratham Singla, Shivank Garg, Ayush Singh, Ishan Garg, Ketan Suhaas Saichandran</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-18 03:57:32</h6>
+<p class='card-text'>Recent advances in post-training techniques have endowed Large Language
+Models (LLMs) with enhanced capabilities for tackling complex, logic-intensive
+tasks through the generation of supplementary planning tokens. This development
+raises a fundamental question: Are these models aware of what they "learn" and
+"think"? To address this, we define three core competencies: (1) awareness of
+learned latent policies, (2) generalization of these policies across domains,
+and (3) alignment between internal reasoning traces and final outputs. We
+empirically evaluate these abilities on several tasks, each designed to require
+learning a distinct policy. Furthermore, we contrast the profiles of models
+post-trained via Supervised Fine-Tuning (SFT), Direct Policy Optimization
+(DPO), and Group Relative Policy Optimization (GRPO). Our findings indicate
+that RL-trained models not only demonstrate greater awareness of their learned
+behaviors and stronger generalizability to novel, structurally similar tasks
+than SFT models but also often exhibit weak alignment between their reasoning
+traces and final outputs, an effect most pronounced in GRPO-trained models.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.16156v1' target='_blank'>AsyncVoice Agent: Real-Time Explanation for LLM Planning and Reasoning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yueqian Lin, Zhengmian Hu, Jayakumar Subramanian, Qinsi Wang, Nikos Vlassis, Hai "Helen" Li, Yiran Chen</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-17 19:00:08</h6>
+<p class='card-text'>Effective human-AI collaboration on complex reasoning tasks requires that
+users understand and interact with the model's process, not just receive an
+output. However, the monolithic text from methods like Chain-of-Thought (CoT)
+prevents this, as current interfaces lack real-time verbalization and robust
+user barge-in. We present AsyncVoice Agent, a system whose asynchronous
+architecture decouples a streaming LLM backend from a conversational voice
+frontend. This design allows narration and inference to run in parallel,
+empowering users to interrupt, query, and steer the model's reasoning process
+at any time. Objective benchmarks show this approach reduces interaction
+latency by more than 600x compared to monolithic baselines while ensuring high
+fidelity and competitive task accuracy. By enabling a two-way dialogue with a
+model's thought process, AsyncVoice Agent offers a new paradigm for building
+more effective, steerable, and trustworthy human-AI systems for high-stakes
+tasks.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.15772v1' target='_blank'>Self-evolving expertise in complex non-verifiable subject domains:
+  dialogue as implicit meta-RL</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Richard M. Bailey</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-17 15:59:44</h6>
+<p class='card-text'>So-called `wicked problems', those involving complex multi-dimensional
+settings, non-verifiable outcomes, heterogeneous impacts and a lack of single
+objectively correct answers, have plagued humans throughout history. Modern
+examples include decisions over justice frameworks, solving environmental
+pollution, planning for pandemic resilience and food security. The use of
+state-of-the-art artificial intelligence systems (notably Large Language
+Model-based agents) collaborating with humans on solving such problems is being
+actively explored. While the abilities of LLMs can be improved by, for example,
+fine-tuning, hand-crafted system prompts and scaffolding with external tools,
+LLMs lack endogenous mechanisms to develop expertise through experience in such
+settings. This work address this gap with Dialectica, a framework where agents
+engage in structured dialogue on defined topics, augmented by memory,
+self-reflection, and policy-constrained context editing. Formally, discussion
+is viewed as an implicit meta-reinforcement learning process. The
+`dialogue-trained' agents are evaluated post-hoc using judged pairwise
+comparisons of elicited responses. Across two model architectures (locally run
+Qwen3:30b and OpenAI's o4-mini) results show that enabling reflection-based
+context editing during discussion produces agents which dominate their baseline
+counterparts on Elo scores, normalized Bradley-Terry-Davidson ability, and
+AlphaRank mass. The predicted signatures of learning are observed qualitatively
+in statement and reflection logs, where reflections identify weaknesses and
+reliably shape subsequent statements. Agreement between quantitative and
+qualitative evidence supports dialogue-driven context evolution as a practical
+path to targeted expertise amplification in open non-verifiable domains.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.15455v1' target='_blank'>CORE: Reducing UI Exposure in Mobile Agents via Collaboration Between
+  Cloud and Local LLMs</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Gucongcong Fan, Chaoyue Niu, Chengfei Lyu, Fan Wu, Guihai Chen</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-17 09:11:05</h6>
+<p class='card-text'>Mobile agents rely on Large Language Models (LLMs) to plan and execute tasks
+on smartphone user interfaces (UIs). While cloud-based LLMs achieve high task
+accuracy, they require uploading the full UI state at every step, exposing
+unnecessary and often irrelevant information. In contrast, local LLMs avoid UI
+uploads but suffer from limited capacity, resulting in lower task success
+rates. We propose $\textbf{CORE}$, a $\textbf{CO}$llaborative framework that
+combines the strengths of cloud and local LLMs to $\textbf{R}$educe UI
+$\textbf{E}$xposure, while maintaining task accuracy for mobile agents. CORE
+comprises three key components: (1) $\textbf{Layout-aware block partitioning}$,
+which groups semantically related UI elements based on the XML screen
+hierarchy; (2) $\textbf{Co-planning}$, where local and cloud LLMs
+collaboratively identify the current sub-task; and (3)
+$\textbf{Co-decision-making}$, where the local LLM ranks relevant UI blocks,
+and the cloud LLM selects specific UI elements within the top-ranked block.
+CORE further introduces a multi-round accumulation mechanism to mitigate local
+misjudgment or limited context. Experiments across diverse mobile apps and
+tasks show that CORE reduces UI exposure by up to 55.6% while maintaining task
+success rates slightly below cloud-only agents, effectively mitigating
+unnecessary privacy exposure to the cloud. The code is available at
+https://github.com/Entropy-Fighter/CORE.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.15283v1' target='_blank'>Exemplar-Guided Planing: Enhanced LLM Agent for KGQA</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Jingao Xu, Shuoyoucheng Ma, Xin Song, Rong Jiang, Hongkui Tu, Bin Zhou</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-17 03:43:06</h6>
+<p class='card-text'>Large Language Models (LLMs) as interactive agents show significant promise
+in Knowledge Graph Question Answering (KGQA) but often struggle with the
+semantic gap between natural language queries and structured knowledge graph
+(KG) representations. This leads to suboptimal planning and inefficient
+exploration on KG, while training-free approaches often underutilize valuable
+reasoning patterns in training data. To address these limitations, we propose a
+novel framework, Exemplar-Guided Planning (EGP), which enhances the planning
+capabilities of LLM agents for KGQA. EGP first preprocesses the training set
+questions via entity templating to normalize semantic variations. It then
+retrieves highly similar exemplary questions and their successful reasoning
+paths from this preprocessed set using semantic embeddings and an efficient
+FAISS index. These retrieved exemplars dynamically guide the LLM's planning
+process in two key phases: (1) Task Decomposition, by aligning generated
+sub-objectives with proven reasoning steps, and (2) Relation Exploration, by
+providing high-quality auxiliary information to improve relation pruning
+accuracy. Additionally, we introduce a Smart Lookahead mechanism during
+relation exploration to improve efficiency by preemptively exploring promising
+paths and potentially terminating exploration earlier. We apply EGP to the
+Plan-on-Graph (PoG) framework, termed PoG-EGP. Extensive experiments on two
+real-world KGQA datasets, WebQSP and CWQ, demonstrate that PoG-EGP
+significantly improves over the baseline PoG system and other compared methods.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.15259v1' target='_blank'>Experience-Driven Exploration for Efficient API-Free AI Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Chenwei Tang, Jingyu Xing, Xinyu Liu, Zizhou Wang, Jiawei Du, Liangli Zhen, Jiancheng Lv</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-17 02:53:06</h6>
+<p class='card-text'>Most existing software lacks accessible Application Programming Interfaces
+(APIs), requiring agents to operate solely through pixel-based Graphical User
+Interfaces (GUIs). In this API-free setting, large language model (LLM)-based
+agents face severe efficiency bottlenecks: limited to local visual experiences,
+they make myopic decisions and rely on inefficient trial-and-error, hindering
+both skill acquisition and long-term planning. To address these challenges, we
+propose KG-Agent, an experience-driven learning framework that structures an
+agent's raw pixel-level interactions into a persistent State-Action Knowledge
+Graph (SA-KG). KG-Agent overcomes inefficient exploration by linking
+functionally similar but visually distinct GUI states, forming a rich
+neighborhood of experience that enables the agent to generalize from a diverse
+set of historical strategies. To support long-horizon reasoning, we design a
+hybrid intrinsic reward mechanism based on the graph topology, combining a
+state value reward for exploiting known high-value pathways with a novelty
+reward that encourages targeted exploration. This approach decouples strategic
+planning from pure discovery, allowing the agent to effectively value setup
+actions with delayed gratification. We evaluate KG-Agent in two complex,
+open-ended GUI-based decision-making environments (Civilization V and Slay the
+Spire), demonstrating significant improvements in exploration efficiency and
+strategic depth over the state-of-the-art methods.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.14751v1' target='_blank'>Beyond Multi-Token Prediction: Pretraining LLMs with Future Summaries</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Divyat Mahajan, Sachin Goyal, Badr Youbi Idrissi, Mohammad Pezeshki, Ioannis Mitliagkas, David Lopez-Paz, Kartik Ahuja</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-16 14:52:52</h6>
+<p class='card-text'>Next-token prediction (NTP) has driven the success of large language models
+(LLMs), but it struggles with long-horizon reasoning, planning, and creative
+writing, with these limitations largely attributed to teacher-forced training.
+Multi-token prediction (MTP) partially mitigates these issues by predicting
+several future tokens at once, but it mostly captures short-range dependencies
+and offers limited improvement. We propose future summary prediction (FSP),
+which trains an auxiliary head to predict a compact representation of the
+long-term future, preserving information relevant for long-form generations. We
+explore two variants of FSP: handcrafted summaries, for example, a bag of words
+summary of the future of the sequence, and learned summaries, which use
+embeddings produced by a reverse language model trained from right to left.
+Large-scale pretraining experiments (3B and 8B-parameter models) demonstrate
+that FSP provides improvements over both NTP and MTP across math, reasoning,
+and coding benchmarks.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.14548v1' target='_blank'>LLM Agents Beyond Utility: An Open-Ended Perspective</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Asen Nachkov, Xi Wang, Luc Van Gool</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-16 10:46:54</h6>
+<p class='card-text'>Recent LLM agents have made great use of chain of thought reasoning and
+function calling. As their capabilities grow, an important question arises: can
+this software represent not only a smart problem-solving tool, but an entity in
+its own right, that can plan, design immediate tasks, and reason toward
+broader, more ambiguous goals? To study this question, we adopt an open-ended
+experimental setting where we augment a pretrained LLM agent with the ability
+to generate its own tasks, accumulate knowledge, and interact extensively with
+its environment. We study the resulting open-ended agent qualitatively. It can
+reliably follow complex multi-step instructions, store and reuse information
+across runs, and propose and solve its own tasks, though it remains sensitive
+to prompt design, prone to repetitive task generation, and unable to form
+self-representations. These findings illustrate both the promise and current
+limits of adapting pretrained LLMs toward open-endedness, and point to future
+directions for training agents to manage memory, explore productively, and
+pursue abstract long-term goals.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js'></script>
+</body>
+</html>
