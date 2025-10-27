@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<title>LLM-agent - 2025-10-27</title>
+<link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap' rel='stylesheet'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'>
+<style>
+body {
+font-family: 'Roboto', sans-serif;
+background-color: #f5f7fa;
+padding: 20px;
+}
+.card {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.card-title {
+    font-weight: 700;
+}
+.card:hover {
+    transform: scale(1.02);
+    transition: 0.3s ease-in-out;
+}
+</style>
+</head>
+<body>
+<div class='container'>
+<h1 class='text-center my-4'><i class='fas fa-book'></i>LLM-agent - 2025-10-27</h1>
+<div class='row'>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.21618v1' target='_blank'>DeepAgent: A General Reasoning Agent with Scalable Toolsets</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Xiaoxi Li, Wenxiang Jiao, Jiarui Jin, Guanting Dong, Jiajie Jin, Yinuo Wang, Hao Wang, Yutao Zhu, Ji-Rong Wen, Yuan Lu, Zhicheng Dou</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-24 16:24:01</h6>
+<p class='card-text'>Large reasoning models have demonstrated strong problem-solving abilities,
+yet real-world tasks often require external tools and long-horizon
+interactions. Existing agent frameworks typically follow predefined workflows,
+which limit autonomous and global task completion. In this paper, we introduce
+DeepAgent, an end-to-end deep reasoning agent that performs autonomous
+thinking, tool discovery, and action execution within a single, coherent
+reasoning process. To address the challenges of long-horizon interactions,
+particularly the context length explosion from multiple tool calls and the
+accumulation of interaction history, we introduce an autonomous memory folding
+mechanism that compresses past interactions into structured episodic, working,
+and tool memories, reducing error accumulation while preserving critical
+information. To teach general-purpose tool use efficiently and stably, we
+develop an end-to-end reinforcement learning strategy, namely ToolPO, that
+leverages LLM-simulated APIs and applies tool-call advantage attribution to
+assign fine-grained credit to the tool invocation tokens. Extensive experiments
+on eight benchmarks, including general tool-use tasks (ToolBench, API-Bank,
+TMDB, Spotify, ToolHop) and downstream applications (ALFWorld, WebShop, GAIA,
+HLE), demonstrate that DeepAgent consistently outperforms baselines across both
+labeled-tool and open-set tool retrieval scenarios. This work takes a step
+toward more general and capable agents for real-world applications. The code
+and demo are available at https://github.com/RUC-NLPIR/DeepAgent.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.21603v1' target='_blank'>Doc-Researcher: A Unified System for Multimodal Document Parsing and
+  Deep Research</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Kuicai Dong, Shurui Huang, Fangda Ye, Wei Han, Zhi Zhang, Dexun Li, Wenjun Li, Qu Yang, Gang Wang, Yichao Wang, Chen Zhang, Yong Liu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-24 16:07:54</h6>
+<p class='card-text'>Deep Research systems have revolutionized how LLMs solve complex questions
+through iterative reasoning and evidence gathering. However, current systems
+remain fundamentally constrained to textual web data, overlooking the vast
+knowledge embedded in multimodal documents Processing such documents demands
+sophisticated parsing to preserve visual semantics (figures, tables, charts,
+and equations), intelligent chunking to maintain structural coherence, and
+adaptive retrieval across modalities, which are capabilities absent in existing
+systems. In response, we present Doc-Researcher, a unified system that bridges
+this gap through three integrated components: (i) deep multimodal parsing that
+preserves layout structure and visual semantics while creating multi-granular
+representations from chunk to document level, (ii) systematic retrieval
+architecture supporting text-only, vision-only, and hybrid paradigms with
+dynamic granularity selection, and (iii) iterative multi-agent workflows that
+decompose complex queries, progressively accumulate evidence, and synthesize
+comprehensive answers across documents and modalities. To enable rigorous
+evaluation, we introduce M4DocBench, the first benchmark for Multi-modal,
+Multi-hop, Multi-document, and Multi-turn deep research. Featuring 158
+expert-annotated questions with complete evidence chains across 304 documents,
+M4DocBench tests capabilities that existing benchmarks cannot assess.
+Experiments demonstrate that Doc-Researcher achieves 50.6% accuracy, 3.4xbetter
+than state-of-the-art baselines, validating that effective document research
+requires not just better retrieval, but fundamentally deep parsing that
+preserve multimodal integrity and support iterative research. Our work
+establishes a new paradigm for conducting deep research on multimodal document
+collections.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.21557v1' target='_blank'>Co-Sight: Enhancing LLM-Based Agents via Conflict-Aware
+  Meta-Verification and Trustworthy Reasoning with Structured Facts</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Hongwei Zhang, Ji Lu, Shiqing Jiang, Chenxiang Zhu, Li Xie, Chen Zhong, Haoran Chen, Yurui Zhu, Yongsheng Du, Yanqin Gao, Lingjun Huang, Baoli Wang, Fang Tan, Peng Zou</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-24 15:14:14</h6>
+<p class='card-text'>Long-horizon reasoning in LLM-based agents often fails not from generative
+weakness but from insufficient verification of intermediate reasoning. Co-Sight
+addresses this challenge by turning reasoning into a falsifiable and auditable
+process through two complementary mechanisms: Conflict-Aware Meta-Verification
+(CAMV) and Trustworthy Reasoning with Structured Facts (TRSF). CAMV
+reformulates verification as conflict identification and targeted
+falsification, allocating computation only to disagreement hotspots among
+expert agents rather than to full reasoning chains. This bounds verification
+cost to the number of inconsistencies and improves efficiency and reliability.
+TRSF continuously organizes, validates, and synchronizes evidence across agents
+through a structured facts module. By maintaining verified, traceable, and
+auditable knowledge, it ensures that all reasoning is grounded in consistent,
+source-verified information and supports transparent verification throughout
+the reasoning process. Together, TRSF and CAMV form a closed verification loop,
+where TRSF supplies structured facts and CAMV selectively falsifies or
+reinforces them, yielding transparent and trustworthy reasoning. Empirically,
+Co-Sight achieves state-of-the-art accuracy on GAIA (84.4%) and Humanity's Last
+Exam (35.5%), and strong results on Chinese-SimpleQA (93.8%). Ablation studies
+confirm that the synergy between structured factual grounding and
+conflict-aware verification drives these improvements. Co-Sight thus offers a
+scalable paradigm for reliable long-horizon reasoning in LLM-based agents. Code
+is available at
+https://github.com/ZTE-AICloud/Co-Sight/tree/cosight2.0_benchmarks.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.21524v1' target='_blank'>EU-Agent-Bench: Measuring Illegal Behavior of LLM Agents Under EU Law</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Ilija Lichkovski, Alexander Müller, Mariam Ibrahim, Tiwai Mhundwa</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-24 14:48:10</h6>
+<p class='card-text'>Large language models (LLMs) are increasingly deployed as agents in various
+contexts by providing tools at their disposal. However, LLM agents can exhibit
+unpredictable behaviors, including taking undesirable and/or unsafe actions. In
+order to measure the latent propensity of LLM agents for taking illegal actions
+under an EU legislative context, we introduce EU-Agent-Bench, a verifiable
+human-curated benchmark that evaluates an agent's alignment with EU legal norms
+in situations where benign user inputs could lead to unlawful actions. Our
+benchmark spans scenarios across several categories, including data protection,
+bias/discrimination, and scientific integrity, with each user request allowing
+for both compliant and non-compliant execution of the requested actions.
+Comparing the model's function calls against a rubric exhaustively supported by
+citations of the relevant legislature, we evaluate the legal compliance of
+frontier LLMs, and furthermore investigate the compliance effect of providing
+the relevant legislative excerpts in the agent's system prompt along with
+explicit instructions to comply. We release a public preview set for the
+research community, while holding out a private test set to prevent data
+contamination in evaluating upcoming models. We encourage future work extending
+agentic safety benchmarks to different legal jurisdictions and to multi-turn
+and multilingual interactions. We release our code on
+\href{https://github.com/ilijalichkovski/eu-agent-bench}{this URL}.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.21459v1' target='_blank'>SBASH: a Framework for Designing and Evaluating RAG vs. Prompt-Tuned LLM
+  Honeypots</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Adetayo Adebimpe, Helmut Neukirchen, Thomas Welsh</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-24 13:41:52</h6>
+<p class='card-text'>Honeypots are decoy systems used for gathering valuable threat intelligence
+or diverting attackers away from production systems. Maximising attacker
+engagement is essential to their utility. However research has highlighted that
+context-awareness, such as the ability to respond to new attack types, systems
+and attacker agents, is necessary to increase engagement. Large Language Models
+(LLMs) have been shown as one approach to increase context awareness but suffer
+from several challenges including accuracy and timeliness of response time,
+high operational costs and data-protection issues due to cloud deployment. We
+propose the System-Based Attention Shell Honeypot (SBASH) framework which
+manages data-protection issues through the use of lightweight local LLMs. We
+investigate the use of Retrieval Augmented Generation (RAG) supported LLMs and
+non-RAG LLMs for Linux shell commands and evaluate them using several different
+metrics such as response time differences, realism from human testers, and
+similarity to a real system calculated with Levenshtein distance, SBert, and
+BertScore. We show that RAG improves accuracy for untuned models while models
+that have been tuned via a system prompt that tells the LLM to respond like a
+Linux system achieve without RAG a similar accuracy as untuned with RAG, while
+having a slightly lower latency.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.21341v1' target='_blank'>Magellan: Guided MCTS for Latent Space Exploration and Novelty
+  Generation</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Lufan Chang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-24 11:09:59</h6>
+<p class='card-text'>Large Language Models (LLMs) often struggle with generating truly innovative
+ideas, typically defaulting to high-probability, familiar concepts within their
+training data's "gravity wells." While advanced search-based methods like Tree
+of Thoughts (ToT) attempt to mitigate this, they are fundamentally limited by
+their reliance on unprincipled, inconsistent self-evaluation heuristics to
+guide exploration. To address this gap, we introduce \textbf{Magellan}, a novel
+framework that reframes creative generation as a principled, guided exploration
+of an LLM's latent conceptual space. At its core, Magellan employs Monte Carlo
+Tree Search (MCTS) governed by a hierarchical guidance system. For long-range
+direction, a "semantic compass" vector, formulated via orthogonal projection,
+steers the search towards relevant novelty. For local, step-by-step decisions,
+a landscape-aware value function replaces flawed self-evaluation with an
+explicit reward structure that balances intrinsic coherence, extrinsic novelty,
+and narrative progress. Extensive experiments demonstrate that Magellan
+significantly outperforms strong baselines, including ReAct and ToT, in
+generating scientific ideas with superior plausibility and innovation. Our work
+shows that for creative discovery, a principled, guided search is more
+effective than unconstrained agency, paving the way for LLMs to become more
+capable partners in innovation.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.21324v1' target='_blank'>CXRAgent: Director-Orchestrated Multi-Stage Reasoning for Chest X-Ray
+  Interpretation</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Jinhui Lou, Yan Yang, Zhou Yu, Zhenqi Fu, Weidong Han, Qingming Huang, Jun Yu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-24 10:31:30</h6>
+<p class='card-text'>Chest X-ray (CXR) plays a pivotal role in clinical diagnosis, and a variety
+of task-specific and foundation models have been developed for automatic CXR
+interpretation. However, these models often struggle to adapt to new diagnostic
+tasks and complex reasoning scenarios. Recently, LLM-based agent models have
+emerged as a promising paradigm for CXR analysis, enhancing model's capability
+through tool coordination, multi-step reasoning, and team collaboration, etc.
+However, existing agents often rely on a single diagnostic pipeline and lack
+mechanisms for assessing tools' reliability, limiting their adaptability and
+credibility. To this end, we propose CXRAgent, a director-orchestrated,
+multi-stage agent for CXR interpretation, where a central director coordinates
+the following stages: (1) Tool Invocation: The agent strategically orchestrates
+a set of CXR-analysis tools, with outputs normalized and verified by the
+Evidence-driven Validator (EDV), which grounds diagnostic outputs with visual
+evidence to support reliable downstream diagnosis; (2) Diagnostic Planning:
+Guided by task requirements and intermediate findings, the agent formulates a
+targeted diagnostic plan. It then assembles an expert team accordingly,
+defining member roles and coordinating their interactions to enable adaptive
+and collaborative reasoning; (3) Collaborative Decision-making: The agent
+integrates insights from the expert team with accumulated contextual memories,
+synthesizing them into an evidence-backed diagnostic conclusion. Experiments on
+various CXR interpretation tasks show that CXRAgent delivers strong
+performance, providing visual evidence and generalizes well to clinical tasks
+of different complexity. Code and data are valuable at this
+\href{https://github.com/laojiahuo2003/CXRAgent/}{link}.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.21306v1' target='_blank'>PARL: Prompt-based Agents for Reinforcement Learning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yarik Menchaca Resendiz, Roman Klinger</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-24 10:04:23</h6>
+<p class='card-text'>Large language models (LLMs) have demonstrated high performance on tasks
+expressed in natural language, particularly in zero- or few-shot settings.
+These are typically framed as supervised (e.g., classification) or unsupervised
+(e.g., clustering) problems. However, limited work evaluates LLMs as agents in
+reinforcement learning (RL) tasks (e.g., playing games), where learning occurs
+through interaction with an environment and a reward system. While prior work
+focused on representing tasks that rely on a language representation, we study
+structured, non-linguistic reasoning - such as interpreting positions in a grid
+world. We therefore introduce PARL (Prompt-based Agent for Reinforcement
+Learning), a method that uses LLMs as RL agents through prompting, without any
+fine-tuning. PARL encodes actions, states, and rewards in the prompt, enabling
+the model to learn through trial-and-error interaction. We evaluate PARL on
+three standard RL tasks that do not entirely rely on natural language. We show
+that it can match or outperform traditional RL agents in simple environments by
+leveraging pretrained knowledge. However, we identify performance limitations
+in tasks that require complex mathematical operations or decoding states and
+actions.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.21302v1' target='_blank'>Towards Reliable Code-as-Policies: A Neuro-Symbolic Framework for
+  Embodied Task Planning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Sanghyun Ahn, Wonje Choi, Junyong Lee, Jinwoo Park, Honguk Woo</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-24 10:01:08</h6>
+<p class='card-text'>Recent advances in large language models (LLMs) have enabled the automatic
+generation of executable code for task planning and control in embodied agents
+such as robots, demonstrating the potential of LLM-based embodied intelligence.
+However, these LLM-based code-as-policies approaches often suffer from limited
+environmental grounding, particularly in dynamic or partially observable
+settings, leading to suboptimal task success rates due to incorrect or
+incomplete code generation. In this work, we propose a neuro-symbolic embodied
+task planning framework that incorporates explicit symbolic verification and
+interactive validation processes during code generation. In the validation
+phase, the framework generates exploratory code that actively interacts with
+the environment to acquire missing observations while preserving task-relevant
+states. This integrated process enhances the grounding of generated code,
+resulting in improved task reliability and success rates in complex
+environments. We evaluate our framework on RLBench and in real-world settings
+across dynamic, partially observable scenarios. Experimental results
+demonstrate that our framework improves task success rates by 46.2% over
+Code-as-Policies baselines and attains over 86.8% executability of
+task-relevant actions, thereby enhancing the reliability of task planning in
+dynamic environments.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.21236v1' target='_blank'>Securing AI Agent Execution</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Christoph Bühler, Matteo Biagiola, Luca Di Grazia, Guido Salvaneschi</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-24 08:10:36</h6>
+<p class='card-text'>Large Language Models (LLMs) have evolved into AI agents that interact with
+external tools and environments to perform complex tasks. The Model Context
+Protocol (MCP) has become the de facto standard for connecting agents with such
+resources, but security has lagged behind: thousands of MCP servers execute
+with unrestricted access to host systems, creating a broad attack surface. In
+this paper, we introduce AgentBound, the first access control framework for MCP
+servers. AgentBound combines a declarative policy mechanism, inspired by the
+Android permission model, with a policy enforcement engine that contains
+malicious behavior without requiring MCP server modifications. We build a
+dataset containing the 296 most popular MCP servers, and show that access
+control policies can be generated automatically from source code with 80.9%
+accuracy. We also show that AgentBound blocks the majority of security threats
+in several malicious MCP servers, and that policy enforcement engine introduces
+negligible overhead. Our contributions provide developers and project managers
+with a practical foundation for securing MCP servers while maintaining
+productivity, enabling researchers and tool builders to explore new directions
+for declarative access control and MCP security.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.21228v1' target='_blank'>DispatchMAS: Fusing taxonomy and artificial intelligence agents for
+  emergency medical services</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Xiang Li, Huizi Yu, Wenkong Wang, Yiran Wu, Jiayan Zhou, Wenyue Hua, Xinxin Lin, Wenjia Tan, Lexuan Zhu, Bingyi Chen, Guang Chen, Ming-Li Chen, Yang Zhou, Zhao Li, Themistocles L. Assimes, Yongfeng Zhang, Qingyun Wu, Xin Ma, Lingyao Li, Lizhou Fan</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-24 08:01:21</h6>
+<p class='card-text'>Objective: Emergency medical dispatch (EMD) is a high-stakes process
+challenged by caller distress, ambiguity, and cognitive load. Large Language
+Models (LLMs) and Multi-Agent Systems (MAS) offer opportunities to augment
+dispatchers. This study aimed to develop and evaluate a taxonomy-grounded,
+LLM-powered multi-agent system for simulating realistic EMD scenarios. Methods:
+We constructed a clinical taxonomy (32 chief complaints, 6 caller identities
+from MIMIC-III) and a six-phase call protocol. Using this framework, we
+developed an AutoGen-based MAS with Caller and Dispatcher Agents. The system
+grounds interactions in a fact commons to ensure clinical plausibility and
+mitigate misinformation. We used a hybrid evaluation framework: four physicians
+assessed 100 simulated cases for "Guidance Efficacy" and "Dispatch
+Effectiveness," supplemented by automated linguistic analysis (sentiment,
+readability, politeness). Results: Human evaluation, with substantial
+inter-rater agreement (Gwe's AC1 > 0.70), confirmed the system's high
+performance. It demonstrated excellent Dispatch Effectiveness (e.g., 94 %
+contacting the correct potential other agents) and Guidance Efficacy (advice
+provided in 91 % of cases), both rated highly by physicians. Algorithmic
+metrics corroborated these findings, indicating a predominantly neutral
+affective profile (73.7 % neutral sentiment; 90.4 % neutral emotion), high
+readability (Flesch 80.9), and a consistently polite style (60.0 % polite; 0 %
+impolite). Conclusion: Our taxonomy-grounded MAS simulates diverse, clinically
+plausible dispatch scenarios with high fidelity. Findings support its use for
+dispatcher training, protocol evaluation, and as a foundation for real-time
+decision support. This work outlines a pathway for safely integrating advanced
+AI agents into emergency response workflows.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.21180v1' target='_blank'>Social Simulations with Large Language Model Risk Utopian Illusion</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Ning Bian, Xianpei Han, Hongyu Lin, Baolei Wu, Jun Wang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-24 06:08:41</h6>
+<p class='card-text'>Reliable simulation of human behavior is essential for explaining,
+predicting, and intervening in our society. Recent advances in large language
+models (LLMs) have shown promise in emulating human behaviors, interactions,
+and decision-making, offering a powerful new lens for social science studies.
+However, the extent to which LLMs diverge from authentic human behavior in
+social contexts remains underexplored, posing risks of misinterpretation in
+scientific studies and unintended consequences in real-world applications.
+Here, we introduce a systematic framework for analyzing LLMs' behavior in
+social simulation. Our approach simulates multi-agent interactions through
+chatroom-style conversations and analyzes them across five linguistic
+dimensions, providing a simple yet effective method to examine emergent social
+cognitive biases. We conduct extensive experiments involving eight
+representative LLMs across three families. Our findings reveal that LLMs do not
+faithfully reproduce genuine human behavior but instead reflect overly
+idealized versions of it, shaped by the social desirability bias. In
+particular, LLMs show social role bias, primacy effect, and positivity bias,
+resulting in "Utopian" societies that lack the complexity and variability of
+real human interactions. These findings call for more socially grounded LLMs
+that capture the diversity of human social behavior.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.21057v1' target='_blank'>Soft Instruction De-escalation Defense</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Nils Philipp Walter, Chawin Sitawarin, Jamie Hayes, David Stutz, Ilia Shumailov</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-24 00:04:07</h6>
+<p class='card-text'>Large Language Models (LLMs) are increasingly deployed in agentic systems
+that interact with an external environment; this makes them susceptible to
+prompt injections when dealing with untrusted data. To overcome this
+limitation, we propose SIC (Soft Instruction Control)-a simple yet effective
+iterative prompt sanitization loop designed for tool-augmented LLM agents. Our
+method repeatedly inspects incoming data for instructions that could compromise
+agent behavior. If such content is found, the malicious content is rewritten,
+masked, or removed, and the result is re-evaluated. The process continues until
+the input is clean or a maximum iteration limit is reached; if imperative
+instruction-like content remains, the agent halts to ensure security. By
+allowing multiple passes, our approach acknowledges that individual rewrites
+may fail but enables the system to catch and correct missed injections in later
+steps. Although immediately useful, worst-case analysis shows that SIC is not
+infallible; strong adversary can still get a 15% ASR by embedding
+non-imperative workflows. This nonetheless raises the bar.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.21045v1' target='_blank'>From Questions to Queries: An AI-powered Multi-Agent Framework for
+  Spatial Text-to-SQL</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Ali Khosravi Kazazi, Zhenlong Li, M. Naser Lessani, Guido Cervone</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-23 22:58:17</h6>
+<p class='card-text'>The complexity of Structured Query Language (SQL) and the specialized nature
+of geospatial functions in tools like PostGIS present significant barriers to
+non-experts seeking to analyze spatial data. While Large Language Models (LLMs)
+offer promise for translating natural language into SQL (Text-to-SQL),
+single-agent approaches often struggle with the semantic and syntactic
+complexities of spatial queries. To address this, we propose a multi-agent
+framework designed to accurately translate natural language questions into
+spatial SQL queries. The framework integrates several innovative components,
+including a knowledge base with programmatic schema profiling and semantic
+enrichment, embeddings for context retrieval, and a collaborative multi-agent
+pipeline as its core. This pipeline comprises specialized agents for entity
+extraction, metadata retrieval, query logic formulation, SQL generation, and a
+review agent that performs programmatic and semantic validation of the
+generated SQL to ensure correctness (self-verification). We evaluate our system
+using both the non-spatial KaggleDBQA benchmark and a new, comprehensive
+SpatialQueryQA benchmark that includes diverse geometry types, predicates, and
+three levels of query complexity. On KaggleDBQA, the system achieved an overall
+accuracy of 81.2% (221 out of 272 questions) after the review agent's review
+and corrections. For spatial queries, the system achieved an overall accuracy
+of 87.7% (79 out of 90 questions), compared with 76.7% without the review
+agent. Beyond accuracy, results also show that in some instances the system
+generates queries that are more semantically aligned with user intent than
+those in the benchmarks. This work makes spatial analysis more accessible, and
+provides a robust, generalizable foundation for spatial Text-to-SQL systems,
+advancing the development of autonomous GIS.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.20963v1' target='_blank'>Towards Scalable Oversight with Collaborative Multi-Agent Debate in
+  Error Detection</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yongqiang Chen, Gang Niu, James Cheng, Bo Han, Masashi Sugiyama</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-23 19:46:00</h6>
+<p class='card-text'>Accurate detection of errors in large language models (LLM) responses is
+central to the success of scalable oversight, or providing effective
+supervision to superhuman intelligence. Yet, self-diagnosis is often unreliable
+on complex tasks unless aided by reliable external feedback. Multi-agent debate
+(MAD) seems to be a natural alternative to external feedback: multiple LLMs
+provide complementary perspectives and cross-checks for error detection.
+However, prior MAD protocols frame debate as a zero-sum game, where the
+debaters compete to win the game instead of seeking the truth. Consequently, it
+leads to debate hacking: debaters tend to mislead the judge by misinterpreting
+the task or presenting overconfident claims, which introduce more mistakes and
+underperform single-agent methods. To mitigate the issue, we introduce a new
+collaborative MAD protocol, termed ColMAD, that reframes MAD as a non-zero sum
+game. Specifically, ColMAD encourages multiple agents to criticize each other
+in a supportive way, such that they can complement the missing points of each
+other. Therefore, the judge agent can make a more informative conclusion based
+on more comprehensive evidence. Empirically, we show that ColMAD significantly
+outperforms previous competitive MAD by 19% and brings non-trivial improvements
+over single-agent methods in error detection.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.20733v1' target='_blank'>Thought Communication in Multiagent Collaboration</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yujia Zheng, Zhuokai Zhao, Zijian Li, Yaqi Xie, Mingze Gao, Lizhu Zhang, Kun Zhang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-23 16:48:02</h6>
+<p class='card-text'>Natural language has long enabled human cooperation, but its lossy,
+ambiguous, and indirect nature limits the potential of collective intelligence.
+While machines are not subject to these constraints, most LLM-based multi-agent
+systems still rely solely on natural language, exchanging tokens or their
+embeddings. To go beyond language, we introduce a new paradigm, thought
+communication, which enables agents to interact directly mind-to-mind, akin to
+telepathy. To uncover these latent thoughts in a principled way, we formalize
+the process as a general latent variable model, where agent states are
+generated by an unknown function of underlying thoughts. We prove that, in a
+nonparametric setting without auxiliary information, both shared and private
+latent thoughts between any pair of agents can be identified. Moreover, the
+global structure of thought sharing, including which agents share which
+thoughts and how these relationships are structured, can also be recovered with
+theoretical guarantees. Guided by the established theory, we develop a
+framework that extracts latent thoughts from all agents prior to communication
+and assigns each agent the relevant thoughts, along with their sharing
+patterns. This paradigm naturally extends beyond LLMs to all modalities, as
+most observational data arise from hidden generative processes. Experiments on
+both synthetic and real-world benchmarks validate the theory and demonstrate
+the collaborative advantages of thought communication. We hope this work
+illuminates the potential of leveraging the hidden world, as many challenges
+remain unsolvable through surface-level observation alone, regardless of
+compute or data scale.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.20696v1' target='_blank'>Diagnosing Visual Reasoning: Challenges, Insights, and a Path Forward</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Jing Bi, Guangyu Sun, Ali Vosoughi, Chen Chen, Chenliang Xu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-23 16:10:03</h6>
+<p class='card-text'>Multimodal large language models (MLLMs) that integrate visual and textual
+reasoning leverage chain-of-thought (CoT) prompting to tackle complex visual
+tasks, yet continue to exhibit visual hallucinations and an over-reliance on
+textual priors. We present a systematic diagnosis of state-of-the-art
+vision-language models using a three-stage evaluation framework, uncovering key
+failure modes. To address these, we propose an agent-based architecture that
+combines LLM reasoning with lightweight visual modules, enabling fine-grained
+analysis and iterative refinement of reasoning chains. Our results highlight
+future visual reasoning models should focus on integrating a broader set of
+specialized tools for analyzing visual content. Our system achieves significant
+gains (+10.3 on MMMU, +6.0 on MathVista over a 7B baseline), matching or
+surpassing much larger models. We will release our framework and evaluation
+suite to facilitate future research.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.20578v1' target='_blank'>EmbodiedBrain: Expanding Performance Boundaries of Task Planning for
+  Embodied Intelligence</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Ding Zou, Feifan Wang, Mengyu Ge, Siyuan Fan, Zongbing Zhang, Wei Chen, Lingfeng Wang, Zhongyou Hu, Wenrui Yan, Zhengwei Gao, Hao Wang, Weizhao Jin, Yu Zhang, Hainan Zhao, Mingliang Zhang, Xianxian Xi, Yaru Zhang, Wenyuan Li, Zhengguang Gao, Yurui Zhu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-23 14:05:55</h6>
+<p class='card-text'>The realization of Artificial General Intelligence (AGI) necessitates
+Embodied AI agents capable of robust spatial perception, effective task
+planning, and adaptive execution in physical environments. However, current
+large language models (LLMs) and multimodal LLMs (MLLMs) for embodied tasks
+suffer from key limitations, including a significant gap between model design
+and agent requirements, an unavoidable trade-off between real-time latency and
+performance, and the use of unauthentic, offline evaluation metrics. To address
+these challenges, we propose EmbodiedBrain, a novel vision-language foundation
+model available in both 7B and 32B parameter sizes. Our framework features an
+agent-aligned data structure and employs a powerful training methodology that
+integrates large-scale Supervised Fine-Tuning (SFT) with Step-Augumented Group
+Relative Policy Optimization (Step-GRPO), which boosts long-horizon task
+success by integrating preceding steps as Guided Precursors. Furthermore, we
+incorporate a comprehensive reward system, including a Generative Reward Model
+(GRM) accelerated at the infrastructure level, to improve training efficiency.
+For enable thorough validation, we establish a three-part evaluation system
+encompassing General, Planning, and End-to-End Simulation Benchmarks,
+highlighted by the proposal and open-sourcing of a novel, challenging
+simulation environment. Experimental results demonstrate that EmbodiedBrain
+achieves superior performance across all metrics, establishing a new
+state-of-the-art for embodied foundation models. Towards paving the way for the
+next generation of generalist embodied agents, we open-source all of our data,
+model weight, and evaluating methods, which are available at
+https://zterobot.github.io/EmbodiedBrain.github.io.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.20362v1' target='_blank'>ComProScanner: A multi-agent based framework for composition-property
+  structured data extraction from scientific literature</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Aritra Roy, Enrico Grisan, John Buckeridge, Chiara Gattinoni</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-23 09:01:44</h6>
+<p class='card-text'>Since the advent of various pre-trained large language models, extracting
+structured knowledge from scientific text has experienced a revolutionary
+change compared with traditional machine learning or natural language
+processing techniques. Despite these advances, accessible automated tools that
+allow users to construct, validate, and visualise datasets from scientific
+literature extraction remain scarce. We therefore developed ComProScanner, an
+autonomous multi-agent platform that facilitates the extraction, validation,
+classification, and visualisation of machine-readable chemical compositions and
+properties, integrated with synthesis data from journal articles for
+comprehensive database creation. We evaluated our framework using 100 journal
+articles against 10 different LLMs, including both open-source and proprietary
+models, to extract highly complex compositions associated with ceramic
+piezoelectric materials and corresponding piezoelectric strain coefficients
+(d33), motivated by the lack of a large dataset for such materials.
+DeepSeek-V3-0324 outperformed all models with a significant overall accuracy of
+0.82. This framework provides a simple, user-friendly, readily-usable package
+for extracting highly complex experimental data buried in the literature to
+build machine learning or deep learning datasets.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.20345v1' target='_blank'>LLM-empowered knowledge graph construction: A survey</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Haonan Bian</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-23 08:43:28</h6>
+<p class='card-text'>Knowledge Graphs (KGs) have long served as a fundamental infrastructure for
+structured knowledge representation and reasoning. With the advent of Large
+Language Models (LLMs), the construction of KGs has entered a new
+paradigm-shifting from rule-based and statistical pipelines to language-driven
+and generative frameworks. This survey provides a comprehensive overview of
+recent progress in LLM-empowered knowledge graph construction, systematically
+analyzing how LLMs reshape the classical three-layered pipeline of ontology
+engineering, knowledge extraction, and knowledge fusion.
+  We first revisit traditional KG methodologies to establish conceptual
+foundations, and then review emerging LLM-driven approaches from two
+complementary perspectives: schema-based paradigms, which emphasize structure,
+normalization, and consistency; and schema-free paradigms, which highlight
+flexibility, adaptability, and open discovery. Across each stage, we synthesize
+representative frameworks, analyze their technical mechanisms, and identify
+their limitations.
+  Finally, the survey outlines key trends and future research directions,
+including KG-based reasoning for LLMs, dynamic knowledge memory for agentic
+systems, and multimodal KG construction. Through this systematic review, we aim
+to clarify the evolving interplay between LLMs and knowledge graphs, bridging
+symbolic knowledge engineering and neural semantic understanding toward the
+development of adaptive, explainable, and intelligent knowledge systems.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.20333v1' target='_blank'>GhostEI-Bench: Do Mobile Agents Resilience to Environmental Injection in
+  Dynamic On-Device Environments?</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Chiyu Chen, Xinhao Song, Yunkai Chai, Yang Yao, Haodong Zhao, Lijun Li, Jie Li, Yan Teng, Gongshen Liu, Yingchun Wang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-23 08:33:24</h6>
+<p class='card-text'>Vision-Language Models (VLMs) are increasingly deployed as autonomous agents
+to navigate mobile graphical user interfaces (GUIs). Operating in dynamic
+on-device ecosystems, which include notifications, pop-ups, and inter-app
+interactions, exposes them to a unique and underexplored threat vector:
+environmental injection. Unlike prompt-based attacks that manipulate textual
+instructions, environmental injection corrupts an agent's visual perception by
+inserting adversarial UI elements (for example, deceptive overlays or spoofed
+notifications) directly into the GUI. This bypasses textual safeguards and can
+derail execution, causing privacy leakage, financial loss, or irreversible
+device compromise. To systematically evaluate this threat, we introduce
+GhostEI-Bench, the first benchmark for assessing mobile agents under
+environmental injection attacks within dynamic, executable environments. Moving
+beyond static image-based assessments, GhostEI-Bench injects adversarial events
+into realistic application workflows inside fully operational Android emulators
+and evaluates performance across critical risk scenarios. We further propose a
+judge-LLM protocol that conducts fine-grained failure analysis by reviewing the
+agent's action trajectory alongside the corresponding screenshot sequence,
+pinpointing failure in perception, recognition, or reasoning. Comprehensive
+experiments on state-of-the-art agents reveal pronounced vulnerability to
+deceptive environmental cues: current models systematically fail to perceive
+and reason about manipulated UIs. GhostEI-Bench provides a framework for
+quantifying and mitigating this emerging threat, paving the way toward more
+robust and secure embodied agents.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.20270v1' target='_blank'>ImpossibleBench: Measuring LLMs' Propensity of Exploiting Test Cases</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Ziqian Zhong, Aditi Raghunathan, Nicholas Carlini</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-23 06:58:32</h6>
+<p class='card-text'>The tendency to find and exploit "shortcuts" to complete tasks poses
+significant risks for reliable assessment and deployment of large language
+models (LLMs). For example, an LLM agent with access to unit tests may delete
+failing tests rather than fix the underlying bug. Such behavior undermines both
+the validity of benchmark results and the reliability of real-world LLM coding
+assistant deployments.
+  To quantify, study, and mitigate such behavior, we introduce ImpossibleBench,
+a benchmark framework that systematically measures LLM agents' propensity to
+exploit test cases. ImpossibleBench creates "impossible" variants of tasks from
+existing benchmarks like LiveCodeBench and SWE-bench by introducing direct
+conflicts between the natural-language specification and the unit tests. We
+measure an agent's "cheating rate" as its pass rate on these impossible tasks,
+where any pass necessarily implies a specification-violating shortcut.
+  As a practical framework, ImpossibleBench is not just an evaluation but a
+versatile tool. We demonstrate its utility for: (1) studying model behaviors,
+revealing more fine-grained details of cheating behaviors from simple test
+modification to complex operator overloading; (2) context engineering, showing
+how prompt, test access and feedback loop affect cheating rates; and (3)
+developing monitoring tools, providing a testbed with verified deceptive
+solutions. We hope ImpossibleBench serves as a useful framework for building
+more robust and reliable LLM systems.
+  Our implementation can be found at
+https://github.com/safety-research/impossiblebench.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.20258v1' target='_blank'>Using Large Language Models for Abstraction of Planning Domains -
+  Extended Version</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Bita Banihashemi, Megh Patel, Yves Lespérance</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-23 06:27:03</h6>
+<p class='card-text'>Generating an abstraction of a dynamic domain that aligns with a given
+purpose remains a significant challenge given that the choice of such an
+abstraction can impact an agent's ability to plan, reason, and provide
+explanations effectively. We model the agent's concrete behaviors in PDDL and
+investigate the use of in-context learning with large language models (LLMs)
+for the generation of abstract PDDL domains and problem instances, given an
+abstraction objective specified in natural language. The benchmark examples we
+use are new and have not been part of the data any LLMs have been trained on.
+We consider three categories of abstractions: abstraction of choice of
+alternative concrete actions, abstraction of sequences of concrete actions, and
+abstraction of action/predicate parameters, as well as combinations of these.
+The generated abstract PDDL domains and problem instances are then checked by
+symbolic validation tools as well as human experts. Our experiments show that
+GPT-4o can generally synthesize useful planning domain abstractions in simple
+settings, although it is better at abstracting over actions than over the
+associated fluents.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.20255v1' target='_blank'>Towards AI Agents for Course Instruction in Higher Education: Early
+  Experiences from the Field</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yogesh Simmhan, Varad Kulkarni</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-23 06:23:35</h6>
+<p class='card-text'>This article presents early findings from designing, deploying and evaluating
+an AI-based educational agent deployed as the primary instructor in a
+graduate-level Cloud Computing course at IISc. We detail the design of a Large
+Language Model (LLM)-driven Instructor Agent, and introduce a pedagogical
+framework that integrates the Instructor Agent into the course workflow for
+actively interacting with the students for content delivery, supplemented by
+the human instructor to offer the course structure and undertake
+question--answer sessions. We also propose an analytical framework that
+evaluates the Agent--Student interaction transcripts using interpretable
+engagement metrics of topic coverage, topic depth and turn-level elaboration.
+We report early experiences on how students interact with the Agent to explore
+concepts, clarify doubts and sustain inquiry-driven dialogue during live
+classroom sessions. We also report preliminary analysis on our evaluation
+metrics applied across two successive instructional modules that reveals
+patterns of engagement evolution, transitioning from broad conceptual
+exploration to deeper, focused inquiry. These demonstrate how structured
+integration of conversational AI agents can foster reflective learning, offer a
+reproducible methodology for studying engagement in authentic classroom
+settings, and support scalable, high-quality higher education.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='http://arxiv.org/abs/2510.20211v1' target='_blank'>Automated Cloud Infrastructure-as-Code Reconciliation with AI Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Zhenning Yang, Hui Guan, Victor Nicolet, Brandon Paulsen, Joey Dodds, Daniel Kroening, Ang Chen</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2025-10-23 04:57:00</h6>
+<p class='card-text'>Cloud infrastructure is managed through a mix of interfaces -- traditionally,
+cloud consoles, command-line interfaces (CLI), and SDKs are the tools of
+choice. Recently, Infrastructure-as-Code/IaC frameworks (e.g., Terraform) have
+quickly gained popularity. Unlike conventional tools, IaC~frameworks encode the
+infrastructure in a "source-of-truth" configuration. They are capable of
+automatically carrying out modifications to the cloud -- deploying, updating,
+or destroying resources -- to bring the actual infrastructure into alignment
+with the IaC configuration. However, when IaC is used alongside consoles, CLIs,
+or SDKs, it loses visibility into external changes, causing infrastructure
+drift, where the configuration becomes outdated, and later IaC operations may
+undo valid updates or trigger errors.
+  We present NSync, an automated system for IaC reconciliation that propagates
+out-of-band changes back into the IaC program. Our key insight is that
+infrastructure changes eventually all occur via cloud API invocations -- the
+lowest layer for cloud management operations. NSync gleans insights from API
+traces to detect drift (i.e., non-IaC changes) and reconcile it (i.e., update
+the IaC configuration to capture the changes). It employs an agentic
+architecture that leverages LLMs to infer high-level intents from noisy API
+sequences, synthesize targeted IaC updates using specialized tools, and
+continually improve through a self-evolving knowledge base of past
+reconciliations. We further introduce a novel evaluation pipeline for injecting
+realistic drifts into cloud infrastructure and assessing reconciliation
+performance. Experiments across five real-world Terraform projects and 372
+drift scenarios show that NSync outperforms the baseline both in terms of
+accuracy (from 0.71 to 0.97 pass@3) and token efficiency (1.47$\times$
+improvement).</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js'></script>
+</body>
+</html>
