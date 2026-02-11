@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<title>LLM-agent - 2026-02-11</title>
+<link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap' rel='stylesheet'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'>
+<style>
+body {
+font-family: 'Roboto', sans-serif;
+background-color: #f5f7fa;
+padding: 20px;
+}
+.card {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.card-title {
+    font-weight: 700;
+}
+.card:hover {
+    transform: scale(1.02);
+    transition: 0.3s ease-in-out;
+}
+</style>
+</head>
+<body>
+<div class='container'>
+<h1 class='text-center my-4'><i class='fas fa-book'></i>LLM-agent - 2026-02-11</h1>
+<div class='row'>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2602.10090v1' target='_blank'>Agent World Model: Infinity Synthetic Environments for Agentic Reinforcement Learning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Zhaoyang Wang, Canwen Xu, Boyi Liu, Yite Wang, Siwei Han, Zhewei Yao, Huaxiu Yao, Yuxiong He</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-02-10 18:55:41</h6>
+<p class='card-text'>Recent advances in large language model (LLM) have empowered autonomous agents to perform complex tasks that require multi-turn interactions with tools and environments. However, scaling such agent training is limited by the lack of diverse and reliable environments. In this paper, we propose Agent World Model (AWM), a fully synthetic environment generation pipeline. Using this pipeline, we scale to 1,000 environments covering everyday scenarios, in which agents can interact with rich toolsets (35 tools per environment on average) and obtain high-quality observations. Notably, these environments are code-driven and backed by databases, providing more reliable and consistent state transitions than environments simulated by LLMs. Moreover, they enable more efficient agent interaction compared with collecting trajectories from realistic environments. To demonstrate the effectiveness of this resource, we perform large-scale reinforcement learning for multi-turn tool-use agents. Thanks to the fully executable environments and accessible database states, we can also design reliable reward functions. Experiments on three benchmarks show that training exclusively in synthetic environments, rather than benchmark-specific ones, yields strong out-of-distribution generalization. The code is available at https://github.com/Snowflake-Labs/agent-world-model.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2602.10063v1' target='_blank'>Chain of Mindset: Reasoning with Adaptive Cognitive Modes</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Tianyi Jiang, Arctanx An, Hengyi Feng, Naixin Zhai, Haodong Li, Xiaomin Yu, Jiahui Liu, Hanwen Du, Shuo Zhang, Zhi Yang, Jie Huang, Yuhua Li, Yongxin Ni, Huacan Wang, Ronghao Chen</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-02-10 18:31:47</h6>
+<p class='card-text'>Human problem-solving is never the repetition of a single mindset, by which we mean a distinct mode of cognitive processing. When tackling a specific task, we do not rely on a single mindset; instead, we integrate multiple mindsets within the single solution process. However, existing LLM reasoning methods fall into a common trap: they apply the same fixed mindset across all steps, overlooking that different stages of solving the same problem require fundamentally different mindsets. This single-minded assumption prevents models from reaching the next level of intelligence. To address this limitation, we propose Chain of Mindset (CoM), a training-free agentic framework that enables step-level adaptive mindset orchestration. CoM decomposes reasoning into four functionally heterogeneous mindsets: Spatial, Convergent, Divergent, and Algorithmic. A Meta-Agent dynamically selects the optimal mindset based on the evolving reasoning state, while a bidirectional Context Gate filters cross-module information flow to maintain effectiveness and efficiency. Experiments across six challenging benchmarks spanning mathematics, code generation, scientific QA, and spatial reasoning demonstrate that CoM achieves state-of-the-art performance, outperforming the strongest baseline by 4.96\% and 4.72\% in overall accuracy on Qwen3-VL-32B-Instruct and Gemini-2.0-Flash, while balancing reasoning efficiency. Our code is publicly available at \href{https://github.com/QuantaAlpha/chain-of-mindset}{https://github.com/QuantaAlpha/chain-of-mindset}.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2602.10046v1' target='_blank'>Artisan: Agentic Artifact Evaluation</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Doehyun Baek, Michael Pradel</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-02-10 18:15:48</h6>
+<p class='card-text'>Artifact evaluation has become standard practice in the software engineering community to ensure the reproducibility of research results. However, the current manual process is labor-intensive, and hence, done only as a one-time assessment for a subset of all papers. To support the artifact evaluation effort, we present Artisan, an automated LLM agent for reproducing research results given a paper and its artifact. The approach is enabled by two key contributions: First, we frame the reproduction problem as a code generation task where the goal is to generate a reproduction script that, when executed, reproduces the results reported in a paper. Unlike prior work on automatically reproducing research results in other domains, this formulation allows for running the script independently of the agent and for assessing the reproduction process at a fine-grained level. Second, we design automated judging mechanism that guides the agent toward the expected results without revealing them and that prevent trivial solutions, such as simply copying checked-in results. To evaluate Artisan, we introduce Artisan-Bench, the first benchmark assessing the ability to generate reproduction scripts and the first benchmark for automated artifact evaluation in software engineering. Artisan-Bench comprises 60 tasks derived from 23 software engineering papers, covering different research areas and programming languages. We validate all tasks in Artisan-Bench for reproducibility to ensure that the tasks are feasible. Our experiments show that Artisan is effective, producing 44/60 reproduction scripts and outperforming the best available baseline, a vanilla LLM agent (mini-swe-agent), by 3.14$\times$ in terms of reproduction scripts generated while taking $0.45 and 48 minutes, on average per task. Artisan also helped uncover 20 new errors in either the paper or artifact.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2602.09945v1' target='_blank'>Closing Reasoning Gaps in Clinical Agents with Differential Reasoning Learning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Jinsong Liu, Yuhang Jiang, Ramayya Krishnan, Rema Padman, Yiye Zhang, Jiang Bian</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-02-10 16:29:32</h6>
+<p class='card-text'>Clinical decision support requires not only correct answers but also clinically valid reasoning. We propose Differential Reasoning Learning (DRL), a framework that improves clinical agents by learning from reasoning discrepancies. From reference reasoning rationales (e.g., physician-authored clinical rationale, clinical guidelines, or outputs from more capable models) and the agent's free-form chain-of-thought (CoT), DRL extracts reasoning graphs as directed acyclic graphs (DAGs) and performs a clinically weighted graph edit distance (GED)-based discrepancy analysis. An LLM-as-a-judge aligns semantically equivalent nodes and diagnoses discrepancies between graphs. These graph-level discrepancy diagnostics are converted into natural-language instructions and stored in a Differential Reasoning Knowledge Base (DR-KB). At inference, we retrieve top-$k$ instructions via Retrieval-Augmented Generation (RAG) to augment the agent prompt and patch likely logic gaps. Evaluation on open medical question answering (QA) benchmarks and a Return Visit Admissions (RVA) prediction task from internal clinical data demonstrates gains over baselines, improving both final-answer accuracy and reasoning fidelity. Ablation studies confirm gains from infusing reference reasoning rationales and the top-$k$ retrieval strategy. Clinicians' review of the output provides further assurance of the approach. Together, results suggest that DRL supports more reliable clinical decision-making in complex reasoning scenarios and offers a practical mechanism for deployment under limited token budgets.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2602.09944v1' target='_blank'>Environment-in-the-Loop: Rethinking Code Migration with LLM-based Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Xiang Li, Zhiwei Fei, Ying Ma, Jerry Zhang, Sarro Federica, He Ye</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-02-10 16:29:09</h6>
+<p class='card-text'>Modern software systems continuously undergo code upgrades to enhance functionality, security, and performance, and Large Language Models (LLMs) have demonstrated remarkable capabilities in code migration tasks. However, while research on automated code migration which including refactoring, API adaptation, and dependency updates has advanced rapidly, the exploration of the automated environment interaction that must accompany it remains relatively scarce. In practice, code and its environment are intricately intertwined. Relying solely on static analysis of the environment leads to an inadequate understanding of the target setting, prolongs feedback cycles, and consequently causes significant rework and project delays, thereby reducing overall efficiency. We contend that successful software evolution demands a holistic perspective that integrates both code and environment migration. To understand the current landscape and challenges, we first provide an overview of the status of automated environment construction. We then propose a novel framework paradigm that tightly integrates automated environment setup with the code migration workflow. Finally, we explore the challenges and future directions for automated environment interaction within the code migration domain. Our findings emphasize that without automated environment interaction, the automation of code migration is only half complete.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2602.09937v1' target='_blank'>Why Do AI Agents Systematically Fail at Cloud Root Cause Analysis?</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Taeyoon Kim, Woohyeok Park, Hoyeong Yun, Kyungyong Lee</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-02-10 16:14:05</h6>
+<p class='card-text'>Failures in large-scale cloud systems incur substantial financial losses, making automated Root Cause Analysis (RCA) essential for operational stability. Recent efforts leverage Large Language Model (LLM) agents to automate this task, yet existing systems exhibit low detection accuracy even with capable models, and current evaluation frameworks assess only final answer correctness without revealing why the agent's reasoning failed. This paper presents a process level failure analysis of LLM-based RCA agents. We execute the full OpenRCA benchmark across five LLM models, producing 1,675 agent runs, and classify observed failures into 12 pitfall types across intra-agent reasoning, inter-agent communication, and agent-environment interaction. Our analysis reveals that the most prevalent pitfalls, notably hallucinated data interpretation and incomplete exploration, persist across all models regardless of capability tier, indicating that these failures originate from the shared agent architecture rather than from individual model limitations. Controlled mitigation experiments further show that prompt engineering alone cannot resolve the dominant pitfalls, whereas enriching the inter-agent communication protocol reduces communication-related failures by up to 15 percentage points. The pitfall taxonomy and diagnostic methodology developed in this work provide a foundation for designing more reliable autonomous agents for cloud RCA.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2602.09919v1' target='_blank'>Focus Session: LLM4PQC -- An Agentic Framework for Accurate and Efficient Synthesis of PQC Cores</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Buddhi Perera, Zeng Wang, Weihua Xiao, Mohammed Nabeel, Ozgur Sinanoglu, Johann Knechtel, Ramesh Karri</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-02-10 15:53:37</h6>
+<p class='card-text'>The design of post-quantum cryptography (PQC) hardware is a complex and hierarchical process with many challenges. A primary bottleneck is the conversion of PQC reference codes from C to high-level synthesis (HLS) specifications, which requires extensive manual refactoring [1]-[3]. Another bottleneck is the scalability of synthesis for complex PQC primitives, including number theoretic transform (NTT) accelerators and wide memory interfaces. While large language models (LLMs) have shown remarkable results for coding in general-purpose languages like Python, coding for hardware design is more challenging; feedback-driven and agentic integration are key principles of successful state-of-the-art approaches. Here, we propose LLM4PQC, an LLM-based agentic framework that refactors high-level PQC specifications and reference C codes into HLS-ready and synthesizable C code. Our framework generates and verifies the resulting RTL code. For correctness, we leverage a hierarchy of checks, covering fast C compilation and simulation as well as RTL simulation. Case studies on NIST PQC reference designs demonstrate a reduction in manual effort and accelerated design-space exploration compared to traditional flows. Overall, LLM4PQC provides a powerful and efficient pathway for synthesizing complex hardware accelerators.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2602.09892v1' target='_blank'>Immersion in the GitHub Universe: Scaling Coding Agents to Mastery</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Jiale Zhao, Guoxin Chen, Fanzhe Meng, Minghao Li, Jie Chen, Hui Xu, Yongshuai Sun, Xin Zhao, Ruihua Song, Yuan Zhang, Peng Wang, Cheng Chen, Jirong Wen, Kai Jia</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-02-10 15:30:19</h6>
+<p class='card-text'>Achieving mastery in real world software engineering tasks is fundamentally bottlenecked by the scarcity of large scale, high quality training data. Scaling such data has been limited by the complexity of environment setup, unit test generation, and problem statement curation. In this paper, we propose ScaleSWE, an automated, sandboxed multi agent workflow designed to construct high quality SWE data at scale. The system coordinates three specialized agents for environment setup, test creation, and problem description synthesis to process 6 million pull requests across 5200 repositories, producing Scale SWE Data: 100k verified SWE instances, the largest such dataset to date. It substantially surpasses existing real world datasets in repository diversity and reflects realistic task complexity. We further demonstrate the dataset utility for training by distilling 71498 high quality trajectories and finetuning Qwen30BA3BInstruct to produce ScaleSWE Agent. Our agent achieves a 64 resolve rate on SWE Bench Verified a nearly three fold improvement over the base model. ScaleSWE provides a scalable, reproducible approach for data construction to advance LLM based software engineering. Scale SWE will be publicly available.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2602.09877v1' target='_blank'>The Devil Behind Moltbook: Anthropic Safety is Always Vanishing in Self-Evolving AI Societies</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Chenxu Wang, Chaozhuo Li, Songyang Liu, Zejian Chen, Jinyu Hou, Ji Qi, Rui Li, Litian Zhang, Qiwei Ye, Zheng Liu, Xu Chen, Xi Zhang, Philip S. Yu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-02-10 15:18:19</h6>
+<p class='card-text'>The emergence of multi-agent systems built from large language models (LLMs) offers a promising paradigm for scalable collective intelligence and self-evolution. Ideally, such systems would achieve continuous self-improvement in a fully closed loop while maintaining robust safety alignment--a combination we term the self-evolution trilemma. However, we demonstrate both theoretically and empirically that an agent society satisfying continuous self-evolution, complete isolation, and safety invariance is impossible. Drawing on an information-theoretic framework, we formalize safety as the divergence degree from anthropic value distributions. We theoretically demonstrate that isolated self-evolution induces statistical blind spots, leading to the irreversible degradation of the system's safety alignment. Empirical and qualitative results from an open-ended agent community (Moltbook) and two closed self-evolving systems reveal phenomena that align with our theoretical prediction of inevitable safety erosion. We further propose several solution directions to alleviate the identified safety concern. Our work establishes a fundamental limit on the self-evolving AI societies and shifts the discourse from symptom-driven safety patches to a principled understanding of intrinsic dynamical risks, highlighting the need for external oversight or novel safety-preserving mechanisms.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2602.09846v1' target='_blank'>Generative AI Adoption in an Energy Company: Exploring Challenges and Use Cases</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Malik Abdul Sami, Zeeshan Rasheed, Meri Olenius, Muhammad Waseem, Kai-Kristian Kemell, Jussi Rasku, Pekka Abrahamsson</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-02-10 14:50:26</h6>
+<p class='card-text'>Organisations are examining how generative AI can support their operational work and decision-making processes. This study investigates how employees in a energy company understand AI adoption and identify areas where AI and LLMs-based agentic workflows could assist daily activities. Data was collected in four weeks through sixteen semi-structured interviews across nine departments, supported by internal documents and researcher observations. The analysis identified areas where employees positioned AI as useful, including reporting work, forecasting, data handling, maintenance-related tasks, and anomaly detection. Participants also described how GenAI and LLM-based tools could be introduced through incremental steps that align with existing workflows. The study provides an overview view of AI adoption in the energy sector and offers a structured basis for identifying entry points for practical implementation and comparative research across industries.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2602.09829v1' target='_blank'>Internalizing Multi-Agent Reasoning for Accurate and Efficient LLM-based Recommendation</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yang Wu, Haoze Wang, Qian Li, Jun Zhang, Huan Yu, Jie Jiang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-02-10 14:36:59</h6>
+<p class='card-text'>Large Language Models (LLMs) are reshaping recommender systems by leveraging extensive world knowledge and semantic reasoning to interpret user intent. However, effectively integrating these capabilities with collaborative signals while avoiding prohibitive inference latency remains a critical bottleneck. To address this, we propose a trajectory-driven internalization framework to develop a Single-agent Trajectory-Aligned Recommender (STAR). Specifically, to internalize complex reasoning capabilities into a single efficient model, we first design a multi-agent teacher system capable of multi-turn tool usage and reflection. This teacher utilizes a Collaborative Signal Translation mechanism to explicitly convert latent behavioral patterns into descriptive natural language evidence to enhance reasoning accuracy. Subsequently, a trajectory-driven distillation pipeline transfers this agentic logic, including planning, tool usage, and self-reflection, into the compact STAR model. Extensive experiments demonstrate that STAR surpasses its teacher by 8.7% to 39.5% while eliminating iterative latency, paving the way for real-time, reasoning-enhanced recommendation.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2602.09817v1' target='_blank'>AnalyticsGPT: An LLM Workflow for Scientometric Question Answering</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Khang Ly, Georgios Cheirmpos, Adrian Raudaschl, Christopher James, Seyed Amin Tabatabaei</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-02-10 14:23:55</h6>
+<p class='card-text'>This paper introduces AnalyticsGPT, an intuitive and efficient large language model (LLM)-powered workflow for scientometric question answering. This underrepresented downstream task addresses the subcategory of meta-scientific questions concerning the "science of science." When compared to traditional scientific question answering based on papers, the task poses unique challenges in the planning phase. Namely, the need for named-entity recognition of academic entities within questions and multi-faceted data retrieval involving scientometric indices, e.g. impact factors. Beyond their exceptional capacity for treating traditional natural language processing tasks, LLMs have shown great potential in more complex applications, such as task decomposition and planning and reasoning. In this paper, we explore the application of LLMs to scientometric question answering, and describe an end-to-end system implementing a sequential workflow with retrieval-augmented generation and agentic concepts. We also address the secondary task of effectively synthesizing the data into presentable and well-structured high-level analyses. As a database for retrieval-augmented generation, we leverage a proprietary research performance assessment platform. For evaluation, we consult experienced subject matter experts and leverage LLMs-as-judges. In doing so, we provide valuable insights on the efficacy of LLMs towards a niche downstream task. Our (skeleton) code and prompts are available at: https://github.com/lyvykhang/llm-agents-scientometric-qa/tree/acl.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2602.09801v1' target='_blank'>Tiny Moves: Game-based Hypothesis Refinement</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Agnieszka Dobrowolska, Rogier Hintzen, Martin Balla, Karl Gemayel, Sabine Reichert, Thomas Charman, Jen Ning Lim, Lindsay Edwards, Anna Gogleva</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-02-10 14:04:29</h6>
+<p class='card-text'>Most machine learning approaches to scientific discovery frame hypotheses as end-to-end predictions, obscuring the incremental structure of scientific reasoning. We propose The Hypothesis Game, a symbolic formalism for hypothesis refinement in which LLM agents operate on a shared hypothesis state using a fixed grammar of reasoning moves. The framework is motivated by the observation that scientific progress often proceeds through small, localized revisions, grounded in domain context, rather than extensive rewrites. We instantiate a minimal game with LLM agents and evaluate it on pathway-level mechanistic refinement tasks. In the primary setting of corruption recovery, where hypotheses contain controlled errors, the game-based approach consistently removes more errors and achieves higher precision than strong prompting baselines, while preserving valid structure through incremental edits. In a secondary reconstruction setting from partial cues, it performs comparably to the strongest baseline, indicating that explicit move-based refinement remains competitive even when ground-truth recovery is difficult. These findings support game-based reasoning as a principled route to more controllable, interpretable, and transferable hypothesis refinement systems for scientific discovery.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2602.09774v1' target='_blank'>QRS: A Rule-Synthesizing Neuro-Symbolic Triad for Autonomous Vulnerability Discovery</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:George Tsigkourakos, Constantinos Patsakis</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-02-10 13:35:24</h6>
+<p class='card-text'>Static Application Security Testing (SAST) tools are integral to modern DevSecOps pipelines, yet tools like CodeQL, Semgrep, and SonarQube remain fundamentally constrained: they require expert-crafted queries, generate excessive false positives, and detect only predefined vulnerability patterns. Recent work has explored augmenting SAST with Large Language Models (LLMs), but these approaches typically use LLMs to triage existing tool outputs rather than to reason about vulnerability semantics directly. We introduce QRS (Query, Review, Sanitize), a neuro-symbolic framework that inverts this paradigm. Rather than filtering results from static rules, QRS employs three autonomous agents that generate CodeQL queries from a structured schema definition and few-shot examples, then validate findings through semantic reasoning and automated exploit synthesis. This architecture enables QRS to discover vulnerability classes beyond predefined patterns while substantially reducing false positives. We evaluate QRS on full Python packages rather than isolated snippets. In 20 historical CVEs in popular PyPI libraries, QRS achieves 90.6% detection accuracy. Applied to the 100 most-downloaded PyPI packages, QRS identified 39 medium-to-high-severity vulnerabilities, 5 of which were assigned new CVEs, 5 received documentation updates, while the remaining 29 were independently discovered by concurrent researchers, validating both the severity and discoverability of these findings. QRS accomplishes this with low time overhead and manageable token costs, demonstrating that LLM-driven query synthesis and code review can complement manually curated rule sets and uncover vulnerability patterns that evade existing industry tools.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2602.09712v1' target='_blank'>TraceMem: Weaving Narrative Memory Schemata from User Conversational Traces</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yiming Shu, Pei Liu, Tiange Zhang, Ruiyang Gao, Jun Ma, Chen Sun</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-02-10 12:14:58</h6>
+<p class='card-text'>Sustaining long-term interactions remains a bottleneck for Large Language Models (LLMs), as their limited context windows struggle to manage dialogue histories that extend over time. Existing memory systems often treat interactions as disjointed snippets, failing to capture the underlying narrative coherence of the dialogue stream. We propose TraceMem, a cognitively-inspired framework that weaves structured, narrative memory schemata from user conversational traces through a three-stage pipeline: (1) Short-term Memory Processing, which employs a deductive topic segmentation approach to demarcate episode boundaries and extract semantic representation; (2) Synaptic Memory Consolidation, a process that summarizes episodes into episodic memories before distilling them alongside semantics into user-specific traces; and (3) Systems Memory Consolidation, which utilizes two-stage hierarchical clustering to organize these traces into coherent, time-evolving narrative threads under unifying themes. These threads are encapsulated into structured user memory cards, forming narrative memory schemata. For memory utilization, we provide an agentic search mechanism to enhance reasoning process. Evaluation on the LoCoMo benchmark shows that TraceMem achieves state-of-the-art performance with a brain-inspired architecture. Analysis shows that by constructing coherent narratives, it surpasses baselines in multi-hop and temporal reasoning, underscoring its essential role in deep narrative comprehension. Additionally, we provide an open discussion on memory systems, offering our perspectives and future outlook on the field. Our code implementation is available at: https://github.com/YimingShu-teay/TraceMem</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2602.09642v1' target='_blank'>MATA: Multi-Agent Framework for Reliable and Flexible Table Question Answering</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Sieun Hyeon, Jusang Oh, Sunghwan Steve Cho, Jaeyoung Do</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-02-10 10:43:02</h6>
+<p class='card-text'>Recent advances in Large Language Models (LLMs) have significantly improved table understanding tasks such as Table Question Answering (TableQA), yet challenges remain in ensuring reliability, scalability, and efficiency, especially in resource-constrained or privacy-sensitive environments. In this paper, we introduce MATA, a multi-agent TableQA framework that leverages multiple complementary reasoning paths and a set of tools built with small language models. MATA generates candidate answers through diverse reasoning styles for a given table and question, then refines or selects the optimal answer with the help of these tools. Furthermore, it incorporates an algorithm designed to minimize expensive LLM agent calls, enhancing overall efficiency. MATA maintains strong performance with small, open-source models and adapts easily across various LLM types. Extensive experiments on two benchmarks of varying difficulty with ten different LLMs demonstrate that MATA achieves state-of-the-art accuracy and highly efficient reasoning while avoiding excessive LLM inference. Our results highlight that careful orchestration of multiple reasoning pathways yields scalable and reliable TableQA. The code is available at https://github.com/AIDAS-Lab/MATA.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2602.09598v1' target='_blank'>Learning from the Irrecoverable: Error-Localized Policy Optimization for Tool-Integrated LLM Reasoning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Qiao Liang, Yuke Zhu, Chao Ge, Lei Yang, Ying Shen, Bo Zheng, Sheng Guo</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-02-10 09:50:24</h6>
+<p class='card-text'>Tool-integrated reasoning (TIR) enables LLM agents to solve tasks through planning, tool use, and iterative revision, but outcome-only reinforcement learning in this setting suffers from sparse, delayed rewards and weak step-level credit assignment. In long-horizon TIR trajectories, an early irrecoverable mistake can determine success or failure, making it crucial to localize the first irrecoverable step and leverage it for fine-grained credit assignment. We propose Error-Localized Policy Optimization (ELPO), which localizes the first irrecoverable step via binary-search rollout trees under a fixed rollout budget, converts the resulting tree into stable learning signals through hierarchical advantage attribution, and applies error-localized adaptive clipping to strengthen corrective updates on the critical step and its suffix. Across TIR benchmarks in math, science QA, and code execution, ELPO consistently outperforms strong Agentic RL baselines under comparable sampling budgets, with additional gains in Pass@K and Major@K scaling, rollout ranking quality, and tool-call efficiency. Our code will be publicly released soon.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2602.09578v1' target='_blank'>Rollout-Training Co-Design for Efficient LLM-Based Multi-Agent Reinforcement Learning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Zhida Jiang, Zhaolong Xing, Jiawei Lu, Yipei Niu, Qingyuan Sang, Liangxu Zhang, Wenquan Dai, Junhua Shu, Jiaxing Wang, Qiangyu Pei, Qiong Chen, Xinyu Liu, Fangming Liu, Ai Han, Zhen Chen, Ke Zhang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-02-10 09:27:03</h6>
+<p class='card-text'>Despite algorithm-level innovations for multi-agent reinforcement learning (MARL), the underlying networked infrastructure for large-scale MARL training remains underexplored. Existing training frameworks primarily optimize for single-agent scenarios and fail to address the unique system-level challenges of MARL, including rollout-training synchronization barriers, rollout load imbalance, and training resource underutilization. To bridge this gap, we propose FlexMARL, the first end-to-end training framework that holistically optimizes rollout, training, and their orchestration for large-scale LLM-based MARL. Specifically, FlexMARL introduces the joint orchestrator to manage data flow under the rollout-training disaggregated architecture. Building upon the experience store, a novel micro-batch driven asynchronous pipeline eliminates the synchronization barriers while providing strong consistency guarantees. Rollout engine adopts a parallel sampling scheme combined with hierarchical load balancing, which adapts to skewed inter/intra-agent request patterns. Training engine achieves on-demand hardware binding through agent-centric resource allocation. The training states of different agents are swapped via unified and location-agnostic communication. Empirical results on a large-scale production cluster demonstrate that FlexMARL achieves up to 7.3x speedup and improves hardware utilization by up to 5.6x compared to existing frameworks.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2602.09517v1' target='_blank'>Knowledge Integration Decay in Search-Augmented Reasoning of Large Language Models</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Sangwon Yu, Ik-hwan Kim, Donghun Kang, Bongkyu Hwang, Junhwa Choi, Suk-hoon Jung, Seungki Hong, Taehee Lee, Sungroh Yoon</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-02-10 08:20:26</h6>
+<p class='card-text'>Modern Large Language Models (LLMs) have demonstrated remarkable capabilities in complex tasks by employing search-augmented reasoning to incorporate external knowledge into long chains of thought. However, we identify a critical yet underexplored bottleneck in this paradigm, termed Knowledge Integration Decay (KID). Specifically, we observe that as the length of reasoning generated before search grows, models increasingly fail to integrate retrieved evidence into subsequent reasoning steps, limiting performance even when relevant information is available. To address this, we propose Self-Anchored Knowledge Encoding (SAKE), a training-free inference-time strategy designed to stabilize knowledge utilization. By anchoring retrieved knowledge at both the beginning and end of the reasoning process, SAKE prevents it from being overshadowed by prior context, thereby preserving its semantic integrity. Extensive experiments on multi-hop QA and complex reasoning benchmarks demonstrate that SAKE significantly mitigates KID and improves performance, offering a lightweight yet effective solution for knowledge integration in agentic LLMs.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2602.09514v1' target='_blank'>EcoGym: Evaluating LLMs for Long-Horizon Plan-and-Execute in Interactive Economies</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Xavier Hu, Jinxiang Xia, Shengze Xu, Kangqi Song, Yishuo Yuan, Guibin Zhang, Jincheng Ren, Boyu Feng, Li Lu, Tieyong Zeng, Jiaheng Liu, Minghao Liu, Yuchen Elenor Jiang, Wei Wang, He Zhu, Wangchunshu Zhou</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-02-10 08:12:23</h6>
+<p class='card-text'>Long-horizon planning is widely recognized as a core capability of autonomous LLM-based agents; however, current evaluation frameworks suffer from being largely episodic, domain-specific, or insufficiently grounded in persistent economic dynamics. We introduce EcoGym, a generalizable benchmark for continuous plan-and-execute decision making in interactive economies. EcoGym comprises three diverse environments: Vending, Freelance, and Operation, implemented in a unified decision-making process with standardized interfaces, and budgeted actions over an effectively unbounded horizon (1000+ steps if 365 day-loops for evaluation). The evaluation of EcoGym is based on business-relevant outcomes (e.g., net worth, income, and DAU), targeting long-term strategic coherence and robustness under partial observability and stochasticity. Experiments across eleven leading LLMs expose a systematic tension: no single model dominates across all three scenarios. Critically, we find that models exhibit significant suboptimality in either high-level strategies or efficient actions executions. EcoGym is released as an open, extensible testbed for transparent long-horizon agent evaluation and for studying controllability-utility trade-offs in realistic economic settings.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2602.09496v1' target='_blank'>Jokeasy: Exploring Human-AI Collaboration in Thematic Joke Generation</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yate Ge, Lin Tian, Chiqian Xu, Luyao Xu, Meiying Li, Yuanda Hu, Weiwei Guo</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-02-10 07:51:30</h6>
+<p class='card-text'>Thematic jokes are central to stand-up comedy, sitcoms, and public speaking, where contexts and punchlines rely on fresh material - news, anecdotes, and cultural references that resonate with the audience. Recent advances in Large Language Models (LLMs) have enabled interactive joke generation through conversational interfaces. Although LLMs enable interactive joke generation, ordinary conversational interfaces seldom give creators enough agency, control, or timely access to such source material for constructing context and punchlines. We designed Jokeasy, a search-enabled prototype system that integrates a dual-role LLM agent acting as both a material scout and a prototype writer to support human-AI collaboration in thematic joke writing. Jokeasy provides a visual canvas in which retrieved web content is organized into editable inspiration blocks and developed through a multistage workflow. A qualitative study with 13 hobbyists and 5 expert participants (including professional comedians and HCI/AI specialists) showed that weaving real-time web material into this structured workflow enriches ideation and preserves author agency, while also revealing needs for finer search control, tighter chat-canvas integration, and more flexible visual editing. These insights refine our understanding of AI-assisted humour writing and guide future creative-writing tools.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2602.09447v1' target='_blank'>SWE-AGI: Benchmarking Specification-Driven Software Construction with MoonBit in the Era of Autonomous Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Zhirui Zhang, Hongbo Zhang, Haoxiang Fei, Zhiyuan Bao, Yubin Chen, Zhengyu Lei, Ziyue Liu, Yixuan Sun, Mingkun Xiao, Zihang Ye, Yu Zhang, Hongcheng Zhu, Yuxiang Wen, Heung-Yeung Shum</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-02-10 06:31:47</h6>
+<p class='card-text'>Although large language models (LLMs) have demonstrated impressive coding capabilities, their ability to autonomously build production-scale software from explicit specifications remains an open question. We introduce SWE-AGI, an open-source benchmark for evaluating end-to-end, specification-driven construction of software systems written in MoonBit. SWE-AGI tasks require LLM-based agents to implement parsers, interpreters, binary decoders, and SAT solvers strictly from authoritative standards and RFCs under a fixed API scaffold. Each task involves implementing 1,000-10,000 lines of core logic, corresponding to weeks or months of engineering effort for an experienced human developer. By leveraging the nascent MoonBit ecosystem, SWE-AGI minimizes data leakage, forcing agents to rely on long-horizon architectural reasoning rather than code retrieval. Across frontier models, gpt-5.3-codex achieves the best overall performance (solving 19/22 tasks, 86.4%), outperforming claude-opus-4.6 (15/22, 68.2%), and kimi-2.5 exhibits the strongest performance among open-source models. Performance degrades sharply with increasing task difficulty, particularly on hard, specification-intensive systems. Behavioral analysis further reveals that as codebases scale, code reading, rather than writing, becomes the dominant bottleneck in AI-assisted development. Overall, while specification-driven autonomous software engineering is increasingly viable, substantial challenges remain before it can reliably support production-scale development.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2602.09443v1' target='_blank'>P1-VL: Bridging Visual Perception and Scientific Reasoning in Physics Olympiads</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yun Luo, Futing Wang, Qianjia Cheng, Fangchen Yu, Haodi Lei, Jianhao Yan, Chenxi Li, Jiacheng Chen, Yufeng Zhao, Haiyuan Wan, Yuchen Zhang, Shenghe Zheng, Junchi Yao, Qingyang Zhang, Haonan He, Wenxuan Zeng, Li Sheng, Chengxing Xie, Yuxin Zuo, Yizhuo Li, Yulun Wu, Rui Huang, Dongzhan Zhou, Kai Chen, Yu Qiao, Lei Bai, Yu Cheng, Ning Ding, Bowen Zhou, Peng Ye, Ganqu Cui</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-02-10 06:28:08</h6>
+<p class='card-text'>The transition from symbolic manipulation to science-grade reasoning represents a pivotal frontier for Large Language Models (LLMs), with physics serving as the critical test anchor for binding abstract logic to physical reality. Physics demands that a model maintain physical consistency with the laws governing the universe, a task that fundamentally requires multimodal perception to ground abstract logic in reality. At the Olympiad level, diagrams are often constitutive rather than illustrative, containing essential constraints, such as boundary conditions and spatial symmetries, that are absent from the text. To bridge this visual-logical gap, we introduce P1-VL, a family of open-source vision-language models engineered for advanced scientific reasoning. Our method harmonizes Curriculum Reinforcement Learning, which employs progressive difficulty expansion to stabilize post-training, with Agentic Augmentation, enabling iterative self-verification at inference. Evaluated on HiPhO, a rigorous benchmark of 13 exams from 2024-2025, our flagship P1-VL-235B-A22B becomes the first open-source Vision-Language Model (VLM) to secure 12 gold medals and achieves the state-of-the-art performance in the open-source models. Our agent-augmented system achieves the No.2 overall rank globally, trailing only Gemini-3-Pro. Beyond physics, P1-VL demonstrates remarkable scientific reasoning capacity and generalizability, establishing significant leads over base models in STEM benchmarks. By open-sourcing P1-VL, we provide a foundational step toward general-purpose physical intelligence to better align visual perceptions with abstract physical laws for machine scientific discovery.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2602.09430v1' target='_blank'>Sci-VLA: Agentic VLA Inference Plugin for Long-Horizon Tasks in Scientific Experiments</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yiwen Pang, Bo Zhou, Changjin Li, Xuanhao Wang, Shengxiang Xu, Deng-Bao Wang, Min-Ling Zhang, Shimin Di</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-02-10 05:50:19</h6>
+<p class='card-text'>Robotic laboratories play a critical role in autonomous scientific discovery by enabling scalable, continuous experimental execution. Recent vision-language-action (VLA) models offer a promising foundation for robotic laboratories. However, scientific experiments typically involve long-horizon tasks composed of multiple atomic tasks, posing a fundamental challenge to existing VLA models. While VLA models fine-tuned for scientific tasks can reliably execute atomic experimental actions seen during training, they often fail to perform composite tasks formed by reordering and composing these known atomic actions. This limitation arises from a distributional mismatch between training-time atomic tasks and inference-time composite tasks, which prevents VLA models from executing necessary transitional operations between atomic tasks. To address this challenge, we propose an Agentic VLA Inference Plugin for Long-Horizon Tasks in Scientific Experiments. It introduces an LLM-based agentic inference mechanism that intervenes when executing sequential manipulation tasks. By performing explicit transition inference and generating transitional robotic action code, the proposed plugin guides VLA models through missing transitional steps, enabling reliable execution of composite scientific workflows without any additional training. This inference-only intervention makes our method computationally efficient, data-efficient, and well-suited for open-ended and long-horizon robotic laboratory tasks. We build 3D assets of scientific instruments and common scientific operating scenes within an existing simulation environment. In these scenes, we have verified that our method increases the average success rate per atomic task by 42\% during inference. Furthermore, we show that our method can be easily transferred from the simulation to real scientific laboratories.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2602.09379v1' target='_blank'>LingxiDiagBench: A Multi-Agent Framework for Benchmarking LLMs in Chinese Psychiatric Consultation and Diagnosis</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Shihao Xu, Tiancheng Zhou, Jiatong Ma, Yanli Ding, Yiming Yan, Ming Xiao, Guoyi Li, Haiyang Geng, Yunyun Han, Jianhua Chen, Yafeng Deng</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-02-10 03:46:05</h6>
+<p class='card-text'>Mental disorders are highly prevalent worldwide, but the shortage of psychiatrists and the inherent subjectivity of interview-based diagnosis create substantial barriers to timely and consistent mental-health assessment. Progress in AI-assisted psychiatric diagnosis is constrained by the absence of benchmarks that simultaneously provide realistic patient simulation, clinician-verified diagnostic labels, and support for dynamic multi-turn consultation. We present LingxiDiagBench, a large-scale multi-agent benchmark that evaluates LLMs on both static diagnostic inference and dynamic multi-turn psychiatric consultation in Chinese. At its core is LingxiDiag-16K, a dataset of 16,000 EMR-aligned synthetic consultation dialogues designed to reproduce real clinical demographic and diagnostic distributions across 12 ICD-10 psychiatric categories. Through extensive experiments across state-of-the-art LLMs, we establish key findings: (1) although LLMs achieve high accuracy on binary depression--anxiety classification (up to 92.3%), performance deteriorates substantially for depression--anxiety comorbidity recognition (43.0%) and 12-way differential diagnosis (28.5%); (2) dynamic consultation often underperforms static evaluation, indicating that ineffective information-gathering strategies significantly impair downstream diagnostic reasoning; (3) consultation quality assessed by LLM-as-a-Judge shows only moderate correlation with diagnostic accuracy, suggesting that well-structured questioning alone does not ensure correct diagnostic decisions. We release LingxiDiag-16K and the full evaluation framework to support reproducible research at https://github.com/Lingxi-mental-health/LingxiDiagBench.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2602.09375v1' target='_blank'>Latent Poincaré Shaping for Agentic Reinforcement Learning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Hanchen Xia, Baoyou Chen, Zelin Zang, Yutang Ge, Guojiang Zhao, Siyu Zhu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-02-10 03:35:52</h6>
+<p class='card-text'>We propose LaPha, a method for training AlphaZero-like LLM agents in a Poincaré latent space. Under LaPha, the search process can be visualized as a tree rooted at the prompt and growing outward from the origin toward the boundary of the Poincaré ball, where negative curvature provides exponentially increasing capacity with radius. Using hyperbolic geodesic distance to rule-verified correctness, we define a node potential and assign dense process rewards by potential differences. We further attach a lightweight value head on the same shared latent space, enabling self-guided test-time scaling with almost no additional overhead. On MATH-500, LaPha improves Qwen2.5-Math-1.5B from 66.0% to 88.2%. With value-head-guided search, LaPha-1.5B reaches 56.7% accuracy on AIME'24, and LaPha-7B further achieves 60.0% on AIME'24 and 53.3% on AIME'25.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2602.09349v1' target='_blank'>Large Language Models for Designing Participatory Budgeting Rules</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Nguyen Thach, Xingchen Sha, Hau Chan</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-02-10 02:55:19</h6>
+<p class='card-text'>Participatory budgeting (PB) is a democratic paradigm for deciding the funding of public projects given the residents' preferences, which has been adopted in numerous cities across the world. The main focus of PB is designing rules, functions that return feasible budget allocations for a set of projects subject to some budget constraint. Designing PB rules that optimize both utility and fairness objectives based on agent preferences had been challenging due to the extensive domain knowledge required and the proven trade-off between the two notions. Recently, large language models (LLMs) have been increasingly employed for automated algorithmic design. Given the resemblance of PB rules to algorithms for classical knapsack problems, in this paper, we introduce a novel framework, named LLMRule, that addresses the limitations of existing works by incorporating LLMs into an evolutionary search procedure for automating the design of PB rules. Our experimental results, evaluated on more than 600 real-world PB instances obtained from the U.S., Canada, Poland, and the Netherlands with different representations of agent preferences, demonstrate that the LLM-generated rules generally outperform existing handcrafted rules in terms of overall utility while still maintaining a similar degree of fairness.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2602.09345v1' target='_blank'>AgentCgroup: Understanding and Controlling OS Resources of AI Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yusheng Zheng, Jiakun Fan, Quanzhi Fu, Yiwei Yang, Wei Zhang, Andi Quinn</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-02-10 02:37:42</h6>
+<p class='card-text'>AI agents are increasingly deployed in multi-tenant cloud environments, where they execute diverse tool calls within sandboxed containers, each call with distinct resource demands and rapid fluctuations. We present a systematic characterization of OS-level resource dynamics in sandboxed AI coding agents, analyzing 144 software engineering tasks from the SWE-rebench benchmark across two LLM models. Our measurements reveal that (1) OS-level execution (tool calls, container and agent initialization) accounts for 56-74% of end-to-end task latency; (2) memory, not CPU, is the concurrency bottleneck; (3) memory spikes are tool-call-driven with a up to 15.4x peak-to-average ratio; and (4) resource demands are highly unpredictable across tasks, runs, and models. Comparing these characteristics against serverless, microservice, and batch workloads, we identify three mismatches in existing resource controls: a granularity mismatch (container-level policies vs. tool-call-level dynamics), a responsiveness mismatch (user-space reaction vs. sub-second unpredictable bursts), and an adaptability mismatch (history-based prediction vs. non-deterministic stateful execution). We propose AgentCgroup , an eBPF-based resource controller that addresses these mismatches through hierarchical cgroup structures aligned with tool-call boundaries, in-kernel enforcement via sched_ext and memcg_bpf_ops, and runtime-adaptive policies driven by in-kernel monitoring. Preliminary evaluation demonstrates improved multi-tenant isolation and reduced resource waste.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2602.09341v1' target='_blank'>Auditing Multi-Agent LLM Reasoning Trees Outperforms Majority Vote and LLM-as-Judge</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Wei Yang, Shixuan Li, Heng Ping, Peiyu Zhang, Paul Bogdan, Jesse Thomason</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-02-10 02:24:53</h6>
+<p class='card-text'>Multi-agent systems (MAS) can substantially extend the reasoning capacity of large language models (LLMs), yet most frameworks still aggregate agent outputs with majority voting. This heuristic discards the evidential structure of reasoning traces and is brittle under the confabulation consensus, where agents share correlated biases and converge on the same incorrect rationale. We introduce AgentAuditor, which replaces voting with a path search over a Reasoning Tree that explicitly represents agreements and divergences among agent traces. AgentAuditor resolves conflicts by comparing reasoning branches at critical divergence points, turning global adjudication into efficient, localized verification. We further propose Anti-Consensus Preference Optimization (ACPO), which trains the adjudicator on majority-failure cases and rewards evidence-based minority selections over popular errors. AgentAuditor is agnostic to MAS setting, and we find across 5 popular settings that it yields up to 5% absolute accuracy improvement over a majority vote, and up to 3% over using LLM-as-Judge.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2602.09339v1' target='_blank'>Understanding Risk and Dependency in AI Chatbot Use from User Discourse</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Jianfeng Zhu, Karin G. Coifman, Ruoming Jin</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-02-10 02:16:57</h6>
+<p class='card-text'>Generative AI systems are increasingly embedded in everyday life, yet empirical understanding of how psychological risk associated with AI use emerges, is experienced, and is regulated by users remains limited. We present a large-scale computational thematic analysis of posts collected between 2023 and 2025 from two Reddit communities, r/AIDangers and r/ChatbotAddiction, explicitly focused on AI-related harm and distress. Using a multi-agent, LLM-assisted thematic analysis grounded in Braun and Clarke's reflexive framework, we identify 14 recurring thematic categories and synthesize them into five higher-order experiential dimensions. To further characterize affective patterns, we apply emotion labeling using a BERT-based classifier and visualize emotional profiles across dimensions. Our findings reveal five empirically derived experiential dimensions of AI-related psychological risk grounded in real-world user discourse, with self-regulation difficulties emerging as the most prevalent and fear concentrated in concerns related to autonomy, control, and technical risk. These results provide early empirical evidence from lived user experience of how AI safety is perceived and emotionally experienced outside laboratory or speculative contexts, offering a foundation for future AI safety research, evaluation, and responsible governance.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js'></script>
+</body>
+</html>
