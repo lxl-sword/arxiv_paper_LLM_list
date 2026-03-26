@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<title>LLM-agent - 2026-03-26</title>
+<link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap' rel='stylesheet'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'>
+<style>
+body {
+font-family: 'Roboto', sans-serif;
+background-color: #f5f7fa;
+padding: 20px;
+}
+.card {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.card-title {
+    font-weight: 700;
+}
+.card:hover {
+    transform: scale(1.02);
+    transition: 0.3s ease-in-out;
+}
+</style>
+</head>
+<body>
+<div class='container'>
+<h1 class='text-center my-4'><i class='fas fa-book'></i>LLM-agent - 2026-03-26</h1>
+<div class='row'>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2603.24579v1' target='_blank'>MARCH: Multi-Agent Reinforced Self-Check for LLM Hallucination</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Zhuo Li, Yupeng Zhang, Pengyu Cheng, Jiajun Song, Mengyu Zhou, Hao Li, Shujie Hu, Yu Qin, Erchao Zhao, Xiaoxi Jiang, Guanjun Jiang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-03-25 17:54:10</h6>
+<p class='card-text'>Hallucination remains a critical bottleneck for large language models (LLMs), undermining their reliability in real-world applications, especially in Retrieval-Augmented Generation (RAG) systems. While existing hallucination detection methods employ LLM-as-a-judge to verify LLM outputs against retrieved evidence, they suffer from inherent confirmation bias, where the verifier inadvertently reproduces the errors of the original generation. To address this, we introduce Multi-Agent Reinforced Self-Check for Hallucination (MARCH), a framework that enforces rigorous factual alignment by leveraging deliberate information asymmetry. MARCH orchestrates a collaborative pipeline of three specialized agents: a Solver, a Proposer, and a Checker. The Solver generates an initial RAG response, which the Proposer decomposes into claim-level verifiable atomic propositions. Crucially, the Checker validates these propositions against retrieved evidence in isolation, deprived of the Solver's original output. This well-crafted information asymmetry scheme breaks the cycle of self-confirmation bias. By training this pipeline with multi-agent reinforcement learning (MARL), we enable the agents to co-evolve and optimize factual adherence. Extensive experiments across hallucination benchmarks demonstrate that MARCH substantially reduces hallucination rates. Notably, an 8B-parameter LLM equipped with MARCH achieves performance competitive with powerful closed-source models. MARCH paves a scalable path for factual self-improvement of LLMs through co-evolution. The code is at https://github.com/Qwen-Applications/MARCH.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2603.24517v1' target='_blank'>AVO: Agentic Variation Operators for Autonomous Evolutionary Search</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Terry Chen, Zhifan Ye, Bing Xu, Zihao Ye, Timmy Liu, Ali Hassani, Tianqi Chen, Andrew Kerr, Haicheng Wu, Yang Xu, Yu-Jung Chen, Hanfeng Chen, Aditya Kane, Ronny Krashinsky, Ming-Yu Liu, Vinod Grover, Luis Ceze, Roger Bringmann, John Tran, Wei Liu, Fung Xie, Michael Lightstone, Humphrey Shi</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-03-25 16:55:04</h6>
+<p class='card-text'>Agentic Variation Operators (AVO) are a new family of evolutionary variation operators that replace the fixed mutation, crossover, and hand-designed heuristics of classical evolutionary search with autonomous coding agents. Rather than confining a language model to candidate generation within a prescribed pipeline, AVO instantiates variation as a self-directed agent loop that can consult the current lineage, a domain-specific knowledge base, and execution feedback to propose, repair, critique, and verify implementation edits. We evaluate AVO on attention, among the most aggressively optimized kernel targets in AI, on NVIDIA Blackwell (B200) GPUs. Over 7 days of continuous autonomous evolution on multi-head attention, AVO discovers kernels that outperform cuDNN by up to 3.5% and FlashAttention-4 by up to 10.5% across the evaluated configurations. The discovered optimizations transfer readily to grouped-query attention, requiring only 30 minutes of additional autonomous adaptation and yielding gains of up to 7.0% over cuDNN and 9.3% over FlashAttention-4. Together, these results show that agentic variation operators move beyond prior LLM-in-the-loop evolutionary pipelines by elevating the agent from candidate generator to variation operator, and can discover performance-critical micro-architectural optimizations that produce kernels surpassing state-of-the-art expert-engineered attention implementations on today's most advanced GPU hardware.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2603.24511v1' target='_blank'>Claudini: Autoresearch Discovers State-of-the-Art Adversarial Attack Algorithms for LLMs</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Alexander Panfilov, Peter Romov, Igor Shilov, Yves-Alexandre de Montjoye, Jonas Geiping, Maksym Andriushchenko</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-03-25 16:50:56</h6>
+<p class='card-text'>LLM agents like Claude Code can not only write code but also be used for autonomous AI research and engineering \citep{rank2026posttrainbench, novikov2025alphaevolve}. We show that an \emph{autoresearch}-style pipeline \citep{karpathy2026autoresearch} powered by Claude Code discovers novel white-box adversarial attack \textit{algorithms} that \textbf{significantly outperform all existing (30+) methods} in jailbreaking and prompt injection evaluations.
+  Starting from existing attack implementations, such as GCG~\citep{zou2023universal}, the agent iterates to produce new algorithms achieving up to 40\% attack success rate on CBRN queries against GPT-OSS-Safeguard-20B, compared to $\leq$10\% for existing algorithms (\Cref{fig:teaser}, left).
+  The discovered algorithms generalize: attacks optimized on surrogate models transfer directly to held-out models, achieving \textbf{100\% ASR against Meta-SecAlign-70B} \citep{chen2025secalign} versus 56\% for the best baseline (\Cref{fig:teaser}, middle). Extending the findings of~\cite{carlini2025autoadvexbench}, our results are an early demonstration that incremental safety and security research can be automated using LLM agents. White-box adversarial red-teaming is particularly well-suited for this: existing methods provide strong starting points, and the optimization objective yields dense, quantitative feedback. We release all discovered attacks alongside baseline implementations and evaluation code at https://github.com/romovpa/claudini.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2603.24484v1' target='_blank'>Video-Only ToM: Enhancing Theory of Mind in Multimodal Large Language Models</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Siqi Liu, Xinyang Li, Bochao Zou, Junbao Zhuo, Huimin Ma, Jiansheng Chen</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-03-25 16:24:50</h6>
+<p class='card-text'>As large language models (LLMs) continue to advance, there is increasing interest in their ability to infer human mental states and demonstrate a human-like Theory of Mind (ToM). Most existing ToM evaluations, however, are centered on text-based inputs, while scenarios relying solely on visual information receive far less attention. This leaves a gap, since real-world human-AI interaction typically requires multimodal understanding. In addition, many current methods regard the model as a black box and rarely probe how its internal attention behaves in multiple-choice question answering (QA). The impact of LLM hallucinations on such tasks is also underexplored from an interpretability perspective. To address these issues, we introduce VisionToM, a vision-oriented intervention framework designed to strengthen task-aware reasoning. The core idea is to compute intervention vectors that align visual representations with the correct semantic targets, thereby steering the model's attention through different layers of visual features. This guidance reduces the model's reliance on spurious linguistic priors, leading to more reliable multimodal language model (MLLM) outputs and better QA performance. Experiments on the EgoToM benchmark-an egocentric, real-world video dataset for ToM with three multiple-choice QA settings-demonstrate that our method substantially improves the ToM abilities of MLLMs. Furthermore, results on an additional open-ended generation task show that VisionToM enables MLLMs to produce free-form explanations that more accurately capture agents' mental states, pushing machine-human collaboration toward greater alignment.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2603.24465v1' target='_blank'>Mechanic: Sorrifier-Driven Formal Decomposition Workflow for Automated Theorem Proving</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Ruichen Qiu, Yichuan Cao, Junqi Liu, Dakai Guo, Xiao-Shan Gao, Lihong Zhi, Ruyong Feng</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-03-25 16:12:08</h6>
+<p class='card-text'>Recent advances in large language models (LLMs) and LLM-based agents have substantially improved the capabilities of automated theorem proving. However, for problems requiring complex mathematical reasoning, current systems rarely succeed on the first try and must repeatedly modify their proof strategies. Existing approaches for handling failed attempts typically either discard the entire proof and regenerate it from scratch or iteratively fix errors within the proof. The former is inefficient, as it may abandon mostly correct reasoning due to localized errors, while the latter, although preserving prior progress, leads to progressively longer contexts which progressively degrades the model's ability to attend to the remaining unresolved subproblems. To address this dilemma, we propose Mechanic, a novel agent system that employs a sorry-driven formal decomposition strategy. By leveraging the sorry placeholder in Lean to precisely isolate unresolved subgoals while preserving the surrounding verified proof structure, Mechanic extracts each failed subproblem into a clean, self-contained context and resolves it independently. This avoids both the waste of full regeneration and the excessive context length induced by repeated repairs. Experimental results on challenging mathematical competition benchmarks, including IMO 2025 and Putnam 2025, demonstrate that our agent achieves significant advantages in proving efficiency.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2603.24361v1' target='_blank'>LATS: Large Language Model Assisted Teacher-Student Framework for Multi-Agent Reinforcement Learning in Traffic Signal Control</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yifeng Zhang, Peizhuo Li, Tingguang Zhou, Mingfeng Fan, Guillaume Sartoretti</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-03-25 14:42:32</h6>
+<p class='card-text'>Adaptive Traffic Signal Control (ATSC) aims to optimize traffic flow and minimize delays by adjusting traffic lights in real time. Recent advances in Multi-agent Reinforcement Learning (MARL) have shown promise for ATSC, yet existing approaches still suffer from limited representational capacity, often leading to suboptimal performance and poor generalization in complex and dynamic traffic environments. On the other hand, Large Language Models (LLMs) excel at semantic representation, reasoning, and analysis, yet their propensity for hallucination and slow inference speeds often hinder their direct application to decision-making tasks. To address these challenges, we propose a novel learning paradigm named LATS that integrates LLMs and MARL, leveraging the former's strong prior knowledge and inductive abilities to enhance the latter's decision-making process. Specifically, we introduce a plug-and-play teacher-student learning module, where a trained embedding LLM serves as a teacher to generate rich semantic features that capture each intersection's topology structures and traffic dynamics. A much simpler (student) neural network then learns to emulate these features through knowledge distillation in the latent space, enabling the final model to operate independently from the LLM for downstream use in the RL decision-making process. This integration significantly enhances the overall model's representational capacity across diverse traffic scenarios, thus leading to more efficient and generalizable control strategies. Extensive experiments across diverse traffic datasets empirically demonstrate that our method enhances the representation learning capability of RL models, thereby leading to improved overall performance and generalization over both traditional RL and LLM-only approaches. [...]</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2603.24329v1' target='_blank'>GameplayQA: A Benchmarking Framework for Decision-Dense POV-Synced Multi-Video Understanding of 3D Virtual Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yunzhe Wang, Runhui Xu, Kexin Zheng, Tianyi Zhang, Jayavibhav Niranjan Kogundi, Soham Hans, Volkan Ustun</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-03-25 14:10:45</h6>
+<p class='card-text'>Multimodal LLMs are increasingly deployed as perceptual backbones for autonomous agents in 3D environments, from robotics to virtual worlds. These applications require agents to perceive rapid state changes, attribute actions to the correct entities, and reason about concurrent multi-agent behaviors from a first-person perspective, capabilities that existing benchmarks do not adequately evaluate. We introduce GameplayQA, a framework for evaluating agentic-centric perception and reasoning through video understanding. Specifically, we densely annotate multiplayer 3D gameplay videos at 1.22 labels/second, with time-synced, concurrent captions of states, actions, and events structured around a triadic system of Self, Other Agents, and the World, a natural decomposition for multi-agent environments. From these annotations, we refined 2.4K diagnostic QA pairs organized into three levels of cognitive complexity, accompanied by a structured distractor taxonomy that enables fine-grained analysis of where models hallucinate. Evaluation of frontier MLLMs reveals a substantial gap from human performance, with common failures in temporal and cross-video grounding, agent-role attribution, and handling the decision density of the game. We hope GameplayQA stimulates future research at the intersection of embodied AI, agentic perception, and world modeling.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2603.24284v1' target='_blank'>The Specification Gap: Coordination Failure Under Partial Knowledge in Code Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Camilo Chacón Sartori</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-03-25 13:18:26</h6>
+<p class='card-text'>When multiple LLM-based code agents independently implement parts of the same class, they must agree on shared internal representations, even when the specification leaves those choices implicit. We study this coordination problem across 51 class-generation tasks, progressively stripping specification detail from full docstrings (L0) to bare signatures (L3), and introducing opposing structural biases (lists vs. dictionaries) to stress-test integration. Three findings emerge. First, a persistent specification gap: two-agent integration accuracy drops from 58% to 25% as detail is removed, while a single-agent baseline degrades more gracefully (89% to 56%), leaving a 25--39 pp coordination gap that is consistent across two Claude models (Sonnet, Haiku) and three independent runs. Second, an AST-based conflict detector achieves 97% precision at the weakest specification level without additional LLM calls, yet a factorial recovery experiment shows that restoring the full specification alone recovers the single-agent ceiling (89%), while providing conflict reports adds no measurable benefit. Third, decomposing the gap into coordination cost (+16 pp) and information asymmetry (+11 pp) suggests that the two effects are independent and approximately additive. The gap is not merely a consequence of hidden information, but reflects the difficulty of producing compatible code without shared decisions. These results support a specification-first view of multi-agent code generation: richer specifications are both the primary coordination mechanism and the sufficient recovery instrument.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2603.24216v1' target='_blank'>Where Do Your Citations Come From? Citation-Constellation: A Free, Open-Source, No-Code, and Auditable Tool for Citation Network Decomposition with Complementary BARON and HEROCON Scores</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Mahbub Ul Alam</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-03-25 11:44:47</h6>
+<p class='card-text'>Standard citation metrics treat all citations as equal, obscuring the social and structural pathways through which scholarly influence propagates. I introduce Citation-Constellation, a freely available no-code tool for citation network analysis with two complementary bibliometric scores that decompose a researcher's citation profile by network proximity between citing and cited authors. BARON (Boundary-Anchored Research Outreach Network score) is a strict binary metric counting only citations from outside the detected collaborative network. HEROCON (Holistic Equilibrated Research Outreach CONstellation score) applies graduated weights assigning partial credit to in-group citations based on relationship proximity. The gap between scores serves as a diagnostic of inner-circle dependence. An extended abstract with full details appears in the paper.
+  The tool implements this through a phased architecture: (1) self-citation analysis, (2) co-authorship graph traversal, (3) temporal institutional affiliation matching via ROR, and (4) AI-agent-driven venue governance extraction using a local LLM. Phases 1-3 are fully operational; Phase 4 is under development. Key design choices include ORCID-validated author identity resolution, an UNKNOWN classification for citations with insufficient metadata, and comprehensive audit trails documenting every classification decision. A no-code web interface enables researchers to compute scores without programming, installation, or registration.
+  I present these scores as structural diagnostics, not quality indicators. BARON and HEROCON describe where in the social graph citations originate. They should not be used for hiring, promotion, or funding decisions. HEROCON weights are experimental and require empirical calibration.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2603.24203v1' target='_blank'>Invisible Threats from Model Context Protocol: Generating Stealthy Injection Payload via Tree-based Adaptive Search</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yulin Shen, Xudong Pan, Geng Hong, Min Yang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-03-25 11:24:47</h6>
+<p class='card-text'>Recent advances in the Model Context Protocol (MCP) have enabled large language models (LLMs) to invoke external tools with unprecedented ease. This creates a new class of powerful and tool augmented agents. Unfortunately, this capability also introduces an under explored attack surface, specifically the malicious manipulation of tool responses. Existing techniques for indirect prompt injection that target MCP suffer from high deployment costs, weak semantic coherence, or heavy white box requirements. Furthermore, they are often easily detected by recently proposed defenses. In this paper, we propose Tree structured Injection for Payloads (TIP), a novel black-box attack which generates natural payloads to reliably seize control of MCP enabled agents even under defense. Technically, We cast payload generation as a tree structured search problem and guide the search with an attacker LLM operating under our proposed coarse-to-fine optimization framework. To stabilize learning and avoid local optima, we introduce a path-aware feedback mechanism that surfaces only high quality historical trajectories to the attacker model. The framework is further hardened against defensive transformations by explicitly conditioning the search on observable defense signals and dynamically reallocating the exploration budget. Extensive experiments on four mainstream LLMs show that TIP attains over 95% attack success in undefended settings while requiring an order of magnitude fewer queries than prior adaptive attacks. Against four representative defense approaches, TIP preserves more than 50% effectiveness and significantly outperforms the state-of-the-art attacks. By implementing the attack on real world MCP systems, our results expose an invisible but practical threat vector in MCP deployments. We also discuss potential mitigation approaches to address this critical security gap.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2603.24160v1' target='_blank'>Towards Automated Crowdsourced Testing via Personified-LLM</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Shengcheng Yu, Yuchen Ling, Chunrong Fang, Zhenyu Chen, Chunyang Chen</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-03-25 10:29:04</h6>
+<p class='card-text'>The rapid proliferation and increasing complexity of software demand robust quality assurance, with graphical user interface (GUI) testing playing a pivotal role. Crowdsourced testing has proven effective in this context by leveraging the diversity of human testers to achieve rich, scenario-based coverage across varied devices, user behaviors, and usage environments. In parallel, automated testing, particularly with the advent of large language models (LLMs), offers significant advantages in controllability, reproducibility, and efficiency, enabling scalable and systematic exploration. However, automated approaches often lack the behavioral diversity characteristic of human testers, limiting their capability to fully simulate real-world testing dynamics. To address this gap, we present PersonaTester, a novel personified-LLM-based framework designed to automate crowdsourced GUI testing. By injecting representative personas, defined along three orthogonal dimensions: testing mindset, exploration strategy, and interaction habit, into LLM-based agents, PersonaTester enables the simulation of diverse human-like testing behaviors in a controllable and repeatable manner. Experimental results demonstrate that PersonaTester faithfully reproduces the behavioral patterns of real crowdworkers, exhibiting strong intra-persona consistency and clear inter-persona variability (117.86% -- 126.23% improvement over the baseline). Moreover, persona-guided testing agents consistently generate more effective test events and trigger more crashes (100+) and functional bugs (11) than the baseline without persona, thus substantially advancing the realism and effectiveness of automated crowdsourced GUI testing.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2603.24014v1' target='_blank'>Language-Grounded Multi-Agent Planning for Personalized and Fair Participatory Urban Sensing</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Xusen Guo, Mingxing Peng, Hongliang Lu, Hai Yang, Jun Ma, Yuxuan Liang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-03-25 07:19:45</h6>
+<p class='card-text'>Participatory urban sensing leverages human mobility for large-scale urban data collection, yet existing methods typically rely on centralized optimization and assume homogeneous participants, resulting in rigid assignments that overlook personal preferences and heterogeneous urban contexts. We propose MAPUS, an LLM-based multi-agent framework for personalized and fair participatory urban sensing. In our framework, participants are modeled as autonomous agents with individual profiles and schedules, while a coordinator agent performs fairness-aware selection and refines sensing routes through language-based negotiation. Experiments on real-world datasets show that MAPUS achieves competitive sensing coverage while substantially improving participant satisfaction and fairness, promoting more human-centric and sustainable urban sensing systems.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2603.23994v1' target='_blank'>Understanding the Challenges in Iterative Generative Optimization with LLMs</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Allen Nie, Xavier Daull, Zhiyi Kuang, Abhinav Akkiraju, Anish Chaudhuri, Max Piasevoli, Ryan Rong, YuCheng Yuan, Prerit Choudhary, Shannon Xiao, Rasool Fakoor, Adith Swaminathan, Ching-An Cheng</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-03-25 06:49:24</h6>
+<p class='card-text'>Generative optimization uses large language models (LLMs) to iteratively improve artifacts (such as code, workflows or prompts) using execution feedback. It is a promising approach to building self-improving agents, yet in practice remains brittle: despite active research, only 9% of surveyed agents used any automated optimization. We argue that this brittleness arises because, to set up a learning loop, an engineer must make ``hidden'' design choices: What can the optimizer edit and what is the "right" learning evidence to provide at each update? We investigate three factors that affect most applications: the starting artifact, the credit horizon for execution traces, and batching trials and errors into learning evidence. Through case studies in MLAgentBench, Atari, and BigBench Extra Hard, we find that these design decisions can determine whether generative optimization succeeds, yet they are rarely made explicit in prior work. Different starting artifacts determine which solutions are reachable in MLAgentBench, truncated traces can still improve Atari agents, and larger minibatches do not monotonically improve generalization on BBEH. We conclude that the lack of a simple, universal way to set up learning loops across domains is a major hurdle for productionization and adoption. We provide practical guidance for making these choices.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2603.23990v1' target='_blank'>From Untamed Black Box to Interpretable Pedagogical Orchestration: The Ensemble of Specialized LLMs Architecture for Adaptive Tutoring</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Nizam Kadir</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-03-25 06:38:19</h6>
+<p class='card-text'>Monolithic Large Language Models (LLMs) used in educational dialogue often behave as "black boxes," where pedagogical decisions are implicit and difficult to audit, frequently violating instructional constraints by providing answers too early. We introduce the Ensemble of Specialized LLMS (ES-LLMS) architecture that separates decision-making from wording. Pedagogical actions are selected by a deterministic rules-based orchestrator coordinating specialized agents covering tutoring, assessment, feedback, scaffolding, motivation and ethics-guided by an interpretable Bayesian Knowledge Tracing (BKT) student model. An LLM renderer surface-realizes the chosen action in natural language. This design emphasizes reliability and controllability: constraints such as "attempt-before-hint" and hint caps are enforced as explicit rules, and the system logs per-turn agent traces and constraint checks. Validation of pedagogical quality via human expert reviewers (N=6) and a multi-LLM-as-Judge panel (six state-of-the-art models) showed that ES-LLMs were preferred in 91.7% and 79.2% of cases, respectively. The architecture significantly outperformed monolithic baselines across all seven dimensions, particularly in Scaffolding & Guidance, and Trust & Explainability. Furthermore, a Monte Carlo simulation (N=2,400) exposed a "Mastery Gain Paradox," where monolithic tutors inflated short-term performance through over-assistance. In contrast, ES-LLMs achieved 100% adherence to pedagogical constraints (e.g., attempt-before-hint) and a 3.3x increase in hint efficiency. Operationally, ES-LLMs reduced costs by 54% and latency by 22% by utilizing stateless prompts. We conclude that structural decoupling is essential for transforming stochastic models into trustworthy, verifiable and resource-efficient pedagogical agents.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2603.23966v1' target='_blank'>Policy-Guided Threat Hunting: An LLM enabled Framework with Splunk SOC Triage</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Rishikesh Sahay, Bell Eapen, Weizhi Meng, Md Rasel Al Mamun, Nikhil Kumar Dora, Manjusha Sumasadan, Sumit Kumar Tetarave, Rod Soto</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-03-25 05:59:34</h6>
+<p class='card-text'>With frequently evolving Advanced Persistent Threats (APTs) in cyberspace, traditional security solutions approaches have become inadequate for threat hunting for organizations. Moreover, SOC (Security Operation Centers) analysts are often overwhelmed and struggle to analyze the huge volume of logs received from diverse devices in organizations. To address these challenges, we propose an automated and dynamic threat hunting framework for monitoring evolving threats, adapting to changing network conditions, and performing risk-based prioritization for the mitigation of suspicious and malicious traffic. By integrating Agentic AI with Splunk, an established SIEM platform, we developed a unique threat hunting framework. The framework systematically and seamlessly integrates different threat hunting modules together, ranging from traffic ingestion to anomaly assessment using a reconstruction-based autoencoder, deep reinforcement learning (DRL) with two layers for initial triage, and a large language model (LLM) for contextual analysis. We evaluated the framework against a publicly available benchmark dataset, as well as against a simulated dataset. The experimental results show that the framework can effectively adapt to different SOC objectives autonomously and identify suspicious and malicious traffic. The framework enhances operational effectiveness by supporting SOC analysts in their decision-making to block, allow, or monitor network traffic. This study thus enhances cybersecurity and threat hunting literature by presenting the novel threat hunting framework for security decision- making, as well as promoting cumulative research efforts to develop more effective frameworks to battle continuously evolving cyber threats.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2603.23964v1' target='_blank'>From Pixels to Digital Agents: An Empirical Study on the Taxonomy and Technological Trends of Reinforcement Learning Environments</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Lijing Luo, Yiben Luo, Alexey Gorbatovski, Sergey Kovalchuk, Xiaodan Liang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-03-25 05:56:54</h6>
+<p class='card-text'>The remarkable progress of reinforcement learning (RL) is intrinsically tied to the environments used to train and evaluate artificial agents. Moving beyond traditional qualitative reviews, this work presents a large-scale, data-driven empirical investigation into the evolution of RL environments. By programmatically processing a massive corpus of academic literature and rigorously distilling over 2,000 core publications, we propose a quantitative methodology to map the transition from isolated physical simulations to generalist, language-driven foundation agents. Implementing a novel, multi-dimensional taxonomy, we systematically analyze benchmarks against diverse application domains and requisite cognitive capabilities. Our automated semantic and statistical analysis reveals a profound, data-verified paradigm shift: the bifurcation of the field into a "Semantic Prior" ecosystem dominated by Large Language Models (LLMs) and a "Domain-Specific Generalization" ecosystem. Furthermore, we characterize the "cognitive fingerprints" of these distinct domains to uncover the underlying mechanisms of cross-task synergy, multi-domain interference, and zero-shot generalization. Ultimately, this study offers a rigorous, quantitative roadmap for designing the next generation of Embodied Semantic Simulators, bridging the gap between continuous physical control and high-level logical reasoning.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2603.23951v1' target='_blank'>From AI Assistant to AI Scientist: Autonomous Discovery of LLM-RL Algorithms with LLM Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Sirui Xia, Yikai Zhang, Aili Chen, Siye Wu, Siyu Yuan, Yanghua Xiao</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-03-25 05:19:23</h6>
+<p class='card-text'>Discovering improved policy optimization algorithms for language models remains a costly manual process requiring repeated mechanism-level modification and validation. Unlike simple combinatorial code search, this problem requires searching over algorithmic mechanisms tightly coupled with training dynamics while reusing empirical evidence across iterations. We propose POISE, a closed-loop framework for automated discovery of policy optimization algorithms for language models. POISE maintains a structured, genealogically linked archive linking proposals, executable implementations, standardized evaluations, and natural-language reflections to support evidence-driven iteration. In mathematical reasoning experiments starting from GRPO, POISE evaluates 64 candidate algorithms and discovers improved mechanisms, including analytic-variance scaling and validity masking. The best variant improves weighted Overall from 47.8 to 52.5 (+4.6) and increases AIME25 pass@32 from 26.7% to 43.3%, demonstrating the feasibility of automated policy optimization discovery while supporting interpretable design principles.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2603.23937v1' target='_blank'>Dialogue to Question Generation for Evidence-based Medical Guideline Agent Development</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Zongliang Ji, Ziyang Zhang, Xincheng Tan, Matthew Thompson, Anna Goldenberg, Carl Yang, Rahul G. Krishnan, Fan Zhang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-03-25 04:58:53</h6>
+<p class='card-text'>Evidence-based medicine (EBM) is central to high-quality care, but remains difficult to implement in fast-paced primary care settings. Physicians face short consultations, increasing patient loads, and lengthy guideline documents that are impractical to consult in real time. To address this gap, we investigate the feasibility of using large language models (LLMs) as ambient assistants that surface targeted, evidence-based questions during physician-patient encounters. Our study focuses on question generation rather than question answering, with the aim of scaffolding physician reasoning and integrating guideline-based practice into brief consultations. We implemented two prompting strategies, a zero-shot baseline and a multi-stage reasoning variant, using Gemini 2.5 as the backbone model. We evaluated on a benchmark of 80 de-identified transcripts from real clinical encounters, with six experienced physicians contributing over 90 hours of structured review. Results indicate that while general-purpose LLMs are not yet fully reliable, they can produce clinically meaningful and guideline-relevant questions, suggesting significant potential to reduce cognitive burden and make EBM more actionable at the point of care.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2603.23910v1' target='_blank'>AnalogAgent: Self-Improving Analog Circuit Design Automation with LLM Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Zhixuan Bao, Zhuoyi Lin, Jiageng Wang, Jinhai Hu, Yuan Gao, Yaoxin Wu, Xiaoli Li, Xun Xu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-03-25 03:59:02</h6>
+<p class='card-text'>Recent advances in large language models (LLMs) suggest strong potential for automating analog circuit design. Yet most LLM-based approaches rely on a single-model loop of generation, diagnosis, and correction, which favors succinct summaries over domain-specific insight and suffers from context attrition that erases critical technical details. To address these limitations, we propose AnalogAgent, a training-free agentic framework that integrates an LLM-based multi-agent system (MAS) with self-evolving memory (SEM) for analog circuit design automation. AnalogAgent coordinates a Code Generator, Design Optimizer, and Knowledge Curator to distill execution feedback into an adaptive playbook in SEM and retrieve targeted guidance for subsequent generation, enabling cross-task transfer without additional expert feedback, databases, or libraries. Across established benchmarks, AnalogAgent achieves 92% Pass@1 with Gemini and 97.4% Pass@1 with GPT-5. Moreover, with compact models (e.g., Qwen-8B), it yields a +48.8% average Pass@1 gain across tasks and reaches 72.1% Pass@1 overall, indicating that AnalogAgent substantially strengthens open-weight models for high-quality analog circuit design automation.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2603.23909v1' target='_blank'>DUPLEX: Agentic Dual-System Planning via LLM-Driven Information Extraction</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Keru Hua, Ding Wang, Yaoying Gu, Xiaoguang Ma</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-03-25 03:57:44</h6>
+<p class='card-text'>While Large Language Models (LLMs) provide semantic flexibility for robotic task planning, their susceptibility to hallucination and logical inconsistency limits their reliability in long-horizon domains. To bridge the gap between unstructured environments and rigorous plan synthesis, we propose DUPLEX, an agentic dual-system neuro-symbolic architecture that strictly confines the LLM to schema-guided information extraction rather than end-to-end planning or code generation. In our framework, a feed-forward Fast System utilizes a lightweight LLM to extract entities, relations etc. from natural language, deterministically mapping them into a Planning Domain Definition Language (PDDL) problem file for a classical symbolic planner. To resolve complex or underspecified scenarios, a Slow System is activated exclusively upon planning failure, leveraging solver diagnostics to drive a high-capacity LLM in iterative reflection and repair. Extensive evaluations across 12 classical and household planning domains demonstrate that DUPLEX significantly outperforms existing end-to-end and hybrid LLM baselines in both success rate and reliability. These results confirm that The key is not to make the LLM plan better, but to restrict the LLM to the part it is good at - structured semantic grounding - and leave logical plan synthesis to a symbolic planner.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2603.23884v1' target='_blank'>POSIM: A Multi-Agent Simulation Framework for Social Media Public Opinion Evolution and Governance</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yongmao Zhang, Kai Qiao, Zhengyan Wang, Ningning Liang, Dekui Ma, Wenyao Sun, Jian Chen, Bin Yan</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-03-25 03:16:26</h6>
+<p class='card-text'>Modeling social media public opinion evolution is essential for governance decision-making. Traditional epidemic models and rule-based agent-based models (ABMs) fail to capture the cognitive processes and adaptive behaviors of real users. Recent large language model (LLM)-based social simulations can reproduce group-level phenomena like polarization and conformity, yet remain unable to recreate the irrational interactions and multi-phase dynamics of real public opinion events. We present POSIM (Public Opinion Simulator), a multi-agent simulation framework for social media public opinion evolution and governance. POSIM integrates LLM-driven agents with a Belief--Desire--Intention (BDI) cognitive architecture that accounts for irrational factors, places them in a virtual social media environment with social networks and recommendation mechanisms, and drives temporal dynamics through a Hawkes point process engine that captures the co-evolution of agents and the environment across event phases. To validate the framework, we collect real-world public opinion datasets from the Weibo platform covering the full interaction chain of users. Experiments show that POSIM successfully reproduces key characteristics of public opinion evolution from individual mechanisms to collective phenomena, and its effectiveness is further supported by multiple statistical metrics. Building on POSIM, governance-oriented guidance and intervention experiments uncover a counterintuitive empathy paradox: empathetic guidance deepens negative sentiment instead of easing it under certain conditions, offering new insights for governance strategy design. These results demonstrate that the proposed framework can fully serve as a computational experimentation platform for proactive strategy evaluation and evidence-based governance. All source code is available at https://github.com/DeepCogLab/posim/.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2603.23880v1' target='_blank'>ProcureGym: A Multi-Agent Markov Game Framework for Modeling National Volume-based Drug Procurement</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Jia Wang, Qian Xu, Xuanwen Ding, Zhuangqi Li, Chao He, Bao Liu, Zhongyu Wei</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-03-25 03:13:33</h6>
+<p class='card-text'>In this paper, we introduce ProcureGym, an data-driven multi-agent simulation platform that models China's National Volume-Based drug Procurement (NVBP) as a Markov Game. Based on real-world data from 7 rounds of NVBP (covering 325 drugs and 2,267 firms), the platform establishes a high-fidelity simulation environment. Within this framework, we evaluate diverse agent models, including Reinforcement Learning (RL), Large Language Model (LLM), and Rule-based algorithms. Experimental results demonstrate that RL agents achieve superior winner alignment and profits. Further analyses show that maximum valid bidding price and procurement volume dominate strategic outcomes. ProcureGym thus serves as a rigorous instrument for assessing policy impacts and formulating future procurement strategies.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2603.23875v1' target='_blank'>Self-Evolving Multi-Agent Framework for Efficient Decision Making in Real-Time Strategy Scenarios</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Li Ma, Hao Peng, Yiming Wang, Hongbin Luo, Jie Liu, Kongjing Gu, Guanlin Wu, Hui Lin, Lei Ren</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-03-25 03:05:29</h6>
+<p class='card-text'>Large language models (LLMs) have demonstrated exceptional potential in complex reasoning,pioneering a new paradigm for autonomous agent decision making in dynamic settings. However, in Real-Time Strategy (RTS) scenarios, LLMs suffer from a critical speed-quality trade-off. Specifically expansive state spaces and time limits render inference delays prohibitive, while stochastic planning errors undermine logical consistency. To address these challenges, we present SEMA (Self-Evolving Multi-Agent), a novel framework designed for high-performance, low-latency decision-making in RTS environments. This collaborative multi-agent framework facilitates self-evolution by adaptively calibrating model bias through in-episode assessment and cross-episode analysis. We further incorporate dynamic observation pruning based on structural entropy to model game states topologically. By distilling high dimensional data into core semantic information, this approach significantly reduces inference time. We also develop a hybrid knowledge-memory mechanism that integrates micro-trajectories, macro-experience, and hierarchical domain knowledge, thereby enhancing both strategic adaptability and decision consistency. Experiments across multiple StarCraft II maps demonstrate that SEMA achieves superior win rates while reducing average decision latency by over 50%, validating its efficiency and robustness in complex RTS scenarios.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2603.23852v1' target='_blank'>APISENSOR: Robust Discovery of Web API from Runtime Traffic Logs</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yanjing Yang, Chenxing Zhong, Ke Han, Zeru Cheng, Jinwei Xu, Xin Zhou, He Zhang, Bohan Liu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-03-25 02:30:45</h6>
+<p class='card-text'>Large Language Model (LLM)-based agents increasingly rely on APIs to operate complex web applications, but rapid evolution often leads to incomplete or inconsistent API documentation. Existing work falls into two categories: (1) static, white-box approaches based on source code or formal specifications, and (2) dynamic, black-box approaches that infer APIs from runtime traffic. Static approaches rely on internal artifacts, which are typically unavailable for closed-source systems, and often over-approximate API usage, resulting in high false-positive rates. Although dynamic black-box API discovery applies broadly, its robustness degrades in complex environments where shared collection points aggregate traffic from multiple applications. To improve robustness under mixed runtime traffic, we propose APISENSOR, a black-box API discovery framework that reconstructs application APIs unsupervised. APISENSOR performs structured analysis over complex traffic, combining traffic denoising and normalization with a graph-based two-stage clustering process to recover accurate APIs. We evaluated APISENSOR across six web applications using over 10,000 runtime requests with simulated mixed-traffic noise. Results demonstrate that APISENSOR significantly improves discovery accuracy, achieving an average Group Accuracy Precision of 95.92% and an F1-score of 94.91%, outperforming state-of-the-art methods. Across different applications and noise settings, APISENSOR achieves the lowest performance variance and at most an 8.11-point FGA drop, demonstrating the best robustness among 10 baselines. Ablation studies confirm that each component is essential. Furthermore, APISENSOR revealed API documentation inconsistencies in a real application, later confirmed by community developers.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2603.23849v1' target='_blank'>VILLA: Versatile Information Retrieval From Scientific Literature Using Large LAnguage Models</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Blessy Antony, Amartya Dutta, Sneha Aggarwal, Vasu Gatne, Ozan Gökdemir, Samantha Grimes, Adam Lauring, Brian R. Wasik, Anuj Karpatne, T. M. Murali</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-03-25 02:15:58</h6>
+<p class='card-text'>The lack of high-quality ground truth datasets to train machine learning (ML) models impedes the potential of artificial intelligence (AI) for science research. Scientific information extraction (SIE) from the literature using LLMs is emerging as a powerful approach to automate the creation of these datasets. However, existing LLM-based approaches and benchmarking studies for SIE focus on broad topics such as biomedicine and chemistry, are limited to choice-based tasks, and focus on extracting information from short and well-formatted text. The potential of SIE methods in complex, open-ended tasks is considerably under-explored. In this study, we used a domain that has been virtually ignored in SIE, namely virology, to address these research gaps. We design a unique, open-ended SIE task of extracting mutations in a given virus that modify its interaction with the host. We develop a new, multi-step retrieval augmented generation (RAG) framework called VILLA for SIE. In parallel, we curate a novel dataset of 629 mutations in ten influenza A virus proteins obtained from 239 scientific publications to serve as ground truth for the mutation extraction task. Finally, we demonstrate VILLA's superior performance using a novel and comprehensive evaluation and comparison with vanilla RAG and other state-of-the art RAG- and agent-based tools for SIE.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2603.23848v1' target='_blank'>BeliefShift: Benchmarking Temporal Belief Consistency and Opinion Drift in LLM Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Praveen Kumar Myakala, Manan Agrawal, Rahul Manche</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-03-25 02:09:35</h6>
+<p class='card-text'>LLMs are increasingly used as long-running conversational agents, yet every major benchmark evaluating their memory treats user information as static facts to be stored and retrieved. That's the wrong model. People change their minds, and over extended interactions, phenomena like opinion drift, over-alignment, and confirmation bias start to matter a lot.
+  BeliefShift introduces a longitudinal benchmark designed specifically to evaluate belief dynamics in multi-session LLM interactions. It covers three tracks: Temporal Belief Consistency, Contradiction Detection, and Evidence-Driven Revision. The dataset includes 2,400 human-annotated multi-session interaction trajectories spanning health, politics, personal values, and product preferences.
+  We evaluate seven models including GPT-4o, Claude 3.5 Sonnet, Gemini 1.5 Pro, LLaMA-3, and Mistral-Large under zero-shot and retrieval-augmented generation (RAG) settings. Results reveal a clear trade-off: models that personalize aggressively resist drift poorly, while factually grounded models miss legitimate belief updates.
+  We further introduce four novel evaluation metrics: Belief Revision Accuracy (BRA), Drift Coherence Score (DCS), Contradiction Resolution Rate (CRR), and Evidence Sensitivity Index (ESI).</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2603.23840v1' target='_blank'>VehicleMemBench: An Executable Benchmark for Multi-User Long-Term Memory in In-Vehicle Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yuhao Chen, Yi Xu, Xinyun Ding, Xiang Fang, Shuochen Liu, Luxi Lin, Qingyu Zhang, Ya Li, Quan Liu, Tong Xu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-03-25 01:54:28</h6>
+<p class='card-text'>With the growing demand for intelligent in-vehicle experiences, vehicle-based agents are evolving from simple assistants to long-term companions. This evolution requires agents to continuously model multi-user preferences and make reliable decisions in the face of inter-user preference conflicts and changing habits over time. However, existing benchmarks are largely limited to single-user, static question-answer settings, failing to capture the temporal evolution of preferences and the multi-user, tool-interactive nature of real vehicle environments. To address this gap, we introduce VehicleMemBench, a multi-user long-context memory benchmark built on an executable in-vehicle simulation environment. The benchmark evaluates tool use and memory by comparing the post-action environment state with a predefined target state, enabling objective and reproducible evaluation without LLM-based or human scoring. VehicleMemBench includes 23 tool modules, and each sample contains over 80 historical memory events. Experiments show that powerful models perform well on direct instruction tasks but struggle in scenarios involving memory evolution, particularly when user preferences change dynamically. Even advanced memory systems struggle to handle domain-specific memory requirements in this environment. These findings highlight the need for more robust and specialized memory management mechanisms to support long-term adaptive decision-making in real-world in-vehicle systems. To facilitate future research, we release the data and code.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2603.23802v1' target='_blank'>How are AI agents used? Evidence from 177,000 MCP tools</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Merlin Stein</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-03-25 00:25:49</h6>
+<p class='card-text'>Today's AI agents are built on large language models (LLMs) equipped with tools to access and modify external environments, such as corporate file systems, API-accessible platforms and websites. AI agents offer the promise of automating computer-based tasks across the economy. However, developers, researchers and governments lack an understanding of how AI agents are currently being used, and for what kinds of (consequential) tasks. To address this gap, we evaluated 177,436 agent tools created from 11/2024 to 02/2026 by monitoring public Model Context Protocol (MCP) server repositories, the current predominant standard for agent tools. We categorise tools according to their direct impact: perception tools to access and read data, reasoning tools to analyse data or concepts, and action tools to directly modify external environments, like file editing, sending emails or steering drones in the physical world. We use O*NET mapping to identify each tool's task domain and consequentiality. Software development accounts for 67% of all agent tools, and 90% of MCP server downloads. Notably, the share of 'action' tools rose from 27% to 65% of total usage over the 16-month period sampled. While most action tools support medium-stakes tasks like editing files, there are action tools for higher-stakes tasks like financial transactions. Using agentic financial transactions as an example, we demonstrate how governments and regulators can use this monitoring method to extend oversight beyond model outputs to the tool layer to monitor risks of agent deployment.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2603.23791v1' target='_blank'>The Cognitive Firewall:Securing Browser Based AI Agents Against Indirect Prompt Injection Via Hybrid Edge Cloud Defense</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Qianlong Lan, Anuj Kaul</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-03-24 23:49:15</h6>
+<p class='card-text'>Deploying large language models (LLMs) as autonomous browser agents exposes a significant attack surface in the form of Indirect Prompt Injection (IPI). Cloud-based defenses can provide strong semantic analysis, but they introduce latency and raise privacy concerns. We present the Cognitive Firewall, a three-stage split-compute architecture that distributes security checks across the client and the cloud. The system consists of a local visual Sentinel, a cloud-based Deep Planner, and a deterministic Guard that enforces execution-time policies. Across 1,000 adversarial samples, edge-only defenses fail to detect 86.9% of semantic attacks. In contrast, the full hybrid architecture reduces the overall attack success rate (ASR) to below 1% (0.88% under static evaluation and 0.67% under adaptive evaluation), while maintaining deterministic constraints on side-effecting actions. By filtering presentation-layer attacks locally, the system avoids unnecessary cloud inference and achieves an approximately 17,000x latency advantage over cloud-only baselines. These results indicate that deterministic enforcement at the execution boundary can complement probabilistic language models, and that split-compute provides a practical foundation for securing interactive LLM agents.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2603.23660v1' target='_blank'>GTO Wizard Benchmark</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Marc-Antoine Provost, Nejc Ilenic, Christopher Solinas, Philippe Beardsell</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-03-24 19:04:04</h6>
+<p class='card-text'>We introduce GTO Wizard Benchmark, a public API and standardized evaluation framework for benchmarking algorithms in Heads-Up No-Limit Texas Hold'em (HUNL). The benchmark evaluates agents against GTO Wizard AI, a state-of-the-art superhuman poker agent that approximates Nash Equilibria, and defeated Slumbot, the 2018 Annual Computer Poker Competition champion and previous strongest publicly accessible HUNL benchmark, by $19.4$ $\pm$ $4.1$ bb/100. Variance is a fundamental challenge in poker evaluation; we address this by integrating AIVAT, a provably unbiased variance reduction technique that achieves equivalent statistical significance with ten times fewer hands than naive Monte Carlo evaluation. We conduct a comprehensive benchmarking study of state-of-the-art large language models under zero-shot conditions, including GPT-5.4, Claude Opus 4.6, Gemini 3.1 Pro, Grok 4, and others. Initial results and analysis reveal dramatic progress in LLM reasoning over recent years, yet all models remain far below the baseline established by our benchmark. Qualitative analysis reveals clear opportunities for improvement, including representation and the ability to reason over hidden states. This benchmark provides researchers with a precise and quantifiable setting to evaluate advances in planning and reasoning in multi-agent systems with partial observability.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js'></script>
+</body>
+</html>
