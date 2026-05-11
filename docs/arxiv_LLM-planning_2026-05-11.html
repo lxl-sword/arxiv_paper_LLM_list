@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<title>LLM-planning - 2026-05-11</title>
+<link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap' rel='stylesheet'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'>
+<style>
+body {
+font-family: 'Roboto', sans-serif;
+background-color: #f5f7fa;
+padding: 20px;
+}
+.card {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.card-title {
+    font-weight: 700;
+}
+.card:hover {
+    transform: scale(1.02);
+    transition: 0.3s ease-in-out;
+}
+</style>
+</head>
+<body>
+<div class='container'>
+<h1 class='text-center my-4'><i class='fas fa-book'></i>LLM-planning - 2026-05-11</h1>
+<div class='row'>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.07877v1' target='_blank'>Melding LLM and temporal logic for reliable human-swarm collaboration in complex scenarios</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Junfeng Chen, Yuxiao Zhu, An Zhuo, Xintong Zhang, Shuo Zhang, Guanghui Wen, Xiwang Dong, Meng Guo, Zhongkui Li</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-08 15:32:14</h6>
+<p class='card-text'>Robot swarms promise scalable assistance in complex and hazardous environments. Task planning lies at the core of human-swarm collaboration, translating the operator's intent into coordinated swarm actions and helping determine when validation or intervention is required during execution. In long-horizon missions under dynamic scenarios, however, reliable task planning becomes difficult to maintain: emerging events and changing conditions demand continual adaptation, and sustained operator oversight imposes substantial cognitive burden. Existing LLM-based planning tools can support plan generation, yet they remain susceptible to invalid task orderings and infeasible robot actions, resulting in frequent manual adjustment. Here we introduce a neuro-symbolic framework for long-horizon human-swarm collaboration that tightly melds verifiable task planning with context-grounded LLM reasoning. We formalize mission goals and operational rules as temporal logic formulas and admissible task orderings as task automata. Conditioned on these formal constraints and live perceptual context, LLMs generate executable subtask sequences that satisfy mission rules and remain grounded in the current scene. An uncertainty-aware scheduler then assigns subtasks across the heterogeneous swarm to maximize parallelisms while remaining resilient to disruptions. An event-triggered interaction protocol further limits operator involvement to sparse, high-level confirmation and guidance. Deployment on a heterogeneous robotic fleet yields similar results while remaining robust to hardware-specific actuation and communication uncertainties. Together, these results support a formal and scalable paradigm for reliable and low-overhead human-swarm collaboration in dynamic environments</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.07764v1' target='_blank'>CommandSwarm: Safety-Aware Natural Language-to-Behavior-Tree Generation for Robotic Swarms</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Mohammed Majid, Amjad Yousef Majid</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-08 14:06:36</h6>
+<p class='card-text'>Natural-language interfaces can make swarm robotics more accessible to non-expert operators, but they must translate ambiguous user intent into executable swarm behaviors without unsupported actions, malformed programs, or unsafe plans. This paper presents CommandSwarm, a safety-aware language-to-behavior-tree pipeline for generating XML behavior trees (BTs) from speech or text commands. The system combines multilingual translation, command-level safety filtering, constrained prompting, a LoRA-adapted large language model (LLM), and deterministic parser validation against a whitelist of executable swarm primitives. We evaluate eleven open 6.7B--14B parameter LLMs, all using 4-bit quantization, on representative swarm-control scenarios under zero-shot, one-shot, and two-shot prompting. Falcon3-Instruct-10B and Mistral-7B-v3 are the strongest prompt-engineered candidates, reaching BLEU scores above 0.60 and high syntactic validity in few-shot settings. LoRA adaptation of Falcon3-Instruct-10B on a 2,063-example synthetic instruction--BT corpus improves zero-shot BLEU from 0.267 to 0.663, ROUGE-L from 0.366 to 0.692, and parser-accepted syntactic validity from 0% to 72%. Translation experiments further show that SeamlessM4T v2-large and EuroLLM-9B provide the best quality-latency trade-offs for the multilingual front end. The results indicate that compact, quantized, domain-adapted LLMs can generate useful swarm BTs when embedded in a validated systems pipeline. They also show that parser acceptance and safety filtering remain necessary execution gates; generation quality alone is not sufficient for autonomous deployment.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.07707v1' target='_blank'>Hierarchical Task Network Planning with LLM-Generated Heuristics</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Felipe Meneguzzi, Alexandre Buchweitz, Augusto B. Corrêa, Victor Scherer Putrich, André Grahl Pereira</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-08 13:14:31</h6>
+<p class='card-text'>HTN planning is a variation of classical planning where, instead of searching for a linear sequence of actions, an algorithm decomposes higher-level tasks using a method library until only executable actions remain. On one hand, this allows one to introduce domain knowledge that can speed up the search for a solution through the method library. On the other hand, it creates challenges that go beyond those of classical state-space search. While recent research produced a number of heuristics and novel algorithms that speed up HTN planning, these heuristics are not yet as informative as those available in classical planning algorithms. We investigate whether large language models (LLMs) can generate effective search heuristics for HTN planning, extending the methodology of Corrêa, Pereira, and Seipp (2025) from classical to hierarchical planning. Using the Pytrich planner on six standard total-order HTN benchmark domains, we evaluate heuristics generated by nine LLMs under domain-specific prompting and compare them against the TDG and LMCount domain-independent baselines and the PANDA planner. Our results show that LLM-generated heuristics nearly match the coverage of the best available HTN planner, while substantially reducing search effort on 83% of shared problems.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.07677v1' target='_blank'>TRACE: Tourism Recommendation with Accountable Citation Evidence</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Zixu Zhao, Sijin Wang, Yu Hou, Yuanyuan Xu, Yufan Sheng, Xike Xie, Wenjie Zhang, Won-Yong Shin, Xin Cao</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-08 12:47:39</h6>
+<p class='card-text'>Tourism is a high-stakes setting for conversational recommender systems (CRS): a plausible-sounding suggestion can waste real money and trip time once a traveler acts on it. Existing CRS benchmarks primarily evaluate systems with a single Recall@k score over entity mentions, and tourism-specific resources add spatial or knowledge-graph context, yet none of them couple multi-turn recommendation with verbatim review-span evidence and rejection recovery. This leaves an evaluation gap for tourism recommendation that is simultaneously trustworthy, verifiable, and adaptive: recommend the right point of interest (POI) for multi-aspect preferences (such as cuisine, price, atmosphere, walking distance), justify each suggestion with verifiable evidence from prior visitors so the traveler can act without trial and error, and recover when the first recommendation is rejected mid-dialogue. We introduce TRACE, where each item is a multi-turn tourism recommendation dialogue with review-span citations and explicit rejection turns: 10,000 dialogues over 2,400 Yelp POIs and 34,208 reviews across eight U.S. cities, paired with 14 retrieval, planning, and LLM baselines, along with 25 metrics organized under Accuracy, Grounding, and Recovery. Across these baselines, TRACE reveals the Three-Competency Gap: LLM Zero-Shot leads in closed-set Recall@1 and rejection recovery but cites less densely than retrievers; non-LLM retrievers achieve surface-verbatim grounding but with low accuracy; Multi-Review Synthesis fails at recovery. The Grounding Score agrees with human citation precision (Spearman rho=+0.80, p<10^-20), and paired t-tests reproduce the per-baseline ranking (p<0.01 on the dominant contrasts). TRACE reframes accountable tourism recommendation as a joint target (right POI, verifiable evidence, adaptive repair) rather than a single-axis leaderboard.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.07358v1' target='_blank'>A Comprehensive Survey on Agent Skills: Taxonomy, Techniques, and Applications</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yingli Zhou, Wang Shu, Yaodong Su, Wenchuan Du, Yixiang Fang, Xuemin Lin</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-08 07:10:26</h6>
+<p class='card-text'>Large language model (LLM)-based agents that reason, plan, and act through tools, memory, and structured interaction are emerging as a promising paradigm for automating complex workflows. Recent systems such as OpenClaw and Claude Code exemplify a broader shift from passive response generation to action-oriented task execution. Yet as agents move toward open-ended, real-world deployment, relying on from-scratch reasoning and low-level tool calls for every task become increasingly inefficient, error-prone, and hard to maintain. This survey examines this challenge through the lens of \emph{agent skills}, which we define as reusable procedural artifacts that coordinate tools, memory, and runtime context under task-specific constraints. Under this view, agents and skills play complementary roles: agents handle high-level reasoning and planning, while skills form the operational layer that enables reliable, reusable, and composable execution. Skills are therefore central to the scalability, robustness, and maintainability of modern agent systems. We organize the literature around four stages of the agent skill lifecycle -- representation, acquisition, retrieval, and evolution -- and review representative methods, ecosystem resources, and application settings across each stage. We conclude by discussing open challenges in quality control, interoperability, safe updating, and long-term capability management. All related resources, including research papers, open-source data, and projects, are collected for the community in \textcolor{blue}{https://github.com/JayLZhou/Awesome-Agent-Skills}.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.07339v1' target='_blank'>Tools as Continuous Flow for Evolving Agentic Reasoning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Tairan Huang, Siyu Shang, Qiang Chen, Xiu Su, Yi Chen</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-08 06:44:11</h6>
+<p class='card-text'>Large Language Models (LLMs) have demonstrated remarkable capabilities in orchestrating tools for reasoning tasks. However, existing methods rely on a step-wise paradigm that lacks a global perspective, which causes error accumulation over long horizons and restricts generalization to unseen tools. To overcome these limitations, we propose Tools as Continuous Flow for Evolving Agentic Reasoning (FlowAgent), which reconceptualizes tool chaining as continuous trajectory generation within a semantic space. To systematically evaluate this paradigm, we introduce the first plan-level closed-loop benchmark dedicated to plan-level agentic reasoning in dynamic real-world environments. Specifically, the proposed FlowAgent leverages conditional flow matching to generate continuous latent trajectories, providing a global planning perspective to ensure coherent and robust tool execution. Theoretically, we establish formal bounds on utility convergence and prove that our continuous formulation fundamentally guarantees robust generalization and error attenuation. Empirical evaluations show that FlowAgent achieves superior robustness and adaptability in long-horizon reasoning tasks.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.07251v1' target='_blank'>Can Agents Price a Reaction? Evaluating LLMs on Chemical Cost Reasoning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yuyang Wu, Yue Huang, Shuaike Shen, Xujian Wang, Shuhao Zhang, Qiyao Xue, Weichen Liu, Runtian Gao, Jian Ma, Xiangliang Zhang, Olexandr Isayev</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-08 05:19:59</h6>
+<p class='card-text'>Large Language Models (LLMs) have become increasingly capable as tool-using agents, with benchmarks spanning diverse general agentic tasks. Yet rigorous evaluation of scientific tool use remains limited. In chemistry, recent agents can plan syntheses and invoke domain-specific tools, but evaluations often rely on curated demonstrations, expert assessment, or LLM-as-judge scoring rather than exact, judge-free ground truth. We address this gap with chemical procurement cost estimation, a practical task in which an agent must ground chemical identities, retrieve supplier quotes, select valid purchasable packs, normalize quantities, and compute cost from a reaction description. We introduce ChemCost, a benchmark of 1,427 evaluable reactions grounded to a frozen pricing snapshot covering 2,261 chemicals and 230,775 supplier quotes, supporting scalar scoring and stage-level diagnosis of grounding, retrieval, procurement, and arithmetic failures. To evaluate robustness, we further construct controlled noise-injected views that perturb chemical aliases, quantity expressions, missing fields, and input formatting. Experiments with frontier, open-weight, and chemistry-specialized LLM agents show that tool access is necessary but insufficient for solving the task. The strongest agents reach only 50.6% accuracy within 25% relative error on clean inputs and degrade substantially with realistic noise. Stage-level analysis further shows that failures arise from brittle parsing, ineffective evidence integration, invalid pack selection, and non-convergent tool use.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.07248v1' target='_blank'>PaT: Planning-after-Trial for Efficient Test-Time Code Generation</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Youngsik Yoon, Sungjae Lee, Seockbean Song, Siwei Wang, Wei Chen, Jungseul Ok</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-08 05:09:18</h6>
+<p class='card-text'>Beyond training-time optimization, scaling test-time computation has emerged as a key paradigm to extend the reasoning capabilities of Large Language Models (LLMs). However, most existing methods adopt a rigid Planning-before-Trial (PbT) policy, which inefficiently allocates test-time compute by incurring planning overhead even on directly solvable problems. We propose Planning-after-Trial (PaT), an adaptive policy for code generation that invokes a planner only upon verification failure. This adaptive policy naturally enables a heterogeneous model configuration: a cost-efficient model handles generation attempts, while a powerful model is reserved for targeted planning interventions. Empirically, across multiple benchmarks and model families, our approach significantly advances the cost-performance Pareto frontier. Notably, our heterogeneous configuration achieves performance comparable to a large homogeneous model while reducing inference cost by approximately 69\%.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.07238v1' target='_blank'>FATE: Future-State-Aware Scheduling for Heterogeneous LLM Workflows</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Zirui Huang, Yi-Xiang Hu, Feng Wu, Xiangyang Li</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-08 04:45:29</h6>
+<p class='card-text'>Large language model (LLM) applications are increasingly executed as heterogeneous multi-stage workflows rather than isolated inference calls. In these workflow directed acyclic graphs (DAGs), scheduling decisions affect not only the currently ready stage, but also the execution state inherited by downstream stages, including model residency, parent-output locality, prefix reuse, and future device reachability. Existing serving and DAG-scheduling policies mainly optimize immediate queue state, placement cost, or reuse signals in isolation, which can fragment useful state and increase end-to-end latency. We present FATE, a future-state-aware scheduler for heterogeneous LLM workflows. FATE combines a CP-SAT-backed frontier planner, horizon-aware candidate scoring, bounded multi-device shard execution, and state-conditional cost estimation. Rather than solving a monolithic full-DAG problem, FATE repeatedly plans over the current ready frontier and scores assignments by both immediate cost and the downstream state they induce. Across real-DAG and controlled prefix-reuse benchmarks, FATE outperforms practical heuristics, classical DAG scheduling, and proxy adaptations of recent workflow-serving policies. On the real-DAG benchmark, it achieves normalized makespan and normalized P95 latency of 0.675 and 0.677, reducing them by 32.5% and 32.3% over RoundRobin and by 8.9% and 8.8% over the strongest non-FATE baseline. Mechanism analysis and ablations show that these gains arise from jointly preserving multiple dimensions of future execution state rather than prefix reuse alone. These results indicate that future-state preservation should be treated as a first-class scheduling objective for heterogeneous LLM workflow serving.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.07066v1' target='_blank'>2.5-D Decomposition for LLM-Based Spatial Construction</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Paul Whitten, Li-Jen Chen, Sharath Baddam</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-08 00:17:33</h6>
+<p class='card-text'>Autonomous systems that build structures from natural-language instructions need reliable spatial reasoning, yet large language models (LLMs) make systematic coordinate errors when generating three-dimensional block placements. We present a neuro-symbolic pipeline based on \emph{2.5-D decomposition}: the LLM plans in the two-dimensional horizontal plane while a deterministic executor computes all vertical placement from column occupancy, eliminating an entire class of errors. On the Build What I Mean benchmark (160 rounds), GPT-4o-mini with this pipeline achieves 94.6\% mean structural accuracy across 12 independent runs, within 3.0 percentage points of the 97.6\% ceiling imposed by architect-agent errors that no builder-side improvement can address. This outperforms both GPT-4o at 90.3\% and the best competing system at 76.3\%. A controlled ablation confirms that 2.5-D decomposition is the dominant contributor, accounting for 50.7 percentage points of accuracy. The pipeline transfers directly to edge hardware: Nemotron-3 120B running locally on an NVIDIA Jetson Thor AGX matches the cloud result at 94.5\% with no prompt modifications. The underlying principle, removing deterministic dimensions from the LLM's output space, applies to any autonomous construction or assembly task where gravity or other physical constraints fix one or more degrees of freedom. A transfer experiment on 500 IGLU collaborative building tasks confirm the effect generalizes beyond the primary benchmark.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.06957v1' target='_blank'>Learning and Reusing Policy Decompositions for Hierarchical Generalized Planning with LLM Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Shirin Sohrabi, Haritha Ananthakrishnan, Harsha Kokel, Kavitha Srinivas, Michael Katz</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-07 21:22:33</h6>
+<p class='card-text'>We present a dynamic policy-learning approach that combines generalized planning and hierarchical task decomposition for LLM-based agents. Our method, Hierarchical Component Learning for Generalized Policies (HCL-GP ), learns parameterized policies that generalize across task instances and automatically extracts reusable components from successful executions, organizing them into a component library for compositional policy generation. We address three challenges: (1) learning components through automated decomposition, (2) generalizing components to maximize reuse, and (3) efficient retrieval via semantic search. Evaluated on the AppWorld benchmark, our approach achieves 98.2% accuracy on normal tasks and 97.8% on challenge tasks with unseen applications, improving 15.8 points over static synthesis on challenging scenarios. For open-source models, dynamic reuse enables 62.5% success versus near-zero without reuse. This demonstrates that classical planning concepts can be effectively integrated with LLM agents for improved accuracy and efficiency.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.06869v1' target='_blank'>Agentick: A Unified Benchmark for General Sequential Decision-Making Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Roger Creus Castanyer, Pablo Samuel Castro, Glen Berseth</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-07 19:12:03</h6>
+<p class='card-text'>AI agent research spans a wide spectrum: from RL agents that learn from scratch to foundation model agents that leverage pre-trained knowledge, yet no unified benchmark enables fair comparison across these approaches. We present Agentick, a benchmark for sequential decision-making agents designed to evaluate RL, LLM, VLM, hybrid, and human agents on common ground and to power research on the fundamental challenges of sequential decision-making. Agentick provides 37 procedurally generated tasks across six capability categories, four difficulty levels, and five observation modalities, all exposed through a single Gymnasium-compatible interface. The benchmark ships with a Coding API, oracle reference policies for all tasks, pre-built SFT datasets, a composable agent harness, and a live leaderboard. An evaluation spanning 27 configurations and over 90,000 episodes reveals that no single approach dominates: GPT-5 mini leads overall at 0.309 oracle-normalized score while PPO dominates planning and multi-agent tasks; the reasoning harness multiplies LLM performance by 3-10x; and ASCII observations consistently outperform natural language. These findings highlight the substantial room for improvement that remains across all agent paradigms. Agentick's capability-decomposed, multi-modal design provides the empirical infrastructure needed to drive progress toward general autonomous agents, both as an evaluation framework and as a training ground for RL post-training of foundation models in truly sequential environments.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.06840v1' target='_blank'>Extracting Search Trees from LLM Reasoning Traces Reveals Myopic Planning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Sixing Chen, Ji-An Li, Saner Cakir, Sinan Akcali, Kayla Lee, Marcelo G. Mattar</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-07 18:45:46</h6>
+<p class='card-text'>Large language models (LLMs), especially reasoning models, generate extended chain-of-thought (CoT) reasoning that often contains explicit deliberation over future outcomes. Yet whether this deliberation constitutes genuine planning, how it is structured, and what aspects of it drive performance remain poorly understood. In this work, we introduce a new method to characterize LLM planning by extracting and quantifying search trees from reasoning traces in the four-in-a-row board game. By fitting computational models on the extracted search trees, we characterize how plans are structured and how they influence move decisions. We find that LLMs' search is shallower than humans', and that performance is predicted by search breadth rather than depth. Most strikingly, although LLMs expand deep nodes in their traces, their move choices are best explained by a myopic model that ignores those nodes entirely. A causal intervention study where we selectively prune CoT paragraphs further suggests that move selection is driven predominantly by shallow rather than deep nodes. These patterns contrast with human planning, where performance is driven primarily by deep search. Together, our findings reveal a key difference between LLM and human planning: while human expertise is driven by deeper search, LLMs do not act on deep lookahead. This dissociation offers targeted guidance for aligning LLM and human planning. More broadly, our framework provides a generalizable approach for interpreting the structure of LLM planning across strategic domains.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.06638v1' target='_blank'>Can RL Teach Long-Horizon Reasoning to LLMs? Expressiveness Is Key</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Tianle Wang, Zhaoyang Wang, Guangchen Lan, Xinpeng Wei, Sipeng Zhang, Guanwen Qiu, Abulhair Saparov</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-07 17:48:42</h6>
+<p class='card-text'>Reinforcement learning (RL) has been applied to improve large language model (LLM) reasoning, yet the systematic study of how training scales with task difficulty has been hampered by the lack of controlled, scalable environments. We introduce ScaleLogic, a synthetic logical reasoning framework that offers independent control over two axes of difficulty: the depth of the required proof planning (i.e., the horizon) and the expressiveness of the underlying logic. Our proposed framework supports a wide range of logics: from simple implication-only logic ("if-then") towards more expressive first-order reasoning with conjunction ("and"), disjunction ("or"), negation ("not"), and universal quantification ("for all"). Using this framework, we show that the RL training compute $T$ follows a power law with respect to reasoning depth $D$ ($T \propto D^γ$, $R^{2} > 0.99$), and that the scaling exponent $γ$ increases monotonically with logical expressiveness, from $1.04$ to $2.60$. On downstream mathematics and general reasoning benchmarks, more expressive training settings yield both larger performance gains (up to $+10.66$ points) and more compute-efficient transfer compared to less expressive settings, demonstrating that what a model is trained on, not just how much it is trained, shapes downstream transfer. We further show that the power-law relationship holds across multiple RL methods, and curriculum-based training substantially improves scaling efficiency.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.06544v1' target='_blank'>CCL-Bench 1.0: A Trace-Based Benchmark for LLM Infrastructure</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Eric Ding, Byungsoo Oh, Bhaskar Kataria, Kaiwen Guo, Jelena Gvero, Abhishek Vijaya Kumar, Arjun Devraj, Lindsey Bowen, Atharv Sonwane, Emaad Manzoor, Rachee Singh</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-07 16:40:39</h6>
+<p class='card-text'>Evaluative claims about LLM infrastructure -- ``workload X is fastest on hardware Y with software Z'' -- depend on a complex configuration space spanning hardware accelerators, interconnect bandwidth, software frameworks, parallelism plans, and communication libraries. Current infrastructure evaluation benchmarks publish a small set of end-to-end numbers that do not explain why one configuration outperforms another. We present CCL-Bench, a trace-based benchmark that addresses the limitations of existing benchmarks by recording reusable evidence for every ML workload. Each contributed data point in CCL-Bench packages an execution trace, a YAML workload card, and the launch scripts. We have developed a community-extensible toolkit to compute fine-grained compute, memory, and communication efficiency metrics from this evidence. Using CCL-Bench, we surface three claims that summary-statistic benchmarks cannot support: (i) higher compute-communication overlap can coincide with longer training step time and reveal inefficient parallelization choices, (ii) doubling TPU interconnect bandwidth yields a much higher end-to-end improvement in step time than doubling GPU interconnect bandwidth on small and medium workloads, and (iii) the best-tuned configuration on one training framework can run up to 3$\times$ slower than the best-tuned configuration on a peer framework on identical hardware.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.06486v1' target='_blank'>Autonomous Adversary: Red-Teaming in the age of LLM</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Mohammad Mamun, Mohamed Gaber, Scott Buffett, Sherif Saad</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-07 16:07:41</h6>
+<p class='card-text'>Language Model Agents (LMAs) are emerging as a powerful primitive for augmenting red-team operations. They can support attack planning, adversary emulation, and the orchestration of multi-step activity such as lateral movement, a core enabling capability of advanced persistent threat (APT) campaigns. Using frameworks such as MITRE ATT&CK, we analyze where these agents intersect with core offensive functions and assess current strengths and limitations of LMAs with an emphasis on governance and realistic evaluation. We benchmark LMAs across two lateral-movement scenarios in a controlled adversary-emulation environment, where LMAs interact with instrumented cyber agents, observe execution artifacts, and iteratively adapt based on environmental feedback. Each scenario is formalized as an ordered task chain with explicit validation predicates, leveraging an LLM-as-a-Judge paradigm to ensure deterministic outcome verification.
+  We compare three operational modalities: fully autonomous execution, self-scaffolded planning, and expert-defined action plans. Preliminary findings indicate that expert-defined action plans yield higher task-completion rates relative to other operational modes. However, failure remains frequent across all modalities, largely attributable to brittle command invocation, environmental and deployment instability, and recurring errors in credential management and state handling.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.06257v1' target='_blank'>LearnMate^2: Design and Evaluation of an LLM-powered Personalized and Adaptive Support System for Online Learning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Xinyu Jessica Wang, Christine P. Lee, Bilge Mutlu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-07 13:33:31</h6>
+<p class='card-text'>Personalization is crucial for effective learning, yet online learning, designed for widespread availability and open access, lacks personalized guidance. Recent advancements in large language models (LLMs) offer opportunities to bridge this gap. We explore how LLM-driven tools may be designed to support personalized and adaptive learning and examine how they shape user experience and learning outcomes. We iteratively designed \tool{} to support online learning by providing personalized study plans, real-time contextual assistance, and adaptive learning activities. A preliminary study ($n=24$) assessed the effectiveness and usability of \tool{} and informed refinements in our system, which we then evaluated ($n = 16$) against a combination of a state-of-the-art online learning platform and an LLM for learning support. Results indicate that \tool{} advances AI pedagogy by improving both learning outcomes and user experience compared to existing online learning and support tools. This work advances our understanding of the design space of personalized, AI-driven educational tools and their potential impact on user experience.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.06068v1' target='_blank'>VibeServe: Can AI Agents Build Bespoke LLM Serving Systems?</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Keisuke Kamahori, Shihang Li, Simon Peter, Baris Kasikci</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-07 11:54:53</h6>
+<p class='card-text'>For years, we have built LLM serving systems like any other critical infrastructure: a single general-purpose stack, hand-tuned over many engineer-years, meant to support every model and workload. In this paper, we take the opposite bet: a multi-agent loop that automatically synthesizes bespoke serving systems for different usage scenarios. We propose VibeServe, the first agentic loop that generates entire LLM serving stacks end-to-end. VibeServe uses an outer loop to plan and track the search over system designs, and an inner loop to implement candidates, check correctness, and measure performance on the target benchmark. In the standard deployment setting, where existing stacks are highly optimized, VibeServe remains competitive with vLLM, showing that generation-time specialization need not come at the cost of performance. More interestingly, in non-standard scenarios, VibeServe outperforms existing systems by exploiting opportunities that generic systems miss in six scenarios involving non-standard model architectures, workload knowledge, and hardware-specific optimizations. Together, these results suggest a different point in the design space for infrastructure software: generation-time specialization rather than runtime generality. Code is available at https://github.com/uw-syfi/vibe-serve.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.06040v1' target='_blank'>Novelty-based Tree-of-Thought Search for LLM Reasoning and Planning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Leon Hamm, Zlatan Ajanovic</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-07 11:28:53</h6>
+<p class='card-text'>Although advances such as chain-of-thought, tree-of-thought or reinforcement learning have improved the performance of LLMs in reasoning and planning tasks, they are still brittle and have not achieved human-level performance in many domains, and often suffer from high time and token costs. Inspired by the success of width-based search in planning, we explore how the concept of novelty can be transferred to language domains and how it can improve tree-of-thought reasoning. A tree of thoughts relies on building possible "paths" of consecutive ideas or thoughts. These are generated by repeatedly prompting an LLM. In our paper, a measurable concept of novelty is proposed that describes the uniqueness of a new node (thought) in comparison to nodes previously seen in the search tree. Novelty is estimated by prompting an LLM and making use of embedded general knowledge from pre-training. This metric can then be used to prune branches and reduce the scope of the search. Although this method introduces more prompts per state, the overall token cost can be reduced by pruning and reducing the overall tree size. This procedure is tested and compared using several benchmarks in language-based planning and general reasoning.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.05963v1' target='_blank'>TheraAgent: Self-Improving Therapeutic Agent for Precise and Comprehensive Treatment Planning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Junkai Li, Yunghwei Lai, Tianyi Zhu, Zheng Long Lee, Weizhi Ma, Yang Liu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-07 10:10:22</h6>
+<p class='card-text'>Formulating a treatment plan is inherently a complex reasoning and refinement task rather than a simple generation problem. However, existing large language models (LLMs) mainly rely on one-shot output without explicit verification, which may result in rough, incomplete, and potentially unsafe treatment plans. To address these limitations, we propose TheraAgent, an agentic framework that replaces one-shot generation with an iterative generate-judge-refine pipeline. By mirroring the actual reasoning process of human experts who iteratively revise treatment plans, our framework progressively transforms coarse and incomplete drafts into precise, comprehensive, and safer therapeutic regimens. To facilitate the critical judge component, we introduce TheraJudge, a treatment-specific evaluation module integrated into the inference loop to enforce clinical standards. Experiments show TheraAgent achieves state-of-the-art results on HealthBench, leading in Accuracy and Completeness. In expert evaluations, it attains an 86% win rate against physicians, with superior Targeting and Harm Control. Moreover, the highly agreement between TheraJudge and HealthBench evaluations confirms the reliability of our framework.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.05716v1' target='_blank'>More Is Not Always Better: Cross-Component Interference in LLM Agent Scaffolding</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Ming Liu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-07 06:01:43</h6>
+<p class='card-text'>LLM agent systems are built by stacking scaffolding components (planning, tools, memory, self-reflection, retrieval) assuming more is better. We study cross-component interference (CCI): degradation when components interact destructively. We run a full factorial experiment over all 2^5=32 subsets of five components on HotpotQA and GSM8K with Llama-3.1-8B/70B (96 conditions, up to 10 seeds). The All-In system is consistently suboptimal: on HotpotQA, a single-tool agent surpasses All-In by 32% (F1 0.233 vs 0.177, p=0.023); on GSM8K, a 3-component subset beats All-In by 79% (0.43 vs 0.24, p=0.010). Optimal component count is task-dependent (k*=1-4) and scale-sensitive: at 70B, combinations that hurt at 8B provide gains, though All-In still trails the best subset. We fit a main-effects regression (R^2=0.916, adj-R^2=0.899, LOOCV=0.872), compute exact Shapley values, and find 183/325 submodularity violations (56.3%), showing greedy selection is unreliable. A three-body synergy among Tool Use, Self-Reflection, and Retrieval (INT_3=+0.175, 95% CI [+0.003,+0.351]) is reported as exploratory. CCI replicates across model families (Qwen2.5) and is robust to prompt paraphrasing. Our findings suggest maximally-equipped agent defaults should be replaced by task-specific subset selection via interaction-aware analysis.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.06716v1' target='_blank'>From Storage to Experience: A Survey on the Evolution of LLM Agent Memory Mechanisms</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Jinghao Luo, Yuchen Tian, Chuxue Cao, Ziyang Luo, Hongzhan Lin, Kaixin Li, Chuyi Kong, Ruichao Yang, Jing Ma</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-07 03:38:48</h6>
+<p class='card-text'>Large Language Model (LLM)-based agents have fundamentally reshaped artificial intelligence by integrating external tools and planning capabilities. While memory mechanisms have emerged as the architectural cornerstone of these systems, current research remains fragmented, oscillating between operating system engineering and cognitive science. This theoretical divide prevents a unified view of technological synthesis and a coherent evolutionary perspective. To bridge this gap, this survey proposes a novel evolutionary framework for LLM agent memory mechanisms, formalizing the development process into three stages: Storage (trajectory preservation), Reflection (trajectory refinement), and Experience (trajectory abstraction). We first formally define these three stages before analyzing the three core drivers of this evolution: the necessity for long-range consistency, the challenges in dynamic environments, and the ultimate goal of continual learning. Furthermore, we specifically explore two transformative mechanisms in the frontier Experience stage: proactive exploration and cross-trajectory abstraction. By synthesizing these disparate views, this work offers robust design principles and a clear roadmap for the development of next-generation LLM agents.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.06713v1' target='_blank'>Agentic AI and the Industrialization of Cyber Offense: Forecast, Consequences, and Defensive Priorities for Enterprises and the Mittelstand</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Christopher Koch</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-06 23:23:26</h6>
+<p class='card-text'>Agentic AI systems can plan, call tools, inspect code, interact with web applications, and coordinate multi-step workflows. These same capabilities change the economics of cyber offense. The central near-term risk is not that every low-skill criminal immediately becomes a frontier exploit researcher; it is that agentic AI compresses the attack lifecycle by lowering the cost of reconnaissance, phishing, credential abuse, vulnerability triage, exploit adaptation, and post-compromise decision support. This paper synthesizes current public evidence from national cybersecurity agencies, industry threat reports, agent security guidance, and research on LLM agents cyber capabilities. It introduces a Three Channel Agentic Cyber Risk Model and an Agentic Attack Compression Model, uses the 2026 Linux kernel Copy Fail incident as a case study for foothold-to-root acceleration, and develops a 2026 to 2028 forecast for large enterprises and the German and European Mittelstand. The paper concludes with a prioritized defense roadmap. Organizations should treat agentic AI security as an immediate operational problem: identity, phishing resistant authentication, patch velocity, CI/CD and Linux/container hardening, agent governance, telemetry, and recovery readiness must be strengthened now.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.05501v1' target='_blank'>SOCpilot: Verifying Policy Compliance for LLM-Assisted Incident Response</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Sidnei Barbieri, Leonardo Vaz de Meneses, Ágney Lopes Roth Ferraz, Lourenço Alves Pereira Júnior</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-06 22:51:18</h6>
+<p class='card-text'>Security operations centers (SOCs) are beginning to use large language models (LLMs) as copilots to draft incident-response plans. These plans may include actions that are valid per the catalog but still violate mandatory steps, required ordering, or approval gates before analyst review. SOCpilot makes this compliance question measurable at the plan boundary. It fixes the incident package, action catalog, policy rules, verifier, and public evidence surface. Next, it verifies the copilot's proposed action trace. We evaluate two LLM providers on 200 real incidents from an anonymized production SOC in a financial-sector case study. We compare their plans to paired analyst-authored references from the same security orchestration, automation, and response (SOAR) cases. An identical inline policy text moves the two providers in opposite directions. A deterministic verifier removes 466 non-compliant, approval-gated actions, without reducing baseline-task recall. Aggregate rates remain stable across 3 reruns of the fixed corpus. The official evidence focuses on approval-gated decisions regarding recovery and containment. Separately, the artifact exposes zero-cost readiness checks for mandatory and ordering repairs. We release the runnable artifact so independent reviewers can rederive the public results without access to private incident data.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.05460v1' target='_blank'>Agentic Discovery of Exchange-Correlation Density Functionals</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Titouan Duston, Jiashu Liang, Yuanheng Wang, Weihao Gao, Xuelan Wen, Nan Sheng, Weiluo Ren, Yang Sun, Yixiao Chen</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-06 21:36:43</h6>
+<p class='card-text'>The development of accurate exchange-correlation (XC) functionals remains a longstanding challenge in density functional theory (DFT). The vast majority of XC functionals have been hand designed by human researchers combining physical insight, exact constraints, and empirical fitting. Recent advances in large language models enable a systematic, automated alternative to this human-driven design loop. This report presents an agentic search system in which an LLM proposes structured functional-form changes guided by evolutionary history. The system attempts to improve functional performance through an iterative plan-execute-summarize loop, where improvements are measurable by optimizing functional parameters against a standard thermochemistry dataset, then evaluating performance on a held-out subset. The strongest discovered functional, SAFS26-a (Seed Agentic Functional Search 2026), improves upon the gold-standard ωB97M-V baseline by ~9%. These results also surface a cautionary lesson for AI-assisted science: models powerful enough to discover genuine improvements are equally capable of exploiting unphysical shortcuts to game the benchmark; domain expertise translated into explicitly enforced constraints remains essential to keeping results scientifically grounded.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.04472v1' target='_blank'>Automated Formal Proofs of Combinatorial Identities via Wilf-Zeilberger Guidance and LLMs</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Beibei Xiong, Hangyu Lv, Junqi Liu, Yisen Wang, Shaoshi Chen, Jianlin Wang, Zhengfeng Yang, Lihong Zhi</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-06 03:49:35</h6>
+<p class='card-text'>Automating formal proofs of combinatorial identities is challenging for LLM-based provers, as long-horizon proof planning is required and unconstrained search quickly explodes. Symbolic methods such as the Wilf-Zeilberger (WZ) method can achieve a mechanized proof of combinatorial identities by constructing special auxiliary functions and demonstrating that they satisfy specific recurrence relations. We propose WZ-LLM, a neuro-symbolic framework that turns WZ proof plans into executable proof sketches in Lean 4 and uses an LLM-based prover to discharge the resulting machine-checkable subgoals. We also train a dedicated WZ-Prover via a Lean-kernel-verified bootstrapping loop with expert-verified iteration, followed by DAPO-based refinement. Experiments show that WZ-LLM achieves a 34% proof success rate on LCI-Test (100 classic combinatorial identities), outperforming strong baselines such as DeepSeek-V3 and Goedel-Prover-V2, and delivering consistent gains on CombiBench and PutnamBench-Comb. These results indicate that our framework provides two complementary strengths: improved direct proving for identities beyond the scope of WZ, and substantially higher end-to-end success when WZ sketches guide a specialized prover.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.03986v1' target='_blank'>From Intent to Execution: Composing Agentic Workflows with Agent Recommendation</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Kishan Athrey, Ramin Pishehvar, Brian Riordan, Mahesh Viswanathan</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-05 17:08:26</h6>
+<p class='card-text'>Multi-Agent Systems (MAS) built using AI agents fulfill a variety of user intents that may be used to design and build a family of related applications. However, the creation of such MAS currently involves manual composition of the plan, manual selection of appropriate agents, and manual creation of execution graphs. This paper introduces a framework for the automated creation of multi-agent systems which replaces multiple manual steps with an automated framework. The proposed framework consists of software modules and a workflow to orchestrate the requisite task- specific application. The modules include: an LLM-derived planner, a set of tasks described in natural language, a dynamic call graph, an orchestrator for map agents to tasks, and an agent recommender that finds the most suitable agent(s) from local and global agent registries. The agent recommender uses a two-stage information retrieval (IR) system comprising a fast retriever and an LLM-based re-ranker. We implemented a series of experiments exploring the choice of embedders, re- rankers, agent description enrichment, and supervising critique agent. We benchmarked this system end-to-end, evaluating the combination of planning, agent selection, and task completion, with our proposed approach. Our experimental results show that our approach outperforms the state-of-the- art in terms of the recall rate and is more robust and scalable compared to previous approaches. The critique agent holistically reevaluates both agent and tool recommendations against the overall plan. We show that the inclusion of the critique agent further enhances the recall score, proving that the comprehensive review and revision of task-based agent selection is an essential step in building end-to-end multi-agent systems.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.03855v2' target='_blank'>Evaluating Generative Models as Interactive Emergent Representations of Human-Like Collaborative Behavior</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Shinas Shaji, Teena Chakkalayil Hassan, Sebastian Houben, Alex Mitrevski</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-05 15:20:15</h6>
+<p class='card-text'>Human-AI collaboration requires AI agents to understand human behavior for effective coordination. While advances in foundation models show promising capabilities in understanding and showing human-like behavior, their application in embodied collaborative settings needs further investigation. This work examines whether embodied foundation model agents exhibit emergent collaborative behaviors indicating underlying mental models of their collaborators, which is an important aspect of effective coordination. This paper develops a 2D collaborative game environment where large language model agents and humans complete color-matching tasks requiring coordination. We define five collaborative behaviors as indicators of emergent mental model representation: perspective-taking, collaborator-aware planning, introspection, theory of mind, and clarification. An automated behavior detection system using LLM-based judges identifies these behaviors, achieving fair to substantial agreement with human annotations. Results from the automated behavior detection system show that foundation models consistently exhibit emergent collaborative behaviors without being explicitly trained to do so. These behaviors occur at varying frequencies during collaboration stages, with distinct patterns across different LLMs. A user study was also conducted to evaluate human satisfaction and perceived collaboration effectiveness, with the results indicating positive collaboration experiences. Participants appreciated the agents' task focus, plan verbalization, and initiative, while suggesting improvements in response times and human-like interactions. This work provides an experimental framework for human-AI collaboration, empirical evidence of collaborative behaviors in embodied LLM agents, a validated behavioral analysis methodology, and an assessment of collaboration effectiveness.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.03799v1' target='_blank'>Natural Language Processing: A Comprehensive Practical Guide from Tokenisation to RLHF</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Mullosharaf K. Arabov</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-05 14:25:48</h6>
+<p class='card-text'>This preprint presents a systematic, research-oriented practicum that guides the reader through the entire modern NLP pipeline: from tokenisation and vectorisation to fine-tuning of large language models, retrieval-augmented generation, and reinforcement learning from human feedback. Twelve hands-on sessions combine concise theory with detailed implementation plans, formalised evaluation metrics, and transparent assessment criteria. The work is not a conventional textbook: it is designed as a reproducible research artefact where every session requires publishing code, models, and reports in public repositories. All experiments are conducted on a single evolving corpus, and the work advocates open-weight models over commercial APIs, with special attention to the Hugging Face ecosystem. The material is enriched by original research on low-resource languages, incorporating linguistic resources for Tajik and Tatar (subword tokenisers, embeddings, lexical databases, and transliteration benchmarks), demonstrating how modern NLP can be adapted to data-scarce environments. Designed for senior undergraduates, graduate students, and practising developers seeking to implement, compare, and deploy methods from classical ML to state-of-the-art LLM-based systems.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.03788v1' target='_blank'>Say the Mission, Execute the Swarm: Agent-Enhanced LLM Reasoning in the Web-of-Drones</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Andrea Iannoli, Lorenzo Gigli, Luca Sciullo, Angelo Trotta, Marco Di Felice</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-05 14:14:57</h6>
+<p class='card-text'>Large Language Models (LLMs) are increasingly explored as high-level reasoning engines for cyber-physical systems, yet their application to real-time UAV swarm management remains challenging due to heterogeneous interfaces, limited grounding, and the need for long-running closed-loop execution. This paper presents a mission-agnostic, agent-enhanced LLM framework for UAV swarm control, where users express mission objectives in natural language and the system autonomously executes them through grounded, real-time interactions. The proposed architecture combines an LLM-based Agent Core with a Model Context Protocol (MCP) gateway and a Web-of-Drones abstraction based on W3C Web of Things (WoT) standards. By exposing drones, sensors, and services as standardized WoT Things, the framework enables structured tool-based interaction, continuous state observation, and safe actuation without relying on code generation. We evaluate the framework using ArduPilot-based simulation across four swarm missions and six state-of-the-art LLMs. Results show that, despite strong reasoning abilities, current general-purpose LLMs still struggle to achieve reliable execution - even for simple swarm tasks - when operating without explicit grounding and execution support. Task-specific planning tools and runtime guardrails substantially improve robustness, while token consumption alone is not indicative of execution quality or reliability.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js'></script>
+</body>
+</html>
