@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<title>LLM-agent - 2026-05-20</title>
+<link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap' rel='stylesheet'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'>
+<style>
+body {
+font-family: 'Roboto', sans-serif;
+background-color: #f5f7fa;
+padding: 20px;
+}
+.card {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.card-title {
+    font-weight: 700;
+}
+.card:hover {
+    transform: scale(1.02);
+    transition: 0.3s ease-in-out;
+}
+</style>
+</head>
+<body>
+<div class='container'>
+<h1 class='text-center my-4'><i class='fas fa-book'></i>LLM-agent - 2026-05-20</h1>
+<div class='row'>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.20176v1' target='_blank'>ClinSeekAgent: Automating Multimodal Evidence Seeking for Agentic Clinical Reasoning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Juncheng Wu, Letian Zhang, Yuhan Wang, Haoqin Tu, Hardy Chen, Zijun Wang, Cihang Xie, Yuyin Zhou</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-19 17:58:37</h6>
+<p class='card-text'>Large language models (LLMs) and agentic systems have shown promise for clinical decision support, but existing works largely assume that evidence has already been curated and handed to the model. Real-world clinical workflows instead require agents to actively seek, iteratively plan, and synthesize multimodal evidence from heterogeneous sources. In this paper, we introduce ClinSeekAgent, an automated agentic framework for dynamic multimodal evidence seeking that shifts the paradigm from passive evidence consumption to active evidence acquisition. Given only a clinical query and access to raw data sources, ClinSeekAgent gathers evidence by querying medical knowledge bases, navigating raw EHRs, and invoking medical imaging tools; refines its hypotheses as new information emerges; and integrates the collected evidence into grounded clinical decisions. ClinSeekAgent serves both as an inference-time agent for frontier LLMs and as a training-time pipeline for distilling high-quality agent trajectories into compact open-source models. To validate its inference-time effectiveness, we construct ClinSeek-Bench, which pairs Curated Input reasoning from fixed pre-selected evidence with Automated Evidence-Seeking over raw clinical data. On text-only EHR tasks, ClinSeekAgent improves Claude Opus 4.6 from 60.0 to 63.2 overall F1 and MiniMax M2.5 from 43.1 to 47.3, with positive risk-prediction gains in 7 out of 9 evaluated host models. On multimodal tasks, ClinSeekAgent improves Claude Opus 4.6 from 47.5 to 62.6 (+15.1); all evaluated models improve across the three CXR-related task groups. We further validate ClinSeekAgent as a training pipeline by distilling agentic evidence-seeking trajectories into ClinSeek-35B-A3B, which achieves 34.0 average F1 on existing AgentEHR-Bench, improving over its Qwen3.5-35B-A3B baseline by +11.9 points and approaching Claude Opus 4.6.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.20173v1' target='_blank'>A Methodology for Selecting and Composing Runtime Architecture Patterns for Production LLM Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Vasundra Srinivasan</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-19 17:54:21</h6>
+<p class='card-text'>Production LLM agents combine stochastic model outputs with deterministic software systems, yet the boundary between the two is rarely treated as a first-class architectural object. This paper names that boundary the stochastic-deterministic boundary (SDB): a four-part contract among a proposer, verifier, commit step, and reject signal that specifies how an LLM output becomes a system action. We argue that the SDB is the load-bearing primitive of production agent runtimes.
+  Around this primitive, we organize agent runtime design into three concerns: Coordination, State, and Control. We present a catalog of six runtime patterns that compose the SDB differently across conversational, autonomous, and long-horizon agents: hierarchical delegation, scatter-gather plus saga, event-driven sequencing, shared state machine, supervisor plus gate, and human in the loop. For each pattern, we trace its lineage to distributed-systems concepts and identify what changes when the worker is stochastic.
+  The paper contributes a five-step methodology for selecting runtime patterns, a diagnostic procedure that maps production failures to pattern weaknesses, and a failure mode called replay divergence, in which LLM-based consumers of a deterministic event log produce different downstream outputs under model-version or prompt changes. A stylized reliability decomposition separates per-call model variance from architectural momentum, motivating the claim that as model variance decreases, pattern choice and SDB strength become increasingly important levers for long-run reliability. We apply the methodology to five workloads and provide one runnable reference implementation for a 90-day contract-renewal agent.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.20086v1' target='_blank'>What Do Evolutionary Coding Agents Evolve?</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Nico Pelleriti, Sree Harsha Nelaturu, Zhanke Zhou, Zongze Li, Max Zimmer, Bo Han, Sebastian Pokutta</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-19 16:41:45</h6>
+<p class='card-text'>Recent work pairs LLMs with evolutionary search to iteratively generate, modify, and select code using task-specific feedback. These systems have produced strong results in mathematical discovery and algorithm design, yet a fundamental question remains: what do they actually evolve? Progress is typically summarized by the best score a run reaches under a task-specific evaluator, but that score can reflect several different mechanisms: new algorithmic structure, re-tuning an existing strategy, recombining ideas already in the model's internal knowledge, or overfitting to the evaluator. Distinguishing these mechanisms requires inspecting the search process itself, not only its final outcome. We introduce EvoTrace, a dataset of evolutionary coding traces spanning four evolutionary frameworks, reasoning and non-reasoning models, and 16 tasks across mathematics and algorithm design. To analyze these traces, we develop EvoReplay, a replay-based methodology that reconstructs the local search states behind high-scoring solutions and tests controlled interventions, including adjusting constants, removing program components and substituting models or prompting contexts. We annotate every code edit in EvoTrace with one of nine recurring edit types using an LLM-as-judge pipeline validated against blind human re-annotation. Across EvoTrace, most score gains come from a small subset of these edit types. We further find a deterministic cycling pattern: about 30% of code lines added during search are byte-identical re-introductions of previously-deleted lines, present throughout nearly every run. These results show that benchmark gains in evolutionary coding agents can arise from qualitatively different mechanisms, only some of which correspond to new algorithmic structure. EvoTrace enables more diagnostic evaluation of evolutionary coding agents beyond final benchmark scores.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.20075v1' target='_blank'>CopT: Contrastive On-Policy Thinking with Continuous Spaces for General and Agentic Reasoning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Dachuan Shi, Hanlin Zhu, Xiangchi Yuan, Wanjia Zhao, Kejing Xia, Wen Xiao, Wenke Lee</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-19 16:28:53</h6>
+<p class='card-text'>Chain-of-thought (CoT) is a standard approach for eliciting reasoning capabilities from large language models (LLMs). However, the common CoT paradigm treats thinking as a prerequisite for answering, which can delay access to plausible answers and incur unnecessary token costs even when the model is able to identify an answer before extended thinking, a behavior known as performative reasoning. In this paper, we introduce CopT, a reformulated reasoning pipeline that reverses the usual order of thinking and answering. Instead of thinking before answering, CopT first elicits a draft answer and then invokes subsequent on-policy thinking conditioned on its own draft answer for reflection and correction. To assess whether the draft answer should be trusted, CopT recasts continuous embeddings as inference-time contrastive verifiers. Specifically, it contrasts the model's support for the same generated tokens under discrete-token inputs and continuous-embedding inputs, yielding a sequence-level reverse KL estimator for answer reliability. Our analysis shows that under certain assumptions, the expected estimate equals the mutual information between the unresolved latent state and the emitted answer token, explaining why it captures answer-relevant uncertainty rather than arbitrary uncertainty in the latent state. When the answer is deemed insufficiently reliable, CopT performs further on-policy thinking, where a second KL estimator dynamically controls draft-answer visibility, preserving useful partial information while reducing the risk of being misled by unreliable content. Across mathematics, coding, and agentic reasoning tasks, CopT improves peak accuracy by up to 23% and reduces token usage by up to 57% at comparable or higher accuracy, without any additional training. The code is available at https://github.com/sdc17/CopT.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.20072v1' target='_blank'>Probing Embodied LLMs: When Higher Observation Fidelity Hurts Problem Solving</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Oussama Zenkri, Oliver Brock</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-19 16:27:00</h6>
+<p class='card-text'>Large Language Models are increasingly proposed as cognitive components for robotic systems, yet their opaque decision processes make it difficult to explain success or failure in closed-loop embodied tasks. Following an empirical AI methodology, we study embodied LLM agents behaviorally by varying the information available to the agent and measuring the resulting changes in behavior. Using the Lockbox, a sequential mechanical puzzle with hidden interdependencies, we evaluate LLMs across RGB, RGB-D, and ground-truth symbolic observations in a physical robotic setup and use controlled simulation to probe the resulting behavior. Counterintuitively, agents perform best under raw RGB input and worst under perfect ground-truth observations. In simulation, we probe this effect by randomly flipping perceived action outcomes and find that moderate noise improves performance, peaking at a 40% flip probability with a 2.85-fold success rate increase over the noise-free baseline. Further analysis links this gain to a reduction in repetitive action loops. These findings suggest that success rates alone are insufficient for evaluating LLMs, as measured performance may reflect the interaction between perceptual errors and reasoning failures rather than robust problem solving.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.20061v1' target='_blank'>Rewarding Beliefs, Not Actions: Consistency-Guided Credit Assignment for Long-Horizon Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Wenjie Tang, Minne Li, Sijie Huang, Liquan Xiao, Yuan Zhou</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-19 16:19:29</h6>
+<p class='card-text'>Reinforcement learning from verifiable rewards (RLVR) is a promising paradigm for improving large language model (LLM) agents on long-horizon interactive tasks. However, in partially observable environments, incomplete observations cause agent beliefs to drift over time, while delayed rewards obscure the causal impact of intermediate decisions, exacerbating temporal credit assignment challenges. To address this, we propose ReBel (Reward Belief), a process-level reinforcement learning algorithm that explicitly models structured belief states to summarize interaction history and guide subsequent policy learning. ReBel introduces belief-consistency supervision, converting discrepancies between predicted beliefs and observed feedback into dense self-supervised signals without requiring external step-wise annotations or verifiers. It also employs belief-aware grouping to compare trajectories under similar belief states, yielding more robust and lower-variance advantage estimates. We evaluate ReBel on challenging long-horizon benchmarks, including ALFWorld and WebShop. ReBel improves task success by up to $20.4$ percentage points over the episode-level baseline GRPO and increases sample efficiency by $2.1\times$. These results suggest that belief-aware self-supervision is a promising direction for reliable long-horizon decision-making under partial observability. Code is available at: https://github.com/Fateyetian/Rebel.git.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.20055v1' target='_blank'>Towards LLM-Assisted Architecture Recovery for Real-World ROS~2 Systems: An Agent-Based Multi-Level Approach to Hierarchical Structural Architecture Reconstruction</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Dominique Briechle, Raj Chanchad, Tobias Geger, Ruidi He, Dhruv Jajadiya, Dhruv Kapadiya, Andreas Rausch, Meng Zhang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-19 16:14:33</h6>
+<p class='card-text'>Explicit software architecture models are essential artifacts for communicating, analyzing, and evolving complex software-intensive systems. In ROS~2-based robotic systems, however, structural (de-)composition and integration semantics are often only implicitly encoded across distributed artifacts such as source code and launch files, making recovery of hierarchical architecture particularly difficult. Existing approaches mainly focus on node-level entities and communication wiring, while providing limited support for recovering hierarchical structural (de-)composition across multiple abstraction levels.
+  In this paper, we extend our previously proposed blueprint-guided LLM-assisted architecture recovery pipeline for ROS~2 systems through two major enhancements: (1) refined prompting to improve the consistency and controllability of architecture synthesis, and (2) a staged recovery strategy based on multi-level intermediate architectural representations that incorporate the atomic ROS node list and launch file dependencies, thereby enabling structurally constrained reconstruction across multiple abstraction levels.
+  The approach is evaluated on a real-world automated product disassembly system based on cooperative robotic arms and heterogeneous ROS~2 artifacts. Compared to our previous work, the considered case study exhibits substantially higher integration complexity and richer functionality. The results demonstrate improved structural consistency, scalability, and robustness of architecture recovery, while also revealing remaining challenges related to dynamic integration semantics in large-scale ROS~2 systems.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.20023v1' target='_blank'>When Skills Don't Help: A Negative Result on Procedural Knowledge for Tool-Grounded Agents in Offensive Cybersecurity</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Samuel Jacob Chacko, James Hugglestone, Chashi Mahiul Islam, Xiuwen Liu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-19 15:48:35</h6>
+<p class='card-text'>Agent Skills, structured packages of procedural knowledge loaded into an LLM agent at inference time, are widely reported to improve task pass rates by an average of 16.2~percentage points across diverse domains. Yet the same benchmarks show wide variance, with 16 of 84 tasks suffering negative deltas when Skills are introduced. The community has not yet articulated a clean mechanism for \emph{when} Skills help and when they are merely redundant overhead. We re-analyze a recently published 180-run controlled study of an MCP-grounded autonomous Capture-the-Flag (CTF) agent under four documentation conditions of increasing richness (55, 1{,}478, 1{,}976, and 4{,}147 lines), and show that these conditions correspond almost exactly to a No-Skills, Experiential-Skills, Curated-Skills, and Comprehensive-Skills ablation. In offensive cybersecurity, a domain not deeply covered by existing Skills benchmarks, the marginal benefit of Skills collapses. The spread between the no-Skills and full-Skills conditions is only 8.9~pp ($p = 0.71$, $χ^2$; $p = 0.25$, Cochran--Armitage trend test; five of six pairwise Cohen's $h$ values fall below the $0.2$ small-effect threshold). We argue that the missing variable is \emph{environment-feedback bandwidth}. When an agent's tool layer returns strict, schema-validated, low-latency observations, the environment itself supplies the procedural correction signal that Skills are normally needed to provide. As a result, the marginal benefit of curated Skills diminishes substantially, and, in some cases (e.g., our timing side-channel setting), actively degrades performance. We articulate a falsifiable hypothesis, sketch its design implications for compound AI systems, and will release the reanalysis pipeline to support replication.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.19988v1' target='_blank'>A Case for Agentic Tuning: From Documentation to Action in PostgreSQL</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Hongyu Lin, Mingyu Li, Weichen Zhang, Yihang Lou, Mingjie Xing, Yanjun Wu, Haibo Chen</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-19 15:26:28</h6>
+<p class='card-text'>Documentation has long guided computer system tuning by distilling expert knowledge into per-parameter recommendations. Yet such guides capture only what experts conclude, discarding how they reason. This fundamental gap manifests in three concrete deficiencies: documentation grows stale as software evolves, fails under heterogeneous workloads, and ignores inter-parameter dependencies.
+  We propose shifting from static documentation to dynamic action for system tuning. We introduce PerfEvolve, which translates expert tuning methodologies into executable skills that equip LLM-based agents to perform version-consistency verification, workload-specific profiling, and multi-parameter joint optimization. Evaluated on PostgreSQL under TPC-C and TPC-H benchmarks, PerfEvolve outperforms state-of-the-art documentation-driven tuning baselines by up to 35.2%. The tool is available at https://github.com/ISCAS-OSLab/PerfEvolve.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.19952v1' target='_blank'>Rethinking How to Remember: Beyond Atomic Facts in Lifelong LLM Agent Memory</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Jingwei Sun, Jianing Zhu, Jiangchao Yao, Tongliang Liu, Bo Han</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-19 15:05:06</h6>
+<p class='card-text'>To enable reliable long-term interaction, LLM agents require a memory system that can faithfully store, efficiently retrieve, and deeply reason over accumulated dialogue history. Most existing methods adopt an extracted fact based paradigm: handcrafted static prompts compress raw dialogues into atomic facts, which are then stored, matched, and injected into downstream reasoning. Nevertheless, such fact-centric designs inevitably discard fine-grained details in original dialogues and fail to support deep reasoning over scattered isolated facts. Moreover, static prompts cannot maintain consistent extraction granularity across diverse dialogue styles. To address these limitations, we propose TriMem, which maintains three coexisting representation granularities, including raw dialogue segments anchored by source identifiers for storage fidelity, extracted atomic facts for efficient memory retrieval, synthesized profiles that aggregate dispersed facts into holistic semantic understanding for deep reasoning. We further adopt TextGrad-based prompt optimization, which iteratively refines extraction and profiling prompts via response quality feedback, achieving lifelong evolution without any parameter updating. Extensive experiments on LoCoMo and PerLTQA across multiple LLM backbones demonstrate that TriMem consistently outperforms strong memory baselines. The code is available at https://TMLR-TriMem.github.io .</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.19932v1' target='_blank'>PEEK: Context Map as an Orientation Cache for Long-Context LLM Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Zhuohan Gu, Qizheng Zhang, Omar Khattab, Samuel Madden</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-19 14:51:32</h6>
+<p class='card-text'>Large language model (LLM) agents increasingly operate over long and recurring external contexts, like document corpora and code repositories. Across invocations, existing approaches preserve either the agent's trajectory, passive access to raw material, or task-level strategies. None of them preserves what we argue is most needed for repeated same-context workloads: reusable orientation knowledge (e.g., what the context contains, how it is organized, and which entities, constants, and schemas have historically been useful) about the recurring context itself. We introduce PEEK, a system that caches and maintains this orientation knowledge as a context map: a small, constant-sized artifact in the agent's prompt that gives it a persistent peek into the external context. The map is maintained by a programmable cache policy with three modules: a Distiller that extracts transferable knowledge from inference-time signals, a Cartographer that translates it into structured edits, and a priority-based Evictor that enforces a fixed token budget. On long-context reasoning and information aggregation, PEEK improves over strong baselines by 6.3-34.0% while using 93-145 fewer iterations and incurring 1.7-5.8x lower cost than the state-of-the-art prompt-learning framework, ACE. On context learning, PEEK improves solving rate and rubric accuracy by 6.0-14.0% and 7.8-12.1%, respectively, at 1.4x lower cost than ACE. These gains generalize across LMs and agent architectures, including OpenAI Codex, a production-grade coding agent. Together, these results show that a context map helps long-context LLM agents interact with recurring external contexts more accurately and efficiently.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.19915v1' target='_blank'>LLM Agents Make Collective Belief Dynamics Programmable: Challenges and Research Directions</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Xin He, Junxi Shen, Yuchen Mou, David M. Bossens, Caishun Chen, Ivor W. Tsang, Yew Soon Ong</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-19 14:39:54</h6>
+<p class='card-text'>Classical models of opinion dynamics assume human participants with bounded rationality and limited coordination. The rise of LLM-based agents introduces a qualitative shift: agents can now participate in online discussions at scale, maintain consistent persuasion strategies, and coordinate systematically. This paper argues that LLM agents make collective belief dynamics programmable, enabling deliberate steering of population-level beliefs. We term this emerging problem programmable collective belief control. Through controlled multi-agent simulations, we provide proof-of-concept evidence that coordinated AI agents can induce measurable belief shifts that stabilize within a few interaction rounds. We identify four structural properties (indistinguishability, persistence, contextuality, and configurability) that make detection and defense fundamentally difficult. Based on these findings, we outline a research agenda spanning theoretical foundations for adversarial belief dynamics, operational methods for system-level detection and intervention, and simulation infrastructure for scalable experimentation. Our goal is not to present a complete solution, but to articulate why this problem demands urgent attention and to provide a conceptual foundation for future work.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.19824v1' target='_blank'>From Prompts to Pavement Through Time: Temporal Grounding in Agentic Scene-to-Plan Reasoning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Ahmed Y. Gado, Omar Y. Goba, Alaa Hassanein, Catherine M. Elias, Ahmed Hussein</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-19 13:18:35</h6>
+<p class='card-text'>Recent attempts to support high-level scene interpretation and planning in Autonomous Vehicles (AVs) using ensembles of Large Language Models (LLMs) and Large Multimodal Models (LMMs) continue to treat time as a secondary property. This lack of temporal grounding leads to inconsistencies in reasoning about continuous actions, undermining both safety and interpretability. This work explores whether temporal conditioning within inter-agent communication can preserve or enhance coherence without introducing degradation in semantic or logical consistency. To investigate this, we introduce three planner architectures with progressively increasing temporal integration and evaluate them on curated subsets of the BDD-X dataset using semantic, syntactic, and logical metrics. Results show that while temporal conditioning reshapes reasoning style, it yields no statistically significant improvements in standard NLP-based correctness metrics. However, qualitative analysis reveals predictive hazard reasoning, stable corrective behavior, and strategic divergence in the Sentinel. These findings clarify the limits of prompt-based temporal grounding and establish the first empirical benchmark for temporal scene-to-plan reasoning.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.19798v1' target='_blank'>Towards Trust Calibration in Socially Interactive Agents: Investigating Gendered Multimodal Behaviors Generation with LLMs</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Lucie Galland, Chloé Clavel, Magalie Ochs</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-19 12:59:21</h6>
+<p class='card-text'>As Socially Interactive Agents (SIAs) become increasingly integrated into daily life, the ability to calibrate user trust to an agent's actual capabilities would help ensure appropriate usage of these agents. In this paper, we explore the capacity of Large Language Models (LLMs) to generate multimodal behaviors (verbal, vocal, gestural, and facial expression modalities) that reflect varying levels of ability and benevolence, two key dimensions of trustworthiness. We propose a novel method for automatically generating behaviors aligned with specific levels of these traits, a first step towards enabling nuanced and trust-calibrated interactions. By analyzing a large dataset of multimodal transcripts generated by LLMs, we demonstrate that GPT-5.4 is able to produce coherent behavior across different modalities (text, intonation, facial expression, and gesture). Using Random Forest feature importance analysis, we show that the generated behaviors align with theoretical expectations for ability and benevolence. However, we also find that when gender is specified in the prompt, LLMs tend to reproduce societal gender stereotypes, associating male agents' behaviors with high ability and female agents' behaviors with high benevolence. To validate our approach, we conducted a user study on Prolific using a within-subjects design. Participants perceived different levels of ability and benevolence in the generated behaviors align with the intended instructions.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.19782v1' target='_blank'>Prior Knowledge or Search? A Study of LLM Agents in Hardware-Aware Code Optimization</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Dmitry Redko, Albert Fazlyev, Konstantin Sozykin, Maria Ivanova, Evgeny Burnaev, Egor Shvetsov</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-19 12:48:48</h6>
+<p class='card-text'>LLM discovery and optimization systems are increasingly applied across domains, implementing a common propose-evaluate-revise loop. Such optimization or discovery progresses via context conditioning on received feedback from an environment. However, as modern LLM agents are increasingly complex in their structure, it is difficult to evaluate which components contribute the most, and when and how this exploration may fail. We answer these questions through three controlled experiments. Our findings: (1) In pure black-box optimization, LLMs act as greedy optimizers. (2) In zero-shot kernel generation, providing explicit input-size information has no measurable effect, models converge to the same kernel parameters regardless of size or temperature, as though the size instruction were invisible. Moreover, when tasked to perform kernel optimization for uncommon kernel sizes, performance sharply degrades regardless of the language used. (3) In feedback-loop kernel optimization, CUDA improves monotonically under iterative feedback, while TVM IR actively degrades, which demonstrates that kernel optimization degrades when models operate with low-density language. Our results conclude that LLMs in code optimization tasks highly depend on pretrained priors rather than provided feedback or agentic structure.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.19769v1' target='_blank'>OpenComputer: Verifiable Software Worlds for Computer-Use Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Jinbiao Wei, Qianran Ma, Yilun Zhao, Xiao Zhou, Kangqi Ni, Guo Gan, Arman Cohan</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-19 12:40:29</h6>
+<p class='card-text'>We present OpenComputer, a verifier-grounded framework for constructing verifiable software worlds for computer-use agents. OpenComputer integrates four components: (1) app-specific state verifiers that expose structured inspection endpoints over real applications, (2) a self-evolving verification layer that improves verifier reliability using execution-grounded feedback, (3) a task-generation pipeline that synthesizes realistic and machine-checkable desktop tasks, and (4) an evaluation harness that records full trajectories and computes auditable partial-credit rewards. In its current form, OpenComputer covers 33 desktop applications and 1,000 finalized tasks spanning browsers, office tools, creative software, development environments, file managers, and communication applications. Experiments show that OpenComputer's hard-coded verifiers align more closely with human adjudication than LLM-as-judge evaluation, especially when success depends on fine-grained application state. Frontier agents struggle with end-to-end completion despite partial progress, and open-source models exhibit sharp drops from their OSWorld-Verified scores, exposing a persistent gap in robust computer automation.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.19766v1' target='_blank'>Synthesis and Evaluation of Long-term History-aware Medical Dialogue</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Hebin Hu, Renke Dai, Ah-Hwee Tan, Yilin Kang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-19 12:38:41</h6>
+<p class='card-text'>An effective healthcare agent must be able to recall and reason over a patient's longitudinal medical history. However, the absence of datasets with realistic long-term dialogue timelines limits systematic evaluation. Real clinical text is constrained by privacy and ethics, while existing benchmarks focus on isolated interactions, failing to capture cross-session reasoning. We introduce a framework for synthesizing high-quality, long-term medical dialogues with LLMs. Our approach entails a knowledge-guided decomposition into three stages: constructing synthetic patient profiles with diverse disease and complication trajectories, generating multi-turn dialogues per encounter, and integrating them into a coherent longitudinal history dataset, MediLongChat. We establish three benchmark tasks-In-dialogue Reasoning, Cross-dialogue Reasoning, and Synthesis Reasoning-to evaluate the memory capabilities of healthcare agents. To assess data quality, we introduce a multi-dimensional evaluation framework combining vector-based metrics with LLM-as-a-judge assessments. Specifically, we define automatic measures-Faithfulness, Coherence, and Diversity-together with two LLM-based evaluations: Correctness and Realism. Benchmark experiments show that even state-of-the-art LLMs struggle with MediLongChat. These findings highlight the benchmark's applicability and underscore the need for tailored methods to advance healthcare agents.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.19748v1' target='_blank'>Memory-Augmented Reinforcement Learning Agent for CAD Generation</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yin Xiaolong, Liu Yu, Shen Jiahang, Lu Xingyu, Ni Jingzhe, Fan Fengxiao, Sang Fan</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-19 12:16:31</h6>
+<p class='card-text'>Automatic generation of computer-aided design (CAD) models is a core technology for enabling intelligence in advanced manufacturing. Existing generation methods based on large language models (LLMs) often fall short when handling complex CAD models characterized by long operation sequences, diverse operation types, and strong geometric constraints, primarily because reasoning chains break and effective error-correction mechanisms are lacking. To address this problem, this paper proposes a memory-augmented reinforcement learning framework for CAD generation agents. The framework encapsulates the underlying geometric kernel into a structured toolchain callable by the agent and builds a closed-loop mechanism of design intent understanding, global planning, execution, and multi-dimensional verification. It also designs a dual-track memory module consisting of a case library and a skill library, and proposes a dynamic utility retrieval algorithm. By introducing reinforcement learning into retrieval and policy optimization, the agent can effectively avoid retrieval traps in which examples are semantically similar but geometrically infeasible, enabling online self-correction and continual evolution without additional large-scale annotated data. Experiments show that the proposed method significantly improves both the success rate and geometric consistency on complex CAD model generation tasks.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.19743v1' target='_blank'>EngiAI: A Multi-Agent Framework and Benchmark Suite for LLM-Driven Engineering Design</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Gioele Molinari, Florian Felten, Soheyl Massoudi, Mark Fuge</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-19 12:12:09</h6>
+<p class='card-text'>Large Language Model (LLM) agents are increasingly applied to engineering design tasks, yet existing evaluation frameworks do not adequately address multi-agent systems that combine simulation, retrieval, and manufacturing preparation. We introduce a benchmark suite with three evaluation dimensions: (1) a workflow benchmark with seven prompt styles targeting distinct cognitive demands-including direct tool use, semantic disambiguation, conditional branching, and working-memory tasks; (2) a Retrieval-Augmented Generation (RAG) benchmark with gated scoring isolating retrieval contributions to parameter selection; and (3) an High Performance Computing (HPC) benchmark evaluating end-to-end ML training orchestration on a SLURM cluster. Alongside the benchmark we present EngiAI, a Multi-Agent System (MAS) reference implementation built on LangGraph that operationalizes the benchmark by coordinating seven specialized agents through a supervisor architecture, unifying topology optimization, document retrieval, HPC job orchestration, and 3D printer control. Across four LLM backends and two EngiBench problems, proprietary models achieve 96-97% average task completion on Beams2D, while open-source 4B-parameter models reach 55-78%, with clear generational improvement. Conditional branching proves most challenging, with task completion dropping to 20-53% for the conditional style on Photonics2D. RAG gating confirms near-perfect retrieval-augmented scores ($\approx 1.0$) versus near-zero without retrieval, validating the evaluation design. On HPC orchestration, one model completes all pipeline steps in 100% of runs while another drops to 50%, revealing that multi-step instruction following degrades over long-running workflows.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.19717v1' target='_blank'>Physics-in-the-Loop: A Hybrid Agentic Architecture for Validated CAD Engineering Design</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Elias Berger, Muhammad Usama, Jan Mehlstäubl, Bernhard Saske, Kristin Paetzold-Byhain</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-19 11:52:42</h6>
+<p class='card-text'>Large Language Models (LLMs) can generate Computer-Aided Design (CAD), yet lack physical comprehension required for reliable engineering design. Instead of attempting to implicitly learn physical laws from data, we propose a Hybrid Agentic-Physical Architecture that embeds validated knowledge-based engineering tools directly into the decision making loop of autonomous AI agents. In this framework, engineering design is formulated as a closed-loop, sequential decision making process guided by explicit physical verification. Based on a load case, dedicated agents iteratively plan, generate, evaluate, and revise engineering designs using knowledge-based tools as a feedback signal. We introduce a benchmark dataset and metrics for assessing functional validity in generative CAD. Our system generates more complex and physically verified designs, with a 4.2 increase in structural complexity and improving compile rate by 3.5% compared to similar agentic methods. The codebase, prompts and dataset will be made publicly available to support reproducibility and future research.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.19704v1' target='_blank'>RefiningGPT: Specialized language Models for Automated Refinery Unit-level Process Diagram Synthesis</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Dongxiao Liu, Yuwen Ding, Xinghai Wei, Jiacheng Ji, Lei Li, Linghui Li, Xiaoyong Li</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-19 11:42:40</h6>
+<p class='card-text'>Applying LLMs to complex industrial processes remains challenging due to the semantic gap between natural language design intents and the rigorous physical logic of engineering. In the field of petroleum refining engineering, a critical bottleneck is the automated synthesis of Unit-level Process Diagrams (UPDs), which serve as the topological bridge connecting abstract requirements to concrete unit operations. In this paper, we propose RefineGPT, a domain-specialized agent for autonomous refinery design.RefineGPT adopts a hierarchical architecture in which a supervised fine-tuned small language model is responsible for selecting units that satisfy design requirements, while a large language model is used to connect these units to generate the final topology. To enable supervised training, we develop a pipeline that extracts latent process motifs from noisy, unstructured legacy topologies and synthesizes high-quality rationale-based Chain-of-Thought (CoT) training data. Empirical validation demonstrates that RefineGPT achieves substantial improvements in topological consistency and chemical engineering feasibility, establishing a high-fidelity pathway for AI-augmented industrial process synthesis.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.19633v1' target='_blank'>optimize_anything: A Universal API for Optimizing any Text Parameter</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Lakshya A Agrawal, Donghyun Lee, Shangyin Tan, Wenjie Ma, Karim Elmaaroufi, Rohit Sandadi, Sanjit A. Seshia, Koushik Sen, Dan Klein, Ion Stoica, Joseph E. Gonzalez, Omar Khattab, Alexandros G. Dimakis, Matei Zaharia</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-19 10:18:12</h6>
+<p class='card-text'>Can a single LLM-based optimization system match specialized tools across fundamentally different domains? We show that when optimization problems are formulated as improving a text artifact evaluated by a scoring function, a single AI-based optimization system-supporting single-task search, multi-task search with cross-problem transfer, and generalization to unseen inputs-achieves state-of-the-art results across six diverse tasks. Our system discovers agent architectures that nearly triple Gemini Flash's ARC-AGI accuracy (32.5% to 89.5%), finds scheduling algorithms that cut cloud costs by 40%, generates CUDA kernels where 87% match or beat PyTorch, and outperforms AlphaEvolve's reported circle packing solution (n=26). Ablations across three domains reveal that actionable side information yields faster convergence and substantially higher final scores than score-only feedback, and that multi-task search outperforms independent optimization given equivalent per-problem budget through cross-task transfer, with benefits scaling with the number of related tasks. Together, we show for the first time that text optimization with LLM-based search is a general-purpose problem-solving paradigm, unifying tasks traditionally requiring domain-specific algorithms under a single framework. We open-source optimize\_anything with support for multiple backends as part of the GEPA project at https://github.com/gepa-ai/gepa .</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.19604v1' target='_blank'>Formal Skill: Programmable Runtime Skills for Efficient and Accurate LLM Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Xi Zhang, Meijun Gao, Yuntian Zhao, Xinyu Tan, Yilun Yao, Feiyu Wang, Yanshu Wang, Dingsiyi, Tong Yang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-19 09:43:17</h6>
+<p class='card-text'>Large Language Model (LLM) agents increasingly act inside real workspaces, where tools and skills determine whether model reasoning becomes reliable action. Existing skills remain largely informal: Markdown skills and instruction packs encode procedures as long natural-language documents, while function calling, Model Context Protocol (MCP) servers, and framework tools structure individual actions but usually leave workflow state, policy enforcement, and completion discipline outside the skill itself. We introduce Formal Skill, a runtime-native abstraction that represents reusable capability with JSON metadata and action schemas, reliable Python executors, hook-governed control logic, Formal Skill routing, and skill-local runtime state. By moving reusable procedure from repeated prompt text into executable state machines and hook policies, Formal Skill gives agents a token-efficient and enforceable control surface. We implement the abstraction in FairyClaw, an open-source event-driven runtime for executable, observable, and composable Formal Skills. On Harness-Bench, FairyClaw obtains highly competitive average scores while using substantially fewer tokens, with especially strong results on tasks that expose the role of Formal Skill.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.19595v1' target='_blank'>A novel YOLO26-MoE optimized by an LLM agent for insulator fault detection considering UAV images</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:João Pedro Matos-Carvalho, Laio Oriel Seman, Stefano Frizzo Stefenon, Mohammad Khalaf Mohammad Khreasat, Gabriel Villarrubia González</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-19 09:40:05</h6>
+<p class='card-text'>The inspection of electrical power line insulators is essential for ensuring grid reliability and preventing failures caused by damaged or degraded insulation components. In recent years, Unmanned Aerial Vehicles (UAVs) combined with deep learning-based vision systems have emerged as an effective solution for automating this process. However, insulator fault detection remains challenging due to small defect regions, heterogeneous fault patterns, complex backgrounds, and varying imaging conditions. To address these challenges, this paper proposes an optimized YOLO26-MoE, a novel object detection architecture that integrates a sparse Mixture-of-Experts (MoE) module into the high-resolution branch of the YOLO26 detector. The proposed modification enables adaptive feature refinement for subtle and diverse fault patterns while preserving the efficiency of a one-stage detection framework. Hyperparameter optimization, final training, and evaluation were coordinated through a tool-augmented Large Language Model (LLM) agent. The proposed model achieved 0.9900 mAP@0.5 and 0.9515 mAP@0.5:0.95, outperforming the latest YOLO versions. These results demonstrate that the proposed model provides an effective and reliable solution for UAV-based insulator fault detection.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.19576v1' target='_blank'>Library Drift: Diagnosing and Fixing a Silent Failure Mode in Self-Evolving LLM Skill Libraries</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Xing Zhang, Yanwei Cui, Guanghui Wang, Ziyuan Li, Wei Qiu, Bing Zhu, Peiyang He</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-19 09:19:56</h6>
+<p class='card-text'>Self-evolving skill libraries face a silent failure mode we term \emph{library drift}: unbounded skill accumulation without outcome-driven lifecycle management causes retrieval degradation, false-positive injections, and performance stagnation. Recent evaluation confirms the symptom--LLM-authored skills deliver +0.0pp gain while human-curated ones deliver +16.2pp (SkillsBench)--yet the underlying mechanism has not been isolated. We provide (1) a reproducible trigger: ablations that isolate drift--one disables skill injection (flat floor, +0.002), one imposes premature retirement (active harm, $-$0.019); (2) trace-level diagnostics: an append-only evidence log with per-skill contribution scores, attribution verdicts, and router engagement metrics that make the failure visible before it reaches end-task scores; and (3) a verified fix: a minimal governance recipe (outcome-driven retirement + bounded active-cap + meta-skill authoring prior) that lifts held-out pass@1 from a 0.258 baseline to a late-window mean of 0.584 (rolling gain $+$0.328) on MBPP+ hard-100 over 100 rounds. Eight ablations decompose which governance mechanisms are load-bearing and which are subsumed, providing a concrete playbook for diagnosing library drift in any self-evolving agent.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.19447v1' target='_blank'>What and When to Distill: Selective Hindsight Distillation for Multi-Turn Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Xiaozhe Li, Tianyi Lyu, Yang Li, Yichuan Ma, Peiji Li, Linyang Li, Qipeng Guo, Dahua Lin, Kai Chen</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-19 07:00:55</h6>
+<p class='card-text'>Reinforcement learning can train LLM agents from sparse task rewards, but long-horizon credit assignment remains challenging: a single success-or-failure signal must be distributed across many actions. Existing methods rely on trajectory-level rewards or proxy signals, without fully leveraging per-step environmental feedback. Multi-turn agent settings are underexplored, where feedback can include error messages, page changes, observations, or reference trajectories. We systematically study five feedback sources and two insertion granularities and introduce SERL, a selective environment-reweighted learning framework. SERL uses the task reward to determine update direction, while environment feedback adjusts placement and magnitude, focusing on critical actions. On ALFWorld and WebShop, SERL achieves 90.0% and 80.1% success, outperforming strong RL and distillation baselines. Analysis shows that grounded, action-relevant feedback at meaningful points consistently outperforms indiscriminate use of longer or richer context.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.19418v1' target='_blank'>Conflict-Resilient Multi-Agent Reasoning via Signed Graph Modeling</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Longgang He, Longzhu He, Daojing He, Chaozhuo Li</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-19 06:11:11</h6>
+<p class='card-text'>LLM-based multi-agent systems (MAS) have demonstrated strong reasoning and decision-making capabilities that consistently surpass those of single LLM agents. However, their performance often suffers from naive aggregation mechanisms that assume uniformly cooperative interactions. Upon close inspection, we observe that existing graph-based MAS frameworks (1) propagate errors when conflicting signals arise without control, and (2) lack explicit modeling of conflicting inter-agent relations as well as structural awareness, failing to identify reliable interaction patterns. To bridge this gap, we introduce SIGMA, a novel SIgned Graph-informed Multi-Agent reasoning framework that explicitly captures trust, conflict, and neutral relations among agents via a signed relational graph. Specifically, given a query, SIGMA first selects a set of relevant and diverse agents, then constructs a structured signed interaction graph with confidence-weighted edges. Reasoning proceeds through conflict-aware signed message passing, which reinforces information from trustworthy agents while suppressing conflicting signals, and terminates with a structure- and conflict-aware weighted aggregation to yield globally consistent and conflict-resilient predictions. Extensive experiments on six benchmark datasets, across multiple LLM backbones and diverse multi-agent configurations, demonstrate that SIGMA consistently outperforms state-of-the-art baselines, achieving notable gains in both accuracy and conflict-resilient performance.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.19399v1' target='_blank'>HSCO-Bench: An Agent-Driven End-to-End Hardware-Software Co-design Benchmark for Systems-on-Chip</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Pei-Huan Tsai, Kuan-Lin Chiu, William Baisi, Pin-Yu Chen, Luca P. Carloni</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-19 05:51:28</h6>
+<p class='card-text'>Large language models (LLMs) are adopted for software and hardware design, yet these domains are still evaluated separately. Software benchmarks typically assume fixed hardware targets, while hardware benchmarks focus on component-level optimization without considering the full hardware-software stack. Consequently, no existing benchmark evaluates whether an LLM agent can perform end-to-end, system-level hardware-software co-design. Such a process requires: 1) analyzing applications to identify kernels requiring acceleration, 2) designing and integrating heterogeneous accelerators into a System-on-Chip (SoC) under resource constraints, and 3) mapping kernels onto the generated accelerators. We present HSCO-Bench, an end-to-end hardware-software co-design benchmark for accelerator-rich heterogeneous SoC generation. Built upon an open-source SoC platform with a curated repository structure, HSCO-Bench evaluates the ability of LLMs to jointly optimize software and hardware stacks, producing SoC prototypes deployed on the AMD Virtex-7 FPGA VC707 Evaluation Kit. Experimental results show that end-to-end integration remains challenging for current models. Among the five frontier models evaluated, only two of them could successfully generate valid SoC prototypes. Yet, even in these successful instances, the generated designs are far from optimal. While we observe a promising peak speedup of 16.22X, the maximum additional resource utilization reaches only 23.67%. This highlights that while state-of-the-art models demonstrate an emerging capability for hardware acceleration, they still heavily underutilize the available hardware capacity, leaving room for future optimization. To the best of our knowledge, HSCO-Bench is the first benchmark targeting this complete co-design flow, enabling LLMs to jointly reason about and modify both the software and hardware stacks of heterogeneous SoCs.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.19362v1' target='_blank'>Toward User Comprehension Supports for LLM Agent Skill Specifications</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Zikai Alex Wen</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-19 04:50:42</h6>
+<p class='card-text'>Users often interpret and select agent skills through their \texttt{SKILL.md} specifications. To protect users, existing audits mainly focus on malicious or unsafe skills. We study the complementary question of whether specifications help users form bounded expectations about what a skill consumes, produces, and covers. Across 878 cybersecurity skills, we used rule-based coding to measure textual cues for four comprehension anchors, namely operational basis, output contract, boundary disclosure, and example capability demonstration. Cues for operational basis were common, but only 19.0\% of specifications exhibited cues for an example task, sample, or expected outcome, and only 2.3\% exhibited cues for all four anchors. We further examined a small DNS/C2 telemetry subset (n$=$6) to illustrate why missing examples may matter. Examples appeared to make first local checks easier to construct, while no-example skills typically required helper code inspection to recover command arguments or output fields. We argue that agent-skill evaluation should treat specifications as user-facing capability disclosures, not merely as containers for executable instructions.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.19351v1' target='_blank'>PAVE: A Cognitive Architecture for Legitimate Violation in Generative Agent Societies</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Ahmad Yehia, Abduallah Mohamed, Kun Qian, Tianyi Wang, Jiseop Byeon, Omar Hassanin, Christian Claudel</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-19 04:40:09</h6>
+<p class='card-text'>Generative agents based on large language models reproduce believable human behavior in cooperative settings, but how they should reason in situations where rule-breaking may be required, such as fire evacuation or authority-supervised emergency, remains poorly characterized. We propose PAVE (Perception, Assessment, Verdict, Emulation), a novel four-module cognitive architecture that addresses this gap end to end: (i) Perception extracts a structured context with explicit authority distance, peer behaviors, and severity-tagged situational cues; (ii) Assessment scores the context along five scalars including an explicit legitimacy judgment that checks necessity, proportionality, and absence of alternatives; (iii) Verdict decides to comply or violate under a hard legitimacy gate, with a per-agent threshold elicited from the persona; (iv) Emulation enacts the verdict and scopes the violation to the rule the trigger justifies. We instantiate PAVE in Voville, a tile-based traffic environment forked from Smallville, and evaluate across three scenarios, four LLM backbones, and a focused ablation. PAVE agents satisfy four properties simultaneously: legitimate violation (only when a trigger justifies it), authority deference (officer instructions override even high legitimacy), bounded scope (violations confined to the targeted rule), and recovery (baseline restored once the trigger ends). PAVE agents make more structured and interpretable decisions than vanilla across all four properties, and human evaluators rate them as more plausible. Ablating the legitimacy gate reproduces vanilla-like failures. We release Voville, the PAVE prompts and code, and the evaluation pipeline.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js'></script>
+</body>
+</html>
