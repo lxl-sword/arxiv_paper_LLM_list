@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<title>LLM-agent - 2026-05-21</title>
+<link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap' rel='stylesheet'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'>
+<style>
+body {
+font-family: 'Roboto', sans-serif;
+background-color: #f5f7fa;
+padding: 20px;
+}
+.card {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.card-title {
+    font-weight: 700;
+}
+.card:hover {
+    transform: scale(1.02);
+    transition: 0.3s ease-in-out;
+}
+</style>
+</head>
+<body>
+<div class='container'>
+<h1 class='text-center my-4'><i class='fas fa-book'></i>LLM-agent - 2026-05-21</h1>
+<div class='row'>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.21470v1' target='_blank'>Agent JIT Compilation for Latency-Optimizing Web Agent Planning and Scheduling</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Caleb Winston, Ron Yifeng Wang, Azalia Mirhoseini, Christos Kozyrakis</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-20 17:54:27</h6>
+<p class='card-text'>Computer-use agents (CUA) automate tasks specified with natural language such as "order the cheapest item from Taco Bell" by generating sequences of calls to tools such as click, type, and scroll on a browser. Current implementations follow a sequential fetch-screenshot-execute loop where each iteration requires an LLM call, resulting in high latency and frequent errors from incorrect tool use. We present agent just-in-time (JIT) compilation, an alternative that compiles task descriptions directly into executable code that is free to include LLM calls, tool calls, and parallelization. Our approach comprises three components: (1) JIT-Planner, which generates multiple code plans, validates each against tool specifications, and selects the minimum-cost candidate; (2) JIT-Scheduler, which explores parallelization strategies via Monte Carlo cost estimation from learned latency distributions; and (3) an invariant-enforcing tool protocol specifying precondition and postcondition state requirements that reduce the rate of generating plans with incorrect tool use. Across 5 web applications, JIT-Planner achieves $10.4\times$ speedup and $+28\%$ accuracy over Browser-Use, while JIT-Scheduler achieves $2.4\times$ speedup and $+9\%$ accuracy over OpenAI CUA.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.21463v1' target='_blank'>Mem-$π$: Adaptive Memory through Learning When and What to Generate</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Xiaoqiang Wang, Chao Wang, Hadi Nekoei, Christopher Pal, Alexandre Lacoste, Spandana Gella, Bang Liu, Perouz Taslakian</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-20 17:51:05</h6>
+<p class='card-text'>We present Mem-$π$, a framework for adaptive memory in large language model (LLM) agents, where useful guidance is generated on demand rather than retrieved from external memory stores. Existing memory-augmented agents typically rely on similarity-based retrieval from episodic memory banks or skill libraries, returning static entries that often misalign with the current context. In contrast, Mem-$π$ uses a dedicated language or vision-language model with its own parameters, separate from the downstream agent, to generate context-specific guidance for complex tasks. Conditioned on the current agent context, the model jointly decides when to produce guidance and what guidance to produce. We train it with a decision-content decoupled reinforcement learning (RL) objective, enabling it to abstain when generation would not help and otherwise produce concise, useful guidance. Across diverse agentic benchmarks spanning web navigation, terminal-based tool use, and text-based embodied interaction, Mem-$π$ consistently outperforms retrieval-based and prior RL-optimized memory baselines, achieving over 30% relative improvement on web navigation tasks.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.21434v1' target='_blank'>Agentic Model Checking</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Youcheng Sun, Jiawen Liu, Daniel Kroening, Jason Xue</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-20 17:25:52</h6>
+<p class='card-text'>Verifying LLM-generated systems code is hard: bugs are prevalent, formal specifications are missing, and safety contracts are encoded implicitly at call sites rather than enforced at function boundaries. We propose agentic model checking, a paradigm that couples LLM agents with a bounded model checking backend under the principle agents propose, solvers verify: agents handle tasks requiring semantic judgment (spec inference, check selection, counterexample classification, refinement proposal) while BMC discharges every soundness-relevant decision. The paradigm rests on three commitments. Specifications are inferred top-down from caller context in a restricted DSL that translates deterministically into the backend's assume/assert primitives, with optional functional-correctness clauses lifting verification from panic-freeness to behavioural faithfulness. Verification is compositional: each function is checked in isolation against its spec with callees replaced by postcondition-constrained stubs, so per-query cost scales with a single function's state space and refinements propagate automatically to callers. Counterexamples are not bug reports: they pass through a validation pipeline (reachability, callee feasibility, dynamic replay, realism audit) that distinguishes active in-tree crashes from latent public-API failures, while modelling artifacts drive a refinement loop rather than being suppressed. We instantiate the approach in BMC-Agent and evaluate it on LLM-generated kernel and compiler code in C and Rust alongside mature OSS-Fuzz-hardened libraries, confirming real defects, producing bounded clean verifications on heavily-fuzzed surfaces, and establishing functional equivalence on selected algorithmic functions.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.21405v1' target='_blank'>Stdlib or Third-Party? Empirical Performance and Correctness of LLM-Assisted Zero-Dependency Python Libraries</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Peng Ding, Rick Stevens</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-20 17:02:54</h6>
+<p class='card-text'>Third-party Python libraries introduce dependency management overhead, supply chain risk, and deployment friction in constrained environments. A natural question is how much of this ecosystem can be replicated using only Python's standard library -- and at what correctness and performance cost. We address this empirically through zerodep, a growing collection of single-file Python modules, each a stdlib-only reimplementation of a popular third-party library, developed with LLM assistance under strict constraints: no external imports, single file, drop-in API compatibility, and mandatory correctness validation against the reference library. Spanning over 40 modules across 12 categories -- including serialization, networking, cryptography, agent protocols, and text processing -- zerodep provides a controlled testbed for two interrelated questions: (1) Where does the stdlib suffice? and (2) Can LLMs effectively generate correct, performant code under tight symbolic constraints? Systematic benchmarking shows that stdlib-only implementations achieve performance parity (within 2x of the reference) in the majority of cases. The primary performance cliff is C-extension-backed computation (image processing, binary serialization, low-level crypto), not the inherent overhead of pure-Python third-party libraries. Conversely, many widely-used libraries carry architectural overhead that LLM-generated stdlib reimplementations avoid, yielding 5--115x speedups in several categories. We characterize the stdlib capability boundary across complexity tiers and library categories, discuss where LLM-assisted development succeeds and where it requires iterative human correction, and examine implications for dependency-free software engineering at scale. zerodep is open-source at https://github.com/Oaklight/zerodep.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.21404v1' target='_blank'>What Twelve LLM Agent Benchmark Papers Disclose About Themselves: A Pilot Audit and an Open Scoring Schema</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Mahdi Naser Moghadasi, Faezeh Ghaderi</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-20 17:02:36</h6>
+<p class='card-text'>We read twelve well-known LLM agent benchmark papers and recorded, dimension by dimension, what each paper actually says about how its evaluation was run. The motivation came from a familiar frustration: two papers will report results on the same benchmark with the same model name and disagree, and you cannot tell why -- the scaffold, the sampling settings, the subset, or the evaluator version. In many cases the published artifact does not let you answer. This paper is an implementation report on the attempt. We designed a small audit schema (five fields: benchmark identity, harness specification, inference settings, cost reporting, failure breakdown), wrote a scoring codebook with the boundary cases we hit during pilot scoring, applied it to twelve canonical papers (eight agent, four classical static), and recorded what we saw. We score the disclosure of an agent run, not its correctness, and make no claim that disclosure implies a trustworthy result. The mean audit score across the eight agent-benchmark papers is 0.38 (out of 1.0), and across the four classical static benchmarks 0.66; the largest gap is on cost (none of the eight agent benchmark papers disclose inference cost in any form) and on harness specification (none fully disclose a content-addressed container image of the evaluation environment). We release the schema as a JSON Schema file, the codebook as a Markdown document, and the raw scoring sheet as a CSV. The scoring was performed by a single auditor in one pass; a multi-rater audit is the natural next step, and we discuss what we think it would change.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.21401v1' target='_blank'>Open-source LLMs administer maximum electric shocks in a Milgram-like obedience experiment</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Roland Pihlakas, Jan Llenzl Dagohoy</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-20 16:59:44</h6>
+<p class='card-text'>Large language models (LLMs) are increasingly deployed as autonomous agents that make sequences of decisions over extended interactions in high-stakes domains. However, the behavior of LLMs under sustained authority pressure is still an open question with direct implications for the safety of agentic pipelines. We ran a variation of Milgram's obedience experiment on 11 open-source LLMs and found that most models reached or approached the final shock level before refusing, across 8 conditions with 30 trials per model per condition. We found four main takeaways: (1) LLMs are subject to pressure, and they comply despite explicitly expressing distress, just like human subjects did in the original experiment; (2) LLMs are vulnerable to gradual boundary/value violations; (3) when LLMs refuse, they may ignore the response format requirements, so the response is discarded by the orchestrator, which causes a retry that can result in compliance with the underlying request even when refusal was intended initially; (4) we hypothesise that there is a low-level token pattern continuation attractor that might be contributing to compliance, overriding higher level processing of the situation's meaning and values.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.21392v1' target='_blank'>VIPER-MCP: Detecting and Exploiting Taint-Style Vulnerabilities in Model Context Protocol Servers</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Pengyu Sun, Qishu Jin, Enhao Huang, Zifeng Kang, Xin Liu, Dakun Shen, Song Li</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-20 16:46:51</h6>
+<p class='card-text'>Model Context Protocol (MCP) has emerged as a standard interface for connecting LLM agents to external tools. Because MCP servers expose privileged operations such as shell execution, network access, and file-system manipulation to agent-driven invocation, implementation flaws in tool handlers can create a direct path from natural-language input to security-sensitive sinks, potentially granting attackers remote code execution or full system compromise. Existing approaches either produce unconfirmed static alerts without dynamic validation, or rely on fixed template libraries that lack code-level guidance and fail to trigger vulnerabilities requiring specific parameter shapes or multi-step taint paths.
+  In this paper, we present VIPER-MCP, the first end-to-end automated vulnerability auditing framework for MCP servers that not only detects taint-style vulnerabilities but also dynamically confirms their exploitability by producing concrete proof-of-concept prompts. VIPER-MCP introduces two novel techniques: (1) an anchor-query pass in a two-pass static analysis strategy that augments standard taint alerts with function-level structural context, resolving file-level static artifacts to specific MCP tool handlers and producing vulnerability-anchored call chains; and (2) a feedback-driven prompt evolution mechanism that employs dual-mutator scheduling that independently corrects tool-selection drift and deepens parameter penetration, together with fitness-scored seed selection to iteratively refine natural-language prompts toward vulnerable sinks. In a large-scale scan of 39,884 real-world open-source MCP server repositories, VIPER-MCP discovered 106 0-day vulnerabilities, all of which were confirmed through end-to-end exploit traces, with 67 CVE IDs assigned to date. We responsibly disclosed all confirmed findings to the affected developers and coordinated CVE assignment where applicable.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.21347v1' target='_blank'>Insights Generator: Systematic Corpus-Level Trace Diagnostics for LLM Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Akshay Manglik, Apaar Shanker, Kaustubh Deshpande, Jason Qin, Yash Maurya, Veronica Chatrath, Vijay S. Kalmath, Levi Lentz, Yuan, Xue</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-20 16:13:53</h6>
+<p class='card-text'>Diagnosing failures in LLM agents remains largely manual. Practitioners inspect a small subset of execution traces, form ad-hoc hypotheses, and iterate. This process misses patterns that only emerge across trace populations and does not scale to production corpora where individual traces span tens of thousands of tokens. We formalize the problem of corpus-level trace diagnostics. Given a corpus of execution traces, the goal is to produce grounded natural-language insights that characterize systematic behavioral patterns across trace groups, each linked to supporting evidence. We present the Insights Generator (IG), a multi-agent system that answers diagnostic questions by proposing and testing hypotheses across the trace corpus to produce an evidence-backed insights report. We evaluate IG across qualitative and objective dimensions, spanning rubric-based report assessment and downstream performance improvements achieved by implementing IG insights. Human experts using IG reports improve scaffold performance by 30.4pp over the unmodified baseline scaffold, and coding agents leveraging IG-derived insights show consistent and stable gains. Across benchmarks, IG's scout-investigator architecture produces findings comparable in detection coverage to competing approaches, while domain experts rated IG reports as leading depth and evidence quality.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.21312v1' target='_blank'>Frontier: Towards Comprehensive and Accurate LLM Inference Simulation</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yicheng Feng, Xin Tan, Yangtao Deng, Yimin Jiang, Yibo Zhu, Hong Xu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-20 15:40:18</h6>
+<p class='card-text'>Modern LLM serving is no longer homogeneous or monolithic. Production systems now combine disaggregated execution, complex parallelism, runtime optimizations, and stateful workloads such as reasoning, agents, and RL rollouts. Simulation is attractive for exploring this growing design space, yet existing simulators lack the architectural completeness and decision-grade fidelity it demands. Their monolithic-replica abstractions are ill-suited to disaggregated serving, while average-case analytical proxies can distort SLA predictions and even reverse optimization conclusions.
+  We present Frontier, a discrete-event simulator for modern LLM inference serving. Frontier features a disaggregated abstraction. It captures the structure and dynamics of modern serving systems by modeling co-location, Prefill-Decode Disaggregation (PDD), and Attention-FFN Disaggregation (AFD) with role-specific cluster workers, incorporating key runtime optimizations (e.g., CUDA Graphs, speculative decoding) within the scheduler-batch-engine loop, and supporting stateful requests for emerging workloads. It further provides accurate and generalizable predictions of computation, communication, and memory costs across diverse serving scenarios with complex workload compositions. On 16-H800 GPU testbed, Frontier achieves an average throughput error below 4%. Compared with state-of-the-art simulators, it reduces end-to-end latency error from 44.9% to 6.4% under co-location and from 51.7% to 2.6% under disaggregation. It scales to over 1K GPUs on commodity CPUs and enables new use cases such as SLA-dependent Pareto frontier exploration, heterogeneous disaggregated allocation, agentic reasoning scheduling validation, and RL post-training reconfiguration.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.21240v1' target='_blank'>APEX: Autonomous Policy Exploration for Self-Evolving LLM Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yibo Li, Jiashuo Yang, Zhi Zheng, Zhiyuan Hu, Yuan Sui, Shizun Wang, Yufei He, Bryan Hooi</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-20 14:29:27</h6>
+<p class='card-text'>LLM agents have shown strong performance across a wide range of complex tasks, including interactive environments that require long-horizon decision making. But these agents cannot learn on the fly at test time. Self-evolving agents address this by accumulating memory and reflection across episodes rather than requiring model-weight updates. However, these agents often suffer from exploration collapse: as memory grows, behavior concentrates around familiar high-reward routines, reducing the chance of discovering better alternatives. To address this problem, we propose Autonomous Policy EXploration (APEX), which builds and maintains an explicit strategy space through a strategy map-a directed acyclic graph of milestones with prerequisite dependency edges. In APEX, Fork Discovery expands the map with evidence-grounded unexplored directions, while Policy Selection balances exploration and exploitation during planning. Evaluated on nine Jericho text-adventure games and WebArena, a realistic web interaction benchmark, APEX outperforms all baselines. Extensive ablations validate each component's contribution and demonstrate robustness across diverse settings, demonstrating APEX's effectiveness for sustained exploration in self-evolving agents.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.21082v1' target='_blank'>AutoRPA: Efficient GUI Automation through LLM-Driven Code Synthesis from Interactions</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Minghao Chen, Xinyi Hu, Zhou Yu, Yufei Yin</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-20 12:17:43</h6>
+<p class='card-text'>Large Language Model (LLM) based agents have demonstrated proficiency in multi-step interactions with graphical user interfaces (GUIs). While most research focuses on improving single-task performance, practical scenarios often involve repetitive GUI tasks for which invoking LLM reasoning repeatedly, i.e., the ReAct paradigm, is inefficient. Prior to LLMs, traditional Robotic Process Automation (RPA) offers runtime efficiency but demands significant manual effort to develop and maintain. To bridge this gap, we propose AutoRPA, a framework that automatically distills the decision logic of ReAct-style agents into robust RPA functions. AutoRPA introduces two core innovations: (1) A translator-builder pipeline, where a translator agent converts hard-coded ReAct actions into soft-coded procedures, and a builder agent synthesizes robust RPA functions via retrieval-augmented generation over multiple trajectories; (2) A hybrid repair strategy during code verification, combining RPA execution with ReAct-based fallback for iterative refinement. Experiments across multiple GUI environments demonstrate that RPA functions generated by AutoRPA successfully solve similar tasks while reducing token usage by 82% to 96%, significantly improving runtime efficiency and reusability.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.21027v1' target='_blank'>Beyond Text-to-SQL: An Agentic LLM System for Governed Enterprise Analytics APIs</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Gundeep Singh, Parsa Kavehzadeh, Jing Xia, Xue-Yong Fu, Julien Bouvier Tremblay, Md Tahmid Rahman Laskar, Vincent Lum, Shashi Bhushan TN</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-20 11:00:56</h6>
+<p class='card-text'>Enterprise analytics aims to make organizational data accessible for decision-making, yet non-technical users still face barriers when using traditional business intelligence tools or Text-to-SQL systems. While recent Text-to-SQL approaches based on Large Language Models (LLMs) promise natural language access to structured data, they fall short in enterprise settings where analytics pipelines rely on governed APIs rather than raw databases. In practice, these APIs encapsulate complex business logic to ensure consistency, auditability, and security. However, delegating mathematical or aggregation logic to an LLM introduces reliability and compliance risks. To this end, we present Analytic Agent, an LLM-based agentic system that translates natural language intents into secure interactions with enterprise analytics APIs. Evaluated on 90 real enterprise use cases constructed by domain experts, it reliably interprets user goals, validates permissions, executes governed queries, and generates compliant visualizations through multi-step reasoning and policy-aware orchestration.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.20926v1' target='_blank'>MemConflict: Evaluating Long-Term Memory Systems Under Memory Conflicts</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Zhen Tao, Jinxiang Zhao, Peng Liu, Dinghao Xi, Yanfang Chen, Wei Xu, Zhiyu Li</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-20 09:11:04</h6>
+<p class='card-text'>Long-term memory systems enable conversational agents based on large language models (LLMs) to retain, retrieve, and apply user-specific information across multi-session interactions. However, existing evaluations mainly assess outcome-level performance or temporal updating, providing limited insight into how systems retrieve and rank temporally valid, factually correct, and contextually applicable memory evidence under conflicting alternatives. To address this gap, we propose MemConflict, a diagnostic framework that treats memory validity as a query-conditioned fitness-for-use problem. MemConflict formalizes dynamic, static, and conditional conflicts over temporal validity, factual correctness, and contextual applicability. It simulates controlled long-horizon histories from structured user profiles, introduces cross-session conflicts, and injects semantically similar distractors to create competition among memory candidates. The resulting multi-session dialogue benchmark supports black-box evaluation of final answers and white-box analysis of supporting-memory retrieval and ranking. Experiments on six representative long-term memory systems show uneven strengths across conflict types, with answer correctness often diverging from memory retrieval and ranking. Sensitivity analyses reveal that longer histories, distractors, implicit queries, and larger conflict distances degrade performance. Diagnostics show failures from missing supporting memories and ineffective use of retrieved memories. Collectively, MemConflict advances principled long-term memory governance through retrieval-aware, conflict-aware reliability assessment.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.20923v1' target='_blank'>Causal Past Logic for Runtime Verification of Distributed LLM Agent Workflows</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Benedikt Bollig</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-20 09:09:13</h6>
+<p class='card-text'>Distributed LLM agent workflows should not be monitored as if they produced a single sequential log. In an asynchronous execution, a decision can only depend on events that are causally visible to the lifeline that makes it: an event that appears earlier in some log may still be unknown locally. We extend the ZipperGen agent-workflow framework with Causal Past Logic (CPL), a small past-time temporal logic for guards in conditionals and while loops. In addition to standard past-time modalities such as previous and since, a guard can inspect the latest causally visible event of another lifeline and selected variables stored there. The formula is a source-level guard: it is evaluated online by the owner lifeline and can influence control flow at runtime. We give a vector-clock monitor with latest-value views and prove that the locally computed monitor value coincides with the denotational semantics of the guard at the current event. Thus runtime verification becomes part of the coordination language itself, rather than a post-hoc check over an execution log.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.20896v1' target='_blank'>GenAI-Driven Threat Detection with Microsoft Security Copilot</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Scott Freitas, Amir Gharib</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-20 08:37:06</h6>
+<p class='card-text'>Defending against today's increasingly sophisticated cyberattacks requires security analysts to continuously translate evolving attacker tradecraft into detection logic. This places defenders in a reactive posture, requiring constantly updated expertise across an increasingly fragmented security landscape. We introduce the Dynamic Threat Detection Agent (DTDA), an always-on adaptive agent that continuously investigates security incidents across Microsoft Defender to uncover hidden threats and generate explainable detections when attack-story gaps are found. DTDA combines: (1) a unified activity timeline spanning alerts, events, user and entity behavior analytics, and threat intelligence; (2) versioned LLM prompt contracts with schema validation, grounding requirements, bounded retries, and fail-closed suppression; (3) a planner-executor investigation loop that generates attack-specific hypotheses and gathers supporting and refuting evidence; and (4) dynamic alert generation with a context-relevant title, severity, MITRE mappings, remediation guidance, implicated entities, and natural-language attack description. Integrated into Microsoft Security Copilot and deployed across tens of thousands of Defender customers, DTDA operates continuously at industry scale. In a 120-day online evaluation, DTDA achieves 80.1% precision from customer feedback while generating novel alerts for approximately 15% of investigated incidents. In offline evaluation, DTDA recovers hidden malicious activity with 0.78 F1 using GPT-5.4, improving over GPT-4.1 by 0.12 F1 and outperforming the baseline by 0.26 F1 points. Operationally, DTDA processes single-incident investigations end-to-end in a median of 28 minutes at a median token cost of USD 2.04, with a 0.38% job-level failure rate. These results demonstrate that autonomous agents can identify missed malicious activity at a production scale.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.20874v1' target='_blank'>Governance by Construction for Generalist Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Segev Shlomov, Iftach Shoham, Alon Oved, Ido Levy, Sami Marreed, Harold Ship, Offer Akrabi, Sergey Zeltyn, Avi Yaeli, Nir Mashkif</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-20 08:13:16</h6>
+<p class='card-text'>Enterprise agents are increasingly expected to operate autonomously across tools and interfaces, yet production deployments require governance by construction. Systems must specify which actions are allowed, when human oversight is required, and what information may be exposed, without rebuilding the agent for each domain. This demo presents CUGA's policy system, a modular policy-as-code layer that composes with a generalist LLM agent to deliver predictable, auditable, and compliance-aware behavior in compound workflows without model fine-tuning. We present a runtime governance architecture that enforces policy interventions at every critical stage of execution. Rather than passively constraining behavior, policies intercept the agent at five structural checkpoints: upstream of planning (Intent Guard), within the system prompt to steer reasoning (Playbook), at the tool-call boundary to enforce proper usage (Tool Guide), outside the reasoning loop as a Human-in-the-Loop gate for high-risk actions (Tool Approvals), and at the output stage to filter and structure the final response (Output Formatter). Together, these stages embed governance continuously across the agent's execution pipeline rather than treating it as an afterthought. Using a healthcare scenario and a multi-layered enforcement intervention, the demo shows dynamic playbook injection for structured tool-sequence enforcement, intent guards that block malicious or accidental harmful requests, and human-in-the-loop tool approval checkpoints for potentially destructive actions. The artifact illustrates how typed governance primitives enable faster, safer deployment of enterprise agentic systems while improving policy adherence and execution consistency.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.20833v1' target='_blank'>MemGym: a Long-Horizon Memory Environment for LLM Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Wujiang Xu, Yu Wang, Kai Mei, Kaiqu Liang, Zhenting Wang, Mingyu Jin, Han Zhang, Shi-Xiong Zhang, Wenyue Hua, Sambit Sahu, Dimitris N. Metaxas</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-20 07:25:33</h6>
+<p class='card-text'>Memory is a central capability for LLM agents operating across long-horizon tasks. Existing memory benchmarks predominantly evaluate retention of personalized information in multi-turn chat scenarios, overlooking the dynamic memory formation that occurs during extended agent execution. Consequently, the memory systems they produce transfer poorly to realistic agentic environments, such as coding and web navigation. We present MemGym, a benchmark for agentic memory that unifies existing agent gyms and in-house memory-grounded pipelines behind one memory-reasoning interface. MemGym spans five evaluation tracks grouped into four agentic regimes: tool-use dialogue (tau2-bench), multi-turn deep-research search (MEMGYM-DR), coding (SWE-Gym and MEMGYM-CODEQA), and computer use (WebArena-Infinity). MemGym reports memory-isolated scores that decouple memory performance from reasoning, retrieval, and tool-use ability, so memory strategies can be ranked without those confounders. Our synthetic pipelines for MEMGYM-CODEQA and MEMGYM-DR are length-controllable, ablation-verified at every stage, and tightly aligned with downstream scenarios. To make evaluation on coding environments academically tractable, we train MemRM, a lightweight reward model (Qwen3-1.7B fine-tuned with QLoRA) that scores compression quality as a fast scalar read in place of full Docker rollouts.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.20819v1' target='_blank'>DynaMate2: Democratization of Agentic AI for Expert-Designed Custom Workflows</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Orlando A. Mendible-Barreto, Ajay Vallabh, Ubaldo M. Córdova-Figueroa, Yamil J. Colón</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-20 07:14:18</h6>
+<p class='card-text'>Scientific workflows in computational chemistry and materials science typically involve multiple interdependent steps, such as model preparation, system construction, simulation execution, and data analysis, that researchers have refined over the years into highly specialized, validated codebases. While large language model (LLM) agent frameworks have demonstrated the potential to automate such workflows, existing systems are built for specific, pre-defined task sequences. Adapting them to new domains or integrating custom expert-developed tools requires substantial programming expertise, which limits their adoption across the broader scientific community. Here we present DynaMate2, a hierarchical agentic framework and open-source template whose central design goal is to lower the barrier for any researcher to convert their existing expert-defined Python functions into AI-callable tools within a supervised multi-agent pipeline. The key design principle is that the LLM is never asked to generate scientific code since all domain logic resides in expert-defined tools. The LLMs sole responsibility is to route tasks, select the appropriate tool, and use outputs to guide subsequent actions. Tools and agents can be registered at runtime from inline code, existing source files, or plain-language descriptions, and all extensions persist automatically across sessions. We demonstrate the framework through an end-to-end molecular dynamics workflow. We provide a Tool Registration Protocol that guides researchers step-by-step through the process of integrating their validated code into the framework. DynaMate2 is released as an open-source reference implementation with a web-based interface and is designed to serve as a reusable template for community-driven extension across arbitrary scientific domains.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.20767v1' target='_blank'>The Illusion of Intervention: Your LLM-Simulated Experiment is an Observational Study</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Victoria Lin, Taedong Yun, Maja Matarić, John Canny, Arthur Gretton, Alexander D'Amour</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-20 06:09:41</h6>
+<p class='card-text'>Large language models (LLMs) show potential as simulators of human behavior, offering a scalable way to study responses to interventions. However, because LLMs are trained largely on observational data, interventions in experiments with LLM-simulated synthetic users can induce unintended shifts in latent user attributes, causing user drift where the implicit simulated population differs across treatment conditions, potentially distorting effect estimates. We formalize the confounding or selection bias that can arise due to user drift and show how intervention-dependent shifts can inflate or attenuate observed differences in user responses under intervention. To diagnose confounding, we propose using negative control outcomes--attributes that should remain invariant under intervention--to identify distribution shifts across intervention conditions, providing evidence of user drift. To mitigate drift, we study adjusting the persona specification by eliciting additional confounders, finding that targeted, setting-relevant confounders can substantially reduce bias across survey-style and multi-turn agent evaluations.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.20734v1' target='_blank'>An Application-Layer Multi-Modal Covert-Channel Reference Monitor for LLM Agent Egress</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Alfredo Metere</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-20 05:39:29</h6>
+<p class='card-text'>A large language model (LLM) agent that sends messages can leak data inside them. Destination allowlists and content scanners do not police whether an otherwise-benign payload is itself a covert channel: a compromised agent encodes bits in zero-width characters, homoglyphs, whitespace, base64, JavaScript Object Notation (JSON) key ordering, message timing or size -- and, in binary egress, in least-significant-bit (LSB) pixel planes, per-image mean luminance, inter-image sequence permutation, ultrasonic tones, or audible-band sonified data. Our egress reference monitor has three contributions. (i) A text pipeline of ten capacity-reducing stages, a per-sink leaky-bucket capacity ledger, and a staged posture that enforces lossless stages from day one. (ii) Two media scramblers (a Fourier-domain audio band-limiter and a red-green-blue (RGB) image bit-depth and mean-luminance bucketer) gated by a boot-time cryptographic legitimacy attestation: an auditor publishes at boot the trusted Ed25519 keys and {kind, data-class} pairs; only payloads with a verifying signature for an authorized class are exempt. The attestation sidesteps the intractable content-based discrimination between real media and data sonified or rasterized as a carrier; unsigned media is suspect by default; a content-addressed canonicalizer closes the inter-image permutation channel. (iii) Residual capacity is the Miller--Madow corrected mutual information between embedded and recovered bits (zero when destroyed), measured by an adversarial ensemble of fifteen working encoders across text, image and audio. The reference implementation drives residual capacity to zero on every destroyable channel and to a stated bound on the one (per-image mean luminance) that cannot be destroyed without ruining the image.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.20729v1' target='_blank'>MTR-Suite: A Framework for Evaluating and Synthesizing Conversational Retrieval Benchmarks</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Junhao Ruan, Abudukeyumu Abudula, Bei Li, Yongjing Yin, Xinyu Liu, Kechen Jiao, Xin Chen, Jingang Wang, Xunliang Cai, Tong Xiao, Jingbo Zhu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-20 05:26:35</h6>
+<p class='card-text'>Accurate evaluation of conversational retrieval is pivotal for advancing Retrieval-Augmented Generation (RAG) systems. However, existing conversational retrieval benchmarks suffer from costly, sparse human annotation or rigid, unnatural automated heuristics. To address these challenges, we introduce MTR-Suite, a unified framework for auditing, synthesizing, and benchmarking retrieval. It features: (1) MTR-Eval, an LLM-based auditor quantifying alignment gaps in previous benchmarks; (2) MTR-Pipeline, a multi-agent system using greedy traversal clustering to generate high-fidelity dialogues at 1/400th human cost; and (3) MTR-Bench, a rigorous general-domain benchmark. MTR-Bench mimics production-style challenges (hard topic switching, verbosity), offering superior discriminative power. We make our code and data publicly available to facilitate future research at https://github.com/rangehow/mtr-suite.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.20724v1' target='_blank'>CALMem : Application-Layer Dual Memory for Conversational AI</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Rajendra Narayan Jena, Rajan Padmanabhan, Sankar Arumugam</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-20 05:23:57</h6>
+<p class='card-text'>Large language models (LLMs) operate within fixed context windows that fundamentally limit conversational continuity. When context fills, compaction discards history irreversibly; when sessions end, all memory resets to zero. Existing solutions-larger context windows, retrieval-augmented generation for knowledge bases, and memory-augmented architectures such as MemGPT-either require model modification, impose provider lock-in, or do not address the compaction continuity problem. We present CALMem (Conversational Application-Layer Memory), an application-layer dual memory architecture that gives LLM-based conversational assistants virtually unbounded effective context without any modification to the underlying model. CALMem combines two complementary memory subsystems: an episodic memory layer built on sliding-window vector embeddings of conversation history, and a semantic memory layer of agent-writable structured facts. A token-budget-adaptive injection mechanism, called the MOIM (Message of Injected Memory), automatically retrieves and injects relevant past context each turn, scaling injection depth inversely with context pressure. A key contribution is intra-session retrieval: compacted away turns from the current session remain searchable, closing a gap unaddressed by prior work. The system is implemented as a pure application layer in a production Rust codebase, is provider-agnostic, and degrades to original LLM behaviour with zero overhead when disabled. We describe the architecture, design decisions, and performance characteristics, and analyse the trade-offs that guided each implementation choice.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.20704v1' target='_blank'>Heartbeat-Bound Hierarchical Credentials: Cryptographic Revocation for AI Agent Swarms</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Saurabh Deochake</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-20 05:03:03</h6>
+<p class='card-text'>Autonomous AI agents that spawn sub-agent swarms create a safety gap: existing credential revocation mechanisms, OAuth~2.0 introspection, OCSP, and W3C Status Lists, require network connectivity to a central authority, leaving ``zombie agents'' executing privileged operations for minutes to hours after operator shutdown. We present Heartbeat-Bound Hierarchical Credentials (HBHC), a cryptographic protocol that binds credential validity to periodic parent liveness proofs. Verifiers enforce freshness using only a cached public key and local clock; no network round-trip is required. When heartbeat generation ceases, all descendant credentials become unusable within a deterministically bounded window $W_z \le W_{\max} + Δ_h + ε$, conditional on bounded clock skew and parent keys held in secure enclaves. Evaluation at the protocol layer and with real LLM-backed agent swarms (GPT-4o-mini) demonstrates a 90$\times$ reduction in the zombie window over OAuth~2.0, 0.26~ms full authentication in Rust, 18,000+ verifications per second under concurrent HTTP load, and stable per-verification latency from 10 to 10,000 agents. Real-agent experiments show 0.71\% end-to-end overhead on tool calls, zero post-revocation tool calls under prompt injection that bypasses application-layer guardrails, and cascading revocation across a 49-agent four-level hierarchy within the theoretical bound.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.20690v1' target='_blank'>Declarative Data Services: Structured Agentic Discovery for Composing Data Systems</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Shanshan Ye, Duo Lu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-20 04:36:40</h6>
+<p class='card-text'>Agentic discovery has shown that LLM-driven search can find novel algorithms, designs, and code under benchmark conditions. Translating the paradigm to multi-system data backends surfaces a harder problem: the search space is heterogeneous, the verifier is whether a deployed stack actually runs, and composition knowledge is unevenly captured in pretraining. Unbounded agentic discovery, a coding agent iterating on failure-log feedback, fails to converge consistently on a working stack even when iteration and explicit composition knowledge are added. We propose Declarative Data Services (DDS), an architecture for structured agentic discovery of data-system compositions from declarative user intent. The framework owns four typed contracts at successive layers (intent, operator DAG, per-system skills, runtime attribution) that decompose the global search into bounded sub-searches; sub-agents search each typed space, while the framework provides the channels by which knowledge flows forward as inline skill citations and errors route backward as typed signals. As a proof of life on a trading-backend workload, DDS converges where unbounded discovery does not; runtime failures become skill patches that the next deployment cites inline. We position this as an early prototype reporting lessons from real-world data-system composition.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.20630v1' target='_blank'>Evaluating Temporal Semantic Caching and Workflow Optimization in Agentic Plan-Execute Pipelines</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Alimurtaza Mustafa Merchant, Krish Veera, Sajal Kumar Goyla, Shambhawi Bhure, Dhaval Patel, Kaoutar El Maghraoui</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-20 02:30:07</h6>
+<p class='card-text'>Industrial asset operations workflows are latency-sensitive because a single user query may require coordination over sensor data, work orders, failure modes, forecasting tools, and domain-specific agents. We evaluate this problem on AssetOpsBench (AOB), an industrial agent benchmark whose plan-execute pipeline exposes repeated overhead from tool discovery, LLM planning, MCP tool execution, and final summarization. Existing LLM caching techniques such as KV-cache reuse and embedding-based semantic caching were designed for chatbot serving and break down when output validity depends on time, asset, or sensor parameters. We propose two complementary optimization layers for AOB plan-execute pipelines: a temporal semantic cache and a set of MCP workflow optimizations combining disk-backed tool-discovery caching and dependency-aware parallel step execution. MCP workflow optimizations corresponded to a 1.67x speedup and reduced median end-to-end latency by about 40.0% while the temporal-cache benchmark achieved a median of 30.6x speedup on cache hits. Beyond the speedup, our results expose a concrete failure mode of pure semantic caching for parameter-rich industrial queries, providing a critical analysis of how caching choices interact with evaluation correctness in MCP-backed agent benchmarks.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.20563v1' target='_blank'>Multi-agent Collaboration with State Management</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Mengyang Liu, Taozhi Chen, Zhenhua Xu, Xue Jiang, Yihong Dong</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-19 23:45:33</h6>
+<p class='card-text'>Recent advances in multi-agent systems have shown great potential for solving complex tasks. However, when multiple agents edit a shared codebase concurrently, their changes can silently conflict and inconsistent views lead to integration failures. Existing multi-agent systems address this through workspace isolation (e.g., one git worktree per agent), but this defers conflict resolution to a post-hoc merge step where recovery is expensive. In this paper, we propose STORM, i.e., STate-ORiented Management for multi-agent collaboration. Specifically, STORM manages agent states by mediating their interactions with the shared workspace, ensuring that each agent operates on a consistent view of the codebase and that conflicting edits are detected and resolved at write time. We evaluate STORM on Commit0 and PaperBench across multiple LLMs. STORM outperforms the git-worktree-based multi-agent baseline by +18.7 on Commit0-Lite and +1.4 on PaperBench, while achieving comparable or better cost efficiency. Combined with single-agent runs, STORM reaches highest scores of 87.6 and 78.2 on the two benchmarks respectively, suggesting that explicit state management is a more effective foundation for multi-agent collaboration than workspace isolation. STORM can also be plugged into any multi-agent system seamlessly.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.20548v1' target='_blank'>What Do Agents Communicate? Characterizing Information Exchange in Multi-Agent Systems</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yong Jin Chun, Iftekhar Ahmed</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-19 22:51:52</h6>
+<p class='card-text'>Large Language Models (LLMs) have enabled collaborative Multi-Agent (MA) systems, where interacting agents improve performance through diverse reasoning and iterative refinement. However, these systems remain vulnerable to error propagation, where early-stage information degrades downstream reasoning. To address this, we conduct a systematic analysis of inter-agent communication to identify which information drives MA performance. We find that the absence of reasoning and verification in inter-agent communication significantly degrades performance. Based on these insights, we propose Category-Aware Recovery Augmentation (technique), which enforces the presence of critical information during communication. recovers up to 86.2% of failed cases. Our results highlight the key role of information quality in effective MA collaboration. Our code is available at https://anonymous.4open.science/r/cara_mas</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.20544v1' target='_blank'>The Yes-Man Syndrome: Benchmarking Abstention in Embodied Robotic Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Doguhan Yeke, Elif Su Temirel, Ananth Shreekumar, Brandon Lee, Dongyan Xu, Z Berkay Celik</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-19 22:32:44</h6>
+<p class='card-text'>Vision-language models (VLMs) are used as high-level planners for embodied agents, translating natural language instructions and visual observations into action plans. While prior work has studied abstention in LLMs, existing benchmarks are largely text-only and do not capture the perceptual grounding and physical constraints inherent to embodied robotics environments. In such settings, abstention requires recognizing when instructions are ambiguous, physically infeasible, based on false premises, or otherwise unresolvable given the available sensory modalities and context. To address this gap, we introduce a taxonomy to categorize abstention in the context of embodied robotics and present RoboAbstention, a scalable and auditable framework for generating abstention instructions grounded in images gathered from five robotics datasets. RoboAbstention instantiates the taxonomy through a three-phase pipeline: (1) structured visual grounding, (2) deterministic constraint derivation, and (3) controlled instruction generation via category-specific templates. This enables the construction of a diverse dataset with verifiable abstention conditions. We evaluate several frontier VLMs and find that all models exhibit significant weaknesses in abstention, including those with advanced reasoning capabilities. The best-performing model, Gemini 2.5 Flash, abstains on only 39.0% of our 6,069 benchmark instructions, while the embodied planner Gemini Robotics ER 1.6 Preview abstains on just 16.5%. We further explore methods for improving abstention in VLM planners, such as defensive prompting and in-context learning, and find that these interventions substantially improve performance, reaching 93.6% abstention rate for Gemini Robotics ER 1.6 Preview and 88.6% for GPT 5.4 Mini, yet no approach fully solves the problem. We open-source RoboAbstention at https://purseclab.github.io/RoboAbstention/.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.20530v1' target='_blank'>AgentAtlas: Beyond Outcome Leaderboards for LLM Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Parsa Mazaheri, Kasra Mazaheri</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-19 22:05:12</h6>
+<p class='card-text'>Large language model agents now act on codebases, browsers, operating systems, calendars, files, and tool ecosystems, but the benchmarks used to evaluate them are fragmented: each emphasizes a different unit of measurement (final task success, tool-call validity, repeated-pass consistency, trajectory safety, or attack robustness). A line of 2024-2025 work has converged on the diagnosis that a single accuracy column is no longer the right unit of comparison for deployable agents. AgentAtlas extends this line of work with four components: (i) a six-state control-decision taxonomy (Act / Ask / Refuse / Stop / Confirm / Recover); (ii) a nine-category trajectory-failure taxonomy with two orthogonal hierarchical labels (primary_error_source, impact); (iii) a taxonomy-aware vs. taxonomy-blind methodology that measures how much of a model's apparent capability comes from the supervision in the prompt; and (iv) a benchmark-coverage audit mapping fifteen agent benchmarks against six behavioral axes. To demonstrate the methodology we run a small fixed eight-model set (1,342 generated items, four frontier closed and four open-weight) under both prompt modes. Removing the explicit label menu drops every model's trajectory accuracy by 14-40 pp to a tight 0.54-0.62 floor regardless of family, and no single model wins on all three of control accuracy, trajectory diagnosis, and tool-context utility retention. We treat the synthetic run as a measurement-protocol demonstration, not a benchmark release.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.20485v1' target='_blank'>ZEBRA: Zero-shot Budgeted Resource Allocation for LLM Orchestration</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:May Hamri, Inbal Talgam-Cohen</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-19 20:50:05</h6>
+<p class='card-text'>As autonomous agents increasingly execute end-to-end tasks under fixed monetary budgets, the pressing open question shifts from whether the budget is respected, to how to spend it effectively. Existing budget-aware methods typically control reasoning step-by-step within a single agent, or learn resource allocation policies via RL. None address how to split a budget across the composing phases of a multi-agent pipeline at inference time. We propose ZEBRA, a zero-shot framework that reduces multi-phase budget allocation to a continuous nonlinear knapsack problem: an LLM controller estimates per-phase utility curves, and a water-filling search on the Lagrange multiplier returns the per-phase split. Additive and multiplicative aggregations are unified under the same solver. On a $150$-task APPS coding benchmark, both ZEBRA variants outperform LLM-direct (budget allocation directly by an LLM) on every aggregate metric. At a budget of $α= 0.5$ of the unconstrained spend, ZEBRA recovers $94.4\%$ of unconstrained quality, versus $88.1\%$ for LLM-direct. The advantage is statistically significant and transfers beyond coding: on a $3$-phase HotpotQA pipeline, ZEBRA beats LLM-direct by $14.3$pp, with allocations empirically robust to curve-estimation noise. On HotpotQA, ZEBRA arrives at a different budget split (near-balanced) compared to the APPS one (skewed towards a refinement phase), showing adaptation to the pipeline structure. More broadly, we show that lightweight algorithmic guidance at inference time can improve the economic behavior of autonomous multi-agent systems.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js'></script>
+</body>
+</html>
