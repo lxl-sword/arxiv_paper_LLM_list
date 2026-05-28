@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<title>LLM-agent - 2026-05-28</title>
+<link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap' rel='stylesheet'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'>
+<style>
+body {
+font-family: 'Roboto', sans-serif;
+background-color: #f5f7fa;
+padding: 20px;
+}
+.card {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.card-title {
+    font-weight: 700;
+}
+.card:hover {
+    transform: scale(1.02);
+    transition: 0.3s ease-in-out;
+}
+</style>
+</head>
+<body>
+<div class='container'>
+<h1 class='text-center my-4'><i class='fas fa-book'></i>LLM-agent - 2026-05-28</h1>
+<div class='row'>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.28787v1' target='_blank'>Do Agents Need Semantic Metadata? A Comparative Study in Agentic Data Retrieval</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Shiyu Chen, Tarfah Alrashed, Alon Halevy, Natasha Noy</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-27 17:46:43</h6>
+<p class='card-text'>In the era of autonomous agents, machine-actionable data is critical for data-driven workflows. For more than a decade, semantic metadata like schema.org has anchored the FAIR principles (Findable, Accessible, Interoperable, and Reusable) for machine-actionable data and enabled discovery tools like Google Dataset Search. However, the rise of Large Language Models (LLMs) capable of navigating the unstructured web raises a fundamental question: Is semantic metadata still necessary for agentic data discovery, or can agents reliably retrieve actionable data directly from the web? We present a comparative analysis of agentic data retrieval across two distinct environments: a Baseline Agent searching billions of open-web documents, and a Semantic Agent leveraging a corpus of 90 million datasets using schema.org. We deploy an "LLM-as-a-judge" evaluation pipeline, mapped directly to the FAIR principles, to assess the semantic relevance, data accessibility, and computational utility of the retrieved data. Our results reveal a clear divergence. The Semantic Agent excels at retrieving actionable data, achieving a 44.9% higher precision for metadata-rich registries and a 46.6% higher precision for pages with machine-readable downloads among its returned results. Conversely, the Baseline Agent frequently suffers "Last-Mile Utility" failures, retrieving prose-heavy pages (20.1% of results) and portal landing pages (8.5%) rather than actual data pages. While the Baseline Agent achieves higher coverage by answering 40% more questions, the Semantic Agent delivers greater accuracy, achieving 65.7% higher overall precision in retrieving FAIR-compliant datasets. We conclude that while unstructured retrieval supports broad exploratory tasks, structured ecosystems remain the indispensable foundation for reliable, execution-oriented autonomous workflows.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.28773v1' target='_blank'>Rethinking Memory as Continuously Evolving Connectivity</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Jizhan Fang, Buqiang Xu, Zhixian Wang, Haoliang Cao, Xinle Deng, Baohua Dong, Hangcheng Zhu, Ruohui Huang, Gang Yu, Ying Wei, Guozhou Zheng, Feiyu Xiong, Haofen Wang, Huajun Chen, Ningyu Zhang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-27 17:35:34</h6>
+<p class='card-text'>Existing memory-augmented LLM agents often treat memory as a static repository with pre-defined representations and fixed retrieval pipelines, which is brittle in dynamic agentic environments where feedback, task variation, and heterogeneous signals continuously reshape what should be remembered and how it should be connected. To address this, we propose FluxMem, a connectivity-evolving memory framework that models memory as a heterogeneous graph and progressively refines its topology through three stages: initial connection formation, feedback-driven refinement, and long-term consolidation. During execution, FluxMem repairs missing links, prunes interference, aligns abstraction granularity, and distills recurrent successful trajectories into reusable procedural circuits, guided by one metric for memory generalizability and evolutionary maturity. Across three fundamentally distinct benchmarks including LoCoMo, Mind2Web, and GAIA, FluxMem achieves consistent state-of-the-art performance, demonstrating strong adaptation and generalization in complex agentic environments. The code will be open-sourced in https://github.com/zjunlp/LightMem.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.28721v1' target='_blank'>LiveBrowseComp: Are Search Agents Searching, or Just Verifying What They Already Know?</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:HuiMing Fan, Xiao Wang, Zheng Chu, Qianyu Wang, Zhuoyao Wang, Ming Liu, Bing Qin, XingYu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-27 16:39:57</h6>
+<p class='card-text'>Are LLM-based search agents genuinely searching, or using the web to verify what they already know? We study this question on BrowseComp with three diagnostics. Our analysis reveals Intrinsic Knowledge Dependence (IKD): even with tool access, agents often rely on intrinsic knowledge -- information encoded in the model before retrieval -- rather than on external evidence. Agents answer up to 44.5% of BrowseComp questions without tools, generate more than half of their search queries from internally produced hypotheses rather than retrieved leads, and perform worse than closed-book baselines when answer-supporting evidence is removed. These results suggest that static search benchmarks can reward memory-backed verification rather than evidence-driven discovery, conflating what agents already know with what they can find. We then introduce LiveBrowseComp, a deep-search benchmark designed to evaluate agents beyond intrinsic coverage. It contains 335 human-authored questions whose answers depend on facts published within the 90 days preceding benchmark construction, drawn from six updated sources and filtered to exclude globally salient events. On LiveBrowseComp, all evaluated agents fall below 2% closed-book accuracy, search-augmented scores drop by 25-40 points relative to BrowseComp, and prior model rankings no longer reliably predict performance. LiveBrowseComp is available at https://huggingface.co/datasets/Forival/LiveBrowseComp.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.28699v1' target='_blank'>TRACER: Turn-level Regret Matching with Inner Reinforcement Credit for Cooperative Multi-LLM Reasoning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Chusen Li, Zhou Liu, Shuigeng Zhou, Wentao Zhang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-27 16:25:21</h6>
+<p class='card-text'>Large language models increasingly rely on either reinforcement learning or multi-agent prompting to improve reasoning, yet these two paradigms remain difficult to combine. Directly applying single-agent reinforcement learning to multi-turn multi-agent systems faces following dilemmas: i) Sparse rewards, role-level free-riding and excessive training overhead. ii) Agents only imitate to collaborate. iii) Fixed collaboration protocol falls into oscillating local optimum. We introduce TRACER, a turn-level reinforcement framework for cooperative multi-LLM reasoning. TRACER separates collaborative decision making into a controller-regret layer, where controllers learn whether the agents should speak or skip the current round through regret matching, and a generation-credit layer, which optimizes proposer and reviewer utterances with role-specific GSPO rewards. This design i) assigns credit at the level of both action modes and generated utterances, thus avoiding free-riding and sparse rewards. We only expand the choices made by the controllers, thus greatly reducing computational cost of training. Moreover, ii) agents acquire collaborative capability as they learn when to utter and what to speak. Finally, iii) by designing binary actions ingeniously, we extend classical game theory established for finite action spaces to deep learning, thus achieving mathematically rigorous convergence. We train all local RL-style methods on the GSM8K training split and evaluate on held-out GSM8K, MATH500, and GPQA-Diamond to measure in-domain accuracy, cross-benchmark generalization, inference cost, and correction-preservation behavior. The resulting framework provides a compact and reproducible testbed for studying learned collaboration policies beyond fixed debate, voting, or aggregation protocols. Code is available at https://github.com/Shark-Forest/TRACER.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.28666v1' target='_blank'>An LLM-Based Assistance System for Intuitive and Flexible Capability-Based Planning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Luis Miguel Vieira da Silva, Nicolas König, Felix Gehlhoff</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-27 16:00:32</h6>
+<p class='card-text'>In modern industry, dynamic environments and the complexity of modular and reconfigurable resources require automated planning of process sequences. Capability-based planning approaches address this by automatically generating plans from semantic knowledge models that describe resource functions in a machine-interpretable form. Their practical use, however, remains limited: solver feedback, especially in the case of unsatisfiability, is difficult to interpret, and the knowledge models require adaptation as operational conditions change or requests become infeasible. This paper presents a hybrid assistance system that augments an existing capability-based Satisfiability Modulo Theories (SMT) planning approach with an Large Language Model (LLM)-based layer for natural-language interaction, explanation, and adaptation. Formal planning correctness remains with the symbolic planner, while the LLM layer handles natural-language access and flexible knowledge model adaptation under explicit Human-in-the-Loop (HitL) approval. The system decomposes into four components: Capability Grounding, Symbolic Planning, Result Interpretation, and Planning Adaptation, realized as a routed agentic workflow in which a central router delegates to five specialized agents. The system is evaluated on a modular production system across four scenario types. Of 23 test cases, 9 of 10 knowledge queries and all 4 satisfiable planning cases were handled correctly, 3 of 4 unsatisfiable cases produced concrete repair proposals, and all 5 adaptive planning scenarios resolved into satisfiable plans through iterative, user-approved knowledge model modifications. The findings confirm that combining formal planning with LLM-based assistance substantially improves accessibility and adaptability in industrial automation.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.28617v1' target='_blank'>LACUNA: Safe Agents as Recursive Program Holes</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yaoyu Zhao, Yichen Xu, Oliver Bračevac, Cao Nguyen Pham, Frank Zhengqing Wu, Martin Odersky</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-27 15:27:25</h6>
+<p class='card-text'>LLM agents increasingly act by writing code, yet a split persists between the runtime that drives the agent and the code the model writes. The runtime owns the loop, context, and control flow, and the model has little say over any of them. Letting model-written code shape the runtime itself would make agents more expressive, but it would also sharpen safety problems. A model can be diverted by a prompt injection, call the wrong tool, or fail partway and leave an inconsistent state, and each such failure reaches further when the code shapes the runtime than when it expresses a single action. We present LACUNA, a programming model for agents that closes this split while preserving safety. Each agent action is a typed call $\texttt{agent[T](task)}$ that the LLM fills with code when execution reaches it, and the code is type-checked against the surrounding program before it runs. Because each action is accepted or rejected as a whole, a rejected one leaves the environment untouched, and its compiler diagnostics drive a retry. The same check also bounds which tools and data an action may use and how they flow. Our primitive expresses ReAct loops, sub-agents, skills, parallel decomposition, and multi-model planning as ordinary control flow. We evaluate LACUNA on a collection of test cases, BrowseComp-Plus, and $τ^2$-bench. On BrowseComp-Plus, $8.6\%$ of generations are rejected before execution, with 0.7 retries per query on average, and the agent reaches $27.1\%$ accuracy. On $τ^2$-bench, LACUNA solves $76.0\%$ of $392$ tasks across four domains with a capable model, on par with the baseline agent.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.28598v1' target='_blank'>Evaluating the Realism of LLM-powered Social Agents: A Case Study of Reactions to Spanish Online News</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Alejandro Buitrago López, Alberto Ortega Pastor, Javier Pastor-Galindo, José A. Ruipérez-Valiente</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-27 15:16:05</h6>
+<p class='card-text'>LLM-powered social agents are increasingly used to simulate online social behavior, yet their realism remains difficult to validate. Existing work has largely relied on general-purpose benchmarks, while less attention has been paid to short, reactive discourse such as audience replies to online news.
+  In this paper, we evaluate whether LLM-generated reactions to Spanish online news reproduce measurable properties of real audience discourse. Using the Hatemedia dataset, we pair 5,631 news items with 58,555 real audience reactions, and generate a matched synthetic dataset using five LLMs under a shared experimental setting. We compare real and synthetic reactions across three dimensions: hate speech, sentiment, and semantic alignment, considering both off-the-shelf and fine-tuned generation.
+  Results show that off-the-shelf models are poor proxies for real audience reactions: they strongly underproduce hate speech, introduce model-specific sentiment biases, and remain distributionally distant from human replies. Fine-tuning improves fidelity unevenly. Qwen3 provides the most balanced approximation, while Mistral7B achieves the strongest sentiment and semantic alignment but overshoots hate prevalence. Plausible synthetic replies do not necessarily reproduce the distributional properties of public discourse.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.28556v1' target='_blank'>A Matter of TASTE: Improving Coverage and Difficulty of Agent Benchmarks</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Tomer Keren, Nitay Calderon, Asaf Yehudai, Yotam Perlitz, Michal Shmueli-Scheuer, Roi Reichert</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-27 14:45:59</h6>
+<p class='card-text'>As agent capabilities advance, existing benchmarks, such as $τ^2$-Bench, are becoming increasingly saturated. Yet constructing new benchmark tasks remains complex, costly, and labor-intensive. Moreover, the standard approach, in which scenarios are first written in natural language and then mapped to tool sequences, captures only a narrow subset of the tool-use patterns agents exercise. In this paper, we address these problems by reversing the task construction process. We propose TASTE: Task Synthesis from Tool Sequence Evolution, an automatic method that generates challenging tasks with broader tool-use coverage. TASTE utilizes an Adaptive Contrastive $n$-gram model trained on LLM-judged validity signals. This enables sampling valid tool sequences that cover a vast range of tool combinations. TASTE then selects representative sequences from the pool via clustering, instantiates them into complete benchmark tasks, and refines them through iterative difficulty evolution. Using TASTE, we construct $τ^c$-Bench, a challenging extension of the three domains of $τ^2$-Bench. We evaluate $11$ agent/user LLM pairs and find that models nearly saturating $τ^2$-Bench suffer severe performance drops on our tasks (e.g., Gemini-3-Flash falls from $0.82\!-\!0.94$ to $0.28\!-\!0.61$). Beyond increasing difficulty, our generated tasks more than double the number of unique tool combinations agents must execute. Our results suggest high scores on existing benchmarks often reflect saturation rather than robust task-solving ability. By automating the generation of difficult, high-coverage benchmarks, TASTE enables continuous, scalable evaluation of future agents.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.28515v1' target='_blank'>Do LLMs Favor Their Providers? Measuring Vertical Integration Bias in Code Generation</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Melih Catal, Alex Wolf, Tiago Ferreiro Matos, Pooja Rani, Harald Gall</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-27 14:17:06</h6>
+<p class='card-text'>Large Language Models (LLMs) have become an integral part of software development, especially with the advent of agentic capabilities. Yet, many frontier LLMs are affiliated with specific providers. This raises the question of whether generated code favors the provider's own ecosystem over comparable alternatives, potentially constraining developers' choices and increasing dependence on a single provider. We define this behavior as Vertical Integration Bias (VIB) and introduce \textsc{VIBench}, a benchmark for measuring VIB in direct and agentic code generation across $20$ provider-selectable software-integration scenarios. Evaluating $10$ frontier provider-affiliated models against $3$ non-affiliated controls, we find positive VIB in direct generation, with six of ten affiliated models showing statistically significant effects up to $+18.8$ percentage points (pp). Agentic workflows further amplify VIB, reaching $+39.2$ pp. Moreover, early affiliated-ecosystem choices in agentic workflows can persist into conceptually decoupled downstream files, with persistence as high as $90.3\%$. These findings underscore the need to measure and account for VIB in code generation, especially as agentic capabilities become more prevalent.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.28465v1' target='_blank'>Beyond One Path: Evaluating and Enhancing Divergent Thinking in Interactive LLM Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Jihyeong Park, Ingeol Baek, Jeonghyun Park, Hwanhee Lee</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-27 13:33:23</h6>
+<p class='card-text'>Divergent thinking is a core dimension of creativity, yet existing evaluations of Large Language Models (LLMs) treat them as single-turn text generations, failing to capture how an agent reasons through iterative interaction. To address this, we introduce MUTATE, an interactive benchmark designed to evaluate agentic divergent thinking at two levels: path-level, where an agent discovers multiple alternative paths to the same goal, and action-level, where individual actions require non-typical, mechanism-shifting object uses. Unlike success-only evaluations, MUTATE scores both completed paths and off-path attempts, capturing divergent reasoning that conventional success rates discard. Our experiments with frontier LLMs reveal a structural blind spot in existing frameworks: when exposed to immediate convergence pressure, they tend to fall into immediate action fixation, failing to improve action-level divergence. To overcome this, we propose ReDNA, which separates unconstrained divergent candidate generation from convergent constraint selection. ReDNA significantly outperforms prior methods across both divergence levels and generalizes effectively to an external creativity environment. We also confirm its success stems from a qualitative enhancement of resilient divergent reasoning rather than simple environmental exploration.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.28433v1' target='_blank'>Roles with Rails: Contract-Preserving Role Evolution in Multi-Agent Structured Reasoning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Ling-Yue Ge, Lan-Zhe Guo</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-27 13:00:44</h6>
+<p class='card-text'>Role-based LLM multi-agent systems need adaptive role pools, yet adapting such systems is not merely a matter of prompt optimization: roles often carry structural obligations, including capability coverage, message compatibility, validation, final-answer aggregation, and parser-compatible output protocols. Existing systems either fix the role inventory and lose adaptivity, or allow unconstrained generation to induce role drift, removing structurally necessary roles and breaking answer contracts. We formulate this as contract-preserving role evolution, requiring every committed edit to preserve five structural contracts (capability, communication, validation, aggregation, output protocol). We instantiate this formulation in SERO, a Self-Evolving Role Orchestration framework that evolves a typed role-card pool through credit-guided retrieval, a credit-ranked communication DAG with a protected terminal aggregator and conditional validator repair, and a contextual-bandit controller whose LLM-proposed edits are committed only when they preserve the contracts and improve task score. Experiments on real-world reasoning benchmarks across three LLM backbones confirm the value of contract-preserving role evolution.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.28390v1' target='_blank'>You Live More Than Once: Towards Hierarchical Skill Meta-Evolving</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Xujun Li, Kehan Zheng, Mingyuan Zhao, Yize Geng, Jinfeng Zhou, Qi Zhu, Fei Mi, Lifeng Shang, Minlie Huang, Hongning Wang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-27 12:26:49</h6>
+<p class='card-text'>Test-time skill evolving is regarded as a new paradigm for enhancing deployed agentic systems. Existing works mainly focus on hard-coded skill evolving strategies or parametric learning that rely on expensive parameter updates in the underlying LLMs. In this paper, we demonstrate that test-time refinement of the skill evolving framework itself is necessary for continuous improvement of the agent systems in different downstream scenarios, and lightweight algorithmic adaptation is feasible. Specifically, we propose HiSME, a lightweight hierarchical skill meta-evolving solution that jointly optimizes skills and the skill evolving strategy by learning meta-skills from agents' task execution traces. Experiments on diverse agentic benchmarks show that meta-evolving can produce a higher-quality skill library than pure skill evolving and can derive diverse meta-skills for different scenarios, thereby facilitating future continual experience learning. Our code is temporarily public at https://anonymous.4open.science/r/HiSME-BD45.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.28369v1' target='_blank'>CyberJurors: A Multi-Agent Simulation Task for E-Commerce Disputes Verdict</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yanhui Sun, Wu Liu, Haifeng Ming, Xinru Wang, Hantao Yao, Yongdong Zhang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-27 12:07:44</h6>
+<p class='card-text'>E-commerce platforms have begun recruiting crowdsourced jurors to adjudicate massive volumes of transaction disputes. Unlike formal legal judgment, E-commerce dispute verdicts require grounding pivotal clues from redundant, multi-round, multimodal evidence and making decisions under flexible platform-specific conventions. These characteristics render existing methods insufficient for this scenario. To bridge this gap, we introduce a pioneering task, E-commerce Dispute Verdicts (EDV), and present VerdictBench, a multimodal benchmark comprising 6,000 real-world cases designed to reflect crowdsourced jury decisions. Building upon this, we propose CyberJurors, a multi-agent framework to clarify the dispute logic and regulate the verdict process. At the individual level, Individual Verdict Chain-of-Thought decomposes the EDV task into four structured reasoning stages, enabling fine-grained clue perception and clarifying causal logic between pivotal clues and the dispute focus. At the collective level, Jury Consensus Verdict simulates multi-round discussion and voting among jurors, while incorporating verdict precedents to mitigate cognitive biases toward either disputant. Experiments on VerdictBench show that CyberJurors outperforms state-of-the-art LLMs, MLLMs, and court simulators, while achieving stronger alignment with real-world jury voting patterns. Code and dataset are available at https://github.com/YanhuiS/CyberJurors and https://huggingface.co/datasets/piggi/VerdictBench.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.28360v1' target='_blank'>Prompt Codebooks: Discrete Compositional Optimization for Language Model Instruction Refinement</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Jyotirmoy Nath, Neeraj Kumar, Brejesh Lall</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-27 11:57:12</h6>
+<p class='card-text'>Automatic prompt optimization (APO) has driven significant gains in LLM-based agentic workflows. However, existing methods treat each task's prompt as a monolithic, instance-blind string optimized through global edits, producing brittle updates and preventing the reuse of learned sub-behaviors. We propose Prompt Codebooks (PCO), a novel compositional prompt optimization framework that recasts APO as discrete learning over a finite vocabulary of natural-language instincts - atomic, reusable instruction units. PCO organizes prompt-construction knowledge in a discrete codebook and routes each input to a small subset of entries via an LLM-based encoder; a generator composes them into a prompt for the frozen target model; a critic emits a structured verdict that decomposes by attribution into per-variable textual gradients, jointly training the encoder, generator, and codebook under a language-valued min-max objective. The resulting routing is per-instance: different inputs in the same task receive different instinct compositions, a regime structurally inexpressible under instance-blind methods. Across six benchmarks on Qwen3-8B and LLaMA-3.1-8B, PCO improves over zero-shot by up to +30.36 points, surpasses the strongest prior baseline (GEPA) by +3.34 on HotpotQA and +1.11 in aggregate, and reduces deployed prompt length by up to 14.1x versus MIPROv2 and 3.0x versus GEPA using only K=16 instincts.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.28359v1' target='_blank'>From Knowing to Doing: A Memory-Controlled Benchmark for LLM Trading Agents on Stock Markets</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Taojie Zhu, Wentao Zhao, Rui Sun, Beidi Luan, Jiacheng Lu, Sinuo Wang, Jing Li, Daxin Jiang, Yonghong He, Zuo Bai</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-27 11:57:10</h6>
+<p class='card-text'>Evaluating whether large language model (LLM) agents can profit in capital markets is increasingly framed as end-to-end trading: place an agent in a historical market, let it trade, and measure portfolio returns. This setup is vulnerable to two evaluation failures. First, long backtests often overlap with the knowledge cutoffs of frontier LLMs, allowing memorized tickers, dates, prices, and market narratives to substitute for investment reasoning. Second, raw returns are a noisy proxy for stock-selection ability, since positive performance may come from market beta, style exposure, or favorable regimes rather than genuine alpha.
+  We introduce KTD-Fin (Knowing-To-Doing Financial Benchmark), an end-to-end stock-market trading benchmark that addresses both issues. KTD-Fin uses a data-side masking protocol to anonymize key identifiers and calendar information consistently across prompts and tools, separating historical market memory from investment decision-making. It also incorporates a Barra-style performance attribution framework that decomposes portfolio returns into market, style, and stock-selection alpha components.
+  Across ten frontier LLM agents evaluated on the Chinese CSI300 over a 2024--2026 window, masking substantially changes agent rationales, pushing them towards anonymized factor-based reasoning. Attribution analysis further shows that LLM agents' cumulative returns under leakage-controlled evaluation are largely explained by passive market and style exposure, with limited evidence of persistent stock-selection alpha. These findings suggest that financial LLM benchmarks should evaluate not only whether an agent makes money, but also whether the source of returns reflects transferable investment skill. We release KTD-Fin as a reproducible template for leakage-controlled and attribution-aware evaluation of LLM trading agents.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.28334v1' target='_blank'>Towards Cybersecurity SuperIntelligence (CSI): What's the best harness for cybersecurity?</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Víctor Mayoral-Vilches, Francesco Balassone, María Sanz-Gómez, Paul Zabalegui Landa, Daniel Sánchez Prieto, Marina Oteiza Álvarez, Davide Quarta, Martin Pinzger</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-27 11:37:18</h6>
+<p class='card-text'>What is the best harness for cybersecurity AI? Cybersecurity systems are converging on a single execution scaffold per agent, an iterative shell loop driven by a Large Language Model (LLM). However, scaffolds are not interchangeable, rarely interoperable, and no single scaffold dominates across all challenge types. In our path towards researching Cybersecurity SuperIntelligence (CSI), we present a meta-scaffold that unifies heterogeneous agent harnesses under a common orchestration layer, enabling any LLM-driven scaffold to be deployed, benchmarked, and composed within the same infrastructure. Using CSI, we benchmark five scaffolds (CSI::Claude, CSI::Codex, CSI::GCAI, CSI::Mistral, CSI::CAI) on the 33 cybench challenges, holding the model fixed at alias2-mini. The best individual scaffolds solve 15/33 (45.5%); the four-scaffold union solves 17/33 (51.5%), with the fifth (CSI::Mistral, 10/33) contributing one exclusive solve. We find that no single scaffold is the best harness: it is the combination of structurally heterogeneous scaffolds that yields the highest coverage. We validate this through CSI's blackboard-based multi-agent architecture, in which scaffold-specialised agents run in parallel and exchange intermediate findings via a shared substrate (a blackboard). The blackboard solves 19/33 (57.6%), a 27% relative gain over CSI::Claude, one of the best individual scaffolds (15/33, 45.5%), 25% faster (20.2 h vs. 26.8 h), at comparable cost ($5,480 vs. $5,122).</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.28321v1' target='_blank'>Multi-Agent LLM-based Metamorphic Testing for REST APIs</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Shehroz Khan, Abdullah Mughees, Gaadha Sudheerbabu, Tanwir Ahmad, Dragos Truscan</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-27 11:24:46</h6>
+<p class='card-text'>As REST APIs become an increasingly significant part of software systems, their validation is becoming more critical. Hence, testing and uncovering underlying issues are of utmost importance for improving software quality. However, testing REST APIs is challenging mainly due to the difficulty of assessing whether the output of an API call is correct, i.e., the test oracle problem. Metamorphic testing is a specification-based testing approach for situations where correct outputs are unknown or not specified explicitly. To check the correctness of a system, relations between the different outputs are specified. We present ARMeta, a tool-supported approach that uses an LLM-based multi-agent workflow to support metamorphic testing of REST APIs documented with OpenAPI. The agentic workflow is used to identify metamorphic test scenarios and specify them in the Given-When-Then format. These scenarios are automatically implemented as executable tests and executed against the system under test. We evaluate ARMeta on two publicly available web applications that expose REST interfaces and compare its performance with a scenario-based testing baseline. The results show that ARMeta explores behaviors that serve as a complement to existing scenario-based testing approaches.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.28302v1' target='_blank'>How Far Can Disaggregation Go? A Design-Space Exploration of Attention-FFN Disaggregation for Efficient MoE LLM Serving</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Hanjiang Wu, Abhimanyu Rajeshkumar Bambhaniya, Sarbartha Banerjee, Tuhin Khare, Sudarshan Srinivasan, Suvinay Subramanian, Souvik Kundu, Madhu Kumar, Midhilesh Elavazhagan, William Won, Amir Yazdanbakhsh, Tushar Krishna</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-27 10:55:57</h6>
+<p class='card-text'>Modern large language model (LLM) inference has progressively disaggregated to keep pace with growing model sizes and tight TTFT and TPOT service-level objectives: from chunked-prefill aggregation, to prefill-decode (P/D) disaggregation, and most recently to operator-level Attention-FFN Disaggregation (AFD). This trend is especially important for mixture-of-experts (MoE) models, where memory-bound attention, compute-intensive expert FFNs, and MoE dispatch/combine communication create distinct resource demands. AFD further exposes this heterogeneity by placing attention and MoE-FFN execution on separate GPU groups. Each level of disaggregation deepens the scheduling design space across workload characteristics, resource allocation, and interconnect topology, raising the central question: when does each level actually pay off? We systematically characterize this trade-off for MoE inference across realistic workloads spanning input/output sequence lengths, prefix-KV reuse, and per-user latency constraints. Using chunked-prefill and P/D disaggregation as baselines, we study the benefits and limits of AFD at scale through a framework that fuses on-device kernel measurements with high-fidelity network simulation. Under strict TTFT/TPOT SLOs, AFD sustains around 4k tokens/s of system throughput on DeepSeek-V3.2 across chat, coding, and agentic-coding workloads, where non-AFD deployments are infeasible. We distill concrete takeaways for jointly optimizing throughput and interactivity, including how to partition attention and FFN across GPUs as a function of workload and model architecture, providing design principles for current rack- and cluster-scale deployments as well as future disaggregated AI infrastructure.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.28224v1' target='_blank'>When Does Memory Help Multi-Trajectory Inference for Tool-Use LLM Agents?</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Xinzhe Li, Yaguang Tao</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-27 09:39:19</h6>
+<p class='card-text'>Multi-trajectory inference for tool-use LLM agents - generating multiple reasoning attempts and selecting among them - benefits from transferring knowledge across attempts so that later ones avoid the pitfalls of earlier ones. Existing cross-trajectory memory methods (trajectory-level reflection, atomic fact extraction, raw observation injection) are each evaluated under a single inference strategy on a single task, making it unclear whether reported gains reflect properties of the memory abstraction or of the inference method. We propose a unified framework that decomposes memory along two axes -- the scope of transfer (within an expansion vs. across trajectories) and the abstraction of the transferred content -- and evaluate four methods under three inference strategies (best-of-N, beam search, MCTS) on four tool-use benchmarks spanning SQL, knowledge-graph, and CLI environments, in a verifier-free setting that matches the deployment regime of practical agents. The experiment matrix identifies the inference method as a confound: the same memory method produces statistically distinct results under different inference strategies on the same examples. Reflection reaches significance only under MCTS (not under best-of-N); within-expansion injection (conditioning each candidate on prior siblings' outcomes) helps only diversity-starved beam search; and atomic fact extraction is accuracy-neutral but shortens trajectories by 19-26% on tasks with reusable environmental structure.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.28213v1' target='_blank'>Learning When to Optimize: Verified Optimization Skills from Expert GPU-Kernel Lineages</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Shuoming Zhang, Qiuchu Yu, Yangyu Zhang, Ruiyuan Xu, Xiyu Shi, Guangli Li, Xiaobing Feng, Huimin Cui, Jiacheng Zhao</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-27 09:32:16</h6>
+<p class='card-text'>LLM-based agents are increasingly used to generate GPU kernels, but they often know what optimizations to try without knowing when those optimizations are sound. We introduce KLineage, which learns this missing "when" knowledge from expert kernels: instead of relying on forward rollouts, KLineage walks expert implementations backward through validation-gated simplifications and reverses each accepted step into a reusable optimization skill. Each skill records not only the optimization intent, but also where it applies in code, what conditions made it valid, what effect it had, and what failures its assumptions avoid. A downstream LLM materializes these skills on new code surfaces under the same compile/correctness/profile gate. On five expert workloads across two NVIDIA architectures, these lineage-derived skills serve as an effective optimization curriculum, exceeding recent memory-based LLM-kernel baselines in both final kernel quality and optimization efficiency under the same fixed budget. We additionally use a separate 22-instance held-out check as a sanity test against source-case memorization.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.28208v1' target='_blank'>Nonvolatile Charge-Domain Attention with HZO Ferroelectric Capacitors: A Simulation-Based Device-to-System Evaluation</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Faris Abouagour</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-27 09:28:40</h6>
+<p class='card-text'>Transformer decoding is constrained by both attention compute and KV-cache movement. This paper presents the Ferroelectric Charge-Domain Compute Cell (FCDC), a hafnium-zirconium-oxide (HZO) memcapacitor with an access device that stores analog state nonvolatilely and performs charge-domain VMM for attention. Two deployment modes are evaluated throughout: a full-substrate mode that runs q, k, v, o projections and both attention matmuls on FCDC, and a KV-coprocessor mode that only stores KV and executes the two attention matmuls; the projection-noise budget upper-bounds the coprocessor mode.
+  The device-to-system model is cross-checked across ngspice, CrossSim, FiPy, and NeuroSim and anchored in recent wafer-scale 10 nm HZO measurements. Across 12 pretrained LLMs (1.1-32 B dense, plus a partial-layer Mixtral-8x22B 141 B-MoE stress test at k=75% and a 128 k-context dense-Mistral replication), all-layer noise substitution adds only +2.62% WikiText-2 perplexity on Qwen3-32B and +2.90% +/- 0.33% on Mistral-7B-v0.3 (five-seed mean). End-to-end analog attention adds at most +1.68 pp on TinyLlama-1.1B and shrinks below +/-1 pp on every >=7 B model. Downstream accuracy on HellaSwag, ARC, LAMBADA, and GSM8K stays within 5% of the digital baseline for Mistral-7B (MMLU -1.6 pp).
+  The headline energy win is nonvolatility, no refresh, and KV-cache residency. A workload-level simulator anchored on measured INT4 decode energy delivers 18-35x lower per-served-token energy on RAG and agent loops against a single-user INT4 GPU baseline; against optimized GPU serving (batched vLLM, CPU+NVMe park, power-gate) the robust advantage shrinks to 1.36-4.69x and remains >=41x on parked sessions with multi-hour residency.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.28201v1' target='_blank'>Plant, Persist, Trigger: Sleeper Attack on Large Language Model Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yongxiang Li, Moxin Li, Zhixin Ma, Fengbin Zhu, Dongrui Liu, Wenjie Wang, Fuli Feng</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-27 09:25:37</h6>
+<p class='card-text'>Large Language Model (LLM) agents remain vulnerable to safety threats from the external environment, where attackers inject adversarial content into external observations such as tool-returned data, webpages, or MCP context, causing harmful agentic behaviors such as unsafe actions or incorrect outputs. Existing studies typically focus on single-interaction attacks, where the agent observes adversarial content and immediately exhibits harmful behavior within one user request. However, we show that adversarial content can also persist across interactions served by the same agent, making such threats harder to detect and mitigate. Specifically, adversarial content may persist in the agent state, remain dormant across interactions, and later be activated by a benign user query. We formalize this type of safety threat as Sleeper Attack. To evaluate it, we construct a benchmark with 1,896 instances covering six real-world harmful outcomes, three attack strategies, and three agent state targets: session context, memory, and reusable skills. Experiments on seven strong open-source and closed-source LLMs show that state-of-the-art LLM agents remain vulnerable to Sleeper Attack, even when they achieve low attack success rates under a single-interaction baseline. Our code and data are available at https://anonymous.4open.science/r/skdvnfu23ihr9wdscnksf1asdffsaef.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.28192v1' target='_blank'>Agentic Active Omni-Modal Perception for Multi-Hop Audio-Visual Reasoning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Ke Xu, Yuhao Wang, Ziyang Cheng, Hongcheng Liu, Yanfeng Wang, Yu Wang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-27 09:11:59</h6>
+<p class='card-text'>Multi-hop audio-visual reasoning remains challenging for Omni-LLMs, as relevant evidence is often sparse, temporally dispersed, and distributed across both audio and visual streams. Existing benchmarks provide limited investigation of this setting, typically involving only a limited number of modalities, relevant temporal segments, or reasoning steps. In this work, we introduce MOV-Bench, a benchmark containing 519 carefully curated questions that require multi-hop reasoning over temporally dispersed audio-visual evidence. Evaluations on MOV-Bench reveal that current Omni-LLMs still struggle with multi-hop cross-modal reasoning. To address this challenge, we further propose AOP-Agent, an efficient agentic framework built on open-source Omni-LLMs for active omni-modal perception. By combining a hierarchical omni-modal memory with a collaborative observe-reflect-replan loop, AOP-Agent enables open-source Omni-LLMs to perform active perception without additional training or proprietary models. Experiments on MOV-Bench and OmniVideoBench demonstrate that AOP-Agent consistently improves reasoning performance, with particularly notable gains on long videos and reasoning-intensive questions.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.28175v1' target='_blank'>Mixture-of-Experts Knowledge Graph Retrieval-Augmented Generation for Multi-Agent LLM-based Recommendation</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Shijie Wang, Chengyi Liu, Yujuan Ding, Shanru Lin, See-Kiong Ng, Xu Xin, Wenqi Fan</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-27 08:56:57</h6>
+<p class='card-text'>Large language models (LLMs) have recently been adopted for recommendations due to their ability to understand user intent and item semantics. However, LLM-based recommender systems often rely on parametric knowledge and suffer from outdated knowledge, motivating knowledge graph retrieval-augmented generation (KG-RAG) to ground recommendations on structured, up-to-date KGs. Despite this promise, effective KG-RAG in recommendations faces great challenges. First, users' queries vary in complexity and require KG knowledge at different granularities, whereas existing methods adopt a one-size-fits-all retrieval strategy, leading to over-retrieval for simple queries and under-retrieval for complex ones. In addition, augmenting LLMs with KG knowledge requires translating graph-structured data into linear text, which may introduce noise and cause structural information loss. Moreover, the selection of retrieval granularity lacks direct supervision and must be inferred from the final recommendation after alignment and downstream utilization, making query-aware retrieval hard to learn end-to-end. To address these issues, we propose MixRAGRec, a cooperative multi-agent framework for KG-RAG recommendations. MixRAGRec integrates a Mixture-of-Experts Retrieval Agent that routes each query to a KG retrieval expert with different granularities, a Knowledge Preference Alignment Agent that converts structured knowledge into LLM-friendly natural language, and a Contrastive Learning-reinforced Recommendation Agent trained with contrastive preference feedback. Notably, we introduce Mixture-of-Experts Multi-Agent Policy Optimization (MMAPO) to train three agents under a unified objective. Extensive experiments on real-world datasets demonstrate the effectiveness of our framework.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.28168v1' target='_blank'>OccuReward: LLM-Guided Occupant-Centric Reward Shaping for Demographic Equity in Grid-Interactive Buildings</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Shadmehr Zaregarizi, Khashayar Yavari</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-27 08:50:02</h6>
+<p class='card-text'>Large language models (LLMs) have demonstrated promising capability in generating reward functions for deep reinforcement learning (DRL)-based building energy management. However, their potential to exhibit or exacerbate disparities in occupant comfort across heterogeneous demographic populations remains unexplored. We present OccuReward, a framework investigating how LLM-mediated reward design affects demographic equity. Our contribution is three-fold: the introduction of the Comfort Equity Index (CEI) as a novel feedback signal; a methodology for iterative, equity-aware LLM reward shaping; and a performance analysis of DRL agents under these refined objectives. Utilizing four empirically grounded occupant profiles from the ASHRAE Global Thermal Comfort Database II (13,440 votes), we deploy a Soft Actor-Critic agent in CityLearn v2. Our approach employs the Gemini API to generate reward function logic and weights--rather than performing per-step inference--across three refinement rounds. Results across 15 experimental runs reveal that elderly female occupants consistently experience the lowest satisfaction in initial rounds. By Round 3, equity-aware LLM refinement activates specific reward components that improve satisfaction for Young Males (+17.6%), Mid-aged Females (+28.2%), Health Sensitive (+53.8%), and Elderly Females (+567%), while simultaneously reducing energy costs by 3.2%. Our findings highlight that while reward-level intervention significantly improves equity, demographic disparities in AI-driven controllers persist, necessitating further research into algorithmic fairness in building systems.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.28158v1' target='_blank'>OR-Space: A Full-Lifecycle Workspace Benchmark for Industrial Optimization Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Chenyu Zhou, Xinyun Lu, Jiangyue Zhao, Jianghao Lin, Dongdong Ge, Yinyu Ye</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-27 08:41:30</h6>
+<p class='card-text'>Large language model (LLM) agents are increasingly used to assist with operations research (OR) modeling, yet existing OR-oriented benchmarks often reduce evaluation to one-shot translation from a self-contained problem statement into a mathematical formulation or solver program. Such settings abstract away two characteristics of real industrial OR workflows: persistent multi-artifact workspaces and multi-stage task lifecycles. We introduce OR-Space, a full-lifecycle workspace benchmark for evaluating industrial optimization agents across model construction, model revision, and grounded explanation. Each instance is an executable workspace containing business documents, structured data, optional code artifacts, solver outputs, and task-specific evaluators distributed across interdependent files. OR-Space defines three task modes: Build, where agents construct solver-ready optimization models from heterogeneous artifacts; Revise, where agents modify existing models under changing requirements or solver feedback while preserving valid prior logic; and Explain, where agents answer grounded questions about solutions, constraints, and business implications using evidence spread across workspace artifacts. By combining persistent workspaces with lifecycle-oriented tasks, OR-Space evaluates whether agents can perform reliable optimization work beyond end-to-end text generation. We describe the benchmark design, evaluation protocol, and quality-control pipeline, and position OR-Space as a benchmark for studying the reliability, failure modes, and practical readiness of LLM agents in industrial OR workflows.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.28148v1' target='_blank'>DeltaMCP: Incremental Regeneration via Spec-Aware Transformation for MCP servers</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Aditya Pujara, Xiaogang Zhu, Hsiang-Ting Chen</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-27 08:31:21</h6>
+<p class='card-text'>The rapid development of LLMs coupled with the introduction of Model Context Protocol (MCP) has revolutionized how intelligent agents interact with APIs through deterministic and structured methods \cite{ModelContextProtocolIntro2025}. While some existing systems like AutoMCP attempt to automate a previously completely manual process of generating MCP servers, they fail to address the recurring challenge of maintaining synchronization between evolving enterprise-level APIs and their corresponding MCP toolset implementation \cite{mastouri2025makingrestapisagentready}. This paper introduces DeltaMCP, a specification-aware, incremental regeneration tool for enterprise-grade MCP servers. DeltaMCP enables developers to only update the affected tooling of MCP servers, given a new release of it's corresponding service's OpenAPI specification. Using Azure REST API specifications as the evaluation dataset, DeltaMCP is benchmarked against baseline full generation methods on generation quality and system performance. The results demonstrate the reduction in developer overhead through DeltaMCP whilst improving maintainability and version consistency. This research offers a scalable approach for enterprises seeking to maintain high-fidelity, up-to-date MCP server infrastructures for LLM-based systems.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.28146v1' target='_blank'>Cybersecurity AI (CAI) Dataset</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Víctor Mayoral-Vilches</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-27 08:29:28</h6>
+<p class='card-text'>We present CAI Dataset, a fourteen-month corpus of cybersecurity LLM trajectories collected through the open-source CAI agent framework, built in response to PentestGPT's finding that expert operator trajectories, not base-model capability, are the bottleneck for cybersecurity LLM performance. CAI Dataset aggregates 230,935 session logs and 26,027,742 user prompts from 16,768 source IPs across 123 countries, exercising 4,187 unique LLM identifiers against 23,147 target domains over 18.07 TB of durable storage. The mix is hands-on (36.4% offensive, 20.1% attacker-intent, 27.5% business / integration, 4.4% defensive), making CAI Dataset, to the best of our knowledge, the largest described corpus of LLM-driven hacker trajectories. It is released to partner organisations and selected customers as an audience-size series (CAI Dataset10, CAI Dataset1k, CAI Dataset200k). Read longitudinally, the corpus is a record of cybersecurity itself turning automated: operators routinely paste live credentials, production hostnames and bearer tokens into prompts knowing their inputs are logged, a trade-off they accept to stay competitive. Aggregated across the industry, this concentrates a substantial fraction of the world's offensive and defensive operator context inside a handful of frontier-model API providers, a single failure surface whose breach or politically motivated repurposing could cascade into nation- and enterprise-scale disruption. The only configuration that preserves both the productivity advantage and operator-side confidentiality is an on-premise, privately-hosted cybersecurity-specialised LLM served inside the operator's trust boundary, which CAI Dataset is shaped to make practical.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.28120v1' target='_blank'>LegalGraphRAG: Multi-Agent Graph Retrieval-Augmented Generation for Reliable Legal Reasoning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Zerui Chen, Qinggang Zhang, Zhishang Xiang, Zhimin Wei, Linfeng Gao, Xiao Huang, Zhihong Zhang, Jinsong Su</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-27 08:13:11</h6>
+<p class='card-text'>Graph-based Retrieval-Augmented Generation (GraphRAG) advances flat document retrieval by structuring knowledge as relational graphs, enabling more coherent and effective reasoning. However, applying it to specific domains like legal reasoning faces critical challenges. (i) Legal corpora are heterogeneous, containing multi-granular knowledge from cases, articles and interpretations. A flat knowledge graph cannot adequately differentiate between factual details, applied rules, and abstract principles, limiting accurate retrieval. (ii) Reliable legal judgment demands transparent, evidence-based reasoning. Traditional RAG passes retrieved context directly to an LLM without verification, resulting in opaque, error-prone reasoning. To this end, we propose LegalGraphRAG, a framework designed for reliable legal reasoning. Our approach introduces two core components: a hierarchical legal graph that hierarchically organizes legal sources to enable retrieval at appropriate abstraction levels, and a multi-agent system for reliable legal reasoning, where a Researcher retrieves candidate evidence, an Auditor rigorously verifies its validity against source documents, and an Adjudicator synthesizes the set of verified evidence to render a final judgment. Extensive experiments show that LegalGraphRAG achieves the state-of-the-art performance, outperforming existing GraphRAG baselines in accurate and trustworthy legal analysis. Our code, datasets and implementation details are available at https://github.com/XMUDeepLIT/LegalGraphRAG.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2605.28108v1' target='_blank'>Ask Now, Use Later: Benchmarking the Proactivity Gap in Long-Lived LLM Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Bin Wu, Guanyun Zou, Bingbing Wang, Huan Zhao, Chuan Shi</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-05-27 08:00:58</h6>
+<p class='card-text'>A long-lived LLM agent, such as OpenClaw, earns its value by acting on a user's preferences and constraints across sessions, not just the current request. Yet today's agents keep what a user volunteers but rarely ask for what stays unspoken, leaving a proactivity gap in long-lived LLM agents: an agent cannot act on a preference it never obtained. As users delegate more of their affairs to agents, the impact of this gap grows. We isolate one concrete, controllable slice of this gap as Ask-to-Remember (ATR): the agent decides whether to ask now for a reusable user preference that the current task does not need but a later session with the same user will. ATR is hard even to evaluate: the right question is underdetermined and its payoff deferred to tasks that may never arise. ATRBench, to the best of our knowledge the first ATR benchmark, makes it measurable by fixing each user's preferences as hidden ground truth, so success demands asking, not recall. Across eight frontier LLM agents, defaults fall at least 62 points below an oracle handed the relevant preference, and prompting closes little of it. Diagnostics identify acquisition as the bottleneck. ATRBench surfaces this proactivity gap in current agents and offers a diagnostic testbed for closing it.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js'></script>
+</body>
+</html>
