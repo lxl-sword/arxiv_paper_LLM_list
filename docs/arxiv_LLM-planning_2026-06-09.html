@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<title>LLM-planning - 2026-06-09</title>
+<link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap' rel='stylesheet'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'>
+<style>
+body {
+font-family: 'Roboto', sans-serif;
+background-color: #f5f7fa;
+padding: 20px;
+}
+.card {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.card-title {
+    font-weight: 700;
+}
+.card:hover {
+    transform: scale(1.02);
+    transition: 0.3s ease-in-out;
+}
+</style>
+</head>
+<body>
+<div class='container'>
+<h1 class='text-center my-4'><i class='fas fa-book'></i>LLM-planning - 2026-06-09</h1>
+<div class='row'>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2606.09738v1' target='_blank'>HDSL: A Hierarchical Domain-Specific Language for Structured 3D Indoor Scene Generation and Localized Editing with LLM Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Letian Li, Chao Shen, Shuzhao Xie, Chenghao Gu, ZhengXiao He, Yu Meng, Xin Yang, Wenyuan Jiang, Zhi Wang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-06-08 17:02:36</h6>
+<p class='card-text'>Text-driven indoor scene generation and editing require an intermediate representation that language models can both produce and revise. Existing LLM-based systems often rely on scene graphs or global constraint lists, which are compact but underspecify local geometry and make instruction-based edits difficult to localize. We frame this problem as structured program generation and local program repair, and propose Hierarchical Descriptive Scene Language (HDSL), an XML/CSS-style domain-specific language for structured 3D indoor scenes. HDSL represents rooms, regions, objects, and support surfaces as a tree with local coordinates, making complex scenes easier to plan recursively and easier to retrieve for editing. Our pipeline uses LLM agents to generate HDSL subtrees with bounded verification, grounds non-virtual nodes through multimodal asset retrieval, and applies force-directed layout optimization to repair boundary and collision errors. For editing, Hierarchical Retrieval-Augmented Generation retrieves the relevant subtree, asks the LLM to rewrite only that local context, and merges the result back through a deterministic three-way merge. In our reproduced benchmark, HDSL improves average object coverage, text-scene alignment, and generation time over full text-to-scene baselines while remaining competitive with recent layout-only reproductions on geometry metrics; for editing, HRAG reduces token use by $5.22\times$ and runtime by $6.19\times$, produces valid DSL for all eight paired edits, and better preserves unrelated scene objects.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2606.09709v1' target='_blank'>IS-CoT: Breaking the Long-form Generation Collapse via Interleaved Structural Thinking</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Zechen Sun, Yuyang Sun, Zecheng Tang, Juntao Li, Wenpeng Hu, Wenliang Chen, Zhunchen Luo, Guotong Geng, Min Zhang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-06-08 16:31:00</h6>
+<p class='card-text'>Generating coherent and controllable long-form content remains a persistent challenge for Large Language Models (LLMs). While reasoning-enhanced models have demonstrated success in logic-intensive domains, our evaluation reveals that they suffer from a severe length collapse in open-ended writing, where performance degrades sharply as target lengths exceed 2,000 words. We attribute this failure to the limitation of static hierarchical planning, which struggles to provide dynamic guidance over extended contexts. To bridge this gap, we introduce the Interleaved Structural Chain-of-Thought (IS-CoT) framework. Unlike external agentic workflows, IS-CoT embeds a dynamic Plan-Write-Reflect cycle into the generation process, enabling continuous strategy adaptation and global alignment without additional assistance. Based on this framework, we construct a high-quality dataset of interleaved reasoning traces via a multi-teacher pipeline and train IS-Writer-8B. Experiments demonstrate that IS-Writer-8B achieves state-of-the-art performance on challenging long-form benchmarks (e.g., +3.08 vs. DeepSeek-V3.2 on LongBench-Write), exhibiting robust length compliance and coherence competitive with significantly larger proprietary models.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2606.09549v1' target='_blank'>SecureClaw: Clawing Back Control of LLM Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yuhan Ma, Stefan Schmid</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-06-08 14:29:01</h6>
+<p class='card-text'>Tool-using large language model (LLM) agents face two distinct security failures: unauthorized external actions and exposure of sensitive plaintext inside the runtime before any final output check can intervene. Existing defenses usually protect one boundary, either the planner/runtime or the action sink, and therefore do not by themselves secure both surfaces. We present SecureClaw, a dual-boundary architecture that places authorization at the effect sink and plaintext confinement at the read boundary. Sensitive reads pass through a trusted gateway that replaces raw values with opaque handles and, in the evaluated deployment, bounded summaries as an explicit declassification interface. Writes that change external state follow a PREVIEW$\rightarrow$COMMIT protocol in which only a trusted executor may commit the exact canonical request authorized by policy. The runtime can still plan over summaries and symbolic references, but cannot directly dereference secrets or perform side effects. Across AgentDojo, AgentLeak, and Agent Security Bench (ASB), SecureClaw is the only defense we evaluate in a common harness that simultaneously retains usable task utility and achieves 0\% attack success rate (ASR) on ASB, 0.64\% ASR on AgentDojo, and 3.23\% overall leak on AgentLeak's attacked parity lane, which measures final-output and internal-relay leakage.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2606.09450v1' target='_blank'>TheoremBench: Evaluating LLMs on Theorem Proving in Formal Mathematics</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:QuocViet Pham, Elvir Karimov, Andrey Galichin, Ivan Oseledets</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-06-08 12:57:18</h6>
+<p class='card-text'>LLMs have recently achieved strong results on formal proving benchmarks. However, existing evaluations remain heavily concentrated on competition-style problems and often fail to capture how models behave on longer, more dependency-rich mathematical developments. We introduce TheoremBench, a Lean4 benchmark designed to evaluate theorem provers beyond contest settings. The benchmark is built from nearly one hundred classical theorems and is released in two complementary forms: a plain main version containing one target theorem per instance, and a premised version that expands each theorem into a structured family of related proving tasks consisting of the main theorem together with automatically extracted supporting subtheorems. This design enables evaluation of not only whether the final theorem was proved from scratch, but also of partial progress through the internal proof structure of a theorem. Our experiments show that explicit premises substantially improve performance for Lean4-capable prover models. To provide a comprehensive evaluation, we introduce theorem-level coverage and token-efficiency metrics that expose qualitative differences in proof behavior. The results show that current provers remain strongly biased toward easy subtheorems and often solve theorems through long and inefficient tactic traces rather than compact proof plans. TheoremBench therefore provides a more fine-grained view of formal reasoning ability and highlights the importance of structural benchmark design for evaluating Lean4 theorem provers.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2606.09371v1' target='_blank'>Capability-Aligned Hierarchical Learning for Tool-Augmented LLMs</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Haotong Yang, Ting Long, Yi Chang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-06-08 11:48:55</h6>
+<p class='card-text'>Tool learning enables LLMs to invoke external tools to accomplish tasks. Prior studies have demonstrated the effectiveness of a hierarchical structure: a high-level policy handles global planning and decomposes tasks into manageable sub-tasks, and a low-level policy focuses on invoking tools to solve these sub-tasks. However, these works typically optimize the high-level and low-level policies separately, leading to planner-executor misalignment and limiting LLM performance on tool-use tasks. In this paper, we propose a method called Capability-Aligned Hierarchical Learning (CAHL), which leverages RLVR to jointly optimize both policies, enabling better alignment between the high-level planner and the low-level executor. Experiments on constrained tool-use benchmarks (API-Bank and BFCL) and an open-ended environment (Bamboogle) demonstrate the effectiveness of CAHL.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2606.09198v1' target='_blank'>MASS: Deep Research for Social Sciences with Memory-Augmented Social Simulation</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yongrui Liu, Deyi Xiong</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-06-08 08:32:21</h6>
+<p class='card-text'>Deep Research agents powered by Large Language Models (LLMs) have exhibited extraordinary potential in automated paper writing tasks. However, existing systems rely heavily on literature retrieval and synthesis through internet and local knowledge bases, often resulting research in lacking insight and creativity in social science. To address this issue, we propose "Memory-Augmented Social Simulation (MASS)", an innovative paradigm that leverages highly realistic and research-oriented social simulations to enhance the creativity and empirical founding of LLMs-generated research. Specifically, MASS integrates three core components: dynamic goal-path planning with multi-level social norm restraint to guide the simulation, a multi-disciplinary behavior dataset for agent memory cold-start, and a structured forgetting mechanism inspired by the Ebbinghaus curve. Together, these ensure simulation authenticity and provide a robust empirical foundation for generating innovative scholarly papers. Experimental results demonstrate the effectiveness of our method, showing a 6.81\% improvement in generation overall quality over foundation LLMs and 17.19\% gain in Insight over strong baselines.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2606.09071v1' target='_blank'>REFLECT: Intervention-Supported Error Attribution for Silent Failures in LLM Agent Traces</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Xiaofeng Lin, Yingxu Wang, Tung Sum Thomas Kwok, Daniel Guo, Sahil Arun Nale, Charles Fleming, Guang Cheng</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-06-08 06:11:57</h6>
+<p class='card-text'>Large language model (LLM) agents now solve complex tasks through long plan-and-execution traces, yet the ability to locate errors in a completed traces still lags far behind, especially in the \emph{silent failure} regime. Existing approaches predict suspect steps via classifiers or LLM judges, or recover correct answers via retry, but none feed the intervention outcome back to \emph{refine the attribution itself}. We propose \methodname, a method that closes this gap by diagnosing a candidate error step, testing it through controlled replay with a diagnosis-specific patch, and using the verified outcome flip as contrastive evidence to refine the final attribution. Across four localization benchmarks spanning multi-hop reasoning across domains, \methodname achieves the highest localization accuracy among same-auditor methods across all four benchmarks, with the largest gains on structured tool-use traces, while providing actionable localization even when ground-truth answers are unavailable.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2606.09037v1' target='_blank'>A Multi-Agent System for IPMSM Design Optimization via an FEA-AI Hybrid Approach</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Jinseong Han, Sunwoong Yang, Namwoo Kang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-06-08 05:07:46</h6>
+<p class='card-text'>Interior permanent magnet synchronous motor (IPMSM) design requires balancing conflicting objectives and multi-physics constraints, while modern optimization workflows face three bottlenecks: manual problem setup, high finite element analysis (FEA) cost, and unreliable surrogate-based search in sparse or out-of-distribution regions. To address these limitations, we propose an end-to-end automated IPMSM design optimization framework that integrates retrieval-augmented generation (RAG) for structured problem definition with an uncertainty-aware FEA-AI hybrid optimization pipeline. A Design agent, connected to a motor textbook through RAG, provides domain-knowledge-based options and engineering tips, and compiles an optimization card and a design-of-experiments plan for AI-model training. A Training agent automates electromagnetic FEA, records geometry-validation and solver-failure logs, analyzes failed geometries using ANOVA-based data analysis and LLM reasoning, and invokes a Design Sampling agent to redefine the design space and generate additional samples. An Optimization agent performs GA-based search with uncertainty-driven switching: low-uncertainty candidates are evaluated by AI-surrogate inference, whereas high-uncertainty and reliability-critical Pareto-front or top-K candidates are corrected by high-fidelity FEA and reused for iterative retraining. The framework converts manual, experience-dependent configuration into a reproducible workflow that balances computational cost and prediction reliability. Experimental results under a matched high-fidelity FEA budget show that the proposed hybrid approach achieves better objective performance while maintaining low and further reducible predictive uncertainty, outperforming FEA-only search, which is limited by early budget exhaustion, and AI-only search, which converges to a low-confidence optimum.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2606.09032v1' target='_blank'>Bridging the Agent-World Gap: Text World Models for LLM-based Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yixia Li, Hongru Wang, Peng Lai, Zhiwen Ruan, He Zhu, Youxin Zhu, Ganlong Zhao, Minda Hu, Yun Chen, Sibei Yang, Peng Li, Jeff Z. Pan, Jia Pan, Guanhua Chen, Yang Liu, Guanbin Li</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-06-08 04:58:52</h6>
+<p class='card-text'>Large language model (LLM)-based agents are increasingly used in interactive textual environments, from web navigation and code editing to tool use and long-horizon dialogue. Yet many remain largely reactive, mapping observations to actions without an explicit model of how these environments are structured and evolve. This motivates text world models (TWMs): transition models over textual states that, given a state and a candidate action, predict the resulting webpage, terminal output, API response, or user reply, thereby supporting planning, efficient learning, and principled evaluation. We systematically review text world models for LLM-based agents, organized around a formal framework and the agent lifecycle: (1) Foundations, defining text world models and characterizing them by state representation and grounding domain; (2) Construction, taxonomizing LLM-as-WM and code-as-WM paradigms and reviewing methods for building them; (3) Application, examining how world models support agents at training time through experience synthesis and at inference time through planning, verification, and adaptation; and (4) Evaluation, covering both evaluation of the world model itself and its use as an evaluation environment for agents. We aim to consolidate this rapidly developing area, clarify its design space, and highlight open challenges for future research.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2606.09027v1' target='_blank'>SafeRun: Enabling Determinism in LLM Planning for Running</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Meilin Chen, Zepeng Zhai, Jiaxuan Zhao, Yuan Lu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-06-08 04:53:01</h6>
+<p class='card-text'>Large Language Models enable flexible natural-language planning but remain unreliable in determinism-critical domains due to their probabilistic nature. This limitation is especially problematic in running planning, where violating safety rules can lead to safety risks. We propose SafeRun, a framework for deterministic LLM-based planning via a decoupled architecture. SafeRun separates soft interpretation by an LLM from hard constraint enforcement by a deterministic solver, ensuring strict safety constraints while preserving natural-language flexibility. To validate SafeRun, we build a comprehensive benchmark for running planning under realistic physiological and safety constraints. Experiments across five LLMs show that SafeRun achieves 100\% safety score (vs.\ 79.1\% PE average and 97.6\% CodeAct average) while maintaining competitive instruction-following scores. The SafeRun benchmark is publicly available at \href{https://huggingface.co/datasets/zzp-seeker/SafeRun-RunPlanning-Benchmark}{huggingface}.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2606.08702v1' target='_blank'>ConMem: Structured Memory-Guided Adaptation in Training-Free Multi-Agent Systems</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Zhixun Tan, Qiang Chen, Tairan Huang, Xiu Su, Yi Chen</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-06-07 15:59:15</h6>
+<p class='card-text'>Recent advances have improved the adaptive capabilities of LLM-based multi-agent systems (MAS) through memory-, skill-, and learning-based approaches, yet these approaches remain challenged by noisy trajectories, insufficient modeling of memory-skill relations, and reliance on additional training or high-quality supervision. To address these limitations, we propose ConMem, a relation-aware and training-free framework that enables efficient multi-agent adaptation through cross-experience coordination. Specifically, ConMem distills historical interaction trajectories into structured memory cards to capture reusable strategies and cues, organizing them into a relation-aware memory graph. At runtime, ConMem retrieves cards according to task needs and coordinates them through the card graph to resolve strategy conflicts and recover their dependencies. Combined, these modules yield structured and relation-aware guidance, enabling robust, lightweight adaptation in multi-agent systems without additional training. Extensive experiments across multiple benchmarks and mainstream MAS architectures show consistent gains over existing memory architectures, with improved inference-time efficiency through pruning more than 50% of expanded candidates and reducing planning overhead by over 80%. Our codes are available at https://anonymous.4open.science/r/ConMemCode</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2606.08633v1' target='_blank'>Towards Long-Horizon Vessel Trajectory and Destination Forecasting with Reasoning Large Language Models</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Hongwei Wang, Miao Zhou, Fengde Wang, Yuting Wang, Jiewen Yu, Jun-Yan He, Bohao Qu, Wanbing Zhang, Xiuju Fu, Qing Guo, Zipei Fan, Yingying Xing, Yi Yuan</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-06-07 13:55:11</h6>
+<p class='card-text'>Long-horizon maritime trajectory prediction is important for shipping management, logistics planning, and maritime risk analysis, yet month-level forecasting remains insufficiently studied. Existing deep learning methods mainly focus on short- and mid-term coordinate extrapolation and often struggle to preserve route feasibility and destination correctness over extended horizons. This paper investigates joint long-horizon vessel trajectory and destination forecasting with reasoning-capable large language models, and develops a Maritime LLM post-training framework based on Reinforcement Learning with Verifiable Reward (RLVR). An AIS-based benchmark is constructed with 60-day historical trajectories and 30-day forecasting horizons, where trajectories are converted into semantic textual representations for RL prompt construction. RLVR aligns LLMs with maritime forecasting objectives by enforcing physical validity, providing early-weighted trajectory supervision, and evaluating destination correctness through hierarchical matching and curriculum learning. Experimental results show that RLVR-trained LLMs substantially improve over zero-shot LLMs and representative deep learning baselines, especially on destination-related metrics. Among the evaluated RLVR-trained variants, 4B LLMs achieve the best overall performance, suggesting that reward-compatible optimization and task-specific capacity matching are more important than simply using larger 8B or 14B LLMs. The results also show that LSTM remains a strong deep learning baseline under limited fine-tuning data, while Transformer-style spatio-temporal models typically require larger datasets and richer structured inputs. Overall, this work advances semantic, verifier-aligned maritime forecasting for operational decision support.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2606.08620v1' target='_blank'>SPA: A SQL-Plan-Aware Reinforcement Learning Framework for Query Rewriting with LLMs</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Xinyi Huang, Zhengjie Miao</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-06-07 13:12:46</h6>
+<p class='card-text'>SQL query rewriting is a well-established technique for improving database performance without schema or index changes, yet finding effective rewrites for modern analytical workloads remains difficult: rule-based methods are limited to predefined transformations, while LLM-based approaches often produce rewrites that are semantically valid but compile to equivalent physical plans or degrade runtime performance. We present SPA, a SQL-Plan-Aware reinforcement learning framework that trains LLMs to rewrite queries using physical execution feedback. SPA formulates rewriting as a policy optimization problem and extends GRPO with rewards spanning semantic equivalence, textual rewrite distance, physical-plan divergence, and runtime speedup. To handle reward sparsity across query difficulty, SPA introduces Probability-Gated Adaptive Reward Shaping, a query-level curriculum that unlocks higher-level rewards only once a rollout group achieves sufficient mastery of lower-level objectives, and further improves sample efficiency through on-policy self-improvement by recycling slowdown rewrites from the current policy as targeted training signals. On both IID and OOD workloads, SPA outperforms rule-based and strong LLM baselines in end-to-end runtime, substantially reduces harmful slowdown rewrites, and yields strong tail-latency gains.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2606.08476v1' target='_blank'>FlashCP: Load-Balanced Communication-Efficient Context Parallelism for LLM Training</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Zheng Wang, Eric Liu, Linan Jiang, Zhongkai Yu, Zaifeng Pan, Yue Guan, Yuke Wang, Yufei Ding</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-06-07 06:45:15</h6>
+<p class='card-text'>Context parallelism (CP) is essential for training large-scale, long-context language models, as it partitions sequences to reduce memory overhead. However, existing CP methods suffer from workload imbalance, inefficient kernels, and redundant communication due to static sequence sharding and key-value (KV) tensor communication. We present FlashCP, a load-balanced and communication-efficient framework for CP training. FlashCP introduces a sharding-aware communication mechanism to eliminate redundant KV communication and proposes a novel Whole-Doc sharding strategy that maximizes communication savings while maintaining balanced workloads. To efficiently combine Whole-Doc and Per-Doc sharding, FlashCP further designs a heuristic algorithm to search for near-optimal sharding plans. Extensive experiments show that FlashCP achieves up to 1.63x speedup over state-of-the-art CP frameworks across diverse datasets.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2606.08340v1' target='_blank'>Benchmarking Open-Ended Multi-Agent Coordination in Language Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Kale-ab Abebe Tessera, Andras Szecsenyi, Cameron Barker, Alexander Rutherford, Davide Paglieri, Aidan Scannell, Henry Gouk, Elliot J. Crowley, Tim Rocktäschel, Amos Storkey</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-06-06 21:13:43</h6>
+<p class='card-text'>As language models are increasingly deployed as autonomous agents, they must coordinate with others over long horizons in open-ended interactive tasks. Yet existing evaluations rarely test these demands together, instead emphasising single-agent tasks, short interactions, or highly structured multi-agent settings. We introduce $alem$, a JAX-based benchmark for open-ended multi-agent coordination built on Craftax-like dynamics. Alem embeds procedurally generated coordination tasks, soft specialisation, communication, and controllable coordination difficulty into a long-horizon survival world with exploration, crafting, trading, and combat. We evaluate $13$ modern LLMs zero-shot within homogeneous teams, with trained MARL agents as reference points. Current LLM agents remain far from solving alem, averaging only ~6% normalised return, but their failures are not uniform. On the hardest coordination setting, zero-shot Gemini-3.1-Pro-High approaches MARL agents trained for one billion steps, while GPT-5.4-High achieves strong base-task reward but much lower coordination reward. This contrast shows that individual task competence does not imply coordination competence. Ablations show that communication is the largest contributor to coordination, while memory and reasoning help when used to maintain multi-step plans. Overall, our results identify coordination as a distinct bottleneck for frontier LLM agents, separate from single-agent capabilities. Alem makes this bottleneck measurable and provides a controlled testbed for developing agents that communicate, allocate roles, and execute shared plans. Code is available at https://github.com/alem-world/alem-env.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2606.08300v1' target='_blank'>QueryWeaver: Reliable Multi-Tool Query Execution Planning via LLM-Based Graph Generation</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Aishwarya Chakravarthy, Vidhi Kulkarni, Duen Horng Chau</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-06-06 18:54:43</h6>
+<p class='card-text'>Many real-world queries over personal data span multiple applications and require structured planning, as individual tools expose only partial information. While LLMs show strong reasoning and tool use, reliably executing multi-step, cross-tool queries remains challenging. We introduce a system that converts natural language queries into structured graphs and executes them via a deterministic planner. Our approach uses depth-first search to resolve dependencies and combine results across tools, improving reliability and enabling queries beyond traditional keyword-based search. We demonstrate high accuracy even with smaller or locally hosted LLMs.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2606.08274v1' target='_blank'>Toward Human-Centered Multi-Agent Systems: Integrating Cognition, Culture, Values, and Cooperation in AI Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Safia Baloch, Rahemeen Khan</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-06-06 17:40:21</h6>
+<p class='card-text'>The emergence of large language model (LLM)-based agents and multi-agent systems has enabled a shift from narrow task automation to more autonomous decision-making. Despite progress in language generation, planning, tool use, and coordination, most agents still treat intelligence as prediction, optimization, and task completion. Human environments are social and normative, where people reason under bounded rationality, communicate in culturally situated language, and make decisions guided by values, beliefs, trust, and social norms. This survey argues that future AI agents, especially those acting on behalf of humans, must move beyond task competence toward human-centered capabilities.
+  We review research across six areas: (1) evolution of intelligent agents, (2) human cognition and decision-making, (3) language, culture, and social context, (4) human values and belief systems, (5) human-agent collaboration, and (6) multi-agent coordination and modeling of human characteristics. We synthesize work from cognitive science, sociolinguistics, computational social science, and AI alignment, along with recent advances in LLM agents, cultural alignment benchmarks, preference learning, explainability, and agent societies. We identify a key gap: existing systems do not provide a unified framework integrating cognition, culture, values, and social behavior into autonomous agents. We conclude with directions for building culturally aware, value-aligned, cognitively grounded, and cooperative multi-agent systems.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2606.08214v1' target='_blank'>Agentic Neuro-Symbolic Planning and Commissioning for Human-in-the-Loop Industrial Robotics with Digital Twins</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Zhihao Liu, Victor Nan Fernandez-Ayala, Tianyu Wang, Qiang Qin, Xi Vincent Wang, Dimos V. Dimarogonas, Lihui Wang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-06-06 14:57:56</h6>
+<p class='card-text'>Flexible robotic automation requires systems that interpret operator intent, verify physical feasibility, and recover from execution failures across both the planning and execution stages. This paper proposes an agentic neuro-symbolic framework for human-in-the-loop industrial robotics, in which LLMs are used for tasks that require language understanding or contextual reasoning, while all verification, sequencing, and execution remain deterministic. The framework adapts the Planner-Generator-Evaluator (PGE) harness pattern from software engineering into a Specifier-Designer-Inspector (SDI) architecture for industrial robotics, combined with LangGraph-based dynamic routing for failure recovery. A two-tier recovery mechanism addresses structure-level replanning through context-aware orchestration and execution-level geometric failures through deterministic recovery skills. A Unity3D digital twin supports human inspection, modification, and re-verification prior to physical execution. Evaluated on natural-language commands across multiple difficulty levels against ten baselines, the proposed method achieves the highest task success. Ablation results confirm that structured command expansion, symbolic verification, selective LLM routing, and recovery skills are each individually necessary.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2606.08135v1' target='_blank'>TICoder: A Repository-Level Code Generation Framework with Test-Driven Planning and Implementation-Aware Reuse</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Siyu Nan, Yaling Luo, Jian Wang, Neng Zhang, Bing Li</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-06-06 12:23:30</h6>
+<p class='card-text'>Repository-level code generation with Large Language Models (LLMs) remains challenging, primarily due to complex dependencies and limited context windows. Recent approaches adopt retrieval-augmented generation (RAG) and the planning mechanism to reuse potential callee functions in the repository. However, these approaches often suffer from two limitations: lack of test-driven behavioral guidance during planning and overlooking the implementation logic embedded in repository code during reuse. As a result, generated plans may not align with expected behaviors, and retrieved functions may not be effectively reused. In this paper, we propose TICoder, a novel repository-level code generation framework that improves both planning and reuse. TICoder introduces a test-driven iterative planning mechanism that leverages test cases as behavioral specifications to refine implementation steps. Furthermore, TICoder employs an implementation-aware code reuse strategy, which retrieves potential callee functions using a dual-view similarity that captures both functional and implementation aspects. We then identify relevant usage patterns through a dual-stage selection strategy, combining structure-based clustering and perplexity-based filtering. We conduct extensive experiments on widely used repository-level code generation benchmarks with various LLMs. Experimental results demonstrate that TICoder outperforms state-of-the-art (SOTA) methods, achieving an average improvement of 11.52%.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2606.08068v1' target='_blank'>DICE: Entropy-Regularized Equilibrium Selection for Stable Multi-Agent LLM Coordination</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yi Xie, Zhanke Zhou, Chentao Cao, Bo Liu, Bo Han</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-06-06 09:33:32</h6>
+<p class='card-text'>Multi-agent large language model (LLM) systems often fail to reliably outperform a single strong model equipped with best-of-N sampling. We argue that a core source of this instability is ill-posed equilibrium selection: current systems specify what information agents share, but not which coordination convention should be selected. We formalize a broad class of such systems as discounted incomplete-information Markov games and show that two common pathologies, oscillation between competing conventions and drift across them, can both induce unstable learning and linear Bayesian regret. To obtain a well-posed target, we introduce the Heterogeneous Quantal Response Equilibrium (HQRE), an entropy-regularized equilibrium concept with agent- and state-dependent temperatures. Under a monotonicity condition, HQRE is unique, admits linearly convergent mirror updates, and yields bounded Bayesian regret; the same condition yields rollout-measurable stability diagnostics. We instantiate this objective in two algorithms: DICE-PC, which coordinates frozen models through prompt-control actions, and DICE-FT, which performs parameter-efficient mirror fine-tuning. Across eleven benchmarks in four domains, DICE improves accuracy-cost trade-offs over strong within-class baselines; on reasoning and planning tasks, DICE-PC improves by 4.3 percentage points on average and DICE-FT by 8.5 points.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2606.07939v1' target='_blank'>Stable Geometry, Reversing Poles: The Bipolar Structure of AI Occupational Substitutability and Its Decade-Scale Inversion</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Shuyao Gao, Minghao Huang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-06-06 02:00:32</h6>
+<p class='card-text'>Empirical research on the labor-market impact of artificial intelligence has converged, since Frey and Osborne (2017), on a continuous-gradient representation in which each occupation is assigned a real-valued exposure score on [0,1] obtained by linear aggregation across capability dimensions. This continuity is rarely articulated as an assumption and has not been tested at the micro-action level where substitution actually occurs. We decompose 1,961 O*NET Detailed Work Activities into 15,817 micro-actions using a multi-agent LLM pipeline with 31-expert HITL calibration, then project the DWA-level Occupational Automation Index from our prior work onto a 7-macro semantic typology. The result is a bipolar structure. Tool-Mediated Physical (M2, mean OAI = 0.054) and Planning & Design (M7, mean OAI = 0.499) form two extremes separated by Cohen's d = 2.41 (H = 172.88, p = 6.21e-34). The geometry is robust under three independent stress tests: resolution (K=7 to K=15, polar gap widens from 0.45 to 0.57), encoder swap to BGE (LLM-class OAI lead replicates at 3.37x), and Eloundou's GPT-4 task ratings (DWA-level rho = 0.635). The six middle macros form a low-contrast band between the poles (TOST at d=0.2 admits only 1/15 pairs as equivalent), not a flat plain. The geometry's stability does not, however, extend to its content. Across a decade, the polarity has inverted. Frey-Osborne (2013) placed Tool-Mediated Physical near the highest computerisation risk and Planning & Design near the lowest; our LLM-era OAI reverses that order, with macro-level FO-Eloundou Spearman rho = -0.750, p = 0.020, against the original Oxford Martin appendix. Which pole is high is therefore contingent on the era's dominant capability frontier, while the stable geometry itself is the structurally robust object.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2606.07853v1' target='_blank'>Beyond English benchmarks: clinical llm evaluation in Brazilian Portuguese</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Giordano de Pinho Souza, Glaucia Melo, Josefino Cabral Melo Lima, Daniel Schneider</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-06-05 21:29:39</h6>
+<p class='card-text'>Large Language Models are transforming the support for clinical decision and their application in real scenarios. Yet, most benchmarks are conducted in English, and cross-lingual evaluation is needed to tackle the language gaps in global access. We introduce ClinicalBr, the first bilingual benchmark for clinical decision built from real Brazilian case reports. The corpus contains 2,892 cases drawn from 28 SciELO medical journals, spanning 18 specialties, and is structured as parallel Portuguese-English pairs. Each case supports four evaluation tasks: diagnosis retrieval, differential diagnosis, exam recommendation, and treatment planning. We evaluate four models: MedGemma-27B, Sabiá-4, DeepSeek-R1, and o3-mini, across both languages. The central finding is that the Portuguese-English performance gap is task-dependent, not general. In diagnosis retrieval, English yields a consistent advantage across all models, with +7.5-12.1 accuracy points. This advantage disappears in differential diagnosis, exam recommendation, and treatment planning, where confidence intervals cross zero for most models and Portuguese completeness scores are marginally higher. Brazilian-endemic conditions proved easier than the full corpus, not harder, indicating that tropical presentations are adequately represented in current pre-training. Exam recommendation was the hardest task across all models and both languages, with F1 scores below 0.10, well below the differential diagnosis ceiling of 0.20-0.27.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2606.07831v1' target='_blank'>SLRMentor: An LLM-Based Tool Supporting Learning of SLR in Software Engineering</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Rodolfo Gil-Pereira, Ronnie de Souza Santos, Cleyton Magalahes, Italo Santos</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-06-05 20:41:47</h6>
+<p class='card-text'>This paper presents SLRMentor, a conversational assistant designed to support both learning about the systematic literature review process and the execution of planning activities in software engineering. The tool offers general guidance on SLR methodology and supports key planning tasks, including search string construction and reasoning about inclusion and exclusion criteria, with explanations grounded in established SLR guidelines. A pilot validation with graduate students suggests that SLRMentor helps clarify the SLR process and planning decisions, lowers initial barriers for novice researchers, and supports learning while still requiring active methodological judgment.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2606.07486v1' target='_blank'>OPENPATH: A Supervisor--Specialist Agent System for Personalized, Accessible, and Multi-stop Urban Trip Planning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Ziyang Xiong, He Zong, Zhiyuan Xue, Manxi Wu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-06-05 17:40:54</h6>
+<p class='card-text'>Urban trip-planning systems are commonly optimized for travel time and cost, but they offer limited support for the heterogeneous needs that real travelers bring, such as personalized preferences, multi-stop itinerary construction, and end-to-end wheelchair accessibility. We present openpaths, a supervisor-specialist multi-agent system that handles all of these tasks within a single architecture. openpaths adopts a deliberate division of labor: LLM agents parse natural-language input, classify request intent, and orchestrate execution, while classical algorithms perform route optimization over curated mobility and accessibility data. This design ensures that the resulting trip honors heterogeneous user preferences and enforces strict accessibility requirements when requested. Beyond per-user planning, openpaths doubles as a measurement instrument for city-scale accessibility analysis: applied to NYC, the system reveals substantial ADA infrastructure gaps and quantifies their effect on job accessibility for wheelchair users. Overall, this study shows how a supervisor-specialist LLM agentic framework can support heterogeneous trip planning and transparent, equitable transportation analysis in real urban environments.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2606.07720v1' target='_blank'>Why Limit the Residual Stream to Layers and Not Tokens? Persistent Memory for Continuous Latent Reasoning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Mujtaba Farhan, Maheep Chaudhary</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-06-05 15:45:44</h6>
+<p class='card-text'>Large language models (LLMs) have demonstrated remarkable reasoning abilities on mathematical and multi-hop planning tasks. The CoCoNuT (Chain of Continuous Thought) paradigm~\cite{hao2024coconut} extends this by enabling models to reason in latent space, exploring multiple reasoning paths simultaneously rather than committing to a single chain early on. However, we identify a limitation we term the \textbf{concept bottleneck}. At each reasoning pass, intermediate hidden states are overwritten, causing the model to lose critical facts computed in earlier steps as reasoning depth increases. We observe this empirically. On HotpotQA, vanilla CoCoNuT (10.4\% EM) fails to improve over the CoT baseline (11.0\% EM), and performance degrades with curriculum depth on GSM8K. To address this, we propose \textbf{AGCLR} (Adaptive Gated Continuous Latent Reasoning), which augments CoCoNuT with a \textit{Gated Concept Stream}. A persistent residual memory maintained across all reasoning passes, controlled by three learned gates: a \textit{write} gate that commits intermediate facts to memory, a \textit{read} gate that retrieves relevant prior states, and a \textit{forget} gate that prunes irrelevant context. Evaluated on GSM8K, HotpotQA, and ProsQA using GPT-2 as our base model, AGCLR achieves consistent improvements across all types of datasets. With the performance gap compounding as curriculum depth increases, directly resolving the concept bottleneck. Code available at https://anonymous.4open.science/r/JJJJ/README.md</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2606.07338v1' target='_blank'>VeriDrive: Verifiable Counterfactual Supervision for Cost-Efficient Vision-Language Planning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Zikai Zhang, Hubert P. H. Shum, Toby P. Breckon</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-06-05 14:50:11</h6>
+<p class='card-text'>Vision-language driving models increasingly use reasoning supervision to bridge perception, prediction, and planning, but existing driving rationales are often free-form and expensive to generate with frontier models. We present VeriDrive, a framework for constructing planning-oriented, verifiable counterfactual supervision. VeriDrive converts driving reasoning into a structured Perception-Evaluation-Revision chain that grounds key objects in future motion, evaluates alternative ego trajectories with rule-checkable evidence, revises risky intent toward expert behavior, and produces final planning targets. To scale data construction, VeriDrive combines local generation with validator-guided selective correction, escalating only invalid or difficult samples. We build the VeriDrive dataset on nuScenes and train under the Omni-Q protocol. Controlled open-loop experiments show that VeriDrive improves L2, Collision, and Intersection over OmniDrive while reducing logged token usage, generation time, and actual paid LLM/VLM cost. These results show that auditable intermediate fields and structured revision targets can improve vision-language planning supervision under realistic annotation budgets. Code, prompts, and validator scripts are coming soon and will be released after the review process.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2606.07711v1' target='_blank'>Rosetta Memory: Adaptive Memory for Cross-LLM Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Hao Yang, Shiqi Shen, Haoxuan Li, Zhipeng Wang, Zhi Gong, Xu Chen</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-06-05 13:50:59</h6>
+<p class='card-text'>Memory is the key component for transforming a stateless LLM into a persistent, evolving agent through experience accumulation, long-horizon planning, and continual self-improvement. Existing memory systems typically take the LLM as the center and design memory operations tailored to a specific backbone. In practice, however, users frequently switch between LLMs, for example using Claude for coding and GPT for writing across tasks, or routing different steps to different backbones within a single task for cost-effective trade-offs. As a result, memory written by one model often needs to be consumed by another. Making upstream memory effectively adapt to and activate downstream LLMs remains a critical yet underexplored problem. To bridge this gap, we shift the perspective from LLM-centric memory design to \emph{memory-centric LLM adaptation}. Specifically, we approach the above upstream-downstream memory adaptation problem from both the write and read sides, and design two profile-conditioned operators that are jointly trained to optimize how memory is stored and presented for better task completion. To ensure the learned operators generalize across a broad set of LLMs, we propose a minimum-gain sampling curriculum that prioritizes the least-served LLMs during training. To better measure the operators' actual contribution rather than the LLM's own capability, we design a performance-gap reward that compares against a naive memory baseline. Experiments on HotpotQA, 2WikiMultihopQA, and MuSiQue demonstrate that our model consistently outperforms baselines and remains robust under unseen-model replacement.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2606.07020v1' target='_blank'>MADE: Beyond Scoring via a Multilingual Agentic Diagnosing Engine for Fine-Grained Evaluation Insights</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yilun Liu, Miao Zhang, Shimin Tao, Minggui He, Chunguang Zhao, Chenxin Liu, Li Zhang, Chen Liu, Cheng Qian, Liqun Deng, Xiaojun Meng, Daimeng Wei</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-06-05 08:09:46</h6>
+<p class='card-text'>Multilingual and multicultural benchmarks now cover dozens of languages and model families, but the resulting score landscapes remain metric-rich and insight-poor, necessitating fine-grained multilingual post-evaluation diagnosis. However, single LLMs and open-ended agents are easily swamped by the long, noisy diagnostic input, and no reusable taxonomy exists for it. To address this, we propose MADE, a Multilingual Agentic Diagnosing Engine that decomposes post-evaluation analysis into planning, aggregate analysis, instance-level case inspection, multilingual and cultural reflection, and grounded report synthesis. MADE is paired with an expert-led 54-query and 15-language diagnostic set, evaluated on top of a large-scale multilingual evaluation substrate (33 model families, 11 benchmarks, 26 languages, 34 cultures, 8.66M evaluation records). Experiments show that MADE outperforms the strongest shared baseline by 47% in diagnosis report quality and is preferred by human multilingual experts in 87.9% of pairwise comparisons. Applied with multilingual experts, MADE further surfaces four actionable findings on deployment, iteration, and cross-cultural pitfalls, turning benchmark score tables into model-selection and remediation guidance.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2606.07001v1' target='_blank'>DataEvolver: Automatic Data Preparation for Large Language Models through Multi-Level Self-Evolving</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Chao Deng, Shaolei Zhang, Ju Fan, Xiaoyong Du</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-06-05 07:44:34</h6>
+<p class='card-text'>High-quality training data is essential to large language models (LLMs) and typically requires extensive and costly manual curation. Existing automatic data preparation methods rely on predefined pipelines or customized human instructions, which limits their adaptability to diverse data distributions and lacks principled guidance from high-quality examples. In this paper, we introduce DataEvolver, the first self-evolving data preparation system that automatically constructs pipelines to transform raw data into high-quality data. DataEvolver employs a multi-level mechanism to ensure both pipeline executability and effectiveness. At the operator level, it incrementally expands the operator set to construct a logical plan while resolving dependency conflicts. At the pipeline level, it instantiates logical plans into executable code and iteratively refines pipeline orchestration through a feedback loop that reduces the distribution gap between prepared data and high-quality examples. Experiments on seven benchmarks show that DataEvolver substantially improves data quality and achieves an average 10\% gain in downstream LLM performance compared with training on original data, highlighting new opportunities for the iterative co-evolution of LLMs and data.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2606.06711v1' target='_blank'>Lightfall: An API-first, LLM-addressable control platform for synchrotron beamlines</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Ronald J. Pandolfi, Damian Guenzing, Marcus M. Noack, Sophie A. Morley, Damon English</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-06-04 20:53:40</h6>
+<p class='card-text'>Synchrotron beamlines differ in hardware, technique, and workflow, making customized control interfaces necessary; bespoke per-beamline graphical user interfaces (GUIs) do not scale well, one-size-fits-all facility software forces compromises that leave most of the interface unused, and even recent component-library approaches keep per-scientist tweaks on a developer's queue. We present Lightfall, a control platform designed for facility-wide use, whose API-first architecture exposes every panel, device, and scan plan through a single uniform addressable interface. An embedded language-model agent drives experiments through that interface, from a single move-and-read to a Gaussian-process-driven autonomous scan, while beamline staff extend the interface during operation via skills: plugin modules the agent invokes to compose and modify panels in the running application. The result is a closed development loop: a beamline scientist authors a panel change in natural language, the agent emits and applies it, and the commit lands in the beamline's plugin repository as a side effect. The per-iteration cost of a scientist-driven change is then fixed in the scientist's own time rather than in developer hours the facility must supply. Lightfall is in testing at the COSMIC-Scattering beamline at the Advanced Light Source.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js'></script>
+</body>
+</html>
