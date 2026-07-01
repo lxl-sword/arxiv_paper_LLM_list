@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<title>LLM-agent - 2026-07-01</title>
+<link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap' rel='stylesheet'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'>
+<style>
+body {
+font-family: 'Roboto', sans-serif;
+background-color: #f5f7fa;
+padding: 20px;
+}
+.card {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.card-title {
+    font-weight: 700;
+}
+.card:hover {
+    transform: scale(1.02);
+    transition: 0.3s ease-in-out;
+}
+</style>
+</head>
+<body>
+<div class='container'>
+<h1 class='text-center my-4'><i class='fas fa-book'></i>LLM-agent - 2026-07-01</h1>
+<div class='row'>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2606.32034v1' target='_blank'>QVal: Cheaply Evaluating Dense Supervision Signals for Long-Horizon LLM Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Sergio Hernández-Gutiérrez, Matteo Merler, Ilze Amanda Auzina, Joschka Strüber, Ameya Prabhu, Matthias Bethge</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-06-30 17:58:23</h6>
+<p class='card-text'>LLM agents increasingly act over long horizons, where a single trajectory can contain hundreds or thousands of actions. In these settings, outcome-only rewards provide too sparse guidance, failing to inform the model about the goodness of intermediate actions. Dense supervision methods aim to solve this problem by scoring intermediate steps, from intrinsic confidence to self-distillation and embedding similarities. However, it is common practice to evaluate them by measuring the downstream performance of a training pipeline that integrates them. This is expensive, conflates supervision quality with training engineering confounders, and renders different methodological families requiring distinct training setups incomparable. As a result, dense supervision methods are rarely benchmarked on common ground. We introduce QVal, a training-free testbed for directly evaluating dense supervision signals. Given a state-action pair, QVal measures how well a method's score is Q-aligned: whether it orders actions according to the Q-values of a strong reference-policy. This lets us compare signals before any training run and separate signal quality from other engineering choices. We instantiate QVal as QVal-v1.0, benchmarking 21 dense supervision methods across four diverse environments and seven methodological families, with over 1.2K evaluation experiments across six open-weight model backbones. We find that simple prompting baselines consistently outperform recent dense supervision methods from the literature, and that performance clusters strongly by family. These findings hold across model sizes, environments, and observation modalities. QVal is designed to be easily extensible to new environments and methods, enabling researchers to iterate on dense supervision methods before any training run.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2606.32025v1' target='_blank'>Generative Skill Composition for LLM Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Xinyu Zhao, Zhen Tan, Vaishnav Tadiparthi, Nakul Agarwal, Kwonjoon Lee, Ehsan Moradi Pari, Hossein Nourkhiz Mahjoub, Tianlong Chen</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-06-30 17:53:09</h6>
+<p class='card-text'>Recent LLM agents benefit from skills for solving complex tasks. Skills encapsulate modular packages of procedural knowledge and instructions for performing specialized tasks, such as setting up a sandboxed environment, running a test suite, or refactoring a function across multiple files. As skill libraries grow and become reusable across tasks and domains, selecting an appropriate skill composition has emerged as a central bottleneck. Existing approaches fall into two categories. One exposes the agent's reasoning to the entire skill collection; the other performs skill retrieval via embeddings or LLM-based rerankers. Both provide useful insights; however, they miss the structural nature of skill composition, which is a joint decision over which skills, how many, and in what order -- three dimensions that cannot be decoupled. We formalize this as structured skill composition: given a task and a skill library, predict an executable skill plan that jointly specifies the activated subset, count, and execution order. We propose SkillComposer, which instantiates structured skill composition as task-conditioned skill sequence prediction. SkillComposer uses a constrained autoregressive decoder over skill identifiers, so subset, count, and order emerge jointly from a single decoding pass, and dependencies between successive skills are captured naturally. We build a training set of task-composition pairs from a real, human-curated skill library. We then evaluate SkillComposer along two axes: composition quality on a held-out test set, and downstream task success on SkillsBench across two production-grade coding agents. On GPT-5.2-Codex, Gemini-3-Pro-Preview, SkillComposer raises the pass rate by +23.1, +18.2pp over the no-skill baseline, surpassing top-3 retrieval and matching the gold-skill retrieval upper bound at lower prompt-token cost.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2606.31916v1' target='_blank'>Theory of Mind and Persuasion Beyond Conversation: Assessing the Capacity of LLMs to Induce Belief States via Planning and Action</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Ben Slater, Matteo G. Mecattaf, Lucy G. Cheke, John Burden, Winnie Street</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-06-30 16:22:12</h6>
+<p class='card-text'>Theory of Mind (ToM) benchmarks for Large Language Models (LLMs) typically rely on passive question-answering formats, but the deployment of LLMs in increasingly agentic and autonomous forms demands new evaluations. In this paper we evaluate an agent's ability to induce specific belief states in other agents by taking actions rather than using conversational persuasion, a capability we call Non-Conversational Planning ToM (NCP-ToM). NCP-ToM is likely to be essential for many agent use-cases, including within user-assistant interactions and pedagogical contexts, but may also present manipulation or misinformation risks. Using a novel framework, NCP-ExploreToM, we subvert the conventional task structure by providing models with a set of belief state goals and requiring them to move objects or direct characters into rooms to achieve their goals. We evaluated six frontier models, including GPT-5, Gemini 2.5 Pro and the Claude 4 series, and a cohort of human participants, across 600 task instances. GPT-5 was successful on approximately 80% of tasks in the agentic setting, and was the only model to outperform human participants on our task, but was still less robust than humans across contexts. We additionally found that all models, like humans, performed better on tasks inducing true belief states than false belief states, which is a positive signal for alignment efforts. These findings highlight emerging social-reasoning capabilities in LLMs for non-conversational task completion and underscore the necessity of agentic evaluations for understanding the safety and alignment of autonomous social agents.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2606.31767v1' target='_blank'>JETO-Bench: A Reproducible Benchmark for Execution Time Improvement Patches in Java</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Khashayar Etemadi, Zhendong Su</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-06-30 14:54:25</h6>
+<p class='card-text'>Automated fixing of performance issues is gaining increasing attention. However, existing benchmarks of execution time improvement patches are fixed datasets that target Python, C++, or .NET and cannot be extended to new patches according to user-defined configurations. In this paper, we present JETO-Mine, the first configurable and reusable tool for automatically creating reproducible benchmarks of execution time improvement patches (ETIPs) in real-world Java projects. JETO-Mine employs a three-phase pipeline: a static analysis phase that crawls GitHub repositories and identifies ETIPs using user-defined filters and an LLM-based issue classifier, a dynamic analysis phase that wraps the identified ETIPs in Docker images for fully reproducible execution and performs statistical testing to find objective evidence of execution time improvement, and an evaluation harness that enables quantitative assessment of both generated patches and generated tests. Unlike existing benchmarks, JETO-Mine is designed as a reusable tool that allows researchers continuously collect new benchmarks with their own desired filters and statistical rigor levels. We use JETO-Mine to build JETO-Bench, a benchmark of 660 identified ETIPs and 91 manually verified executable ETIPs collected from 174 open-source Java repositories. To build JETO-Bench, JETO-Mine scans 11 years of open-source development history and nearly 1.8 million commits. We run OpenHands, a leading open-source coding agent, on the 91 manually verified executable ETIPs in JETO-Bench and find that it correctly fixes 14.3% (13/91) of the issues, aligning with results reported by similar studies on other programming languages. Our results also reveal that open-source Java projects largely lack tests that demonstrate execution time improvements, presenting an opportunity for future research in test generation.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2606.31744v1' target='_blank'>A Conversational Agentic Interface to Physics-Based Household Digital Twins for Residential Energy Decision Support</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Costas Mylonas, Titos Georgoulakis, Magda Foti</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-06-30 14:36:18</h6>
+<p class='card-text'>Multiple actors around residential energy systems require accessible decision-support tools: homeowners and tenants for dwelling-level retrofit choices, consultants and municipal planners for building and district-level intervention assessment, and retailers and aggregators for estimating residential flexibility and coordinating distributed energy resources. However, existing pathways remain limited, since professional audits are costly and static, rule-of-thumb estimates lack household specificity, and high-fidelity simulation tools require specialized expertise. This paper presents a conversational agentic framework that makes physics-based household energy simulation accessible through natural language interaction. The proposed system integrates a Household Digital Twin (HDT), built on GridLAB-D and exposed through a REST-based microservices architecture, with a two-tier large language model (LLM) agentic layer that translates user requests into structured, schema-compliant simulation payloads. To improve reliability, the architecture combines intent routing, a domain-specific knowledge base, deterministic post-processing of simulation outputs, and tool-governed execution policies. The system is evaluated on a curated dataset of 45 prompts with increasing complexity, covering multiple households, seasons, and override scenarios. Results show 100% schema conformance, 96.1% field-level F1, 90.4% value accuracy, and a 95.6% end-to-end simulation success rate. The findings indicate that conversational agentic interfaces can substantially lower the usability barrier of physics-based household digital twins while preserving the reliability required for residential energy decision support.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2606.31693v1' target='_blank'>ShopX: A Foundation Model for Intent-to-Item Fulfillment in Agentic Shopping</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Jiacheng Chen, Tao Zhang, Manxi Lin, Dunxian Huang, Teng Shi, Honghao Fu, Mengyan Li, Xinming Zhang, Chenchi Zhang, Xuan Lu, Xiaoxiong Du, Haibin Chen, Shaolin Ye, Hao Chang, Xiaoqi Li, Shuwen Xiao, Yujin Yuan, Jingxuan Feng, Shaopan Xiong, Huimin Yi, Ju Huang, Qiu Shen, Ying Chen, Junjun Zheng, Xiangheng Kong, Yuning Jiang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-06-30 14:05:28</h6>
+<p class='card-text'>The wave of AI-native applications is moving shopping beyond page- and feed-based browsing toward intent-driven experiences orchestrated by LLM agents. A common design wraps an LLM around existing search and recommendation pipelines, forcing complex intents through low-bandwidth retrieval or ranking interfaces and leaving a gap between language understanding and item-space fulfillment. Generative recommendation gives LLMs a direct item-space interface through semantic IDs (SIDs), but existing models mainly generate candidates for retrieval rather than translate flexible intents into item-space outcomes. We propose ShopX to address this bottleneck by unifying intent understanding, execution planning, and flexible SID-native item-space operations into a single foundation model. We deploy ShopX in agentic shopping workflows through a model-native item-fulfillment framework with a serving harness that defines a model-facing action protocol and exposes support surfaces for context access, catalog grounding, and state management. Within this framework, ShopX plans and composes SID-based item-space operations such as SID beam-search retrieval, listwise ranking, or product bundling. This model-centric design reduces lossy hand-offs between agent orchestration and item-space execution. To build ShopX, we design semantically recoverable, LLM-operable SIDs and a training recipe that equips a general LLM for flexible multi-turn item-space fulfillment while retaining the knowledge and instruction-following abilities needed by a shopping agent. We evaluate the ShopX framework against tool-mediated agentic systems on single- and multi-turn fulfillment tasks derived from anonymized Taobao production logs, showing that model-native fulfillment improves overall framework behavior, especially on complex or ambiguous requests.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2606.31651v1' target='_blank'>FARS: A Fully Automated Research System Deployed at Scale</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Qiong Tang, Xiangkun Hu, Xiangyang Liu, Yiran Chen, Yunfan Shao</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-06-30 13:30:24</h6>
+<p class='card-text'>Recent automated research systems show that language-model agents can generate hypotheses, run experiments, and write complete manuscripts, but most evidence still comes from selected examples, human-framed topics, or a few pre-defined research tasks. We present FARS (Fully Automated Research System), a fully automated AI-for-AI research system designed to operate across research topics at scale. FARS autonomously generates and advances projects through ideation, planning, experimentation, and writing, using stage-specific agents coordinated through a shared workspace that records proposals, code, logs, results, and manuscripts. In its first public deployment, FARS produced 166 complete research papers spanning 67 fine-grained AI/ML topics while preserving intermediate artifacts as an auditable corpus rather than a curated set of successes. We evaluate this corpus with 282 structured reviews from volunteer reviewers covering 140 papers, including overall ratings, sub-scores, integrity checks, and LLM-use disclosure. The reviews indicate that FARS can produce review-worthy and occasionally strong AI/ML research artifacts in a large-scale public deployment, while also exposing recurring failure modes in narrow experimental scope, methodological limitations, and integrity issues.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2606.31639v1' target='_blank'>A Lifecycle and Application-Stack Survey of Large Language Model Vulnerabilities: Attacks, Risks, Defenses, and Open Problems</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Seyed Bagher Hashemi Natanzi, Bo Tang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-06-30 13:21:43</h6>
+<p class='card-text'>Large language models are no longer only text generators. They are increasingly embedded in retrieval pipelines, enterprise assistants, coding environments, robotic systems, security-operation workflows, and autonomous agents that can read private data, call tools, write files, execute code, and act across organizational boundaries. This shift changes the security problem: risks do not arise from the model weights alone, but from the full lifecycle and application stack through which data, prompts, model outputs, tools, memories, and user authority interact. This paper systematizes the literature on vulnerabilities in large language model systems through a lifecycle and application-stack lens. We organize attacks across eight stages: data collection, pretraining, post-training alignment, model packaging and supply chain, retrieval and memory, prompting and inference, tool/agent execution, and deployment/maintenance. For each stage, we analyze attacker capabilities, affected security objectives, representative attacks, practical risks, evaluation practices, and defenses. We further map LLM-specific vulnerabilities to confidentiality, integrity, availability, safety, privacy, fairness, accountability, and agency-control objectives. Unlike taxonomies that list isolated attack names, the proposed systematization emphasizes where trust boundaries fail, how untrusted data becomes executable instruction, how delegated authority amplifies model errors, and why point defenses rarely compose. We close with a research agenda for secure LLM systems, including compositional security, provenance-aware retrieval, tool-call containment, long-horizon agent evaluation, privacy-preserving adaptation, realistic red teaming, and deployment-grade incident response.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2606.31635v1' target='_blank'>A Tutorial on Autonomous Fault-Tolerant Control Using Knowledge-Grounded LLM Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Javal Vyas, Milapji Singh Gill, Artan Markaj, Felix Gehlhoff, Mehmet Mercangöz</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-06-30 13:19:45</h6>
+<p class='card-text'>Fault recovery in process plants still relies heavily on plant operators, especially when faults fall outside predefined supervisory logic. Operators interpret alarms, procedures, P\&IDs, interlocks, and process trends, then decide how to move the plant to a safe operating mode without triggering a shutdown. This paper examines how Large Language Model (LLM) agents can support such recovery decisions. The proposed framework treats the LLM as a constrained supervisory planner. It uses plant-specific knowledge to propose recovery actions, and every proposal is checked by an external validator (symbolic or simulation-based) before actuation. The paper develops three design dimensions for applying the framework: the recovery patterns for which LLM agents are useful, the validation strategies that separate admissible from inadmissible proposals, and the deployment constraints imposed by latency, knowledge engineering, safety integration, and model lifecycle management. To make the framework directly usable, two openly available executable Python environments are provided. Both re-implement established case studies, a modular mixing module and a continuous stirred-tank reactor, extended with configurable faults and defined interfaces for custom recovery and validation methods.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2606.31564v1' target='_blank'>ACE: Pluggable Adaptive Context Elasticizer across Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Ning Liao, Zihao Long, Xiaoxing Wang, Xue Yang, Yaoming Wang, Ziyuan Zhuang, Xunliang Cai, Rongxiang Weng, Junchi Yan</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-06-30 12:20:45</h6>
+<p class='card-text'>The increasing complexity of agentic tasks has led to rapidly growing trajectory lengths, which poses significant challenges for large language model (LLM) based agents with fixed context windows. Existing context management techniques, such as truncation and summarization, suffer from inherent inflexibility and irreversibility: once information is discarded or compressed, it cannot be recovered even when it becomes critically relevant in later decision steps. To address these limitations, we propose the Adaptive Context Elasticizer (ACE), a plug-and-play module that elastically orchestrates historical step information into the agent's context at each decision step. ACE maintains a lossless message maintenance layer that stores both raw messages and compressed abstractions for each historical step, while a context orchestration layer adaptively assigns each step an elastic type as raw, abstract, or drop, at every decision step based on the current task state. This reversible design ensures that the main LLM always receives a compact yet information-rich context. We adapt ACE to four diverse agent frameworks, including ReAct, DeepAgent, WebThinker, and MiroFlow, without training or architectural modifications. Experiments show that ACE consistently outperforms truncation and summarization baselines, and brings consistent performance gains across all four agent frameworks.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2606.31522v1' target='_blank'>FinPersona-Bench: A Benchmark for Longitudinal Psychometric Stability of Autonomous Financial Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Muhammad Usman Safder, Ayesha Gull, Rania Elbadry, Fan Zhang, Yankai Chen, Xueqing Peng, Xue, Liu, Preslav Nakov, Zhuohan Xie</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-06-30 11:33:29</h6>
+<p class='card-text'>Large Language Models (LLMs) are increasingly deployed as autonomous financial agents initialized with explicit behavioral mandates such as "preserve capital" or "avoid speculative bets" that are meant to govern every decision throughout deployment. In practice, however, as market context accumulates over long horizons, these mandates gradually lose their behavioral influence, a phenomenon we formalize as Mandate Salience Decay (MSD). To measure MSD objectively, we introduce FinPersona-Bench, a simulation benchmark in which a synthetic market decouples observable price from hidden fundamental value, enabling falsifiable evaluation across three failure modes: trading without signal in calm markets, panic-selling during crashes, and ignoring fundamental value during speculative bubbles. Evaluating 18 leading frontier and open-source LLMs, each assigned one of three behavioral profiles ranging from strict capital preservation to aggressive growth, shows that MSD compounds over time and is model-dependent. In crash scenarios, the behavioral gap between static agents and those receiving periodic mandate re-grounding grows 4.4x from the first to the final quarter of the simulation. The effects of mandate re-grounding are not uniformly positive: it consistently helps conservative agents in low-signal markets but actively worsens behavior for aggressive agents in the same setting. These findings suggest that reliable long-horizon deployment requires selective, mandate-aware re-grounding based on agent profile and market regime.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2606.31518v1' target='_blank'>Design and Implementation of Agentic Orchestrations and Orchestration of Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Stefanie Rinderle-Ma, Juergen Mangler, Johannes Loebbecke, Dominik Voigt, Nataliia Klievtsova, Matthias Ehrendorfer</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-06-30 11:31:49</h6>
+<p class='card-text'>Agentic Business Process Management has gained momentum recently. The prospect is that the autonomy of AI agents, i.e., predominantly LLM-based agents, can be balanced with a certain level of robustness, tractability, and traceability through a combination with process technology. In this paper, we provide a classification framework for agentic orchestration options along properties such as task specificity, traceability and tractability, autonomy and reactivity, and correctness assurance and present qualitative decision criteria for realizations of different scenarios. We also provide metrics for the quantitative assessment of realization properties and show them through different agentic implementations of a predictive light sensing scenario. Altogether, this work aims at providing properties, criteria, and metrics for the design and implementation of agentic orchestrations and orchestration of agents.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2606.31461v1' target='_blank'>CSTrader: A Testbed for Language-Grounded Trading in a Community-Driven Virtual Asset Market</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yao Shi, Kingfung Luo, Nan Tang, Yuyu Luo</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-06-30 10:40:40</h6>
+<p class='card-text'>Niche asset markets, such as Counter-Strike 2 (CS2) weapon skins, are small, volatile, and heavily driven by community discussions and platform rules. These properties make them hard for traditional quantitative models, but provide an ideal testbed for studying how large language models (LLMs) turn unstructured text into trading actions. We present CSTrader, a multi-agent framework for language-grounded trading in the CS2 skin market. The system first integrates heterogeneous signals from various sources, then uses specialized agents for technical analysis, liquidity, events, and (reversed) sentiment, and finally applies risk control, transaction friction, and portfolio management agents to produce buy, sell, or hold decisions under realistic trading frictions. We build a live-like evaluation environment with real CS2 data from a highly volatile period and evaluate several recent LLM backbones. Across models, CSTrader consistently outperforms both a falling market index (-15.62%) and simple single-prompt LLM baselines, achieving up to a 7.58% cumulative return with controlled risk. Ablation studies show that liquidity, reversed sentiment, and transaction friction agents are crucial for turning noisy language signals into stable profits, suggesting that niche, language-driven markets are a useful benchmark for future language-to-action research. Code is available at: https://github.com/IatomicreactorI/CSGOTrading?tab=readme-ov-file#quick-start</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2606.31423v1' target='_blank'>DA-Studio: An Agentic System for End-to-End Data Analysis</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yizhe Liu, Shaolei Zhang, Ju Fan</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-06-30 09:45:49</h6>
+<p class='card-text'>Real-world data analysis is a multi-step process over heterogeneous inputs rather than merely producing a final answer. A practical system should autonomously organize multi-step workflows, execute generated code in a sandboxed and controllable environment, and remain inspectable through visible action traces and intermediate artifacts. Existing LLM-based analysis tools, however, often emphasize isolated subtasks, leaving limited support for complete execution-grounded workflows.
+  We present DA-Studio (Data Analysis Studio), an interactive web-based demo system for end-to-end data analysis that is autonomous, sandboxed, and inspectable. DA-Studio integrates an action-structured analysis backend, a sandboxed execution workspace, and a browser interface for task setup, streamed action traces, artifact preview, code editing and rerunning, and report export. Through iterative action generation, code execution, and feedback incorporation, it incrementally constructs executable analysis steps from raw files and natural-language requests while exposing intermediate results and artifacts throughout the process.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2606.31371v1' target='_blank'>Calibrating the Evaluator: Does Probability Calibration Mitigate Preference Coupling in LLM Agent Feedback Loops?</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Zewen Liu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-06-30 09:03:24</h6>
+<p class='card-text'>When large language model (LLM) agents adapt their behavior through evaluator feedback, systematic evaluator biases propagate into the agent's learned strategy distribution - a phenomenon termed evaluator preference coupling. Prior work has documented this coupling and established a diagnostic framework (EPC) to measure it, but has not investigated whether calibration techniques can mitigate the effect. We present the first study of evaluator calibration as mitigation: applying probability calibration to the evaluator's pairwise judgments to reduce spurious preference propagation. In a controlled within-subjects experiment (N=5) comparing standard binary TTRL (win/loss) with confidence-calibrated TTRL (probability-weighted updates) using DeepSeek-V4-Pro as executor and GLM5.2 as evaluator, we find that calibration reduces the coupling coefficient gamma by 20-49% and Jensen-Shannon divergence by 45-67%. A symmetric-LR control confirms the effect is not due to reduced update asymmetry. We release the calibrated TTRL protocol and recommend it as a lightweight mitigation for LLM-as-judge deployment pipelines.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2606.31368v1' target='_blank'>MOA: A Profiling-Guided LLM Framework for Memory-Optimization Automation at Codebase Scale</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Jiaxi Liang, Yuanxiang Shi, Zezhou Yang, Chenxiong Qian</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-06-30 09:00:31</h6>
+<p class='card-text'>Modern large-scale software systems often suffer from pervasive memory inefficiencies (e.g., bloat, churn), leading to excessive resource costs and performance degradation. Existing optimization workflows lack end-to-end automation, forcing developers to manually synthesize complex tool outputs into actionable and semantics-preserving fixes, precluding scalability in large codebases. To address this, this paper presents MOA, an LLM-driven framework that automatically detects and repairs recurring memory inefficiencies across production-scale codebases. Specifically, MOA operates through three agents: an Analyzer that mines anti-patterns from profiling data, a Checker Generator that synthesizes static analyzers through template-guided refinement, and a Patcher that generates optimization patches via state-machine-driven workflows. Our evaluation on OpenHarmony, an open-source operating system with over 100 million lines of C/C++ code, shows that MOA identifies 13 anti-patterns (9 previously unknown) from 3 profiled services, detects over 10,000 inefficiencies across a broader set of 7 services, and generates 769 patches with 92.5% expert acceptance rate, achieving 42.2% heap reduction and 10.6% binary size reduction on average. We envision MOA as a valuable tool for performance engineering at production scale.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2606.31314v1' target='_blank'>A Novel Method for Differential-Algebraic Dynamic Model Discovery in Power Systems: An LLM-Based Multi-Agent Collaborative Framework</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Xinming Wang, Fan Tang, Yingli Wei, Yakun He, Zhe Liu, Ping Jiang, Haoyu Wu, Zihan Guo, Chao Shen</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-06-30 08:23:44</h6>
+<p class='card-text'>With large-scale integration of emerging power electronic devices represented by grid-forming inverters, power system dynamics increasingly exhibit strong nonlinearity, multi-timescale coupling, and black-box control logic. These features hinder conventional parameter identification requiring known model structures and structure identification based on predefined function libraries, making complete differential-algebraic dynamic model recovery difficult under weak prior information. To address this challenge, this paper proposes an LLM-based multi-agent collaborative framework for differential-algebraic dynamic model discovery in power systems. It integrates heterogeneous exploratory agents, individual candidate model memories, parameter fitting and evaluation, and a coordinator agent. Under unified measurement-data constraints, agents generate candidate equation structures in parallel, while candidates are optimized, evaluated, retained, and summarized to provide closed-loop search guidance. The task is decomposed into differential equation structure discovery and algebraic closure discovery, enabling joint recovery of state dynamics, algebraic constraints, and key intermediate variables with incomplete prior information. Case studies on synchronous generators and grid-forming inverters show that the proposed method outperforms single-agent LLM-based discovery and conventional symbolic regression in reconstruction accuracy, generalization, search efficiency, and noise robustness. In the generator case, OOD MAPE reaches 0.19\%; in the inverter case, discovery time is reduced by 25.7\% compared with the single-agent LLM baseline.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2606.31307v1' target='_blank'>When the Database Fails: Prompting LLM Dialogue Agents for Safe Recovery in Task-Oriented Dialogue</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Mohammad Alijanpour Shalmani, Alale Rezvani Boroujeni, Jiann Shiun Yuan</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-06-30 08:18:11</h6>
+<p class='card-text'>Large language models used in task-oriented dialogue often produce fluent but unsafe responses when backend database calls fail, return empty results, or surface mismatched information, inventing venues, confirmations, or booking details not grounded in the database. We study a lightweight prompting-based recovery approach that improves robustness without retraining or additional model calls. We compare three response strategies, including a guided recovery prompt conditioned on structured database status, across six open-weight model families (DeepSeek-R1, Gemma-2, Llama-3, Mistral, Phi-3, and Qwen-2.5) and four database conditions: empty result, wrong-domain retrieval, API error, and clean retrieval. Using fault-injected benchmarks built on two structurally different datasets, MultiWOZ 2.2 (5 domains) and SGD (20 domains), we find that naive agents hallucinate on 30.5% of failure turns on MultiWOZ and 20.9% on SGD. Our Guided-Retry strategy reduces hallucination by 50% on MultiWOZ (30.5 to 15.3%) and by 42% on SGD (20.9 to 12.2%) without retraining. However, residual hallucination remains substantial (6-37% across models), with wrong-domain failures the hardest case. Results are consistent across both datasets and all six model families, and human annotation shows substantial agreement while supporting the validity of the automatic commitment-safety metric.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2606.31273v1' target='_blank'>The Calibration Turn in AI-Assisted Research: A Conceptual and Methodological Framework for Evidence-Licensed Claims</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Hongmin Li</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-06-30 07:46:54</h6>
+<p class='card-text'>AI-assisted research has entered a stage in which the central question is not only whether systems can generate hypotheses, run experiments, or produce manuscripts, but whether their scientific claims are calibrated to the evidence that supports them. This Perspective-style paper develops a conceptual and methodological framework for evidence-licensed claims in AI-assisted research. Motivated by representative routes including specialized scientific foundation models, LLM research assistants, multi-agent co-scientists, AI Scientist pipelines, mathematical discovery agents, and self-driving laboratories, it represents AI-assisted research as five operators: hypothesis generation, model-mediated consequence derivation, external validation, belief update, and claim calibration. The central claim is that calibration is not merely cautious wording but a mechanism for managing scientific assertion rights: evidence licenses some forms of speech and withholds others. The paper distinguishes linguistic, consequence-based, interventional, and evidence-licensed semantics; defines the claim-evidence gap and epistemic debt; and treats minimal structural reconstruction across heterogeneous outputs as an upward form of claim calibration. AISim-Cal is included as an illustrative synthetic dynamics exercise, not as an empirical forecast or benchmark. The resulting principles are: no claim without license, validation does not determine claim level, and automation amplifies the need for calibration. Reliable AI-assisted research is therefore evaluated as a loop that generates hypotheses, derives testable consequences, accepts independent adjudication, updates beliefs, and outputs only evidence-licensed claims.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2606.31270v1' target='_blank'>Learning from Failure: Inference-Time Self-Improvement for Computer-Use Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Xueqiao Sun, Xiaohan Wang, Ludwig Schmidt, Serena Yeung-Levy, Yuhui Zhang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-06-30 07:44:37</h6>
+<p class='card-text'>Computer-use agents, which leverage multimodal large language models (MLLMs) to operate computers and complete tasks, have attracted significant attention for their utility and versatility. A major challenge in developing these agents is collecting large-scale, high-quality trajectories. The standard approach generates synthetic data through a self-improving loop: an agent is placed in a verifiable environment and iteratively fine-tuned on its successful trajectories. Despite its effectiveness, this paradigm exploits only successful trajectories and discards the failed ones, even though failures carry rich information about a model's weaknesses. In this work, we explore a complementary failure-driven self-improvement loop, a data-centric paradigm that turns failed trajectories into agent improvements. Specifically, we employ an LLM to diagnose failure modes, propose inference-time solutions, and generate code patches -- lightly verified by humans -- that upgrade the agent. We validate this approach with the state-of-the-art OpenCUA-72B model on the OSWorld benchmark, improving the success rate from 42.3% to 48.9%, a gain of 6.6 percentage points, without any additional training cost and with only modest inference overhead. Our results demonstrate that failure-driven self-improvement is a viable complement to success-based pipelines, enabling more efficient agent improvement.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2606.31260v1' target='_blank'>Plan Right, Then Plan Tight: Symbolic RL for Efficient Embodied Reasoning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Xiangli Shi, Xiaomeng Zhu, Ye Tian, Yuchun Guo, Ziyang Sun, Lujie Yin, Yuxuan Zhou, Yufei Huang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-06-30 07:37:21</h6>
+<p class='card-text'>Embodied task planning asks an agent to turn a natural-language instruction into an executable sequence of actions in a physical scene, and is a building block for household, assistive, and service robots. Recent prompting-based and reinforcement-learning planners generate fluent action text but lack a cheap deterministic check that the produced plan is valid in the target world, while high-fidelity simulation is too slow to serve as an inner-loop training signal. The general problem is therefore how to obtain verifiable supervision and rewards for embodied planners without relying on string-level matching or full simulation. Here we show that a single BDDL specification, automatically constructed from open-world video evidence or curated tasks, can serve as a shared interface for data construction, plan verification, and reward design. A video-to-BDDL parser, an LLM verifier, and a lightweight symbolic engine together supply dense feedback at millisecond latency. We further introduce GroupAdapt, a difficulty-aware length schedule that uses the in-batch group pass rate as a zero-cost signal so that hard prompts get wider length tolerance and automatically tighten as their pass rate improves. Under the guidance of the proposed verifier and GroupAdapt schedule, the 8B planner attains a Strict-Pass score of 97.3 on BEHAVIOR-1000, yielding a 25.9 percent relative improvement over the Qwen3-8B baseline. This result exceeds the strongest large-model baseline by 3.5 percent, while simultaneously compressing the response length by 79 percent to 207 tokens, demonstrating both effectiveness and efficiency.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2606.31252v1' target='_blank'>Embodied CAD: Solver-Grounded LLM Agents for Parametric B-Rep Assembly Modeling</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Fumin Liu, Haoyu Zhou, Fei Hao, Lin Yang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-06-30 07:31:01</h6>
+<p class='card-text'>Large language models can write plausible CAD scripts, but reliable industrial CAD modeling requires more than syntactically valid code: every feature, placement, and assembly relation must be accepted by an exact geometric kernel while remaining editable as parametric boundary representation geometry. We present Embodied CAD, solver-grounded LLM agents for parametric B-Rep assembly modeling. Instead of generating a complete script in one pass, the agent iteratively selects actions from a stratified L0-L4 CAD skill library, resolves them into typed geometric operations, executes them in a CAD backend, and uses solver feedback to plan, repair, and learn. The framework combines action grammar constraints, deterministic parameter resolution, and solver-derived rewards for supervised warm-up and GRPO-style refinement. We evaluate Embodied CAD on multi-step mechanical, industrial equipment, and mold-oriented assembly tasks using solver-aligned metrics: executable rate, skill accuracy, operation-family accuracy, exact policy accuracy, and task completion success. The results show that solver-grounded planning executes all strong-planner workflows in the current benchmark, while learned controllers reach high executable rates and expose the remaining gap between valid tool calls and exact long-horizon policy prediction.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2606.31229v1' target='_blank'>Agentic-Ideation: Sample Efficient Agentic Trajectories Synthesis for Scientific Ideation Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Keyu Zhao, Lingyan Kong, Fengli Xu, Yong Li</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-06-30 07:07:51</h6>
+<p class='card-text'>Ideation plays a pivotal role in scientific discovery. Recent LLM, especially AI Scientist systems, show promising potential for automated ideation. However, existing approaches predominantly rely on pre-defined agentic workflows. This constraint severely limits the flexibility required to navigate the vast search space of scientific literature and the complex action space of research reasoning. Recently, training Agentic LLMs has emerged as a promising direction, offering flexible reasoning frameworks and the capability for autonomous tool utilization. However, there remains a non-trivial challenge: applying previous agentic data synthesis methods to scientific ideation suffers from prohibitively high data synthesis cost. To bridge this gap, we propose Agentic-Ideation, a novel framework comprising an automated trajectory synthesis pipeline and a specialized agentic LLM trained for scientific ideation. Specifically, we first define a comprehensive tool space incorporating three external tools and three cognitive tools. Then we introduce an Oracle-Guided Data Synthesis strategy. By leveraging a reference idea as oracle guidance, this approach steers the multi-agent system to efficiently reconstruct the logical reasoning and tool invocation paths, transforming aimless trial-and-error into directed trajectory generation. Finally, we train the agent on these synthesized trajectories, employing a masking strategy on tool execution results. This ensures the model focuses on decision-making logic without interference from external feedback. Experimental results demonstrate that our method outperforms the SOTA workflow-based baseline by \textbf{11.91\%} in overall quality. Furthermore, our approach improves the sample efficiency of high-quality data synthesis by \textbf{over 10$\times$}.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2606.31227v1' target='_blank'>Securing the AI Agent: A Unified Framework for Multi-Layer Agent Red Teaming</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yong Yang, Xing Zheng, Huiyu Wu, Huangsheng Cheng, Xiaorong Shi, Jing Guo, Bo Yang, Yi Zhou, Xiangfan Wu, Zonghao Ying</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-06-30 07:06:56</h6>
+<p class='card-text'>The fast growth of open-source AI infrastructure, from model serving engines and agent platforms to the Model Context Protocol (MCP) ecosystem and the language models themselves, has outpaced the security tooling available to defend it. We present AI-Infra-Guard, an open-source framework that organizes AI red teaming around a single observation: the attack surface of an AI agent is stratified across layers (infrastructure, protocol/tool, agent behavior, and model), and no single detection paradigm fits all of them. The framework therefore matches a paradigm to each layer, from deterministic rule matching over 75+ AI components and 1{,}400+ vulnerability rules, through LLM-driven agentic auditing of MCP servers and agent-skill packages and multi-turn black-box agent red teaming, to a jailbreak harness with 26+ attack operators over sixteen datasets. To our knowledge it is the only open-source framework to span all of these, including supply-chain auditing of the agent skills that increasingly extend AI agents. We release AI-Infra-Guard as open source so that \emph{layer-paradigm matching} can serve as a practical foundation for agent security and a shared base for the community to build on.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2606.31213v1' target='_blank'>Can LLMs Imagine Moral Alternatives Beyond Binary Dilemmas?</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Jongchan Choi, Nari Yang, Sung Soo Park, Jaemin Cho, Han Seoyoung, Haerin Shin, Jun-Hyung Park</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-06-30 06:49:06</h6>
+<p class='card-text'>As large language models (LLMs) are increasingly deployed as moral advisors and agents, they need to address dilemmas between two competing values. However, existing research on LLMs with moral dilemmas overlooks a central aspect of human moral cognition: the ability to imagine alternatives that move beyond the given options. We introduce MoralAltDataset, a dataset of 307 moral dilemmas spanning narrative Advisor dilemmas and AI-facing Agent dilemmas, each augmented with compromise and reframed alternatives. We first examine whether humans and LLMs shift their judgments when such alternatives are introduced. Across 15 LLMs, we find that compromise alternatives are often preferred over either original option, substantially reshaping moral choice. We then evaluate the quality of LLM-generated alternatives against human-authored ones using pairwise preference and expert-based criteria. Results show that LLM-generated alternatives are often preferred and better satisfy fine-grained structural and ethical criteria, while revealing trade-offs between structural quality and practical feasibility.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2606.31209v1' target='_blank'>Long-term Traffic Simulation via Structured Autoregressive Modeling</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Lingyu Xiao, Zexin Feng, Xintao Yan</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-06-30 06:41:28</h6>
+<p class='card-text'>Interactive traffic simulation is a vital world model for autonomous driving. A central challenge in long-horizon simulation is modeling sustained multi-agent interactions, which is further exacerbated by dynamic token cardinality as agents continuously enter and exit the scene. In this work, we propose that the solution lies in the synergy between the architectural inductive biases and statistical priors of large-scale sequence models, e.g., Large Language Models (LLMs). Our probing experiments reveal that the transferability of attention mechanisms and the distributional consistency between motion tokens and natural language enable small-scale, heavily frozen LLMs to rapidly adapt to traffic modeling. Building on this insight, we introduce RosettaSim, a unified framework that projects scene topology, agent states, and spawning intents into a structured autoregressive stream with variable length, achieving both strong short-term accuracy and stable long-horizon simulation fidelity. Furthermore, evaluating extended rollouts presents yet another hurdle, as one-to-one agent correspondence inevitably fades over time. To address this, we introduce Retrieval-based Traffic Evaluation (RTE), which retrieves semantically similar real-world scenarios as context-aware reference anchors. Experiments on the Waymo Open Sim Agent Challenge (WOSAC) demonstrate that RosettaSim achieves state-of-the-art performance in both short- and long-term simulation. Furthermore, RTE exhibits a stronger correlation with standard metrics ($r=0.83$) than existing approaches ($r=0.74$), indicating improved alignment with long-horizon simulation fidelity.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2606.31206v1' target='_blank'>FeatX: Editing Software by Editing Features for Repository-Level Code Evolution</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Xutian Li, Yifeng Zhu, Xianlin Zhao, Yanzhen Zou, Lu Zhang, Bing Xie</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-06-30 06:38:56</h6>
+<p class='card-text'>Large language models (LLMs) are increasingly used for software evolution, yet most interaction paradigms remain code-centric and require manual context management and prompt iteration. We present FeatX, a feature-oriented tool for editing software by editing features. Given an existing repository, FeatX extracts a hierarchical epic-feature structure with explicit feature-to-code mappings, then invokes a three-stage Evolution Agent to translate feature edits into code patches. The workflow is exposed through four coordinated panels. Across a controlled user study and replay experiments on 38 real-world feature-editing commits, FeatX significantly reduces cognitive load and improves usability compared with vanilla ChatGPT. It also achieves a 42.6\% relative improvement in function-level modification localization F1 over strong LLM baselines, at substantially lower cost (\$0.07 in total). The tool and collected dataset are available at https://github.com/a496263365/FeatX/tree/demo, with a demonstration video at https://youtu.be/OZqKZ4Ii-yM.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2606.31182v1' target='_blank'>AI-Assisted Discovery of Convex Relaxations via Dual Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Sungyoon Kim, Mert Pilanci</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-06-30 06:10:25</h6>
+<p class='card-text'>Recent work shows that LLM agents can improve sharp-constant inequalities by searching for extremal constructions, which yield upper bounds. We address the complementary side: a lower bound holds for every admissible function and follows from a convex relaxation of the nonconvex problem, with tighter relaxations giving stronger bounds. We instantiate the autoresearch paradigm to discover such relaxations: a coding agent proposes valid tightening constraints, a theory agent verifies each one and searches for counterexamples, and every reported bound is certified by an explicit dual-feasible point checked in rigorous interval arithmetic. On two optimization constants studied by \citet{tao2025alphaevolve} - the first autocorrelation inequality ($C_{6.2}$) and the Erdős minimum-overlap constant ($C_{6.5}$) - we improve the certified lower bounds from $1.28$ to $1.2937$ and from $0.379005$ to $0.37912$, respectively.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2606.31174v1' target='_blank'>ClawArena-Team: Benchmarking Subagent Orchestration and Dynamic Workflows in Language-Model Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Kaiwen Xiong, Haonian Ji, Shi Qiu, Zeyu Zheng, Cihang Xie, Xinyu Ye, Huaxiu Yao</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-06-30 06:06:08</h6>
+<p class='card-text'>Production large language-model (LLM) agents are increasingly deployed not as lone problem-solvers but as managers: a main model creates specialized subagents, delegates work, and orchestrates their parallel, asynchronous returns through dynamic workflows. Whether one model can actually run such a team is largely unmeasured: existing benchmarks score a policy's own task-solving or a fixed multi-agent system's emergent behavior, but none isolate the management ability of the single LLM acting as leader. We introduce ClawArena-Team, a benchmark of 41 multi-turn, multimodal, multi-directory scenarios spanning 258 evaluation rounds and 72 staged updates that measures this management ability. The main agent is deliberately constrained: it natively perceives only text and directly accesses only part of the workspace. It commands a fixed, locally served subagent pool, so score differences reflect management skill, not raw capability. All scoring is execution-based with no LLM judge: an overall score -- the Subagent-Management Score (SMS) -- multiplies task correctness by a least-privilege and modality-routing factor. Across twelve proprietary, community-hosted, and self-hosted models, experiments show that the management bottleneck is privilege granting rather than perception (no model exceeds 50% workspace-permission precision); that cost and management quality are decoupled (API cost spans over 100 times while the overall score spans under 4 times, with the cheapest open models on the Pareto frontier); and that most leaderboard scores cluster within a 9.9-point band while orchestration behaviors diverge by more than an order of magnitude. Code and data will be released.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2606.31134v1' target='_blank'>Beyond the Library: An Agentic Framework for Autoformalizing Research Mathematics</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Arshia Soltani Moakhar, Iman Gholami, Max Springer, Mahdi JafariRaviz, MohammadTaghi Hajiaghayi</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-06-30 05:05:03</h6>
+<p class='card-text'>While Large Language Models (LLMs) have demonstrated exceptional capabilities in mathematical reasoning, they frequently produce subtle errors that evade human detection. Formal mathematical languages like Lean 4 offer mechanical proof checking, strongly motivating the need for autoformalization: the automatic translation of natural language mathematics into verifiable code. Recent trends indicate that general-purpose LLMs, heavily optimized for standard programming, now outperform smaller models explicitly fine-tuned for Lean. Leveraging this shift, we introduce an agentic autoformalization framework powered by general coding LLMs. At the core of our system is an orchestrator that manages a multi-agent pipeline tailored for research-level mathematics. Because cutting-edge research frequently relies on concepts outside the scope of existing libraries like Mathlib, our system dynamically extends necessary type definitions and validates them via a novel Auxiliary Lemma technique before formalizing the primary theorems. We applied our approach to PutnamBench, producing machine-checked Lean proofs for a random sample of 32 problems. Furthermore, we evaluate our system on five papers from the ACM Symposium on Theory of Computing (STOC) spanning combinatorics, communication complexity, mechanism design, and learning theory, successfully formalizing their main theorems and validating the generated formalizations with human experts; for all five we also formalize the proofs alongside the statements, and notably two of them are proved with no axioms beyond Lean's kernel. All of our formalizations are available at https://beyondthelibrary.github.io/formal_arxiv .</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js'></script>
+</body>
+</html>
