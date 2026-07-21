@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<title>LLM-agent - 2026-07-21</title>
+<link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap' rel='stylesheet'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'>
+<style>
+body {
+font-family: 'Roboto', sans-serif;
+background-color: #f5f7fa;
+padding: 20px;
+}
+.card {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.card-title {
+    font-weight: 700;
+}
+.card:hover {
+    transform: scale(1.02);
+    transition: 0.3s ease-in-out;
+}
+</style>
+</head>
+<body>
+<div class='container'>
+<h1 class='text-center my-4'><i class='fas fa-book'></i>LLM-agent - 2026-07-21</h1>
+<div class='row'>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2607.18213v1' target='_blank'>SWE-Pruner Pro: The Coder LLM Already Knows What to Prune</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yuhang Wang, Yuling Shi, Shaoqiu Zhang, Jialiang Liang, Shilin He, Siyu Ye, Yuting Chen, Kai Cai, Xiaodong Gu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-07-20 17:47:44</h6>
+<p class='card-text'>Pruning long context for coding agents has been a vital technology for efficient context management. While existing context pruning methods such as SWE-Pruner realize this by attaching a separate code classifier, we find the agent itself encodes internal representations indicating the relevance of code context when reading tool output. Based on this finding, we propose SWE-Pruner Pro, which prunes tool outputs directly inside the agent. Concretely, a small head turns the agent's own internal representations into a keep-or-prune label for each line, with a length-aware embedding keyed to each tool output's line count. Across two open-weight backbones and four multi-turn benchmarks, SWE-Pruner Pro saves up to 39% of prompt and completion tokens while preserving task quality, with bounded inference overhead. Notably, on MiMo-V2-Flash SWE-Pruner Pro additionally raises the SWE-Bench Verified resolve rate by +3.8% and the long-context Oolong accuracy by +2.2 points.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2607.18171v1' target='_blank'>FlashRT: Agent Harness for Guiding Agents to Deploy Real-Time Multimodal Applications</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Krish Agarwal, Zhuoming Chen, Yanyuan Qin, Zhenyu Gu, Atri Rudra, Beidi Chen</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-07-20 17:12:28</h6>
+<p class='card-text'>Real-time multimodal applications, including voice agents and interactive video generation, compose heterogeneous models into pipelines whose efficient deployment requires application-specific decisions about placement, streaming, and intra-model parallelism. Existing serving systems and auto-parallelism compilers commit to limited transformations and fixed workload assumptions, so achieving high performance on a new application requires hand-crafting an efficient implementation. We present FlashRT, an agent harness that guides coding agents to lift simple developer-written reference implementations into optimized multi-GPU deployments that flexibly weigh target metrics like latency and throughput. Using a new chain-of-program paradigm, FlashRT directs a generic coding agent through a multi-pass transformation process where an agent transforms the reference into an intermediate representation (IR) to capture data dependencies and persistent-state scopes, validates this IR via a sequential interpreter, and performs static analyses to identify candidate transformations. Then, the agent iteratively implements, verifies, and benchmarks each candidate under a measurement-gated optimization loop to produce effective deployments that span different hardware budgets. Across various applications, including video world models and multimodal LLMs, FlashRT converts reference implementations into highly efficient deployments, delivering up to ~70x latency reduction and 2.8x throughput improvement on NVIDIA B200 GPUs. On AMD MI355X GPUs, FlashRT matches the peak latency reduction while increasing peak throughput improvement to 3.6x, demonstrating that agent-driven optimization can be more scalable on platforms with less mature expert optimization. In fact, for Qwen3-Omni text-to-audio inference, FlashRT reduces response latency by 65% compared to the expert vLLM-Omni implementation on AMD MI355X.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2607.18147v1' target='_blank'>LLMs and Agentic AI Systems for Smart Grids: A Tutorial on Architectures and Applications</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Daniela Rojas, Abdulwahab Albassam, Aidan G. Leung, Jett Ngo, Ryan Luo, Peter R. Quawas, Junpyung Kim, Kangkai Liang, Mansi Nanavati, Jonathan Mai, Meng-Chi Tsai, Yun-Tong Tsai, Yize Chen, Yuanyuan Shi</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-07-20 16:45:13</h6>
+<p class='card-text'>Large language models (LLMs) and agentic AI systems have evolved from natural language tasks to using external tools to plan, retrieve, and act in technical domains. In smart grids, recent work applies agentic schemes to forecasting, optimization, and control, wrapping trusted solvers behind language interfaces and orchestrating multi-step workflows. The literature lacks a unified approach to designing and evaluating such systems. LLMs can produce numerically plausible yet physically infeasible outputs, evaluation protocols vary across tasks, and the boundary between what the model should and should not compute is implicit. This paper presents a solver-grounded design principle: a numerical result is reported only when it originates from a trusted tool and passes explicit verification. We review the building blocks of LLM and agentic AI systems for power systems: prompting strategies and agentic architectures. We instantiate the principle in four case studies: wind power forecasting, EV charging scheduling, power flow analysis, and contingency diagnosis, each comparing an LLM-only baseline against its solver-grounded counterpart on identical data and metrics. EVAgent reproduces the CVXPY optimum while reducing LLM-only unmet energy by 7.5-9.5x, and GridDebugAgent repairs 17/39 contingency cases while reducing total violations by 52.3%. We propose a four-group evaluation framework spanning task utility, solver-grounded correctness, faithfulness and safe failure, and cost and latency. A consistent division of labor emerges: the agentic system reliably orchestrates, retrieves, and explains, while trusted tools compute and a verification gate decides what is reported.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2607.18141v1' target='_blank'>HyMCache: A KV Cache Framework for Multi-Turn LLM Serving with CXL-Hybrid Memory</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Hakbeom Jang, Inho Song, Sam H. Noh, Jongryool Kim</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-07-20 16:35:47</h6>
+<p class='card-text'>Long-context, multi-turn, and agentic LLM workloads increasingly reuse previously processed context, making KV-cache reuse essential for reducing redundant computation. However, this reuse shifts the bottleneck to the memory tier that stores and serves reusable KV states at cluster scale. GPU HBM and host DRAM are too costly to scale to TB-scale shared context capacity, motivating remote tiers built from lower-cost, higher-capacity media. This paper presents HyMCache, a KV-cache framework that integrates CXL-hybrid memory (CXL-HM) for multi-turn LLM serving. CXL-HM combines a small amount of in-device DRAM with large SSD-backed capacity behind a CXL interface. By exploiting the read-dominant, predictable, and append-only nature of multi-turn KV-cache access, HyMCache rethinks DRAM management within CXL-HM to efficiently support TB-scale SSD-backed KV reuse. It uses request-level prefix prefetching and opportunistic write buffering to stage latency-critical reads in device DRAM, enabling DRAM-scale KV-cache efficiency at SSD-level cost. We evaluate HyMCache on a real CXL-HM prototype under both single-aggregator and PD-disaggregated serving configurations. Under the same DRAM budget, HyMCache outperforms local LMCache by 3.0x in single-node serving and 1.45x in PD-disaggregated serving. Compared with 1 TB distributed-DRAM Mooncake, HyMCache incurs about 30% lower performance but uses 16x less DRAM.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2607.18116v1' target='_blank'>SGA: Plug&Play Geometric Verification for Educational Video Synthesis</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Lopez Jhon, Hinojosa Carlos, Ghanem Bernard</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-07-20 16:11:19</h6>
+<p class='card-text'>Recent work leverages Large Language Models (LLMs) to generate executable code for pedagogical animations using libraries such as Manim. However, ensuring spatial correctness and visual legibility remains challenging, as existing frameworks emphasize pedagogical content while overlooking geometric occlusions. We propose the Symbolic Geometric Agent (SGA), a plug-and-play module for code-centric animation pipelines that intercepts LLM-generated code, performs partial execution to extract symbolic scene graphs, and applies targeted refinement when spatial conflicts are detected. We further introduce the Manim Visual Quality Score (MVQS), a deterministic rendering-free proxy for spatial integrity. Experiments on the MMMC-Code benchmark across four LLM backbones and two agentic pipelines show that SGA achieves a peak MVQS of 73.11 (Code2Video + GPT-5.1), corresponding to a 16.1% relative improvement over the raw baseline, and improves MVQS in 7 of 8 backbone x pipeline configurations.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2607.18063v1' target='_blank'>Adaptive Adversaries: A Multi-Turn, Multi-LLM Benchmark for LLM Agent Security</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Devina Jain, David Hartmann, Chuan Li</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-07-20 15:30:38</h6>
+<p class='card-text'>LLM-based agents process external content, exposing them to prompt injection and multi-turn manipulation. Most safety benchmarks evaluate defenders against fixed attack pools collected before evaluation, single-turn or multi-turn. We present a 21-scenario benchmark for \emph{adaptive multi-round attacks against memoryless LLM defenders}: an autonomous LLM attacker observes prior defender responses and pivots across rounds, while each defender response is evaluated as a fresh interaction. Holding the 21 scenarios, attackers, defenders, and structured-output scoring fixed, restricting scoring to the first attacker turn yields $0$-$1\%$ attack success rate (ASR); allowing 15 rounds of adaptive attack yields $5.4$-$14.0\%$. Pooling three frontier attacker LLMs uncovers $1.4$-$2.2\times$ as many unique successful attacks as the best single attacker, and the generated attacks have low cosine similarity ($0.02$-$0.14$) to attacks in existing benchmarks. Claude Opus 4.6 and GPT-5.4 are tied in aggregate ($5.4\%$ each; overlapping $95\%$ CIs), but their weaknesses differ sharply: on one scenario Opus reaches $60\%$ ASR ($95\%$ CI $36$--$80\%$) while GPT-5.4 and Gemini each stay at $7\%$ (CI $1$-$30\%$; the gap is preserved in a higher-$N$ replication). $13$ of $21$ scenarios distinguish at least one defender pair, yet rankings disagree across scenarios (Kendall's $W = 0.19$). We release the benchmark -- 21 evaluation scenarios, 10 public development scenarios, the orchestrator, baseline harnesses, and a multi-attacker CLI -- plus 945 transcripts from the 3$\times$3 frontier matrix, an attack-replay dataset, and 18{,}422 gpt-oss-20b battles from an open competition's final scoring rounds.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2607.18039v1' target='_blank'>Evidence-in-the-Loop: Trace-Driven Optimization for Customer-Service LLM Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Chunming Wu, Dafei Qiu, Congde Yuan, Charles Quan, Jun Wu, Suipeng Li, Mo Wu, Gavin Xie, Hope Chen, Max Yao</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-07-20 15:07:58</h6>
+<p class='card-text'>Production customer-service bots must improve answer quality across iterative releases, yet large language models must not bypass evidence boundaries, policy rules, or human-handoff safeguards. We present an \textbf{Evidence-Grounded Customer-Service Agent Workflow} deployed in a real-world customer-service setting. BM25 recall, issue-title-vector recall, issue-description-vector recall, weighted RRF fusion, and cross-encoder reranking construct grounded FAQ evidence for controlled LLM decisions. Policy-guided orchestration then combines this RAG evidence with scenario-specific rule evidence, conversation memory, and clarification state inside a fixed LangGraph DAG~\cite{langgraph2024}. The paper contributes three reusable deployment patterns: \textbf{hybrid RAG evidence construction}, where multi-channel retrieval and reranking produce auditable FAQ candidates; \textbf{evidence-grounded issue/action decision}, where an Evidence-Grounded Decision Module selects an issue/action from typed FAQ evidence and scenario-specific rule evidence; and \textbf{trace-driven RAG and reranker improvement}, where traces diagnose whether failures come from recall, ranking, final candidate selection, clarification, rule-derived evidence, or action policy, and where reranker fine-tuning is evaluated not only for in-domain gain but also for forgetting risk.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2607.18029v1' target='_blank'>Natural Language Access to Domain-Specific Metadata: A Reusable Framework for LLM Query Generation</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Blake G. Fitch, Cato Elia Kurtz</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-07-20 14:59:33</h6>
+<p class='card-text'>Researchers need to answer ad-hoc questions about the contents of domain-specific archives but often lack the expertise to write structured queries on the metadata. We show that when domain vocabulary and semantics are captured in a well-designed Web Ontology Language (OWL) ontology, Large Language Models (LLMs) can generate accurate structured queries zero-shot, without fine-tuning, retrieval augmentation, or multi-agent orchestration. We present the Natural Language Knowledge Graph Query (NLKGQ) system, a framework and development process that enables natural language access to metadata in such archives. The framework includes a web interface that helps researchers pose natural language questions, which a domain-agnostic harness translates to SPARQL via an LLM and executes against a knowledge graph. The development process begins with capturing domain vocabulary and semantics in a formal OWL ontology. Domain-specific code then extracts metadata from archive sources and imports it into a knowledge graph defined by the ontology. Both are designed for reuse across domains. We demonstrate the system on metadata derived from a large-scale neuroimaging research archive, evaluating multiple LLMs and ontology representations. The best configurations achieve 100% accuracy on a competence and regression question set developed with domain experts. An ablation study across eight ontology representations reveals that readable entity names and semantic annotations are the dominant factors in accuracy, more significant than model choice or prompt engineering. We also compare SPARQL to an auto-generated SQL database as query backends, showing that OWL's structural features provide a substantial advantage over SQL DDL for LLM-driven query generation. Our demonstration domain also requires local LLMs on modest institutional hardware to address privacy concerns for human subject data.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2607.17979v1' target='_blank'>Harness Engineering for LLM-Driven GPU Kernel Generation</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yue Shui, Chenyu Ma, Hangfei Xu, Shengzhao Wen, Yanpeng Wang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-07-20 14:14:14</h6>
+<p class='card-text'>Large language models (LLMs) can assist GPU kernel generation, but their practical effectiveness depends on whether generated code can be reliably constrained, validated, profiled, and selected. This paper presents a harness-centered system for LLM-driven GPU kernel optimization in the MLSys 2026 FlashInfer AI Kernel Generation Contest on NVIDIA Blackwell B200 GPUs. The system separates an evaluation harness from a profile-backed optimization controller: the harness enforces compilation, correctness, official-aligned timing, and artifact archival, while the controller turns profiler and workload evidence into bounded candidate-generation decisions. Human-authored skills capture operator constraints, references, profiling procedures, and promotion rules, while Codex and Claude Code agents generate candidate kernels inside those constraints. Across five operator definitions, the retained official-aligned artifacts achieved mean-latency speedups over supplied FlashInfer baselines of 1.62x, 18.05x, 29.68x, 1.12x, and 13.70x. The Agent-Assisted kernels outperform the Full-Agent artifacts across the evaluated definitions, indicating that expert-provided optimization directions, high-quality references, and workload context remain critical for reliable AI-driven kernel optimization.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2607.17957v1' target='_blank'>DepRepair: LLM-Based Source-Code Repair for Dependency Breaking Changes</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Shenghao Yang, Bo Lu, Yaochen Liu, Yu Kang, Qiongfang Zhang, Chetan Bansal, Saravan Rajmohan, Minghua Ma</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-07-20 13:58:13</h6>
+<p class='card-text'>Modern software projects depend on numerous third-party libraries, whose updates often introduce breaking changes. Adapting consumer code to such changes remains labor-intensive and error-prone. Existing work either characterizes dependency breaking changes without producing a verified consumer-side patch, or studies automated repair only in settings where the failure and repair context are contained within the target repository. However, dependency breaking changes violate this assumption: the decisive repair evidence lies upstream in release notes and API diffs, and no failing test localizes where the consumer breaks, leaving the repair under-informed. To study this cross-repository problem on real data, we introduce DepBench, a benchmark of 95 real-world dependency-update instances across four ecosystems, each paired with a Docker-based executable oracle that runs the consumer's own tests. To address these challenges, we propose DepRepair, a single-call LLM approach that grounds repair in structured upstream evidence through three components: an evidence filter that distills relevant upstream changes, a usage locator that identifies affected consumer sites, and a subcategory-aware guide that tailors repairs to the breaking-change type. Evaluated on DepBench, DepRepair attains the highest executable pass rate on each backbone, achieving 89.5% with GPT-5.5 and 82.1% with Claude Opus 4.6. We further find that raw upstream evidence reduces LLM and agent pass rates by 7--23 percentage points, whereas structured evidence consistently improves them.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2607.17948v1' target='_blank'>Towards Agentic Agent-based Models: Feasibility, Performance, and Statistical Model Checking</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Stefano Blando, Emanuele Guerrazzi, Riccardo Porcedda, Giuseppe Squillace, Max Tschaikowski, Andrea Vandin</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-07-20 13:49:51</h6>
+<p class='card-text'>Agent-based models (ABMs) rely on simple, explicit and reproducible rules for individual decision making, while complex collective behavior emerges from interactions among agents. Recent advances in large language models (LLMs) make it tempting to replace, enrich, or perturb these rules with LLM-based agentic capabilities. However, this raises a methodological question: how does introducing LLM-driven decisions affect the reliability, computational cost, and behavior of ABM simulations? We investigate this for Mesa ABM models, a popular Python library for ABMs, analyzed by statistical model checking. Building on Mesa's integration with the statistical model checker MultiVeStA, we extend the classical Schelling segregation model with a hybrid population: ordinary agents classify neighbors using the standard symbolic rule, while one agent delegates this task to an LLM through tool calls. The LLM-enabled agent receives natural-language descriptions of neighboring agents and invokes tools that increment counters of similar/different neighbors; these counters determine its happiness according to the original Schelling dynamics. This provides a minimal but controlled setting where the semantic, operational, and computational behavior of LLM-based decisions can be studied inside an otherwise standard ABM. We report preliminary experiments with locally served LLMs of different sizes, showing that smaller models may fail simple semantic classification experiments or become operationally unusable during repeated tool-call generation, while larger tested models pass these preliminary checks. We discuss how statistical model checking can estimate classical ABM observables and quantify the impact of introducing agentic LLM components into simulation models.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2607.17917v1' target='_blank'>PEARL: Auditable Repair for Scientific Reasoning Graph Extraction</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Bohan Su, Pengze Li, Yuchen Lu, Xi Chen</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-07-20 13:14:13</h6>
+<p class='card-text'>Scientific Reasoning Graph Extraction (SRGE) aims to recover explicit links among observations, evidence, intermediate claims, and paper-level conclusions. LLMs can produce graph-like scientific explanations, but their outputs often mix malformed syntax, drifting edge labels, incorrectly oriented roots, and weak source anchors. We propose PEARL (Peircean Extraction via Abstraction and Repair Layer), a training-free framework that turns noisy LLM graph responses into auditable reasoning graphs and repairs them toward strict semantic validity. PEARL first materializes explicit graph content under a closed Peircean schema, then uses matched evidence-grounded judge feedback to repair rejected edge types, local inference steps, and terminal roots while preserving an audit trail. On five 70-paper model archives from ARCHE, a benchmark for latent reasoning-chain extraction, PEARL raises strict gate passes from 0/350 for the LLM baseline to 300/350, with average REA improving from 0.339 to 0.906. The graphs provide a reliability layer for research-agent and AI scientist workflows that need inspectable reasoning traces rather than unconstrained graph regeneration. Code and audit artifacts are available at https://github.com/BohanSu/auditable-repair-reasoning-graphs/tree/300-350_workshop .</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2607.17890v1' target='_blank'>Stress Testing Concept Erasure with Large Language Model Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yuyang Xue, Feng Chen, Zhihua Liu, Edward Moroshko, Jingyu Sun, Steven McDonagh, Sotirios A. Tsaftaris</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-07-20 12:38:50</h6>
+<p class='card-text'>Concept erasure aims to remove semantic concepts from a trained generative model and is increasingly important for responsible AI deployment. However, verifying whether a model has robustly removed targeted concepts remains a critical challenge. Existing evaluation methods are typically pre-defined and static, failing to expose vulnerabilities under diverse natural-language probes and challenging conditions. Moreover, manually designed evaluation strategies can be biased and difficult to scale. We posit that concept erasure evaluation is best formulated as an adaptive hypothesis search, operationalised by agents that iteratively propose, critique, and verify tests to systematically expand coverage of failure modes. To this end, we propose Stress Testing Agents for Concept Erasure (STACE), a framework that autonomously stress-tests concept-erased models using multiple Large Language Model (LLM) agents, by iteratively generating and verifying stress-testing hypotheses grounded by external knowledge. We also introduce a suite of metrics for assessing the performance and efficiency of LLM-agent-powered stress-testing frameworks. Our extensive experiments show that STACE outperforms five LLM-based evaluation baselines on four concept categories. Further analysis across two T2I models, six concept erasure approaches, and various erasure strengths show that STACE is robust for different settings. We also show that STACE can be adapted beyond concept erasure evaluation to other problem domains, such as LLM jailbreaking. Our code is available anonymously.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2607.17883v1' target='_blank'>Zero Hallucination, by Construction: Hallucination-Aware Layered Oversight for Trustworthy Enterprise AI</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Bogdan Raduta, Horia Velicu, Alexandru Preda, Serban Chiricescu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-07-20 12:34:44</h6>
+<p class='card-text'>Enterprises will not deploy AI agents they cannot trust, and the most-cited reason for distrust is hallucination: confident, fluent output that is simply not true. The common response is to wait for a model that does not hallucinate. We argue that this is the wrong target. Large language models are, by construction, capable of generating unsupported text, and no amount of scale removes the possibility; a faithfulness judge bolted onto a raw model catches some errors but still ships others, and even well-curated retrieval pipelines have been shown to fabricate citations. We reframe the goal: "zero hallucination" is not a property a model possesses but a property a system enforces. We present HALO (Hallucination-Aware Layered Oversight), an assurance architecture which treats hallucination as a containable failure mode rather than an eliminable one. HALO composes six layers of defense: grounded generation over retrieved, approved content; constrained, deterministic execution that bounds where the model can err; multi-signal verification that scores every output for groundedness and hallucination using both an LLM judge and evidence-based checks against the source text; calibrated abstention, so the system declines rather than guesses when grounding is insufficient; total traceability of every retrieval, tool call, and generation; and continuous oversight that detects drift, alerts on threshold breaches, and closes the loop by regenerating and statistically validating improved agents. We detail each layer, give particular attention to evidence-based confidence (which verifies extractions against the source document rather than trusting the model's self-reported certainty), and illustrate the architecture on a regulated claims-extraction workload</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2607.17879v1' target='_blank'>Exploratory and Assimilating Reflection: Reflective Recall Cycle for Long-term Memory</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Ganesh Senrayan, Moyuru Yamada, Ishan Jindal, Kiran Purohit</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-07-20 12:30:17</h6>
+<p class='card-text'>LLM-based autonomous agents require external memory to overcome their statelessness and limited context window for long-term interaction and dynamic knowledge reasoning. However, existing memory retrieval methods often lack adaptability and sample efficiency, and struggle to retrieve the right mixture of memories from heterogeneous stores. We propose Exploratory-Assimilating Reflection (EAR), a framework for high initial retrieval performance and sample-efficient adaptation. EAR combines two mechanisms: Exploratory Reflection, which performs iterative search to bootstrap retrieval and collect useful experiences for each query, and Assimilating Reflection, which replays these experiences from an Experience Buffer to refine a global reranker more efficiently than methods relying only on immediate rewards. Experiments show that EAR improves retrieval by up to 17.9% over the baseline retriever on two long-term dialogue benchmarks. We also show that EAR is highly sample-efficient and robust to noisy feedback.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2607.17765v1' target='_blank'>FIFA World Cup 2026 as a Contamination-Free Benchmark for LLM Forecasting Agents: Four Models, a Bookmaker, and 104 Matches</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Jiacheng Ding, Cong Guo, Jason Xu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-07-20 10:00:11</h6>
+<p class='card-text'>We introduce WC2026-Agents, a benchmark and dataset for evaluating large language models (LLMs) as autonomous forecasting agents on real, future events. For every one of the 104 matches of the 2026 FIFA World Cup, four frontier models -- Claude Opus 4.8, ChatGPT (GPT-5.5, high reasoning), Gemini 3.1 Pro, and Grok (Expert Mode) -- ran an identical search-act-reflect loop: gather evidence with a web tool, commit to a 1X2 (team-A win / draw / team-B win) distribution and a virtual 100-USD bet, and, after the match, reflect given only the final score. Because every match kicked off after the models' training cutoffs, the benchmark is contamination-free by construction. Crucially, we pair the four agents with a fifth competitor drawn from the same information environment -- the pre-match betting market -- collected as per-match 1X2 odds, giving an economically grounded baseline and letting us score not just what an agent predicts but what it does with money. The release contains 416 forecasts and 414 reflections with verbatim reasoning, ground truth (including penalty shootouts), odds, and a reproducible evaluation suite. A reference evaluation surfaces findings that raw accuracy hides: the four agents issue an identical top pick in 92% of matches and none beats the market's Brier score; indeed, a naive flat stake on the market favorite out-earns all four agents. Yet the agents diverge sharply as decision-makers: betting return-on-investment ranges from -18% to +10%, fading the market is unprofitable for all four, the share of forecasts that cite the market ranges from 12% to 100%, and self-reported error rates on wrong picks range from 36% to 86%. The benchmark thus measures calibration, decision quality, and self-knowledge -- axes on which frontier models differ even when their predictions do not. Data and code: https://github.com/graphuofm/FIFA2026LLM</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2607.17722v1' target='_blank'>KernelDiag: Agent-Based Root Cause Diagnosis for Kernel Crashes</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Weijing Wang, Zan Wang, Dong Wang, Haichi Wang, Junjie Chen</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-07-20 09:14:10</h6>
+<p class='card-text'>The Linux kernel is one of the most complex software systems, where automated fuzzing continuously exposes thousands of crashes, yet root-cause diagnosis remains a manual and time-consuming bottleneck. Existing LLM-based root cause analysis (RCA) techniques, effective for distributed systems, do not readily generalize to kernel debugging due to sparse low-level artifacts, heterogeneous diagnostic evidence (e.g., syscalls, logs, and crash reports), and complex non-linear fault propagation that demands fine-grained method-level reasoning. To address these challenges, we propose KernelDiag, an agent-based framework for kernel root-cause diagnosis via structured causal reasoning. KernelDiag first aligns heterogeneous diagnostic artifacts through log-to-code mapping, and then employs artifact-specialized agents to iteratively reason over source-level program semantics and crash-specific kernel configurations. The inferred causal dependencies are incrementally organized into structured Evidence Graphs, enabling accurate faulty-method localization and causal explanations. We evaluate KernelDiag on the real-world KGYM benchmark. KernelDiag consistently outperforms state-of-the-art localization approaches at both file and method levels, achieving significant improvements in Top@k accuracy, including up to 4x and 2x gains in challenging settings without explicit hints. Furthermore, both human and LLM-assisted evaluations show that KernelDiag generates accurate, coherent, and actionable diagnostic explanations. Overall, this work lays the foundation for automated kernel root-cause diagnosis by bridging low-level diagnostic evidence with source-level causal reasoning.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2607.17719v1' target='_blank'>SR-Agent: An Experience-Driven Agentic Framework for Post-Ranking Strategies Refinement in E-Commerce Recommendation</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Hanchen Yang, Kaiwen Yang, Junpeng Zhuang, Yang He, Keting Cen, Bochao Liu, Zhongbo Sun, An Liu, Zhongteng Han, Chenyi Lei</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-07-20 09:12:46</h6>
+<p class='card-text'>User experience is a first-class objective in industrial e-commerce recommender systems (RS). Post-ranking strategies, which govern diversity, similarity, and exposure over a ranked list, are widely deployed in industrial RS for their simplicity and low serving cost. However, as the online recommendation environment evolves continuously, these statically configured strategies gradually become stale, degrading the user experience. Refining them typically relies on manual inspection, diagnosis, and updates, a process that is slow, costly, and hard to reuse. Although recent LLM-based agents (e.g., RecUserSim, SimUSER, and Self-EvolveRec) offer promising directions, none of them close the full loop of automated, self-evolving strategy refinement. To bridge this gap, we introduce SR-Agent, a Strategy Refinement agentic framework that, to the best of our knowledge, is the first deployed for refining post-ranking strategies in industrial RS. SR-Agent unifies three components: (i) a UserSim agent that applies staged inspection skills to surface user-perceived bad cases; (ii) an Analysis agent that consolidates recurring bad cases into structured, reusable diagnoses; and (iii) a constrained Strategy Refinement Harness that maps diagnoses to typed and bounded actions, gated by a four-stage reward pipeline with reversible rollback. Deployed on the Kuaishou e-commerce platform, SR-Agent continuously runs this refinement loop and, in a one-month online A/B test, increases order volume by 0.71%, browsing depth by 0.34%, and clicked-category diversity by 0.48%, while markedly shortening the refinement cycle and lowering operational cost.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2607.17701v1' target='_blank'>ProEvent: An Event-centric Benchmark for Proactive Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Guanzhen Li, Liangming Pan, Leye Wang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-07-20 08:48:36</h6>
+<p class='card-text'>Proactive agents are expected to anticipate user needs and provide autonomous assistance by perceiving environmental context without explicit instructions. A fundamental capability of such agents is to identify and track users' upcoming events, enabling continuous and event-specific assistance. For example, by recording the time and location of a planned hike, an agent can deliver weather reminders in advance or provide navigation support before departure. However, existing works on proactive agents largely overlook event-centric assistance, and the open-ended nature of proactive assistance poses challenges for reliable evaluation.
+  To bridge these gaps, we introduce ProEvent, the first event-centric benchmark designed to assess an agent's ability to proactively maintain a user's timetable based on ongoing instant messaging chats. ProEvent provides synthesized yet realistic chats that consider the dynamic interaction among users, concurrent chat threads, and noise in the real world, and evaluates proactive agents on response timing, single-step response correctness, and multi-step response correctness. Experiments on eight LLMs and pipelines reveal that current agents frequently overact and struggle with event cancellation. Notably, even GPT-5.1 only reacts correctly in 26.7% of scenarios. Further qualitative analysis reveals fundamental limitations of current LLMs as proactive agents, particularly in detecting implicit events and reasoning from the user's first-person perspective.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2607.17641v1' target='_blank'>Verify, Repair, Repeat, or Stop? Robust Stopping for Noisy Verify-Repair Loops in LLM Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yitao Wu, Si Shen, Rui Yang, Hong Peng, Bin Hu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-07-20 07:52:36</h6>
+<p class='card-text'>Verify-repair loops are a standard means for large language model (LLM) agents to correct faulty plans in code generation, mathematical reasoning, and tool use. When both the verifier and the repairer are noisy, repair can damage already-correct plans, and reported acceptance keeps rising while true validity falls, so existing methods lack a principled basis for deciding when repair should stop. We propose VRR-Stop, a robust stopping framework for noisy verify-repair-repeat (VRR) loops. A four-parameter noise model separates verifier false acceptance and false rejection from the repair and damage behavior of the repairer. Belief filtering turns repeated verification votes into an estimate of committed validity, and the loop commits or repairs according to the sign of the true marginal gain, which requires only sign identifiability rather than accurate recovery of all parameters. When verifier discrimination approaches zero, calibration itself fails and estimation error can flip the stopping sign, so we pair VRR-Stop with VRR-Guard, an estimation-free fallback that replaces the incumbent candidate only under a sufficient verification margin. On a GSM8K stress setting, VRR-Stop improves final true validity by 60.6 percentage points over fixed five-round repair at an average cost of 0.72 repair rounds. Across settings, stopping reliability is governed jointly by verifier discrimination and the decision margin rather than by the absolute size of estimation error.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2607.17628v1' target='_blank'>Token Communications (TokCom): A Unified AI-Native Communication Framework</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yaru Fu, Liang Ji, Sabita Maharjan, Tony Q. S. Quek</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-07-20 07:36:34</h6>
+<p class='card-text'>As artificial intelligence (AI) evolves from static perception to generative reasoning and autonomous agency, the fundamental principles of wireless communications are undergoing a paradigm shift. The classical Shannon paradigm, centered on reliable bit-level reconstruction for users, is increasingly misaligned with an emerging scenario in which the primary users of the network are interconnected AI agents. This article introduces token communications (TokCom), a novel framework that elevates tokens, i.e., the fundamental processing units of large language models (LLMs), to first-class entities for information exchange in the sixth generation wireless cellular networks (6G). We first examine the architectural transition from conventional communication systems to TokCom and identify the key challenges in implementing this transition, along with potential solution approaches. Thereafter, we present a practical case study to demonstrate the effectiveness of token sharing among heterogeneous language models. Finally, we outline promising future research directions toward realizing an AI-native, token-driven communication paradigm suitable for 6G.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2607.17564v1' target='_blank'>ZifaMem: Structured Memory for Persona, Preference, and Emotional Continuity in AI Companions</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Jingzhe Fang, Guozhi Xu, Yunfan Cui, Xiaochen Yang, Zhangyu Hua</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-07-20 05:18:40</h6>
+<p class='card-text'>AI companions are judged not only by single-turn fluency but by whether they sustain emotional continuity: remembering who the companion is, what the user prefers, and how the relationship has felt. We present ZifaMem, a structured memory system that organizes dialogue into session summaries, episodic memories, and a consolidated user model. Against a deployment-honest comparator that supplies the full raw dialogue history, and under a fixed LLM-as-a-judge protocol with route audits, structured memory raises pooled four-backbone emotional-intelligence scores by 11.4% (95% CI 6.3% to 17.1%), and persona grounding improves on all four backbones (Claude +42% relative). Multi-turn affect context wins a +39% net preference over a single-turn snapshot (exploratory), whereas an additional emotion state machine yields no measurable gain on any of five endpoints. Under an identical preregistered protocol, three memory systems (ZifaMem, Mem0, and filtered verbatim retrieval) each improve significantly over raw-history deployment, and ZifaMem and Mem0 are statistically equivalent within +/-5 points on the preregistered primary preference endpoint. The ZifaMem SDK, CLI, and portable Agent Skills are open-sourced at https://github.com/zifacorp/zifamem.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2607.17545v1' target='_blank'>Retain or Consolidate? Budget-Dependent Operator Selection for Language Agent Memory</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Qingcan Kang, Mingyang Liu, Shixiong Kai, Kaichao Liang, Zhentao Tang, Yuqi Cui, Tao Zhong, Mingxuan Yuan</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-07-20 04:43:47</h6>
+<p class='card-text'>Language agents depend on memory across interactions. However, the limited context windows of large language models (LLMs) and their inference costs constrain how much memory can be used at once. Existing systems mainly follow two strategies: memory retention and memory consolidation. Retention keeps raw records and preserves exact details, but relevant evidence may not fit under a tight budget; consolidation compresses and combines records, improving coverage per token but risking the loss of query-critical details. Neither strategy is universally preferable. This raises two central questions: when should consolidation replace retention, and which operator -- Merge, Abstract, or Rewrite -- should be selected? We formalize this decision by decomposing each operator's utility into a coverage effect on evidence omitted by retention and a signed replacement effect on raw evidence that already fits. Their balance explains why the preferred action changes with relative budget pressure. We implement this mechanism with Offline Abstraction-Safety (OAS), a lightweight learner that estimates action utilities from pre-generation features with held-out harm calibration. The public LongMemEval and LoCoMo benchmarks show the same budget-dependent pattern. On LongMemEval, consolidation improves absolute accuracy by up to 48% under tight budgets, whereas retention is preferable under loose budgets; LoCoMo replicates this crossover at a smaller budget, consistent with its shorter evidence. On both datasets, cross-note abstraction and merging generally outperform local rewriting when compression is necessary.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2607.17531v1' target='_blank'>Oracle Gap and Signal Fidelity: A Fixed-Pool Diagnostic for Test-Time Collaboration</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Jie Hu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-07-20 04:09:19</h6>
+<p class='card-text'>Test-time collaboration, including self-consistency, best-of-N selection, critic models, and verifier pipelines, is often credited with broadly improving LLM reasoning, yet its gains are uneven and sometimes negative. We ask when training-free collaboration should be expected to help. For a fixed candidate pool, we decompose a selector or verifier's net gain into measurable factors: recoverable mass, verification-signal coverage, conditional selection quality, and harm to already-correct outputs. This reframes collaboration as a candidate-selection problem rather than as an intrinsic property of a multi-agent topology. Across LiveCodeBench, MATH Level-5 hard subjects, and GPQA-Diamond, gains are bounded first by the oracle gap and then by signal fidelity, which we measure directly as candidate-level agreement between verifier verdicts and official labels. On LiveCodeBench, a public-test verifier (MCC 0.825) gains +8.14 percentage points (pp) over a first-sample baseline; a generated-test verifier (MCC 0.248) improves by +2.70pp and is not statistically distinguishable from an LLM selector, but operates at near-zero harm versus the selector's 4.69% harm rate. On MATH, a symbolic answer-equivalence selector beats self-consistency by +4.67pp, while LLM selectors are negative. On GPQA-Diamond, recoverable mass is only 3.03% and 87.54% of candidate pools are answer-identical; a weaker model's pools shrink both further, suggesting that oracle gap is a joint property of task, model, and sampling configuration. Our framework yields a practical pre-deployment diagnostic: estimate the oracle gap, then measure coverage, signal fidelity, and harm before investing in collaboration.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2607.17528v1' target='_blank'>Can AI Agents Really Complete RTL-to-GDS? Lessons from Benchmarking Tool-Interactive EDA Workflows</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Jinyuan Deng, Zhengrui Chen, Xufeng Wei, Tianyu Xing, Chenyi Wen, Cheng Zhuo</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-07-20 04:08:06</h6>
+<p class='card-text'>LLM-driven agent systems have emerged as a promising paradigm for electronic design automation (EDA), demonstrating strong potential for automating complex design workflows. However, existing evaluations primarily examine individual language models on isolated EDA tasks, providing limited insight into how different agent systems perform across complete EDA flows. In this work, we present FluxBench, a systematic evaluation of AI agents on end-to-end EDA workflows under unified prompts, tool environments, and technology library settings. Our evaluation covers representative scenarios, including RTL generation with open-source toolchains and an RTL-to-GDS flow using closed-source commercial EDA tools for industrial applications. Through these workflows, we assess agents' capabilities in RTL code generation, iterative repair, tool-feedback utilization, logic synthesis, placement and routing (P&R), and Engineering Change Order (ECO) automation. To further characterize the efficiency of agent systems, we introduce Token ROI, a cost-efficiency metric that measures effective improvements in EDA artifacts relative to token usage and runtime cost. Experimental results show that, even when built on the same foundation model, different agent system architectures can exhibit performance gaps of up to 86.27%. Moreover, among systems with comparable task performance, Token ROI can differ by as much as $105.92\times$. In the RTL-to-GDS flow using PicoRV32 as a case study, FluxEDA achieves an end-to-end score of up to 97.94, outperforming Claude Code equipped with domain-specific EDA skills by up to $8.39\times$. These results indicate that domain-specific skills alone are insufficient to improve agent performance in large-scale EDA scenarios. Instead, both agent system design and foundation model capability play critical roles in enabling effective automated EDA workflows.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2607.17437v1' target='_blank'>Empirical Grounding Improves the Realism of LLM Agents Simulating Human Behavior During Disruptions</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Chen Xia, Zexi Kuang, Yuqing Hu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-07-19 23:06:28</h6>
+<p class='card-text'>Large language model (LLM) agents offer a generative approach to simulating human behavior under conditions that may have few or no direct historical analogues, a common challenge in disaster and infrastructure-disruption planning. However, this generative capacity creates a validity problem: individually plausible agent reasoning may fail to reproduce empirical population behavior. We evaluate whether empirical grounding improves the statistical realism of LLM-agent simulations during disruptions. Specifically, we develop an empirically grounded LLM-agent framework that embeds demographic profiles from the American Community Survey, baseline routines from the American Time Use Survey, and urban spatial context into agent initialization, memory, decision prompts, and activity execution. An independent household survey conducted during the July 2024 Philadelphia heatwave is reserved as an external validation benchmark. Compared with an ungrounded LLM-agent baseline, the grounded model improved reconstruction of normal daily routines, increasing mean correlation with empirical activity profiles from 0.528 to 0.912 and reducing mean squared error from 0.066 to 0.008. Under heatwave conditions, the grounded model better reproduced survey-derived activity profiles, increasing mean correlation from 0.349 to 0.836 and reducing mean squared error from 0.098 to 0.012. The grounded model captured 46.4% of observed heatwave response amplitude, compared with 20.6% for the ungrounded baseline. These findings show that empirical grounding can make LLM agents more statistically credible simulators of population behavior while revealing remaining gaps in modeling human adaptation during disruptions.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2607.17423v1' target='_blank'>TimeLens2: Generalist Video Temporal Grounding with Multimodal LLMs</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yuhan Zhu, Changlian Ma, Xiangyu Zeng, Xinhao Li, Zhiqiu Zhang, Songze Li, Jun Zhang, Tianxiang Jiang, Yuandong Yang, Ziang Yan, Zikang Wang, Xinyu Chen, Haoran Chen, Shaowei Zhang, Limin Wang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-07-19 22:04:33</h6>
+<p class='card-text'>Video multimodal large language models (MLLMs) can describe what happens in a video, but rarely identify when the supporting evidence occurs. We study generalist video temporal grounding, in which one model predicts a variable-cardinality set of evidence intervals across video lengths, domains, query forms, and viewpoints. Existing training strategies are misaligned with this set-valued task: long-video labels often rely on brittle one-pass annotation, while reinforcement-learning rewards either fail to distinguish non-overlapping predictions or require fragile segment matching. TimeLens2 treats temporal evidence as an interval set throughout supervision and optimization. TimeLens2-93K constructs reliable multi-span supervision through caption-derived proposals, independent localization, cross-agent consensus, semantic verification, and boundary refinement. Our temporal Wasserstein reward computes exact one-dimensional \(W_1\) between uniform distributions over merged interval supports, providing dense, matching-free feedback under unequal cardinalities and equivalent fragmentation; temporal IoU complements it with precise-overlap feedback. Across seven benchmarks, TimeLens2-2B outperforms all size-matched baselines on every benchmark, while the 4B and 8B variants achieve state-of-the-art performance, surpassing open-source models with up to 397B parameters. The 2B, 4B, and 8B variants improve over their Qwen3-VL backbones by 14.2, 13.0, and 18.1 mIoU points, respectively.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2607.17384v1' target='_blank'>Quantifying Diversity of Thought: A Predictive Law of Weighted LLM Ensemble Lift</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Junade Ali</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-07-19 19:01:06</h6>
+<p class='card-text'>This paper provides an experimentally verified formal law for calculating the uplift that diversity of thought provides in Large Language Model (LLM) ensembles. From first principles, we derive an exact decomposition of LLM ensemble lift into rescue and damage masses, which yields a compact heuristic for calculating uplift. From this we extract the metrics which predict ensemble performance: an accuracy adjusted correctness correlation, $φ_{\mathrm{adj}}$, together with the accuracy gap and collective accuracy of the pair. We test the law on 767,520 inferences from ten open-weight models over two graduate-level science benchmarks, together with a novel agentic cybersecurity benchmark in which each model conducts digital-forensics investigations by multi-turn tool use in a network-isolated sandbox (23,520 graded trials including abstentions); all votes are released openly. Calibrated once on SuperGPQA at a 40:60 vote split, the heuristic predicts lift on the calibration set with Spearman's $ρ=0.84$ and, with its coefficients frozen, transfers to two datasets never used in calibration ($ρ=0.51$ on GPQA Diamond and $0.84$ on the forensic tasks), whilst the measured swap mass tracks realised lift with $R^2\ge 0.96$ throughout. Raw $φ$ has almost no predictive power ($R^2\le 0.09$ throughout); the accuracy-adjusted $φ_{\mathrm{adj}}$ is markedly superior ($R^2=0.67$ on SuperGPQA), and the heuristic combining these metrics is the most stable pre pooling predictor across the three datasets.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2607.17331v1' target='_blank'>Agentic ERP: Multi-Agent Large Language Model Architecture for Autonomous Enterprise Resource Planning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Zhihao Liu, Tianyu Wang, Xi Vincent Wang, Lihui Wang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-07-19 16:40:41</h6>
+<p class='card-text'>Enterprise Resource Planning (ERP) systems record transactions reliably but still delegate almost all operational decision-making to human specialists, because classical rule-based automation cannot reason about exceptions and monolithic AI assistants degrade when asked to coordinate across functional boundaries. This paper presents Agentic ERP, an expert-system architecture that combines role-aligned large-language-model (LLM) agents with a risk-tiered human-in-the-loop harness and a graph-based orchestrator to execute end-to-end business workflows on a production ERP backend. First, autonomous ERP operation is formulated as a constrained sequential-decision problem over a structured enterprise state, with a decomposition argument linking role-aligned agents to a measurable reduction in per-step tool-selection complexity. Second, a graph-based Planner--Executor--Reflector--Responder orchestration decouples generation from evaluation through externalised grading criteria and sprint contracts, packaging recent harness-engineering principles as inspectable expert-system artefacts. Third, the system is evaluated at three levels: a scenario-based task suite, a comprehensive comparison of six orchestration paradigms on cross-functional crisis tasks, and a 365-day agent-in-the-loop simulation against rule-based RPA and no-intervention baselines. Across these levels the proposed multi-agent method is significantly better than the baseline, and the system sustains a simulated year of operation with zero stockouts while the rule-based baseline accumulates hundreds under the same demand stream. The work shows that role-aligned LLM agents under human oversight can move an ERP system from passively recording transactions to actively executing operational decisions, and it provides a reference architecture and an evaluation protocol for autonomous enterprise resource planning.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2607.17288v1' target='_blank'>SAGA: Synthetic Agentic Graph Architecture for Temporal Benchmark Generation</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Jiacheng Ding, Xiaofei Zhang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-07-19 15:09:21</h6>
+<p class='card-text'>High quality temporal graph benchmarks with rich semantics and ground-truth anomaly labels are essential for training graph neural networks, yet remain scarce due to privacy constraints and annotation costs. We present SAGA (Synthetic Agentic Graph Architecture), a system for generating large-scale, semantically rich temporal graphs via a four-phase pipeline. Our Skeleton-First, Semantics-Second architecture decouples structure from semantics: (S) an O(1)-per-edge skeleton generator produces power-law graphs; (A) a dispatcher partitions causally ordered time blocks for parallel execution; (G) LLM agents inject domain semantics using RAG-based rule bases across four domains; and (A) a state alignment engine resolves conflicts via temporal replay, yielding anomaly labels as natural byproducts. Unlike structural generators (e.g., LDBC SNB, Kronecker/R-MAT) or purely LLM-based approaches, SAGA achieves structural realism, semantic richness, and automatic anomaly labeling in a unified framework. On a single H100 GPU with vLLM batching, SAGA generates 500,000 temporal edges with controlled anomalies in under 90 minutes, scaling to 100,000 nodes while maintaining clustering coefficients above 0.99. The system supports real-time pipeline visualization, interactive multi-domain tuning (Finance/AML, Network/IDS, Cyber/APT, Transportation), and a CLI for large-scale GPU-based experiments.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js'></script>
+</body>
+</html>

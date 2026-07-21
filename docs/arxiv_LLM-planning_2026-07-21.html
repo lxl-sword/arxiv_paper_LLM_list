@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<title>LLM-planning - 2026-07-21</title>
+<link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap' rel='stylesheet'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'>
+<style>
+body {
+font-family: 'Roboto', sans-serif;
+background-color: #f5f7fa;
+padding: 20px;
+}
+.card {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.card-title {
+    font-weight: 700;
+}
+.card:hover {
+    transform: scale(1.02);
+    transition: 0.3s ease-in-out;
+}
+</style>
+</head>
+<body>
+<div class='container'>
+<h1 class='text-center my-4'><i class='fas fa-book'></i>LLM-planning - 2026-07-21</h1>
+<div class='row'>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2607.18147v1' target='_blank'>LLMs and Agentic AI Systems for Smart Grids: A Tutorial on Architectures and Applications</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Daniela Rojas, Abdulwahab Albassam, Aidan G. Leung, Jett Ngo, Ryan Luo, Peter R. Quawas, Junpyung Kim, Kangkai Liang, Mansi Nanavati, Jonathan Mai, Meng-Chi Tsai, Yun-Tong Tsai, Yize Chen, Yuanyuan Shi</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-07-20 16:45:13</h6>
+<p class='card-text'>Large language models (LLMs) and agentic AI systems have evolved from natural language tasks to using external tools to plan, retrieve, and act in technical domains. In smart grids, recent work applies agentic schemes to forecasting, optimization, and control, wrapping trusted solvers behind language interfaces and orchestrating multi-step workflows. The literature lacks a unified approach to designing and evaluating such systems. LLMs can produce numerically plausible yet physically infeasible outputs, evaluation protocols vary across tasks, and the boundary between what the model should and should not compute is implicit. This paper presents a solver-grounded design principle: a numerical result is reported only when it originates from a trusted tool and passes explicit verification. We review the building blocks of LLM and agentic AI systems for power systems: prompting strategies and agentic architectures. We instantiate the principle in four case studies: wind power forecasting, EV charging scheduling, power flow analysis, and contingency diagnosis, each comparing an LLM-only baseline against its solver-grounded counterpart on identical data and metrics. EVAgent reproduces the CVXPY optimum while reducing LLM-only unmet energy by 7.5-9.5x, and GridDebugAgent repairs 17/39 contingency cases while reducing total violations by 52.3%. We propose a four-group evaluation framework spanning task utility, solver-grounded correctness, faithfulness and safe failure, and cost and latency. A consistent division of labor emerges: the agentic system reliably orchestrates, retrieves, and explains, while trusted tools compute and a verification gate decides what is reported.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2607.18034v1' target='_blank'>AdaHome: An Adaptive Smart Home Assistant using Local Small Language Models</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Eu Jin Lim, Zhaoxing Li, Sebastian Stein</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-07-20 15:01:41</h6>
+<p class='card-text'>Smart home assistants interpret a wide range of user commands, from explicit device control to underspecified and preference dependent requests. While recent systems based on Large Language Models (LLMs) improve this capability, they often rely on heavyweight reasoning pipelines and cloud-based deployment, limiting their efficiency and suitability for resource-constrained environments, and raising privacy concerns. In addition, existing approaches provide limited support for stable long-term personalization. To address these issues, we present AdaHome, an adaptive smart home assistant designed for locally deployed small language models in smart home environments. Rather than applying complex reasoning uniformly, AdaHome introduces an intent-aware planning framework that dynamically routes commands either to straightforward prompt-based or lightweight reasoning-based components. For commands requiring interpretation, we adopt a Chain-of-Draft strategy to enable efficient and stable decision-making. To support personalization, we further propose a preference adaptation mechanism that learns from user feedback over time without requiring prompt augmentation or model retraining. We evaluate AdaHome against representative LLM-based baselines under a unified small model setting. AdaHome achieves substantially higher accuracy on direct commands (86.7%) while reducing latency by up to 3$\times$. Furthermore, it maintains competitive performance on ambiguous inputs with lower computational cost. In multi-turn scenarios, AdaHome achieves 88% preference consistency, compared to 52.5% for a prompt augmentation baseline.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2607.17935v1' target='_blank'>DeLIVeR: Decomposed Learning for Information-grounded Veracity Recognition via Reinforced Knowledge Graph Exploration</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Cong Hoan Nguyen, Thomas Hoang, Hieu Minh Duong, Long Nguyen</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-07-20 13:32:42</h6>
+<p class='card-text'>Automated fact-checking remains a challenge for Large Language Models (LLMs) due to "query brittleness" in traditional retrieval systems. We propose DeLIVeR (Decomposed Learning for Information-grounded Veracity Recognition), a framework that treats evidence retrieval as a reinforced strategic exploration task. DeLIVeR utilizes a Planner LLM to decompose complex claims into targeted question sets, which are used to traverse structured Knowledge Graphs (KGs) for high-precision evidence. We optimize the Planner's policy using Group Relative Policy Optimization (GRPO) with a reward system prioritizing structural diversity and verdict accuracy. Our evaluation on LIAR, FEVER, and PolitiFact shows that DeLIVeR significantly outperforms state-of-the-art baselines. Using Qwen2.5-7B, our framework achieved peak F1-scores of 83.73, 84.57, and 79.70 respectively, representing a 10-15% improvement over HippoRAG2. By shifting to a reinforced question-planning strategy, DeLIVeR effectively bridges multi-hop reasoning gaps and provides an auditable, transparent path for verifiable misinformation detection.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2607.17774v1' target='_blank'>Persona-as-Configuration: Generative Stakeholder Reporting for Agricultural Floods</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Oliver Aleksander Larsen, Tiziano Santilli, Francesco Daghero, Mahyar T. Moghaddam</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-07-20 10:06:47</h6>
+<p class='card-text'>Cyber-physical systems built on deterministic edge inference, such as on-vehicle flood detection for agricultural fields, produce structured decision logs that must be interpreted differently by heterogeneous stakeholders. Pairing such systems with large language models (LLMs) to generate stakeholder-specific reports introduces a tension: the generative layer is non-deterministic, while the edge plane must remain replayable and auditable. We propose an architectural pattern resting on two invariants: unidirectional consumption, in which the generative layer is a strict read-only consumer of the deterministic plane and never writes back, and persona-as-configuration, in which stakeholder adaptation is a versioned prompt-template artifact rather than runtime improvisation. We instantiate the pattern as a context-aware dashboard layer over the JSON decision logs of a previously published edge-based standing-water detection system, and analyse how the integration boundary admits standard generative-reliability mitigations as configuration- or middleware-level extension points. A structured expert review rated the pattern favourably across five ISO/IEC 25010-aligned quality dimensions, with strongest agreement on separation of concerns. End-user evaluation with agricultural stakeholders is planned for future work.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2607.17710v1' target='_blank'>Planning with Transformers: Chain of Computation and Structured Context Windows</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Ehsan Futuhi, Nathan R. Sturtevant</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-07-20 09:06:15</h6>
+<p class='card-text'>Large Language Models (LLMs) have had a remarkable impact across many areas of machine learning. However, recent studies have shown that they struggle to reliably solve planning problems. At the same time, theoretical results have shown that transformers, the core architecture underlying modern LLMs, are Turing-complete. In this work, we investigate this apparent gap between the theoretical computational power of LLMs and their empirical planning performance. We propose Chain of Computation (COC), a computational architecture that places a transformer-based LM inside an iterative loop, leveraging its strength as a pattern-matching system. The COC uses a Structured Context Window (SCW) which provides a constant-sized context window with support for choosing which window is used at each planning step. Within this architecture, the LM is able to learn a planning policy, predicts the world model, and performs the arithmetic operations required during planning. We show that, when given an append-only SCW (resembling a Turing Machine tape), even relatively small LMs trained from scratch can learn planning policies and generalize from a small number of training instances within each planning domain, achieving success rates above 99.89\% on BlocksWorld and the Pancake puzzle. Our analysis of failure cases in Tower of Hanoi (TOH) reveals that they arise from arithmetic operations or from encountering previously unseen tokens. We show that COC can solve TOH problem instances with up to 20 disks, requiring over 1 million actions, while requiring substantially less training data by either (1) planning with symbolical support for arithmetic or by (2) using a deterministic pushdown automaton (PDA) formulation for the SCW.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2607.17701v1' target='_blank'>ProEvent: An Event-centric Benchmark for Proactive Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Guanzhen Li, Liangming Pan, Leye Wang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-07-20 08:48:36</h6>
+<p class='card-text'>Proactive agents are expected to anticipate user needs and provide autonomous assistance by perceiving environmental context without explicit instructions. A fundamental capability of such agents is to identify and track users' upcoming events, enabling continuous and event-specific assistance. For example, by recording the time and location of a planned hike, an agent can deliver weather reminders in advance or provide navigation support before departure. However, existing works on proactive agents largely overlook event-centric assistance, and the open-ended nature of proactive assistance poses challenges for reliable evaluation.
+  To bridge these gaps, we introduce ProEvent, the first event-centric benchmark designed to assess an agent's ability to proactively maintain a user's timetable based on ongoing instant messaging chats. ProEvent provides synthesized yet realistic chats that consider the dynamic interaction among users, concurrent chat threads, and noise in the real world, and evaluates proactive agents on response timing, single-step response correctness, and multi-step response correctness. Experiments on eight LLMs and pipelines reveal that current agents frequently overact and struggle with event cancellation. Notably, even GPT-5.1 only reacts correctly in 26.7% of scenarios. Further qualitative analysis reveals fundamental limitations of current LLMs as proactive agents, particularly in detecting implicit events and reasoning from the user's first-person perspective.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2607.17641v1' target='_blank'>Verify, Repair, Repeat, or Stop? Robust Stopping for Noisy Verify-Repair Loops in LLM Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yitao Wu, Si Shen, Rui Yang, Hong Peng, Bin Hu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-07-20 07:52:36</h6>
+<p class='card-text'>Verify-repair loops are a standard means for large language model (LLM) agents to correct faulty plans in code generation, mathematical reasoning, and tool use. When both the verifier and the repairer are noisy, repair can damage already-correct plans, and reported acceptance keeps rising while true validity falls, so existing methods lack a principled basis for deciding when repair should stop. We propose VRR-Stop, a robust stopping framework for noisy verify-repair-repeat (VRR) loops. A four-parameter noise model separates verifier false acceptance and false rejection from the repair and damage behavior of the repairer. Belief filtering turns repeated verification votes into an estimate of committed validity, and the loop commits or repairs according to the sign of the true marginal gain, which requires only sign identifiability rather than accurate recovery of all parameters. When verifier discrimination approaches zero, calibration itself fails and estimation error can flip the stopping sign, so we pair VRR-Stop with VRR-Guard, an estimation-free fallback that replaces the incumbent candidate only under a sufficient verification margin. On a GSM8K stress setting, VRR-Stop improves final true validity by 60.6 percentage points over fixed five-round repair at an average cost of 0.72 repair rounds. Across settings, stopping reliability is governed jointly by verifier discrimination and the decision margin rather than by the absolute size of estimation error.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2607.17437v1' target='_blank'>Empirical Grounding Improves the Realism of LLM Agents Simulating Human Behavior During Disruptions</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Chen Xia, Zexi Kuang, Yuqing Hu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-07-19 23:06:28</h6>
+<p class='card-text'>Large language model (LLM) agents offer a generative approach to simulating human behavior under conditions that may have few or no direct historical analogues, a common challenge in disaster and infrastructure-disruption planning. However, this generative capacity creates a validity problem: individually plausible agent reasoning may fail to reproduce empirical population behavior. We evaluate whether empirical grounding improves the statistical realism of LLM-agent simulations during disruptions. Specifically, we develop an empirically grounded LLM-agent framework that embeds demographic profiles from the American Community Survey, baseline routines from the American Time Use Survey, and urban spatial context into agent initialization, memory, decision prompts, and activity execution. An independent household survey conducted during the July 2024 Philadelphia heatwave is reserved as an external validation benchmark. Compared with an ungrounded LLM-agent baseline, the grounded model improved reconstruction of normal daily routines, increasing mean correlation with empirical activity profiles from 0.528 to 0.912 and reducing mean squared error from 0.066 to 0.008. Under heatwave conditions, the grounded model better reproduced survey-derived activity profiles, increasing mean correlation from 0.349 to 0.836 and reducing mean squared error from 0.098 to 0.012. The grounded model captured 46.4% of observed heatwave response amplitude, compared with 20.6% for the ungrounded baseline. These findings show that empirical grounding can make LLM agents more statistically credible simulators of population behavior while revealing remaining gaps in modeling human adaptation during disruptions.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2607.17331v1' target='_blank'>Agentic ERP: Multi-Agent Large Language Model Architecture for Autonomous Enterprise Resource Planning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Zhihao Liu, Tianyu Wang, Xi Vincent Wang, Lihui Wang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-07-19 16:40:41</h6>
+<p class='card-text'>Enterprise Resource Planning (ERP) systems record transactions reliably but still delegate almost all operational decision-making to human specialists, because classical rule-based automation cannot reason about exceptions and monolithic AI assistants degrade when asked to coordinate across functional boundaries. This paper presents Agentic ERP, an expert-system architecture that combines role-aligned large-language-model (LLM) agents with a risk-tiered human-in-the-loop harness and a graph-based orchestrator to execute end-to-end business workflows on a production ERP backend. First, autonomous ERP operation is formulated as a constrained sequential-decision problem over a structured enterprise state, with a decomposition argument linking role-aligned agents to a measurable reduction in per-step tool-selection complexity. Second, a graph-based Planner--Executor--Reflector--Responder orchestration decouples generation from evaluation through externalised grading criteria and sprint contracts, packaging recent harness-engineering principles as inspectable expert-system artefacts. Third, the system is evaluated at three levels: a scenario-based task suite, a comprehensive comparison of six orchestration paradigms on cross-functional crisis tasks, and a 365-day agent-in-the-loop simulation against rule-based RPA and no-intervention baselines. Across these levels the proposed multi-agent method is significantly better than the baseline, and the system sustains a simulated year of operation with zero stockouts while the rule-based baseline accumulates hundreds under the same demand stream. The work shows that role-aligned LLM agents under human oversight can move an ERP system from passively recording transactions to actively executing operational decisions, and it provides a reference architecture and an evaluation protocol for autonomous enterprise resource planning.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2607.17281v1' target='_blank'>AIGB-R1: Self-Evolving Generative Auto-Bidding via Hierarchical Planner-Executor Optimization</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yuejia Dou, Hesong Wang, Xinyu Zhang, Tianyu Wang, Zhilin Zhang, Chuan Yu, Jian Xu, Bo Zheng, Qi Qi</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-07-19 14:59:12</h6>
+<p class='card-text'>Auto-bidding plays an essential role in online advertising, automatically adjusting bids for advertisers to optimize their commercial goals. The emerging AI-Generated Bidding (AIGB) paradigm widely adopts generative modeling to optimize bidding strategies, yet suffers from the limited mode coverage of offline datasets and inadequate task-state understanding, hindering effective exploration of optimal strategies. Large Language Models (LLMs), with prior world knowledge and reasoning capabilities, offer a promising approach to overcome these limitations. However, directly applying LLMs to auto-bidding tasks faces inherent challenges in limited numerical precision, hallucinations, and inference latency. To address these limitations, we propose AIGB-R1, a hierarchical self-evolving auto-bidding framework aiming to enhance AI-Generated Bidding via LLMs' Reasoning capabilities, comprising a high-level Planner module for macro-level strategy planning and a low-level Executor module for fine-grained decision-making. Building upon this, we design an experience-driven self-evolving loop, enabling autonomous strategy exploration and optimization from accumulated experience. We adopt a two-stage pipeline of offline pre-training and post-training alignment, and build an interactive bidding simulation environment for strategy rollout. Furthermore, we propose Decoupled Group Relative Policy Optimization (D-GRPO) to achieve end-to-end optimization via advantage decoupling. Experimental results on a large-scale public dataset demonstrate the effectiveness of AIGB-R1.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2607.17038v1' target='_blank'>Reward-Driven LLM Agent Workflows: Synthesizing POMDP Routing and Self-Correction for Autonomous Decision-Making</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Amez Amanj Ali, Kuo-Kun Tseng</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-07-19 02:51:41</h6>
+<p class='card-text'>This paper addresses key technical challenges in current large language model (LLM) agent applications, including long-horizon planning, sparse reward attribution, and dynamic environmental interaction, by designing and optimizing an intelligent agent workflow. The proposed architecture is based on the synthesis of core AI paradigms: Visual, Language, Generative, Graph, Multimodal, Reinforcement, and Agent Intelligence. Unlike conventional baseline models that rely on static prompting and lack robust perception-action loops, our approach introduces a Partially Observable Markov Decision Process (POMDP) routing mechanism. This mechanism is augmented with an internal, self-correcting reward model that evaluates decision trajectories before execution. By integrating multimodal inputs and advanced reinforcement learning principles (such as proximal policy optimization and value function approximation), the agent maintains long-term structural memory and dynamically adapts its reasoning pathways to mitigate error accumulation. Empirical experiments on the ALFWorld embodied simulation environment and the WebShop online navigation benchmark demonstrate a 24.5% absolute improvement in task success rate and trajectory efficiency over mainstream baselines like the standard ReAct framework. Comprehensive ablation studies confirm the significant contribution of the reward-driven critique module in suppressing hallucination rates. This research bridges theoretical foundations of reinforcement learning and graph-based memory with autonomous agent workflows. Ultimately, the resulting architecture offers a practical, scalable reference framework for developing artificial intelligence technologies in complex, multi-step autonomous systems. Code is available at https://github.com/01Amez/RLAW_Implementation.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2607.17012v1' target='_blank'>Schema-Bound LLM Control of Scientific Instrumentation through Model Context Protocol Skills</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Roberto dos Reis, Vinayak P. Dravid</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-07-19 00:16:24</h6>
+<p class='card-text'>Large language models (LLMs) can plan tool-mediated scientific work, but scientific instruments remain difficult to connect to such agents: vendor APIs may load only inside acquisition host processes, facilities may prohibit cloud-hosted agents, and natural-language interfaces can emit physically unreasonable arguments. We present a method for connecting local LLMs to scientific instruments through the Model Context Protocol (MCP). It combines: (1) a schema-bound tool surface that validates requests against physical bounds before adapter dispatch; (2) a vendor-neutral, host-process adapter pattern separating language-side reasoning from instrument-side execution; (3) a persistent lifecycle for long-running live-processing jobs; and (4) MCP-prompt-registered skills that compose typed tools into reusable multi-step protocols. Our open-source reference server exposes 30 typed tools, 5 live-job types, and 6 skills through a physics-plausible simulator implementing the same protocol surface. Validation is software-only: all 120 hardware-independent tests pass deterministically, while 15 local-LLM integration tests pass 12-15 of 15 across runs because of model nondeterminism. A preliminary single-run probe across five open tool-calling LLMs indicates that the schema-bound interface can be driven locally by small open-weight models without cloud dependency; it is not a benchmark and has no confidence intervals. The method provides a bounded, testable, and reproducible foundation for closed-loop agentic instrumentation research.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2607.16745v1' target='_blank'>RELIC: Revealed Principles for Learning Interpretable Composable Skills in Multi-Agent Planning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Nguyen Viet Tuan Kiet, Bui Dinh Pham, Duong Quoc Chinh, Dao Van Tung, Tran Cong Dao, Huynh Thi Thanh Binh</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-07-18 10:08:54</h6>
+<p class='card-text'>Multi-agent planning becomes substantially harder when agents must improve specialized decision-making skills while keeping their internal implementations private. This regime arises when agents are developed independently, expose different interfaces and capabilities, and must nevertheless coordinate without sharing executable policies. Prior research has largely assumed centralized optimization, shared policy access, or common skill representations, making it poorly suited to privacy-constrained cooperation. We introduce RELIC, a framework for learning interpretable and composable skills via revealed principles. Each agent refines its own programmatic skill through private LLM-guided search, while a trusted orchestrator evaluates proposed updates solely through team-level performance. Successful behaviors are not broadcast as code; instead, they are abstracted into portable principles that other agents can instantiate within their own interfaces and recombine with local strategies. This separates coordination from implementation sharing, enabling cross-agent transfer under heterogeneous skill signatures. RELIC thus introduces a new paradigm for privacy-preserving skill learning and coordination in multi-agent planning.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2607.16591v1' target='_blank'>Learning from World Feedback: Why Model Uncertainty Fails as a Risk Signal in Model-Based RL</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Zhaohui Wang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-07-18 02:17:45</h6>
+<p class='card-text'>The RLxF programme argues that learning signals should come from world feedback rather than from internal model proxies. We instantiate this position in safe model-based control and distil it into three concrete design principles. Empirically, across four world-model architectures spanning a 2x MSE range, MPC planning is statistically equivalent (TOST, n=200), and dynamics-based uncertainty penalties increase collision rates from 26% to 34%: the standard MBRL safety proxy is anti-correlated with safety in this regime. Replacing the model-internal proxy with three world-feedback signals (a sensor-derived margin via minimum lidar, a temporal signal via time-to-collision, and an outcome-supervised feedback model g_psi trained on prior collision labels, structurally analogous to outcome-trained reward models in RLHF) reduces collisions to 1-14% without retraining the world model or the planner. The mechanism is structural: model uncertainty has support over state-prediction space, whereas task risk has support over constraint boundaries, with empirical correlation r < 0.15. From this we extract three RLxF principles (ground risk in world outcomes, validate proxies before deployment, and substitute outcome-trained feedback models when direct world signals are unavailable) and argue they apply equally to model-based control and to verifier-based or RLHF approaches in LLM alignment.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2607.16580v1' target='_blank'>Automating structural reliability analysis with a multi-agent large language model framework</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Jaehwan Jeon, Chang Hee Lee, Taeyong Kim</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-07-18 01:45:27</h6>
+<p class='card-text'>Structural reliability analysis supports the design and safety assessment of buildings and civil infrastructure but requires specialized expertise throughout the workflow. This study presents a multi-agent large language model framework that automates component-level reliability analysis from a natural-language problem statement to interpreted estimates of the reliability index and failure probability. Specialized agents handle problem formulation, method planning, code generation, execution, and result interpretation, with human confirmation at key decision points. The Method Planner is fine-tuned using QLoRA for a priori reliability-method category selection. Analysis results are not generated directly by an LLM; instead, validated deterministic solvers compute the reliability estimates, improving reproducibility and reducing hallucination risk. The framework uses open-weight models and supports local execution without closed APIs. Results show that it lowers the expertise barrier to structural reliability assessment while preserving computational trustworthiness.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2607.16066v1' target='_blank'>LLM-Powered Agentic AI for 5G/6G Networks: A Tutorial and Survey on Architectures, Protocols, and Standardization</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Mazene Ameur, Abdelkader Mekrache, Bouziane Brik, Adlen Ksentini</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-07-17 15:47:23</h6>
+<p class='card-text'>Agentic Artificial Intelligence (AI), enabled by Large Language Models, marks a shift from rule-based automation toward autonomous, goal-driven control of Next-Generation Networks (NGNs). Existing surveys treat the two domains in isolation, leaving protocol integration, evaluation, and standardization alignment underexplored. To address this gap, a two-part tutorial-and-survey is presented. Part I formalises the control, management, and AI-native planes of 5G and 6G. It then covers the foundations of agentic systems: reasoning, planning, tool use, multi-agent coordination, and evaluation. Part II maps agentic capabilities onto 5G/6G control surfaces, standardization, and major 6G initiatives. Finally, it identifies open challenges shaping autonomous telecommunications.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2607.15781v1' target='_blank'>AgentFAIR: A Multi-Agent Collaborative Framework for FAIRness Evaluation of Geospatial Datasets</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Ming Chen, Pranav Pai</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-07-17 09:32:54</h6>
+<p class='card-text'>Geospatial datasets support applications from urban planning to climate modeling, yet consistent assessment of FAIR compliance is difficult. Existing evaluators use different rubrics and evidence sources and may fail on JavaScript-rendered pages or repository-specific identifiers. For 50 datasets from 10 repositories, the standard deviation of normalized scores across available tools averages 15.0 percentage points and reaches 30.3 for one dataset. Because these outputs are not equivalent measurements, we use them to characterize disagreement and failure modes, not comparative accuracy. We present AgentFAIR, a multi-agent framework combining structured metadata extraction with 13 sub-principle-specific LLM evaluators. Each produces a 0-3 maturity score, cited evidence, and recommendations; a critic checks evidence and consistency and can request targeted re-evaluation. Mean Findability, Accessibility, Interoperability, and Reusability scores are 79.7%, 70.4%, 45.3%, and 72.0%. Rank correlations with four baseline tools range from 0.31 to 0.61; the FAIR-enough comparison is not statistically significant. On a 10-dataset repeated-run subset, sub-principle agreement averages 89% (standard deviation: 3 percentage points), versus 71% without the critic. A preliminary 15-dataset expert study yields Fleiss' kappa of 0.71 and 82% alignment with expert consensus. API cost is approximately USD 0.054 per dataset. These results support auditability and feasibility, while the limited benchmark, incomplete ablations, and single-model-family validation constrain claims about accuracy and generalization.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2607.15674v1' target='_blank'>A Generative Partially Specified Finite State Machine Approach to Complex Behaviour Planning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Kalana Ratnayake, Michael Pritchard, David Hinwood, Maleen Jayasuriya, Damith Herath</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-07-17 06:33:31</h6>
+<p class='card-text'>Autonomous robots operating in dynamic environments require behaviour planning systems that combine reactivity, interpretability, and adaptability. While Large Language Models have been successfully integrated with Behaviour Trees for dynamic replanning, Finite State Machines, despite their widespread adoption and computational efficiency, remain unexplored for generative approaches. We propose a Generative Partially Specified Finite State Machine (GPSFSM) neurosymbolic architecture that utilises the symbolic and semantic structure of FSMs, including states and event-triggered transitions, to implement Behaviour Planning. This paper introduces the first GPSFSM framework for robotics, featuring Fabric, an FSM engine that parses, validates, and executes behaviour plans that contain Sequential, Recovery, Parallel-Any, and Parallel-All control structures. We extend the Capabilities2 package in ROS2 with an asynchronous event system for behaviour chaining and runtime parameter injection for configurable execution, addressing the ad-hoc function representations that limit current generative systems. PromptTools provides a unified ROS 2 interface to local and cloud LLMs, with prompt buffering, enabling dynamic asynchronous composition of task and context information. Together, these components enable standardised semantic capability descriptions for robot-agnostic development. Experimental evaluation on navigation tasks demonstrates that our GPSFSM approach achieves consistently higher plan-generation success rates than the state-of-the-art BTGenBot system, particularly excelling in zero-shot scenarios where BTs typically struggle, while maintaining comparable or lower planning latency to frontier LLMs. We also demonstrate that our system can generate complex behaviours. We release an open-source ROS2 stack that makes generative FSM planning practical and reproducible for robotic systems.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2607.15596v1' target='_blank'>From Neural Intent to Cryptographic Authorization: Governing Agentic Workflows</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Jiasi Weng, Jian Weng, Minrong Chen, Ming Li, Jia-Nan Liu, Zhi Li, Yue Zhang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-07-17 03:44:05</h6>
+<p class='card-text'>The rapid adoption of artificial intelligence (AI)-driven and agentic workflows is transforming traditional government and enterprise systems into language-based, tool-using and increasingly autonomous infrastructures. Conventional key management services authenticate who may invoke a cryptographic primitive, but remain agnostic to which workflow steps are authorized at runtime: an authenticated agent can still be hijacked by direct or indirect prompt injection into executing malicious actions that satisfy identity checks yet violate user intent. We present \emph{Neural Cryptographic Services} (NCS), an active security governance plane grounded in a neural-symbolic design and interposed between LLM agents and privileged tools. Under NCS, an untrusted neural planner compiles natural-language instructions into structured plan drafts but holds no execution authority. Execution is instead gated by a deterministic symbolic controller operating over an offline-signed, hash-chained instruction stream. NCS verifies the signature, incrementally validates the hash chain, releases exactly one instruction payload at a time, and enforces strict binding between the agent's proposed tool parameters and the verified payload. Mismatched or out-of-order tool calls are rejected fail-closed, while previously verified states are retained for post-hoc auditing. We evaluate NCS on AgentDojo and a custom argument-hijacking benchmark. NCS drives attack success rates to near zero while preserving acceptable utility on benign workflows. NCS thus reframes agent security from asking whether a model's intent complied to asking whether a proposed dispatch matches a cryptographically authorized step.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2607.15552v1' target='_blank'>From Feasibility to Desirability: Plan, Learn, Adapt (PLA) Framework for Personalized On-Device Itinerary Generation</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Himel Dev, Tanmoy Sen, Madhusudan Basak, Bashima Islam</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-07-17 01:52:02</h6>
+<p class='card-text'>Generating personalized trip itineraries is a complex planning task and involves a tension between hard combinatorial feasibility and soft latent desirability. Classical optimization enforces constraints but fails to capture subjective traveler preferences. While learning-based approaches model preferences, they cannot guarantee feasibility. Mobile deployment imposes additional resource constraints on both. To address this, we propose Plan, Learn, Adapt (PLA), a three-stage framework for personalized on-device itinerary generation. The Plan stage builds a heterogeneous ensemble of lightweight planners that produces structurally diverse feasible candidates. From pairwise itinerary comparisons, Learn fits a compact Bradley-Terry reward model that captures emergent schedule properties such as pacing, geographic coherence, and day balance, which per-POI signals miss. Finally, Adapt applies feasibility-preserving local refinement within a device-aware compute budget; every intermediate state is feasible by construction. On 2,519 pairwise human comparisons across more than 100 U.S. cities, the reward-guided ensemble achieves a 67.8% win rate, 11.2 percentage points above the best single planner, with 100% feasibility. Three frontier LLMs, GPT-5, Claude Opus 4.5, and Gemini 3 Pro, achieve 0% feasibility under the same constraints. The reward model generalizes across held-out cities, with a 67.6% mean leave-one-city-out accuracy. In production deployment within FlyEnJoy, PLA increased itinerary completion rates by 91%, with 109.9 ms average on-device latency.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2607.15367v1' target='_blank'>AnovaX: A Local, Multi-Agent Voice Assistant with LLM Planning, Typed Executors, and Adaptive Recovery</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Raunak B Sinha</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-07-16 18:09:36</h6>
+<p class='card-text'>Desktop voice assistants are still dominated by cloud pipelines that ship raw audio off the machine and expose a fixed set of skills. We describe AnovaX, a small local-first assistant that runs entirely on the user's computer and treats the desktop itself as its action surface. A single Python process wires together a wake-word gate, a speech pipeline, an LLM planner (Gemini) that emits a JSON plan of tool calls, a whitelist-and-denylist safety layer, a multi-agent orchestrator that translates each plan into typed child agents on a bounded thread pool, and an adaptive recovery loop that takes over whenever a core step fails. Every tool corresponds to a specialized agent class (AppAgent, TypingAgent, BrowserAgent and six others) with its own timeout, retry policy, and shared-resource locks. A recursive MetaAgent lets the planner delegate a sub-goal back to itself, capped at two levels of nesting. The recovery loop uses a compact ReAct-style prompt and hides Gemini's latency behind speculative execution of read-only tools. A companion Flask server exposes a phone-friendly remote over the local WiFi, mirrors every agent lifecycle event to the phone in real time, and streams the laptop's screen back over MJPEG so the user can watch remote commands land as they run. The point of the project is less to compete with Siri or Alexa than to show that a legible, few-thousand-line assistant is enough to open apps, type into them, run searches, coordinate concurrent actions, recover from single-step failures, and be driven entirely from a phone in another room -- without the LLM ever touching the keyboard.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2607.14675v1' target='_blank'>An Intelligent-Cloud Edge Multimodal Interaction System for Robots</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Zihan Guo, Xiaoqi Li</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-07-16 07:39:18</h6>
+<p class='card-text'>Robust human-robot interaction in complex environments requires accurate gesture perception, semantic scene understanding, and reliable task planning under limited onboard computing resources. This paper presents a cloud-edge multimodal interaction framework that integrates an enhanced YOLO-based gesture detector with coordinated large language model (LLM) and vision-language model (VLM) agents. The proposed detector, incorporates the Convolutional Block Attention Module (CBAM) into the neck and replaces the baseline bounding-box regression objective with Distance-IoU (DIoU) loss. These modifications improve feature discrimination and localization for small or partially occluded gestures in complex backgrounds. The cloud layer performs gesture detection, scene understanding, multimodal fusion, and action planning, whereas the TonyPi robot locally handles data acquisition, communication, action execution, and feedback. Experiments on a public gesture dataset and a custom dataset show that YOLO-DC achieves precision values of 98.9% and 95.0%, with mAP@0.5 values of 90.7% and 92.7%, respectively. System-level evaluation yields success rates of 95%, 88%, and 82% for single-action, composite-action, and vision-dependent tasks. A 30 participant evaluation yields an overall mean satisfaction score of 3.69 out of 5. These results demonstrate the feasibility of combining refined gesture detection with multimodal agents for resource-constrained robotic interaction.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2607.14661v2' target='_blank'>SmartRAG: Native Graph-Based RAG for Mobile Device</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Zhihan Jiang, Meng Li, Shenghao Liu, Keran Li, Ruiben Zhou, Wei Wang, Xianjun Deng, Shuai Wang, Haipeng Dai</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-07-16 07:28:31</h6>
+<p class='card-text'>Deploying large language models (LLMs) as personal assistants on mobile devices demands privacy, low latency, and offline availability, yet the computational cost of giant models clashes with strict edge-hardware budgets. We argue that this tension cannot be resolved by model compression alone; it requires decomposing on-device intelligence into complementary functional roles. We present SmartRAG, a fully on-device framework that organizes an intelligent assistant around four coordinated modules -- Perception, Memory, Focus, and Thinking. At the core of SmartRAG is EvoNER, a continually learnable named-entity recognizer that incrementally expands its label inventory through teacher-distilled updates, enabling the system to absorb previously unseen entity types without retraining the backbone LLM. Extracted knowledge is stored in MRGraph, a three-layer provenance-preserving knowledge graph, and retrieved at query time through a hybrid pipeline combining graph traversal, lexical matching, and dense semantic search. The on-device LLM is invoked only for high-value semantic operations -- labeling, planning, and answer synthesis -- keeping inference costs bounded. Experiments on four QA benchmarks (TriviaQA, Natural Questions, HotpotQA, MultiHopQA) show that SmartRAG with a quantized 1.7B-parameter backbone achieves multi-hop reasoning performance competitive with models up to 18$\times$ larger, while running entirely on commodity smartphones within practical memory and latency envelopes.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2607.14642v1' target='_blank'>MCPEvol-Bench: Benchmarking LLM Agent Performance Across Dynamic Evolutions of MCP Servers</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Huanxi Liu, Kun Hu, Jiaqi Liao, Qiang Wang, Pengfei Qian, YuanZhao Zhai, Dawei Feng, Bo Ding, Huaimin Wang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-07-16 07:09:49</h6>
+<p class='card-text'>As Model Context Protocol (MCP) servers emerge as the core infrastructure for connecting LLMs with external tools, existing benchmarks leverage real-world MCP servers to evaluate LLM agents' tool-using capabilities. However, these benchmarks overlook the continuous evolution of tool interfaces and functionalities within MCP servers, resulting in flawed assessments that fail to capture the agent's adaptability in changing tool landscapes. To bridge this gap, we introduce \textbf{MCPEvol-Bench}, a novel benchmark for evaluating the task-solving capabilities of LLM agents under dynamic toolset evolution. Inspired by large-scale empirical study, we propose 11 mutation operators to simulate realistic tool evolution within 123 MCP servers. We benchmark 12 state-of-the-art LLMs on multiple versions of MCP servers, revealing that even frontier models struggle to adapt to evolving tools. For instance, GPT-5.4 and Claude-Sonnet-4-6 exhibit performance declines of 13.7\% and 14.4\% in evolved MCP servers, respectively, accompanied by substantial increases in planning and reasoning errors. These findings highlight the vulnerability of LLM-driven workflows, establishing MCPEvol-Bench as a standard for evaluating agent adaptability in dynamic tool environments.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2607.14512v1' target='_blank'>RetroAgent: Harnessing LLMs to Search Over Structured Memory for Agentic Retrosynthesis Planning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yanqiao Zhu, Jingru Gan, Xiaoqi Sun, Fang Sun, Yidan Shi, Md Mofijul Islam, Chao Shang, Wenhao Gao, Connor W. Coley, Yizhou Sun, Wei Wang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-07-16 03:05:38</h6>
+<p class='card-text'>Multi-step retrosynthesis planning seeks to decompose a target molecule into commercially available building blocks through a sequence of feasible reactions. The vast combinatorial search space makes this task challenging even for expert chemists. Traditional methods combine tree search with offline-trained value networks that score candidates in isolation, without reasoning about complete multi-step routes. Recent work leverages Large Language Models (LLMs) for this task, but relies on simple interfaces that limit exploration of the full search space. We introduce RetroAgent, an LLM agent that bridges symbolic search and neural reasoning through a harness with structured memory. Through memory and chemistry tools, the agent observes the full search state, including explored routes, available alternatives, and properties of intermediates, enabling informed decisions grounded in both global progress and domain knowledge. Experiments on in-distribution and out-of-distribution benchmarks demonstrate that RetroAgent delivers strong performance and generalization.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2607.14485v1' target='_blank'>Step-Level Preference Learning for Generative Agents in Social Simulations</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Wenchang Gao, Pingyue Sheng, Lanlan Qiu, Yunfei Ma, Jian Zhao, Baicheng Chen, Kangda Wang, Yuyang Tian, Shunqiang Mao, Tianxing He</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-07-16 01:58:53</h6>
+<p class='card-text'>Large language model (LLM)-based generative agents simulate human behavior through long-horizon decision-making processes that comprise intermediate steps such as planning, memory retrieval, reflection, and action selection. However, fine-grained human annotations of these intermediate steps remain scarce, and existing agents are not grounded in human preferences over such intermediate decisions. To address this gap, we introduce \method, an interactive simulation interface that enables us to collect step-level human preference supervision over agent decision trajectories, leading to a dataset of 57K fine-grained annotations. We conduct step-level preference learning on open-weight language models using supervised finetuning and direct preference optimization on this data, consistently improving simulation fidelity, coordination, and interaction quality, and inducing more socially effective agent behavior. Our results show that step-level human supervision is an effective training signal for improving both local decision quality and long-horizon agent behavior.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2607.15314v1' target='_blank'>Cura 1T: Specialized Model for Agentic Healthcare</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:actAVA AI, :, Haolin Chen, Leon Qi, Steve Brown, Deon Metelski, Tao Xia, Joonyul Lee, Qixuan Wang, Kevin Riley, Frank Wang, Weiran Yao</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-07-15 22:05:23</h6>
+<p class='card-text'>Healthcare spans high-stakes communication, expert reasoning, and workflow execution, yet specialized LLMs that cover these use cases together remain limited. A healthcare model must handle patient consultation, clinical reasoning over text and images, interactive diagnosis, and electronic health record (EHR) tool use. These capabilities fail in different ways, and a narrow update for one task can degrade another. We present Cura 1T, a healthcare-specialized LLM trained through a human-gated self-evolution loop. In each evolution round, a training agent plans a target capability, trains the model, evaluates benchmark trajectories, and refines the data mixture from observed failures. This data-centered loop improves the model through targeted synthetic and curated examples rather than a single generic medical-data update. Across the healthcare evaluation suite, Cura 1T ranks at or near the top among frontier baselines, while remaining competitive on out-of-domain reasoning and agentic benchmarks.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2607.14169v2' target='_blank'>When a Verified World Model Still Loses: Play-Adequacy vs Prediction-Accuracy in LLM-Synthesized Code World Models</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Javier Aguilar Martín</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-07-15 08:54:59</h6>
+<p class='card-text'>Large language models can synthesize a game's rules as executable code - a Code World Model (CWM) - which a classical planner then searches over. Such models are typically accepted when they reach high transition accuracy on sampled trajectories. We argue this is the wrong notion of adequacy for planning.
+  We show four things. (1) An LLM-synthesized CWM can pass a sampling gate at 100% transition accuracy and be $\geq 98\%$ state-accurate on the planner's own search distribution, yet lose systematically at play, because the $<1\%$ it gets wrong is exactly the pivotal dynamics; the play cost of the omitted rule is $0.091$ (seed-clustered 95% CI $[0.065,0.117]$, $n=4800$). We call this the verified-vs-correct gap, and confirm it end-to-end through the synthesis pipeline. (2) The harm follows a quantitative law, $\mathrm{danger}=\mathrm{play\_cost}\times(1-\mathrm{rarity})^N$, whose $(1-\mathrm{rarity})^N$ gate-miss factor is proven exact and whose play cost is empirically bounded. (3) The failure is not repaired by more data: LLM synthesis behaves as rule translation, not rule inference, and did not infer the omitted rule across models (GPT-5.x) and data regimes (including DAgger and targeted examples). (4) The same mechanism recurs on the belief-inference function of imperfect-information CWMs: we prove a coverage bound (a size-$N$ gate is identifying when $N\gtrsim b^{d_{\max}}$), explaining why shallow games such as Kuhn poker show no gap, and hand-construct Beacon, a verified-but-wrong inference function that passes the gate yet loses every game.
+  These results suggest adequacy for planning-oriented world models should be measured on the search distribution or by play directly, not by prediction accuracy on sampled transitions.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2607.13591v1' target='_blank'>Memory as a Controlled Process: Learned Adaptive Memory Management for LLM Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Eric Hanchen Jiang, Zhi Zhang, Yuchen Wu, Levina Li, Dong Liu, Xiao Liang, Rui Sun, Yubei Li, Edward Sun, Haozheng Luo, Zhaolu Kang, Aylin Caliskan, Kai-Wei Chang, Ying Nian Wu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-07-15 08:32:40</h6>
+<p class='card-text'>Large Language Model (LLM) agents increasingly rely on external memory systems to accumulate experience across tasks. Yet nearly all existing approaches, from graph-structured memories to reflective insight stores, access memory through fixed, hand-designed heuristics. We argue that this static view of memory is a core bottleneck for agentic learning because optimal memory behavior is fundamentally context-dependent. The early stages of the tasks, benefit from minimal retrieval because memory is sparse; recurring goal types benefit from plan reuse rather than generic nearest-neighbor lookup; stuck agents benefit from re-retrieval with alternative queries; and across long task streams, the memory store itself must be consolidated and pruned to remain useful. We present Memory as a Controlled Process (MemCon), a framework that models memory operations as a Markov Decision Process and learns an online policy that adaptively decides when, what, and how much to retrieve, when to inject a distilled plan, and when to consolidate or forget. MemCon is backend-agnostic: it wraps any existing memory implementation, learns from task-by-task binary feedback with no pretraining and no additional LLM calls, and uses a lightweight tabular contextual bandit with UCB exploration that converges within tens of tasks. Across 6 benchmarks, 3 agent frameworks, and 3 LLM backbones, MemCon consistently outperforms multiple memory baselines by up to 15.2 points in task success while reducing token consumption by 5--20%.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2607.13533v1' target='_blank'>Scientific-Intention Driven Embodied Intelligent Solar Telescope: Conceptual Design</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Lin Jiaben, Tong Liyue, Wang Hui, Shao Mingfu, Yang Chen</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-07-15 07:38:07</h6>
+<p class='card-text'>Artificial Intelligence (AI) is profoundly transforming the paradigms of scientific research. Cutting-edge technologies such as Large Language Models (LLMs) and embodied intelligence are continuously pushing the boundaries of scientific instrumentation. Against this backdrop, this paper proposes a novel conceptual system: the Scientific-Intention Driven Embodied Intelligent Solar Telescope (SIDEST). The system is designed with three core layers to achieve three types of intelligent scientific research closed loops. First, the Scientific Intent Research and Demonstration Layer parses the research objectives and intents of scientists (e.g., solar physicists) through natural language interaction, achieving a closed loop for the generation and optimization of executable observation plans aligned with scientific intent via in-depth research. Subsequently, the Observation Realization Layer schedules embodied intelligent solar telescopes to implement a closed loop for the execution of scientific observation plans. Finally, the Evaluation and Evolution Layer coordinates intelligent agents for data processing and scientific analysis to analyze observation data, generate research reports, and iteratively optimize observation strategies and model methods based on results, thereby realizing a self-evolving closed loop for the entire system. During the research process, we constructed a minimal prototype system based on a precision temperature control device for solar telescope birefringent filters to validate the core principles of SIDEST. This prototype successfully implemented all key steps of intention-driven automated research, demonstrating the feasibility of the technical pathways for the three types of intelligent research closed loops. SIDEST redefines telescopes through cutting-edge AI methods.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js'></script>
+</body>
+</html>
