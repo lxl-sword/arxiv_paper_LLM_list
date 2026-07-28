@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<title>LLM-planning - 2026-07-28</title>
+<link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap' rel='stylesheet'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'>
+<style>
+body {
+font-family: 'Roboto', sans-serif;
+background-color: #f5f7fa;
+padding: 20px;
+}
+.card {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.card-title {
+    font-weight: 700;
+}
+.card:hover {
+    transform: scale(1.02);
+    transition: 0.3s ease-in-out;
+}
+</style>
+</head>
+<body>
+<div class='container'>
+<h1 class='text-center my-4'><i class='fas fa-book'></i>LLM-planning - 2026-07-28</h1>
+<div class='row'>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2607.24625v1' target='_blank'>Agentic Permissions Policy Algebra for Taint Confinement in LLM Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Arseny Kravchenko, Vadim Liventsev, Innokentii Konstantinov, Ildar Iskhakov, Matvey Kukuy</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-07-27 16:19:45</h6>
+<p class='card-text'>Autonomous LLM agents processing mixed-confidentiality data face severe security risks from prompt injection attacks and reasoning errors. While dynamic Information Flow Control (IFC) provides structural security guarantees, traditional taint tracking permanently taints an agent's context upon reading unvetted data, severely restricting downstream utility. We present APPA (Agentic Permissions Policy Algebra), an IFC framework that resolves this usability bottleneck through engine-managed context branching and prospective acquisition enforcement. Before data acquisition occurs, APPA prospectively evaluates label descents and missing prerequisites, generating actionable remedy plans (Authorize, Accept). To inspect unvetted data without polluting the primary context, a label-seeded child trajectory is spawned, absorbing label descent locally and allowing a trusted sanitizer to return a bounded derivative to the unchanged parent. Governed by a two-monoid model over security labels and shared event logs, we formally prove parent label preservation and merge confinement. Finally, we evaluate APPA on a multi-turn tool-chaining benchmark across four models: it suppresses exfiltration (31%-50% down to 0%-7% attack success), and on three of the four, branching recovers a substantial share of the utility that taint tracking alone forfeits.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2607.24341v1' target='_blank'>Simulating Tenant Responses to Energy Policy Interventions with Transaction-Cost-Aware LLM Age</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Weijie Xia, Stefanie Horian, Hanyue Huang, Queena K. Qian, Jie Yang, Pedro P. Vergara Barrios</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-07-27 12:18:59</h6>
+<p class='card-text'>Recent studies use Large language models (LLMs) to simulate human opinions and decisions by prompting models with demographic, attitudinal, or persona-based descriptions. Yet such simulations rarely model the practical, cognitive, or social frictions that shape how people respond to policy interventions. Perceived transaction cost (PTC) provides a useful lens for modeling the practical frictions that shape policy responses, such as information burden, administrative effort, coordination demands, and perceived uncertainty. We use this lens to develop a friction-aware persona modeling approach for LLM-based simulation. In the context of energy-efficient renovation (EER), tenants are represented not only by who they are demographically, but by how they perceive the costs, benefits, barriers, and uncertainties associated with proposed renovation plans. Using survey data collected from 1,068 citizens in the Netherlands, comprising approximately 40,548 survey question and answer pairs, we compare prompt-only and fine-tuned settings across GPT-3.5-turbo, Ministral-8B-Instruct, and Llama-3.1-8B-Instruct, and evaluate supervised fine-tuning (SFT) and Group Relative Policy Optimization (GRPO) for local open-weight models. Results show that incorporating PTC-based personas and reasoning consistently improves model performance across both prompt-only and fine-tuned settings, suggesting that PTC-based persona design provides a useful bridge between institutional policy theory and interpretable LLM-based policy simulation. Code is available at https://github.com/xiaweijie1996/socialagent.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2607.24260v1' target='_blank'>KAP: Bridging the Knowledge Selection-Runtime Consumption Gap in LLM Systems</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Shuo Wang, Fang Xi, Wenyuan Huang, Qing Wang, Junming Su</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-07-27 10:51:38</h6>
+<p class='card-text'>Modern LLM systems increasingly rely on knowledge-selection processes that produce high-value structured priors, such as ranked evidence, graph topology, multimodal alignment, and confidence signals. Yet LLM serving remains fundamentally oblivious to this rich structure: once such signals are serialized into a prompt, the backend observes only a flat token sequence, forcing dense and uniform consumption of the full key-value (KV) state during decoding. We term this architectural mismatch the Knowledge Selection-Runtime Consumption (KSRC) gap: richer contexts enlarge the full-prompt KV footprint and decode-time memory traffic, increasing latency and degrading throughput even when reasoning depends on only a small fraction of the context. To bridge the gap, we propose Knowledge Access Planning (KAP), a paradigm-shifting execution abstraction that elevates structured knowledge priors from passive prompt-construction hints into first-class physical execution artifacts. KAP establishes a universal intermediate representation (IR)-the runtime access plan-which compiles structured knowledge signals to govern physical KV access without altering logical prompt semantics, model weights, or training procedures. Through this IR, KAP shifts LLM serving from token-aware context consumption to plan-driven, knowledge-aware runtime consumption. We instantiate KAP with GraphSpec, a compiler-executor realization connecting structured knowledge selection to an LLM serving backend. We derive a phase-boundary model for the positive-speedup regime of plan-guided execution. Across 4K-128K long-context QA workloads, GraphSpec maintains answer quality comparable to full-context decoding while decoupling physical KV consumption from prompt length, reducing proposal-time KV access to 5.5% of source KV state at 128K, and fundamentally shifting the scaling trajectory of long-context generation.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2607.24167v1' target='_blank'>Falsifiable Commitment Planning for Self-Correcting Web Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Guangyi Liu, Huan Zhao, Quanming Yao</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-07-27 08:48:01</h6>
+<p class='card-text'>Long-horizon web agents often go off track before final failure: a trajectory can remain locally plausible even after the current state, reused skill, or plan assumption no longer supports the user instruction. Existing agents can plan, reflect, or reuse experience, but their plans rarely specify the evidence under which an active step should still be trusted. We propose FCPAgent, a falsifiable commitment planning framework for robust long-horizon web agents. FCPAgent represents each plan step as a Falsifiable Commitment Unit (FCU): a subgoal grounded in a reusable skill, together with confirming evidence, falsifying evidence, and a confidence score. Execution is organized as a plan-test-repair loop. The hybrid commitment testing module checks candidate actions before they modify the browser and checks observations after execution; for efficiency, it combines lightweight evidence matching with LLM-based diagnostic verification. When evidence falsifies a commitment, scope-aware repair localizes the contradiction to the execution, skill, or planning level and revises the smallest adequate part. On WebArena, FCPAgent achieves a 13.8% relative improvement in average success over the strongest baseline, with especially large gains on long-horizon tasks.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2607.24097v1' target='_blank'>MemChain: Learning Interpretable Memory Traces for Memory-Augmented LLM Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yiwen Ma, Songjun Tu, Qichao Zhang, Dong Li, Linjing Li, Dongbin Zhao</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-07-27 07:37:43</h6>
+<p class='card-text'>Memory-augmented LLM agents typically answer queries by retrieving relevant memories and feeding them directly to an answer model. This retrieval-as-evidence paradigm assumes retrieved memories are already suitable for reasoning, leaving the answer model to resolve redundancy, conflicts, and weak relevance while incurring substantial context overhead in long-term memory tasks. We propose MemChain, a trainable post-retrieval memory policy that transforms retrieved candidates into answer-facing active memory, represented as a compact and grounded evidence context. Given a user query and retrieved candidates, MemChain first generates a question-conditioned evidence plan, then constructs an ordered grounded evidence trace that organizes retrieved memories according to their semantic roles and dependencies, and finally executes explicit memory actions to produce a concise evidence context for answer generation. To train the mediator, we introduce a two-stage learning framework. Supervised trace learning first teaches the policy to generate structurally valid plans, traces, actions, and evidence contexts. We then propose Trace-Guided Memory Policy Optimization (TMPO), a reinforcement learning objective that optimizes the memory policy using downstream answer quality while jointly encouraging trace grounding, evidence support, structural validity, and answer stability across multiple rollouts. Experiments on LoCoMo and LongMemEval-S demonstrate that MemChain consistently achieves state-of-the-art performance across both closed-source and open-weight frozen answer models while substantially reducing the memory context passed to the answer model.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2607.23815v1' target='_blank'>Kalypso: Relational LLM Serving</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Hojae Son, Md Ashraful Islam, Huy Gia Cao, Hui Guan, Marco Serafini</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-07-26 19:29:31</h6>
+<p class='card-text'>Large language models are increasingly used as semantic operators for filtering, extracting, ranking, joining, and transforming unstructured data. Existing semantic query processing systems invoke request-centric LLM serving systems that are unaware of the query plan, leaving substantial performance opportunities unused. This paper introduces relational LLM serving, an abstraction that makes LLM serving aware of semantic query structure while preserving query semantics and output accuracy. The key opportunity is pipelined execution across semantic operators: when intermediate tuples flow directly from one operator to the next, their KV-cache state can be reused instead of recomputed.
+  We present Kalypso, a relational LLM serving system that exposes an API for semantic query plans and executes them using an adaptive, memory-aware scheduling algorithm. Kalypso addresses a new online scheduling problem in which pipelined operator execution is coupled with GPU memory pressure management to reuse KV-cache state in the serving engine before eviction. Its scheduler continuously adjusts memory allocations to balance upstream parallelism, downstream progress, and GPU utilization. Our evaluation shows that Kalypso improves query completion time over baselines using request-centric LLM serving, with speedups up to 4.57x across diverse workloads, demonstrating that query-aware LLM serving can substantially improve the efficiency of semantic query execution.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2607.23771v1' target='_blank'>Training Language Models to Cooperate with Inference-Time Controllers</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Moumita Choudhury, Vanshaj Khattar, Jing Liu, Toshiaki Koike-Akino, Ankush Chakrabarty, Shlomo Zilberstein, Ye Wang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-07-26 17:44:33</h6>
+<p class='card-text'>Large language model (LLM) performance increasingly depends not only on the base model, but also on the inference-time controller used to organize reasoning. Existing post-training methods, however, typically optimize for a single fixed interaction pattern, despite real deployments relying on diverse controllers such as Chain-of-Thought, self-consistency, debate, planning, and verification pipelines. This creates a training--deployment mismatch and limits transfer to new workflows. We introduce CALM (Controller-Aware Language Models), a post-training framework that explicitly places controllers in the training loop. We formulate controller-aware post-training as multi-task reinforcement learning over controller-induced interaction protocols, where controllers are compositions of reusable local reasoning modules. This structure also induces a module-level decomposition of mixed-controller training under a turn-level GRPO objective, enabling a systematic study of controller and module-aware training strategies. We evaluate CALM on held-out controller compositions and broader controller shifts, showing that controller-aware post-training improves generalization across inference-time workflows beyond single-controller optimization.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2607.23718v1' target='_blank'>Melo: A Production LLM-Powered Music Recommendation Agent</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Shijia Wang, Da Guo, Qiang Xiao, Fanghui Bi, Weisheng Li, Dongjing Wang, Chuanjiang Luo</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-07-26 15:30:48</h6>
+<p class='card-text'>We describe Melo, an LLM-powered music recommendation agent deployed on NetEase Cloud Music. Melo is structured as a deterministic five-node state graph over heterogeneous tools, with a prompt- and state-machine-driven orchestration policy rather than a fine-tuned controller. At industrial scale, the bottleneck is not how smart the brain is but how the system detects and recovers from the mistakes that brain makes. Two production failure modes drove the design: entity hallucination, where the agent commits to interpretations unsupported by the live catalog or user-behavior index, and long-tail degradation, where over-constrained requests collapse to generic popular fallbacks. We address them with two complementary mechanisms. Inference-time entity grounding repurposes the production search index as a verification primitive that gates entity decisions before they propagate downstream. Reflective retry verbalizes failure reasons from a broken tool chain and feeds them into the next planning step, so the system can relax or revise constraints rather than fall back blindly. A one-month online A/B test across NetEase Cloud Music's playlist surfaces reports an over 2 pp lift in a primary playlist retention metric and a lift of over one minute in a core playlist engagement metric. Offline ablation isolates a 7.8 pp reduction in entity misidentification from the three-layer grounding stack on our evaluation set, and a triggered-session analysis on our evaluation set shows reflective retry firing on 5.8% of sessions with 59% process-level recovery. Our deployment experience suggests that progress on LLM-powered music recommendation at this scale depends as much on the named, ablatable runtime machinery that catches and corrects the brain's mistakes as on the brain itself: a hypothesis we offer for the community to test.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2607.23678v1' target='_blank'>Focus Is All You Need: Adaptive Goal-aware Attention Orchestration for Multi-Agent Graph Systems</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Mingzhou Fan, Siyuan Xu, Mingxuan Yuan</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-07-26 14:23:33</h6>
+<p class='card-text'>Large language models (LLMs) enable autonomous agents for reasoning, planning, and tool use. Recent systems increasingly organize these agents as graphs of specialized, interconnected nodes. Although graph-based orchestration supports flexible decomposition and coordination, it creates a key challenge: \textbf{attention allocation}. As workflows grow, existing approaches often execute graph components uniformly, wasting resources on irrelevant or low-impact tasks. We introduce \textbf{Attention Orchestration}, a paradigm that extends Transformer-style attention from token representations to workflow-level agent coordination. Our framework, \textbf{Adaptive Goal-aware Attention Orchestration (AGAO)}, dynamically estimates agent importance based on user objectives, graph dependencies, and computational constraints. AGAO combines three components: (1) goal-aware attention, measuring semantic relevance between user goals and agent capabilities; (2) topology-aware attention, modeling structural dependencies in agent graphs; and (3) resource-aware attention, allocating budgets and execution priorities across heterogeneous agents. Together, these mechanisms transform static agent graphs into adaptive systems that focus computation on goal-critical reasoning paths. Experiments across diverse multi-agent workloads show that AGAO improves task effectiveness while reducing unnecessary computation, latency, and token consumption compared with existing graph-based execution strategies. Our work establishes \textbf{Attention Engineering} as a direction for scalable, intelligent multi-agent systems. Code: https://github.com/MingzhouFan97/AGAO.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2607.22954v1' target='_blank'>Toward Automated Detection of Documentation Inconsistencies in Electronic Health Records</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Jian Lu, Panyu Chen, Miriam Treggiari, Robert Blessing, Danyang Zhuo, Chunhua Weng, William W. Stead, Anru R. Zhang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-07-24 23:43:35</h6>
+<p class='card-text'>Objective: To characterize the kinds of internal documentation inconsistencies a general-domain large language model (LLM) can surface from real-world discharge summaries, and to identify recurring failure modes that limit reliability at scale.
+  Materials and Methods: We applied a two-stage LLM pipeline---open-ended candidate identification (Gemini 2.5 Pro) followed by context-grounded verification (Gemini 2.5 Flash)---to 3,000 randomly sampled MIMIC-IV-Note discharge summaries. A subset of the pipeline output was then reviewed manually by clinical experts.
+  Results: Our pipeline surfaced 3,460 candidate inconsistencies, affecting 69.7% of admissions. Representative examples spanned demographics, allergies, procedures, diagnoses, laboratory, medications, and care-planning domains, with direct implications for clinical reasoning or patient safety. Expert review also revealed recurring failure modes that arise when verification requires temporal reasoning, evolving-diagnosis context, or knowledge of outpatient-prescribing conventions the model does not natively possess.
+  Discussion: Detection is highly context-dependent: many flagged pairs require anchoring each statement to its source section and clinical domain, then assessing whether the conflict reflects a true contradiction or missing context. We propose a graded ontology spanning strict contradiction and ambiguity, with a schema characterizing each flagged case by category, section, domain, and inconsistency axis.
+  Conclusion: This formative study establishes a methodological foundation and conceptual framework to guide subsequent validated, large-scale EHR-inconsistency analysis.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2607.22319v1' target='_blank'>Towards Trustworthy and Cost-Efficient Data Integration: From Naïve RAG to Agentic RAG</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Chuangtao Ma, Arijit Khan</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-07-24 13:58:44</h6>
+<p class='card-text'>Large language models (LLMs) and AI agents have demonstrated strong potential for data integration in zero-shot and few-shot settings. However, they continue to face significant accuracy and cost challenges in enterprise environments due to a persistent knowledge gap. This paper envisions trustworthy, scalable, and cost-efficient integration through knowledge-grounded LLMs and agents operating within a retrieval-augmented generation (RAG) workflow. Here, trustworthiness refers to evidence-grounded, verifiable reasoning, where integration decisions are transparently supported by retrieved knowledge, robust against hallucination, and consistent across tasks. We trace the evolution from classic RAG to GraphRAG and KG-RAG (knowledge graph-based RAG), highlighting how these paradigms bridge parametric and contextual knowledge. Building on this trajectory, we explore the shift toward Agentic RAG, where autonomous multi-agent systems adaptively plan, retrieve, refine, and reason for complex integration tasks. We examine optimization strategies for cost-efficient integration, addressing computational bottlenecks in large-scale enterprise settings. Finally, we outline open challenges and future directions toward building reliable, explainable, and scalable knowledge-grounded integration systems.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2607.22188v1' target='_blank'>Draining the Energy Commons: Self-Defeating Over-Appropriation as a Coordination Failure in Agentic LLM Collectives</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Marcantonio Bracale Syrnicov, Federico Pierucci, Matteo Prandi, Marcello Galisai, Piercosma Bisconti, Francesco Giarrusso, Daniele Nardi</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-07-24 10:59:34</h6>
+<p class='card-text'>LLMs are increasingly deployed as agents that plan, use tools, and act over time. When they share persistent resources, such as compute pools or energy reserves, decisions by one agent affect the conditions faced by later agents. We study this coordination failure in a renewable energy commons. Four same-family GPT, Gemini, or Grok agents act in homogeneous self-play as electricity prosumers, instructed to maximize operational continuity. Holding aggregate residual demand and the decision protocol fixed, we vary the regeneration rate of a shared energy reserve from abundance to scarcity. All three families preserve the reserve when demand does not exceed peak renewable replacement, but over-appropriate it beyond that threshold (all nine exact scarcity contrasts survive Holm correction; largest adjusted p = 4.87e-5). The pattern is self-defeating: the same populations protect current service while undermining future service. At higher scarcity (rho = 1.2), early aggregate request pressure exceeds peak renewable replacement in every family and averages 1.21 times that level. Mean trajectories fall below the reserve level of maximum replenishment by rounds 5-7. Two offline benchmarks compare a social planner maximizing group-wide operational-service value with open access, where each prosumer maximizes its own value. At a discount factor of gamma = 0.95, both benchmarks sustain the reserve under the same dynamics. Realized depletion instead resembles outcomes under a more impatient open-access benchmark. The populations therefore behave like impatient optimizers at the level of the public trajectory. This system-level alignment failure would be missed by isolated-response evaluation.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2607.22182v1' target='_blank'>From Isolated Tasks to Structured Capabilities: A Multilayer Taxonomy for Large Language Models</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Shixin Fang, Jiachen Wo, Wenjuan Qin, Sihang Jiang, Yanghua Xiao</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-07-24 10:49:50</h6>
+<p class='card-text'>Large language model (LLM) evaluation spans diverse tasks and benchmarks, yet evidence remains organized around tasks rather than the capabilities they probe. This fragmentation limits cross-study comparison, obscures capabilities tasks recruit, and makes coverage gaps difficult to identify.
+  We introduce a multi-layer taxonomy of 14 capability domains and 91 subskills across Primitive, Constructed, and Integrative layers. Human cognitive science guides capability definition and organization, not LLM architecture. Layer assignments draw on developmental precedence and hypothesized functional support, while human-origin constructs are adapted to observable model behavior.
+  To demonstrate operational utility, we screened 31,505 papers from ACL, AAAI, ICML, and NeurIPS between 2023 and 2025 and mapped 15,934 LLM-focused papers through multi-model annotation, consensus, and arbitration. Direct research attention concentrated on Language-Semantic Competence (3,551; 22.3%), Reasoning (3,388; 21.3%), Planning and Decision-Making (2,149; 13.5%), and Perception (1,954; 12.3%), whereas six domains appeared in fewer than 2% of papers. Within domains, the most frequent subskill had a median prevalence of 97.9% and appeared in at least 90% of papers in 10 of 14 domains. Language-Semantic Competence and Reasoning formed the highest-volume pair (n = 1,864; 11.7%; lift = 2.47), whereas Theory of Mind and Social Reasoning and Interaction showed the highest lift among pairs with at least 20 co-occurrences (n = 62; lift = 30.84).
+  By shifting the unit of analysis from isolated tasks to structured capabilities, the taxonomy supports research organization, coverage audits, evaluation interpretation, and testable hypotheses for diagnosis, training, and transfer.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2607.21911v1' target='_blank'>Leveraging Resolved Incident History for LLM-Assisted Software Bug Diagnosis</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Boyuan Guan, Hailu Xu, Jamie Rogers</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-07-24 02:33:14</h6>
+<p class='card-text'>Effective software bug diagnosis requires two ingredients: the right knowledge source (operational failure history, not just system documentation) and the right retrieval structure (structured records, not unstructured chunks). Current retrieval-augmented generation (RAG) approaches fall short on one or both dimensions. We propose Operational Memory RAG (OM-RAG), which indexes resolved issues as structured symptom-root cause-resolution triples and retrieves the most similar historical precedent via single-hop embedding. OM-RAG powers a purpose-built large language model (LLM) administrator that has operated a production Dataverse instance for over six months, operationalizing the Knowledge component of the Monitor-Analyze-Plan-Execute-Knowledge (MAPE-K) feedback loop with the system's own resolved failure history. In a controlled four-configuration ablation, LLM-based judging covers all 1,172 issues and manual verification a 123-issue subset. OM-RAG achieves Diagnosis Accuracy of 0.931 and Fix Correctness of 0.809, outperforming chunk-based retrieval (+186%) and a documentation-anchored concept graph (+77%). Model-free retrieval metrics (mean similarity 0.880) independently corroborate the ranking.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2607.21906v1' target='_blank'>A Knowledge-Grounded Behavioral Reasoning Framework for Training-Free Urban Healthcare OD Prediction</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Linzhen Yang, Xueliang Liu, Chengbo Zhang, Meng Meng</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-07-24 02:21:34</h6>
+<p class='card-text'>Understanding urban healthcare mobility is essential for healthcare resource allocation, hospital capacity planning, and resilient urban governance. Existing healthcare origin-destination (OD) prediction methods primarily rely on supervised deep learning, requiring expensive model training while providing limited interpretability into the behavioral mechanisms of hospital choice. This paper presents a training-free urban healthcare OD prediction framework based on knowledge-grounded behavioral reasoning, replacing gradient-based neural network learning with collaborative LLM reasoning over structured urban knowledge. The framework organizes heterogeneous urban information, including healthcare resources, population characteristics, transportation accessibility, weather conditions, and historical mobility, into a unified knowledge graph, enabling evidence retrieval, urban context understanding, behavioral reasoning, preference ranking, and Bayesian verification through a multi-agent reasoning pipeline. Experiments on a real-world Shenzhen dataset containing 137 hospitals and 6,341 prediction tasks demonstrate that the proposed framework achieves CPC = 0.5449, Top-1 = 66.19%, Top-5 = 68.03%, and Top-10 = 74.03%, consistently outperforming conventional deep learning baselines on all Top-K metrics (e.g., Top-5 improves by 22.1% over MLP). Compared with Direct LLM using the same backbone without structured reasoning, the proposed framework improves CPC by 87.5% and Top-1 accuracy by 141%, demonstrating that knowledge-grounded behavioral reasoning, rather than raw LLM capability, is the key to accurate, interpretable, and training-free healthcare OD prediction. These findings highlight the potential of urban intelligence to move healthcare mobility modeling beyond data fitting toward knowledge-driven behavioral reasoning.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2607.21857v1' target='_blank'>SoundscapeAgent: Agentic Soundscape Construction for Controllable Synthesis and Scalable Audio-Language Supervision</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Hao Zhang, Yiwen Zhao, Yixuan Zhang, Yiwen Shao, Steve Yves</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-07-23 22:58:24</h6>
+<p class='card-text'>We present an agentic soundscape construction framework for controllable compositional audio generation that makes explicit the scene planning, source selection, temporal layout, and rendering steps typically handled implicitly by single-shot text-to-audio models. An LLM-based agent converts user intent into an executable scene plan, acquires assets through retrieval and on-demand generation, renders controllable multi-event mixtures, and exports aligned scene metadata. The framework also supports human-in-the-loop interaction through user-guided tool selection and editable scene plans. Together, these components provide an inspectable and reusable approach to controllable soundscape synthesis and scalable audio-language data construction. Listener studies and objective metrics demonstrate competitive generation performance against text-to-audio baselines, while models trained with agent-generated data consistently outperform real-only baselines in downstream audio reasoning. Code, demos, and listening-test results are available at https://haozhang6720.github.io/SoundscapeAgentDemoPage/.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2607.21756v1' target='_blank'>Prompt as a Data Type: In-Database LLM Prompt Management and Rewriting</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Denis Mayr Lima Martins, Gottfried Vossen</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-07-23 19:18:18</h6>
+<p class='card-text'>Large Language Models (LLMs) are increasingly used in database-backed applications to classify tuples, filter records using semantic predicates, extract structured attributes, and enrich query results. Yet the prompt that start these computations are typically stored outside the DBMS in unstructured formats, making them invisible to query execution, metadata management, and optimization. Drawing on Stonebraker's QUEL as a Data Type and the principles of reflective programming, this paper introduces PromptDB, a database system that treats prompts as tuple-level database values. PromptDB provides a logical PROMPT datatype whose values store a template, bindings to tuple attributes, model metadata, and task metadata. Relations may contain PROMPT attributes directly in base tables, or expose them through views over joined tuples. Users query prompt-valued attributes through generated evaluation views, while the system internally renders, rewrites, optimizes, and executes prompts through an EVAL operator. Making prompts database-visible creates a new optimization space. The key idea is to bring query-optimizer thinking to prompts: just as query optimizers exploit database metadata to rewrite SQL plans, PromptDB exploits database metadata to rewrite prompts. We evaluate PromptDB on synthetic and real-world data workloads across different tasks. The results show how database-guided rewriting improves output validity and yields favorable cost-quality trade-offs compared with static, manually written prompts.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2607.21570v1' target='_blank'>MedGame: Storytelling Gamification Empowered by Large Language Models for Medical Education</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Qian Wu, Xinrong Zhou, Zizhan Ma, Kai Chen, Zheyao Gao, Xun Lin, Hongqiu Wu, Longfei Gou, Yixiao Liu, Ann Sin Nga Lau, Qi Dou</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-07-23 17:50:28</h6>
+<p class='card-text'>Large Language Models (LLMs) show promise for medical education, but most existing systems focus on localized interactions such as question answering or single-turn feedback, rather than organizing an entire clinical case into a decision-centered learning trajectory. We introduce \textit{MedGame}, a framework that transforms static clinical cases into structured, executable storytelling games. MedGame uses a dual-engine design: a Medical Narrative Designer synthesizes case-grounded clinical storylines with states and decision nodes, while a Story Director converts them into dependency-aware multimodal orchestration plans rendered by our released interactive platform. We construct MedGame Bench, a 5,000-case benchmark and evaluation protocol for Medical Narrative Generation and Story Direction. Experiments show that task-specific fine-tuning substantially improves open-source LLMs on MedGame Bench and narrows the gap with commercial models. A pilot student study further shows that learners perceive MedGame as more engaging and useful than text-only alternatives.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2607.21156v1' target='_blank'>SafeStep: AI-powered Travel Assistance for Elderly People with Frailty or Dementia</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Elderly People with Frailty or Dementia Azul Debenedetti, David Gamez, Franco Such, Nik Kairinos</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-07-23 10:37:28</h6>
+<p class='card-text'>More than a million people in the UK suffer from frailty or dementia, which severely compromise their ability to travel in urban environments. This paper presents SafeStep, an AI-driven travel system that assists elderly users with their journeys. At the core of SafeStep is a novel travel graph representation, which integrates route planning with predictive modelling. For each stage of a journey, the system (i) generates personalized failure scenarios using a combi-nation of LLMs and the Anticip8 behavioral prediction engine, (ii) proposes targeted interventions, and (iii) estimates the impact of interventions on out-come probabilities. This enables SafeStep to select interventions that maximize the likelihood of the person reaching their destination. SafeStep was evaluated through experiments on travel graph generation and a field study involving 26 real-world journeys. Results showed that combining Anticip8 for failure pre-diction with GPT-based models for intervention evaluation yields the most re-liable performance. User feedback indicated that SafeStep improves confidence and perceived safety during travel, although interface usability needs to be im-proved for the target demographic. In the future, we would like to improve and release SafeStep. The AI system that was developed for SafeStep could be ap-plied in other areas, such as mental health, career coaching and addiction treatment.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2607.20891v1' target='_blank'>Is Deep Research Reliable? Misleading Knowledge Induces False Conclusions</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Pengyu Zhu, Lijun Li, Longju Yang, Sen Su</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-07-23 03:28:08</h6>
+<p class='card-text'>Deep Research agents extend LLM-based assistants into long-horizon workflows involving planning, retrieval, evidence synthesis, and report generation, yet their reliability in open information environments remains underexplored. A key concern is whether apparently credible but factually misleading knowledge encountered in such environments can propagate through these workflows and be adopted as false conclusions in final reports. To study this failure mode, we introduce MisKnow-Agent, a framework for constructing and validating misleading knowledge for Deep Research tasks. MisKnow-Agent generates misleading instances with controllable authority levels and styles, yielding 5,933 quality-controlled instances built on DeepResearch Benchmark tasks. Extensive experiments across open-source and closed-source Deep Research agents show that even limited exposure to misleading knowledge can induce false-conclusion adoption in final reports, revealing a broad reliability vulnerability in current Deep Research agents. Although search-enabled verifier models consistently identify the retained instances as misleading during focused corpus validation, the same instances can still be adopted during long-horizon research, revealing a disconnect between focused verification and workflow-level evidence use. Finally, we evaluate pre- and post-research defenses, both individually and in combination, finding that all three configurations mitigate but do not fully prevent false-conclusion adoption. Our findings suggest that reliable Deep Research requires evidence verification and correction capabilities at both the model and framework levels, beyond improvements in planning, retrieval, evidence integration, or report-generation abilities.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2607.20773v1' target='_blank'>HARP: The Human--AI Research Platform</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Zeshu Zhu, Natalie Friedman, Kevin Weatherwax, Emily Eiben</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-07-22 22:38:16</h6>
+<p class='card-text'>Large language models (LLMs) have shifted human--computer interaction from `traditional'' interface journeys toward more conversational exchanges. Researchers studying HCI and UI use moderated usability sessions, interviews, surveys, transcript analysis, and static prototypes. However, static prototypes provide limited opportunities to study interaction with live AI systems or systematically control how an LLM behaves across participants and scenarios. Conversation transcripts reveal little about how users formulate, revise, and hesitate over prompts before submission. We designed the Human--AI Research Platform (HARP) for researchers, designers, and anyone who has ever wondered, `What if AI did this?' HARP places participants in controlled mock scenarios with live, configurable AI agents. Researchers can control agent prompts, model parameters, response characteristics, and experimental conditions; trigger surveys at predefined moments; and record prompt composition time, response latency, deletions, and keystroke pauses. Planned capabilities include voice, facial expression, gesture, and, where legally and ethically appropriate, emotion analysis. We illustrate HARP through a study examining how technical specificity and response length affect retention of LLM output. By pairing controllable live agents with behavioral and self-report measures, HARP enables systematic testing of how AI design choices affect users.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2607.20630v1' target='_blank'>Demonstrating GenDB: Instance-Optimized and Customized Query Processing Code Generation via LLM Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Jiale Lao, Immanuel Trummer</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-07-22 18:01:29</h6>
+<p class='card-text'>Traditional query processing engines require continuous development and extensions to support new techniques and user requirements, and in some cases, entirely new systems must be built from scratch. However, these engines are difficult to extend due to their internal complexity, and building new systems demands significant engineering effort and cost. To address this, we demonstrate GenDB, a generative query engine that shifts query processing from manually engineered systems to query processing code generation driven by Large Language Models (LLMs). An early prototype of GenDB uses LLM agents to generate instance-optimized query execution code tailored to specific data, workloads, and hardware resources. This prototype suits offline code generation for repetitive, templated queries, since the upfront generation cost amortizes over many executions and correctness can be ensured through extensive fuzz testing and manual inspection. For ad-hoc queries, GenDB can work with a traditional DBMS in a hybrid architecture: the DBMS handles one-off queries, while GenDB speeds up frequent SQL templates. Our demonstration allows users to (1) visually and interactively explore how GenDB analyzes workloads, profiles hardware resources and underlying data, produces query plans, generates code based on them, and finally uses an optimizer to iteratively achieve a correct and efficient implementation; (2) use visual inspection and analysis to gain qualitative insights into why GenDB produces code that achieves significantly better performance than state-of-the-art query engines on two benchmarks: TPC-H and a newly constructed benchmark designed to reduce potential data leakage from LLM training data; and (3) upload their own data and queries to explore GenDB with different LLMs and query patterns.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2607.20268v1' target='_blank'>PoTRE: Test-Time Reasoning inspired by Cognitive Heterogeneity</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Anmol Kankariya, Sercan Ö. Arık</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-07-22 15:20:53</h6>
+<p class='card-text'>While Large Language Models (LLMs) excel at many tasks, they frequently struggle with complex reasoning that requires long-horizon planning and iterative error correction. Furthermore, standard single-stream prompting proves brittle when models encounter novel abstractions or rigorous domain constraints. We introduce PoTRE (Poly-Topological Reasoning Ensembles), a heterogeneous framework that decouples inference into four agents: (1) Adversarial Refinement Agent, (2) Hierarchical strategic Planning Agent, (3) Spectrum Search Agent, and (4) Direct Chain Agent. A final Task-Adaptive Aggregation Layer dynamically reconciles these perspectives -- via final candidate selection, semantic synthesis, or neuro-symbolic verification -- to produce a robust global solution. We evaluate PoTRE on three frontier benchmarks: ARC-AGI-2, Humanity's Last Exam (HLE), and PRBench Finance. PoTRE achieves state-of-the-art accuracy of 49.92% on HLE, surpassing the previous best official score. We demonstrate that this architectural heterogeneity achieves improved reasoning performance using similar or fewer inference tokens compared to heavily scaled homogeneous baselines.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2607.22732v1' target='_blank'>Spatial Reasoning in LLM Game Agents: Impact of Causal Context and Multi-Step Planning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Mohit Jiwatode, Ronja Fuchs, Robin Schmöcker, Bodo Rosenhahn, Alexander Dockhorn</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-07-22 12:10:45</h6>
+<p class='card-text'>LLM-based game agents often perform poorly on more complex tasks. This work examines whether these failures are linked to limited spatial reasoning and evaluates whether causal prompt augmentation and multi-step planning can improve win-rates while managing response latency. Using the open-source Qwen3 model family, we conduct experiments across varying model scales, reasoning modes, and planning horizons. We further introduce a focused GVGAI benchmark consisting of three custom games with five difficulty levels to isolate spatial navigation. The evaluation follows two paradigms: an initial ``positioning experiment'' to test an agent's ability to find its exact coordinates, and a study of game-play success. Our results show that while larger models with an enabled thinking mode identify their positions more accurately, overall performance in coordinate matching remains limited for smaller models. Win rates decrease as game levels and layout complexity increase, validating the benchmark's difficulty scaling. Integrating causal context into the prompts tends to improve the agents' success rates, particularly for bigger models. While enabling thinking mode and longer planning horizons significantly improve performance, multi-step planning further reduces mean per-step response times, offering a practical trade-off between reasoning depth and execution speed.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2607.19633v1' target='_blank'>LENS: LLM-guided Environment Simplification for Planning and Control in Clutter</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Aileen Liao, Rachel Holladay, Dinesh Jayaraman, Michael Posa</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-07-22 00:05:00</h6>
+<p class='card-text'>Despite recent advances in general-purpose robotic manipulation, real-world multi-object clutter remains challenging to handle for today's prevalent approaches. The problem scales in complexity due to more objects and collisions, more unpredictable contact physics, distractors, and task ambiguity. Bridging this gap to real-world deployment requires effective scene abstractions; yet today, producing such abstractions requires extensive task-specific manual engineering, which does not scale. These abstractions are costly to generate and difficult to adjust or fine-tune. We instead propose a plug-and-play fix to automatically generate scene-specific, task-specific, adaptively updating abstractions on top of existing planning and control stacks. LLM-guided Environment Simplification (LENS) produces a de-cluttered abstracted scene representation by merging (e.g., stacked objects) or pruning (e.g., distant objects) scene entities in a closed loop in response to task progress. These dynamic, task-relevant abstractions are versatile and easy to use. In our experiments, we show that LENS improves classical planning, model-based control, and a vision-language-action model, across a diverse set of highly cluttered manipulation scenes. Project website: https://lens-2026.github.io/.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2607.19336v1' target='_blank'>Agents in the Wild: Where Research Meets Deployment</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Grace Hui Yang, Pranav N. Venkit, Hooman Sedghamiz, Enrico Santus, Victor Dibia, Ioana Baldini</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-07-21 17:55:10</h6>
+<p class='card-text'>Agentic systems large language model (LLM) based architectures capable of reasoning, planning, acting, and coordinating with tools and other agents are rapidly transitioning from research prototypes to production scale deployments across domains such as software engineering, scientific discovery, and finance. While academic work has emphasized benchmarks and algorithmic innovation, deployment raises new challenges around robustness, safety, and reliability. This tutorial brings together researchers and practitioners to explore advances in reasoning and planning, multi agent coordination, and evaluation, highlighting open challenges arising from deployment experience. Through applied case studies in pharmaceutical discovery and financial systems, we analyze common design patterns that make agentic systems successful, and discuss practical mitigation strategies for failure modes, such as verification pipelines, fallback mechanisms, and human in the loop supervision. Attendees will gain a comprehensive view of the field along with concrete design patterns, evaluation checklists, and templates for safe and reliable deployment across industries.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2607.19182v2' target='_blank'>ARBITER: Guarded Agentic Control for SLO-Oriented Kubernetes Remediation</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Pooyan Habibi, Alberto Leon-Garcia</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-07-21 15:15:56</h6>
+<p class='card-text'>Maintaining service-level objectives (SLOs) on Kubernetes microservices remains difficult because autoscalers observe coarse resource metrics, recent SLO controllers often depend on custom telemetry, and unconstrained agentic operators cannot safely mutate production clusters. We present ARBITER, a guarded control plane for SLO-oriented Kubernetes remediation. ARBITER builds an OpenTelemetry-native causal resource graph, assembles bounded DiagnosisContext objects, and exposes a finite typed-action interface that separates planning from execution. The same interface supports deterministic planners and an LLM-backed planning harness, with deterministic schema checks, policy gates, resource/disruption budgets, approval, and bounded execution forming the safety substrate. We evaluate ARBITER on a 4-node Kubernetes cluster using DeathStarBench Social Network and Online Boutique. The evaluation tests two forms of SLO-oriented control that resource autoscaling alone does not provide: selecting the right remediation action and selecting the right downstream target. For bad-image deployment regressions, ARBITER selects rollback_canary in all ten CPU-burn and pure-latency runs; HPA either scales the faulty image or never triggers. For a downstream critical-path fault, the user-visible breach appears at the frontend, but trace evidence identifies home-timeline-service as the remediable bottleneck. Deterministic ARBITER and a live approval-gated Sonnet harness target that downstream service in every replicate, whereas HPA/resource-only control never does. Additional experiments cover guarded placement repair, Online Boutique portability, adversarial safety rejection, offline multi-model replay, and KWOK-based control-plane scale evidence. We release the controller, replay corpus, harnesses, safety tests, and figure artifacts: https://github.com/pooyan/arbiter.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2607.18847v1' target='_blank'>Data Leakage Prevention in Agentic Applications via Preemptive Hardening</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Akansha Shukla, Emily Bellov, Parth Atulbhai Gandhi, Yuval Elovici, Asaf Shabtai</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-07-21 08:35:22</h6>
+<p class='card-text'>Agentic systems integrate LLM driven planning with interfaces to external tools, making data leakage and tool misuse feasible via instruction/data boundary failures and prompt injection attacks. Enforcing required controls consistently is particularly challenging in workflows spanning many codebases and heterogeneous agents. To address this challenge in multi agentic systems, we present a pre-deployment pipeline for scanning, hardening, and validation of agentic applications. The pipeline analyzes prompt templates, tool interfaces, and tool-invocation code to identify leakage-enabling patterns and generate actionable patches. The hardened application is then validated through adversarial prompt injection attacks and benign input variations ensuring that mitigations do not disrupt intended behavior. In the hardening stage, high-risk tools are prioritized, and minimally invasive mitigations are applied, including schema tightening, boundary sanitization, allowlist-based tool gating, and least-privilege checks. In the validation stage, the pipeline automatically generates attack inputs that mimic jailbreaks, instruction overrides, and tool-targeted manipulation, along with benign task variants, to confirm that the functionality of the hardened application is preserved after remediation. We evaluated the pipeline on five real-world agentic applications, as well as on the AgentDojo benchmark. Across all applications, the proposed pipeline identified recurring leakage-enabling patterns and generated patches that can be integrated without disrupting the intended application behavior. The resulting modifications of application code were shown to eliminate leaks when targeted by basic jailbreak and instruction-override attacks, achieving a 100% reduction in leakage, and reduce leaks by 91% under conditions of stress-induced manipulation, without the need of continuous runtime policy enforcement.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2607.18806v1' target='_blank'>AI Tour Meeting: Group Travel Planning by LLM Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Daisuke Kikuta</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-07-21 07:36:46</h6>
+<p class='card-text'>This paper proposes AI Tour Meeting, a group travel planning framework powered by multiple Large Language Model (LLM)-based agents. The agents are instantiated with distinct personas and collaboratively seek an itinerary that satisfies their constraints and preferences through natural language discussion. The framework enables easy and flexible orchestration of such discussions by providing interfaces for configuring agent personas, discussion workflows, monitoring, and LLM deployment. Its primary use case is a simulation tool for analyzing the behavior of multiple LLM agents during tour planning discussions. This paper demonstrates the utility of the framework by presenting system validation and several analytical results obtained by the framework.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2607.18742v1' target='_blank'>Beyond Text Editing: Algebraic Manipulation of Source Code</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Kevin Pulo</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-07-21 06:05:17</h6>
+<p class='card-text'>Source code is almost universally edited as plain text. However, the mismatch between the syntactic and semantic requirements of valid and correct code, and the unconstrained text editing process trying to produce it, introduces friction that degrades the programming task. It is also increasingly costly in the era of LLM-based coding agents, which must materialize their high-level plan of intended changes as low-level text edits dispersed throughout the codebase, often requiring them to re-read large portions of code.
+  We propose the novel alternative approach of source code algebra, where the codebase is modified by applying to it a sequence of logical algebraic operations. Each operation makes the full set of changes necessary for a single semantic change, analogous to mathematical equation rewriting. We sketch initial properties of such operations - including composition, nullipotency, and commutativity - that distinguish this approach from text editing, and make it well-suited as a substrate for agentic code editing.
+  A feasibility probe with our proof-of-concept implementation (SCAS) suggests that LLM agents can use source code algebra to complete a non-local, cross-file code change with both higher success rates and one to two orders of magnitude fewer tokens, relative to text-based baselines. While preliminary, this is consistent with the hypothesis that having LLMs emit algebraic operations, rather than rewritten code, is a promising direction for code editing - and motivates broader future research into source code algebra, such as comprehensive operator libraries, formal properties, and human-facing tooling.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js'></script>
+</body>
+</html>
