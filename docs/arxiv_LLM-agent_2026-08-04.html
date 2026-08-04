@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<title>LLM-agent - 2026-08-04</title>
+<link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap' rel='stylesheet'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'>
+<style>
+body {
+font-family: 'Roboto', sans-serif;
+background-color: #f5f7fa;
+padding: 20px;
+}
+.card {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.card-title {
+    font-weight: 700;
+}
+.card:hover {
+    transform: scale(1.02);
+    transition: 0.3s ease-in-out;
+}
+</style>
+</head>
+<body>
+<div class='container'>
+<h1 class='text-center my-4'><i class='fas fa-book'></i>LLM-agent - 2026-08-04</h1>
+<div class='row'>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2608.02582v1' target='_blank'>ACEM: A Cost Estimation Model for Agentic Software Engineering</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Mohammad El-Ramly</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-08-03 17:54:11</h6>
+<p class='card-text'>Traditional software cost estimation models, such as COCOMO II, Function Points, and Story Points, assume that development effort is primarily driven by human labor in design, coding, and testing. Agentic software engineering, where autonomous AI agents perform substantial implementation work and humans focus on planning, specification, and validation, challenges this assumption. New cost dimensions arise: large language model (LLM) token consumption across agent actions, Human-in-the-Loop (HITL) oversight effort, and infrastructure costs for agent orchestration and tooling. These costs are nondeterministic: identical tasks may consume different tokens, follow divergent reasoning paths, and require varying human correction, phenomena absent in traditional development. A new framework is needed to bridge standard sizing metrics with this cost structure.
+  This paper proposes ACEM (Agentic Cost Estimation Model), which decomposes total agentic development cost into three additive dimensions: LLM, HITL, and infrastructure cost. ACEM introduces three constructs for agentic dynamics: the Revision Factor (RF), modeling token overhead from output rejection and retries; the Context Factor (CF), capturing rising token consumption as context accumulates; and the HITL Intensity Score (HIS), a four-level oversight classification scheme. It further maps Use Case Points, Story Points, and Function Points to estimated token consumption, enabling organizations to reuse existing project-scoping data for agentic cost forecasting.
+  ACEM is presented as a fully specified model structure and calibration methodology, with constants left symbolic pending empirical grounding. As an early-stage proposal, it invites the research community to calibrate, test, and extend the model through real project data.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2608.02569v1' target='_blank'>AtumAI: A Principled Framework for Agentic Generation of Datacenter Control-Plane Policies</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Qiushi Lin, Chaojie Zhang, Íñigo Goiri, Aditya Akella, Ricardo Bianchini, Jovan Stojkovic</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-08-03 17:45:58</h6>
+<p class='card-text'>The efficiency of a datacenter rests on its control plane policies. Designing these policies is increasingly hard: the hardware-software stack grows fast, the design space is vast and interdependent, and prototyping a single policy takes months. Agentic AI promises to automate this search. Off the shelf, however, it falls short on three fronts. It is not formal: with no structured, searchable statement of the problem, the search has little structure to exploit and hard constraints are not guaranteed. It is not transferable: each task is solved from scratch, so nothing learned on one task carries to the next. Finally, it is not systematic: relying on the LLM as the sole source of candidates, it explores a narrow slice of the design space and settles into local optima. We introduce AtumAI, a framework that generates datacenter control-plane policies with agentic AI, making the process formal, transferable, and systematic. From a goal stated in plain language, AtumAI autonomously proposes, tests, and refines candidate policies until one satisfies the request. It does so through two components. The Datacenter Task Compiler automates problem formulation: it compiles the request into a formal, machine-checkable, and searchable specification of the task's objectives, constraints, decision variables, and evaluation methodology. The Evolutionary Design Discovery Loop then searches this specification, expanding the search beyond the LLM itself via a diffusion model, an evolutionary algorithm, and a surrogate model. Together, they reduce onboarding a new task from months of engineering to writing its description. We evaluate AtumAI on three control-plane tasks with distinct problem scopes, design spaces, and trade-offs: workload placement, resource scaling, and power management. Across all tasks, the policies generated by AtumAI consistently outperform expert-engineered baselines.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2608.02515v1' target='_blank'>LiveMem: Maintaining Memory State Continuity in Long-Running LLM Inference</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Zhichen Liu, Ruihan Sun, Hengjie Yang, Zipeng Wu, Zhaohan Chen, Xiaofan Zhang, Yang Xu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-08-03 17:12:05</h6>
+<p class='card-text'>Long-running assistants and agents consume interaction streams that eventually outgrow the context. Existing context retention, summarization, and retrieval preserve access to selected history, but do not provide a persistent state over the full lifecycle when working context changes. We formulate this missing inference capability as \emph{state continuity under context turnover}: carrying computation forward through a fixed-capacity memory state whose lifetime is independent of the active context. We introduce an intrinsic memory method, \textbf{LiveMem}, which augments a pretrained full-attention LLM with a memory state that preserves the historical information over the whole lifecycle while the main attention path retains a bounded KV window. Context turnover and memory state maintaining, memory-oriented post-training, and state-aware serving jointly make this memory state load bearing after its originating tokens are released. Our experiments show that LiveMem achieves leading overall performance among evaluated systems and other intrinsic memory methods. Experiments on LongMemEval show that LiveMem is able to answer the question based on the memory state, even when the supporting evidence has been removed from the current context, and evidence-distance analysis shows that useful information persists beyond the active window. LiveMem thus establishes state continuity as a distinct and complementary abstraction for continual LLM inference.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2608.02508v1' target='_blank'>RoMeRL: Balancing Feedback Coverage and the Memory-Reward Trap in Self-Evolving Agent Memory via Reduced-Order Utility States</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yi Yang, Zhennan Chen, Yihong Zhuang, Tiehan Fan, Yinan Chen, Jian Li, Jian Yang, Ying Tai</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-08-03 17:07:50</h6>
+<p class='card-text'>Learning-based memory systems for self-evolving LLM agents face two tightly coupled challenges. First, trajectory-indexed utilities grow with the interaction history, thereby dispersing limited feedback over an ever-expanding state space. Second, because trajectory-level rewards are jointly assigned to co-retrieved memories, irrelevant experiences may receive misleading utility updates and consequently enter the memory-reward trap. To address these challenges, we introduce Reduced-Order Memory Reinforcement Learning (RoMeRL), which represents the growing trajectory-indexed utility space using a fixed-dimensional per-task memory state factorized by outcome polarity and memory dynamics. RoMeRL incorporates new experiences through a fixed set of semantic coordinates whose contents are updated or replaced over time, thereby concentrating feedback over a bounded utility support. Theoretically, we show that this reduced-order parameterization increases the average feedback received by each utility coordinate and characterize the steady-state occupancy of erroneous coordinates under a generic coordinate-transition model. Empirically, across ALFWorld and LifelongAgentBench, RoMeRL improves task performance, reduces the Cold-Q ratio by 80.0%, increases feedback density by approximately 6.0 times, reduces the maintained memory size by 84.4%, and cuts LLM calls by 21.1%. These results show that reduced-order utility states support efficient self-evolving agent memory while limiting persistent reward contamination. Code is available at: https://github.com/YOUNG-fnxm/RoMeRL</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2608.02464v1' target='_blank'>Real-Time Detection and Repair of LLM Agent Failures</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Sunny Dubey</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-08-03 16:34:46</h6>
+<p class='card-text'>LLM agents fail mid-episode -- they loop, cascade tool errors, drift off goal, fabricate results, or silently absorb corrupted content -- and the standard remedy, judging every step with a second LLM, costs more than the agent itself. We ask how much detection is achievable from observable step telemetry alone, using monitors costing microseconds per step and trained only on healthy runs.
+  On 2,823 committed agent episodes across three frameworks, three local models (qwen2.5 7b/3b, llama3.1 8b) and a commercial API (gemini-2.5-flash), a one-class echo-state-network ensemble with CUSUM alarms detects 0.71 of failures at a 5% false-alarm budget (AUROC 0.872). Its advantage over a memoryless baseline is a monotone function of post-onset horizon (+0.09 at <=3 steps, +0.40 at >=9), predicting its own failure region out of sample on AFTraj-2K. Ranking transfers with no retraining to two corpora from other groups (AFTraj-2K 0.745, ATBench 0.779).
+  Monitors carry two burdens: a per-deployment healthy null (they do not transfer -- AUROC 0.527 cold against 0.885 recalibrated) and a residual false-alarm rate. We add a layer carrying neither: deterministic verification, which recomputes a run's stated total from the tool results it actually received and confirms every required call was made. Head-to-head it catches 60% of failures (96% with the coverage check) at 0 of 63 false positives against the monitor's 54% at 17%, transfers unchanged to llama3.1:8b (110 of 110 at 0 of 10), and trips on 0 of 1825 healthy episodes.
+  Detection is then closed into repair: each flagged run is rolled back and re-run live, recovering 45% of failures against a 16% resampling control (p=0.0005) and lifting task success from 52% to 73% for about one extra model call per run. The system runs at ~200 microseconds per step, three orders of magnitude below a judge call. Code, traces and results are released.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2608.02444v1' target='_blank'>ParEvalLayer: When Partial LLM-Agent Evaluations Support a Decision</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Wei-Jung Huang, Bonan Shen</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-08-03 16:22:51</h6>
+<p class='card-text'>LLM-agent evaluations often produce task outcomes long before the full benchmark run is complete. A partial score is tempting to report, but it does not show whether the observed tasks support the same conclusion as the completed evaluation. Early tasks can omit important parts of a benchmark, running cheaper tasks first can distort the observed sample, and a rule that decides only easy pairs can appear accurate while leaving many comparisons unresolved. We introduce ParEvalLayer, a decision layer that reads paired outcomes for two agent systems and a comparison policy chosen in advance. For each partial run, it records whether the tested agent system is better by the required amount, is not better by that amount, needs more evidence, or should abstain. We evaluate ParEvalLayer by replaying completed public benchmark data as if each evaluation had stopped earlier. At each point, ParEvalLayer applies the policy using only the outcomes observed so far; if it reaches one of the two comparison judgments, we check whether that judgment matches the completed data for the same system pair. With the main comparison rule, three of the public benchmarks reach the same decision as the completed evaluation after observing only 15% to 25% of task outcomes. Other benchmarks require more task outcomes. This variation shows why a partial score alone is not enough: reports should also state the decision rule and how many comparisons remain without a decision.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2608.02422v1' target='_blank'>Agentic Incident Response through Digital Twin-Enhanced Multiscale Planning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yiran Gao, Tao Li, Kim Hammar</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-08-03 16:03:16</h6>
+<p class='card-text'>Incident response is currently managed by security operators using predefined playbooks, resulting in slow, labor-intensive security decision-making processes. Consequently, there is a growing need for automated incident response planning. Decision-theoretic approaches based on control, optimization, and reinforcement learning have been proposed to automate such planning tasks with well-grounded approaches, yet most of which, while guaranteeing strong performance, are limited to abstract models and cannot be directly applied to operational systems. A promising approach to mitigate this limitation is to use the security knowledge embedded in large language models (LLMs) to develop agentic response systems. However, current agentic approaches rely on repeated invocations of the LLM to generate a response plan, which is unreliable and limits the planning horizon due to hallucination. In this paper, we develop a principled LLM-based planning method by combining decision-theoretic planning with LLM-generated response commands. The proposed agentic incident response approach uses a rollout planner to compute a high-level response strategy that allocates security resources (the tactical scale), which is then translated into executable commands by a lightweight LLM agent (the operational scale). Within this architecture, we use a digital twin that supports tactical planning through simulation and operational execution through emulation. Across three attack scenarios, our agentic approach reduces recovery execution time by 15.1\% on average and increases the recovery rate by 33.6\% over frontier LLM baselines.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2608.02412v1' target='_blank'>Why Large Language Models Fail at Tabular Prediction</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Marta Garnelo, Wojciech M. Czarnecki</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-08-03 15:52:51</h6>
+<p class='card-text'>Large language models (LLMs) have become the default tool for a remarkable range of tasks, yet they have had conspicuously little success at one of the most common machine learning workloads: predictive analytics over tabular data. This gap is the founding premise of the fast-growing field of tabular foundation models, but the question of why generic LLMs fail has remained open. We study a frontier LLM in its purest inference regime - a single generation pass over a prompt containing the full training and test data, with no tools, no agentic scaffolding, and no fine-tuning - and systematically evaluate five hypotheses for the failure: (a) an inability to handle noisy or non-linearly-separable data; (b) the linearised CSV format obscuring column structure; (c) the tokenisation of numeric values; (d) the number of test points classified per query; and (e) the dimensionality of the input. Controlled experiments falsify (a)-(d). Dimensionality, in contrast, is decisive: sweeping random linear projections of thirty-one benchmark datasets, the LLM is the only method among nine whose accuracy decreases as dimensionality grows, while every classical baseline stays flat or improves. A behavioural comparison against 252 configured classical models finds that in two dimensions the LLM predicts like a local, distance-based method (up to 91.6% grid agreement), but in higher dimensions no classical model - even when augmented with tuned, dimension-dependent noise - reproduces its predictions. We do not claim to have identified the internal mechanism; our results show, more modestly, that the LLM's capability dissolves with dimension in a way no noise-corrupted classical learner mimics - which explains why LLMs, so capable elsewhere, keep losing to fifty-year-old baselines on tables, while leaving the mechanism of the prediction as an open question.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2608.02391v1' target='_blank'>Cooperative Coevolution for Resource-Constrained Agentic LLM Post-Training</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Zhiyuan Wang, Shengcai Liu, Jiahao Wu, Ning Lu, Hui Ouyang, Shaofeng Zhang, Haoze Lv, Ke Tang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-08-03 15:34:45</h6>
+<p class='card-text'>Tool-using large language model (LLM) agents produce long, multi-turn trajectories, making gradient-based post-training memory-intensive. Evolution strategies (ES) enable memory-efficient full-parameter post-training without backpropagation and can eventually match the performance of gradient-based reinforcement learning (RL). However, resource-constrained settings typically offer only a few GPUs, so the high GPU-hour requirements of ES translate into prohibitively long training times. To address this, we introduce Cooperative Parameter-subspace Evolution Strategy (CoPES), a cooperative coevolutionary method that decomposes the full parameter space into lower-dimensional subspaces and searches over them cooperatively to improve optimization efficiency. We post-train a Qwen3.5-4B tool-using agent for the math task and evaluate it on five benchmarks of varying difficulty. Under the GPU-hour budget of full-parameter GRPO's best validation checkpoint, CoPES recovers 92% of GRPO's validation-accuracy gain, versus 67% for standard ES, while its theoretical GPU memory requirement is less than one-eighth that of full-parameter GRPO. It consistently outperforms standard ES and LoRA-based GRPO on all evaluated pass@k metrics across the five benchmarks. Additional experiments further show the advantage of CoPES on the question-answering task. These results demonstrate an improved trade-off between memory requirements and training time for agentic LLM post-training under resource constraints. The code is open-sourced in https://github.com/MetaronWang/CoPES</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2608.02372v1' target='_blank'>PredAct-Bench: Benchmarking Tool-Augmented Dialogue under Controlled Tool Noise</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Abdulrahman AlRabah, Xiaocheng Yang, Dilek Hakkani-Tür, Abdussalam Alawini</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-08-03 15:15:55</h6>
+<p class='card-text'>Large Language Models (LLMs) are increasingly deployed in task-oriented dialogue systems that support multi-step decision-making in high-stakes domains such as education, healthcare, and finance. However, existing benchmarks typically assume perfectly accurate tool outputs, overlooking the reality that deployed systems must operate with noisy tools and human decision-makers whose trust in the agent is itself uncertain. Such conditions are common in practice, for example, a clinician using a diagnostic prediction tool or an advisor relying on a model that forecasts student outcomes from historical records. We introduce PREDACTBENCH, a benchmark for evaluating dialogue agents paired with statistically imperfect tools, using education as a measurable testbed where ground truth outcomes and clear intervention decisions are available. First, we build a benchmark for AI-assisted human decision-making, where the AI uses noisy predictors to help guide a user. Second, we introduce episode-level Relative AI-Reliance (RAIR) and Relative self-reliance (RSR) metrics, extending prior trust calibration framework to multi-turn dialogue. Third, we evaluate 13 state-of-the-art closed and open source LLMs on two educational datasets, OULAD (real assessment trajectories from the UK Open University) and PREDACT-CS (60 courses with real final grade outcomes and synthetically generated weekly score trajectories), alongside a human study with instructors and teaching assistants. We find that when tools are noisy, SOTA models are supposed to provide visibility to teachers so that they do not over-rely on wrong suggestions or hallucinations, but current models fail to do that. We offer PREDACTBENCH to help build better LLMs as AI decision support systems to help teachers.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2608.02356v1' target='_blank'>SkillTrace: Traversing a Query-Skill Graph for Composable LLM Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yue Yao, Shengyuan Wang, Xin Chen, Minke Zhang, Jia He, Bingjun Luo, Tom Gedeon</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-08-03 15:07:11</h6>
+<p class='card-text'>Large language model agents increasingly solve complex tasks by composing reusable skills from a library. To address this, the key challenge is not merely to retrieve individually relevant skills, but to identify a complete and executable skill composition. In this paper, we argue that this problem can be solved in a graph with three levels: compositional relations among skill queries, similarity between queries and candidates in the skill library, and the dependencies among the selected candidates. We introduce SkillTrace, which organizes the user query into a semantic hierarchy, matches skill queries and candidates, and propagates over the skill dependencies. Experiments on SkillsBench and ALFWorld demonstrate that SkillTrace achieves state-of-the-art performance, reaching a success rate of 53.17% on SkillsBench and 91.43% on ALFWorld. SkillTrace also delivers consistent improvements across different backbone language models, demonstrating the generality and robustness of graph-based skill retrieval.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2608.02351v1' target='_blank'>KC-Agent: A Dual-Process Cognitive Architecture for Efficient ML Model Improvement</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Gusseppe Bravo-Rocca, Jordi Guitart, Ajay Dholakia, David Ellison, Puneet Jain</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-08-03 15:03:35</h6>
+<p class='card-text'>Data drift poses significant challenges for machine learning systems in production, requiring continuous model updates to maintain performance. We present KC-Agent, a dual-process cognitive architecture for automated ML model improvement that combines fast pattern recognition (System 1) with deliberate incremental updates (System 2). Our approach implements structured memory systems enabling System 1 to leverage successful solutions previously discovered by System 2, achieving efficient pattern-based responses without costly re-computation. KC-Agent incorporates atomic change principles and rollback capabilities to ensure reliable, verifiable updates in production environments. We evaluate our method on five datasets including real-world NASA turbofan data with authentic temporal degradation and synthetic datasets with controlled drift scenarios. KC-Agent achieves state-of-the-art performance (76.8% accuracy) while maintaining optimal efficiency (13.2s execution time), outperforming established cognitive architectures: CodeAct (+2.4%), Tree of Thoughts (+3.6%), ReAct (+8.0%), and Reflexion (+8.9%). Consensus evaluation by a panel of state-of-the-art LLMs confirms superior strategic efficacy (8.33/10 Smartness score), significantly outperforming baseline agents. The knowledge consolidation mechanism delivers 91% speedup over the slow variant while maintaining higher accuracy. Our approach demonstrates both theoretical foundations and practical viability for cognitive-inspired automated ML improvement systems capable of handling complex real-world data drift scenarios.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2608.02311v1' target='_blank'>AI Governance for Institutional Readiness in Finance</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Irene Aldridge, Steve Krawciw</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-08-03 14:36:11</h6>
+<p class='card-text'>Agentic AI is gaining acceptance in asset management, but governance has not kept pace: 88% of surveyed finance professionals report no operational governance framework for agentic AI despite universal awareness of its deployment, and only 24 of 75 large U.S. money managers disclosing AI use in Form ADV filings report a formal governance policy. We argue this gap is architectural, not cultural: governance built for deterministic systems assumes static validation. However, continuously retrained agentic policies violate static governance by design. We propose a four-layer framework (Policy, Engineering, Composition, Systemic) with computable instantiations: a regret-covariance statistic that detects policy drift from observed data alone, and a calibrated crowding model showing joint drawdown probability rising from 39.2% to 79.3% as institutions converge on correlated exposures. We support the framework with a study of a deployed LLM-embedding trading strategy and a contemporaneous discretionary fund blowup, clarifying which controls transfer across agentic and human-directed risk-taking. We also provide a 90-day framework implementation sequence for institutions.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2608.02295v1' target='_blank'>MechGeo: Autoformalizing and Proving Euclidean Geometry in Lean 4</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Hao Shen, Junyu Guo, Tian Cui, Yuxuan Xiao, Lihong Zhi</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-08-03 14:24:12</h6>
+<p class='card-text'>We present MechGeo, a Mathlib native agentic framework that jointly addresses faithful autoformalization and certified proof construction for Euclidean geometry. In this framework, GeoFormalizer represents informal problems in GeoIR, deterministically translates them into Lean 4, and iteratively repairs candidate statements using structural diagnostics and semantic evaluation. GeoProver constructs geometric proof plans, derives intermediate lemmas, and selectively algebraizes suitable subgoals through a library verified in Lean. Singular or SymPy may generate algebraic certificates, but all resulting proofs and counterexamples are checked by Lean's kernel. Experiments across seven LLM backbones show substantial improvements in autoformalization, particularly for models with weaker direct translation performance. On 43 historical IMO geometry problems, GeoFormalizer generates formal statements that GeoProver proves in 29 cases; for the remaining 14, it constructs counterexamples verified in Lean and proves all repaired statements after expert correction. Together with IMO 2026 Problem 2, this yields, to the best of our knowledge, the largest reported collection of automated, kernel-checked Lean proofs for IMO geometry problems. On the 14 geometry statements in LEAP's Lean-IMO-Bench, MechGeo proves 12 for the first time, formally refutes the remaining two, and proves both repaired statements. These results establish counterexample guided diagnosis, geometric reasoning, and certified symbolic computation as a practical foundation for trustworthy formal geometry.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2608.02178v1' target='_blank'>Microscopic dynamics of consensus formation in multi-agent LLM Naming Games</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Cristiano De Nobili, Vijayasri Iyer, Alessandro Codello, Raffaella Burioni</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-08-03 12:59:23</h6>
+<p class='card-text'>Decentralized populations of Large Language Model (LLM) agents can spontaneously reach consensus on shared conventions, yet the microscopic mechanisms by which their internal stochasticity shapes macroscopic ordering remain unexplored. We study a minimal LLM Naming Game in which the listener's decision is a single-token LLM call at decoding temperature $T$, replacing the inventory check of the deterministic Naming Game. Each interaction decomposes into an in-inventory and an out-inventory channel with conditional rates $π(T)\!\equiv\!P(\text{YES}\mid w\in P_j)$ and $φ(T)\!\equiv\!P(\text{YES}\mid w\notin P_j)$, whose balance controls an ordering-disordering drift. A mean-field theory of the two-rate dynamics yields an analytical ordering condition that generalizes the consensus threshold of the stochastic Naming Game to a critical line in the $(π,φ)$ plane. Across three open-weight architectures, consensus is always reached, but through three distinct listener regimes: permissive (repaint-noise dominated), near-deterministic, and conservative (missed-collapse dominated). The effective finite-size exponent $β(T)$ in $t_{\rm conv}\!\sim\!N^β$ shifts with temperature, and the temperature-sensitivity $α$ in $t_c\!\sim\!e^{αT}$ ranges from ${\approx}\,0.67$ to ${\approx}\,0$ across architectures. Decoding temperature thus emerges as an architecture-dependent control parameter for decentralized LLM populations, quantitatively characterized by the statistical-physics toolkit.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2608.02171v1' target='_blank'>From Profiling to Synthesis: Benchmarking Implicit Behavioral Alignment in Personalized LLM Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Jiajia Song, Bobo Li, Haiwen Yi, Zibo Ji, Meishan Zhang, Hao Fei, Min Zhang, Mong-Li Lee, Wynne Hsu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-08-03 12:52:04</h6>
+<p class='card-text'>Large Language Models have enabled increasingly capable autonomous agents, yet personalization remains critical for making such agents practically useful. Recent benchmarks have begun evaluating personalization in agents, but they largely rely on static preference snapshots, fixed interaction logs, or question answering over predefined user profiles. Such designs fail to capture the complexity of evolving user preferences and neglect preference-conditioned task execution-a discrepancy we term as the knowledge-to-action gap. To address this challenge, we introduce IBA-Bench, a benchmark for implicit behavioral alignment constructed from longitudinal interaction histories that contain noise, implicit cues, and temporal inconsistencies. Unlike prior work, IBA-Bench evaluates whether an agent can execute tasks while satisfying implicit user constraints inferred from historical interactions. We further propose IBA-Agent, an agent framework that reconciles conflicting priorities through broad retrieval and trajectory-level alignment. Experiment results on IBA-Bench show that effective personalization remains a significant challenge for state-of-the-art LLM agents, and the proposed IBA-Agent substantially improves behavioral alignment in complex scenarios across nine application domains.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2608.02143v1' target='_blank'>Beyond Solution-Centric Search: Adaptive Inquiry and Knowledge Revision for Autonomous ML Engineering</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Shaokang Fu, Yulong Tao, Linbo Jin, Jiarong Zhao, Qiming Shi, Tianjun Pan, Haonan Li, Chengyu Wang, Jia Wu, Chengfu Huo</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-08-03 12:28:52</h6>
+<p class='card-text'>Long-horizon autonomous research tasks such as machine learning engineering require systems to make interdependent decisions under a limited budget. Existing LLM-based agents typically organize candidate-solution improvement through tree, graph, or chain structures, meaning that the search process determines how information is acquired and managed. We call this design solution-centric search and propose instead the information paradigm, in which an evolving information state represents the system's understanding of the task and guides solution improvement. We instantiate this paradigm in Iris, an inquiry-revision loop. For information acquisition, Iris generates local action plans from the current information state and uses epistemic actions to probe decision-critical unknowns without modifying the retained solution. For information management, Iris synthesizes observations across experiments into task knowledge composed of revisable claims with explicit scope and status. It updates this knowledge as new evidence arrives and constructs each decision context from raw evidence, structured summaries, or task knowledge at the required level of detail. On MLE-Bench, Iris attains a 64.9% any-medal rate under a 12-hour budget, the highest among compared systems. Across four tasks spanning harness engineering and model post-training, Iris also demonstrates cross-domain generalization.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2608.02113v1' target='_blank'>MemArbiter: Decision-Time Memory Arbitration for Long-Horizon LLM Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Jiajun Dong, Yutao Hu, Fengrui Fan, Shihan Dou, Yueming Wu, Deqing Zou</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-08-03 12:10:52</h6>
+<p class='card-text'>Large language model (LLM) agents must retain and use cross-step information to act coherently in long-horizon tasks. Existing methods improve memory accessibility, yet action-relevant information may still fail to guide the current decision because it is poorly formed, organized, prioritized, or presented. We call this post-access failure the Memory-Action Gap. We propose MemArbiter, a function-aware memory arbitration framework that addresses the memory-management-induced component of this gap. MemArbiter decomposes interaction histories into atomic items, organizes them into five functional Memory Banks, and combines bank-level demand, item-level relevance, focal-ambient representations, and a temporal presentation gate to dynamically control memory salience. We evaluate MemArbiter on ALFWorld against Flat Retrieval and Flat Recency under unified per-step memory budgets. With an open-weight action-generation model, MemArbiter achieves success rates of 82.8% and 92.5% under 500- and 750-token budgets, outperforming the strongest baseline by 20.9 and 25.4 percentage points, respectively. It also improves post-failure recovery and reduces failed-action repetition and state-action recurrence. These results show that function-aware memory arbitration enables accessible information to guide actions more effectively.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2608.02046v1' target='_blank'>CompanionBench: A Theory-Anchored, Real-World-Grounded Benchmark for AI Emotional Companionship</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yao Liu, Guangjia Chai, Yuming Huang, Jihao Huang, Lei Wang, Junchen Wan</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-08-03 10:44:04</h6>
+<p class='card-text'>LLM companions are deployed at scale in personally consequential settings, yet poorly evaluated. Existing benchmarks use hand-authored scenarios and prompted simulators, aggregate empathy into one score, and overlook judge biases such as same-family favoritism and scale drift. We introduce CompanionBench, an interactive bilingual benchmark. To our knowledge, it is the first companion benchmark to ground both its scenarios and a trained user simulator in de-identified real-world data. A hidden disclosure gate branches each persona's trajectory on the agent's own behavior, controlling the interaction state space without scripting dialogue. We operationalize ten capabilities derived from 25 theories across psychology and counseling, four of them not graded explicitly by prior work: holding ambiguity, selfobject responsiveness, positive resonance and calibrated challenge. Agents are assessed on two complementary axes: a subjective ten-capability rubric and a deterministic measure of whether deeper disclosure was earned. A cross-family panel dilutes same-family favoritism; an Item Response Theory model separates agent quality from judge severity. Theory fixes what to measure and how personas are structured; real data supply events, history, and profiles -- coverage from theory, authenticity from data. Rankings are reproducible in both languages (rho = 0.996 ZH / 0.953 EN). Evaluating 28 agents reveals capability-level differences obscured by aggregate scores. Emotion regulation and calibrated challenge remain common weaknesses; holding ambiguity discriminates most. Role-play agents rank near the bottom: immersion does not imply relational competence. Across agents, the dominant failure mode is substituting surface warmth for substantive relational support. We will release 500 Chinese-English parallel pairs and the evaluation code.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2608.02026v1' target='_blank'>HPFA: Hypergraph-Based Paired Failure Attribution for LLM Reasoning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Runchuan Zhu, Hongbin Lai, Bowen Jiang, Junrui Zhang, Zhangheng LI, Ostap Kilbasovych, Junyuan Hong</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-08-03 10:23:48</h6>
+<p class='card-text'>Reflection is a powerful mechanism for LLM reasoning, yet its effectiveness hinges on accurately attributing failures to specific reasoning steps, a capability that current models notably lack. Existing failure attribution methods either require expensive step-by-step counterfactual testing that scales poorly with trajectory length, or treat reasoning traces as flat sequences that ignore the inherent non-linear logical dependencies. We propose a hypergraph-based paired failure attribution (HPFA) framework that attributes the failure root cause by comparing the hyperedges of the targeted failure reasoning path against a reference successful path. By reducing the search space, our method efficiently localizes root causes and enables scalable synthesis of attribution data for training a lightweight attributor model via supervised fine-tuning and reinforcement learning. Experiments on mathematical reasoning and agentic coding tasks demonstrate that HPFA can dramatically increase attribution accuracy and efficiency, and the trained attributor consistently improves reasoning accuracy at test time, outperforming baselines that lack graph structure or paired analysis.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2608.02011v1' target='_blank'>Before Reasoning Fails: Pre-Evidence Procedural Failures in Agentic RAG</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Daeyoung Roh, Donghee Han</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-08-03 10:09:19</h6>
+<p class='card-text'>Agentic retrieval-augmented generation (RAG) systems can fail before evidence-conditioned reasoning is tested: an agent may retrieve candidate snippets but finalize without inspecting them. We study this failure mode as a procedural property of the agent trajectory, decomposing wrong answers into pre-evidence discipline failures and post-gold-read failures using saved tool-call traces, retrieved evidence, read passages, and final answers. Across 12,000 paired trajectories on HotpotQA, 2WikiMultiHopQA, and MuSiQue, the two failure types are largely non-redundant: the both-trigger rate is in [11.2%, 13.1%] across regex and spaCy entity extractors. We then evaluate Read-Gate, a minimal runtime invariant requiring an agent to read after search and before finalization. Forced reading improves LLM-Acc by 14.9-19.9 points on trajectories that would otherwise skip reading and by 3.2-9.4 points on full minimal-reasoning cells. Additional diagnostics show that larger hidden thinking budgets do not necessarily increase evidence inspection. Together, these results indicate that evidence-gathering should be evaluated as a trajectory-level control problem, separately from answer-side reasoning.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2608.02005v1' target='_blank'>Evolving in the Agent Jungle via History-Informed Opponent Awareness</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Zhaofeng Zhang, Linhan Xia, Rui Liu, Yihao Wang, Binrui Shen, Shengxin Zhu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-08-03 10:06:23</h6>
+<p class='card-text'>Learning to adapt strategies through interaction is a key step toward more general and autonomous LLM agents. Existing approaches typically achieve behavioral adaptation by revising skill libraries. However, in multi-agent environments, opponents may simultaneously update their strategies, causing the environment itself to evolve continuously. Applying skill-revision methods designed for static environments in such settings therefore amounts to updating against an obsolete reference. To address this challenge, we introduce OASE (Opponent-Aware Selective Evolution), which identifies and adopts genuinely beneficial skill revisions in dynamic multi-agent environments. Specifically, OASE conducts paired comparisons between a candidate skill and the incumbent under identical conditions anchored by historical snapshots of opponent strategies, and adopts the candidate only when its estimated payoff gain exceeds an acceptance threshold. We evaluate OASE in two decision-making scenarios: first-price auctions and private-cost Cournot competition. Experimental results show that, compared with a Reflexion-style baseline, OASE achieves a lower final equilibrium distance in both environments while accepting substantially fewer skill revisions, thereby suppressing strategy changes that lack sufficient payoff support. OASE therefore replaces blind updating with evidence-anchored selection, allowing agents to adapt stably and efficiently even as opponents continuously evolve.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2608.02001v1' target='_blank'>VulnGym: Benchmarking Coding Agents for Repository-Level Vulnerability Detection</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Kexing Ji, Jiachen Liu, Enze Hu, Cuiyun Gao, Keke Lian, Yongheng Liu, Lei Zhang, Tian Dong, Hao Chen, Wang Bin</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-08-03 10:03:29</h6>
+<p class='card-text'>Recent advances in LLM-based vulnerability detection have shown promising results, while coding agents further extend this capability from isolated code snippets to complete repositories. This shift requires agents to autonomously explore repositories and locate vulnerability-relevant code, instead of performing detection on preselected functions. However, existing benchmarks primarily focus on vulnerability classification over preselected code snippets, limiting their ability to evaluate coding agents in repository-level vulnerability detection. Moreover, without fine-grained vulnerability trace annotations, the capability limitations underlying the detection process remain difficult to explore. To address these limitations, we present \textbf{VulnGym}, a real-world repository-level benchmark for evaluating vulnerability detection by coding agents. VulnGym aligns reviewed GitHub advisories with their corresponding vulnerable version repositories. It contains 184 advisories and 408 vulnerability entries across 23 repositories, with each entry annotated with line-level entry points, critical operations, and vulnerability traces. Using this fine-grained ground truth, VulnGym defines an end-to-end detection task and three oracle-based subtasks to jointly evaluate vulnerability detection and diagnose limitations in code localization and evidence construction. Our evaluation indicates that current coding agents remain limited in both end-to-end repository-level vulnerability detection and the construction of accurate supporting traces.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2608.01964v1' target='_blank'>LongHorizon-Harness: Advancing Long-Horizon Agents for Real-World Tasks</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Ziyu Ma, Hailang Huang, Shun Zou, Yong Wang, Shidong Yang, Yiming Hu, Fei Wei, XiangXiang Chu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-08-03 09:32:21</h6>
+<p class='card-text'>Large language model (LLM) agents increasingly undertake long-horizon tasks that require sustained reasoning, tool use, and revision across many interdependent steps. However, existing agent harnesses maintain task execution, task state, and completion assessment within a growing context, making the state difficult to track and allowing incorrect self-assessments to propagate into later decisions. We reformulate long-horizon execution as a task-state management problem and propose LongHorizon-Harness, which maintains the task state explicitly outside execution and updates it only with facts independently verified from the environment. Its Manage-Execute-Audit(MEA) loop uses a manager to maintain the task state and determine the next subtask, a fresh-context executor to perform it, and a read-only auditor to verify the resulting environment state before the next round. A lightweight AgentAdapter supports interchangeable model and harness backends without modifying their native agent loops. LongHorizon-Harness improves Qwen~3.7-Plus from 51.8% to 80.7% on WeaveBench, from 69.7% to 77.2% on Terminal-Bench~2.1, and from 2.8% to 8.3% on OSWorld~2.0. It also raises Claude Opus~4.7 from 20.0% to 34.3% on an OSWorld2.0 subset, demonstrating consistent gains across models, harnesses, and interaction domains.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2608.01918v1' target='_blank'>HarnessCompass: Guiding Automatic Harness Evolution toward Generalizable and Effective Agent Harnesses</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Luan Zhang, Ruochen Zhou, Dandan Song, Zhengyu Chen, Yuhang Tian, Jun Yang, Huipeng Ma, Chenhao Li, Guangyuan Feng, Xudong Li, Yizhou Jin, Yan Xu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-08-03 08:51:50</h6>
+<p class='card-text'>Harness design plays a critical role in agent performance by shaping how large language models (LLMs) perceive, reason over, and act within executable environments. Recent work has proposed automatic harness evolution, which iteratively improves the harness from agent--environment interactions. However, existing methods often overfit to the evolution tasks, rely exclusively on trajectory-derived signals, and optimize harness components jointly, causing interference across components. We propose HarnessCompass, a novel automatic harness evolution framework built around constrained evolution, proactive feedback, and component-wise optimization. HarnessCompass first enforces global constraints on evolution, restricting modifications to task-agnostic harness changes that generalize beyond the evolution tasks. It then augments trajectory-derived evidence with proactive first-person feedback from the agent about harness usage, yielding richer signals for evolution. Finally, it decouples the optimization of different harness components before consolidating them into a unified harness, reducing cross-component interference while preserving component synergy. On SWE-bench Verified with GPT-5.4, HarnessCompass improves Pass@1 from 54\% to 66\% in only 5 evolution iterations, outperforming AHE in both effectiveness and evolution efficiency. In addition, the evolved harness transfers effectively to held-out tasks and other models, demonstrating substantially stronger generalization than prior automatic harness evolution methods.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2608.01867v1' target='_blank'>CRISP: Critical Step Perception for Training Efficient Deep Search Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Haosi Mo, Zihao Yan, Ruiqing Zhang, Zhongli Li, Hexuan Deng, Xuebo Liu, Min Zhang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-08-03 08:15:18</h6>
+<p class='card-text'>Large language models (LLMs) are increasingly extended into deep search agents that solve complex questions through multi-step interaction with external search and browsing tools. However, existing agents often incur substantial computational and interaction costs, generating lengthy trajectories that contain redundant queries, inefficient exploration, and irrelevant observations. Existing efficiency-oriented methods usually encourage agents to use tools less frequently, but treating all tool interactions uniformly may also suppress steps that gather necessary evidence. In this paper, we propose CRISP, a framework for training efficient deep search agents through critical step perception. Unlike prior efficiency methods that uniformly penalize tool use, CRISP distinguishes interactions that gather necessary evidence from redundant ones and shapes the training reward to preserve the former while pruning the latter, improving efficiency without sacrificing the evidence needed for correct answers. Specifically, CRISP first constructs critical-step labels with Backward Evidence Induction: starting from the final answer, a strong model traverses a completed search trajectory backward and judges whether each tool-interaction step provides or preserves evidence for the final answer. We then distill these step-wise judgments into a smaller critical-step recognizer, enabling full-trajectory analysis in a single pass. During policy optimization, an efficiency-aware reward is applied only to successful rollouts. Experiments on BrowseComp and HLE-Verified show that CRISP maintains competitive final-answer accuracy while reducing average interaction turns by 15.1% and 33.2%, respectively, demonstrating substantial improvements in interaction efficiency.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2608.01846v1' target='_blank'>HyperAgent4POI: Dynamic Semantic Message Passing on Multi-Agent Hypergraphs for Missing-Modality Recommendation</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Jinze Wang, Yuze Liu, Tiehua Zhang, Jiong Jin, Zhu Sun</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-08-03 07:54:43</h6>
+<p class='card-text'>Next Point-of-Interest (POI) recommendation benefits from textual and visual content that describes venue semantics, yet such content is often incomplete in real-world services. Missing modalities weaken POI representations and reduce the semantic evidence available for ranking. The resulting representations also provide unreliable evidence for modeling higher-order user--POI interactions. We propose HyperAgent4POI, which uses Dynamic Semantic Message Passing (DSMP) to perform modality completion and soft incidence refinement within each hypergraph layer. Persistent node agents share a frozen Llama backbone and use role-specific adapters to produce node-to-hyperedge messages. Semantic hyperedge motifs formed from these messages guide soft incidence scoring and modality completion. Final node representations are cached for online ranking without LLM calls. Experiments on three real-world LBSN datasets show consistent ranking gains over 15 baselines across modality-missing rates, while cached inference provides practical online efficiency. Under a 60% modality-missing rate, HyperAgent4POI improves NDCG@20 over the strongest baseline by 8.2% on average across the three datasets.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2608.01822v1' target='_blank'>SearchMaster: Grounded and Regulated Self-Play for Search Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Wentao Tan, Qiong Cao, Jiaqi Wang, Nan Duan</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-08-03 07:29:11</h6>
+<p class='card-text'>Training LLM-based search agents requires high-quality search data: tasks that demand genuine multi-hop retrieval and trajectories that use search tools effectively. Existing pipelines often depend on human-written tasks, expert demonstrations, or stronger teacher models. We present SearchMaster, a self-play framework that trains a single LLM from search tasks it generates, solves, and verifies in a local search environment. The key challenge is that self-generated tasks and rollouts can yield misleading signals: pseudo multi-hop questions, success-rate difficulty estimates that ignore search depth, and rollouts with excessive opening but little targeted evidence acquisition. SearchMaster addresses these failure modes with three controls. An Evidence-Chain Generator (ECG) grounds task generation in explicit cross-document evidence chains to reduce pseudo multi-hop questions. A Search-Depth Reward (SDR) scores task difficulty by the search depth of successful rollouts rather than success rate alone, keeping retained tasks search-intensive. An Over-Opening Penalty (OOP) regulates tool use by discouraging excessive document opening, avoiding long but shallow browsing. Verified Proposer and Solver rollouts are then jointly optimized with GRPO. Across six deep-search benchmarks, SearchMaster improves a Qwen3.5-9B backbone from 38.19% to 51.52% average accuracy, with a 30.1-point gain on BrowseComp-Plus. These results show that grounded and regulated self-play can provide effective search-agent training data without human-labeled QA pairs or expert demonstrations. The code is available at https://github.com/WentaoTan/SearchMaster.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2608.01805v1' target='_blank'>CockpitHAT: Dependency-Graph-Driven Hierarchical Attribution for Embodied Multi-Agent Cockpits</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Wei Wang, Shuanghe Liu, Zhu Zhuo, Jiaqi Zhong, Xiaozhao Zhao, Xiaojie Zuo, Jie Su</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-08-03 07:13:00</h6>
+<p class='card-text'>LLM multi-agent systems suffer from Correctness Collapse, where high task-level accuracy conceals severe process-level failures. This is especially hazardous in safety-critical embodied settings such as automotive cockpits, where lexically correct utterances may trigger dangerous physical operations. Existing attribution methods rely on text traces alone, missing dependency structure, multi-channel evidence, and safety-aware evaluation. We introduce CockpitHAT, a hierarchical attribution framework that replaces positional windows with dependency-distance thresholds from interaction DAGs, integrates multi-channel evidence via an embodied adapter, and applies a safety-uplift to high-risk failures during confidence-weighted analyst consensus. We further release CockpitBench, a benchmark of 212 annotated failure traces spanning dialogue, vehicle-state, environmental, and memory channels, each labeled with ISO 26262 ASIL severity via three-expert consensus. On the public Who&When benchmark, CockpitHAT achieves agent-level / step-exact accuracies of 77.9% / 37.8% on the Hand-Crafted split and 86.5% / 46.0% on the Algorithm-Generated split, surpassing the text-only SOTA ECHO by up to 17.6 / 16.7 points. On CockpitBench, it attains 78.3% agent-level and 38.2% step-exact accuracy. These results establish dependency-aware, multi-channel, risk-calibrated attribution as an effective paradigm for reliable failure diagnosis in real-world embodied LLM multi-agent systems.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2608.01791v1' target='_blank'>PICopilot: An LLM-based Agentic Framework for Assisting Photonic Integrated Circuit Design via Script Generation</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Xiaohan Jiang, Zeyu Li, Wei Zhang, Jiang Xu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-08-03 07:03:24</h6>
+<p class='card-text'>The rapid development of photonic integrated circuits (PICs) is shifting the design flow from traditional graphical user interface (GUI)-based methods to script-based methods for higher flexibility, portability, and maintainability. However, script-based design introduces new challenges, requiring designers to possess additional proficiency in tool application programming interfaces (APIs) and programming. It also demands greater effort and time because it is inherently less intuitive and more complex than GUI-based methods. As PICs grow in scale and complexity, the productivity gap between design needs and manual scripting capabilities continues to widen. To address this gap, we introduce PICopilot, the first large language model (LLM)-based agentic framework that assists in PIC design via automated design script generation from natural language instructions. PICopilot leverages a multi-agent architecture with a feedback mechanism and a specifically designed retrieval-augmented generation (RAG) pipeline, achieving a high success rate and reliability. Experimental results on a benchmark of diverse PIC scripting tasks demonstrate that PICopilot successfully completes all 48 tasks and outperforms other LLM-based approaches without incurring substantial extra latency or cost, even solving 21 more tasks than the advanced GPT-5 model with a general RAG pipeline.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js'></script>
+</body>
+</html>
