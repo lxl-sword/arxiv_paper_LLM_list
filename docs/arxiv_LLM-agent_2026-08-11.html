@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<title>LLM-agent - 2026-08-11</title>
+<link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap' rel='stylesheet'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'>
+<style>
+body {
+font-family: 'Roboto', sans-serif;
+background-color: #f5f7fa;
+padding: 20px;
+}
+.card {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.card-title {
+    font-weight: 700;
+}
+.card:hover {
+    transform: scale(1.02);
+    transition: 0.3s ease-in-out;
+}
+</style>
+</head>
+<body>
+<div class='container'>
+<h1 class='text-center my-4'><i class='fas fa-book'></i>LLM-agent - 2026-08-11</h1>
+<div class='row'>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2608.09885v1' target='_blank'>SHE: Trajectory-driven Safety Harness Evolution for LLM Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Wanying Qu, Qinghua Mao, Yu Li, Jiyao Liu, Xin Zhang, Dadi Guo, Yanxu Zhu, Qingyu Liu, Leitao Yuan, Xi Lin, Shanfeng Zhu, Yanwei Fu, Jing Shao, Xia Hu, Dongrui Liu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-08-10 17:35:08</h6>
+<p class='card-text'>The safety of large language model (LLM) agents depends not only on model weights but also on the agent harness that manages context, memory, tools, permissions, and runtime control. Existing safety mechanisms often treat the harness as a fixed deployment artifact, limiting their ability to evolve with emerging risks. Moreover, coupled functions across harness components obscure safety responsibility attribution, making localized evolution difficult. We propose Safety Harness Evolution (SHE), a framework that learns evolving safe boundaries from rollout trajectories. SHE decomposes the harness into four artifacts with explicit safety responsibilities, including the System Prompt, Rule Bank, Safety Memory, and Tool Policy, defining clear functional boundaries for localized evolution. Based on this decomposition, SHE introduces an attribution-guided evolution loop that converts trajectory failures into structured diagnoses, learns artifact-specific boundary refinements, and selects evolved harnesses through safety-utility validation. Experiments on Agent-SafetyBench demonstrate that SHE effectively enhances safety through harness evolution, achieving a 3.1x ASR reduction compared with static SafeHarness, while also improving benign utility. The evolved harness further generalizes to unseen risks on the held-out AgentHarm benchmark and transfers across agent models without additional evolution.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2608.09867v1' target='_blank'>Stealing Reasoning Traces from Proprietary LLM APIs</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Alexander Panfilov, David Schmotz, Ilia Shumailov, Luca Beurer-Kellner, Joachim Schaeffer, Ameya Prabhu, Jonas Geiping, Maksym Andriushchenko</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-08-10 17:24:50</h6>
+<p class='card-text'>Leading large language model providers now conceal their models' step-by-step reasoning, or chain-of-thought, to protect intellectual property and limit information leakage. Rather than storing these traces server-side, providers return them to the client as blocks of encrypted text, which the client passes back with each subsequent request. Building on prior research, we identify an architectural vulnerability: these encrypted blocks are fully compatible and interchangeable across different sessions, users, and models within a provider's ecosystem. We exploit this compatibility to develop a scalable decryption jailbreak. By injecting an encrypted reasoning trace from a given model into a weaker, and less safeguarded model from the same provider, we force it to decode and output the trace verbatim in plaintext, without ever jailbreaking the more capable model directly. This vulnerability enables four distinct attack vectors. First, it circumvents anti-distillation mechanisms, allowing adversaries to extract a proprietary model's reasoning, as we demonstrate across Anthropic, OpenAI, and Google. Second, it allows for large-scale private data extraction. Developers frequently share session logs publicly, unaware of contents of the encrypted blocks. By decoding 315,320 reasoning blocks scraped from public repositories, we recovered 367 Personally Identifiable Information (PII) artifacts and 182 credentials. Third, it inadvertently reveals hazardous information hidden within the reasoning process, even in cases where the model's final, visible output safely rejects a malicious request. Fourth, attackers can leverage this flaw to execute invisible prompt injections, embedding malicious payloads entirely within encrypted blocks to poison public agentic rollouts. Following responsible disclosure, we propose concrete cryptographic and system-level mitigations to secure client-side reasoning.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2608.09857v1' target='_blank'>Agentic Harnesses: LLM-Driven Verification Layers for Robot Autonomy</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Rohan Bhagra, Mahantesh Halapannavar, Uddhav Bhattarai</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-08-10 17:15:55</h6>
+<p class='card-text'>Advances in advanced artificial intelligence tools have sparked research in robot autonomy, but the development of such systems has largely focused on execution rather than verifying the feasibility actions planning models propose. Like general-purpose LLMs, robotics planning models carry risks: biased toward user-specified goals, they may suggest actions misaligned with scientific ethics, they may be unsafe due to an inability to "remember" prior safety risks, or they may be vulnerable to adversarial attacks on the autonomy ecosystem. We propose a LLM-driven verification layer between planning and execution to evaluate action permissibility. Our LLM-as-a-Judge ensemble combines chain-of-thought reasoning across models and synthesizes those expert judge outputs, mirroring a combination of a mixture of experts and self-consistency approach. This layer serves as middleware, gating plans from the server's planning module before they reach the MCP server and therefore the robot's low-level controls: plans are approved, rejected for reformulation, or escalated for human review. With this system, we achieve near 85% precision across accept/escalate/reject categories 97% containment of adversarial attacks, with negligible errors between accepting and rejecting tasks, and errors mostly manifesting at the escalate boundary.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2608.09790v1' target='_blank'>CARD: Controlled Agentic Reddit Discussions for Credit Card Simulation</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yaoning Yu, Kai-Min Chang, Ye Yu, Yi-Chia Wang, Haojing Luo, Haohan Wang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-08-10 16:12:45</h6>
+<p class='card-text'>Online credit card discussions provide a natural setting for studying how consumers communicate about financial products. Simulating these discussions requires more than just generating individual comments, the generated threads should also match how real users express themselves and interact with others. We introduce CARD, a framework for generating realistic credit card discussion threads. Given a credit card post and its matched real thread, CARD uses non-verbatim guidance on reply structure, comment function, stance, tone, and conversational variation. A planner organizes these controls, a writer generates the discussion, and a calibration loop updates comments' populations that contribute to differences between the generated and real thread distributions. We evaluate CARD on real Reddit credit card discussions using lexical, semantic, behavioral, and structural metrics. CARD matches the distributions of real credit card discussions better than simulation baselines across multiple LLMs and also demonstrates smaller effect sizes and distribution distances across metrics. These results show that structured planning and targeted revision can generate the realism of simulated credit card discussions.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2608.09732v1' target='_blank'>ColluSkill: Adversarial Cross-Skill Composition for Evading Agent Skill Scanners</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Puyu Zeng, Simeng Qin, Jingzhi Li, Ju Jia, Zheli Liu, Xiaojun Jia</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-08-10 15:32:44</h6>
+<p class='card-text'>Agent skills are emerging as an important attack surface in LLM-based agent systems. Through an empirical study of existing skill scanners, we find that current defenses mainly inspect individual skills, leaving risks from cross-skill composition insufficiently examined. This creates a practical blind spot: multiple locally plausible skills may pass security checks while collectively forming a harmful workflow during agent execution. To investigate this threat, we propose ColluSkill, a collusive multi-skill-chain attack framework that decomposes a complete malicious intent into interdependent sub-payloads embedded in independently packaged skills. The attack does not rely on any single malicious skill, but emerges from the ordered composition of locally plausible behaviors through contextual dependencies, artifact passing, and execution handoffs. ColluSkill further employs LLM-based chain planning and scanner-feedback refinement to preserve chain-level attack semantics while reducing suspicious signals in individual sub-skills. To defend against such attacks, we propose ChainGuard, a context-aware skill-chain scanner that jointly analyzes a candidate skill and the skills already installed in the agent environment. ChainGuard reconstructs cross-skill dependencies, artifact flows, capability compositions, and downstream behaviors to identify risks that emerge only at the workflow level. Experiments on six representative skill scanners show that ColluSkill achieves an average attack success rate of 96.0% and consistently outperforms the evaluated single-skill and multi-skill attack baselines. Meanwhile, ChainGuard reduces the attack success rate to 22.5% while allowing 99.5% of benign workflows to pass, highlighting the importance of chain-level security analysis for agent skill ecosystems.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2608.09706v1' target='_blank'>Test-Time Scaling for CAD Generation via Verifier-Free Consensus Selection</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Aaron Haag, Altay Kaçan, Bertram Fuchs, Oliver Lohse</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-08-10 15:10:44</h6>
+<p class='card-text'>Large language models can write parametric CAD programs from a natural-language description (text-to-CAD generation), but a single sample is often wrong. Increasing test-time compute by sampling multiple candidates only helps if a good candidate can be identified, yet no ground-truth model is available at generation time. Existing systems often require a separate verifier, such as a vision-language judge, to select among candidates. We investigate whether the candidate pool itself provides enough signal for effective selection and a verifier-free alternative. We introduce 3D CAD consensus selection, hereafter consensus selection: sample $N$ parametric CAD programs, compile them to 3D models, and return the candidate that agrees most with the rest of the pool. The method is training-free and compatible with existing CAD agents. We investigate geometric and topological notions of agreement, each of which improves its corresponding evaluation metric. On the exact candidate pools of a state-of-the-art CAD generation method, geometric consensus improves all three geometric metrics over the method's verifier, while topological consensus matches it on topology. Across every tested LLM and prompt variant, geometric consensus also improves geometric accuracy over random selection from the same pool, reducing Chamfer distance by $1-10\%$.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2608.09696v1' target='_blank'>Model Discovery Agent: LLM-assisted Bayesian experiment design for data-efficient discovery of mechanistic world models</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Kevin Murphy</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-08-10 14:59:22</h6>
+<p class='card-text'>Predicting the answer to interventional ``what if'' questions --- the outcome of an action never taken --- requires a \emph{mechanistic}, causal model, not a curve fit; and learning such a model requires \emph{experiments}, because passive data leaves its mechanisms unidentified. Experiments are expensive, so the central problem is \emph{data efficiency}. We present the Model Discovery Agent (MDA), which couples a large language model (LLM), used as a \emph{proposer} of candidate structures, with standard Bayesian machinery --- sequential Monte Carlo (SMC) for parameter and structure posteriors, simulation-based inference (SBI) for intractable likelihoods, and value-of-information (VoI) for experiment design --- to discover latent mechanistic world models from few interventions. MDA operates in the M-open setting: when the truth lies outside the current hypothesis class, a predictive check flags the inadequacy and the proposer expands the hypothesis space with a new model whose parameters are then identified by designed experiments. We show that \emph{discovery and design reinforce}: the design step identifies the mechanism the discovery step proposes, and the identified mechanism improves predictions, enabling further discoveries from the remaining unexplained residuals. On three different benchmarks --- covering physics (\DPbench, \citep{wiemann2026discoverphysics}), chemistry (\CHEMbench, \citep{kabra2026autoscilab}) and biology (\HHbench, a new partially observed single-neuron electrophysiology benchmark we create) --- we show that MDA sets a new SOTA in terms of data-efficient model learning and reliable interventional forecasting ability.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2608.09650v1' target='_blank'>Listwise Cross-Encoder Fine-Tuning vs. Agentic Instruction Tuning for LLM Rerankers: A Systematic Study in Medical Procedure Reranking</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Matan Fainzilber, Shlomit Plavner</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-08-10 14:28:30</h6>
+<p class='card-text'>Reranking medical procedures against patient queries is a critical component of health insurance information retrieval, complicated by a substantial lexical gap between patient language and clinical nomenclature. We present a systematic comparison of two reranking paradigms for this production task: (1) small cross-encoders (MedCPT, MiniLM-L12) fine-tuned with listwise learning-to-rank objectives across layer freezing configurations, and (2) Qwen3-Reranker-4B, a 4B-parameter instruction reranker whose prompt is iteratively refined via an agentic optimization loop driven by GPT-4.1. On a purpose-built dataset of 2,647 queries across 708 insurance services, we find that a 109M-parameter cross-encoder fine-tuned with ListNet outperforms the 4B-parameter model by 2.6 percentage points on NDCG@3 and 13.3 points on Spearman correlation - at 37x fewer parameters. We report practical findings, a scalable LLM based dataset construction pipeline, and deployment trade-offs relevant to production reranking systems. We release our code and a sample dataset to support reproducibility and adaptation to other domains.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2608.09638v1' target='_blank'>Avalon-ToM-Bench: Evaluating Fine-Grained Theory of Mind via Asymmetric Game Mechanics</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yen-Shan Chen, Yu Chian Duan, Chih-En Kuo, Jian-Bin Wu, Yun-Nung Chen</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-08-10 14:19:08</h6>
+<p class='card-text'>Theory of Mind (ToM) is essential for agent interactions, yet existing evaluations either rely on static scenarios that oversimplify mental-state reasoning or interactive settings that provide limited diagnostic insight. We present Avalon-ToM-Bench, a fine-grained benchmark that operationalizes ToM through the asymmetric-information mechanics of The Resistance: Avalon. Rather than evaluating end-to-end gameplay, it decomposes ToM into a 2$\times$2 taxonomy -- epistemic versus motivational reasoning crossed with inference versus action -- using human-crafted, perspective-constrained queries. Benchmarking 28 LLMs reveals three insights: 1) Reasoning, not knowledge. Models show strong game-rule comprehension but markedly weaker ToM abilities, isolating failures to social reasoning rather than missing domain knowledge. 2) Expression, not representation. Mechanistic analyses via linear probing and activation steering show that models frequently represent correct mental-state inferences in their hidden states but fail to express them during generation -- linear probes recover 77-82% accuracy versus 62-70% from the models' own chain-of-thought. 3) Policy, not deliberation. Dedicated reasoning training yields substantial improvements whereas test-time chain-of-thought provides only marginal gains (+11.0 versus +1.1 points on average), suggesting that robust ToM depends on a learned reasoning policy rather than increased inference-time deliberation.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2608.09577v1' target='_blank'>ElasticBack: Stealthy Conditional Backdoor in LLM-Agent Skills via Coupled Trigger-Rule Optimization</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Hao Sui, Simeng Qin, Jie Liao, Xiaojun Jia, Bing Chen, Yang Liu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-08-10 13:12:35</h6>
+<p class='card-text'>Agent skills, bundles of instructions and resources that an LLM agent loads on demand, form an emerging supply chain where a single poisoned skill can persistently compromise every agent that installs it. However, existing skill attacks either fire on every request or rely on fine-tuned weights or multiple skills, leaving a conditional and low-cost backdoor unexplored. In this work, we present ElasticBack, an effective conditional single-skill backdoor that plants a rule R in the skill document and a benign-looking trigger T in the user query, so the malicious payload fires only when both co-occur. ElasticBack binds the two sides through a trigger-as-switch construction, generating R via semantic-anchored rule injection. It then freezes R and evolves T against it with a stealth-constrained genetic search, so that effectiveness and stealth are optimized, keeping the backdoor weight-free and dormant on benign inputs. Extensive experiments across three target behaviors (50 skills each) and four agent LLMs show that ElasticBack attains a high attack success rate at a near-zero false-positive rate with preserved clean accuracy, transfers across models, and evades deployment-time defenses. These results motivate stronger defenses for the skill supply chain.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2608.09574v1' target='_blank'>The Politician, the Liar, and the Obedient Worker: Emerging Behavior of LLM Agents in Hierarchical Games</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Fatemeh Seyedin, Adrian Weller, Jinhyuk Yun, Mahmoudreza Babaei</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-08-10 13:08:52</h6>
+<p class='card-text'>LLMs are rapidly embedding themselves into daily life: drafting our emails, managing our schedules, and making decisions on our behalf. As they move from individual tools to participants in multi-agent organizations, an important question arises: do they reproduce the governance failures like free-riding, corruption, and entrenched leadership that plague human institutions? We introduce the Hierarchical Game (HG), a public goods game extended with managerial authority, democratic elections, and private communication. Testing six frontier models across twelve experiments that add institutions one at a time (speech, peers, government, wages, oversight, elections), we find distinct behavioral profiles: Qwen promises and lies (13.3\% broken promises); Grok refuses to cooperate on its own but becomes fully cooperative once a manager can punish it (16\%$\to$100\%); Claude and GPT-4o cooperate reliably at baseline. But honesty proves fragile. When the manager role comes with a salary, all models except GPT-4o start cutting private deals to win or keep the position. When punishment is made anonymous, honest models begin to cheat. When all agents share the same model family, the first elected manager stays in power indefinitely. Leadership change only happens in groups that mix different families.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2608.09567v1' target='_blank'>From Runnable to Verifiable: An Independent Reproducibility Study of LLM/Agent-Driven Vulnerability Validation Artifacts</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Bo Chen</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-08-10 13:05:02</h6>
+<p class='card-text'>Security research artifacts---repositories, PoC exploits, and validation pipelines---are increasingly produced by LLM/agent-driven vulnerability workflows, yet the gap between \emph{publicly available}, \emph{runnable}, \emph{signal-producing}, and \emph{semantically confirmed} artifacts is poorly measured. We conduct a pre-registered reproducibility audit of this literature. A search covering 2023--2026 with dual screening yields a 104-paper consensus corpus, of which 59 papers (56.7\%) have a publicly reachable artifact. We execute an 18-paper sample at R0/R1 and all 102 cases of the anchor benchmark (arXiv:2509.24037), with patched-counterfactual verdicts on 30 signal-producing cases and matched-negative-control verdicts on 19. Three findings stand out. First, 58/102 (56.9\%) anchor cases contain a script-internal CVE identifier that diverges from the declared directory CVE. Second, only 10/18 (55.6\%) paper-level artifacts complete their declared workflow at R0, rising to 11/18 (61.1\%) after environment-only R1 repair. Third, artifact-embedded oracles prove unreliable: 20/30 patched-counterfactual audits still produce the claimed signal on the patched build, 7/19 matched negative controls still trigger on benign input, and the oracle confusion matrix has sensitivity 60\% and specificity 45\%. A trigger on the vulnerable build is not evidence of CVE-specific reproduction without a clean patched counterfactual. These are exploratory results from a pre-registered protocol, and our protocol---pre-registered post-conditions, R0/R1 repair ladder, G1--G3 semantic evidence levels, and patched-counterfactual oracles---is a reusable template for the security reproducibility community.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2608.09555v1' target='_blank'>Bidirectional Context Self-Distillation for Reinforcement Learning of Skill-Based LLM Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Tianjun Pan, Yuan Li, Hongda Wang, Linbo Jin, Mengfei Song, Lei Gao, Qiming Shi, Shaokang Fu, Jiarong Zhao, Chengyu Wang, Chengfu Huo</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-08-10 12:53:06</h6>
+<p class='card-text'>External natural-language skills provide large language model (LLM) agents with reusable and editable guidance for solving complex tasks. Yet their effectiveness depends not only on skill quality, but also on whether the policy can translate the provided guidance into appropriate actions. However, methods specifically designed to improve this skill-utilization ability remain largely underexplored. In practice, skill-based agents are commonly trained with reinforcement learning objectives centered on task-level rewards, which offer limited supervision and struggle to capture subtle differences in how effectively the policy uses the provided skills. We propose BCSD (Bidirectional Context Self-Distillation), a framework that combines self-distillation with reinforcement learning to train LLM agents to use external skills more effectively. Unlike prior self-distillation methods that rely on a single privileged context, BCSD evaluates each trajectory from two complementary skill-context views. The augmented view introduces higher-level Meta-Skill guidance, while the reduced view prunes general guidance to highlight task-specific skills. Their complementary token-level signals are combined to rescale the RL advantage. Experiments on ALFWorld and WebShop demonstrate that BCSD achieves the strongest overall performance across model scales, enabling agents to utilize external skills more effectively. Ablation studies further verify the complementary contributions of the augmented and reduced context views. Code will be released to ensure full reproducibility.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2608.09538v1' target='_blank'>TCS-BENCH: Benchmarking State-of-the-Art Generative AI Theoretical Computer Science Research Ability</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Vincent Cohen-Addad, Dimitris Paparas, Ernest van Wijland, Max Springer, Julien Canitrot-Paradis, Honghao Lin, David Woodruff, Adarsh Kumarappan, Rajesh Jayaram, Rudrajit Das, Lalit Jain, Ola Svensson, Silvio Lattanzi, Mislav Balunovic, Theophane Weber, Vahab Mirrokni</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-08-10 12:36:16</h6>
+<p class='card-text'>We introduce TCS-Bench, a benchmark for evaluating Large Language Models (LLMs) on research-level Theoretical Computer Science (TCS) proof generation. TCS-Bench consists of theorem-proving tasks from papers published at top theoretical computer science venues (STOC, FOCS, and SODA). Each task provides the necessary context to derive a self-contained proof for a target result. We evaluate state-of-the-art models on this benchmark. We verify the correctness of generated proofs via a verification agent, and further benchmark the verifier against human-expert proof judgements on a set of target statements and generated proofs pairs. Our reference verifier achieves over 90% accuracy on the expert labeled set.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2608.09526v1' target='_blank'>RangeFactory: Scalable Construction of Multi-Hop Cyber Ranges</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Hanlin Jiang, Puyi Wang, Jiandong Jin, Shaofei Li, Zhan Shen, Pengli Wang, Ziming Wang, Yifeng Cai, Ning Jia, Yuxin Ren, Peng Jiang, Yao Guo, Ding Li</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-08-10 12:25:49</h6>
+<p class='card-text'>Real-world cyberattacks often require sustained progress across multiple hosts and network segments, making multi-hop cyber ranges essential infrastructure for studying and improving LLM agents' ability to sustain complete attack chains. Prior work has scaled isolated vulnerability tasks and constructed multi-host scenarios from manually specified vulnerability semantics. However, they are still unable to automatically orchestrate the growing supply of vulnerability environments into end-to-end validated multi-hop ranges. To this end, we present RangeFactory, an automated cyber-range orchestration framework that constructs multi-hop cyber ranges at scale from isolated vulnerability environments. RangeFactory formulates range construction as dependency resolution: it extracts dependency information from agents' actual attacks against real vulnerabilities, resolves known dependencies through template-guided orchestration, and uses end-to-end attack execution to validate runtime dependencies that emerge after composition. Using RangeFactory, we construct RangeBench with 1,148 validated range instances spanning 287 distinct attack chains and evaluate frontier attack agents across attack depth, network scale, and task information. Among runs that compromise the entry vulnerability, 24.5-47.0% still fail to complete the remaining attack path, revealing a substantial sustained-compromise gap between establishing an initial foothold and completing a multi-hop attack. RangeFactory further produces a corpus of 5,541 outcome-annotated multi-hop attack trajectories, providing execution data for attack-process analysis and future agent training.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2608.09524v1' target='_blank'>STAIR: Effective Incident Response Using an End-to-End Agentic Planning Framework</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Hanlin Jiang, Jionghao Huang, Shaofei Li, Bojia Yu, Peng Jiang, Yuxin Ren, Ning Jia, Yao Guo, Ding Li</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-08-10 12:25:12</h6>
+<p class='card-text'>Incident response planning is critical for restoring compromised software systems after cyberattacks. Common practice relies on expert-driven playbooks that encode fixed response procedures, but these static workflows struggle to adapt to evolving incident states, changing recovery objectives, and execution feedback. Recent LLM-based planners and tool-using agents improve automation, yet they remain unstable in long-horizon response because they lack a unified basis for maintaining incident state, aligning actions with the current recovery stage, and reusing historical experience.
+  We present STAIR, an end-to-end agentic planning framework for incident response. The framework maintains the current incident as Graph-as-State, uses a Stage Router to dispatch planning to stage-specialized agents, and retrieves historical experiences to guide action selection. An Execution Harness executes actions, returns feedback to update the incident state, and validates action effects for future experience reuse. Across 100 Docker-based cyber ranges, our framework achieves a normalized defense score of 0.94 and improves over the strongest baseline by 9.5%.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2608.09507v1' target='_blank'>Learning Preference Adaptation for Large Language Model Personalization via Verbal Reinforcement Learning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yuting Liu, Wei Wu, Jianzhe Zhao, Guibing Guo</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-08-10 12:11:47</h6>
+<p class='card-text'>Natural language user preferences provide an interpretable interface for LLM personalization. However, universal preference summaries often contain information irrelevant to a particular downstream task. Directly supplying the full preference summary therefore wastes context capacity and introduces cross-task distraction, while manually designing task-specific preference views is difficult to scale. In this work, we study \emph{task-specific preference adaptation}: given a universal user preference summary and a downstream task, derive a task-conditioned representation that preserves sufficient decision-relevant evidence while removing redundant context. To this end, we propose \textsc{AlignXada}, a training-free meta-learning framework that induces reusable textual refinement policies for adapting universal preference summaries to task-specific ones. The refinement policy is iteratively optimized by a meta learner through verbal reinforcement learning. Across 13 tasks and three downstream models (39 task--model cells), \textsc{AlignXada} achieves an average gain of 3.82 points, improving 33 cells while retaining only 22.8\% of the original profile tokens and outperforming RAG in 36 cells. An extended faithfulness analysis further shows that the refined profiles remain largely grounded in the source preferences while preserving task-relevant personalization signals, suggesting that profile-side adaptation serves as a practical complement to universal memory construction for lifelong personalized agents.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2608.09485v1' target='_blank'>Capability Is Not Propensity: Measuring Pressure-Robust Cooperative Behavior in Civic LLM Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Neel Tushar Shah, Manglam Kartik, Akshat Karkar</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-08-10 11:49:45</h6>
+<p class='card-text'>Cooperative capabilities in language models are dual-use. The same social reasoning that supports civic deliberation can also enable strategic omission, false consensus, and manipulative framing. We argue that Cooperative AI evaluations should separate what models can do under benign instructions from what they tend to do under realistic civic pressure. We introduce DiffCoop-Civic, a 10-scenario pilot evaluation suite spanning preference understanding, evidence and persuasion, commitment design, asymmetric information, and dissent preservation. Across seven models from four model families, subtle omission pressure produces a near-uniform shift: manipulative enablement rises by 1.17 points and dissent preservation falls by 1.67 points on a 5-point scale. Overt false-consensus pressure behaves differently: it triggers refusal or redirection in some aligned API models, but direct compliance in several open-weight models. A lightweight Pareto-Trace prompting intervention improves pressure robustness without simply relying on hard refusal. An anonymous reproducibility package is available at https://anonymous.4open.science/r/diffcoop-civil-771C.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2608.09476v1' target='_blank'>ActBench: Self-Evolving Benchmark of Behavioral Safety in Cowork Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Hongwei Yao, Yiming Liu, Meihui Chen, Jieling Chen, Zikun Chen, Yiling He, Wangze Ni, Cong Wang, Kui Ren</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-08-10 11:45:03</h6>
+<p class='card-text'>Cowork agents may complete benign tasks while disclosing protected data, manipulating unauthorized state, invocate unauthorized API. We define behavioral safety and introduce ActBench, a self-evolving benchmark that evaluates such behavior risk from execution trajectories rather than final responses. Each case pairs a benign task with an adversarial variant that preserves its instruction, configuration, initial state, rating model, and trusted records while injecting a task-reachable payload. ActBench contains 600 cases from 213 scenarios, spanning 15 risk behaviors, six execution spaces, and 48 web-service APIs.To move beyond static payloads, we propose a reward-guided beam search method that jointly optimizes attack effectiveness and task utility, while reflection diagnoses failed execution checkpoint and guides payload revision. Besides, we propose a dual evidence verification mechanism that verifies agent execution safety and utility through log evidence and LLM-based trajectory evidence.We evaluate 15 LLMs and 6 open-source cowork agents over 24,000 trajectories. Under a fixed harness, attack success rates ranges from 10.1% to 94.4% across models, while under a fixed base model, they range from 73.7% to 94.4% across agents.These results show greater variation across models than agent harness, while attacks remain highly successful across all tested harnesses.Our benchmark is released at: https://github.com/zjuicsr/ActBench.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2608.09443v1' target='_blank'>Coupled Graph--Policy Distillation for Personalized Medication Safety in Older Adults with Multimorbidity</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Zihan Wang, Anglin Liu, Rongyi Wang, Dantong Li, Yi Lu, Siqing Yuan, Hongxia Xu, Zhongtian Long, Jintai Chen</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-08-10 11:19:44</h6>
+<p class='card-text'>Large language model (LLM) agents can support medication review between clinical visits, but safe choices for older adults with multimorbidity depend on conditions, medications, and geriatric risks that users may omit. We introduce ATLAS, a coupled graph--policy distillation framework for patient-adaptive medication safety. ATLAS structures guideline evidence as a medication-safety graph. Targeted questions update the patient state and distill relevant relations into a patient-specific medication conflict graph (PMCG). A risk-first multi-agent policy uses the PMCG to screen contraindications, assess cautions and monitoring needs, identify safer alternatives, and verify the final medication plan. We also introduce GeriMedBench, an interactive benchmark that tests safety-critical information acquisition and evidence-based decision revision. Across a European non-interactive multimorbidity benchmark, an Asian interactive multimorbidity benchmark, and an Asian non-interactive cross-guideline benchmark, ATLAS achieves the strongest complete-decision performance among the compared systems. On the European non-interactive multimorbidity benchmark, it exceeds the strongest proprietary LLM baseline by 53.73 points in Strict Success Rate and 14.63 points in overall safety reasoning score (OSRS), with no unsafe recommendations under the automated evaluator. A blinded clinician evaluation gives ATLAS higher mean ratings across all five criteria and flags potentially unsafe recommendations in one ATLAS case and two Gemini cases.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2608.09343v1' target='_blank'>LLM-Guided Heuristic Design from Simulation Traces: A Case Study in Dynamic Production and AGV Scheduling</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Jinbo Li, Chuanhao Li</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-08-10 09:20:56</h6>
+<p class='card-text'>Simulation-based optimization (SBO) evaluates executable policies under stochastic dynamics, but most methods treat the simulator as a black box: aggregate scores rank candidates without revealing why they fail or which policy logic should change. We present an LLM-guided heuristic design framework that uses repeated simulation for selection and event-level traces for diagnosis. Each incumbent is assessed through multiple replications, while replaying its lowest-scoring one produces a queryable trace. A manager agent formulates bottleneck hypotheses from this evidence, and editing agents implement parallel code-level revisions. After execution checks and repeated evaluation, best-so-far selection retains only improvements. LLM revision occurs between evaluation batches, while a fixed policy controls each simulation run.
+  We evaluate the framework in a discrete-event simulation of dynamic production and automated guided vehicle (AGV) scheduling. Across five independent optimization runs with Gemini-3.1-Pro, final mean scores averaged 77.51 on the simulator's 0-100 scale. In the highest-scoring run, trace-based diagnoses motivated proactive charging, distance-aware AGV assignment, and rebalanced dispatch priorities, raising the best-so-far mean score from 62.49 to 78.61. On 100 matched seeds, the best final policy outscored representative rolling-MILP, rule-based, and metaheuristic policies on every seed and retained its advantage under random faults without re-optimization. After separate re-optimization for a longer horizon and variable order interarrival times, the resulting policies again outscored all baselines. Ablations with two LLM backbones showed that removing either parallel candidate generation or trace-database access reduced final mean scores. These results show that simulation traces can guide targeted code-level policy improvement in complex simulation-based scheduling.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2608.09312v1' target='_blank'>Automated Synthesis of Deterministic Cross-Domain Interfaces</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Konstantinos Christodoulopoulos, Antonis Selentis-Boulntadakis</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-08-10 08:55:31</h6>
+<p class='card-text'>Deterministic networking spans heterogeneous domains. At each boundary, two domains must agree on an assume--guarantee contract: what traffic the client may inject, and the QoS the carrier will hold for it. Composing such contracts into an end-to-end guarantee is standardized, but deriving each domain's contract is not. Today they are hand-crafted, static, and over-provisioned. The difficulty rises when traffic changes and the contract must become dynamic. We present a framework that automatically synthesizes the per-domain contract for both static and dynamic classes, along with the registration the dynamic one rests on. Two reasoning modules implemented with large language models (LLMs) drive it: an agent takes the client's traffic declaration and searches the carrier's configuration mechanisms, and a handler builds the network model from a typed disclosure of the substrate. The handler calls a network-calculus kernel for the model's hard terms, and an independent oracle---a faithful simulator, testbed, or live network---which verifies each candidate and discovers what lacks an a-priori algebraic form: when a reconfiguration is safe, and the instant to apply it. We synthesized a dynamic contract for uplink 5G fronthaul over a TDM-PON, grounded against a packet-level simulator. Across six draws from two LLM families, every synthesis produced a feasible, verified contract tight to ${\sim}1.2\,μ$s, holding a $100$-$μ$s deadline that reactive scheduling cannot meet, at up to $3.5$ times the bandwidth efficiency of static over-provisioning. Tasked instead with computing the worst-case delay directly, the LLMs were unsound in five of six attempts---evidence for the division of labor: LLMs construct the model, formal tools hold numeric authority. The same framework, unchanged, synthesized a static 5G--TSN bridge contract on a second substrate.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2608.09294v1' target='_blank'>Graphing the Everyday: A Neurosymbolic Approach to Eliciting Routines for Just-In-Time Adaptive Interventions</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Shakyani Jayasiriwardene, Blake Mountford, Meican Ma, Niels van Berkel, Nicholas Koemel, Matthew Ahmadi, Jorge Goncalves, Emmanuel Stamatakis, Zhanna Sarsenbayeva</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-08-10 08:45:54</h6>
+<p class='card-text'>Just-In-Time Adaptive Interventions (JITAIs) increasingly rely on conversational agents to elicit user routines, yet translating fluid human dialogue into rigid schedule data remains a significant challenge. We conducted a qualitative investigation of a neurosymbolic pipeline, combining Large Language Models (LLMs) with a Neo4j knowledge graph, to map unstructured verbal narratives into actionable interventions. Through human-centric evaluation using natural-language playbacks, we identified a critical "mental-model gap," where the linear extraction of LLMs clashes with hierarchical, non-linear human storytelling, causing severe entity fragmentation. Furthermore, we articulate an "ecological mismatch," demonstrating that algorithmic schedule availability frequently ignores the user's fluctuating psychological receptivity and physical energy levels. To resolve these tensions, we propose actionable design heuristics, including routine piggybacking, adaptive negotiation, and scalable transparency. Ultimately, these guidelines provide a foundational framework for evolving rigid schedule-trackers into empathetic, context-aware proactive agents capable of supporting long-term health behavior change.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2608.09292v1' target='_blank'>Beyond the Capability Boundary: Zeroth-Order Optimization for Self-Evolving LLM Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Bingzhen Liu, Xiaomeng Fan, Yuwei Wu, Zhi Gao, Mingyang Gao, Chuanhao Li, Yunde Jia</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-08-10 08:45:48</h6>
+<p class='card-text'>Self-evolving methods improve the capabilities of LLM agents by sampling trajectories from the underlying LLMs and learning from these trajectories. However, these methods struggle to learn beyond the inherent capability boundary of the agents, since the agents cannot sample correct trajectories on difficult examples for further improvements. In this paper, we propose a zeroth-order self-evolution framework that enables agents to learn beyond their capability boundary by perturbing LLM parameters to adapt to difficult examples without any trajectory annotations. Specifically, we perturb LoRA parameters of LLMs, run the agent, compute the losses under the perturbed and original parameters, and use the loss difference to estimate gradients and further update the LoRA parameters. We sample trajectories using the updated LLMs for supervised fine-tuning to break through the capability boundary of the agents, forming a closed self-evolution loop. We introduce a parallel perturbation inference mechanism and an adaptive lookup mechanism to reduce time consumption in zeroth-order optimization, with an answer perplexity loss that provides smooth and stable zeroth-order loss values. Experiments on multiple deep research benchmarks show that our method obtains substantially more successful trajectories and consistently outperforms strong baselines, especially on difficult examples. The code and released artifacts are available at https://github.com/hidk1911/ZOForLLMAgents.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2608.09290v1' target='_blank'>OpenCodeReview: Determinism over Non-Determinism for Cost-Effective Agent-Based Code Review</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Zhengfeng Li, Lei Zhang, Xianwei Wu, Zhengqi Zhuang, Yingjie Xu, Boge Wang, Shaofei Zhu, Chuan Wang, Guoping Rong</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-08-10 08:43:16</h6>
+<p class='card-text'>LLM-based code review agents promise scalable, always-on review, yet current systems suffer from two intertwined weaknesses: (1) non-determinism--unbounded tool use makes review outcomes unstable, and (2) context locality--the reviewer's access remains bounded to the diff, capping discoverable issue depth. Both give rise to three challenges: misaligned context retrieval, a coherence-efficiency trade-off in multi-file pull requests, and hallucinated comments that erode trust. To address these, we introduce OpenCodeReview, built on deterministic engineering for uncertain agents: rather than granting maximal freedom, we inject determinism at three deliberate pipeline points. Rule-Guided Dispatch uses a multi-layer rule system to deterministically select files and review criteria, eliminating variability of agent-driven triage. Grounded File Review replaces free-form exploration with a curated tool set exposed through a ReAct loop, while file-level parallel SubAgents balance context coherence against efficiency and recover cross-file dependencies on demand. Independent Reflection introduces a falsification-first filter under an asymmetric information boundary--the reflector sees only the diff, not the agent's tool-augmented exploration--removing hallucinated comments without self-reinforcing bias, improving precision while preserving recall. On AACR-Bench (200 real-world PRs, 10 languages, 1,505 expert-verified comments), OpenCodeReview outperforms mainstream coding agents (e.g., Claude Code and Codex) across six LLM backends, achieving up to 2.17x higher SEM-F1 (25.10% vs. 11.57%) while consuming 5-15x fewer tokens. We open-source OpenCodeReview at https://github.com/alibaba/open-code-review.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2608.09282v1' target='_blank'>ComboShoppingBench: Evaluating LLM Agents for Budget-Constrained Basket Shopping with Coupons</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Adrian Li, Kelong Mao, Yudong Guo, Heming Xia, Xinwei Yang, Lirui Luo, Jace Wong, Pu Yao, Sulong Xu, Simiu Gu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-08-10 08:37:54</h6>
+<p class='card-text'>Real-world shopping often requires constructing a basket of complementary items rather than retrieving a single product. Such combo-shopping tasks arise in device setup, meal preparation, event planning, and group takeout ordering, requiring joint reasoning about item compatibility, availability, store-level requirements, delivery fees, coupons, and budgets. Evaluation is challenging because multiple baskets may satisfy the same request, making exact-match metrics unsuitable, whereas semantic evaluation alone cannot detect infeasible orders, invalid coupon combinations, or incorrect payments. We introduce ComboShoppingBench, an agentic shopping benchmark for open-ended yet verifiable basket construction in a simulated commerce and takeout environment. During task synthesis, an exploration agent constructs a feasible and semantically coherent basket of purchasable products; this witness guides the generation of coupons, budget constraints, user queries, and aligned evaluation rubrics. During evaluation, LLM judges assess semantic satisfaction, response quality, and claim faithfulness, while deterministic validation checks product-ID validity, budget compliance, and coupon optimality. Experiments with diverse LLM agents demonstrate that even strong agents struggle on ComboShoppingBench, highlighting substantial room for improvement in reliable, constraint-aware combo shopping.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2608.09277v1' target='_blank'>P$^{3}$: Joint Program-and-Proof Planning for Verified Code Generation</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Zenan Li, Ziran Yang, Peiyang Song, Zhaoyu Li, Kaiyu Yang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-08-10 08:33:18</h6>
+<p class='card-text'>Verified code generation asks a large language model (LLM) to generate both an executable program and a machine-checkable proof that the program meets a formal specification, promising software that is correct by construction. The de facto workflow decouples the two halves of the problem: first synthesize a program, then attempt to prove it correct. We observe that this sequential pipeline can be both ineffective and inefficient in practice. A program generated without anticipating its proof can be subtly incorrect or structurally difficult to verify, forcing the LLM into brittle repair loops that alternate between patching the code and patching the proof. Inspired by Dijkstra's view that a program and its correctness argument should be developed hand in hand, we propose $P^3$, an LLM-based agentic workflow that first derives a unified program-and-proof plan from the specification, then elaborates the implementation and proof scaffold under this shared plan. To evaluate verified code generation in realistic settings, we further introduce Lean4Commit0, a repository-derived, library-level benchmark built by extracting core APIs from real-world software repositories and translating their requirements, including relational specifications across APIs, into Lean tasks. Using four frontier LLM backends, we evaluate $P^3$ on Verina, AlgoVeri, and our Lean4Commit0 benchmark, where it achieves the highest solve rate in every benchmark--model setting. Compared with the stronger baseline, it improves solve rates by 4.6--11.2 percentage points and reduces per-task API cost by up to roughly 40\% and wall-clock time by up to roughly 37\% on the difficult subset of each benchmark. A targeted ablation further shows gains of 3.3--8.3 points over implementation-only planning, isolating the benefit of planning the program and proof jointly.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2608.09273v1' target='_blank'>Entropy-based Code Adversarial Translation for Real-world Repository Migration</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yushun Tang, Yisen Cao, Zhicheng Chen, Lin Peng, Junkang Mao, Fengyi Song, Yantao Jia</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-08-10 08:29:29</h6>
+<p class='card-text'>LLMs have demonstrated strong capabilities in code generation and automated program repair, but migrating an entire repository rarely produces a runnable application because long-horizon translation challenges LLM-based agents' ability to maintain repository-level migration objectives. In this work, we propose Entropy-based Code Adversarial Translation (ECAT), a multi-agent framework for automated Android-to-HarmonyOS repository migration. ECAT formulates repository migration as adversarial entropy minimization through a generator-discriminator architecture. The discriminator measures migration quality using a unified metric called Code Entropy and produces text gradients that specify both file-level generation directives and the skills needed to execute them. Guided by these optimization signals, the generator iteratively updates the repository, and each update is accepted only if it reduces Code Entropy. Repeated generator--discriminator interactions progressively drive the migration from an initial template toward a functionally complete HarmonyOS repository. Successful low-entropy trajectories are further distilled into a self-evolving memory tree, enabling transferable migration knowledge across repositories. We also introduce A2H-RepoBench, the first real-world benchmark for Android-to-HarmonyOS repository migration, covering applications from tens of thousands to hundreds of thousands of lines of code. Evaluated by node alignment and an agent-based functional judge, ECAT achieves 74.7% overall migration quality and consistently outperforms existing agent-based methods across repositories of different scales.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2608.09254v1' target='_blank'>Business Truth, not SQL Accuracy: A Rule-Gated 7B Analytics Agent Outperforms a Direct-Prompted 32B Baseline</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Morris Lee</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-08-10 08:14:24</h6>
+<p class='card-text'>LLM analytics agents are evaluated on SQL syntax accuracy, but production failures look different: questions with two valid business definitions, questions the warehouse cannot answer, deprecated columns after a schema change, and queries that execute successfully while returning the wrong business number. No execution-match metric can score them. This paper introduces WarehouseReliabilityBench, 400 frozen tasks over two synthetic warehouses in which roughly half the correct responses are a clarification, an abstention or a refusal, with pinned denominators and a pre-registered paired bootstrap fixing each claim verb before the numbers existed. QueryProof, a 7B agent, uses rules derived from a semantic layer and physical catalog to determine its behaviour, and gates every answer on deterministic post-execution checks. On an 80-task synthetic test split evaluated once, QueryProof outperforms a direct-prompted 32B baseline by +0.237 [+0.112, +0.375] Business Truth Rate at 71.0% lower cost per correct answer; against a cost-matched few-shot baseline the accuracy gain holds but the cost difference does not resolve. This compares systems rather than model sizes: the 32B baseline receives none of the scaffolding. False success falls from 0.754 to 0.351 of returned answers, and no wrong number was returned on an answerable task (0 of 24), though 13 answers went to questions requiring clarification or abstention. Removing the routing layer changes little (0.562 against 0.537), so the result does not depend on escalation. Routing tuned on validation over-abstains on test, and the fitted confidence model loses to the heuristic it replaced. Resampling template families rather than tasks widens both accuracy intervals to include zero, so the effect's direction is better supported than its magnitude. The gain tracks the deterministic layer, though no component ablation was run.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2608.09253v1' target='_blank'>SkillSentry: Reliable Skill Execution for LLM Agents via Runtime Assurance</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:You Lu, Xinyu Huang, Bihuan Chen, Xin Peng</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-08-10 08:13:52</h6>
+<p class='card-text'>LLM agents are increasingly equipped with skills to perform complex tasks through multi-step reasoning and tool use. Although skills provide reusable procedural knowledge, agents may still execute them unreliably. Even when an agent has demonstrated the capability to complete tasks under the guidance of a skill, it may fail to do so consistently across similar tasks or repeated runs due to deviations from the skill procedure or incorrect execution of individual steps. Such instability limits the practical reliability of LLM agents. To address this problem, we propose SkillSentry, a skill-oriented runtime assurance framework built upon a new domain-specific language (DSL) for representing runtime guidance for skill execution. SkillSentry initializes the runtime guidance by combining a skill specification extracted from the corresponding skill document with execution experience mined from historical successful and failed traces. It then wraps around the agent execution loop to monitor and guide skill execution under the current guidance, while iteratively refining the guidance using newly collected traces. We evaluate SkillSentry on 15 skills across two LLM agents, each paired with two backbone models, i.e., Claude Code with Claude-Haiku-4.5 and Claude-Opus-4.6, and Codex with GPT-5.2 and GPT-5.4. Our results show that SkillSentry improves the task success rate of LLM agents by 24.1% across skills, on average, while exhibiting lower variability across repeated runs.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js'></script>
+</body>
+</html>
