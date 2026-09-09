@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<title>LLM-planning - 2026-09-09</title>
+<link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap' rel='stylesheet'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'>
+<style>
+body {
+font-family: 'Roboto', sans-serif;
+background-color: #f5f7fa;
+padding: 20px;
+}
+.card {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.card-title {
+    font-weight: 700;
+}
+.card:hover {
+    transform: scale(1.02);
+    transition: 0.3s ease-in-out;
+}
+</style>
+</head>
+<body>
+<div class='container'>
+<h1 class='text-center my-4'><i class='fas fa-book'></i>LLM-planning - 2026-09-09</h1>
+<div class='row'>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2609.09153v1' target='_blank'>Procedural Graphs: Self-Evolving Execution Structures for LLM Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yuxing Lu, Yicheng Chen, Shanchan Wu, Sercan Ö. Arık</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-09-08 17:59:41</h6>
+<p class='card-text'>Large language models are increasingly deployed as agents that plan over long horizons and act through external tools. Most agents select actions through unconstrained generation over an accumulating history, leaving implicit the procedural knowledge of what to do, in what order, and under which conditions. As trajectories lengthen, agents can lose track of their objectives, invoke tools out of order, and repeat unproductive actions. We introduce the Procedural Graph: just as a knowledge graph organizes factual knowledge into (entity, relation, entity) triplets for what-is questions, a Procedural Graph organizes procedural knowledge into (procedure, relation, procedure) triplets for what-to-do questions. At each decision step, the framework localizes the agent's active node, and a guidance model translates the surrounding subgraph into step-level situational guidance that biases the solver's next action without dictating it. The graph is self-evolving: an LLM refiner contrasts failed trajectories with successful ones and edits the graph's topology and attributes, committing edits that preserve or improve held-out validation performance while retaining rejected ones to discourage repetition. Starting from a minimal skeleton, the loop builds graphs that match or surpass hand-designed ones. It can also repair a flawed expert prior. Across multiple datasets, task types, and LLMs, the Procedural Graph delivers consistent gains over memory-based baselines, and self-evolution further improves performance without manual engineering.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2609.09087v1' target='_blank'>PrivEscalate: Measuring and Augmenting the Threat of LLM-Automated Linux Privilege Escalation</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yixuan Liu, Zilong Zhen, Yin Wu, Yi Li</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-09-08 17:34:02</h6>
+<p class='card-text'>As Large Language Model (LLM) agents increasingly automate offensive operations across the cyber kill chain, their efficacy in complex local post-exploitation tasks remains inadequately quantified. Among these, Linux privilege escalation is a key step between initial access and full system compromise. However, existing evaluations for this task are limited by small sample sizes (fewer than 15 scenarios), lacking the scale to compare model capabilities under executable verification. To address this, we present PrivEscalate, a large-scale benchmark for Linux privilege escalation, comprising 531 Dockerized scenarios spanning 14 sub-categories. We additionally derive 329 parameterized variants to measure sensitivity to environmental distractors.
+  Evaluating six LLMs across three agent architectures reveals: (i) model capability is heterogeneous across vulnerability classes, with no single model dominating across the high-prevalence classes, motivating multi-dimensional risk assessments; (ii) LLM successes are sensitive to environmental perturbation, so configuration rotation can disrupt some exploit attempts but does not eliminate the measured risk; and (iii) agent architectures can materially change success rates and reorder model rankings, though the magnitude is model-dependent. Leveraging these insights, we develop PrivEscAgent, a domain-specialized wrapper that augments a generic ReAct agent with deterministic enumeration, category matching, and step planning. PrivEscAgent improves over prior Linux privilege-escalation agent baselines without underlying LLM modifications. We release PrivEscalate as an open-source, Dockerized measurement instrument supporting LLM agent evaluation, defensive tool validation, and red-team training.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2609.09076v1' target='_blank'>ActReview: Rebuttal-Guided Training Data and Rubric Rewards for Actionable Peer Review Generation</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yiling Ma, Yilun Zhao, Sihong Wu, Ziyu Chen, Manasi Patwardhan, Arman Cohan</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-09-08 17:30:16</h6>
+<p class='card-text'>As LLMs are increasingly used for pre-submission self-review, there is growing demand for feedback that not only identifies weaknesses but also guides authors toward concrete revisions. We study this as Actionable Peer-review Generation and decompose it into two subtasks: diagnostic claim generation and revision suggestion generation. We introduce ActReview, a rebuttal-guided post-training framework that connects paper-specific diagnoses to concrete, grounded revision plans. Our central insight is that author rebuttals reveal plausible actions for addressing reviewer concerns and can therefore provide latent supervision for revision-oriented feedback. From real review-rebuttal threads on OpenReview, we construct ActReview-40K by aligning reviewer weaknesses with author responses and grounding the resulting feedback in localized paper evidence. We post-train Qwen3-8B-Base with multi-task supervised fine-tuning followed by GRPO using candidate-aware, weakness-specific rubric rewards. We also introduce ActReview-Bench, a human-curated benchmark of 1,000 instances for evaluating diagnostic quality and revision usefulness. Experiments show that ActReview outperforms prior specialized review-generation models on actionability and grounding while remaining competitive with strong prompt-based LLMs. Human evaluation confirms improved revision usefulness while revealing a remaining gap in technical accuracy, and additional analyses support generalization to held-out papers and robustness across independent judges.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2609.09048v1' target='_blank'>The Audit Decides the Verdict: Instrument Effects Rival Demographic Bias in LLM Decision Audits</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Siddharth Vohra, Manikandan Ravikiran</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-09-08 17:08:53</h6>
+<p class='card-text'>Whether a language model looks demographically biased can depend on how the audit asks its question. A charitable-aid benchmark reports that the same models favor minority applicants when rating requests one at a time and penalize some when ranking side by side. We test whether that reversal generalizes to hiring, lending, and medical triage: 40,726 requests to five models, applications differing only in the applicant's name, and a primary test fixed before collection. It does not. None of 36 planned contrasts survives correction. The rating advantage keeps its sign at roughly half the published size, and a precision extension bounds any hiring ranking penalty below the published effect, though the lending and triage ranking floors sit above that margin, so the exclusion is conclusive for hiring ranking and for rating in all three domains only. Planted disparities tracking their injected sizes and a directional replication on the original aid materials bound these nulls. The audit is livelier than the demographics: models recognize transparent audits nearly always, tie every identical-content comparison whether the varying detail is race or a hobby, and reward first-listed candidates as much as any demographic effect we measure. Audit verdicts reflect audit construction more than demographic bias.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2609.09038v1' target='_blank'>Do Reasoning Representations Help Humans Evaluate LLM Outputs?</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Jaewoo Lim, Sungbok Shin, Sanghyun Hong</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-09-08 17:03:57</h6>
+<p class='card-text'>Reasoning representations are increasingly used as explanations for large language model outputs. Yet they are typically evaluated with model-centric criteria, such as answer accuracy and faithfulness, leaving it unclear whether they help people evaluate model responses. In this work, we study reasoning representations as human-facing interfaces rather than proxies for model reasoning ability. We conduct a controlled human study of six reasoning formats across tasks of varying complexity, supported by a web-based framework that randomizes task domains, problem instances, and representation order. The study collects fine-grained judgments of structural understanding, error detection and localization, and trust calibration. Our study shows a mismatch between perceived preference and support for human evaluation. Participants prefer planning- and decomposition-based representations, but simpler chain-of-thought traces better support verification, trust, and interpretability. Preferred representations also introduce calibration risks, with more false alarms on correct traces and high trust despite low willingness to verify.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2609.08965v1' target='_blank'>PlannerForge: LLM Agents for Scenario-Based Testing of Motion Planners in Autonomous Driving</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yuan Gao, Sebastian Müller, Mattia Piccinini, Marc Kaufeld, Yuchen Zhang, Finn Rasmus Schäfer, Qunying Song, Johannes Betz</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-09-08 16:19:06</h6>
+<p class='card-text'>Ensuring the safety of autonomous driving is a critical challenge. Scenario-based testing is a systematic process used to validate Autonomous Driving Systems (ADSs), but it remains a fragmented modular pipeline in which scenario generation, retrieval, modification, ADS execution, and results analysis are performed by separate tools with little interaction. Large Language Model (LLM) agents have shown promise across ADS sub-systems such as perception, planning, and control. However, no prior work covers the whole scenario-based testing pipeline for ADSs with a unified LLM-agent framework. We present PlannerForge, an LLM-agent framework that extends all scenario-based testing stages (from Scenario Generation to ADS Assessment) and adds two further LLM-enhanced stages: ADS Enhancement and ADS Benchmarking. We evaluate PlannerForge with 10 off-the-shelf LLMs across all tasks (Generation, Selection, Modification, Module Routing, Planner Testing, and Enhancement) under 5 prompt conditions. Best-per-task scores range from 0.88 to 1.00, and open-source 20-35B backends match commercial APIs on most tasks. Open-source models such as Qwen3.6:35B match commercial APIs on three of the five tasks. Chaining the modules end-to-end retains 83% / 78% of seed queries (commercial / open). It outperforms Scenario Factory 2.0 (Finkeldei et al., 2025) on natural-language generation (193 vs. 144 executable of 200) and realises 92-96% of requested city, road and vehicle attributes. It outperforms BM25 (Robertson and Zaragoza, 2009) at rank 1 selection (92.0% vs. 67.5%) and From-Words-to-Collisions (Gao et al., 2025) on physically valid edits (>=94% vs. 31%). At N=400, cost-tuning lifts planner success from 50.4% to 70.2% and cuts collisions from 19.0% to 8.4%, without domain-specific fine-tuning.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2609.08810v1' target='_blank'>Measuring the Security of the Evolving Software Supply Chain: a Research Agenda</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Sarah Meriem Ourari</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-09-08 14:37:06</h6>
+<p class='card-text'>Software supply chain security has become increasingly critical due to the widespread reliance on third-party dependencies and the growing attack surface of modern software ecosystems. However, existing quantitative, measurement-based analysis and vulnerability management approaches remain largely fragmented and ecosystem-specific, limiting their ability to provide comparable risk assessments across environments. This paper presents a structured research plan, starting with a Systematization of Knowledge (SoK) to synthesize the current state of research and identify key gaps, highlighting the limitations in dependency modeling and vulnerability propagation analysis, particularly in the treatment of transitive dependencies and their real-world exploitability. Based on these insights, we argue for a unified measurement perspective capable of consistently representing and analyzing the cross-ecosystem dependency structure. We further identify emerging challenges introduced by AI-assisted software development, where coding LLMs are likely to contribute to new dependency patterns that are not captured by traditional Software Composition Analysis (SCA) tools. These shifts motivate a rethink of dependency modeling to account for evolving software-generation practices and their long-term structural impact on software security.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2609.08503v1' target='_blank'>TSBench: A physics-grounded benchmark for evaluating LLM understanding of chemical reaction mechanisms</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Xiaohu Xu, Tong Zhu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-09-08 09:44:37</h6>
+<p class='card-text'>Understanding a chemical reaction requires mapping a symbolic reactant-product description onto the three-dimensional pathway through which atoms rearrange, yet chemistry benchmarks for large language models (LLMs) largely probe factual knowledge and text-based reasoning. Here we introduce TSBench, a benchmark in which an LLM agent uses structure-editing tools to construct three-dimensional transition-state (TS) guesses verified by an automated quantum-chemical pipeline, yielding a physics-grounded pass/fail verdict. Across 546 evaluations of seven frontier LLMs on 78 elementary reactions, the aggregate success rate rose from 50.4% to 66.8% under diagnosis-driven revision; the best models approached 90% on the simplest reactions, yet performance dropped sharply with mechanistic complexity. Most failed attempts produced locally plausible saddle points whose reaction paths led to the wrong reactant-product pair, revealing local geometric intuition without a robust grasp of the global reaction coordinate. TSBench establishes a mechanism-level yardstick for LLM agents in mechanism-sensitive tasks such as synthesis planning and autonomous experimentation.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2609.08444v1' target='_blank'>Safe Task Planning with Long-Term Graph Memory for Embodied Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Siyuan Li, Taiyan Lang, Aoqi Yan, Jia Yu, Feifan Liu, Yihan Du, Yu Zheng, Xun Wang, Peng Liu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-09-08 08:49:50</h6>
+<p class='card-text'>Large language models (LLMs) and vision-language models (VLMs) have significantly advanced zero-shot task planning for embodied agents. However, most LLM- and VLM-driven methods struggle to generate safe high-level actions due to a lack of physical risk awareness, particularly under partial observability, where hazards lie outside the immediate field of view. To address this challenge, we propose a novel safe task-planning framework, SafeMem, which constructs and maintains a long-term semantic graph memory of the open and dynamic environment. Based on egocentric observations, the proposed framework incrementally accumulates knowledge about surrounding objects and their relationships with a graph. Then, an LLM-based risk predictor evaluates candidate actions using the graph memory, triggering a conservatism-modulated replanning loop with explanations for detected hazards. Extensive experiments on the IS-Bench benchmark and a real-world robot platform demonstrate that the SafeMem framework substantially improves safe success rates compared to state-of-the-art VLM-driven task planners. Video results are available on our webpage: https://sites.google.com/view/safemem.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2609.08288v1' target='_blank'>LEBGen: An LLM-Enhanced Bayesian Network Framework for Few-Shot Travel Survey Data Generation</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Zijian Shen, Bin Zhou, Jiguang Wang, Ya Zhao, Jintao Ke</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-09-08 05:58:37</h6>
+<p class='card-text'>Travel survey data are essential for transportation planning and travel behavior analysis, yet collecting large-scale representative samples is costly and time-consuming. A practical alternative is to generate synthetic survey records from a few-shot sample. However, such samples provide incomplete coverage of heterogeneous traveler groups and insufficient evidence for recovering the complex dependencies between demographic characteristics and travel behavior. Existing approaches have complementary limitations. Probabilistic generative models such as Bayesian networks (BNs) offer explicit distributional control, but structures learned from few-shot samples may omit meaningful dependencies or retain spurious ones. Large language models (LLMs) can help address these difficulties in BN structure learning by providing behavioral knowledge that complements the limited statistical evidence. We therefore propose LEBGen, an LLM-enhanced BN framework that uses this knowledge to refine network structure for few-shot travel survey data generation. Specifically, the LLM first identifies traveler personas from demographic attribute and travel behavior statistics, then recovers dependencies missed by the persona-augmented BN structure and prune spurious ones. The refined BN is parameterized exclusively from the observed data to generate synthetic records. Under a 2% few-shot setting on the 2022 Hong Kong Travel Characteristics Survey, LEBGen reduces the mean marginal Jensen-Shannon divergence from 0.0671 to 0.0091 and the mean absolute Cramer's V error by 14.3% over the best-performing baseline, substantially improving both distributional and dependency fidelity.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2609.08033v1' target='_blank'>Scaling Multi-Agent Systems with Prospect-State Propagation</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Zhimei Chen, Mu Chen, Fakhri Karray</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-09-07 22:30:12</h6>
+<p class='card-text'>Current LLM-based multi-agent systems (MAS) periodically compress intermediate states to reduce inference-time token consumption, thereby attempting to incorporate more agents. However, naive scaling strategies face challenges. For example, in economic simulations, large-scale MAS typically discard semantically rich economic states, i.e., agent behavioral trajectories, which are key drivers of macroeconomic fluctuations. In this paper, we reveal a phenomenon in which agent heterogeneity gradually decreases during simulation, and propose Prospect-State Propagation for Multi-Agent Systems (PspMAS). Inspired by prospect theory, PspMAS decouples each agent's micro state into a compact Prospect State and an expressive Semantic State. The former records psychological traces through a lightweight, parallelizable propagator and continuously injects heterogeneity into the system. The latter leverages the strong perception, reasoning, planning, and decision-making abilities of LLMs. These two components work complementarily, providing a scalable LLM-based multi-agent simulation solution.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2609.07471v1' target='_blank'>MEMO: Multimodal Evidence Memory Organization for Long-Horizon LLM Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Xian Gao, Jinpeng Wang, Jiacheng Ruan, Guangyu Cao, Ting Liu, Yuzhuo Fu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-09-07 13:24:40</h6>
+<p class='card-text'>Long-running LLM agents rely on external memory to store and reuse information beyond a single context window, yet there is a fundamental tension between the continuous accumulation of interaction trajectories and the limited context capacity. The key challenge in agent memory is therefore not only to retrieve relevant records, but also to select necessary evidence under a given budget and organize it in an appropriate modality. Existing memory readout methods mainly use textual or visual forms. Text preserves high fidelity, but its linear token representation makes contents with different importance compete for the limited context at nearly uniform unit cost. Visual readout renders text into document-like images, which can use two-dimensional layouts to expose structure and emphasize key information, but it may lose fine-grained details during rendering and compression. To address this issue, we propose MEMO, a multimodal evidence memory organization method for LLM agents. MEMO first uses a trained evidence extractor to select relevant memory blocks and form evidence units with source information and presentation requirements. A trained query-conditioned memory manager assigns each unit to a textual, visual, or dual-channel carrier and selects a layout that matches the evidence structure. A deterministic memory construction module then generates the textual package and visual pages. The memory manager is trained with feedback from an offline reader that measures the utility of the guided memory plan, so that retention and presentation decisions align with downstream usage. We evaluate MEMO on four benchmarks, HotpotQA, 2WikiMultiHopQA, LoCoMo, and ALFWorld, with multiple reader backends. The results show that MEMO presents memory more efficiently with fewer memory tokens, improves downstream task performance, and builds more effective working memory under constrained budgets.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2609.07395v1' target='_blank'>Uncertainty Quantification for LLM Agents: A Taxonomy, an Evaluation Protocol, and an Empirical Study</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Moule Lin, Qizhen Lan, Shuhao Guan, Weipeng Jing, Jiexin Fan, David Gregg, Goetz Botterweck</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-09-07 12:06:49</h6>
+<p class='card-text'>Large language models (LLMs) are no longer deployed only for single-turn conversation but increasingly act as agents that plan, call tools, retrieve evidence, maintain memory, and interact over long horizons, often together with other agents through multi-turn conversations. Therefore, knowing when to trust the agentic system is a prerequisite for safe deployment. However, existing work on quantifying uncertainty for LLMs was built almost entirely for single-turn question answering. This paper argues that errors and uncertainty arise from multi-turn conversations, environments, and tools rather than from a single-turn question answering setting. It comes late, however, and is compounded in a single score that is too coarse to represent the unreliability. We organize the literature with a three-axis taxonomy, (1) what the uncertainty is, (2) how it is estimated, and (3) where uncertainty arises during an agent pipeline. We investigate step-level and trajectory-level calibration and show with a simple counterexample that the first does not imply the second. Experiments on real agent traces across four models and up to a 50-step budget show that the proposed metric and reporting protocol (Trajectory-Checkpoint Expected Calibration Error, TC-ECE) can be computed and that step errors are coupled along a trajectory. We find that confidence estimates from the agent's own responses do not consistently outperform a simple baseline. The experiments also show that averaging all trajectories together can hide overconfidence at later stages, which becomes visible when results are analyzed across different horizons. In simpler terms, this paper identifies where the uncertainty comes from in the agentic system pipeline, how to teach agents to know when they are wrong, and why one confidence number is not enough.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2609.06758v1' target='_blank'>Agentic Visual Generation: From Generative Models to Agentic Control</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yinming Huang, Shuyuan Tu, Xi Yan, Jiahao Zhan, Zihan Yang, Zhen Xing, Hui Zhang, Tiehua Zhang, Yu-Gang Jiang, Zuxuan Wu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-09-06 17:59:24</h6>
+<p class='card-text'>Visual generation is evolving from generative models used through a single invocation into agentic control processes that can plan, select tools, inspect intermediate synthesized outputs, revise failures, and reuse prior experience. In most existing systems, the controller is an LLM or VLM, while visual generation models serve as tools or executors. However, existing work lacks a consistent criterion for determining when a generation system becomes agentic. Planning depth, tool use, multi-role collaboration, and reinforcement learning are often treated as evidence of agenticity, even though none of them necessarily determines which generation decisions the controller can make. We organize the field according to what the controller can directly control in the generation process. At L1 Conditioning Control, the controller prepares the input to a predetermined generator but does not control which visual operation is executed. At L2 Execution Control, it selects and invokes actual generation, editing, rendering, or other content-modifying operations. At L3 Outcome-Adaptive Control, it observes an intermediate outcome and uses that observation to change a subsequent operation within the current task. At L4 Experience-Adaptive Control, it retains experience from completed tasks and uses that experience to change decisions on future tasks. L0 Fixed Support separately denotes generators, editors, evaluators, reward models, benchmarks, and fixed pipelines without a deployed controller that makes generation-level decisions. These levels describe a progressively broader decision-making scope rather than model size, system complexity, output quality, tool or role count, or training method. Applying this framework across image, video, editing, 3D, world, slide, and user-interface generation reveals how controller capabilities have evolved and how their mechanisms are distributed across levels.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2609.06478v1' target='_blank'>MVWeaver: A Hierarchical Music Video Generation Agent with a Learned Song-to-Visual Bridge</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Sifei Li, Minyan Luo, Xu Li, Guodong Qi, Xincan Wang, Hanwen Wang, Chen Zhang, Pengfei Wan, Oliver Deussen, Weiming Dong</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-09-06 08:50:45</h6>
+<p class='card-text'>Music videos are an important form of audiovisual expression in contemporary culture. They translate and extend the expressive content of songs through deliberate visual design. Existing automatic music video (MV) generation systems can generate visually plausible shots, yet often struggle with long-form coherence and song-grounded visual development. We present MVWeaver, a music video generation agent that integrates hierarchical planning with a learned song-to-visual bridge that translates song understanding into executable shot plans. The MVWeaver architecture comprises a comprehensive song analysis module, a visual planner that constructs hierarchical plans, and downstream image and video generation models that render the planned content. To equip a general-purpose LLM with MV-specific song-to-visual knowledge, we learn a bridge between song analysis and visual planning from real-MV-derived supervision and curate 1,861 real-world song--MV pairs with structured song-side, MV-side, and teacher-inferred song-to-visual rationale annotations. Using these annotations, we perform LoRA-based supervised fine-tuning (SFT) of a large language model to predict song-to-visual bridges that guide hierarchical visual planning. Our experiments demonstrate stronger song-grounded visual translation, richer visual development, and greater conceptual and shot-to-shot coherence, while ablations support the benefits of learned bridge conditioning.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2609.06263v1' target='_blank'>Beyond the Flag: Clinical Framing Closes the Moderation Gap in Suicide Risk Measurement</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Shreyas Krishnan, Gun Ahn, Jungjin Kim</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-09-05 21:16:16</h6>
+<p class='card-text'>Moderation APIs are built to flag policy-violating content, not to measure graded clinical risk. But a platform's duty does not end at detection: the response owed to passive distress differs sharply from the response owed to active planning with means access, and emerging regulation (e.g., California Senate Bill 243) is turning that distinction into a compliance requirement. We therefore ask how well deployed safety signals recover clinically meaningful severity. We release a benchmark of 516 r/SuicideWatch posts rated by a licensed psychiatrist on a four-level ordinal schema (Indicator, Ideation, Behavior, Attempt) grounded in the Columbia Suicide Severity Rating Scale, and evaluate moderation APIs, prompted LLMs, and supervised baselines under seven ordinal-aware metrics. Three findings. Vendor moderation APIs separate low- from high-severity posts well (0.860 high-risk F1) but measure severity poorly (0.395 macro F1), systematically over-predicting the most severe category. Clinically grounded zero-shot prompting recovers much of that gap (0.562 macro F1), and expert-authored framing (not fine-tuning, added reasoning, or naive multi-agent aggregation) is the effective lever. The value of reasoning depends on register: it hurts on long, noisy Reddit posts and helps on short, clinician-authored statements. We argue graded severity, not a binary flag, is what a proportionate duty of care requires, and release our evaluation framework to support that measurement.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2609.06174v1' target='_blank'>Exploiting LLM Agents for Trustworthy AutoResearch in Wireless Communications</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yuan Guo Zixiang Ren, Jie Xu, Liang Hong, Fan Liu, Rui Zhang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-09-05 16:30:06</h6>
+<p class='card-text'>Large language model (LLM) agent-enabled AutoResearch is attracting growing interest across scientific disciplines, in which LLMs are leveraged for knowledge synthesis, multistep planning, code generation, tool invocation, and iterative refinement, thus automating the research lifecycle, from hypothesis generation and experimentation to analysis and manuscript preparation. Wireless communications is particularly suitable to this paradigm. This is due to the fact that advances in this field often rely on fundamental-limit analysis, system optimization, and protocol design, all supported by mature mathematical, simulation, and optimization toolchains, as well as standards, measurement, and digital-twin platforms. However, integrating autonomous agents into rigorous wireless research workflows requires traceable processes and verifiable evidence. This article presents a general trustworthy wireless AutoResearch framework. This framework employs typed research contracts, version-controlled artifacts, independent validators, and bounded agent authority to connect hypothesis generation with system modeling, mathematical formu lation, algorithm design, code generation, simulation, reproducible claims, and manuscript preparation. We conduct a case study on integrated sensing and communication (ISAC) for unmanned aerial vehicles (UAVs). It is shown that the proposed framework can generate innovative research ideas and, with appropriate expert intervention, produce a manuscript whose evaluation score is comparable to or higher than those of related IEEE conference and letter papers. These findings demonstrate the effectiveness of LLM agents in orchestrating authoritative scientific tools and versioned research artifacts, while underscoring the importance of human-AI collaboration.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2609.06071v1' target='_blank'>Generating Instance Generators in PDDL Planning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Nicola J. Müller, Naya Rudolph, Katharina Stein, Jörg Hoffmann, Ayal Taitler, Timo P. Gros</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-09-05 13:04:22</h6>
+<p class='card-text'>PDDL, the de-facto standard language in the AI Planning community, is designed to specify planning domains: sets of instances that share the same predicates and action schemas. Yet it does not provide any means to specify the actual instance set, i.e., legality constraints on initial states and goal conditions, as well as possibly domain subset constraints specifying an instance subset we are interested in. One consequence of this is that instance generation has always been ad-hoc, with manually written domain- and subset-specific instance generators. Recent work has started to address this, through reasoning and learning methods that however suffer from scalability limitations. Here we introduce an alternative approach, leveraging LLMs to generate instance-generation programs, with built-in soundness guarantees through prescribed checks. We show that these automatically generated instance generators return large numbers of sound and diverse instances efficiently.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2609.05818v1' target='_blank'>Agentic BAIM-LLM Evaluation (ABLE): Benchmarking LLM Use of Protein Design Tools</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Bryce Cai, Geetha Jeyapragasan, Samira Nedungadi, Jake Yukich, Seth Donoughe</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-09-05 02:28:21</h6>
+<p class='card-text'>We introduce ABLE, a benchmark for evaluating LLM agents' ability to use biological AI models (BAIMs), such as ProteinMPNN and AlphaFold3, in dual-use protein design workflows. ABLE assesses agent performance through a set of tasks spanning structure retrieval, sequence generation, and design validation. We evaluate 15 frontier models and find that seven refuse all tasks, while the remaining models exhibit substantial performance differences. Claude Sonnet 4 and Gemini 3 Pro achieve the highest scores across information retrieval, tool selection, and tool use. We further compare model performance on a subset of tasks against an expert human baseline. Our results suggest that current LLMs can substantially lower barriers to protein design, but remain inconsistent in planning, strategy generation, and integrating biological knowledge with tool use.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2609.05740v1' target='_blank'>SimTIO: A Simulation-Grounded Multi-Agent LLM Framework for Compositional Traffic Intervention Optimization</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Shuyang Li, Ruimin Ke</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-09-04 21:39:33</h6>
+<p class='card-text'>Traffic analysts must translate diagnosed bottlenecks into executable interventions without allowing local improvements to degrade network-wide performance. This study presents SimTIO, a simulation-grounded multi-agent large language model framework for composing and selecting traffic interventions under explicit operational constraints. SimTIO first simulates an unmodified SUMO scenario to identify a baseline-frozen set of ten bottleneck edges. A grounded sampler then initializes signal-control, corridor-speed, and demand-preserving routing actions, while three specialist agents use measured simulation feedback to select one-parameter refinements from validator-confirmed mutation catalogs. Compatible actions are combined and re-simulated so that their interaction effects are measured rather than inferred. Final selection minimizes bottleneck time loss while constraining network-wide delay, neighboring-road spillover, throughput loss, and teleport events, with the unmodified scenario retained as a no-operation guard. Across 15 cases covering five U.S. urban networks, three synthetic-demand seeds, and 2,400 origin-destination trips per scenario, SimTIO reduced Top-10 bottleneck time loss by an average of 9.18 percent and network-wide delay by 2.78 percent. It found a feasible improving plan in 86.7 percent of cases, compared with 73.3 percent for grounded random search and 80.0 percent for a deterministic heuristic under the same seven-simulation budget, although the differences in Top-10 improvement were not statistically significant. These results support using LLMs as constrained, feedback-guided local search operators while reserving final decision authority for executable tools, microscopic simulation, and explicit safety constraints.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2609.05019v1' target='_blank'>TROVE: Adaptive Agent Skill Orchestration via Trace-Grounded Route Validation and Editing</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Tianxing Wang, Mingming Zhao, Shuai Huang, Huiyang Xu, Chaoyue Niu, Shengzhong Liu, Fan Wu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-09-04 11:38:13</h6>
+<p class='card-text'>Agents tend to optimize, select, or constrain execution structures before decisive runtime outcomes are observed. However, such pre-execution commitment creates an orchestration bottleneck: when intermediate evidence invalidates the pending continuation, agents must either execute stale steps or replan broadly, compounding errors, wasting computation, and discarding progress. We thus propose Trace-grounded Route Orchestration via Validation and Editing (TROVE), which revises only what runtime evidence invalidates. Offline, TROVE distills evaluated workflow-search traces into atomic and composite skills and an outcome-conditioned transition graph, preserving stable fragments while exposing outcome-dependent decisions. Online, it treats a planned route as provisional: after committing one top-level skill, the controller retains a valid continuation, inserts a trace-supported local response, or replaces only the invalid suffix. Evaluation across code-generation, question-answering, and math reasoning benchmarks with different LLM backbones show that TROVE delivers a stronger quality-efficiency trade-off than existing baselines of dataset-level optimization, query-level architecture selection, and graph-constrained scheduling. Quality gains are largest when outcomes change the appropriate continuation, whereas early termination yields substantial efficiency gains on near-saturated tasks. Ablations further show that composite skills capture most offline benefits, insertion enables local correction, and suffix replacement primarily improves efficiency. These findings establish selective route editing as a general principle for adaptive agent orchestration.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2609.04913v1' target='_blank'>ARIA - An Agentic Framework for Autonomous Testing of Infotainment Systems</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:António Azevedo, Bruno Lima, João Pascoal Faria</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-09-04 09:18:01</h6>
+<p class='card-text'>Automotive infotainment validation still relies on manual testing, slow, costly, and incompatible with agile releases and OTA updates. Scripted automation only partly helps: it couples test logic to implementation, yielding brittle, high-maintenance suites. Existing LLM-driven frameworks mostly target web/mobile apps, using single- or dual-agent setups that overload one or two models with perception, planning, action selection, and validation at once, prone to hallucinations and unproductive exploration loops given infotainment complexity. We present ARIA (Autonomous Real-time Infotainment Assessment), a multi-agent LLM framework that autonomously runs end-to-end tests on Android infotainment systems via visual interaction, using a closed-loop pipeline of four specialized agents per step plus a report stage. From single-sentence scenarios (path, action, expected outcome), ARIA runs the interactions and produces reports, reproducible scripts, and visual evidence per step. Evaluated on a manufacturer's physical Android infotainment system across 30 scenarios, ARIA completed 28 (93.3%) with a verdict (2 errored), 20 of which (71.4%) matched ground truth. It caught all 5 known defects, no fault passed as working; its 8 false positives stem from navigation/image limits and unsupported gestures, showing multi-agent LLMs can run infotainment tests industrially while exposing the cost of a low false-positive tolerance. A single-agent baseline confirms the multi-agent design's value: on the first pass, before stronger-model revisitation narrows the gap, it shows a far higher false-positive rate (72.0% vs. 52.6%), conflating navigational difficulty with system failure. We report first-pass/post-revisitation results, token/call/cost per scenario, and show via repeated runs that stability tracks complexity, with fault detection perfectly consistent, pointing to CI integration of visual testing.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2609.04875v1' target='_blank'>Forgetting Without Restarting: Execution-State Unlearning for Stateful LLM Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Chao Yao, Yangbo Wei, Zhen Huang, Junhong Qian, Chenle Chen, Shaoqiang Lu, Chen Wu, Lei He</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-09-04 08:31:40</h6>
+<p class='card-text'>Long-running LLM agents are stateful: beyond the transcript they accrete compressed summaries, plaintext memory, pending tool plans, and, under every serving API, a KV cache. Yet today's "forget" operations delete a plaintext memory record and stop, leaving every artifact derived from the revoked information intact. We formalize execution-state unlearning: after a forget request, the agent must behave as if it had never observed the target. Modeling the runtime as a deterministic transition system, we prove that the pre-target trajectory prefix is shared with this counterfactual world for free, that the post-target suffix is irreducibly tainted without token-level attribution, and that exact unlearning requires at least $T-τ+1$ recomputed transitions, where $τ$ is the target's injection step. Provenance-Guided Selective Replay attains this bound as a cross-layer contract spanning prompt, compressed memory, and cache: a provenance graph locates the injection point, checkpoint restoration reduces to cropping the KV cache, and sanitized replay regenerates the counterfactual suffix. Audited with elicitation, stochastic, and string-free behavioral tests across three agent suites, nine baselines, and three model families, memory deletion leaves leakage unchanged, instruction-based forgetting collapses under elicitation (Leak@probes = 1.00), and source redaction still acts on a revoked preference in 80% of episodes, while selective replay is indistinguishable from a full reset at up to 9x fewer recomputed tokens.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2609.04674v1' target='_blank'>QMClaw: A Scalable General-purpose Framework for Quantum Measurement and Control</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Zhiqiang Fan, Haoran He, Ping Lv, Junchao Wang, Yaqiang Sun, Chenhui Wang, Hanshi Zhao, Geyuyan Ma, Haoran Yang, Pengyu Han, Xiangdong Meng, Lixin Wang, Feng Yue, Weilong Wang, Zheng Shan</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-09-04 03:07:25</h6>
+<p class='card-text'>As quantum computing continues to scale, quantum measurement and control (QMC) are increasingly constrained by calibration workflow complexity and by requirements for low-latency execution, robust exception handling, and traceable workflow governance. Existing frameworks for QMC are specialized and task-specific, while language-model-based agents for QMC suffer from excessive latency and cannot satisfy the strict timing and control-density demands of large-scale quantum systems. Here we propose QMClaw, a general, workflow-oriented framework for QMC built, featuring a local-first, tool-governed, robust architecture. At its core is a RuleEngine-centered control layer that processes structured context, performs rule-based state transitions, and generates execution plans for typical calibration workflows. Language models are used only for natural-language interaction, high-level task understanding, and exception support, keeping the critical fast path efficient. We implement a single qubit tune-up workflow as a demonstration and validation using real quantum device dataset. We also prove that the framework achieves quantitatively acceptable levels in terms of resource cost, LLM calling times and decision latency, enabling its practical deployment in large-scale quantum qubit measurement and control scenarios. This work presents a general workflow-oriented framework for QMC and provides evidence that rule-centered architectures are a promising design choice for scalable quantum-system calibration.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2609.04667v1' target='_blank'>ERPBench: Evaluating LLM Agents for Enterprise Decision-Making Across Competitive Market Ecologies</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Xinran Zhang, Pengrui Lu, Lyumanshan Ye, Pengfei Liu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-09-04 02:58:29</h6>
+<p class='card-text'>Large language model (LLM) agents are increasingly proposed for enterprise workflows, yet existing evaluations rarely test whether business-decision conclusions transfer across competitive market ecologies. We introduce ERPBench, an execution-instrumented benchmark for enterprise decision agents in a six-round Enterprise Resource Planning (ERP) simulation with coupled pricing, production, procurement, inventory, finance, and shared-market competition. ERPBench evaluates the same 100 fixed problems in two matched competitive market ecologies: Solo, where each evaluated LLM agent competes against fixed rule-based opponents, and Arena, where six evaluated LLM agents compete in a shared market. Across six model families, this yields 1,200 model-level trajectories spanning 7,200 decision rounds. Under the observed service configuration, the leading model differs between ecologies: DeepSeek leads in Solo (252.29M mean valuation; mean rank 1.67), whereas Gemini leads in Arena (263.95M; 1.76). The two ecologies identify the same task-level winner on only 21 of 100 problems, and Gemini's bottom-rank rate falls from 22 % to 0 % in Arena. ERPBench supports paired evaluation of whether enterprise-agent rankings transfer across competitive market ecologies, supplemented by aggregate execution-intervention analysis. Code and benchmark resources are available in our https://github.com/GAIR-NLP/erp-bench.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2609.04544v1' target='_blank'>Integrating Agentic Artificial Intelligence with High-Performance Computing for Grid Planning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Samim Konjicija, Slaven Peles</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-09-03 23:03:26</h6>
+<p class='card-text'>We present AgentiGrid, an agentic artificial intelligence (AI) framework that integrates large language models (LLMs) intelligence and high-performance computing (HPC) to streamline and accelerate the multi-scenario power flow studies. AgentiGrid is an autonomous decision-making agent that proposes parameter modifications, invokes analyses through HPC analysis toolkit ExaGO, interprets results, and determines subsequent actions. ExaGO provides multiple power flow applications that can perform deterministic, stochastic and security constrained optimal power flow analyses. AgentiGrid provides backends to multiple LLMs (OpenAI, Anthropic, Ollama, and Ollama cloud) augmented with context specific and task specific prompts. Key features include interactive mid-search steering, goal-type-aware post-search analysis, and concurrent variant exploration for power flow optimization. A Streamlit-based graphical launcher provides real-time visualization of iteration progress and generates reports in natural language. AgentiGrid is capable of autonomously converging transmission constrained alternating current optimal power flow in under 20 iterations, with near-perfect reliability</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2609.04523v1' target='_blank'>MaxKernel: Agentic Kernel Generation for TPUs</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Shangkun Wang, Nina Cai, Charles Hoong, Julian Walker, Gerson Kroiz, George Vanica, Deepak Patil, Andi Gavrilescu, Hassan Sipra, Sethu Sankaran</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-09-03 22:22:37</h6>
+<p class='card-text'>Designing and authoring high-performance custom kernels for accelerators is a complex task that requires deep hardware-level expertise. Large Language Models (LLM) can be leveraged together with real-time compiler feedback to build agentic systems for kernel generation. In this work, we present MaxKernel, a multi-agent system that implements three distinct paradigms for TPU kernel development: (1) a Human-in-the-Loop (HITL) agent for collaborative, step-by-step design; (2) an Autonomous (Auto) agent that executes a fully automated, metric/trace-driven optimization loop; and (3) a Graph-Based Autonomous Search that scales the Auto agent for global exploration of the design space. All three paradigms leverage a shared pool of specialized sub-agents to handle planning, implementation, self-debugging, testing, and hardware profiling. We evaluate MaxKernel on JaxBench, a comprehensive suite of 50 diverse kernel tasks for TPUs, alongside complex, real-world workloads from state-of-the-art open-source models. We demonstrate that MaxKernel consistently generates highly optimized implementations, matching expert hand-tuned baselines and delivering significant performance across the benchmark. Our agent is open-sourced and available https://github.com/AI-Hypercomputer/accelerator-agents/tree/main/MaxKernel.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2609.05565v1' target='_blank'>Toward Sustainable Distributed LLM Inference: A Systems Synthesis and Research Agenda for an Energy-, Carbon-, and Cache-Aware llm-d Control Plane</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Twinkll Sisodia</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-09-03 21:56:54</h6>
+<p class='card-text'>Large language model (LLM) sustainability is increasingly a serving-systems problem, not only a training problem. In production, energy and carbon impact depend on more than model size: workload shape, batching, key-value (KV) cache reuse, prefill/decode placement, model and accelerator choice, power state, geographic carbon intensity, and service-level objectives (SLOs) all matter. Recent systems papers study many of these factors separately. This paper connects those results and asks a practical engineering question: what do they imply when the decision point is a distributed inference control plane such as llm-d?
+  The contribution here is synthesis, not a new set of benchmark results. Reported performance, energy, carbon, and cost improvements remain the results of the cited papers and systems. I group the literature into recurring design patterns and use those patterns to sketch a Sustainable Inference Control Plane (SICP) for llm-d. The proposed control plane would consider latency, energy, carbon, cache reuse, serving cost, and quality when routing and scaling, while keeping TTFT/TPOT SLOs as hard constraints. I also outline an evaluation framework based on SLO-satisfied goodput per joule and per gram CO2e, together with a reproducible experimental plan. The main observation from connecting the literature is that sustainable LLM inference is unlikely to come from one "green" model or one accelerator; it is more naturally treated as a control problem across model, phase, cache, hardware, replica, region, and time.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2609.04055v1' target='_blank'>LabelMate: An LLM-Driven Framework for Refined Issue Report Labeling</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Liam Johnston, Shayan Noei, Maram Assi, Ying Zou</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-09-03 16:31:42</h6>
+<p class='card-text'>Software users often submit issue reports to a product's issue tracking system to report defects, suggest enhancements, or raise other product-related concerns. Labeling these issue reports supports effective planning and improves community engagement. However, many issue reports remain unlabeled due to the substantial manual effort required to design an appropriate label taxonomy, then assign suitable labels from this taxonomy to new issue reports. Existing automated labeling approaches attempt to mitigate these challenges. However, they suffer from key limitations, such as extensive manual intervention, the assignment of generic labels, and a dependence on existing labeled datasets. To address these limitations, we propose LabelMate, a novel Large Language Model (LLM)-driven framework that (1) derives a comprehensive, project-specific label set from historical issue reports and (2) automatically assigns relevant labels to new issue reports without requiring any pre-labeled training data. We evaluate LabelMate on 16,500 issue reports from 30 popular and diverse GitHub repositories. Based on this dataset, our approach generates a coherent list of 275 labels and achieves an average labeling accuracy of 89.84%, a statistically significant improvement over existing generic label assigning approaches. These results demonstrate that LabelMate offers an efficient, domain-adaptive solution to streamline the issue labeling process.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2609.03967v1' target='_blank'>Investigating the Ability of Large Language Models to Analyze Recipes for Diabetes</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Revathy Venkataramanan, Aditya Luthra, Venkatesan Nadimuthu, Amit Sheth</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-09-03 15:03:36</h6>
+<p class='card-text'>Several studies have evaluated the ability of Large Language Models (LLMs) for meal planning, yielding positive outcomes. These models can process natural language inputs and leverage learned knowledge from their pretraining to generate meal plans. In this work, we investigate the ability of LLMs to analyze the suitability of given recipes for diabetes. The primary challenge for LLMs is to retrieve relevant dietary guidelines for diabetes, decompose recipes into ingredients and cooking methods, and apply these guidelines to determine the recipe's suitability. To study these challenges, we employ three kinds of prompts namely, (i) Direct Query Prompt (ii) Context-Guided Prompt, and (iii) Exemplary Context Prompt that incorporate different levels of diabetes dietary guidelines from medical sources. We introduce a benchmark dataset curated for this investigation consisting of 7607 recipes that include 3807 recipes suitable for diabetes and 3800 recipes not suitable for diabetes. Our results demonstrate that most LLMs are cautious in predicting recipes as suitable to prevent detrimental outcomes. Further, the models that can reason using the dietary guidelines performed better in predicting the suitability of recipes for diabetes. Overall, Mistral-7B and Llama 70B showed superior performance to their counterparts.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js'></script>
+</body>
+</html>
