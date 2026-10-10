@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<title>LLM-planning - 2026-10-10</title>
+<link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap' rel='stylesheet'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'>
+<style>
+body {
+font-family: 'Roboto', sans-serif;
+background-color: #f5f7fa;
+padding: 20px;
+}
+.card {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.card-title {
+    font-weight: 700;
+}
+.card:hover {
+    transform: scale(1.02);
+    transition: 0.3s ease-in-out;
+}
+</style>
+</head>
+<body>
+<div class='container'>
+<h1 class='text-center my-4'><i class='fas fa-book'></i>LLM-planning - 2026-10-10</h1>
+<div class='row'>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.12375v1' target='_blank'>OnTrack: Real-Time Monitoring and Intervention in LLM Agent Trajectories via Streaming Structure-Aware Optimal Transport</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Babak Barazandeh, Connor Swanson, Chinmay Kulkarni, Nikhil Mungel</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-08 17:32:08</h6>
+<p class='card-text'>Agents are deployed in applications from trip planners and stock trading to IT incident triage. In most cases, LLM agents work autonomously with minimal rule-based safeguarding, leading to cost and safety issues from irreversible actions. Recent works resolve this either by using a safeguard agent to monitor behavior or evaluating logs post-hoc. The first adds cost and latency to every step; the second delivers its verdict after the run, when tokens are burned and damage is done. To overcome this, we propose OnTrack, a streaming monitoring mechanism that compares an agent's steps and dependencies against recorded successful runs to alert users or block the agent in about a millisecond per step. We study this problem in three regimes of decreasing access: full reference access (historical runs and tool schemas), intermediate access (only tool schemas), and no prior knowledge (only step logs as generated). Expectation of OnTrack's monitoring capabilities reduces as data access drops, ranging from plan violation detection to identifying loops, stalls, and repeated tool calls. Finally, we evaluate OnTrack using SWE-bench trajectories. Based on the first 8 steps, our method ranks failing trajectories below succeeding ones better than content similarity approaches (+0.057 AUROC). With an abort policy, we save about 18% of compute that would be burned on failing runs, where 83% of interrupted runs were actually heading to failure (5 out of 6 aborts were correct).</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.12281v1' target='_blank'>Unlocking the Regulatory Genome by ARGUS: An Evidence-Constrained Agentic Framework for Interpreting Single Nucleotide Variants</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Pratik Dutta, Matthew B. Obusan, Max Chao, Rekha Sathian, Nimisha Papineni, Ramana V. Davuluri</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-08 16:38:32</h6>
+<p class='card-text'>Over 90% of disease-associated variants from genome-wide association studies fall in noncoding regulatory regions, yet their functional interpretation remains a central open problem in genomic medicine. Large language models prompted to interpret such variants routinely hallucinate transcription factor (TF) binding changes, fabricate experimental support, and assign biological significance to statistically negligible signals. We present ARGUS (Agentic Regulatory Genomics for an Uncertainty-aware Scientist), which strictly separates deterministic biological computation from LLM-mediated reasoning. ARGUS wraps 458 DNABERT-based TF binding models in a hypothesis-directed investigation loop where a planner selects evidence sources based on current uncertainty, a verifier deterministically interprets each observation, and intermediate results change the investigation path. On variant rs6983267 at the 8q24 cancer risk locus, the same planner produces four divergent trajectories for four TFs. FOXA1 is rescued in 3 steps when real ADASTRA allele-specific binding data (15 experiments, FDR = 0.030) reveals a model false negative masked by saturation. KLF6 traverses 8 steps across ADASTRA, JASPAR motif analysis, and ENCODE cCRE regulatory annotation before abstaining due to mixed indirect evidence. RAD21 abstains in 8 steps after ADASTRA returns a coverage-qualified but nonsignificant allelic test (5 experiments, FDR = 0.65), and SP1, which shares FOXA1's saturated retained prediction, abstains because no direct experimental evidence exists at this locus. All observations come from real ADASTRA, JASPAR, and ENCODE cCRE queries; none are simulated. A comparison of fixed-priority and LLM-mediated planning shows that the LLM planner reaches identical verdicts with fewer tool calls by declining evidence that cannot resolve the claim under test.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.11899v1' target='_blank'>Forms of LLM-Integrated Applications from LLM-Chats to Autonomous AI Agent System</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Irene Weber</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-08 13:05:33</h6>
+<p class='card-text'>Large language models (LLMs) are increasingly embedded as components in software systems, marketed under labels such as chatbot, copilot, retrieval-augmented generation, workflow, coding agent and AI agent. Whether these labels denote genuine architectural forms or serve as branding has not been assessed systematically.
+  In the sources surveyed, labels do carry architectural content, most clearly in vendor usage: copilot denotes a router-worker architecture operating a host application under step-by-step user confirmation, while the more recent shift to the label agent coincides with AI-planned multi-step execution of which the user sees only the outcome. The coding agents of four major providers share one architecture, a reason-and-act loop delegating to subagents.
+  This survey describes seven recurring forms---LLM chats, custom agents, retrieval-augmented generation (RAG), AI-enhanced workflows, copilots, coding agents, and, in part, agentic RAG---in a common vocabulary of agents and tools. Each is characterized along four structural dimensions (agentic RAG only partially): the architectural pattern, the control of execution and the point of user intervention, the number of agent calls per task, and tool use. An illustrative corpus of 22 systems from research publications and vendor documentation grounds the descriptions and shows where they reach their limit.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.11794v1' target='_blank'>Memento 3: Model-Based Recursive Self-Improvement through Reflective Rulebooks</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Haoyu Zhao, Zhengxu Yu, Zhiyuan He, Meng Fang, Rasul Tutunov, Haitham Bou-Ammar, Weilin Luo, Jun Wang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-08 12:06:54</h6>
+<p class='card-text'>Learning to act in unfamiliar environments requires agents to infer how the world works and revise that understanding as new evidence arrives. Yet limited observations can support multiple world models that explain past interactions but predict different outcomes in unseen states. We introduce Memento 3, building on the Memento series to enable frozen LLM agents to continually learn explicit world models through external memory. The agent maintains a natural-language rulebook as persistent semantic memory, recording revisable hypotheses about environment dynamics while leaving unknown aspects underspecified. It compiles this rulebook into executable code for prediction and planning. Through a continual loop of observation, reflection, rule revision, compilation, and verification, the agent uses prediction errors to refine both the rulebook and its code. Updated code is accepted only when the LLM judges it faithful to the rulebook and cell-exact replay reproduces the observed transitions. We investigate this process as a model-based route to recursive self-improvement (RSI): the agent autonomously explores the environment, revises its world model, and uses verified updates to guide subsequent interaction and learning, while the underlying LLM remains fixed. A population extension maintains multiple world models in parallel, sharing interaction evidence and using their predictions to guide exploration. On ARC-AGI-3, the single-model agent clears every level of all 25 public games, achieves a mean Relative Human Action Efficiency (RHAE) of 100.0, and uses 44% of the human action count. In an Atari Pong case study, a learned feedback controller wins 21:0 in each of three evaluated episodes with different openings, without further LLM calls.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.11655v1' target='_blank'>Harness Evolution Hits a Ceiling: When Weight Training Should Begin</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yuan Tian, Bing Hu, Hao Wang, Binghang Lu, Fang Wu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-08 10:33:29</h6>
+<p class='card-text'>Improving a long-horizon LLM agent means evolving the harness around a frozen model or training its weights. We let a self-evolving harness make the system stronger first, then cross seed and evolved harnesses with base and trained weights to learn which gains the trained model keeps and which still need the runtime. We show that the right lever can be read off the agent's failure composition: labelling failed trajectories by the first signal that fires separates process failures (blocked calls, loops, exhausted step budgets) from content failures (a delivered plan that is poor). Harness evolution repairs the former, the behaviour it instils can be trained into the weights, and content failures are what weight training is for. On DeepPlanning, a self-evolving harness loop lifts the held-out score of Qwen3.5-4B from 0.16 to 0.30 and of Qwen3.5-9B from 0.32 to 0.44; for 4B, held-out delivery rises from 55% to 90% while content failures are left for the weights. LoRA adapters trained on evolved-harness trajectories internalise the gain: under the original harness they add +0.13 on held-out tasks for both sizes; on 4B they stack with the harness to more than double the held-out score, and on 9B the adapter alone matches the full evolution line, cutting content failures from a quarter of trajectories to one in twenty. A placebo adapter trained on answer-shuffled trajectories falls below the base model. The loop transfers to WebArena-Lite (+0.09 on 117 unseen tasks), where the gain lives in what the model sees and adapters do not add to it. The result is a diagnose-then-intervene rule applied twice: read the failure composition to choose between harness and weights, then read what the accepted edits changed to decide which gains to train in. Scores are four-rollout means against fresh anchors, same-night except where marked, across eight models from six families and two benchmarks.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.11461v1' target='_blank'>Beyond Speech Captions: Speech-Rewarded Style Planning for Conversational Text-to-Speech</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Shiao Zhu, Lianbo Liu, Sizhen Lyu, Yuzhe Wang, Sheng Li, Takahiro Shinozaki</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-08 08:12:28</h6>
+<p class='card-text'>Natural-language style descriptions provide an interpretable interface between large language models (LLMs) and controllable text-to-speech (TTS). However, using descriptions as pseudo-labels compresses target acoustics into text, and descriptive fidelity need not imply effective control of a particular synthesizer. We empirically show that speech-text alignment only weakly predicts downstream acoustic similarity among candidate instructions for the same utterance. We therefore propose Speech-Rewarded Style Planning (SRSP), which trains a text-based style planner through a frozen downstream TTS model. Given dialogue history and response text, the planner generates candidate instructions and is optimized with group-relative policy optimization (GRPO), using the teacher-forced likelihood of target speech tokens as the reward. On an English subset of the ISCSLP 2026 CoT-TTS corpus, SRSP achieves higher speech-style and emotion similarity to target speech and lower mel-cepstral distortion than the Base LLM and target-audio-informed captioning baselines. LLM-based expressive speech evaluation further shows gains over all baselines in contextual appropriateness and reference consistency.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.11312v1' target='_blank'>MedBenchAgent: Towards Systematic Automation of Medical VLM Benchmark Construction</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yulin Fu, Junren Wang, Guangjing Yang, Zhangyuan Yu, Wanran Sun, Jiabao Zhou, Jin Yin, Qicheng Lao</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-08 06:17:33</h6>
+<p class='card-text'>Large-scale construction of medical vision-language model (VLM) benchmarks is increasingly feasible with richly annotated imaging datasets and large language models (LLMs), yet existing automation largely focuses on generating evaluation items within predefined benchmark specifications. We study the broader problem of automatically deriving the specification itself: what to evaluate, which annotations support each task, and how to translate this evidence into reliable evaluation items. We formulate benchmark construction as constrained compilation, in which the benchmark specification is progressively derived from evaluation requirements, heterogeneous annotations, and medical knowledge. Based on this formulation, we introduce MedBenchAgent, a multi-agent framework with a Benchmark Intermediate Representation (BIR) that encodes task definitions, evidence mappings, evaluation protocols, and item specifications across construction stages. MedBenchAgent separates planning, which derives and verifies the specification, from instantiation, which constructs and audits items under the locked specification. MedBenchAgent achieves a Task-Space F1 of 90.9%, outperforming direct task induction (79.2-80.0%) and prior-guided induction (85.1%); 994 of 1,000 sampled items from correctly identified tasks pass human audit. We further demonstrate portability to a specialized medical domain and evaluate twelve VLMs, revealing task- and setting-specific variation obscured by aggregate scores. These results establish constrained compilation as a scalable and auditable framework for medical VLM benchmark construction beyond question generation.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.11299v1' target='_blank'>DuplexAgent-RSI: Recursive Harness Improvement for Full-Duplex Voice Agent Collaboration</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yingda Shen, Yuxiang Wang, Kunyu Feng, Qinke Ni, Jiaqi Li, Minghao Hsu, Junan Zhang, Dekun Chen, Yutong Bian, Zhizheng Wu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-08 06:06:42</h6>
+<p class='card-text'>Voice agents are converging on a collaboration pattern: a full-duplex interaction model stays on the live channel as the entry to the conversation, while search, reasoning, and coding are handled through asynchronous delegation. A duplex model supports continuous listening and speaking, but complex reasoning and tool use may exceed its capabilities. A coding agent can plan and execute extended tasks, but its sequential interface is a poor fit for live conversation. Combining them requires a harness that coordinates task acceptance, progress, cancellation, replacement, and result delivery while keeping the conversation responsive. Existing harnesses often rely on coupled heuristics, making them difficult to improve systematically from evidence. We present DuplexAgent, a full-duplex collaboration system whose harness expresses this workflow as six editable modules, and Duplex-Harness-RSI, a closed loop that revises them from interaction traces. A simulator automatically generates timed test conversations, runs the system, and produces failure traces that identify the collaboration modules requiring repair. Reasoning LLMs and coding agents in the delegation pool also serve the improvement loop: the Exam Planner selects the next tests from observed weaknesses and the repair archive, and the Harness Editor proposes targeted module changes. The capabilities that serve the user thus also improve the system's coordination. Experiments on intelligence, agentic, and duplex benchmarks show that DuplexAgent combines continuous interaction with difficult reasoning and complex task execution, achieving stronger spoken-knowledge and executable-tool scores than the compared delegated systems while maintaining strong interruption response. A harness ablation further shows that this modular, verifiable loop outperforms the initial harness and repeated editing that lacks its diagnosis and repair archive.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.10974v1' target='_blank'>Budgeted Multi-Source Counterfactual Annotation for Off-Policy Evaluation</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Biao Xiang, Ali Eshragh, Yuexing Li, Kai Wang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-07 22:55:15</h6>
+<p class='card-text'>Off-policy evaluation (OPE) estimates the value of a target policy from logged data, but limited behavior-policy coverage can force high-variance reweighting or reward-model extrapolation. Counterfactual annotations can add evidence about unobserved actions, yet practical sources, including domain experts and large language models (LLMs), may be costly, biased, or noisy. We study budgeted acquisition of such annotations for contextual-bandit OPE. Given source-specific costs and error profiles, we formulate an integer allocation problem over context-action pairs and annotation sources to minimize the component of estimator variance that depends on the annotation plan. We characterize when annotations are valuable through a first-annotation threshold and local annotation-value regimes. For the coupled multi-source problem, we develop a majorization-minimization algorithm with dynamic-programming subroutines that monotonically improves the objective. Experiments in synthetic clinical and LLM-annotated education bandits show that our allocation method reduces fixed-profile mean squared error (MSE) by 20.58% and 10.77%, respectively, relative to no annotation.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.10942v1' target='_blank'>StoreBench: A Live-Commerce Environment for Evaluating and Training Autonomous Operator Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Daksh Raghuvanshi, Ved Vedere, Yifan Wang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-07 21:46:10</h6>
+<p class='card-text'>Reinforcement learning environments are now a primary lever for improving large language model (LLM) capabilities in post-training, yet most agentic benchmarks remain static: the world moves only when the agent acts, the reward is a terminal verdict, and the pass bar is set arbitrarily. We introduce StoreBench, a live-commerce environment in which an agent runs a mid-size online apparel store on a production-grade commerce backend, testing long-horizon planning and economic judgment under uncertainty. Customers order around the clock, suppliers reprice and fail, and market shocks arrive with partial or no warning. The agent acts through the same 29 merchant tools a human operator would use, under a windowed operation budget that makes simulated time a function of actions taken, so model latency cannot influence simulated time. Pass thresholds are calibrated against scripted anchor policies, the reward is hardened against a catalogue of reward hacks, and every episode replays identically given a sequence of actions. We evaluate seven frontier LLMs on 11 scenarios of 30 to 45 days and a full simulated year, over three world seeds at matched reasoning effort. No model matches the scripted smart-triage policy on average: the best, DeepSeek-V4-Pro, passes 49% of task-seed cells against the heuristic's 97%. Human experts working through the same tools and budgets outscore every model (mean composite 0.708 vs. 0.700). Over a full simulated year under the Claude Code harness, most models show dramatic performance improvement. In a GRPO post-training run, Qwen3.5-27B trained on only five disjoint tasks raises its mean composite on the held-out evaluation tasks from 0.136 to 0.373. We release five example training-split tasks, ten sample trajectories, and the scoring and verification tooling; the full environment and evaluation suite are withheld to keep the benchmark uncontaminated.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.10650v1' target='_blank'>Large Language Model-Assisted Preparation of Transportation Management Plans: A Case Study with WisDOT WisTMP System</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Zihao Sheng, Pei Li, Zilin Huang, Yen-Jung Chen, Yuhao Luo, Zhengyang Wan, Steven T. Parker, David A. Noyce, Sikai Chen</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-07 15:51:01</h6>
+<p class='card-text'>Work zones are critical yet hazardous components of transportation infrastructure, requiring carefully designed Transportation Management Plans (TMPs) to ensure safety and mobility. However, TMP preparation remains labor-intensive and heavily dependent on practitioner expertise. This paper proposes a Large Language Model (LLM)-assisted framework to automate TMP content generation, leveraging the WisDOT WisTMP system as the application context. The framework fine-tunes multiple open-source LLMs across different model scales and deploys them locally to ensure data security. To support model training, we construct a domain-specific dataset from historical WisTMP documents by converting PDF files into structured question-answer pairs in JSON format. Experimental results show that fine-tuning significantly improves performance across standard text generation metrics. Further section-wise and strategy-level analyses reveal that, while LLMs achieve strong overall performance, they tend to over-generate strategies and struggle to produce project-specific justifications and accurate cost estimates. In addition, scaling from 7B/8B to 14B yields limited gains. These findings demonstrate the potential of LLMs to improve TMP preparation efficiency while highlighting remaining challenges in LLM-assisted TMP development. The source code and demo videos will be publicly available at https://zihaosheng.github.io/TMP-LLM/.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.10044v1' target='_blank'>CANDO: Cooperative Agentic Network for Layout Design Optimization</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Athanasios Masouris, Zheng Jing, Benjamin Sam Chandler, Hadi Jamali-Rad</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-07 13:20:52</h6>
+<p class='card-text'>Layout generation for real-world facilities is a challenging problem, requiring reasoning over irregular site boundaries, heterogeneous orientations, access-aware placements, and motion-planning feasibility. Yet, most existing layout benchmarks in the generative AI space target simpler placements over rectangular domains and rely on distributional metrics such as FID and IoU that reward conformity to dataset priors, thus discounting design innovation. Motivated by these gaps, we introduce ALPS-Bench, a benchmark of $1,000$ professionally annotated real-world facility layouts paired with an instance-specific scoring protocol grounded in a structured design manual. As a strong baseline for ALPS-Bench, we propose CANDO, a training-free multi-agent framework in which specialized agents iteratively refine layouts through a verification-grounded loop, concentrating reasoning on strategic spatial decisions. We demonstrate that CANDO surpasses state-of-the-art trained and LLM-based baselines on the widely adopted PubLayNet, RICO, and PKU-PosterLayout benchmarks, establishing cooperative agentic design as a broadly effective recipe for constraint-aware layout synthesis.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.09588v1' target='_blank'>Adaptive Code Generation for Controlling Robots</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Justus Flerlage, Thorsten Wittkopp, Alexander Acker, Odej Kao</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-07 07:33:16</h6>
+<p class='card-text'>Deploying robots as Complex Adaptive Systems (CAS) in unknown and dynamic environments necessitates a transition from rigid command libraries toward intention-based autonomy, as natural language represents the only medium capable of articulating complex goals beyond the capacity of finite instruction sets. While Large Language Models (LLMs) offer a path toward natural language goal description, their integration introduces significant challenges: the formalization gap between imprecise intentions and executable actions, the taxonomy gap induced by unpredictable environments, and the challenge of maintaining temporal state and progress awareness. This work introduces an architectural framework that enables robotic control by leveraging generative AI. The system follows a dual-AI design: an LLM translates high-level intentions into executable program code restricted to a formal robotic library and constrained by verifiable syntax, while a Vision-Language Model (VLM) provides semantic grounding via a distillation process. To ensure robustness, the framework incorporates environment-driven replanning triggers based on geometric and semantic thresholds, complemented by continuous runtime monitoring and an adaptive planning loop. Benchmarked across frontier models, our framework architecture demonstrates that grounding generative AI in a reactive, constrained loop enables robust fulfillment of complex intentions in dynamic and unknown environments.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.09466v1' target='_blank'>LLM-Enabled UAV Dispatch: A System-Level Survey and Taxonomy</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Xiao Han, Aoyang Quan, Xiangyu Zhao, Xiangjie Kong, Guojiang Shen</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-07 05:22:51</h6>
+<p class='card-text'>Unmanned aerial vehicle (UAV) dispatch is beginning to move beyond isolated path planning and optimization-driven resource allocation toward system-level coordination supported by semantic reasoning and LLM-based interfaces. This survey provides a unified characterization of LLM-enabled UAV dispatch systems that bridges semantic intent, symbolic decision-making, and physical UAV execution. Rather than treating LLMs as standalone add-ons, we conceptualize them as a cross-layer semantic orchestration layer connecting human instructions, external solvers, and distributed control modules. We organize the literature into four representative dispatch paradigms: pipeline dispatch, global assignment dispatch, decentralized agentic dispatch, and divide-and-conquer dispatch. For each paradigm, we analyze its decision logic, system structure, control flow, representative methods, and potential LLM roles. We further examine how LLMs support semantic parsing, retrieval-grounded planning, solver orchestration, local agent reasoning, multi-agent coordination, safety assessment, and human-facing explanation. We discuss the implications of these paradigms for scalability, robustness, coordination burden, and verification requirements, and identify open challenges including latency-aware reasoning, grounding reliability, physical feasibility guarantees, edge deployment, privacy protection, and distributed consistency. This survey provides a system-level taxonomy and design perspective for integrating LLMs into safety-critical UAV dispatch systems.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.09398v1' target='_blank'>IVG-UAV: An Intelligent Voice-Guided UAV System for Autonomous Ripe Fruit Harvesting with Vision-Based Classification and Adaptive Path Planning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Dinh Trung Duong</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-07 03:59:03</h6>
+<p class='card-text'>In tropical regions, their agricultural sectors remain highly dependent on manual labor for fruit harvesting. On large-scale farms, this dependency often results in significant labor cost and logistic complexities. This project presents the development and simulation of a voice-controlled Unmanned Aerial Vehicle (UAV) system designed to automate harvesting tasks in extensive plantations. The proposed system integrates speech recognition using Whisper [1] and LLM, computer vision-based ripeness classification, and adaptive path planning within a unified framework. The entire system is modeled and validated in a Gazebo simulation environment, allowing performance evaluation under controlled agricultural scenarios</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.09374v1' target='_blank'>DUDA-Bench: Benchmarking LLM Agents on Multimodal Data-Driven Urban Diagnosis</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yizhi Song, Hang Ni, Weijia Zhang, Hao Liu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-07 03:29:27</h6>
+<p class='card-text'>Urban diagnosis integrates heterogeneous observations to identify urban problems, localize affected areas, and investigate contributing factors, informing evidence-based urban planning and management. However, its reliance on labor-intensive, case-specific expert workflows limits scalability and reuse, motivating the exploration of agent-based execution. To evaluate this capability, we introduce DUDA-Bench, a hierarchical and interactive benchmark that formalizes data-driven urban diagnosis as a multi-stage agent workflow. It comprises 86 atomic and 22 workflow tasks spanning four analytical stages, grounded in multimodal data from 12 cities covering five urban problem types. Evaluations of seven backbone models and five agent systems reveal a substantial gap between isolated analytical competence and end-to-end diagnosis, with system benefits varying across backbones. Trajectory analysis shows that unresolved evidence gaps propagate across stages, while successful recovery involves revising assumptions and actions using feedback. These findings highlight limitations in coordinating analytical capabilities across stages, particularly adaptive planning, evidence integration, and verification. More broadly, DUDA-Bench provides a framework for translating expert analytical workflows into hierarchical agent tasks and process-aware evaluation, supporting systematic assessment of end-to-end analytical capabilities.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.09286v1' target='_blank'>No Trace, No Claim: Two Contracts for Database Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Xiaofei Zhang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-07 01:42:39</h6>
+<p class='card-text'>LLM agents can generate database operations and explain their results, but current interfaces often leave a gap between generated plans, execution conditions, and claims presented to users. We argue that agent-facing data systems need two enforceable contracts. A plan contract defines what an agent may execute and reference; an evidence contract records the belief state, completeness, and provenance under which a result supports a claim.
+  We instantiate these contracts in TGMS, a bi-temporal graph system in which an LLM plans over a fixed temporal operator interface. A static verifier checks plans before execution, and a claim verifier checks typed claims against content-addressed traces. Live model runs exposed two failures missed by input-only schemas and value-only grounding: nonexistent result fields and page-local counts reported as complete-result counts. Result-field checking makes the first a repairable rejection. Completeness propagation detects the second in all 15 controlled cases and misses all 15 when disabled.
+  On the frozen CollegeMsg workload, TGMS reaches 0.408 typed-answer accuracy versus 0.064--0.284 for the evaluated baselines. On Bitcoin-OTC, direct SQL over the same bi-temporal store matches TGMS, showing no universal accuracy advantage for the fixed operator interface. On correction probes, TGMS and bi-temporal SQL answer historical-belief questions, while latest-state baselines cannot. Before claim gating, 21 of 220 answers contain an unsupported gated claim; after gating, none of 199 emitted answers does, at the cost of 21 fewer answers. The plan contract makes invalid plans rejectable and execution reproducible under recorded conditions, while the evidence contract makes gated claims faithful to cited evidence. Neither guarantees correct interpretation of user intent.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.09219v1' target='_blank'>CM-DPO: Constraint-Margin Direct Preference Optimization for LLM Planning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Rabimba Karanjai, Qun Gu, Hemanth Hegadehalli Madhavarao, Wenhuan Sun, Xiaojiao Yu, Suryabhan Singh Hada, Libin N. George, Uma Kona, Richard Williamson, Linsey Pang, Prakhar Mehrotra</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-06 23:30:17</h6>
+<p class='card-text'>Direct Preference Optimization (DPO) treats all constraint violations equally: a $1 budget overshoot and a $1,000 overshoot induce the same training signal. It is also susceptible to length and style bias when preference pairs come from different model families. We introduce Constraint-Margin DPO (CM-DPO), which replaces DPO's binary preference signal with a continuous margin derived from a deterministic symbolic verifier and scaled by violation severity. Hard and soft constraints are separated through a lexicographic objective, ensuring hard constraints are never traded off against preferences. To supply CM-DPO with bias-reduced training pairs, we generate preference data through procedurally generated constraint profiles (DCCG) and minimal-edit distillation from a reasoning teacher (RT-MED), within a framework we call SynPlan-R. On TravelPlanner, NaturalPlan, and out-of-distribution PlanBench, an 8B model fine-tuned with CM-DPO achieves 89.2% pass rate and 93.4% solve rate, matching multi-agent systems at 13x lower latency while outperforming GPT-4o on unseen Blocksworld by 9.2 points.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.09152v1' target='_blank'>sk-bench: A Native-First Benchmark for Evaluating Large Language Models in Slovak</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Marek Šuppa, Ivan Vykopal, Andrej Ridzik, Kristián Sopkovič, Natália Kňažeková, Jaroslav Kopčan, Miroslav Blšták, Viktória Ondrejová, Daniel Hládek, Michal Gregor, Martin Tamajka, Marián Šimko</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-06 21:51:22</h6>
+<p class='card-text'>Multilingual LLM benchmarks omit Slovak, a morphologically rich West Slavic language of five million speakers, or cover it only by machine translation. We present sk-bench, a native-first Slovak benchmark with 30 datasets (33 scored task variants) across ten skill categories. Eleven resources are introduced or first packaged for generative-LLM evaluation, including IFEval-SK with Slovak-adapted instruction checkers and native Chiby/SKJ1 resources for Slovak grammar and morphology. We evaluate 55 open- and closed-weights models under one harness. The best open model trails proprietary APIs by 12.6 points. Model rankings are similar for native and translated closed-form data ($ρ\geq0.98$), though translation separates the strongest models less well. By contrast, human-authored and LLM-generated QA questions rank models differently ($ρ=0.72$). For Qwen3-14B, continued Slovak pretraining lowers the overall score by 13.9 points. A small instruction set restores three quarters of that loss. Test-time reasoning improves scores by 8.5 to 12.5 points for models of 9B and above. Together, these findings suggest four design lessons for other under-resourced languages: use native data where translation fails, plan instruction repair after language adaptation, enable test-time reasoning before scaling up, and avoid overinvesting in target-language prompts. We release the data and code at https://github.com/slovak-nlp/sk-bench</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.09039v1' target='_blank'>From High Recall to High Utility: Dataset-Adaptive Post-Processing of LLM-Generated Customer Intents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Mahesh Viswanathan, Joan Rossello, Leticia Fernandes, Paul Mutawe</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-06 19:41:19</h6>
+<p class='card-text'>Large language models can extract useful signals from heterogeneous enterprise data, but high-recall extraction often produces outputs that are duplicated, uneven in granularity, semantically overlapping, or too numerous for downstream systems and human reviewers to use effectively. We present a dataset-adaptive post-processing architecture developed for Customer Intent Extraction (CIE), where unstructured customer language is transformed into stable, traceable intent units. The approach separates recall-oriented extraction from utility-oriented reduction. Source-specific preprocessing first isolates evidence from multimodal plans, sparse operational records, and structured opportunity data. Candidate intents are then standardized and deduplicated, optionally enriched with metadata for embedding computation, represented in a shared semantic vector space, and grouped using a clustering strategy selected according to the candidate set's characteristics. Cluster-level keywords provide an explainability layer, while singleton reassignment requires agreement between embedding and keyword similarity. Finally, constrained language-model aggregation produces one concise intent per cluster without introducing unsupported concepts, and the resulting unit retains provenance, clustering, embedding, and generation metadata. This treats post-processing not as cosmetic cleanup, but as a semantic reduction layer converting high-recall LLM outputs into reusable enterprise intelligence. We also describe two downstream applications: Machine-Generated Intents, which infer likely objectives for customers lacking direct evidence from peer customers with similar profiles, and intent-guided semantic retrieval and mapping, which uses the stable intent as a query against a downstream decision space, illustrated here by mapping customer intents to business outcomes.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.09021v1' target='_blank'>Not Every Call Needs a Frontier Model: Per-Call-Site Evaluation of Small Language Models in a Deployed Agentic Home-Automation System</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Panagiotis Kasnesis, Christos Chatzigeorgiou, Lazaros Toumanidis, Amalia Contiero Syropoulou</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-06 19:18:59</h6>
+<p class='card-text'>An agentic system issues several structurally different kinds of LLM calls. It routes intent, classifies actions, grounds language in a device registry, plans multi-agent pipelines and writes the Python code those pipelines run. The difficulty of these call sites varies by an order of magnitude, yet in practice a single model, chosen for the hardest site, serves all of them. In this work, we evaluate 9 models from 0.8B to a frontier hosted model across the five call sites of a deployed open-source home-automation framework (Wactorz), using its unmodified production prompts and two real Home Assistant installations (280 cases, 2520 scored calls). We find that capability is not ordered the same way at every site, and that larger models are not uniformly better: one 4B model is worse than its 2B sibling at grounded actuation. Paired testing shows the best local model to be statistically indistinguishable from both hosted models at four of five sites. Only code generation separates them, against a small hosted model (p = 0.039) as well as a frontier one (p = 0.002). Aggregate accuracy also hides a safety failure specific to actuation, where small models resolve the accuracy/refusal trade-off in degenerate ways: one model (Gemma4 E2B) actuates on 87.2% of requests for devices the site does not own, while another refuses every request it receives. Routing each site to its best local model reaches 91.8% against 95.4% at no per-call cost. In a live deployment judged by a user, hosting only the two generative sites matches hosting everything (39/43 against 39/43) for 28% of the spend, and the actuation gap the benchmark predicted appears as exactly one case in twenty-six. Benchmark, harness and all records are released at https://github.com/waldiez/slm-callsite-eval.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.09008v1' target='_blank'>Whose Memory Is It? Scope-Aware Commit Rules for Long-Term LLM Memory</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Hongyu Gu, Xinchang Li</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-06 19:05:31</h6>
+<p class='card-text'>Persistent memory allows an LLM agent to carry experience across conversations, but it also turns a local reasoning mistake into a durable one. During deliberation, an agent may consider a plan, simulate a tool result, report another speaker's belief, and then reject all of them. If memory retains only the resulting sentences, those once-useful possibilities can later return as facts. The record is neither fabricated nor irrelevant; it has simply been detached from the context in which it was valid. We identify this missing context as \emph{discourse ownership}: the world, branch, or speaker that licenses a proposition. Our first finding is counterintuitive. Language models already carry a causally active signal for ownership, yet conventional memory interfaces discard it when they convert reasoning into records. We introduce CASK (Causally Anchored Scoping Keys), a commit rule that preserves this signal so that shared-world facts enter durable memory while provisional content remains available only within its original scope. Our second finding is that the most obvious way to preserve the signal---storing the discovered internal coordinates---is unreliable because equivalent representations need not keep the same coordinates. CASK instead preserves the stable relations that express ownership. Controlled long-conversation conflicts and tool-agent traces show that this design improves memory admission and prevents provisional content from contaminating later answers while complementing runtime provenance. The resulting commit boundary lets agents explore more possibilities without granting every intermediate sentence authority over future behavior.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.08647v1' target='_blank'>SquidAgent: Parallelize Wisely, Coordinate Efficiently</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yexiong Lin, Shanshan Ye, Yu Yao, Zhen Fang, Bo Han, Tongliang Liu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-06 16:35:28</h6>
+<p class='card-text'>LLM-based agents solve complex multi-step tasks, but sequential execution incurs substantial latency. In principle, parallelizing work across multiple agents should yield near-linear speedups. Yet existing parallel multi-agent systems often run slower than a single-agent baseline. We attribute this gap to two hidden costs that parallel execution incurs but a serial agent avoids. First, there is a re-exploration cost: redundant effort spent by parallel workers reconstructing context that the orchestrator already possesses, such as prior decisions, that would otherwise be inherited implicitly in a serial execution. Second, there is an alignment cost: the overhead required to reconcile inconsistencies across independently generated outputs. We thus derive a principled decision criterion: a layer should be parallelized only when its critical-path cost, plus re-exploration and alignment overheads, is lower than the corresponding serial cost. While this criterion is naturally expressed in wall-clock time, we observe that LLMs are poorly calibrated when asked to estimate task duration. To address this, we instead measure cost in predicted output tokens, which we empirically find LLMs can estimate substantially more reliably than wall-clock time. Building on this token-based criterion, we propose SquidAgent. It estimates all token budgets in a single planning step, forks each worker directly from the orchestrator's session to eliminate re-exploration cost, and replaces post-hoc reconciliation with a pre-generated shared convention block that converts alignment into a bounded upfront cost. A deterministic scheduler then applies the criterion layer by layer. Empirically, SquidAgent achieves a 2.2$\times$ mean throughput improvement and a 2.6$\times$ mean wall-time speedup over Claude Code, and a 2.0$\times$ throughput improvement over the strongest multi-agent baseline.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.08642v1' target='_blank'>HygieneRoboBench: Benchmarking Hygiene-Aware Planning for Household Robots</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yurun Chen, Josh Qixuan Sun, Jason Qin, Chengtai Li, Tianyi Wang, Mark Crowley, Wentao Zhu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-06 16:33:44</h6>
+<p class='card-text'>Contact with contaminated objects can spread hazards through a household robot's grippers, tools, and shared surfaces, while new contacts can make an existing plan unsafe. Existing benchmarks do not jointly assess how planners identify hygiene risks from contact history and plan safe continuations after new contact events. Planners must do so within time and resource limits while respecting user priorities. We introduce HygieneRoboBench, with 624 instances across 134 task families, to evaluate safe resolution of household tasks from a given execution history. Tasks capture contamination through two grippers and shared objects, treatment costs, and user priorities. We combine controlled history, profile, and event comparisons with independent plan evaluation. These assess safe resolution, cost efficiency under user priorities, and responses to contact events. Evaluation of LLM-based and symbolic planners shows that safely completing a task does not guarantee the lowest execution costs under the user's priorities. To address this problem, we introduce Hygiene-NSP. It combines LLM-based grounding, contact-history reconstruction, and CP-SAT to jointly plan hygiene treatment and task execution under user priorities. Hygiene-NSP achieves safe resolution and optimal safe resolution rates of 94.4% and 90.4%, respectively. Both rates are higher than those of the evaluated baseline planners on the full dataset. Project page: https://euron-zc.github.io/HygieneRoboBench/.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.08246v1' target='_blank'>LeanPlan: Optimal Planning with LLM-Generated Heuristics and Admissibility Proofs</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:André G. Pereira, Augusto B. Corrêa, Felipe Meneguzzi, Jendrik Seipp</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-06 12:27:34</h6>
+<p class='card-text'>Frontier large language models (LLMs) can generate heuristic functions that guide search to achieve state-of-the-art performance in satisficing planning, where any plan is acceptable. However, these heuristics are not guaranteed to be admissible and can lead to suboptimal plans. We introduce LeanPlan, the first planning system that finds optimal plans with LLM-generated heuristics whose admissibility is machine-checked. Given a domain description and training tasks, an agentic loop uses planner feedback to iteratively improve a reusable domain-specific heuristic, its admissibility proof and the required domain assumptions. LeanPlan implements the heuristic, its proof and an efficient planner with machine-checked grounding and search in Lean 4. We evaluate LeanPlan on ten domains from the International Planning Competition and three new domains, using test tasks with up to 57 times as many objects as the training tasks. With GPT-5.6 Sol in the agentic loop, we successfully generate heuristics and admissibility proofs for all these domains. With the resulting heuristics, LeanPlan usually expands fewer states than the state-of-the-art Scorpion planner and solves more tasks overall.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.07886v1' target='_blank'>ShanLiangRen: A Nutrition Agent for Personalized Daily Meal Planning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Miao Xie, Xiao Zhang, Yuan Wang, Ruixin Zhu, Chunli Lv</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-06 07:32:50</h6>
+<p class='card-text'>Dietary nutrition planning plays an important role in chronic disease management and maintaining a healthy body. In applications, it must simultaneously satisfy personalized constraints and reasonable multidimensional nutritional goals. These two aspects often conflict, and user constraints evolve with feedback, resulting in a substantial gap between generic guidelines and executable plans. To bridge this gap, we first propose the personalized fully quantified multiobjective dietary planning problem (MDP). To tackle MDP, we develop a nutrition agent, ShanLiangRen. The system first transforms dietary specifications, nutrient data, user attributes and natural language requirements into an individualized constrained planning instance. It then employs an exact retrieval-augmented generation method to shrink the feasible candidate set from a large scale ingredient and recipe space. Finally, it adopts a refinement guided by Pareto principles, where an LLM iteratively revises candidate plans under deterministic nutrition computation and feedback from constraint verification. The system outputs fully quantified meal plans with explicit ingredients and portion sizes, together with reports on nutrition compliance that show constraint satisfaction and nutrient interval attainment. We have released the system online as a WeChat Program, ShanLiangRen. A demo video is available at https://www.youtube.com/watch?v=652OtY5VlGA.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.08875v2' target='_blank'>An Empirical Study of Agent Skills' Downstream Utility</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yu Cheng, Dehai Zhao, Zhongxin Liu, Qing Huang, Zhenchang Xing, Xiaoxue Ren</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-06 06:05:00</h6>
+<p class='card-text'>Agent Skills package procedural guidance and resources for reuse, but a relevant Skill does not necessarily improve task performance. Existing studies characterize Skill content and evaluate downstream performance, yet provide limited explanations of how utility depends on content, execution configuration, and multi-Skill organization. We conduct an empirical study on 87 SkillsBench tasks, defining downstream utility as the pass-rate difference from No-Skill on the same tasks under the same model--harness configuration. We compare the same Skills across nine configurations, then examine alternative published Skills and organizations of fixed Skill sets under three selected configurations. We retrieve marketplace candidates from a curated corpus of 37,596 Skills. LLM-assisted analysis of content, execution traces, and final artifacts, followed by author review, relates provided support to actual use and task outcomes. The same Skills help some configurations and hurt others on 36.78\% of tasks, with trajectories showing that recommended procedures can become an execution burden. Relevance rankings overlook more useful candidates. Within the evaluated candidate sets, reranking by support for required operations raises first-choice pass rates by 4.35--5.80 percentage points across the three configurations. We derive 17 authoring practices linking executable procedures to recovery, preservation of task requirements, and checks on final artifacts. Stage Plan and Dependency DAG outperform use order alone, with DAG's additional benefits concentrated in tasks supplied with five or six Skills. These findings guide developers to assess usable operation support, allow procedure adaptation while preserving task requirements, and make artifact dependencies explicit when organizing Skills.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.07749v1' target='_blank'>Cost-Effective Numerical QA over Semi-Structured Table: Structuring, Resolution, Planning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Feng Luo, Hui Luo, Zhifeng Bao, J. Shane Culpepper, Xiaoli Wang, Shazia Sadiq</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-06 04:47:38</h6>
+<p class='card-text'>Semi-structured tables encode rich semantic information through diverse layout elements, such as hierarchical row and column headers. Answering numerical questions over such data is challenging because it requires a joint effort of accurate structural understanding of tables, question uncertainty resolution, and complex query intents interpretation. Existing methods are rarely effective in handling the above multifaceted challenges in a holistic manner; moreover, they rely on LLMs without considering financial implications. We propose SemiBonsai, a cost-effective, LLM-powered framework featuring: (1) a Multiway Layered Table Structurer that converts a table into a multiway layered tree organized by structural elements; (2) a Context-Aware Uncertainty Resolver that grounds underspecified phrases to context-coherent structural elements; (3) a Plan-Guided Reasoner that decomposes complex query intents into a query plan for reasoning; (4) a Budget-Aware Bandit Router that learns per-instance LLM utilities and optimizes LLM selection under fixed monetary constraints. Experiments on three benchmarks show that SemiBonsai improves both QA effectiveness and cost-effectiveness. Notably, the Table Structurer improves answer accuracy by 46% over alternative tree construction methods, and Router achieves a 5% average relative gain in answer accuracy compared with existing routing methods across budgets.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.07739v1' target='_blank'>Cite What You Explore: Budget-Aware LLM Reasoning over Medical KGs with Verifiable Evidence</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Chen Chen, Dongjie Wang, Mei Liu, Zijun Yao</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-06 04:36:07</h6>
+<p class='card-text'>Post-discharge risk prediction from electronic health records (EHRs) is difficult because many dependencies that link discharge-time observations to downstream complications, such as comorbidity cascades and drug-disease interactions, are absent from the record. External medical knowledge graphs (KGs) can supply these missing dependencies, but tracing them demands three properties: KG exploration must remain cost-bounded, retrieved evidence must be differentiated by source quality, and the resulting rationale must be citable for retrospective review. Large language models (LLMs) can plan and verify over structured evidence, making them natural candidates for KG reasoning, but existing LLM-based methods do not satisfy these three properties jointly. In this paper, we propose BAR, a Budget-Aware LLM Reasoning framework over medical KGs with three contributions. First, BAR refines the raw KG into disease-specific evidence graphs whose edges carry support scores and provenance records, turning the KG into a quality-annotated reasoning space rather than a static feature source. Second, an LLM then reasons over this graph through a plan-navigate-verify loop that decomposes the question into steps, retrieves evidence under a patient-specific budget, and revises when verification fails. Third, a reasoning policy is trained with a reward that compares predictions with and without acquired evidence, combined with acquisition cost and citation-integrity terms. Across 8 diseases and 3 prediction horizons on MIMIC-III and MIMIC-IV, BAR improves AUPRC by 3.4 points over the strongest baseline, raises citation precision from 59.8% to 77.9%, and consumes only 62-65% of the budget cap.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.07649v1' target='_blank'>OntoPlan: An Ontology-Grounded Scene Representation and Agentic Framework for Scalable Robot Task Planning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Hyeongwoo Nam, Woongje Cho, Juwon Kim, Jongeun Choi</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-06 02:45:03</h6>
+<p class='card-text'>Large language model (LLM)-based robot task planning is promising for open-ended instruction following, but degrades on long-horizon tasks in large environments. When spatial information is conveyed to the LLM through text, the model can fail to capture spatial context, and token cost grows with environment size. Generating action sequences directly with an LLM also makes it difficult to satisfy the current world state and action preconditions. We address this with an ontology-grounded scene representation that aligns objects, spaces, relations, and states in a shared symbolic vocabulary for spatial reasoning and task planning, and with OntoPlan, an agentic framework that interprets instructions, selectively retrieves task-relevant information, formalizes goals and constraints, and produces executable plans. Across 150 general tasks spanning five indoor environments and three scene scales, OntoPlan achieves 0.89 average task success, compared with 0.27 for the strongest baseline, while using 18.1k total tokens per task on average, about 5.6$\times$ fewer than the most efficient baseline. These advantages persist as scene scale increases, whereas prior methods degrade more sharply in success and remain far more costly in tokens. OntoPlan also responds appropriately to ambiguous or infeasible instructions by asking follow-up questions or reporting insufficient information rather than committing to invalid plans. Code available at https://github.com/namhyeongwoo/OntoPlan.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js'></script>
+</body>
+</html>
