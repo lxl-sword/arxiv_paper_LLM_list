@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<title>LLM-planning - 2026-10-18</title>
+<link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap' rel='stylesheet'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'>
+<style>
+body {
+font-family: 'Roboto', sans-serif;
+background-color: #f5f7fa;
+padding: 20px;
+}
+.card {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.card-title {
+    font-weight: 700;
+}
+.card:hover {
+    transform: scale(1.02);
+    transition: 0.3s ease-in-out;
+}
+</style>
+</head>
+<body>
+<div class='container'>
+<h1 class='text-center my-4'><i class='fas fa-book'></i>LLM-planning - 2026-10-18</h1>
+<div class='row'>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.22092v1' target='_blank'>Onboard Lightweight LLM Reasoning for Human-Aware Safe UAV Navigation</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Siwei Cai, Yuwei Wu, Vijay Kumar, Lifeng Zhou</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-15 15:43:49</h6>
+<p class='card-text'>Aerial robots operating near people must treat a pedestrian, a parked car, and a wall differently, yet conventional perception--planning stacks reduce all of them to occupied geometry---a \emph{human-aware safety gap} in which category-specific clearance is unavailable to the planner and temporary occlusions remove pedestrian-specific constraints from its map. We present a modular, fully onboard pipeline that closes this gap by turning visual observations into context-dependent safety constraints for real-time UAV navigation. A shared BLIP encoder drives scene captioning and text-conditioned segmentation, which is fused with depth to localize obstacles in 3D. Obstacle-specific risk is inferred by a lightweight LLM (Qwen-2.5-0.5B) stabilized with retrieval-augmented generation and grammar-constrained decoding that restricts its output to a planner-compatible JSON schema. The LLM reasons once per object category rather than per frame: its verdicts are cached per class, so previously seen categories are resolved without inference and new ones trigger a fresh retrieval-grounded query; detections are additionally given persistent identities and held in the map across occlusions. The perception pipeline runs at 10\,Hz on a Jetson Orin NX, while fallback LLM queries take approximately 0.8\,s and remain off the control-critical path. In Gazebo, low-altitude urban navigation among pedestrians and vehicles shows a roughly $3\times$ reduction in collision events over a geometric planner, and semantics-aware landing among moving actors raises success from 34\% to 96\%. The 224-pixel encoder input limits reliable small-object perception at range; conservative pedestrian margins and short-term persistence mitigate this limitation during navigation.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.22056v1' target='_blank'>Progress Reward Model for Reinforcement Learning via Large Language Models</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Xiuhui Zhang, Ning Gao, Xingyu Jiang, Yihui Chen, Yuheng Pan, Mohan Zhang, Yue Deng</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-15 15:21:25</h6>
+<p class='card-text'>Traditional reinforcement learning (RL) algorithms face significant limitations in handling long-term tasks with sparse rewards. Recent advancements have leveraged large language models (LLMs) to enhance RL by utilizing their world knowledge for task planning and reward generation. However, planning-based approaches often depend on pre-defined skill libraries and fail to optimize low-level control policies, while reward-based methods require extensive human feedback or exhaustive searching due to the complexity of tasks. In this paper, we propose the Progress Reward Model for RL (PRM4RL), a novel framework that integrates task planning and dense reward to enhance RL. For high-level planning, a complex task is decomposed into a series of simple manageable subtasks, with a subtask-oriented, fine-grained progress function designed to monitor task execution progress. For low-level reward generation, inspired by potential-based reward shaping, we use the progress function to construct a Progress Reward Model (PRM), providing theoretically grounded optimality and convergence guarantees, thereby enabling effective policy optimization. Experimental results on robotics control tasks demonstrate that our approach outperforms both LLM-based planning and reward methods, achieving state-of-the-art performance. Code is available at https://github.com/deng-ai-lab/PRM4RL.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.21972v1' target='_blank'>Inflak: A Unified Orchestration Architecture for Human-Agent Interaction</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Lin Gao, Li Chen, Jianxun Lian, Ji Li, Haotian Li</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-15 14:28:08</h6>
+<p class='card-text'>LLM-powered agents increasingly support open-ended activities, yet orchestrating when and how agents interact with humans remains challenging. Existing approaches often provide interaction mechanisms tied to particular tasks or execution patterns, lacking a unified architecture for diverse and evolving interaction needs. We introduce Inflak, a unified four-layer architecture for human-agent interaction orchestration that separates state reconstruction and routing, interaction and execution planning, interaction design, and interface rendering. Its layered design with progressive resolution enables general applicability, runtime flexibility, module composability, and orchestration maintainability. We implement Inflak as agent-native, skill-based plugins within a general-purpose agent framework and evaluate it through a gallery of various application scenarios and interaction paradigms, technical performance testing, and a comparative implementation case study. The evaluations show that Inflak can serve as a general and extensible foundation for orchestrating diverse human-agent interaction flows.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.21514v1' target='_blank'>Poison Valleys: Diagnosing Path-Dependent Failure in LLM Code Repair</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Veljko Skarich</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-15 08:49:49</h6>
+<p class='card-text'>When code-repair agents fail, final tests reveal that a patch is wrong but not which earlier commitment caused it or which software obligation failed. Poison Valleys traces this path in 1,844 model requests on two synthetic Python cases: PersistQueue adds atomic batch claiming to a disk-backed queue, while Dijkstra adds source-sensitive filtering to shortest-path search. We define plausible but incorrect software mechanisms, place each in a model's hypothesis, implementation plan, or both, and evaluate the generated code with an Oracle and targeted diagnostic coordinates. Moving the misconception from hypothesis to plan increased failure by 32.2% in PersistQueue and 28.9% in Dijkstra after matching the experimental mix. Different misconceptions produced distinct, model-dependent patterns of violated obligations, although several could converge on the same behavior. This creates a measured connection from upstream misconception to code mechanism and failure form. Code, data, and demo: https://poisonvalleys.org.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.21411v1' target='_blank'>Jev-LiteMAS: Separating Decisions from Generation in Multi-Agent Workflows</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Kaixiang Wang, Zhaijiacheng Zhou, Jiong Lou, Jie Li</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-15 07:26:26</h6>
+<p class='card-text'>Multi-agent LLM systems rely on generative models for expert execution, workflow planning, and artifact review. Yet many coordination operations require only bounded decisions, such as selecting the next expert or judging artifact quality. Profiling three representative MAS frameworks, we find that routing and review account for 31.7-43.5% of generative-LLM tokens. However, replacing these operations with low-cost decision models introduces two interface gaps: generative planners produce execution plans and handoff instructions (planning gap), while reviewers provide actionable feedback for repairing flawed artifacts (review gap), which bounded decisions alone cannot provide. We introduce Jev-LiteMAS, a multi-agent framework that bridges both gaps by combining a lightweight decision model (Jev) with generative execution and feedback. To address the planning gap, Jev selects experts dynamically from the task and prior expert outputs, using accumulated context to ground subsequent execution without a pre-generated trajectory. To address the review gap, Jev screens intermediate artifacts against task criteria: passing artifacts proceed directly, whereas flagged ones undergo LLM re-review for acceptance or corrective feedback. Across four benchmarks and two backbones, Jev-LiteMAS reduces generative-LLM tokens by 12.7-54.6% over LAS, maintaining accuracy within 1.34 percentage points and lowering latency in seven of eight settings. Grounding routing in substantive expert outputs prevents up to 18.0 points in accuracy loss.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.21108v1' target='_blank'>Planning Commitment of LLM under Partial Observability</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Cassie Huang, Zhanwei Cao, Yeawon Lee, Nathalia Gomez, Zhuoyi Yang, Ian G. Harris, Tiffany Do, Jiayuan Mao, Li Zhang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-15 02:11:28</h6>
+<p class='card-text'>LLM-based planning agents commit to plans of different lengths before interacting with a partially observable environment. Some aggressively commit to a long plan based on assumptions about unobserved states, while others conservatively plan only over what they have observed. Both behaviors emerge implicitly in pre-trained models, whether the LLM outputs a plan directly or generates a PDDL formulation for a classical solver. Aggressive commitment risks costly failures, while conservative commitment risks excessive LLM calls. This choice pits safety against efficiency, a trade-off that has been neither characterized systematically nor made controllable. We investigate aggressive and conservative LLM planners and formalizers on two partially observable domains, where priors are provided as either explicit statistics or common-sense knowledge. Across three LLMs, both strategies reach similar accuracy. Conservative methods achieve fewer failed attempts (safety) at the cost of more API calls (efficiency). Aggressive methods fail more often but replan efficiently only when priors are informative. Interestingly, analysis shows that LLMs treat the provided priors nearly as facts, which risks failure when priors are unreliable. We also explore hybrid strategies with tunable hyperparameters that adjust the balance between safety and efficiency.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.21082v1' target='_blank'>Sci$Π$vot: Benchmarking Principal-Investigator Judgment at Pivotal Moments of Scientific AutoResearch Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Youran Sun, Xingyu Ren, Chugang Yi, Kejia Zhang, Di Wu, Yingkang Cao, Allen Zhou, Jianping Ye, Suying Liu, Jiaxuan Guo, Jianda Du, Weicheng Ye, Kecheng Liu, Hefan Zhang, Haixin Wang, Jie Xiao, Eric Yang, Haizhao Yang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-15 01:34:44</h6>
+<p class='card-text'>Large language model (LLM) agents can keep scientific experiments running for months with little human supervision, but reliable autonomous research also requires scientific judgment. Evaluating scientific judgment is difficult because research decisions are open-ended and depend on project context. We construct Sci$Π$vot, a 248-case benchmark of scientific judgment based on human corrections. The benchmark draws on records from six months of research in which senior researchers ran LLM agents on 26 projects across six scientific fields and repeatedly intervened to correct the agents' research judgments. In each case, an agent chooses between the original LLM plan and the human-corrected alternative, using only the project record available before the correction as context. We compare LLM and human performance and examine the effects of reasoning effort, access to the project record, and reconsideration. At medium reasoning effort with the project record, models systematically prefer the original LLM plan over the human-corrected alternative. Four of five frontier models perform below chance on the selected cases. The highest accuracy in the project condition across the tested models and reasoning effort settings is 63.5%, compared with 73.4% for fresh researchers. At medium effort, every model achieves lower accuracy with the project record than without it, and reconsideration does not consistently improve overall accuracy. Even with a human-corrected alternative available, frontier models struggle with the selected research decisions, while Sci$Π$vot supports systematic evaluation of scientific judgment for LLM agents.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.20609v1' target='_blank'>SafeDriveVLA: Navigation-Conditioned World Model Dreaming for Conflict-Aware End-to-End Autonomous Driving</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Shaoyuan Xie, Zihan Zhang, Jingxuan Wang, Jiashu Qu, Xiaoqing Liang, Lingdong Kong, Junchi Lu, Henrik I. Christensen, Qi Alfred Chen</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-14 17:59:56</h6>
+<p class='card-text'>Vision-Language-Action (VLA) models are gaining attention in autonomous driving, inheriting commonsense priors from large language models (LLMs) and widening the navigation interface from a fixed command set to free-form natural-language instructions. However, this open-ended interface exposes a new vulnerability surface: an inattentive driver may issue instructions that are unsafe given the current scene, and a malicious user may issue dangerous ones on purpose. We present the first benchmark suite that evaluates navigation following and conflict awareness together, along with adversarial robustness. Existing VLAs fall short on both: SimLingo completes no language-instructed lane change in closed loop, and all models degrade sharply under conflicting signals. We propose SafeDriveVLA, the first driving VLA that (1) explicitly predicts a three-level navigation-compliance mode to decouple conflict reasoning from action generation, and (2) uses navigation-conditioned world model dreaming to inform this prediction. Unlike prior world models that roll out expert or planned actions, ours dreams of strictly following the navigation signal, showing when following is safe. SafeDriveVLA reaches 88.16 Driving Score (DS) and 68.64% Success Rate (SR) on Bench2Drive, lifts closed-loop language following by 49.3% and reduces collisions under unsafe instructions from 60 to 38 compared to the best SimLingo variant. Video demonstrations are available on our project page.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.20560v1' target='_blank'>PhySGA: A Physics-Space Grounded Agentic Framework for Generalizable and Interactive 3D Composition</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Weichen Lyu, Chong Xia, Mingyu Dong, Long Xu, Shengjun Zhang, Yueqi Duan</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-14 17:47:24</h6>
+<p class='card-text'>3D object composition is pivotal to digital content creation and robot simulation, while also serving as a critical testbed for physical intelligence in foundation models. Previous methods either leverage large language models to directly predict object coordinates, or utilize generative diffusion priors to synthesize composite images for visual alignment, both of which rely on static priors in digital spaces. However, these methods consistently struggle with complex compositions such as precise hanging, gravity-driven settling and hidden containment, as these tasks require interactive construction processes involving global planning, fine-grained alignment, and physical simulation. To address these challenges, we propose PhySGA, a Physics-Space Grounded Agentic Framework for 3D composition via agent exploration and physical simulation, enabling the universal interactive assembly of rigid, articulated, and deformable objects. Directly applying vanilla LLMs or VLMs to this task proves insufficient, as current models inherently lack grounded physical understanding and interactive construction experience. To overcome this limitation, we design a collaborative feedforward-feedback architecture: an Assembly Agent focuses on geometric and kinematic reasoning for global step planning and coarse adjustment, while a Critic Agent reasons over contact dynamics for simulator state diagnosis and fine-grained closed-loop correction. Furthermore, Action Routers map semantic planning and analysis onto executable physical primitives within the simulator, while a task-specific Self-Evolving Skill Library distills historical trial-and-error feedback into reusable experiences, boosting success rates and minimizing exploration attempts. Extensive experiments within Isaac Sim demonstrate that PhySGA significantly surpasses existing methods in relation fidelity, physical plausibility, and visual quality.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.20195v1' target='_blank'>What Makes a Social Agent's Interactions Effective? Learning from Verifiable Outcomes in Paired Worlds</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Caixin Kang, Ke Wang, Yuchuan Wu, Xiaoqiang Wang, Ling Li, Bingxue Qiu, Yongbin Li, Yoichi Sato</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-14 13:44:30</h6>
+<p class='card-text'>Effective social interaction requires more than fluent responses: agents must reach plans that fit the participants' needs and circumstances. Existing evaluations of social agents mainly rely on LLM judges that rate the conversation, without checking the resulting plan. We introduce HICO-Bench, a benchmark of 180 everyday coordination scenarios, such as resource allocation, scheduling, and authorization, in which two agents with private information converse and then independently record the plan they agreed on. A program checks Feasibility (the two records match and satisfy both participants' private conditions), and an LLM judge checks Integrity (the conversation supports the recorded plan); passing both is a Verified Success. Each scenario has two versions that share the same public context but differ in one private condition, so the correct plan differs between them. Across thirteen LLMs, 36% of conversations rated highly for goal completion fail Verified Success. To learn from outcomes that arrive only at the end of a conversation, we propose Paired-Credit Policy Optimization (PaCPO). After each turn, PaCPO asks the agent for a tentative plan, checks it in both versions of the scenario, and rewards the turns after which the tentative plans fit their respective versions. PaCPO raises Qwen3-8B's Verified Success from 20.4% to 28.3%.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.19762v1' target='_blank'>PRISMATIC : Prescription Risk Inspection System for Multi-Agent Treatment Interaction in Clinical Decision-Making</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Ziyang Ling, Shuyu Lu, Ziyi Chen</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-14 08:17:05</h6>
+<p class='card-text'>Medical prescribing errors for multimorbid patients, who require complex drug regimens, are a major patient safety concern. These errors often stem from fragmented decision-making across medical specialties, a critical coordination failure that leads to adverse drug events and rehospitalizations. To address this coordination challenge, we introduce PRISMATIC, a multi-agent architecture where specialized agents, each representing a workflow role, collaboratively generate and refine treatment plans. Operating on a blackboard architecture, the system first structures patient information from clinical notes, then iteratively develops safe, rational, and interpretable drug regimens. The agents' collaboration is governed by two novel adaptive coordination mechanisms: (1) Dynamic Self-Updating Weight Adjustment (DSWA), a long-term mechanism that adjusts the influence weights of agents based on historical case outcomes, enabling the system to adapt and trust more reliable specialists over time. (2) Discrepancy Feedback Precise Calibration (DFPC), a short-term mechanism where agents provide iterative feedback to resolve disagreements and eliminate prescription conflicts for the current patient. Experiments on patient records from the MIMIC-IV database show that PRISMATIC significantly reduces drug conflicts, improves prescription coverage, and enhances treatment consistency compared to strong LLM baselines. Our work demonstrates that structuring clinical co-treatment as a multi-agent coordination problem offers a promising path toward safer and more coherent multidisease management.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.19704v1' target='_blank'>BANGLAPLAN: A Benchmark for Constraint-Based Planning and Decision-Making in Bangla</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Md Rayhanul Masud, S M Maksudul Alam, Mohammad Jaminur Islam</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-14 07:32:32</h6>
+<p class='card-text'>Large language models (LLMs) increasingly help users arrange appointments, plan journeys, and allocate limited resources. These tasks require models to satisfy constraints on time, cost, capacity, and order, or determine that no feasible solution exists. Bangla is the world's seventh most widely spoken language, and existing benchmarks cover many language and reasoning tasks. However, benchmarks for evaluating planning and decision-making in Bangla under explicit constraints remain lacking. We introduce BANGLAPLAN, a benchmark of 1,000 problems across ten task families grounded in everyday life and institutions in Bangladesh. It includes feasible and infeasible problems in four language registers: everyday, formal, colloquial, and Bangla--English mixed. Answers cover eight structured types, including schedules, routes, allocations, and ordered steps, in a common JSON format. We construct the benchmark through language-model-assisted drafting and independent human validation. We evaluate 11 open-weight and proprietary model configurations using exact match, separately reporting feasible-case accuracy, infeasibility detection, and format errors. We find a large performance gap: GPT-6.1 Sol achieves 98.7% accuracy and Qwen3.5-27B with thinking reaches 80.3%, while direct-answer configurations score at most 30.9%. Seven of eleven configurations perform below the always-``infeasible'' baseline. Our findings also suggest that harder problems primarily reduce plan-construction accuracy, while infeasibility detection remains more robust. BANGLAPLAN provides a reproducible basis for evaluating planning and decision-making in Bangla. BANGLAPLAN is available at: https://github.com/mrayhanulmasud/banglaplan.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.19423v1' target='_blank'>Beyond the Trial-and-Error Loop: Hybrid Projection and Automated Tuning for Distributed Training</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Anshu Raina, Peyman Razaghi, Yuankai Chen, Cheng Yao, Yao Fu, Vidushi Goyal, Devang Patel, Wen Xie, Zhenyu Gu, Emad Barsoum</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-14 02:15:28</h6>
+<p class='card-text'>Configuring distributed LLM training across hundreds of GPUs requires jointly optimizing tensor, pipeline, expert, context, and data parallelism alongside micro-batch size, recomputation, sharding, and overlap, a combinatorial space where memory legality can hinge on a single byte of activation accounting. Today, teams navigate it through expensive multi-node trial and error, burning GPU-hours on crashes and suboptimal recipes. We present Primus Projection, which closes this loop with two coupled components. First, a hybrid projection engine that measures what it can and simulates what it cannot: GPU microbenchmarks on as few as a single device capture compute kernels and any in-scope communication; a sub-node downscale-measure-upscale workflow analytically restores out-of-scope collectives, FSDP overlap, and the full pipeline schedule at the multi-node target. A pure simulation mode runs entirely on CPU, enabling pre-silicon planning without any GPU. Second, the Primus Tuning Agent treats the projection engine as a fast scoring oracle (seconds per candidate instead of tens of minutes) and uses it to drive an intelligent search over the configuration space. A deterministic seed planner sweeps single axes; an LLM investigation loop proposes cross-axis combinations the planner cannot reach, with an analytic memory pre-filter that rejects infeasible candidates before any GPU time is spent. Validated on Llama 3.1 (dense) and Mixtral 8x22B (MoE) across two GPU generations, all projections stay within ~10% of measured multi-node throughput, and fidelity holds at production scale: 4.7% error on DeepSeek V3 671B at 1,024 GPUs and 1.9% on Qwen3-235B-A22B at 256 GPUs. In a Mixtral 8x22B case study, the Primus Tuning Agent discovers a configuration delivering +27% throughput over the published 4-node BF16 reference at the same scale, in under 30 minutes of single-node exploration.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.19345v1' target='_blank'>When Is Smaller Greener? Right-Sizing Language Models for Agentic AI</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Sajid Siraj, Maria Barbati</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-14 00:37:23</h6>
+<p class='card-text'>AI agents use large language models (LLMs) to plan and act over multiple steps, yet models are usually compared per call rather than per completed task. This paper asks: which model should an agent use to complete tasks reliably while minimising energy, cost and time? We show that per-call comparisons can be misleading for agentic AI. Because a task succeeds only if all required steps succeed, small differences in per-step reliability can produce large differences in overall task success. Failed attempts also consume resources. We therefore evaluate models using energy, cost and time per successfully completed task, treating the completed task as the functional unit. On this basis, we develop a decision model for choosing LLMs in agentic workflows. The model applies to tasks with binary or graded outcomes and to settings with or without retries. We show that each resource has a crossover task length at which a smaller, less reliable model ceases to be the greener, cheaper or faster option. These crossovers divide tasks into three regimes: for short tasks smaller models are preferred, for long tasks larger models are preferred, and only between these extremes do preferences among objectives matter. We embed these results in a two-stage framework that separates efficiency from preference. A Pareto screen first removes models that are never competitive; a weighted decision is required only when a genuine trade-off remains. A pilot study of 15 open-weight models from five developers, ranging from 0.6B to 27B parameters, on two multi-step agent tasks with measured GPU energy supports the predicted structure. The model with the lowest energy per completed task changes with task length and task type, and observed crossover points generally match those predicted from per-step measurements. These findings provide a practical framework for right-sizing language models in agentic AI.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.19222v1' target='_blank'>REPORT-OPS: Hybrid Evidence-Guided Reporting with Human-Supervised Refinement for HPC</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Mah Kadidia Konate, Mayur Akewar, Janki Bhimani, Steven Farrell</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-13 21:40:24</h6>
+<p class='card-text'>Operational reporting for high-performance computing (HPC) facilities requires combining information from monitoring services, schedulers, incident and maintenance records, storage measurements, periodic reports, and operator investigations. Producing a reliable report requires more than retrieving relevant records: the evidence must refer to the correct system, metric definition, time period, and source of authority. We present REPORT-OPS, a hybrid reporting agent in which an LLM interprets requests, plans evidence collection, evaluates possible explanations, and drafts reports, while author-seeded operational policies and automated checks determine whether the available evidence supports the requested conclusion. Depending on the evidence state, the system answers the request, reports a qualified conclusion, or withholds an unsupported claim. During offline refinement, an LLM critic proposes bounded policy changes that a human approves or rejects without editing; accepted candidates are promoted only after automated target, held-out, and regression testing. We evaluate REPORT-OPS on 68 sanitized reporting queries constructed from 50 base scenarios in a frozen HPC operational corpus, using three agent models and two LLM judges. REPORT-OPS achieves 68.63% Pass@80, compared with 7.02% for the strongest retrieval baseline. Evidence gating increases claim-support precision from 40.58% to 90.06%. On the 13-query explanatory subset, explanation accuracy reaches 55.54%. Across five rounds of human-supervised refinement, localized policy updates correct 91.17% of targeted failures and improve performance on related held-out cases by 9.33 percentage points, with no observed regression breaks under release gating. These results demonstrate improved evidence-grounded reporting and within-environment policy reuse; they do not establish unrestricted causal discovery or cross-facility generalization.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.19128v1' target='_blank'>CLASHarness: Benchmarking Multi-Agent Conflict in Computer Use via a Controllable and Verifiable Generation Pipeline</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yuxiang Lai, Jike Zhong, Chengzhi Liu, Ming Li, Haonan Wang, Xiaofeng Yang, Liang Zhao, Youbao Tang, Ruixi Fan</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-13 20:01:18</h6>
+<p class='card-text'>Vision-language models (VLMs) are increasingly deployed in multi-agent systems to automate complex computer-use workflows, yet existing benchmarks mostly assume consistent, cooperative environments. In contrast, real-world collaboration rarely runs on consistent information: peer or sub-agents frequently report outdated states, issue contradictory instructions, or compete over shared permissions and files, forcing agents to check others' outputs and verify ground truth in the environment. Evaluating such conflict resolution remains challenging: manual authoring cannot scale across complex systems, while unconstrained LLM generation produces narrative drift, answer leakage, and unsatisfiable rubrics. We introduce CLASHarness (Conflict-Loaded Agent Scenario Harness), a controllable framework for generating verifiable multi-agent conflicts in computer use, with a benchmark of 600 multi-round tasks. By combining hierarchical scenario planning with an eight-step verified micro-pipeline, CLASHarness pre-commits decisive visual facts before rendering and compiles hybrid code and semantic graders directly from executed reference trajectories, guaranteeing every task is solvable by construction. Evaluating 15 frontier models on CLASHarness reveals three core bottlenecks. First, when sub-agent outputs conflict with the environment, weaker models blindly follow misleading information, whereas stronger models inspect visual evidence to verify ground truth. Second, resolving conflicts is much harder than finding them: while agents can spot inconsistencies, actively fixing system state drops task success significantly. Third, coordination protocols remain a universal bottleneck: even frontier models fail over 58% of closing actions, often forgetting to release shared locks or hand off tasks. CLASHarness provides a scalable, verifiable foundation for building reliable multi-agent systems.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.19068v1' target='_blank'>Plan or Retrieve First? A Scale Study of Tool Discovery Architectures</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Mingfei Zhang, Amit Surana, Ziauddin Majid, Chenxi Wang, Michael Xu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-13 19:03:21</h6>
+<p class='card-text'>Tool-augmented LLM agents discover relevant APIs from large registries before planning execution, yet finite context windows prohibit injecting all tool definitions into a single prompt. The dominant approach, which we term Retrieve-then-Plan (RtP), embeds the user query and retrieves similar tools via approximate nearest-neighbor search. We study an alternative Plan-then-Retrieve (PtR) paradigm in which the LLM first generates Abstract Tool Stubs (hypothesized function signatures describing needed capabilities) which then serve as retrieval queries against the registry. Evaluating on ToolBench (46,984 unique API endpoints, 50 categories) across single-tool (G1), intra-category multi-tool (G2), and cross-category multi-tool (G3) query subsets, we find a clear complexity-dependent crossover: RtP outperforms PtR on single-tool queries while PtR outperforms RtP on multi-tool queries. This crossover holds at every retrieval budget (k=1 to 20), is robust across registry sizes from 1k to 47k APIs, and is consistent across model families (Gemini 2.5 Flash and gpt-oss-120b). We characterize a stub-hallucination failure mode (the LLM invents plausible but non-existent API names) that acts as a double-edged sword: on simple queries PtR's stubs abstract away proper-noun signals that RtP matches directly, yet on complex queries the same mechanism decomposes multi-faceted intent into functional sub-needs. We further analyze token overhead and show that PtR's extra discovery call roughly doubles inference cost, which pays off on multi-tool queries but hurts on single-tool ones, motivating complexity-adaptive routing as a practical direction, one that can be driven by a zero-cost signal already present in the pipeline (RtP's top-1 retrieval score).</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.18762v1' target='_blank'>Looking Complete Is Not Being Grounded: Evaluating LLM Sitreps Against Human-Authored Situation Reports</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Sachin Kumar</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-13 17:23:19</h6>
+<p class='card-text'>Evaluation for automatic crisis reporting should measure what practitioners need, not what is convenient to compare. Through LLM-assisted, author-approved content analysis, we derive a 15-slot information schema from professional humanitarian situation reports using qualitative content analysis, then evaluate 121 human and 261 LLM-generated reports across five disasters and three hazard types. Under google/gemini-3.7-flash on Cyclone Idai, the best machine arm is nominally above the empirical human ceiling (0.827 vs. 0.821), but the difference is statistically indistinguishable from zero (95\% bootstrap CI $[-.049,.059]$; permutation $p=.852$), and the ordering does not replicate under openai/gpt-5.6-luna. On a blind 100-item Idai sample, the author agrees with the Gemini judge at 0.910 accuracy and unweighted Cohen's $κ=.799$. All four judges clear the plan's raw-agreement criterion of .7; only Gemini reaches .7 on chance-corrected $κ$. Across the three primary events, machine reports reproduce 5.4-11.0% of same-day official figures. Across those same events, raw exact-number matching links 14.3-19.6% of official figures and 85.4-90.1% of machine figures to the social stream; manual audit confirms 45/50 declared absences, 4/25 official matches, and 24/25 machine matches semantically. The issuing-provenance gap is positive in all 12 observed event-judge cells: report date, organisation, series, and authority were not supplied at professional-report coverage in any cell. On the three primary events, ROUGE-L is uninformative, BERTScore is negatively associated with completeness after multiplicity correction, and a generic LLM judge changes sign.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.18522v1' target='_blank'>Lost in Implicit Routing: How LLM Agents Fail to Load Relevant Skills at Scale</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Jinlin Liu, Wei Chen, Xiaojin Zhang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-13 15:12:12</h6>
+<p class='card-text'>Reusable skills let LLM agents load task-specific instructions on demand, but they make execution depend on implicit routing over skill metadata. We test whether this design scales by holding SkillsBench tasks and their golden skills fixed while adding irrelevant skills. We find skill routing collapse: agents increasingly load fewer or no skills, even though the relevant skills remain available. With 1,000 irrelevant skills, loaded-skill recall falls from 73.6% to 27.4% and the zero-load rate rises from 9.3% to 51.6%, whereas explicit selection from the same library retains 73.9% recall. Loading other skills, including plausible alternatives to golden skills, is too rare to explain this decline. Masking only the descriptions of irrelevant skills largely restores skill loading, yet with the metadata intact, explicitly asking agents to plan skill use still yields lower recall than preselection. These findings point to semantic interference from descriptions and instruction interference when skill choice competes with task execution. We also evaluate explicit preselection as a practical mitigation, including its coverage and latency trade-offs. Our analysis informs skill protocols and evaluation for agents with growing skill libraries.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.17794v1' target='_blank'>GIFT-Eval-CTX: A Benchmark For Contextual Forecasting Model Evaluation</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Xu Liu, Hanshu Yan, Taha Aksu, Quang Pham, Zhongzheng Qiao, Jun Hao Liew, Silvio Savarese, Doyen Sahoo, Junnan Li</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-13 06:21:50</h6>
+<p class='card-text'>Contextual forecasting seeks to improve time series forecasting by incorporating forward-looking information, such as planned events, external conditions, and expert expectations. However, reliable evaluation remains difficult: existing benchmarks often have limited domain coverage, lack standardized history-future splits, or provide text that is not guaranteed to inform the future. We introduce GIFT-Eval-CTX, a benchmark that isolates whether forecasting methods can translate verified future information into accurate numerical trajectories. Built upon GIFT-Eval, GIFT-Eval-CTX contains 10,000 instances across 20 datasets. Each instance provides structured effects derived from the realized future: Macro effects describe horizon-wide behavior, while Micro effects specify localized changes. We construct these annotations with an agentic pipeline combining LLM-based discovery and deterministic code validation. We benchmark TSFMs, frontier LLMs, and tool-using agentic systems. The results show that structured effects reduce aggregate relative MASE by 40.7% for GPT-5.6 Sol and 29.6% for Claude Opus 4.8 relative to history-only prompting. The evaluated MoiraiAgent system achieves the best overall result. We further analyze the contributions of structured effects and agentic systems to performance, and identify opportunities for future research.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.17740v1' target='_blank'>Coupled Harness--Model Evolution for Scientific Equation Discovery</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Pengze Li, Jiaquan Zhang, Encheng Su, Yunbo Long, Zihang Zeng, Xinping Liu, Han Zhang, Junchi Yu, Shixiang Tang, Aoran Wang, Xi Chen</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-13 05:17:45</h6>
+<p class='card-text'>Large language models (LLMs) are increasingly used to discover scientific equations from experimental data. Such a discovery system has two parts that must work together: a library of executable computational tools and the model's tool-use policy. The tools supply the solving capability, from diagnosing structure in the data to fitting candidate equations; the policy plans and orchestrates their use. Yet existing systems adapt only one part, keeping either the toolset or the model fixed, which leaves the corresponding failures uncorrectable. We develop a coupled evolution framework that improves both parts from the same verifiable fit-error signal. In the tool-evolution phase, an agent grows an executable tool library from a small set of generic numerical operations by diagnosing its own failures: it authors a new tool when a capability is missing and revises its selection rules when the right tool went unused. In the policy-evolution phase, a small open model (roughly 3B active parameters) is fine-tuned on successful tool-use trajectories collected with the frozen library, on training formulas screened to be disjoint from all evaluation benchmarks. Ablations show the two phases are complementary: with no tool library at all the same model solves almost nothing, the tools account for most of the gain, and trajectory training adds a further gain that is largest on the most difficult problems. The full system solves 79.1/71.3\% of LSR-Synth problems at fit tolerances $10^{-2}$/$10^{-3}$, reaches 63.8\% pooled accuracy on the distributionally different SRSD-Feynman panel, and obtains a normalized CP3-28 aggregate of $-7.27$. These results suggest a broader recipe for scientific agents: let the model and its instruments improve each other under verifiable feedback.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.17426v1' target='_blank'>Reinforcement Learning In Partially Verifiable Environments for Colon Cancer Treatment Planning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Li-Ching Chen, Andrés Franco Valiente, Yuta Ishiyama, Zachary R. Chalmers, William Chen, Kelsey Natsuhara, Taema Brinjikji, Madhumita Sushil, Travis Zack, Julian C. Hong</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-12 21:39:21</h6>
+<p class='card-text'>Clinical decision-making is a sequential process of information collection, clinical inference, and forecasting under partial observability, often without a uniquely correct treatment decision. Large language models (LLMs) have demonstrated strong medical question-answering capabilities but extending these advances to clinical reasoning remains challenging because many clinical tasks are only partially verifiable. Recent clinical reinforcement learning (RL) work has therefore largely focused on diagnostic endpoints, where correctness can be more directly verified. Oncology treatment decision making is a particularly challenging instance of this problem that extends beyond medical question-answering in which multiple decision trajectories can be clinically defensible for the same partially observed patient state. We formulate oncology treatment planning as an interactive RL problem under partial observability and construct patient-specific, process-aware rewards from decision processes observed in real world clinical records. The agent must learn to sequentially acquire information from a structured patient representation before committing to a first-line treatment recommendation, and is evaluated on information gathering, treatment selection, and reasoning alignment. Using GRPO and GDPO to optimize Llama-3.1-8B-Instruct within this environment, RL substantially improves the base policy beyond frontier model capabilities. The GDPO-trained policy increases Mean@3 scalar clinical reward by $79.60\%$ over base Llama and exceeds GPT-5.2 by $18.82\%$ under the same interactive environment, while reducing query count during training. Overall, our results show that patient-specific, partially verifiable rewards can provide an effective learning signal for interactive clinical RL when both the patient state and the underlying clinical decision process are only partially observed.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.17114v1' target='_blank'>D-World: An Explicit World-Language-Action Model with Recursive Self-Improvement under Dual Control</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Xuan Wen, Baichao Wang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-12 17:05:31</h6>
+<p class='card-text'>Frontier large language models (LLMs) now reason about space well enough to program robots, yet the world models behind robot policies are implicit, held in network weights or predicted video, and cannot be inspected or corrected directly. We present D-World, an explicit world-language-action model built on the Sense, Plan and Act decomposition. A perception agent writes the scene as an executable digital twin using generated vision and geometry code. A planning agent searches for actions in simulation and, after each executed action chunk, revises the twin's object states and named physical parameters against what the robot measured. A parameter revision is accepted only if replaying the latest chunk does not increase any measured residual beyond its tolerance, and every chunk is checked in the updated twin before it runs. Structural mismatches return to perception for reconstruction. We call this measurement-grounded cycle of correction and revision recursive self-improvement (RSI), in which the LLM stays frozen while the world it acts in improves. We model the choice of actions that both advance the task and expose model error as a dual control problem and show that the cost of incorporating evidence into the twin sets the threshold at which probing pays, so cheap local revision counteracts the turn-off of cautious controllers. Each episode runs a real-to-sim-to-real loop, and its recorded twins can be refitted and re-rendered offline into higher-fidelity environments for post-training. Because perception and planning communicate only through the twin and language, either can be replaced by a learned model, and since inference dominates the loop, the loop speeds up with faster models. On a dual-arm robot, towel and toaster tasks show local revisions, such as one reducing the bread's rendered-depth residual from 22.4 to 1.5 mm, that let execution continue without reconstruction.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.17083v1' target='_blank'>Declarative Reactive Robot Behaviors from Imperative Language Models</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Vincent Berenz, Tasha Kim, Bernhard Schölkopf</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-12 16:46:41</h6>
+<p class='card-text'>Large Language Models (LLMs) are predominantly trained on imperative programming languages, and existing work on LLM-based robot programming reflects this: it focuses on goal-directed tasks expressed as plans. However, many robotic applications require not tasks but behaviors--open-ended, continuous patterns of sensory-motor engagement with no termination condition (e.g., greeting visitors, patrolling an area). Such behaviors are better served by declarative and reactive programming, on which LLMs have virtually no training. We investigate whether this gap can be bridged. Using Playful, a reactive scripting language, we show that an LLM-based coding agent can generate correct declarative and reactive programs for robotic behaviors. These programs are produced from under-specified natural language descriptions, given suitable context and a set of reusable programming guidelines. The guidelines encode design principles that redirect the agent from imperative defaults toward proper reactive patterns. Developed once by an expert, they generalize across robots and behaviors. Starting from only the generic robot operating system API, the agent jointly designs both the imperative component (Python modules for sensing, acting, and evaluating) and the declarative component (the reactive script that composes them into behavior logic). The declarative nature of reactive programming supports both incremental refinement through conversational turns and one-shot generation of complete behaviors.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.16895v1' target='_blank'>Observe, Share, or Predict? Disentangling Partner Information in Embodied Multi-Agent Collaboration</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Adrián Szlatincsán, Filippo Ziliotto, Bruno Lepri, Luciano Serafini, Massimiliano Luca, Tommaso Campari</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-12 14:49:31</h6>
+<p class='card-text'>LLMs are used as high-level controllers for embodied agents, but it remains unclear whether they support collaborative reasoning, such as anticipating a collaborator's actions in real-time teamwork without dialogue. We ask if observing the partner's state, exchanging object knowledge, and predicting the partner's next action, shape task outcomes and coordination when agents can share percepts but never intentions, plans, or task-level messages, and whether the two agents occupy symmetric roles. Using the Habitat-based PARTNR benchmark, we introduce a Decoupled Partial Observability regime that enforces strictly individual perception, and we augment decentralized zero-shot ReAct planners with Other Agent's State (OAS) observation, object Knowledge Exchange (KE) between co-located agents, and Other Agent's Next Action (OANA) prediction, evaluated on the full 2 x 2 x 2 grid with four planners on 1,000 validation tasks. OAS observation improves task quality, reducing extraneous effort for every planner, whereas KE primarily improves execution efficiency, cutting simulation steps by up to 25% with little change in success. The two are largely redundant for strong planners but complementary for the weakest, for which KE without the OAS is the worst configuration. OANA prediction lowers the success rate in 15 of 16 model x context pairs while raising explicit partner mentions to 55-100%, and its accuracy gains lie mainly in the coarse action type, partly because agents recognize the action the partner is already performing. The robot retrieves objects sooner and completes its tasks earlier than the simulated human. Shared context reduces total task time by shortening the remaining duration that the human works alone. Also, coordination benefits arise from responding to shared context, especially the OAS, rather than explicit anticipation, yielding shallow, planner-dependent partner modeling.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.16414v1' target='_blank'>Purpose IR: Compiling User Purpose for Privacy-Preserving Agent Workflow State</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Dongsheng Chen, Xiangyu Zhao, Lei Ma, Xin Yao, Xuetao Wei</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-12 08:48:23</h6>
+<p class='card-text'>LLM-agent workflows routinely transform rich observations into plans, summaries, memories, handoffs, and other reusable state. This creates a privacy boundary that task relevance alone does not capture: an observation may be needed as evidence for a task without its full semantics being authorized to persist. We call this mismatch the purpose-to-state semantic gap. The key distinction is that evidence authority is not release authority. We introduce Purpose IR, a bounded typed intermediate representation that compiles natural-language user purpose into an executable semantic boundary for reusable agent state. A Purpose program is an acyclic semantic dataflow graph in which evidence leaves specify task-required semantics, typed dependencies constrain authorized derivations, and declared sinks determine which values or actions may cross the reusable-state boundary. A deterministic compiler constructs and validates the authoritative program, while a typed runtime reconstructs reusable state only from validated sink outputs. Under explicit execution contracts, this design yields release confinement and purpose noninterference, characterizing what factual semantics may be released and which observation differences must become irrelevant to reusable state. Across 1,200 cases spanning LangGraph, CrewAI, and MobileRun, Purpose IR achieves 99.6% Privacy, 83.3% Task, and 83.3% Privacy-Compliant Success (PCS), outperforming the strongest high-privacy baseline by 27.5 PCS points. On 493 PrivacyLens trajectories, it achieves the highest Safe Action Rate at 77.3%, 10.4 points above the next-best method, extending the same boundary from reusable state to downstream actions. These results show that privacy-preserving agent state requires more than filtering sensitive or task-irrelevant content: it requires an explicit, executable representation of what the user's purpose authorizes to survive.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.16391v1' target='_blank'>RetroPlanner: Multi-Route Expansion and Multi-Objective Reasoning for LLM-Based Retrosynthesis Planning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Ye Rin Kim, Yongjun Jeong, Seongjun Yun, Hanbum Ko, Soohyun Oh, Sungbin Lim, Sungwoong Kim</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-12 08:37:43</h6>
+<p class='card-text'>Multi-step retrosynthesis planning is often considered solved once a route to purchasable starting materials is found, but such a route should also be practical in real-world chemistry. Recent LLM-based planners formulate this process as sequential decision-making over an AND-OR graph, yet typically expand a single molecule per turn and are optimized for solvability alone, leaving alternative routes uncompared across the multiple objectives that determine practicality before the search budget is committed. We introduce RetroPlanner, an LLM-based planner that jointly compares multiple routes to steer the search toward higher synthesizability, as measured by reaction plausibility, round-trip consistency, and starting-material price. RetroPlanner is trained to reason over chemical evidence: structural progress from the target molecule, bond changes and reaction classes, where candidate routes diverge from one another, and how they rank across multiple objectives. Experiments on multi-step retrosynthesis benchmarks demonstrate that RetroPlanner recovers more alternative routes than prior LLM-based planners while improving synthetic route quality and maintaining a high success rate.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.16312v1' target='_blank'>Narrative Paradoxes in LLM Inference: Shaping Reasoning Trajectories toward Misalignment</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Haoming Yang, Ke Ma, Yangbangyan Jiang, Ligong Zhang, Xiaojun Jia, Longtao Huang, Yingfei Sun, Qianqian Xu, Qingming Huang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-12 07:38:37</h6>
+<p class='card-text'>Explicit reasoning in large language models (LLMs) is often associated with reliability, yet it can still pose risks when a model infers harmful goals under a benign context. We identify a distinct challenge: ensuring the safety of the \emph{multi-step reasoning process} itself, where locally coherent steps may still lead to globally harmful outcomes. To explore this vulnerability, we propose PDRA (Paradox-driven Reasoning-based Attack), a novel attack method that programs a harmful reasoning trajectory. PDRA first constructs a paradoxical narrative core by pairing a malicious actor (e.g., a terrorist) with a benign task (e.g., writing a safety bulletin). It then embeds this core into a structured analytical framework that forces the model through a mandatory three-stage analysis -- surface purpose, latent intent, and operational reconstruction -- guiding it to produce detailed harmful content while maintaining narrative coherence. Mechanistically, we show PDRA steers the model's internal representations away from refusal-related patterns, suppressing safety-triggering lexicons while activating planning-oriented terms. Empirically, PDRA achieves state-of-the-art attack success rates across diverse LLMs with high efficiency. \textcolor{red}{\textbf{Warning:} This paper may contain sensitive content.}</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.16305v1' target='_blank'>ATTCK-R: Knowledge-Aware Long-Horizon Jailbreaking for Protected LLMs</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Md Mushfiqur Rahman, Tobias Rohde, Rahul Tripathi, Khalil Elkhalil, Kevin Lybarger</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-12 07:32:11</h6>
+<p class='card-text'>As large language models are deployed behind increasingly sophisticated safety mechanisms, evaluating their robustness under realistic adversarial conditions becomes increasingly difficult and critical. Existing jailbreaking evaluations often rely on static prompts, limited interaction horizons, or lightly protected systems, failing to reflect protected deployment settings with prompt-based safety protections. We show that the introduction of a prompt-based safety protection reduces the average attack success rate of a strong multi-turn baseline from 0.896 to 0.608 (32.1\% relative), demonstrating that unprotected evaluations substantially overestimate real-world vulnerabilities. We propose Adaptive Traceback and Tactic Curation for Knowledge-based Red-teaming (ATTCK-R), a planning-driven multi-turn red teaming framework designed for protected black-box systems. ATTCK-R models jailbreaking as a long-horizon trajectory optimization problem using a structured belief state, introduces optimization-based tactic curation to abstract reusable strategies from prior successes and failures, and employs informed traceback to resume attacks from strategically meaningful states rather than restarting. Evaluated across 9 widely used LLMs configured with a single prompt-based safety protection layer, ATTCK-R consistently outperforms strong recent multi-turn jailbreaking frameworks. Ablation results confirm that long-horizon planning and tactic curation improve attack effectiveness, while adaptive traceback improves efficiency through structured recovery from conversational failure.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.16140v1' target='_blank'>Large Language Model Assisted Transportation Planning through a Differentiable User Equilibrium Layer</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Eunseung Lee, Gyeongjun Kim, Keemin Sohn</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-12 03:59:40</h6>
+<p class='card-text'>Transportation planning has traditionally required substantial expertise in network modeling, traffic assignment, and optimization. As a result, strategic analyses such as network design, capacity expansion, and model calibration remain inaccessible to non-expert decision makers. Recent advances in large language models (LLMs) provide an opportunity to bridge this gap by enabling natural-language interaction with complex transportation planning tools. However, existing LLM-based systems primarily serve as interfaces to simulation software and lack the ability to efficiently search, evaluate, and optimize transportation solutions. This study proposes an integrated human-AI transportation planning framework that combines a large language model, a model context protocol (MCP) interface, an open-source transportation planning engine (AequilibraE), and a differentiable user equilibrium (UE) assignment layer. The framework allows non-expert users to execute network analyses and improve solutions for optimization. A differentiable UE layer is developed by directly differentiating the Karush-Kuhn-Tucker (KKT) conditions of the Beckmann traffic assignment problem. The proposed framework is demonstrated through two representative planning tasks: calibration of travel time functions from observed traffic counts and network design under budget constraints. The examples illustrate how differentiable transportation models and LLM agents can jointly democratize transportation planning and substantially reduce barriers between domain expertise and transportation decision making.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js'></script>
+</body>
+</html>

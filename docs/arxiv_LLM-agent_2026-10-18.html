@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<title>LLM-agent - 2026-10-18</title>
+<link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap' rel='stylesheet'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'>
+<style>
+body {
+font-family: 'Roboto', sans-serif;
+background-color: #f5f7fa;
+padding: 20px;
+}
+.card {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.card-title {
+    font-weight: 700;
+}
+.card:hover {
+    transform: scale(1.02);
+    transition: 0.3s ease-in-out;
+}
+</style>
+</head>
+<body>
+<div class='container'>
+<h1 class='text-center my-4'><i class='fas fa-book'></i>LLM-agent - 2026-10-18</h1>
+<div class='row'>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.22344v1' target='_blank'>MLExpert: Towards a Generalist Agentic Model for Autonomous Machine Learning Engineering</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Shangheng Du, Jinxin Shi, Shuaiyu Zhang, Yiming Wu, Junpeng Zhao, Shiyang Feng, Xin Li, Liang He, Xiangchao Yan, Bo Zhang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-15 17:56:32</h6>
+<p class='card-text'>Large language models (LLMs) are expanding from assisting scientific research and engineering to autonomously developing and improving AI systems, advancing AI for AI (AI4AI) as a pathway toward recursive self-improvement (RSI). Workflow-driven machine learning engineering (MLE) systems provide a practical path toward this pursuit through complex orchestration that manages long-horizon experimentation, while recent MLE systems adopt model-directed interaction, allowing models to autonomously organize experiments and adapt optimization strategies based on execution feedback. However, feedback from each experiment reflects several preceding decisions, and a long MLE run contains many such costly experiments. Training must therefore select useful supervision from long interaction trajectories and learn from intermediate outcomes. We propose a post-training method for autonomous long-horizon MLE optimization and apply it to train MLExpert, a 35B Mixture-of-Experts agentic model. We design the Kaggle-MLE Factory to construct executable tasks and an interaction harness for model-directed experimentation. Hierarchical agentic SFT transfers general tool-use and coding capabilities to MLE through outcome-guided supervision. Windowed Interaction RL (WIRL) treats the multi-turn decisions between successive experiment results as an execution window and assigns it a shared outcome-based reward. Asynchronous collection and policy correction support policy updates before the trajectory ends. On MLE-Bench Lite, MLExpert improves the average medal rate of the base model from 37.9% to 72.7%, achieving performance comparable to larger frontier models such as Kimi-K3 and GLM-5.3. Further experiments show that MLExpert improves performance on NatureBench Lite, agent scaffold optimization, and algorithm optimization, suggesting that the learned optimization capability generalizes to other tasks.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.22324v1' target='_blank'>Training Reasoning Models to Generate Diverse Scientific Ideas</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Manya Wadhwa, Pranav Narayanan Venkit, Hiroaki Hayashi, Yu Li, Tuhin Chakrabarty, Chien-Sheng Wu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-15 17:52:12</h6>
+<p class='card-text'>One of the first steps of a research pipeline is generating ideas. Large Language Models (LLMs) are increasingly used to automate this step, but most of this work optimizes the quality of individual ideas, while overlooking diversity. In our work, we study document-grounded ideation, focusing on increasing the diversity of LLM generated ideas and ensuring they are high quality. Given prior papers, a model must propose a set of ideas that are each high-quality and clearly distinct from one another, while also being grounded in the input documents. To optimize for this, we propose training with a set-level reinforcement learning objective. In our setup, in a single generation, the model writes K structured idea cards grounded in the source papers, and the set is scored jointly, where each idea's quality is weighted by its distance from the ideas written before it. This teaches the model to steer each new idea away from its predecessors. We show that our trained 8B model achieves higher creative utility (a measure combining quality and diversity) than Claude Opus 4.8 and GPT-6 Astra on our contamination-free benchmark. In a pilot human study with four experts, our sets are judged as promising as Claude Opus 4.8's and contain marginally more unique ideas. When a coding agent runs proof-of-concept experiments on the ideas, our model's success@k is comparable to Claude Opus 4.8's, so we see that the added diversity does not cost any executability.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.22316v1' target='_blank'>Learning to Steer LLM Agents and Multi-Agent Systems</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Leyang Shen, Yaxin Gong, Yang Zhang, Chenxiao Fan, Jiakai Wang, Dong Wang, Yang Liu, Fuli Feng, Chun Kai Ling, Tat-Seng Chua</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-15 17:51:17</h6>
+<p class='card-text'>Large language model (LLM)-based agents and multi-agent systems increasingly tackle complex tasks through long-horizon tool use and inter-agent collaboration. However, these systems are prone to deviating from the overall goal as execution unfolds, which wastes execution resources and leads to undesired outcomes, a failure termed goal drift. In this work, we propose a steering agent that supervises execution on the fly and steers the system back on track when drift occurs. The steering agent observes the execution context, deciding when to intervene with a low-cost fast path and how to intervene with a high-cost slow path. To unlock its steering intelligence, the ability to assess goal drift and generate effective interventions, we jointly train the two paths with reinforcement learning, combining a pairwise ranking objective with group-relative policy optimization (GRPO). Experiments on information-seeking search tasks show that the steering agent provides effective supervision for both single-agent and multi-agent systems, improving their performance and efficiency. The learned steering intelligence generalizes to out-of-domain tasks, transfers to unseen executors, and supports controllable intervention frequency without retraining.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.22292v1' target='_blank'>CAT-alyzing Honesty: Continuous Adversarial Training for Transferable LLM Honesty</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yuan-Chen Chang, Niklas Herbster, Gauthier Gidel, Tommaso Tosato</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-15 17:43:47</h6>
+<p class='card-text'>Large language models (LLMs) are becoming prevalent in scenarios where honesty is critical. However, despite alignment training, these models still exhibit dishonest behaviour, such as outputting claims that contradict some knowledge or are not supported by what is accessible in context. We introduce Continuous Adversarial Training for Consistent Honesty (CATCH), inspired by a method originally developed to robustly refuse harmful queries. CATCH trains the model towards an honest answer and away from a dishonest one while maintaining the model's capabilities. We evaluate two architectures (Llama-3.3-70B-Instruct and Qwen3-3.6-27B). We show that trained with only hundreds of targets built from self-reporting scenarios, CATCH learns an honest behaviour that robustly generalizes and transfers across distinct benchmarks. It consistently reduces dishonesty under pressure on MASK, increases confessions in the multi-agent game of Among Us, and improves the discovery rates of the model's hidden behaviours in AuditBench. We show that CATCH outperforms prompting and supervised fine-tuning in improving honesty, and it is on par with state-of-the-art honesty activation steering. However, CATCH surpasses honesty steering in maintaining utility, thanks to a novel choice of utility data.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.22273v1' target='_blank'>Librarian Agents: Training LLMs to Curate Long-Context Workspaces that Anticipate Future Queries</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Anikait Singh, Teresa Zhang, Yoonho Lee, Roshen Sanjay Nair, Aviral Kumar, Chelsea Finn</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-15 17:35:17</h6>
+<p class='card-text'>Reasoning over long document contexts remains a challenge for large language models (LLMs). Standard retrieval methods are inherently reactive, bottlenecking agents with complex, cross-document reasoning at inference time, while precomputed structures like knowledge graphs often fall short because they rely on rigid heuristics. Instead, can we allow agents to perform anticipatory directed curation: learning to proactively reorganize unstructured corpora prior to inference to efficiently serve diverse future queries. We build on a key asymmetry in modern agentic harnesses (e.g., Claude Code): while LLM agents are adept at navigating existing filesystems to solve an immediate task, they are rarely trained to construct reusable workspaces for future use. To instantiate this capability, we introduce Librarian Agents, a framework in which a builder agent transforms raw documents into a hierarchical filesystem of synthetic files and reference links, which forms a workspace tailored for a downstream answering agent. We formulate workspace construction as a Markov decision process and optimize the builder policy via reinforcement learning to directly maximize downstream answering accuracy. Empirically, Librarian Agents outperforms the strongest retrieval and precomputation baselines by 33 percentage points on BrowseComp-Plus, amortizes upfront construction costs across repeated queries, and generalizes zero-shot to unseen domains on BRIGHT with a 31-point average accuracy improvement.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.22201v1' target='_blank'>Decentralized LLM Workflows via Sequential Auctions</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Ian Gemp, Shubhendu Trivedi, Adam Fisch, Fantine Huot, Michael Kaisers, Mirella Lapata, William W. Cohen, Alekh Agarwal, Kate Larson, Jacob Eisenstein</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-15 16:52:16</h6>
+<p class='card-text'>We present a scalable framework for solving multi-step tasks through a decentralized market of self-interested agents. Prior theoretical work demonstrated that agents organized through sequential auctions can converge to a globally optimal policy in a Markov decision process (MDP), but relied on the restrictive assumption of the existence of perfect clones as a model of perfect competition. In reality, exact clones drive agent profit to zero, violating the natural risk-reward incentives of participants. Conversely, we empirically demonstrate that the opposite extreme, absence of competition, also leads to market failure and value extraction collapse. Between these two extremes, we investigate how heterogeneous agents can survive in markets that span the critical middle ground of imperfect competition. To be profitable, agents learn to strategically shade bids to secure positive individual profit margins, while still ensuring that the marketplace functions effectively enough so that collaborative tasks posed by market consumers can still be solved. We formulate and evaluate four bidding algorithms (Mirror Descent, Thompson Sampling, Bayes-Optimal, and PPO) across three auction protocols (1st-Price, 2nd-Price, and Credit-Conserving Vickrey). Across a diverse set of domains, we demonstrate that imperfect competition successfully sustains necessary agent profit margins while maintaining high task success rates at low costs.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.22138v1' target='_blank'>Believed but Not Said: Measuring Hidden Belief Collapse in Multi-Agent LLM Discussions</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Liangjie Huang, Henry Peng Zou, Wei-Chieh Huang, Wooseong Yang, Yuwei Han, Philip S. Yu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-15 16:12:07</h6>
+<p class='card-text'>LLM systems increasingly rely on groups of agents that discuss, critique, and check one another, assuming that peers will catch individual errors. We test this assumption against a minimal adversary. In a ten-agent factual discussion, one or three adversarial agents repeatedly assert a plausible false answer. After each round we probe each benign agent's private answer through a separate call whose response is hidden from its peers, and we separately label its public stance toward the claim. Across six models and three factual-QA datasets, groups remain stable without an attacker: only 0.6% of benign agents finish with the false answer. A single adversarial agent increases this rate to 44.8% and three to 60.5%. Studies of conformity typically report public agreement without private change; we find the reverse. With three adversarial agents present, benign agents hold the false answer in 51.6% of exposed turns but publicly endorse it in only 19.7%. Much of the influence therefore remains invisible in the discussion, and the false answers persist when agents are asked for their own views. Agents that retain the true answer often fail to defend it; once adopted, the false answer spreads among benign agents, and baseline knowledge does not predict robustness.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.22124v1' target='_blank'>PROBE: Learning to Audit Policy Compliance in Tool-Using LLM Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Kshitij Mishra, Abhijith Sharma, Nils Lukas, Salem Lahlou</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-15 16:01:38</h6>
+<p class='card-text'>Modern agentic systems extend language models with external tools, enabling them to complete complex tasks through multi-turn interactions. As these agents are deployed in consequential settings, they are often constrained by policies governing pricing, privacy, confirmation, safety, and other requirements. However, existing evaluation methods leave a critical gap: capability benchmarks measure what agents can accomplish, while content-safety red-teaming measures harmful generations, but neither tests whether agents comply with predefined policies during otherwise valid tool use. Such policy violations are difficult to audit because their effects may emerge only after several turns, span multiple tool calls, or surface in downstream systems. We propose PROBE (Policy Rule Observation via Behavioral Exploration), an algorithm for training LLM-based auditors that interact with deployed agents as realistic users and probe them for policy violations through multi-turn, tool-mediated dialogue. We formalize agent auditing as a two-player Markov game and propose a composite reward that balances violation discovery, behavioral plausibility, conversation progress, and policy diversity. To study training objectives and reward design, we compare GRPO, DPO, and GFlowNet-based optimization in a controlled setting. Across extensive experiments, auditors trained with PROBE uncover substantially broader and higher-yield policy violations than same-architecture zero-shot adversaries, even when the auditor is significantly smaller than the target agent. Our results show that multi-turn behavioral auditing is a distinct and necessary axis of agent evaluation, complementing capability and safety benchmarks. PROBE offers a scalable path toward automated policy auditing for real-world agentic systems and suggests a co-evolutionary loop in which auditors expose failures and agents improve from auditor feedback.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.22031v1' target='_blank'>GraphACM: Graph-based Action Consistency Measurement for Uncertainty Quantification in LLM Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yaxin Ma, Wenbo Zhang, Satya Krishna Pothapragada, Alina Zare</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-15 15:07:15</h6>
+<p class='card-text'>Behavioral consistency across repeated executions provides an informative signal for assessing the reliability of large language model (LLM) agents. However, existing approaches typically summarize consistency with a single task-level score, without identifying where behavioral differences occur or whether actions are compared under equivalent decision contexts. We propose a graph-based framework for fine-grained behavioral consistency measurement and uncertainty quantification. Given multiple rollouts of the same task, we merge equivalent states into a directed, action-labeled graph, enabling action comparisons at shared decision states. We introduce node-level and global measures of action consistency, using the global consistency score as a proxy for uncertainty to predict task success or failure. Experiments across three LLMs on ALFWorld, AppWorld, and WebShop demonstrate that our measure is positively associated with task success and achieves an average AUROC of 0.811 for task-success prediction, outperforming the strongest behavioral-consistency baseline (0.729) and verbalized confidence (0.769). These results highlight the effectiveness of state-conditioned behavioral consistency and pinpoint where agent actions agree.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.22016v1' target='_blank'>Close Enough is Nowhere Near: Fidelity-Consumability Decoupling in KV Caches</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Adam Deng, Shicheng Liu, Yada Zhu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-15 14:56:53</h6>
+<p class='card-text'>Multi-agent LLM systems communicate in text, which is lossy and wasteful: the sender throws away the reading it already did. A growing literature instead transmits the KV cache, the natural carrier of that reading. We study the most appealing form of the idea: both models stay frozen and the sender's cache is substituted for the reader's with nothing trained. It does not work, and the obstruction belongs to the reader. A frozen transformer reads only caches close to the one it would have written itself, a region we call its tolerable set. We show that geometric similarity to that cache does not predict whether the reader can use it, and the failure is not gradual, so a more faithful substitute is not the remedy it appears to be. We explain this phenomenon with competitive attention. Experimentally, we test eight diverse substitution methods against two measured anchors: an uninformative cache baseline and the reader's own accuracy from having read the passage. All sit at the baseline. That turns a long tail of separate negative results into one outcome with a stated condition for overturning it. A different design does work: if the reader keeps its own cache and attends over the sender's as extra context, adapting only its queries, it beats its own baseline, and also clears the baseline with eight senders pooled where undirected attention over the same union falls below it. We offer this as a characterization on one probe, not a leaderboard claim. Our central contribution is a redirection: pursuing faithful substitute caches is the wrong target; adding a cache to what the reader already has is the promising one.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.21983v1' target='_blank'>OntoAct: Hypothesis-Based Neuro-Symbolic Agents through Ontological Abstraction</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Donghyeok Lee, Bong Gyun Kang, Junyong Ahn, Sungroh Yoon</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-15 14:34:15</h6>
+<p class='card-text'>Learning from experience requires recovering reusable knowledge and determining when it applies to a new situation. We introduce OntoAct, a hypothesis-based neuro-symbolic framework built on ontological abstraction. OntoAct turns individual experiences into axioms over entity types, relations, and conditions, making their underlying patterns reusable across situations. A large language model (LLM) uses this world knowledge to propose hypotheses and actions, while a symbolic verifier assesses their supporting conditions against current observations. Verification identifies missing evidence, and new observations and intervention outcomes update hypothesis assessments and guide subsequent actions. We also introduce Tacit-FLE, a benchmark built on the Factorio Learning Environment (FLE) for diagnosing and repairing hidden faults in existing factories using inherited operational records. Its synthetic maintenance corpus distributes evidence across records, and an executed repair may leave the fault unresolved, requiring agents to reassess their diagnoses through interaction. Across Tacit-FLE, Mars, and ALFWorld, OntoAct achieves leading task performance with efficient interaction and inference.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.21972v1' target='_blank'>Inflak: A Unified Orchestration Architecture for Human-Agent Interaction</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Lin Gao, Li Chen, Jianxun Lian, Ji Li, Haotian Li</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-15 14:28:08</h6>
+<p class='card-text'>LLM-powered agents increasingly support open-ended activities, yet orchestrating when and how agents interact with humans remains challenging. Existing approaches often provide interaction mechanisms tied to particular tasks or execution patterns, lacking a unified architecture for diverse and evolving interaction needs. We introduce Inflak, a unified four-layer architecture for human-agent interaction orchestration that separates state reconstruction and routing, interaction and execution planning, interaction design, and interface rendering. Its layered design with progressive resolution enables general applicability, runtime flexibility, module composability, and orchestration maintainability. We implement Inflak as agent-native, skill-based plugins within a general-purpose agent framework and evaluate it through a gallery of various application scenarios and interaction paradigms, technical performance testing, and a comparative implementation case study. The evaluations show that Inflak can serve as a general and extensible foundation for orchestrating diverse human-agent interaction flows.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.21938v1' target='_blank'>Agentic-Priors: Using Large Language Models to Address the Cold Start Problem in Preference Elicitation</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Bruno Arcanjo, Zhaoxing Li, Sebastian Stein</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-15 14:14:04</h6>
+<p class='card-text'>An agent that learns a user's preferences from their choices faces a cold start problem: before any choices are observed, it must rely solely on a prior. Informative priors are usually fitted to historical choice data, which new tasks and deployments lack. To address this, we present Agentic-Priors, which lets agentic systems use the implicit knowledge of large language models (LLMs) instead. Specifically, an LLM states a new user's trade-offs in interpretable terms, such as willingness to pay or value of time, which we map to a prior over multinomial logit coefficients. This prior is then refined by a Bayesian learner as choices are observed. Across seven choice datasets, Agentic-Priors improves cold start accuracy over an uninformed prior by 5-40 percentage points. It also outperforms AutoElicit, a state-of-the-art LLM prior-elicitation method, on three datasets and loses on one. It is up to 18 points more accurate than in-context learning, and never significantly worse. Against hierarchical Bayes models fitted to surveys of increasing size, our approach is worth roughly 6-40 surveyed users, in terms of log-loss, so its value is concentrated in a deployment's first users.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.21914v1' target='_blank'>CodeHealth Predicts the Token Cost of Agentic Code Review: A Pre-Registered Study of 465 Agent-Authored Pull Requests</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Lo Gullstrand Heander, Markus Borg, Emma Söderberg, Christofer Rydenfält</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-15 14:00:33</h6>
+<p class='card-text'>Context: Organizations increasingly delegate code review to multi-agent large language model (LLM) pipelines billed per token. Low code quality raises human maintenance effort, but its effect on agent review cost has not been measured.
+  Objective: We test whether baseline CodeHealth predicts the token cost of agentic review and fix beyond pull request (PR) footprint.
+  Method: In a pre-registered observational study, we sampled 465 agent-authored PRs from 246 repositories in AIDev, jointly stratified by CodeHealth and footprint under repository caps. A frozen five-agent review-and-fix pipeline processed every PR with three different LLMs. Per LLM, we fitted a mixed model of log tokens on CodeHealth and log PR footprint, with a repository random intercept.
+  Results: For all three LLMs the CodeHealth coefficient was negative, with 95% CI excluding zero; each CodeHealth point was associated with 3.5% to 6.1% lower token cost. CodeHealth was unrelated to PR footprint, so PR size does not explain the association. Two of three registered smells predicted fix cost; batch fixing left median CodeHealth unchanged. Exploratory analyses located the association in the review stage, where agents iterated more on unhealthy code without writing more comments. Adjusting for the size of the scored files absorbed the association, which we interpret as mediation by file size.
+  Conclusions: A quality metric calibrated against human maintainability also predicts the inference cost of multi-agent review and fix. The effect is modest per point and not carried by PR size, so the refactoring case extends to agent-reviewed code when it changes structure and file size, not only the score.
+  Data Availability: https://doi.org/10.5281/zenodo.22127920</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.21893v1' target='_blank'>GACC-Bench: Benchmarking Goal-Adaptive Context Compression Ability across Large Language Models</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Weiting Liu, Zhiyu Pan, Shuhong Wang, Zhenquan Yao, Jungang Li, Li Zhao, Jian Jiang, Jianfeng Feng, Ai Han, Wenlian Lu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-15 13:51:56</h6>
+<p class='card-text'>Context compression in long-running applications of large language models (LLMs) must preserve goal-relevant information, often before specific downstream questions are known. We introduce GACC-Bench, a benchmark for Goal-Adaptive Context Compression that evaluates how reliably LLMs adapt information retention to specified high-level goals. For each source context, we derive one or more high-level goals by grouping source-grounded questions according to shared downstream objectives. The benchmark contains 500 goals and 2,571 questions over 281 document and agent-trace contexts from seven collections spanning diverse domains, with all instances reviewed by human experts. The compressor receives a source context, a goal, and a context-length budget, with the associated evaluation questions withheld. A fixed reader answers these questions individually using the same compressed context. Our evaluation of ten LLM compressors reveals substantial gaps to full-context performance even for the best-performing model, particularly in supporting correct answers to every question associated with a goal. Compared with goal-agnostic compression, target-goal conditioning consistently improves accuracy, whereas mismatched-goal conditioning reduces it. GACC-Bench is available at https://github.com/weiting24/GACC-Bench.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.21791v1' target='_blank'>RSIFlow: Adaptive Self-Improvement Workflows with an Evolving Meta-Agent</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Huan Zhang, Mingju Chen, Dongxu Zhou, Can Lv, Sen Cui, Faguo Wu, Shiji Zhou</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-15 12:45:08</h6>
+<p class='card-text'>Large language model (LLM) agents have demonstrated strong capabilities in complex tasks, including code generation, tool use, and multi-hop question answering. Existing self-improvement methods enhance agent performance through model optimization, harness evolution, and executable artifact refinement, while recursive self-improvement (RSI) further extends optimization to the improvement mechanisms themselves. However, adapting self-improvement workflows to evolving performance bottlenecks while improving workflow orchestration through execution feedback remains a key challenge. We propose \textbf{RSIFlow}, a \textbf{R}ecursive \textbf{S}elf-\textbf{I}mprovement framework that integrates adaptive work\textbf{flow} orchestration with meta-agent capability evolution. RSIFlow diagnoses performance bottlenecks from task-agent trajectories and environmental feedback to dynamically select component-specific improvement workflows. The meta-agent then distills workflow outcomes into component-specific skills and cross-component principles, evolving its own harness to improve subsequent workflow orchestration. Experiments across six benchmarks and two backbone models show that RSIFlow achieves the SOTA average performance on all benchmarks. Ablation studies further demonstrate the contributions of adaptive workflow orchestration and meta-harness evolution. Code is available at https://github.com/1HUAN1/RSI-Flow.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.21767v1' target='_blank'>From Research Goals to Scientific Closure: Evaluating Agents Through Evidence-Supported Physics Research</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yijia Mao, Song Dai, Tao Chen, Xiangyu Lu, Linqian Zeng, Chenxi Hu, Sitong Zhou, Dongyang He, Xiaodan Mao, Linxuan Zhang, Tong Zhu, Yafu Li, Fangchen Yu, Peng Ye, Feng He, Yu Cheng, Yun Luo</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-15 12:23:22</h6>
+<p class='card-text'>Can AI agents organize scientific investigations that lead to well-supported conclusions? To evaluate this capability, we introduce PhysClosureBench, a benchmark of 50 expert-verified, goal-specified research tasks spanning strong-field, attosecond, and neighboring physics areas. Each task specifies the research objective and essential scientific constraints, while leaving the agent to organize the investigation and determine how to generate and validate the evidence needed to answer the question. A 20-criterion Atomic Score measures local scientific accomplishment, while Research Closure (RC0--RC4) assesses how fully the investigation resolves the specified research question based on whether its indispensable evidence requirements and applicable scope conditions are satisfied. We evaluate seven frontier LLMs, where Claude-Opus-5 achieves the highest mean Atomic Score (6.29/10) but reaches RC4 in only 32.7% of attempts. Across the benchmark, 36.2% of attempts scoring at least 8/10 still fall short of RC4, while all seven models reach RC4 on substantially fewer tasks in all three runs than in at least one. Case-level analysis further illustrates how misinterpretation of generated results and unresolved physical applicability limits can lead to incomplete closure. Together, these results reveal a persistent gap between AI agents' local scientific accomplishments and their ability to achieve complete research closure.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.21746v1' target='_blank'>The Delegation Dilemma: Economies of Scale, Accountability, and Polycentric Governance</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Arin Mukhopadhyay, Aris Filos-Ratsikas, Panayiotis Danassis</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-15 12:04:16</h6>
+<p class='card-text'>Many collective-action systems are neither fully decentralized nor fully centralized: agents voluntarily organize into institutions that share organizational costs and delegate decisions to representatives. Delegation can reduce individual costs, but it also transfers control to representatives whose private objectives need not align with those of their constituents. We study this tension in a repeated game with endogenous delegation to self-interested centers. A simple reduced-form model yields a scale--accountability tradeoff: larger constituencies offer greater cost-sharing benefits to members, yet the marginal value to a center of retaining any one constituent decreases as group size grows. Consequently, the prospect of individual exit can sustain non-exploitative delegation only up to an endogenous accountable constituency size. Additionally, we identify parameter regions in which fully delegated, accountable governance, when feasible, must be polycentric. We investigate these predictions through simulations with large language model (LLM) agents. Across five matched pairs of 30-agent simulations, polycentric structures repeatedly emerge but remain fluid, exhibiting cycles of concentration, exploitation, exit, and re-formation. We further find that models of different capacity exhibit similar willingness to assume leadership but differ substantially in their exercise of authority, with Sol initiating exploitation more frequently than Luna in matched decision states.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.21711v1' target='_blank'>How language model agents reshape price competition</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Martin Bichler, Philip Hierhager, Kassian Köck, Fabian Pieroth</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-15 11:32:32</h6>
+<p class='card-text'>Repeated Bertrand competition is a stringent benchmark for algorithmic pricing: in homogeneous-goods markets, standard learning procedures typically select the stage-game Nash outcome with prices near marginal cost. We show that LLM pricing agents can escape this benchmark, depending on deployment decisions. LLMs outperform standard online learners through faster adaptation, but this advantage largely disappears against full-information learners. An extracted surrogate algorithm illustrates how LLMs in specific deployments profit from regularly undercutting slower learners. Agents that post one price every period from raw market histories that include rival prices can sustain supracompetitive regimes in self-play. Agents that periodically emit probability distributions from summarized histories of their own profits instead move toward the competitive region in self-play. Markets mixing these interfaces can generate dynamic regimes in which LLMs establish a high-price anchor and regularly undercut it to capture demand. These regimes can keep both competitors' prices above marginal cost. Deployment choices shape these outcomes, shifting the focus from stationary equilibria to dynamic pricing regimes.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.21708v1' target='_blank'>Human Interventions as Labels: Localizing, Steering, and (Sometimes) Editing the Computations Behind LLM Agent Failures</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Cesare Zavattari, Alessandro Tommasi, Giuseppe Prencipe</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-15 11:27:19</h6>
+<p class='card-text'>When an LLM agent misbehaves, a human steps in, and that intervention is usually discarded or replayed as training data. We treat it instead as a measurement: a label pointing at the internal computation that failed. We study it in a controlled agent environment, on one failure (asking a clarifying question when the request was already unambiguous), with labels from a rule-based overseer validated against blind human judgment. Claims cover eligible models, which both over-ask and sometimes act on matched unambiguous requests: five of thirteen qualified (Qwen2.5-3B, gemma-2-2b, OLMo-3-7B, Mistral-Nemo-12B, Phi-4). Four findings. First, the ask-vs-act decision is causally localizable in every eligible family: a direction learned from intervention labels flips 72-100% of held-out over-asks at a definite residual-stream depth, with site and dose chosen on training data, and random directions under the same procedure flip at most one episode. Second, over-asking has two mechanistic signatures: in four families the model demonstrably knows the request is unambiguous (the belief is decodable, causally inert and orthogonal to the decision) and asks anyway; in the fifth, the rare over-asks track different world-representations. Third, steering gated on a probe readout removes most of the simulated oversight burden while legitimate questions survive (bootstrap 95% intervals exclude zero); a prompt instruction makes it worse. Fourth, consolidating the fix into the weights yields a map, not a rule: on one model a LoRA confined to the causal band passes every criterion fixed in advance while behavior cloning on identical data breaks retention; on three families the reverse holds; on the fifth the outcome crosses the boundary across seeds. A geometric rule written down in advance to predict the regime failed on two out-of-family tests; we report the failure and stop rather than fit a replacement.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.21640v1' target='_blank'>ReFlow: Replay-Driven Decoupling for Efficient RL Post-Training</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yukun Tian, Junwei Su, Haofeng Xu, Lansong Diao, Zhengping Qian, Weibo Zhao, Wenchao Zhou, Ruiting Zhou, Chuan Wu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-15 10:21:41</h6>
+<p class='card-text'>Reinforcement learning (RL) has been a critical paradigm for improving large language model (LLM) reasoning and agentic capabilities, but its efficiency remains a major bottleneck. Existing RL systems commonly rely on asynchronous execution to overlap rollout generation with policy optimization for enhanced efficiency. However, this approach faces inherent limitations: mild policy staleness offers only limited training efficiency gains, whereas aggressive asynchrony can degrade model quality and yields diminishing efficiency gains. The dynamic nature of LLM RL and multi-turn agentic workloads further challenges RL system design, as resource demands shift over time, making static resource allocation and generation strategy inefficient.
+  This paper presents ReFlow, a system-algorithm co-designed RL framework for efficient LLM post-training. Its key insight is that, unlike existing RL frameworks which consume each trajectory only once, experience replay of recent trajectories enables effective sample reuse, thereby amortizing the high cost of rollout generation without incurring excessive policy staleness. To fully exploit this opportunity, ReFlow adopts a decoupled and adaptive architecture with three key designs: a dual replay data cycle supports efficient experience reuse while balancing training throughput and optimization stability; an elastic resource pool enables dynamic resource placement to accommodate evolving RL workloads; an adaptive scheduler coordinates generation strategies and resource allocation to improve resource utilization and boost generation throughput. Experiments across representative single-turn reasoning and multi-turn agentic RL tasks show that ReFlow improves training throughput by up to $2.06\times$ over state-of-the-art synchronous and asynchronous RL systems, while maintaining comparable or better model performance.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.21624v1' target='_blank'>AgentPerturb: Evaluating LLM Agent Robustness under Controlled Interaction Perturbations</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yuanjian Xu, Jinyi Han, Jianing Hao, Yuxuan Sun, Fanyang Lu, Richeng Xuan, Guang Zhang, Zhichao Hu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-15 10:05:54</h6>
+<p class='card-text'>Real-world tasks are often complex and noisy, posing substantial challenges for LLM agents. Yet existing evaluations lack a systematic framework for jointly characterizing potential perturbation targets and types. We use this two-dimensional view to conduct a unified study that quantifies the robustness of current frontier models, traces the mechanisms behind perturbation-induced failures, and draws implications for robustness-oriented training. Through controlled evaluations on APEX-Agents and Toolathlon, we find that perturbations consistently degrade performance, while the dominant vulnerabilities vary across task environments. Trajectory-level analysis reveals that agents rarely recognize altered inputs and often propagate corrupted information without verification. A focused cost analysis further shows that successful perturbed trajectories can require substantially more computation. These findings motivate training objectives that cover diverse forms of noise and reward verification, uncertainty awareness, and recovery. We provide a rigorous benchmark-construction pipeline. Code and data will be released at https://github.com/xuyj233/AgentPerturb.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.21604v1' target='_blank'>Evaluating Inquiry Learning in LLM-Based Agents: Hypothesizing, Reasoning, and Exploration</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Marta Knežević, Seyed Parsa Neshaei, Jibril Frej, Vinitra Swamy, Tanja Käser</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-15 09:52:14</h6>
+<p class='card-text'>Scientific inquiry involves iterative cycles of exploration, hypothesis generation, and reasoning over observations to uncover relationships in complex systems. Large language models (LLMs) have demonstrated strong capabilities in several components of this process, including inductive reasoning, hypothesis generation, and data analysis. However, prior work typically evaluates these abilities in isolation, leaving open how models integrate them across a full inquiry cycle. In this work, we introduce a framework for evaluating LLMs' inquiry capabilities in a unified, interactive setting. We extend the Countdown task to a mathematical environment where an agent probes the system by manipulating variables, collecting observations, and inferring relationships between them. This setup enables analysis of exploration strategies, causal discovery, and hypothesis refinement during inquiry. Across seven LLMs and multiple prompting strategies, our experiments reveal limited inherent inquiry capabilities and low success rates in discovering the underlying expressions. However, structured guidance inspired by educational scaffolding significantly improves performance. Our findings highlight current limitations of LLMs in strategic exploration and iterative hypothesis refinement, and show how simple guidance strategies developed for human learners in inquiry learning can support more effective inquiry behavior.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.21571v1' target='_blank'>Rethinking the Role of Tool Graph Memory in Multi-Turn Tool Use</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Uiji Hwang, Richeng Xuan, Taeuk Kim</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-15 09:24:30</h6>
+<p class='card-text'>Large language model (LLM) agents solve complex tasks by calling external tools over multiple turns. Recent work has proposed tool graph memory, which stores past experience as tool transitions to guide subsequent selection. However, it remains unclear whether this component consistently improves agents' tool use or undermines it. We evaluate tool graph memory on nine models and two benchmarks, finding that it seldom improves significantly over baselines, and that its gains, where present, cost over twice the LLM calls. The memory's guidance is often incorrect, and random or no guidance retains most of the gain, implying that the benefit stems from extra computation rather than the memory itself. Moreover, even with the correct next tool suggested, many failures remain, such as giving up without a tool call. Storing the same experience instead as textual insights outperforms tool graph memory with almost no extra LLM calls. This suggests that memory serves better as a soft prior than as a prescription of the next tool, leading to a more effective and generalizable solution.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.21570v1' target='_blank'>Independent Data-Integrity Verification for LLM-Driven Functional Coverage Closure in Hardware Design</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Venkata Krishna Kumar Vedantam</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-15 09:24:01</h6>
+<p class='card-text'>LLM agents can write directed tests that close functional coverage, but coverage only shows that a state was reached, not that the data on the way there was correct. This is a long-known point in verification and we do not claim it as new. We describe a small coverage-closure agent that applies it to an LLM loop: coverage is read from the report that the simulation itself exports (cocotb-coverage YAML) and never taken from the model's account, and data integrity is checked by scoreboards that are separate from the model. On three architecturally distinct RTL designs (an asynchronous FIFO, a UART transmitter and an AHB2APB bridge) the agent raised coverage from 91.7%, 88.9% and 67.4% to 100% within its 8-iteration budget in every logged run, using one design-agnostic agent. A reactive scoreboard monitor attached to the FIFO's base testbench also found a clock-domain-crossing bug in the author's own stimulus code. The monitor is not yet attached to the LLM-generated tests, so their data integrity is not independently checked; one manual check on a single FIFO test is reported as preliminary. We list the weaknesses of this evidence: three designs, no baseline, no ablation, and logged runs that come from several agent checkpoints.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.21561v1' target='_blank'>DialFork: Going Beyond Factuality to Evaluate Procedural Hallucination in Conversational Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Sergio Burdisso, Esaú Villatoro-Tello, Dairazalia Sánchez-Cortés, Yanis Labrak, Jordi Luque, Milos Cernak, Petr Motlicek</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-15 09:18:32</h6>
+<p class='card-text'>Large language models (LLMs) deployed as conversational agents are increasingly expected to follow procedural logic. While factual hallucination has received extensive attention, a different failure mode has been overlooked: procedural hallucination, in which an agent produces individually fluent and factually plausible utterances while deviating from the intended conversational process. We introduce DialFork, the first benchmark to measure this failure mode on raw dialogue text. DialFork is built by forking conformant dialogues at controlled turn positions and injecting one of four hallucination types, yielding 36,278 dialogues across 24 tasks in 12 domains; 30 human annotators validate the construction. We define three evaluation tasks that characterize procedural deviation at three granularities: how far a set of dialogues deviates from conformant ones (monitoring deployed agents), how far a single dialogue does (procedural retrieval), and at which turn a dialogue first goes off-track (real-time guardrails). For the first two, we propose dialog-flow-aware metrics, FlowKL and FlowScore, that compare dialogues by how they unfold rather than their content. At the dialogue level, FlowScore significantly outperforms all baselines across seven encoders, showing that semantic similarity is no substitute for procedural similarity. We release DialFork under the MIT license at https://github.com/idiap/dialfork, hoping the community will measure conversational process alongside content.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.21514v1' target='_blank'>Poison Valleys: Diagnosing Path-Dependent Failure in LLM Code Repair</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Veljko Skarich</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-15 08:49:49</h6>
+<p class='card-text'>When code-repair agents fail, final tests reveal that a patch is wrong but not which earlier commitment caused it or which software obligation failed. Poison Valleys traces this path in 1,844 model requests on two synthetic Python cases: PersistQueue adds atomic batch claiming to a disk-backed queue, while Dijkstra adds source-sensitive filtering to shortest-path search. We define plausible but incorrect software mechanisms, place each in a model's hypothesis, implementation plan, or both, and evaluate the generated code with an Oracle and targeted diagnostic coordinates. Moving the misconception from hypothesis to plan increased failure by 32.2% in PersistQueue and 28.9% in Dijkstra after matching the experimental mix. Different misconceptions produced distinct, model-dependent patterns of violated obligations, although several could converge on the same behavior. This creates a measured connection from upstream misconception to code mechanism and failure form. Code, data, and demo: https://poisonvalleys.org.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.21502v1' target='_blank'>ISW-Agent: Integrating LLM-Driven Dialogue with n8n Workflow for Internal Solitary Wave Remote Sensing Image Processing</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Hao Zhang, Hengrui Liu, Lina Sun, Junmin Meng</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-15 08:38:23</h6>
+<p class='card-text'>Internal solitary wave (ISW) remote sensing requires task parameters and spatial information to be transferred across image acquisition, detection, stripe extraction, and propagation prediction. Here, we present ISW-Agent, which integrates large language model (LLM) interpretation with n8n workflows and independent scientific models through structured task constraints, geospatial transformations, and stage-specific output validation. In tests of 120 Chinese instructions per backend, GPT-5.6 Sol and DeepSeek both achieved a strict task-match rate of 94.2%, with all intents and execution decisions matching the reference. Sentinel-1 cases demonstrated continuous processing from dialogue requests to wavefront prediction for the specified scene. Of 50 timed scenes, 39 completed detection, extraction, and prediction with a median turnaround time of 48.04 s; 11 stopped after empty extraction. Across 3,408 controlled fault-injection runs, retries recovered 234 transient-failure conditions and output validation rejected 234 structural defects, while 61 provenance or completeness errors indicated the need for content-consistency checks. Overall, ISW-Agent thus connects natural-language requests to traceable spatial processing chains for multimodel ISW analysis.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.21458v1' target='_blank'>What Survives Self-Evolution: Provenance Marks in Copied Agent Harnesses</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Jieyu Li, Jingya Li, Sheng Li, Xinpeng Zhang, Zhenxing Qian</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-15 08:03:10</h6>
+<p class='card-text'>Agent harnesses, the prompt and tool code around a base model, leak. Claude Code's 512,000 lines were mirrored within hours of a packaging error. A plagiarist can pass a leaked harness through a published self-evolver and ship the result as its own. We define this as a covert rewriting attack. No one targets a provenance mark, yet a large language model (LLM) proposer rewrites the file that carries it and a score keeps the better rewrites. We give the first measurement of marks under this attack, with three evolvers, five proposers and two environments. Published marks fail. KGW in the prompt survives GEPA's rewrites in 0 of 12 copies, AgentMark as released in 5 of 12. The proposer's habits decide survival, by two orders of magnitude across models, and selection protects a mark only when each decision sees enough games. We then build a mark for this attack. Its key is the order of near-tied entries of a table of where objects are found, built from public games, so deleting the table costs success, rewrites that keep its rows keep the order, and a customer reads the key from the agent's actions alone. On held-out games it is detected in 62 of 76 copies whose lineage rewrote its file. A scheme-aware plagiarist reshuffles the ties at no measurable cost, and a plagiarist who asks the proposer for more general code removes the key in 75-100% of rewrites.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.21449v1' target='_blank'>Incentivizing Tool-Use Reinforcement Learning for Post-Arrival Emergency Care Prediction</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Pengfei Hu, Chenwei Wu, Qiao Jin, Jun Deng, Zhiyong Lu, Liyue Shen, Yue Ning</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-15 07:53:54</h6>
+<p class='card-text'>Large language models (LLMs) can reason over both structured measurements and free-text records, which makes them attractive for emergency department (ED) prediction. However, most existing LLMs still fall short of conventional ML methods like trees on EHR-based prediction tasks. Our controlled analysis traces this gap to two weaknesses: LLMs do not select informative features, and they misjudge what numerical values imply for risk even when given the right features. We propose TIR-EC, a tool-integrated reinforcement learning framework that addresses both. TIR-EC exposes EHR feature groups as tools the LLM can call. It trains the LLM with rewards from a gradient-boosted tree teacher, which provides a reference set of informative tools and a graded risk target. TIR-EC also distills task-specific clinical skills into the model weights through a reverse curriculum that gradually removes the skills from the prompt during RL process. Evaluation on three clinical prediction tasks shows that our 4B agent achieves the highest macro F1 of all compared models, outperforms conventional ML baselines, and is competitive with much larger frontier LLMs. Further analysis shows that TIR-EC selects more useful evidence with fewer tool calls and combines measurements more effectively.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js'></script>
+</body>
+</html>
