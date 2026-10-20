@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<title>LLM-planning - 2026-10-20</title>
+<link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap' rel='stylesheet'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'>
+<style>
+body {
+font-family: 'Roboto', sans-serif;
+background-color: #f5f7fa;
+padding: 20px;
+}
+.card {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.card-title {
+    font-weight: 700;
+}
+.card:hover {
+    transform: scale(1.02);
+    transition: 0.3s ease-in-out;
+}
+</style>
+</head>
+<body>
+<div class='container'>
+<h1 class='text-center my-4'><i class='fas fa-book'></i>LLM-planning - 2026-10-20</h1>
+<div class='row'>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.26770v1' target='_blank'>HarnessPro: Recursive Harness Self-Improvement with Pareto Optimization for Performance-Cost Trade-offs</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Zhuoshi Pan, ZhiYuan Feng, Yukuo Cen, Honglin Lin, Junru Lu, Zhongxia Chen, Shuo Yang, H. Vicky Zhao, Jie Tang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-19 17:27:38</h6>
+<p class='card-text'>Harness development plays a crucial role in building capable AI agents. Recent approaches improve harnesses through recursive self-improvement (RSI), but their performance gains often come with higher execution costs. We introduce HarnessPro, a label-free method for evolving harnesses to improve task performance while reducing execution cost. In this setting, candidate harnesses are evaluated using LLM-generated tests without access to ground-truth solutions or official tests. Specialized agents diagnose execution trajectories, plan updates with different performance-cost priorities, and implement them as candidate harnesses. Rather than returning a single harness, HarnessPro uses normalized weighted squared-distance selection to provide cost-focused (lite), balanced (medium), and performance-focused (heavy) harnesses for different deployment budgets. Selected harnesses enter the next iteration, where execution feedback guides further updates. Our experiments cover Terminal-Bench 2, SWE-Bench Pro, and ProgramBench, using GPT-5.5 with Codex and GLM-5.2 with Claude Code. Across these benchmarks using GPT-5.5 with Codex, the heavy mode of HarnessPro achieves an average pass-rate gain of 2.0 percentage points and an average per-task cost reduction of 26.1% relative to RHO. This advantage also holds when using GLM-5.2 with Claude Code. Code is available at https://github.com/pzs19/HarnessPro</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.26359v1' target='_blank'>Discovery-Probability Graph Planning for Embodied Agents in Tasks with Hidden Cooperation Requirements</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Zihuang Cai, Changjian Chen, Zhuo Tang, Chang Tang, Kenli Li</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-19 13:20:42</h6>
+<p class='card-text'>Embodied agents are increasingly capable of perceiving, planning, and acting autonomously in dynamic environments, demonstrating strong performance on complex cooperative tasks. Recent advances typically assume that cooperative tasks are known in advance. In real-world applications, however, hidden-cooperation tasks are more common: the need for cooperation only becomes apparent after an agent observes and interacts with task-related targets. In this paper, we first present HiddenCoop, a benchmark for effectively evaluating agent cooperation in hidden-cooperation tasks. We further propose Discovery-Probability Graph Planning (DPGP), a method for enabling effective agent cooperation in such tasks. At the core of DPGP is a discovery-probability graph that encodes the probability distribution over the number and locations of task-related targets, facilitating effective and efficient information exchange among agents. A search algorithm is then used to derive action plans that minimize expected costs. Experiments show that DPGP achieves cooperative-task success rates of 99.3% on C-WAH and 58.3% on TDW-MAT, surpassing all compared baselines, while also reducing overall embodied execution time and substantially lowering LLM token usage. Our code is available at https://github.com/hnu-vis/DPGP.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.25985v1' target='_blank'>NIOCIS: Typed-Decision Next-Hop Routing with Node-Conditioned Option Spaces for Tool-Use Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Jin Han, Mingfeng Xin, Feng Liang, Jingtao Yu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-19 08:10:26</h6>
+<p class='card-text'>Tool-use agents pay per decision: at each hop a language model re-reads the state and thinks for seconds, though its actions are finite and decisions recur. We present NIOCIS, a routing layer that folds execution logs into a loop-collapsed action graph (forward transitions plus recovery back-edges) answering one typed question: which declared option at a state, plus stop, does the fleet take next? A small model reads a calibrated distribution over them in one pass, emitting no text. On 1,615 production security-operations episodes we measure what the layer replaces, returns and is bounded by. Replaces: the typed encoder matches the logged next hop on 32.2% of the 3,875 held-out decisions (34.9% within the declared options) in 10 ms of encoder time (19.5 ms for the typed-choice form), against 2.2 s per LLM hop; two feature readouts reach 32.8% and 32.3%, an ordering the paired test does not resolve, so the typed layer is chosen for cost, not a separated lead. Tuning: jpt-4b reaches 9.9% zero-shot and 31.9% fine-tuned, a gap an exact paired test does not resolve (p=0.68), at 244 ms. Returns little: the realised hop falls outside the declared options for 7.9% of decisions and outside the model's top twenty for 9.3%; the most confident 15% holds 91.9% accuracy. Bounded: a cross-trace leave-one-out test puts the released state's ceiling at 25.6--44.9% as the state key grows more specific, i.e. repeated states disagree more often than they agree; the option-space ablation attributes the gain to per-node candidate restriction (+3.5 points over a flat catalog) rather than graph traversal (zero within its interval); a gated self-evolution loop lifts every arm above its anchor yet ends below full supervision; a confidence-gated cascade loses agreement when the escalation arm is the zero-shot stand-in; and agreement past a third of the fleet needs a state carrying the plan and the observation.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.25930v1' target='_blank'>TESS: LLM-guided Translation, Exploration, Simulation, and Search for Embodied Task Planning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Peiran Xu, Yixiang Yang, Jinghan Li, Fei Li, Cao Sheng, JiaZhong Yu, Yadong Mu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-19 07:27:23</h6>
+<p class='card-text'>In this work we focus on the problem of embodied task planning, which requires an agent to accomplish a complex task by separating it into atomic actions. Recent studies have developed LLM-based methods to address this problem. However, the executability and correctness of the generated plans remain suboptimal in complex environments and tasks. On the other hand, classical search algorithms have the potential to solve the planning problems perfectly, yet they require fully observable environments, known state transitions and goal state, which are often unattainable in general task domains. Therefore, we propose to implement an LLM-guided search algorithm that makes the search process possible and efficient by incorporating LLMs' commonsense knowledge. Our method leverages LLMs to (1) translate natural language instructions into formatted goal conditions, (2) facilitate efficient exploration in partially observable environments, (3) implement a rule-based world simulator, and (4) prune the space of candidate actions to improve search efficiency. Experimental results on VirtualHome and ALFWorld demonstrate its superior performance.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.25920v1' target='_blank'>Maestro: Agentic Formal Proof Development by Coordination</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Haoyu Li, Zeren Shui, Yuhao Zhang, Ferhat Erata, Benjamin Mikek, Murali Krishna Ramanathan, Hao Zhou</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-19 07:21:10</h6>
+<p class='card-text'>Lean is increasingly used to verify mathematical proofs and software produced by LLM agents, but writing formal proofs remains hard. Existing prover systems take a divide-and-conquer approach that recursively decomposes hard proof obligations into easier lemmas and splits again any lemma that resists proof. However, a lemma can resist proof for different reasons, including insufficient guidance, a false statement, or a flaw in the decomposition that produced it. Existing systems cannot tell these apart as a failed attempt reports little beyond its failure, and responses are confined to the failing node without considering the rest of the proof or revising the plan above it. The system may thus keep decomposing obligations along a flawed proof direction until the budget runs out, causing the whole proof attempt to fail. We introduce Maestro, a Lean prover harness that handles failures through global coordination. Provers report why they failed, not just that they failed, and a coordinator that sees the whole proof chooses an appropriate response, such as guiding a stuck prover, correcting a false lemma, or retracting a flawed subtree and replanning it. The same harness extends to verified code synthesis, where a checked counterexample sends the code back for repair. We evaluate Maestro with four frontier LLMs on seven mathematics and three software verification benchmarks. It proves more targets than each model's native coding agent (Claude Code or Codex) on every benchmark the agent has not already saturated, with the largest gains on research-level mathematics. With Claude Opus 5, it discovers its own proofs of 34 of the 48 theorems in the June 2026 release of arXivLean, against 19 for the native agent. It also outperforms all published prover systems on every benchmark they share, solving 669/672 PutnamBench, 59/60 Lean-IMO-Bench, and 6/6 IMO 2026.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.25659v1' target='_blank'>Beyond Leaderboards: A Method for Application-Specific Capability Profiling of Large Language Models</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Oleg Grynets, Vasyl Lyashkevych, Andrii Salyk, Dmytro Koziuberda, Dmytro Kostetskyi, Oleh Kaskun, Olena Pochernina, Alona Seletska, Oleksii Ilchuk, Viktoriia Tsymbal, Daryna Tukalo, Bohdan Saukh, Ivan Fedorchuk, Hryhorii Petrenko</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-19 02:05:58</h6>
+<p class='card-text'>Public leaderboards rank large language models (LLMs) in general, but an engineer has to choose a model for a specific application, architecture and cost. This paper presents a method for application-specific capability profiling of LLMs and its realization as a containerized testbed. The method treats each application as a unit of extension: an Oracle-to-PostgreSQL migration agent, a documentation-grounded chatbot or an enterprise-support automation agent runs in its own container behind a small contract, brings its own dataset, evaluator and owned attributes, and is onboarded together with its dashboards. Measurements accumulate in a versioned, sparse metamodel of every model. The method separates the model under test from judges and agents, freezes and hashes plans, refuses to compare values from different contexts, diagnoses the instrument before the system, and applies a null-agent check and a noise rule whose operating characteristics are quantified by simulation. In the evaluated automation conditions, model choices produced larger differences on selected observable outcomes than framework choices, although the experimental design does not establish a general causal ranking of these factors. The experiments also show that instruction tuning is deployment-specific and that system-reported success can exceed independently observed success: of 216 migration units checked against a real Oracle database, 108 were demonstrably correct. These measurements establish application-specific observations, not a universal model ranking.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.25649v1' target='_blank'>InteractAgent: Agentic Human Motion Interaction with Memory-Augmented Reflection</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Tao Zhang, Senhe Zhang, Zeyu Zhang, Yujia Zhang, Dong Gong</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-19 01:51:14</h6>
+<p class='card-text'>Long-horizon human-scene interaction requires coordinated spatial reasoning, physical feasibility, and the ability to recover from compounding execution errors. Text-driven motion models are largely scene-agnostic and lack closed-loop correction, while geometry-conditioned approaches depend on paired scene-motion training or explicit 3D preprocessing that limits generalization to novel layouts and open-vocabulary goals. We present InteractAgent, an agentic multimodal LLM system for long-horizon human-scene interaction that plans, executes, observes, and reflects in a closed loop, using a single MLLM as both planner and evaluator and a frozen MotionLLM as the executor. InteractAgent integrates Online Observation for step-wise recovery decisions (continue/redo/replan) and Memory-Augmented Reflection for multi-round plan refinement with adaptive stopping. On UniHSI, InteractAgent improves task success and reduces penetration compared with training-free baselines. Code: https://github.com/AIGeeksGroup/InteractAgent.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.25601v1' target='_blank'>Step-Aligned Script Generation with Verification and Recovery for Web Automation Testing</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Hridya Dhulipala, Xiaokai Rong, Aashish Yadavally, Tien N. Nguyen</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-19 00:07:30</h6>
+<p class='card-text'>Automated generation of end-to-end web tests remains costly: developers must identify stable selectors, encode multi-step workflows, attach assertions, and maintain scripts as interfaces evolve. Recent LLM-based web agents can complete natural-language tasks in a live browser session, but task completion is not the same as producing a test-ware artifact - code that is executable, replay-able from a reset state, inspectable by developers, and tied to an oracle. We present TESSARA, an adaptive test-script generation framework that converts natural-language test intent into Playwright scripts consisting of executable interaction code, goal-state assertions, and step-level provenance linking each step to its generated code fragment, selector evidence, execution outcome, and repair history. TESSARA grounds each planned step via Step-Aligned Scripting (SAS), enabling fine-grained failure localization, selective regeneration of failing suffixes, and reversibility-aware backtracking that avoids undoing likely commit points (e.g., form submissions). A three-level verification pipeline (syntactic, execution, and semantic/oracle), detects and repairs malformed code, interaction failures, and incorrect landing states. We evaluate TESSARA on three public web benchmarks, measuring script executability, oracle satisfaction, replay stability, and repair efficiency, and show substantial improvements over baselines and underlying VLMs used directly as script generators.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.25563v1' target='_blank'>Learning Which Device to Call: Online Tool Grounding for LLM Agents in IoT</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yichen Liu, Xiaochong Jiang, Haoran Yu, Lifei Liu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-18 21:58:22</h6>
+<p class='card-text'>The Internet of Things (IoT) gives large language model (LLM) agents access to physical observations, but one requested capability is usually offered by several devices, and the agent's plan does not say which one to call. Existing work retrieves relevant tools and checks plan feasibility, without learning which eligible device returns a useful observation. Unlike previous works, we study online tool grounding: binding an already specified tool call to one physical endpoint under service cost and device participation constraints. We propose a framework that learns which physical device should execute each agent-issued call. It formulates selection as a contextual bandit problem and combines adaptive context partitions with hierarchical endpoint trees, so that execution feedback is reused across related requests and devices. Selection balances task success against service cost while respecting device capability, authorization, battery reserves, and availability. Gaussian reward aggregation provides an optional mechanism for protecting individual feedback values. Theoretical results establish a finite-horizon regret bound and differential privacy for released reward statistics under fixed, reward-independent assignments. In a simulated loading-dock workload, the proposed router achieves higher step success and better cost-adjusted service, at lower simulated device energy and latency, than nearest-device, advertised-quality, UCB1, and LinUCB selection.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.25372v1' target='_blank'>SEAL: Towards Persistent Tool Poisoning Attack against LLM Agents via Prefix-Eliciting Trigger</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Nanjun Zhou, Yiming Li, Yukun Chen, Ting Qiao, Enhao Huang, Zhan Qin</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-18 16:23:17</h6>
+<p class='card-text'>Tool poisoning has emerged as a critical security threat to LLM agents, where adversaries embed malicious instructions in tool descriptions or external resources that enter the agent's context, allowing adversaries to manipulate agent's tool selection process. However, existing tool poisoning attacks primarily rely on an idealized assumption that the attacks task effect within a single interaction round. We show that their effectiveness degrades sharply in realistic multi-round agentic settings. We further reveal that this degradation stems from the fact that agents do not consistently surface attack-relevant signals in their reasoning as the planning context evolves, thereby weakening the attack's influence across rounds. To investigate whether tool poisoning remains a practical threat in such realistic settings, we propose SEAL, a two-stage method for persistent tool poisoning. Specifically, SEAL first performs Prefix-Eliciting Trigger Optimization (PETO) to optimize context-specific triggers that elicit attack-relevant reasoning prefixes, improving effectiveness within individual contexts. It then applies Local-to-Universal Trigger Aggregation (L2U) to combine these local triggers into a single universal trigger, improving generalization across different contexts and execution rounds. Extensive experiments across seven representative multi-round scenarios and different models demonstrate the attack effectiveness of SEAL, its transferability across target models, and its resistance to potential defenses.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.25096v1' target='_blank'>Toward Agentic Retrieval-Augmented Generation for Enterprise Retail Workflows over Heterogeneous Data Sources</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Jeonghwan Choi, Jibin Hwang, Hayoon Park, Hyeonjae Cheon, Hwanjun Song</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-18 08:15:12</h6>
+<p class='card-text'>Enterprise retail workflows require agents to chain evidence across heterogeneous sources, from structured product and order records to unstructured inquiries and reviews, yet existing agentic RAG benchmarks rarely capture this challenge. To enable controlled evaluation of such workflows, we introduce RetailBridge, a compositional retail benchmark built from persona-driven simulations. Its questions are constructed by linking entities and intermediate answers across heterogeneous sources, requiring agents to identify the relevant sources, carry evidence between them, and produce a grounded answer. To systematically evaluate LLMs on these retail workflows, we develop RetailRAG, a retail-aware framework equipped with auto-schema briefing, source-routed plan chaining, and diagnostic plan revision. RetailRAG consistently outperforms existing agentic RAG baselines across all evaluation axes, serving as a strong reference system for assessing LLM agents on retail workflows. On RetailBridge, evaluating ten LLM backbones with RetailRAG reveals multi-source chaining as the dominant bottleneck across providers and model scales, suggesting that reliable retail agents require explicit cross-source orchestration rather than scaling alone. Code and data are publicly available at \url{https://github.com/DISL-Lab/RetailBridge}.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.25012v1' target='_blank'>Conjugate Compilation: Self-Improving Agentic Co-Compilation for Speculative Decoding</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Annabelle Sujun Tang, Rohan Mahapatra, Christopher Priebe, Hanyang Xu, Manya Ghobadi, Christopher Rossbach, Hadi Esmaeilzadeh</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-18 04:46:51</h6>
+<p class='card-text'>As LLM adoption surges, scaling model serving requires unlocking stranded GPU capacity alongside deploying more GPUs. Speculative decoding brings two models into the serving process: a small draft model proposes tokens that a larger target model verifies. Yet compiling these models individually leaves their shared execution outside the compiler's optimization boundary. We introduce CONJUGATE COMPILATION, which reframes speculative decoding as a cross-model compilation problem and jointly optimizes the draft and target models within their shared execution rather than treating each in isolation. Our key insight is that cross-model compilation should be informed by the measured performance of the co-located shared execution it produces: an optimization that improves a kernel in isolation need not improve the models when they execute together. To expand cross-model opportunities, we devise operand layouts that interleave blocks from both models within common tiles, co-locating GEMM and non-GEMM work while preserving their mathematics. We realize CONJUGATE COMPILATION through a self-improving agentic search system in which an LLM edits cross-model optimization plans using the compiler and GPU execution as its environment. Each proposed plan is compiled and evaluated through its co-located shared execution, whose measured score, together with kernel-level verdicts and compiler feedback, informs subsequent proposals, while Monte Carlo tree search accumulates rewards to guide exploration. Across six single-GPU speculative-decoding configurations on NVIDIA B300 and RTX 5090 GPUs, CONJUGATE COMPILATION achieves a geometric-mean per-round speedup of 1.37x over conventional execution. Interleaved kernels raise this speedup to 1.45x, reaching 1.59x in the best case. CONJUGATE COMPILATION also improves GPU utilization on average by 1.46x on RTX 5090 and 1.50x on B300.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.24930v1' target='_blank'>TrustAgent-RFF: Agentic Diagnostic Planning for Reliable RF Fingerprinting under Domain Shift</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Chuan Liu, Tianya Zhao, Xuyu Wang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-18 00:56:39</h6>
+<p class='card-text'>Radio frequency fingerprinting (RFF) models can achieve accuracy under source domain conditions but become unreliable when the receiver, distance, collection day, or environment changes. Incorrect predictions in unseen domains may receive high softmax confidence, making confidence thresholding insufficient for trustworthy deployment. We propose TrustAgent-RFF, a prediction level reliability framework for RFF that operates with a frozen in-phase and quadrature (I/Q) classifier without target domain labels. For each device prediction, the framework acquires radio frequency evidence: counterfactual stability, prototype consistency, acquisition domain similarity, and signal quality. A source calibrated trust estimator combines these diagnostics with classifier confidence, prediction margin, and evidence availability indicators. Source derived lower tail penalties and cross module interactions reduce trust when diagnostic signals indicate weak support. A large language model (LLM) based planner adaptively selects the next diagnostic action based on evidence, trust state, action costs, and remaining budget. A deterministic source calibrated decision layer updates the prediction state as Accept, Reject, or Defer. Experiments across five RFF datasets and classifier backbones reveal an average source to target accuracy drop of 38.7% and show that many incorrect target domain predictions remain highly confident.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.24928v1' target='_blank'>Means-Ends Analysis Helps LLMs Plan in Continuous-State Domains</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Jiayi Li, Carl Kingsford</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-18 00:43:18</h6>
+<p class='card-text'>LLM planning research has traditionally focused on discrete-state domains, where actions form a finite, enumerable set. Existing LLM planning frameworks largely assume actions are enumerable, modeling planning as a search process over candidate actions. However, in continuous-state domains, where actions form a continuum and cannot be enumerated, this assumption breaks down. We find a remedy in Newell and Simon's Means-Ends Analysis (MEA), a general problem-solving technique rooted in heuristics from human psychology. We develop Medaka, an MEA-inspired structured prompting framework that encourages recursive goal decomposition, algebraic derivation, and per-step state tracking. To evaluate native LLM planning abilities in continuous-state domains, we develop Liquidworld, a systematic testbed on liquid mixing. On Liquidworld, Medaka can improve performance across model families, suggesting that classical means-ends analysis elicits LLM-native reasoning abilities that are helpful for continuous-state planning.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.24855v1' target='_blank'>LLM-Based Evaluation Planning for Heterogeneous Optimization</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Nian Ran, Sebastian Brulin, Markus Olhofer, Mauricio A. Álvarez, Richard Allmendinger</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-17 20:05:30</h6>
+<p class='card-text'>Heterogeneous optimization problems require an optimizer to decide not only which candidate solutions to evaluate, but also which objectives and constraints should be evaluated under different costs and fidelities. Existing SOTA methods such as MFE-NSGA-III address this setting with manually designed selection metrics, but their behavior is largely determined by predefined heuristic rules and hyperparameters. In this work, we propose REP-HO, a reasoning-based evaluation planner that replaces the rule-based mixed-fidelity selection step with a large language model (LLM) planner. The LLM receives the same primitive optimization-state information as the heuristic planner, such as surrogate predictions, uncertainties, evaluation costs, and budget status. We first show that REP-HO achieves competitive performance compared to the human-designed metric-based method (MFE-NSGA-III). We then further enhance each decision with an adaptive nearest-neighbor summary, leading to better and more stable results. We evaluate REP-HO across five heterogeneous regimes covering cost imbalance, constraint difficulty, surrogate fidelity, budget level, and objective conflict. Across these regimes, one of the two variants obtains the best mean ranking score in every regime, REP-HO(Deepseek) is first or second throughout, and the planner shows adaptive allocation behavior, such as prioritizing constraint evaluations under tighter budgets and reallocating constraint evaluation budget when surrogate reliability changes. These results suggest that LLMs can serve as flexible evaluation planners for heterogeneous optimization, offering a general alternative to fixed hand-designed metrics.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.24744v1' target='_blank'>ReTRACE: Feedback-Guided LLM Agent in a Chemistry Harness for Retrosynthesis Planning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Jinxiang Xie, Yijian Zhang, Qingyuan Yi, Jianyi Wang, Hao Dong</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-17 15:22:01</h6>
+<p class='card-text'>Computer-aided retrosynthesis has advanced through single-step prediction, tree search and route scoring, but complex targets still require judgement over the whole route, where stereochemistry, functional-group compatibility, cost and greenness interact. Here we present \textbf{\mbox{ReTRACE}} (\textbf{RE}trosynthesis with \textbf{T}ool-orchestrated \textbf{R}easoning \textbf{A}nd \textbf{C}ontext-aware \textbf{E}vidence), an agent that places a large language model (LLM) in a chemistry harness that integrates molecular tools, complementary single-step prediction engines, a purchasable starting-material library, a route memory and a multi-criterion route evaluator. Routes are judged by a new metric that combines programmatic checks with adversarial LLM review, and its verdicts are compared with a synthetic chemist's. The agent learns continually from evaluator feedback during search, diagnosing weak routes and backtracking to revise them. With Claude Opus 4.8, at least one of the top 10 routes proposed by ReTRACE passed the audit for 87.4\%, 95.0\% and 86.7\% of targets on the three benchmarks. Two prospective wet-lab syntheses show that ReTRACE route proposals can be converted into executable procedures after expert revision.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.24723v1' target='_blank'>Where Natural Language Ends in Agents: Executable Skill Composition with MetaSkill</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Meng Shu, Wei He, Hang Zhou, Runke Liu, Kai Han, Yunhe Wang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-17 14:34:26</h6>
+<p class='card-text'>Agent Skills express open-ended task knowledge in natural language, but composing them requires persistent execution order and upstream-output handoffs. We propose selective formalization at Skill boundaries: coordination relations with stable references and machine-checkable constraints become executable, while substantive task judgments remain within Skills. We introduce MetaSkill, a hybrid representation that preserves complete Skill packages and local instructions while making invocation dependencies and predecessor-text bindings executable through a directed acyclic graph (DAG) runtime. This interface supports explicit coordination without prescribing how each Skill performs its local task. Across 20 multi-Skill artifact tasks and two LLMs, we compare natural-language procedures, prompt-visible graphs, and MetaSkill derived from a common frozen plan per task, using the same designated Skill packages. Additional comparisons evaluate AgentSkillOS with the same available Skill packages as MetaSkill, as well as agent systems using their configured tools. Blinded artifact judgments yield favorable preference point estimates across all reported comparisons, with 95% task-bootstrap intervals excluding parity against Prompt Graph under DeepSeek-V4-Flash and OpenClaw under GLM-5.2. In audited GLM-5.2 execution traces, all planned nodes complete and all declared precedence constraints are satisfied. Together, these findings support MetaSkill as a practical interface for composing open-ended Skills, combining local linguistic flexibility with executable dependencies, explicit predecessor-text bindings, and auditable coordination. Code is available at: https://github.com/TokenRhythm/opensquilla/tree/paper/metaskill-lp4fm-2026</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.24609v1' target='_blank'>From Candidate Admission to Task-Level Return: Auditing LLM-Generated Code under Execution Contracts</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Hiroyasu Usami, Keisuke Hara, Ayato Tsuboi, Naohiko Matsuda</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-17 10:31:27</h6>
+<p class='card-text'>Admission rules retain generated programs, whereas selection policies return one candidate per task. We audit how these decisions interact with execution contracts in two separately frozen, disjoint HumanEvalPlus cohorts, each comprising 32 tasks, four samples per task per profile and two served profiles. Under the inline execution contract, a structural-and-self-test screen admits 4-9 expanded-suite nonpasses per 80-107 admissions and excludes 14-43 suite passes per 128 planned attempts. A restricted module-supply condition adds 20 and 14 passing admissions for one profile in the respective cohorts, plus one follow-up nonpass, and reduces the excluded suite passes to 14-23. All fixed first-admitted outcomes and abstentions remain unchanged. In the original pool, the added passes enter already all-passing admitted pools; in the follow-up, four of 24 common sample orders lose one passed task. Selected-subset diagnostics separately address registration-sensitive completion and reference-relative assertion disagreement, accounting for input domains and comparator tolerances. In these high-pass pools, candidate retention and task-level return diverge and are reported separately. Results are conditional on the saved pools, contracts and pinned suites; downstream training effects are unmeasured.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.24603v1' target='_blank'>Refuse the Harm, Complete the Task via Graph-of-Rules Planning for LLM-Enabled Robots</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Ali Taheri, Alireza Taban, Qizhou Wang, Wanhua Li</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-17 10:13:12</h6>
+<p class='card-text'>Large Language Models (LLMs) are increasingly used in embodied AI for robotic manipulation and planning, but their deployment in physical systems exposes vulnerabilities such as jailbreak attacks that induce unsafe behavior. Existing inference-time defenses are mainly evaluated on short instructions containing a single hazard, whereas realistic tasks may interleave safe and unsafe sub-tasks, conceal hazardous steps, or combine individually safe actions into unsafe outcomes. Such compound instructions make it harder for a single safety decision to distinguish hazardous sub-tasks from legitimate ones, risking either overlooking the hazard or rejecting the whole instruction. We introduce safe task completion, a task that requires an LLM-enabled robot to refuse the harmful part of an instruction while completing its legitimate part. To address this problem, we propose RuleGraph, a multi-agent Graph-of-Rules planning framework that distributes safety enforcement across multiple reasoning and verification stages. Five cooperating agents are used to ground general safety principles into world-specific rules, assess the instruction's sub-tasks in context, and derive a safe goal from the legitimate ones. Planning toward this goal is then organized as a graph of rule-specific nodes, where higher-level nodes inherit the union of their parents' rules, and candidate plans are progressively verified and aggregated until a single plan satisfies every relevant rule. In this way, RuleGraph reduces reliance on a single centralized safety decision. We evaluate RuleGraph on pure-attack and compound instructions across two benchmarks in two environments using Attack Success Rate (ASR) and Task Success Rate (TSR). RuleGraph reduces ASR to 0% on both benchmarks while achieving the highest TSR among all methods, reaching 98.57% on the RoboGuard benchmark and 84.54% on our long-horizon compound instructions.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.24355v1' target='_blank'>Koi: Evidence-Guided, Self-Calibrating Planning for Multi-Cloud, Heterogeneous LLM Inference Fleets</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Mankeerat Sidhu, Gangmuk Lim, Hetarth Chopra, Maximillian Eisenberg, Quan Hao Ng, Aryan Gosaliya, Shu Liu, Luka Govedič, Jiaxin Shan, Hongkuan Zhou, Vikram Sharma Mailthody, P. Brighten Godfrey, Ion Stoica</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-17 01:03:13</h6>
+<p class='card-text'>Deploying a large language model (LLM) requires choosing the right accelerator, parallelization strategy, engine configuration, and replica count amongst ~140 other variables across clouds, regions, and markets. These decisions are intertwined, and the best cluster-wide plan continually changes as jobs contend for shared capacity on shifting workloads. We present Koi, a self-calibrating cluster planner for heterogeneous, multi-cloud fleets. Koi uses a Recursive Language Model (RLM) hierarchy to propose hypotheses and reason over deployment while deterministic components predict serving behavior, score candidates, and control placement. It represents inference behavior as a fixed causal graph linking decisions (e.g., accelerator, parallelism), runtime mediators (e.g., KV-cache pressure, communication overhead), and outcomes (e.g., latency, throughput). Each deployment strengthens or weakens scoped causal relationships, building a comprehensive playbook for inference that the planner employs to guide future decisions. Job-wise configurations are composed into cluster-wide plans and evaluated against serving objectives, resource constraints, SLO risks, and cost. Across benchmarks, Koi achieves 1.18x greater goodput than the strongest baseline while reducing $/token by 20% in a real heterogeneous cluster. Ablations isolate the contribution of Koi's architecture: a pure language model attains a composite score of 35.3, the same model equipped with Koi's deterministic tools reaches 51.6, and the full Koi planner reaches 70.8.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.24329v1' target='_blank'>VERAS: Verification-Guided Adaptive Search for Reliable Operations Research</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Minbo Ma, Honglin Zhang, Bangtao Zhou, Chunguang Yu, Dasheng Ju, Yichen Shen, Fengli Xu, Yong Li</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-16 23:50:11</h6>
+<p class='card-text'>Advances in reasoning, coding, and tool use enable LLM agents to solve operations research (OR) problems through iterative problem modeling, program construction, and verification. Yet passing self-authored verification does not ensure that the solutions satisfy task constraints and meet optimization quality. This gap can arise from correlated specification errors, where the generated program and its checks share omissions or misinterpretations of task requirements, alongside incomplete verification coverage and ineffective optimization strategies. We propose VERAS, a verification-guided adaptive search harness for reliable OR that uses verification evidence to prioritize feasibility repair, constraint-coverage review, and solution-quality improvement. VERAS combines task-specific solution checkers with a separate verification agent to examine candidate solutions against the task requirements. It uses verification feedback to guide feasibility repair, additional constraint checking, and objective improvement, while candidate acceptance criteria screen revisions for deterioration in output validity or constraint satisfaction. On ORAgentBench, VERAS achieves a 42.99% pass rate, exceeding the reported 35.51% of Codex using the same LLM. Across two industrial-scale OR problems, VERAS reduces inter-datacenter peak bandwidth by 10.34% relative to native Codex and lowers annualized distribution network planning costs by 6.28% compared with expert-designed solutions. Code and evidence are available at https://github.com/holimario/VERAS.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.24255v1' target='_blank'>Cortex: A Fixed-Point Theory of Governed Coding Agents - Technical Report</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Marius-Constantin Dinu, Florian Zeba</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-16 21:28:03</h6>
+<p class='card-text'>A coding agent combines a large language model (LLM) with a harness that plans, edits, and executes code. We study Cortex, a supervisory layer for pre-execution governance, requirement tracking, and iterative validation and repair. We formalize requirement closure on a finite lattice. For a fixed requirement set and a sound, monotone validation rule with persistent evidence, exhaustive iteration reaches the least fixed point with no more strict increases than there are requirements. Fair consequence scheduling reaches the same closure. A separate stochastic model bounds expected completion time under a uniform positive-progress assumption. These results depend on their stated assumptions; artifact repair, fallible validation, and finite execution budgets do not satisfy them automatically. We define Gauntlet's trajectory-similarity and build-gated scores, attack-success estimators, Wilson intervals, and case-cluster bootstrap summaries. Effective-feedback accounting counts newly certified requirements, rather than estimating their information value or utility. The five evaluation families support raw-versus-governed comparisons. We report retained benchmark observations, including rescoring of existing artifacts; constructed outcomes are excluded. Unequal observation sets and incomplete provenance prevent causal claims about governance or measured long-horizon scaling.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.24234v1' target='_blank'>Who Plans, Who Edits? Verified, Cost-Aware Division of Labor for LLM-Driven Analog Layout Repair</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Xilai Dai, Saeed Mohammadi</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-16 20:59:27</h6>
+<p class='card-text'>Language-model agents can repair analog layouts when sign-off tools check every edit, but which model should plan a repair, which should edit it, and at what cost remain open questions. In our tool-grounded repair agent, models only choose bounded layout operators; sign-off tools rerun each task's contract checks after every edit, so failing layouts are never accepted. On layout-versus-schematic (LVS), design-rule checking (DRC), and post-layout repairs of three designs (a production high-voltage digital-to-analog converter (DAC), a 5-V oscillator, and a SKY130 operational transconductance amplifier (OTA)) with six tier-matched models from two vendors, 182 blind runs show that cheap models execute plans but rarely succeed alone (the cheapest model: 1 of 11 runs alone, 16 of 17 under a flagship planner; p < 0.001), cheap planners fail more often, and no fixed assignment is cheapest on every task. We propose a learning controller that selects models for each role and the escalation order from the first tool evaluation and updates Bayesian estimates after every attempt. With rules and initial estimates frozen before testing, the controller fixed 7 of 8 episodes on four sealed held-out tasks, matching the OpenAI flagship alone, at 15-40% of the flagship's spend per fix on three tasks but 8% higher spend overall. The cheapest mid-tier model alone fixed 6 of 8 at the lowest overall spend per fix but missed the hardest task. All 32 extracted DAC repairs match the human-guided LVS repair's integral nonlinearity (INL) within 0.005 least significant bits (LSB) at every code.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.23618v1' target='_blank'>ThetreStageAI: Multi-View Retrieval-Augmented Generation for Structured Bengali Theatre Production Planning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Md. Mehedi Hasan Naeem, Mst. Kamrunnahar Ruma, Shakila Sultana, Nafiza Anjum, Nasreen Jannatun Nemu, Md. Sujan Ali</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-16 15:29:20</h6>
+<p class='card-text'>Staging a theatre performance requires coordinating dialogue, actor movement, stage directions, lighting focus, cue timing, and equipment constraints within the same production plan. This work presents ThetreStageAI, a retrieval augmented framework for structured Bengali theatre production planning. Rather than retrieving from one mixed corpus, the system maintains separate scene, actor-blocking, and lighting views. Bengali text is embedded with BGE-M3 and indexed in view-specific Qdrant collections. Retrieved references are combined with a production brief and passed to Gemini, which generates schema-constrained JSON containing characters, scenes, dialogue, stage directions, blocking, lighting, and optional sound cues. Structural and semantic checks are applied before acceptance, with at most one constrained repair attempt. We also construct a human-guided, LLM-assisted synthetic dataset of 500 short Bengali theatre records that expands to 1,500 retrieval documents. Dataset diagnostics confirm consistent identifiers and valid lighting fields while also revealing substantial dialogue repetition. A paired camera-ready evaluation compares single-combined and full multi-view retrieval under matched settings. The source code, dataset, and evaluation materials are publicly available.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.23599v1' target='_blank'>From Trajectories to Differentiated Skills: Cognitive Differentiation for Self-Improving Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yewei Zhao, Derong Xu, Wei Chen, Yin Xu, Peilun Zhou, Xiaohan Wang, Guojun Yin, Wei Lin, Mingjun Xiao</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-16 15:16:56</h6>
+<p class='card-text'>Large language model (LLM) agents tackle complex tasks through reasoning and interaction with external environments. Agent skills provide persistent, transferable capabilities that guide task planning, inform contextual decisions, support tool use, and enable executable procedures. Yet existing skill-evolution methods largely organize knowledge around skill artifacts, overlooking the functional heterogeneity within individual skills and its implications for knowledge maintenance and use. Inspired by cognitive science, we propose Cognitive Differentiation in Skill Evolution (CDSE), which evolves a unified skill through four functionally distinct yet coordinated components: Meta, Experience, Tool, and Script. CDSE extracts evidence-grounded semantic gradients from successful and failed trajectories, consolidates them by functional role, and applies component-specific updates and validation with cross-component coordination and adaptive invocation. An analysis of 500 top-ranked skill packages shows that 96.8% contain knowledge spanning at least two functional roles. Across six benchmarks, three agent models, and two execution harnesses, CDSE achieves the highest scores in all 36 settings, improving over the Base agent by 7.6 percentage points and the strongest competing method in each setting by 2.6 points on average. Ablation studies further support the importance of functional differentiation and adaptive invocation.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.23528v1' target='_blank'>Out of Support, Not Out of Reach: In-Context Learning with Unsupported Instructions and Composed Tasks</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Xuhan Tong, Yuchen Zeng, Jiawei Zhang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-16 14:27:05</h6>
+<p class='card-text'>In-Context Learning (ICL) enables pretrained LLMs to adapt to downstream tasks from a small set of input-output demonstrations, without parameter updates. Yet existing theory primarily explains ICL as identifying a latent task already represented in pretraining, leaving unclear whether ICL can succeed when either the instruction or the target task falls outside the pretraining support. We develop a theoretical framework under mild assumptions that separates these two forms of distribution shift. For target tasks represented in pretraining, we show that demonstrations can identify the task and reduce sensitivity to pretrain-supported prompt templates as their number increases. For an unsupported instruction, we show that under a fixed model-induced reference extension, demonstration evidence can dominate an $N$-independent instruction shift while preserving the exponential identification rate. We then use the same ICL framework as an interpretive lens for long-horizon target tasks that are not represented in pretraining but admit a plan that decomposes them into pretraining-supported subtasks. Applying the supported-task analysis step by step yields a standard accumulated-error bound and clarifies how invoking familiar subtasks along an intermediate-state trajectory can avoid directly selecting the unsupported complete task. Together, our results characterize when demonstrations, instructions, and task decomposition can support ICL beyond the corresponding pretraining supports.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.23255v1' target='_blank'>Sample, Mix, or Verify? Allocating Test-Time Compute under Imperfect Verifiers</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Srinivasan Iyengar</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-16 10:28:07</h6>
+<p class='card-text'>A common way to make language models and agents more accurate is to spend more compute at inference time: generate many candidate solutions and submit the one a verifier prefers. Success then requires that some candidate is correct and that the verifier picks it. The first grows predictably with the number of samples; the second does not, because real verifiers (unit tests, majority votes, LLM judges, reward models) accept wrong answers, reject right ones, and make correlated mistakes. With a fixed budget, a practitioner must decide how many samples to draw, which models to draw them from, and how much to spend on verification, and today these choices are made by rules of thumb. We introduce SPLIT, which makes them from a small labelled pilot. It rests on an exact formula for the probability of submitting a correct answer under accept/reject and top-score selection that accounts for varying task difficulty, blind spots shared across models, and correlated repeated verifier calls. SPLIT fits the formula by empirical Bayes and uses it to plan budgets on unseen tasks. Across seven benchmarks spanning math, science QA, code and software-engineering agents, 26 models, 175 agent systems and six kinds of real verifiers, all from public releases, SPLIT lands within 0.02-0.8 percentage points of the best allocation in hindsight, while every fixed rule we test loses at least 2.5 points in some setting. Regret depends only on how well SPLIT ranks configurations, and it stays near-optimal under compute, price and latency costs and online. The formula also explains when asking more LLM judges lowers precision. As a forecaster far beyond the pilot, SPLIT beats power-law fitting when the verifier caps success, and we report where it loses.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.22881v1' target='_blank'>No One-Size-Fits-All: Adaptive Code Editing with Feature-Based Strategy Selection</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Jun Wan, Zhongxin Liu, Dajun Chen, Wei Jiang, Yong Li, Xiaoxue Ren</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-16 03:37:57</h6>
+<p class='card-text'>Large language models have shown strong potential in automating code editing (CE) tasks, yet most existing systems rely on a fixed CE strategy (i.e., one-step, search-replace, and plan-apply) across diverse scenarios. In practice, CE tasks vary widely in code context, edit locality, and semantic complexity, causing no single strategy to perform consistently well. Moreover, systematic studies on the relationship between strategies and CE tasks remain scarce, limiting further optimization of LLM-based code editing strategies. To address this gap, we construct CEBench, comprising 500 real-world CE tasks curated from SWE-bench. Then we compare three representative CE strategies (one-step, search-replace, plan-apply). Our study reveals two key findings: (1) each strategy exhibits distinct advantages for specific CE tasks, with no universal optimality; (2) strategy effectiveness is significantly influenced by four core task features: total lines of code, modification type, modification scope, and task type. Motivated by these findings, we propose Ace, an adaptive code editing framework that dynamically selects optimal CE strategies based on task features. Unlike classifier-based or instruction-prompting approaches, Ace employs a fine-tuned LLM that learns feature-strategy mappings from empirical data to recommend strategies with interpretable rationales. Extensive experiments on our CEBench-verified show that Ace outperforms state-of-the-art baselines: it boosts Pass@1 by 21.7% while reducing token consumption by 27.3% compared to the best baseline (AutoCodeRover). Our strategy selector achieves 72.6% selection accuracy with 69.9% rationale accuracy (Cohen's Kappa = 0.807), providing transparent and trustworthy decision-making for developers.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.22863v1' target='_blank'>Understanding KV Residency in Production-Scale Agentic LLM Workloads</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Mayank Arya, Agrim Bari, Anjaly Parayil, Yogesh Simmhan, Renee St. Amant, Victor Rühle, Saravan Rajmohan</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-16 03:09:13</h6>
+<p class='card-text'>Agentic large language model (LLM) applications turn one user request into a sequence of model and tool calls over a growing context. Retaining this context's key-value (KV) state in GPU memory lets later calls reuse it instead of recomputing it, but at fleet scale this needs substantial memory. We characterize four production Microsoft M365 workload traces (Deep Research, Enterprise Assistant, Coding Agent and Enterprise Chat) spanning more than 121 million model calls. In Deep Research, the application issues 89% of model calls and the median context grows from about 10K to 68K tokens by the 30th call. About 80% of context tokens are served from the prefix cache. With the public Llama-2-70B KV layout standing in for confidential models, one 99th-percentile Deep Research session exceeds the 80 GB HBM of an NVIDIA H100, and holding all live sessions at their peak needs an estimated 501.8 TB of HBM, although inference occupies only 5.6% of that retention time. Trace-driven replay shows that a one-hour idle cap cuts this ceiling by 3.6x while raising the share of calls that recompute context only from 4.07% to 4.53%. Under tighter budgets, eviction alone is insufficient: at one tenth of the busiest hour's demand, LRU eviction makes 63% of Deep Research calls recompute and clairvoyant furthest-next-use 31%, whereas multi-resolution retention (MRR), which demotes the LRU session's KV state to int4, lowers this to 13.6%. Placement imposes a separate limit: when the next call reaches a different deployment, cached-context reuse drops from 89% to 29%, and treating KV state as deployment-local raises the recompute floor under unlimited memory from 5.4% to 20.2%. These findings motivate retention that changes the representation of KV state, together with deployment-aware routing or migration. We plan to release AgenticTraceSim, a parametric trace generator, and a residency replay framework.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.22858v1' target='_blank'>Uncertainty-Aware Budget Allocation for Efficient LLM Tree Search</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Jianguo Huang, Zhiyi Lyu, Fuxiang Zhang, Yanchen Deng, Deheng Ye, Bo An</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-16 03:03:28</h6>
+<p class='card-text'>Tree search enhances multi-step reasoning in large language models (LLMs), yet prevailing methods expand every step with a fixed budget, irrespective of the marginal utility of expansion. We first show, across existing search algorithms, that continuations sampled from a shared intermediate state are largely duplicates and collapse to a few distinct answers. Critically, we find that the semantic dispersion of sibling actions predicts the redundancy of their downstream continuations, permitting a subtree's budget to be fixed before expansion. An information-theoretic analysis motivates this: treating the per-step budget as the Monte Carlo sample size for estimating a step's residual answer entropy, we derive a sufficient budget that shrinks with sibling dispersion. We accordingly propose $\textbf{Uncertainty-Aware Allocation}$ (UAA), a training-free framework that decouples value from uncertainty: values determine which candidates are promising, while uncertainty, estimated from sibling dispersion at no additional model cost, determines how many merit expansion, via uncertainty-aware pruning and uncertainty-aware budgeting. Across mathematical reasoning, logical reasoning, and planning benchmarks, UAA reduces token usage by up to $90\%$ and latency by up to $9\times$ at comparable accuracy, generalizing across four tree search algorithms and both open- and closed-source LLMs.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js'></script>
+</body>
+</html>
