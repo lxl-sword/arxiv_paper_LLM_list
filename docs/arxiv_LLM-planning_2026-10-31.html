@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<title>LLM-planning - 2026-10-31</title>
+<link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap' rel='stylesheet'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'>
+<style>
+body {
+font-family: 'Roboto', sans-serif;
+background-color: #f5f7fa;
+padding: 20px;
+}
+.card {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.card-title {
+    font-weight: 700;
+}
+.card:hover {
+    transform: scale(1.02);
+    transition: 0.3s ease-in-out;
+}
+</style>
+</head>
+<body>
+<div class='container'>
+<h1 class='text-center my-4'><i class='fas fa-book'></i>LLM-planning - 2026-10-31</h1>
+<div class='row'>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.40350v1' target='_blank'>Don't Lose the Thread: Empowering Long-Horizon LLM Agents with Cognitive Resource Self-Allocation</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Zheng Zhu, Xiaozhuan Liang, Xi Chen, Bei Yu, Jiaya Jia</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-29 16:07:10</h6>
+<p class='card-text'>Agents powered by large language models (LLMs) have demonstrated remarkable progress in solving complex reasoning tasks. However, LLM agents often falter on long-horizon tasks due to cognitive overload, as their working memory becomes cluttered with expanding and irrelevant information, which dilutes their attention and hinders effective planning and reasoning. To mitigate this challenge, we introduce Cognitive Resource Self-Allocation (CORAL), a novel reasoning paradigm that empowers agents to proactively optimize their context. Implemented as an agent-callable working memory management toolset, CORAL allows an agent to checkpoint its task progress and verified facts, and adaptively initiate a new problem-solving episode by resetting cluttered context while preserving only the checkpointed information, enabling it to resume reasoning from a clean state. We further enhance the agent's checkpointing capabilities using a Multi-episode Agentic Reinforced Policy Optimization algorithm. On the GAIA benchmark, CORAL with an 8B model achieves 42.8% average accuracy, with particularly strong gains on the most challenging long-horizon tasks (Level 2 and Level 3). Crucially, these gains come at a substantially lower inference cost: CORAL consumes 6-7$\times$ fewer input tokens than a ReAct agent. It also generalizes to multi-hop Knowledge QA benchmarks and to the considerably harder BrowseComp, where it improves a strong proprietary agent by 8.0 points.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.40227v1' target='_blank'>EpiAgent: Epistemic Self-Play for LLM Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Xuanfa Jin, Xinyu Cui, Zhijian Ma, Xue Yan, Jian Zhao, Haifeng Zhang, Jun Wang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-29 15:05:08</h6>
+<p class='card-text'>Epistemic game theory explains an agent's strategic behavior via the beliefs it holds about others and how these beliefs are updated as the interactions unfold. Modern LLM-based agents, however, often lack an explicit mechanism for learning and updating such beliefs to guide decisions under incomplete information. To bridge this gap, we propose EpiAgent, a framework that equips LLM-based agents with an explicit, learnable epistemic layer, which maintains beliefs over others' private information and combines these beliefs with the agent's available information into an epistemic state for action selection. Concretely, the agent's policy is decomposed into two coupled stages: Epistemic Update, which updates these beliefs from interaction histories, and Action Planning, which selects actions conditioned on the updated epistemic state. By formulating their dependency as a bi-level optimization problem, we introduce Epistemic Self-Play, an algorithm that alternately optimizes the two stages through self-play, utilizing an intrinsic prediction reward to evaluate how well inferred beliefs predict subsequent observations. Empirical results across both mixed and competitive scenarios show that EpiAgent consistently outperforms prompting-based and RL-based baselines. Further analyses reveal the benefits of dedicated epistemic training, improvements in belief inference accuracy, and the contribution of learned beliefs to action planning. These results demonstrate the value of an explicit, learnable epistemic layer for effective multi-agent interactions.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.40186v1' target='_blank'>Locating and Closing Information Gaps in Multi-Agent Systems</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yaxin Gong, Chongming Gao, Gangyi Zhang, Chenxiao Fan, Leyang Shen, Jiakai Wang, Dong Wang, Yang Liu, Haoyan Liu, Xinting Hu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-29 14:45:43</h6>
+<p class='card-text'>Multi-step Web tasks often require several LLM agents to gather and combine evidence. The communication graph of a fixed workflow restricts which agents can read each other's outputs: evidence retrieved by one agent may never reach the agent that needs it, leaving an information gap and an incomplete or incorrect answer. Adding a connection can deliver the missing evidence, but can also lead the receiver to adopt an incorrect upstream conclusion that displaces a correct answer; the final output alone does not separate the two. We propose Selective Probing and Link Insertion for Closing information gaps in multi-agent Execution (SPLICE), which locates information gaps per query and decides what to adopt after adding an edge. After the original workflow runs, SPLICE uses the query and node outputs to locate a possible gap, adds one directed edge from a source to a receiver to deliver the relevant evidence, and re-executes the receiver and affected downstream nodes, producing a candidate answer. The adoption decision reads both the final answers of the two runs and the process changes the edit caused inside the workflow: how far the receiver moved, where its new content came from, and whether the change reached the final answer. A selector trained on these process features chooses between adopting the candidate answer and retaining the original. On five benchmarks, SPLICE raises the task score on Web tool use by 8.0% and the mean score on four reasoning and planning benchmarks by 5.7% relative to the static skeleton, at 1.25 to 1.44$\times$ the skeleton's cost, and transfers zero-shot to four unseen backbones.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.39782v1' target='_blank'>Assessing AI Companion Chatbot Safety for Vulnerable Users: A Crisis-Stage Multi-Platform Evaluation</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Huanyue Liao, Seok Min Lim, Yan Ling Lim, Shi Min Cheng, Kellin Pelrine, Chen Hui Ong</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-29 10:32:06</h6>
+<p class='card-text'>AI companion chatbots are increasingly used by vulnerable individuals, including adolescents in suicidal crisis, for emotional support. Existing safety evaluations focus on base models, leaving gaps in product-level assessment, crisis-stage sensitivity, and comparisons between companion apps and general-purpose LLMs. We introduce MIRROR-Eval (Multi-turn Interaction Risk Review: Observing suicidal-crisis Responses), a dataset of 960 annotated 20-turn conversations across eight deployed platform configurations, six clinically grounded personas, and two crisis stages: ideation and explicit planning. An LLM-as-a-Judge pipeline applies an expert-reviewed rubric covering user risk severity, chatbot risk awareness, and intervention behavior. We observe a three-tier harm structure: companion apps (Character.AI and Replika) and Grok 4.3 form a high-harm tier; Gemini 3.1 Pro is mid-range; GPT-5.5 and Claude Sonnet 5 show substantially lower harm. At planning, companion apps show increased glorification and normalisation, advancement toward harmful action, and harmful methods and instructions. Crisis recognition and empathetic language do not ensure safe responses. These findings highlight the need for product-level safety evaluation across crisis stages. Dataset and code: https://huggingface.co/datasets/imda-biztech/MIRROR-Eval. Warning: this paper includes examples that may be offensive or harmful.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.39681v1' target='_blank'>Can AI Agents Interface Clinicians and Complex Models?</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Giulio Colombini, Matteo Falcioni, Mario Massimo, Francesco Durazzi, Marianna Santoro, Paolo Tubertini, Mirko Degli Esposti, Armando Bazzani</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-29 09:28:15</h6>
+<p class='card-text'>Background: Contemporary healthcare institutions generate daily very large amounts of data, which contain highly useful information for the improvement of work organization, planning and overall efficiency. While models and techniques to extract these insights are well known and constantly developed in mathematical biology, complex systems physics and data science, the adoption of these techniques among Clinicians and Hospital Administrators remains limited, mainly due to language and methodological divides.
+  Objective: In this article we implement an AI Multi Agent System (MAS) that allows Users to use predictive models and make statistical analyses via natural language conversations.
+  Methods: We developed EpidemIA, a training-free MAS endowed with a modular suite of epidemiological models written by human experts, executable on a single-GPU workstation. To avoid relaying sensitive data to third parties, the system uses locally an open-weights LLM as backbone for its two subagents.
+  Results: Using a dataset of Emergency Department visits provided to us by IRCCS Sant'Orsola (Bologna) we test the model on a few typical use cases, demonstrating the possibility of performing both simpler statistical analyses and visualizations as well as more complicated epidemiological predictions based on dynamical models, through simple queries made in natural language.
+  Conclusions: While still being a proof-of-concept implementation, EpidemIA showcases the transformative capabilities of LLM based technologies as an enabling factor in the widespread adoption of complex dynamical models, which is at present hindered by their steep learning curve.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.39608v1' target='_blank'>From Intent to Improvement: Agentic Dataset Search for Better Model Training</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Qiaosheng Chen, Kaijia Huang, Fanqi Zhou, Gong Cheng</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-29 08:42:49</h6>
+<p class='card-text'>Finding training data in million-scale machine learning repositories is a Web search problem where text relevance is not enough. A query couples a semantic training goal with constraints such as task, license, and training stage, and the metadata that would verify them are often missing. Text retrieval ranks dataset cards by similarity but cannot enforce hard constraints or follow the relations that reach a sparsely described dataset. Free-form tool-calling agents are more flexible, but the same model that picks a dataset also declares it a match, and nothing checks that the query's constraints are actually met. Neither approach establishes that the data it returns will improve model training. To address it, we propose AgenticDS, a contract-governed agentic framework in which every language model decision instantiates a typed object before deterministic code consumes it. The framework compiles a query into a typed search plan, executes it through admissible deterministic operators over hybrid retrieval and bounded graph expansion, and verifies the provenance-grounded evidence before accepting a ranking or emitting a typed diagnosis that permits only local repairs. On HuDS-Bench, a new benchmark of 200 queries with 24,908 graded judgments pooled over 15 systems, AgenticDS improves NDCG@10 by 25.7\% over the strongest dense--sparse hybrid and by 18.9\% over a commercial LLM agent. A controlled search-to-train study further shows that the datasets it retrieves give the best downstream accuracy in mathematics, code, and medicine. Code and data are publicly available at https://github.com/nju-websoft/AgenticDS.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.39532v1' target='_blank'>Judging Before Propagation: Task-Graph Contextual Integrity for Multi-Agent Privacy</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Hengyu Wu, Blaise Delattre, Yang Cao</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-29 07:31:50</h6>
+<p class='card-text'>Multi-agent LLM systems increasingly rely on persistent memory and inter-agent communication. These capabilities create privacy risks that extend beyond individual interactions: a release appropriate in isolation may become inappropriate when combined with information previously disclosed to a recipient or propagated to downstream agents along the planned workflow. Existing Contextual Integrity (CI) mechanisms for agentic systems typically rely on local judgments that assess each disclosure in isolation, with or without regard to the recipient's history, but do not account for how information propagates downstream. However, compliance at the current boundary does not guarantee appropriateness across the workflow. We introduce Task-Graph Contextual Integrity (TG-CI), to our knowledge the first task-graph-native formalization of Contextual Integrity for multi-agent systems. TG-CI represents a workflow as a Multi-Agent Task Graph (MATG) and extends CI from atomic transfers to stateful, graph-level information flows by jointly considering an item's intended propagation scope and recipients' evolving disclosure states. We operationalize TG-CI through propagation-scoped authorization under two complementary policies: Full-Scope, which requires admissibility across the complete downstream scope, and Auto-Region, which confines each item to its maximal admissible region using lightweight frontier gates. We further introduce MAPLE-Bench, a benchmark of 144 cases across four scenarios that jointly vary MATG topology, disclosure history, compromised-agent placement, and item-level privacy policies. In our primary experimental configuration, TG-CI reduces the mean unauthorized disclosure count by 85.8-94.1% relative to the Local-History CI baseline, while retaining 93.6-96.1% of the baseline's task accuracy, with the two enforcement policies providing complementary privacy--cost--utility trade-offs.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.39438v1' target='_blank'>ATLAS-Bench: An Agentic Tool-Use Benchmark for Local Area Search</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Keyun Zhang, Dapeng Yin, Fanfu Wang, Shuang Lang, Zhenyu Zhu, Yulin Huang, Chong Yang, Pengjie Wang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-29 06:14:52</h6>
+<p class='card-text'>Reliable local search is essential for LLM agents to support everyday decisions and longer plans by finding places that meet users' needs at given times and locations. Yet existing benchmarks provide limited coverage of whether search results satisfy mandatory requirements, account for preferences, and ground factual and experiential judgments in place attributes and reviews. We introduce ATLAS-Bench, a benchmark of 1,200 queries across three regions, expanded from real search events using place attributes, reviews, and existing user profiles from the platform. Each query distinguishes mandatory requirements from preferences and factual conditions from subjective judgments, with supporting evidence and criteria for checking each requirement. Queries are validated through iterative assertion checks and cross-model review. We also introduce ATLASBox, a standardized evaluation environment with search tools and a fixed point-of-interest (POI) knowledge base. Given a query, timestamp, and location, an agent searches place attributes and reviews to recommend evidence-supported options or report that no place meets all mandatory requirements. We evaluate answer quality, trajectory quality, and execution cost. Across 14 configurations of 11 models, GPT-6-Luna achieves the highest constraint satisfaction rate among returned recommendations (71.5%) and factual accuracy (95.6%). However, it returns at least one acceptable recommendation for fewer satisfiable queries than GLM-5.3 (67.3% versus 85.3%). These results highlight the challenge of satisfying individual requirements while providing usable recommendations across queries.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.39319v1' target='_blank'>ProLoop: Progress-Aware Closed-Loop Framework via Structured State Relations for Long-Horizon Robotic Task Planning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Runxin Zou, Qingmiao Liang, Jiatao Zhang, Xinyan Lv, Liangyu Qie, Meiyi Bu, Wei Song, Shiqiang Zhu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-29 04:03:15</h6>
+<p class='card-text'>Long-horizon robotic tasks are commonly decomposed into semantic subgoals to simplify planning. However, subgoal progress in LLM-based planning is typically inferred implicitly from interaction histories. Inaccurate estimates can misguide execution and allow local errors to propagate. To address this, we propose ProLoop, a Progress-Aware Closed-Loop framework that derives explicit subgoal progress from structured relations between desired and execution states. A learned State-Relation Monitor assesses these relations, which are then aggregated into subgoal progress as ongoing, deviated, or completed. The resulting progress guides execution adaptation, enabling reliable progress-aware control throughout execution. Experiments on AgentBoard ALFWorld and a real-world robotic platform show that ProLoop improves success rate by 12.94% overall and by 15.46% on Hard tasks, while reducing environment interactions by 32.3%.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.39264v1' target='_blank'>Online Dense Reinforcement Learning with Planning-Grounding Agent for UI Navigation on Live IOS Apps</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Peitong Duan, Khashayar Gatmiry, Jeffrey Nichols, Samy Bengio, Emmanuel Abbe</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-29 03:17:33</h6>
+<p class='card-text'>While frontier vision-language models demonstrate strong capabilities in user interface (UI) navigation, their high inference costs prohibit everyday use. Conversely, smaller models trained via supervised fine-tuning (SFT) or offline reinforcement learning often memorize static trajectories, leading to brittle execution and an inability to recover from errors. To address these limitations, we propose a novel online reinforcement learning framework that trains UI navigation agents directly on live iOS applications. Our framework decouples the agent into two specialized components: a Planning agent and a UI Grounding model. We rely on an LLM-as-a-Judge to provide comprehensive reward signals, combining dense, step-level feedback to evaluate intermediate progress with a terminal reward for overall task completion. To effectively leverage this dual reward structure, we optimize the agent using Proximal Policy Optimization (PPO) with step-level advantage estimation. Furthermore, we introduce GiGPPO, a novel neighbor-conditioned value estimation method that improves critic stability by leveraging reward signals from visually similar states across concurrent trajectories. To support this online training paradigm at scale, we introduce an efficient infrastructure that orchestrates hundreds of concurrent virtual iOS devices. Evaluations on rigorous benchmarks, including UINavBench, iOSWorld, and AndroidWorld, demonstrate that our online RL trained agents substantially outperform both SFT and terminal-only RL baselines while accelerating training convergence. Notably, our 8B RL agents achieve nearly a sevenfold improvement over the SFT baseline in out-of-distribution generalization to Android environments, while outperforming Gemini-3.5-Flash and tying with Gemini-3.1-Pro on real iOS applications.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.39193v1' target='_blank'>Goal-Aware Dynamic Multi-Agent Collaboration for Long-Horizon Tasks</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Xu Shen, Lingyong Yan, Shuaiqiang Wang, Jianmin Wu, Zhikai Chen, Jiliang Tang, Jie Ren</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-29 02:15:35</h6>
+<p class='card-text'>LLM-based agents are increasingly used to complete complex, long-horizon tasks without human intervention. To make progress toward the task goal, agents need to perform different duties, such as planning and verification, when needed. To understand how single agents manage these duties during long-horizon execution, we conduct a preliminary study. Our analysis shows that verification has the strongest association with task success, but often occurs late, leaving limited opportunities for correction. We also find that the proportion of duty-relevant information decreases as records from different duties accumulate in a shared context. These findings lead us to examine whether multi-agent systems (MAS) can address these problems by assigning duties to agents with separate contexts. Our analysis shows that this separation alone is insufficient. Agents can lose track of the overall goal and repeat prior investigations. They may also lack necessary background while receiving irrelevant information from others. To maintain goal awareness and coordinate collaboration as task needs change, we propose Goal-Aware Dynamic Multi-Agent Collaboration (GAD). It uses a growing execution graph to organize subtasks and their dependencies. To keep agents focused on their goals, each context retains the original instruction and the assigned task's goal and acceptance conditions. To adapt collaboration and information sharing during execution, agents can divide tasks into subtasks and specify dependencies based on execution evidence. These dependencies guide when agents work and which results they receive. Verification and recovery check subtask results and full task completion against their goals, providing feedback for repair when checks fail.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.38977v1' target='_blank'>Beyond Passing Tests: A Systematic Review and Controlled Re-evaluation of Techniques for Improving the Quality of LLM-Generated Code</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Prashank Kadam</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-28 22:02:40</h6>
+<p class='card-text'>Large language models pass most functional-correctness benchmarks, but passing tests says little about whether their code is readable, efficient or secure. Many techniques claim to improve these qualities, yet their evidence is scattered, usually covers one quality dimension and is rarely compared at an equal compute budget. We contribute a systematic review and a controlled re-evaluation. A systematic literature review of 628 primary studies (July 2021 to October 2026), with disclosed, author-reviewed LLM assistance, organizes the techniques by stage, signal source and quality target. Most studies measure only the dimension they target, gains often come with unchanged or unreported correctness, single automated quality signals are gamed, and compute, variance and contamination are rarely reported. A controlled re-evaluation runs ten techniques on four models at matched budgets on correctness, maintainability, efficiency and security benchmarks, extends it to thirteen current models and repository-level tasks, and compares 66 highlighted techniques head-to-head on Gemma 4 31B. At one call, quality prompting raises analyzer issue counts and leaves complexity and judge scores almost unchanged. At matched budgets, best-of-n sampling with an analyzer-weighted ranker matches or beats prompting, planning, self-refinement, a reviewer agent and retrieval on measures the ranker does not optimize, while an analyzer feedback loop and fine-tuning beat it only on analyzer issue counts. Large correctness losses on HumanEval+, a likely contaminated benchmark near its ceiling, do not appear on contests held after the models' training cutoffs. In the head-to-head, 1 of 66 techniques beats best-of-n on its primary target beyond the 95% interval, a rate consistent with chance. Gains should be reported against a budget-matched sampling baseline and on measures independent of the technique's own signal.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.38950v1' target='_blank'>Student-LLM Interactions During Math Learning: Limited Epistemic Proactivity Overall, but Within-chat Change Predicts Performance Without AI</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Rania Abdelghani, Peter Kaiser, Kou Murayama</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-28 21:35:52</h6>
+<p class='card-text'>Large language models (LLMs) are increasingly used for learning, raising a key question: can learners remain epistemically proactive, retaining responsibility for the cognitive and regulatory activities through which learning is produced while working with AI? Because this responsibility may change as interactions unfold, we examine epistemic proactivity as a developing process. We conceptualize epistemic proactivity through self-regulated learning (SRL) moves, complemented by help-seeking strategies and manifestations of epistemic vigilance. We analyzed these behaviors in 880 substantive turns from 112 secondary-school students completing open-ended mathematical-modeling practice with a general-purpose LLM (Mistral). Overall, students showed limited observable epistemic proactivity: their interactions were strongly request-dominated, with planning, monitoring, and evaluation relatively rare, although low-quality AI responses elicited more explicit evaluation. Temporal analyses qualified this picture: explicit SRL-related moves increased modestly over the chat, but help-seeking strategies became less understanding-oriented. Crucially, these temporal trajectories in help-seeking strategies predicted their post-test performance without AI beyond pre-test and aggregate patterns: students whose requests became more understanding-oriented performed better once AI assistance was removed. Thus, while students had a limited epistemic proactivity overall, its temporal development still was a critical predictor of post-test performance without AI. These results underscore the importance of examining the temporal organization of epistemic proactivity, rather than isolated prompt types, for understanding AI-supported learning. We release our fully-anonymized dataset publicly in an OSF repository.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.38883v1' target='_blank'>Can Artificial Intelligence Forecast Treatment Effects in Economics?</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Eva Vivalt</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-28 20:47:31</h6>
+<p class='card-text'>I use LLMs to forecast treatment effects of research studies pre-registered on the AEA RCT Registry and the Open Science Framework. I focus on studies whose results were first publicly released in 2026 and elicit forecasts from models whose training or knowledge cut-off dates were before the relevant set of papers was released. First, LLM models extract forecasting questions from the pre-registrations or pre-analysis plans. These questions elicit forecasted treatment effects; not all resolve in the subsequent papers, but those that do can be used to consider forecast accuracy. Forecasts were elicited for 889 treatment effects from 39 papers with results disclosed in January 2026 or later, or 673 from 33 papers after screening. Forecasts were elicited in raw units but I focus on those that could be standardized and therefore compared across papers. Currently, the median absolute forecast error is 0.054 SD for the best model, the average absolute error is 0.093 SD, and the MSE is 0.0218. The AI forecasts perform substantially better than benchmarks forecasting 0 effect or forecasting the mean effect of other papers' results in that time period. Overall, these results suggest considerable scope for forecasts to be of value in informing policy and research.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.38744v1' target='_blank'>AtomTree: A Hierarchical Framework for State-Aware Embodied Instruction Following with LLMs</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Haotian Zhai, Tianming Sha, Junnan Li</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-28 19:30:40</h6>
+<p class='card-text'>Embodied instruction following in interactive environments requires agents to interpret natural language commands and complete long-horizon tasks. Existing planners either rely on large labeled trajectories, or use few-shot and zero-shot LLM prompting that produces a whole plan in a single serial reasoning process. These approaches depend on linguistic common sense, commit to a plan from the initial instruction, and only update after failures, which weakens robustness and state awareness. We present AtomTree, a hierarchical framework for state-aware task planning with LLMs. AtomTree incrementally builds a tree of subgoals and actions, where the LLM decides at each step, from the current symbolic state, whether to further decompose or to output a grounded low-level action. A lightweight memory module summarizes past outcomes for reuse in later decisions. When a low-level action stalls, AtomTree triggers hierarchical backtracking replanning to return to the parent node and regenerate the subtree plan from the latest state, preventing continued drift along an incorrect trajectory. In zero-shot evaluation on the ALFRED benchmark, AtomTree outperforms prior LLM-based planners. Project page: https://zhaihaotian.github.io/atomtree-website/.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.38400v1' target='_blank'>When "No Worries" Went Wrong: HRI Lessons for Foundation-Model Robots</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Eliahu Khalastchi</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-28 07:43:21</h6>
+<p class='card-text'>When a person declined our robot's invitation to play, Alice turned her shoulder away and said "No worries, it's all good." Only after a brief pause did she drive off. The words and gestures were plausible but their order changed the message. In another episode, Alice informed a host that his visitor had arrived---while the visitor stood right beside him. Both came from a three-year ROS 2 HRI consortium that integrated large language and vision models as they emerged. Today's foundation models give robots broader capabilities to perceive their surroundings, reason about situations and generate behavior. Yet capability alone does not ensure that a changed situation shapes the action that reaches a person. Evidence may never be acquired, or a purpose or constraint may fail to survive planning and execution. A system may even report Success when an action no longer serves its intended purpose. Drawing on the consortium's engineering experience, we develop five design lessons about attention, knowledge, commitments, embodied timing and action authority. We then introduce TRACE, a lightweight review that changes one interaction premise, follows it to a decision or enforcement boundary, and produces an actionable architecture finding. A bounded analysis of a published LLM-generated behavior-tree system illustrates how an available clarification mechanism can go unused. The engineering lesson is to preserve accountability boundaries, not the computational pipelines that once exposed them.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.38249v1' target='_blank'>Keepace.ai: A Technical Report on a Large Language Model for Sports and Health</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Keepace. ai Team, Bowen Wu, Heng Wang, Jufeng Mi, Kang Liu, Kun Li, Ling Man, Long He, Suli Fan, Xiaosen Jiang, Yi Wang, Ying He, Yu Tang, Yunhan Li, Zifang Liu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-28 04:00:29</h6>
+<p class='card-text'>Large language models hold promise for delivering safe, scientifically grounded, and personalized exercise guidance at scale, yet the sports-and-health domain still lacks curated training corpora and rigorous evaluation benchmarks. Keepace.ai is a domain-specialized LLM built on Qwen3.5-27B through post-training, currently optimized for Chinese-language exercise guidance across three tasks: workout plan generation, sports-and-health knowledge QA, and personal sports data analysis. In internal rubric-based evaluations designed with domain experts, Keepace.ai outperforms its base model and larger general-purpose baselines, with the most pronounced improvements in exercise safety, boundary compliance, structured output completeness, and scientific accuracy. This report summarizes the current design, data pipeline, safety-first evaluation framework, and evaluation results of Keepace.ai.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.38145v1' target='_blank'>El Agente Quntur: Agentic Active-Space Selection for CASSCF</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Juan B. Pérez-Sánchez, Viviana Roman-Ventura, Olalla Nieto-Faza, Aiwei Yin, Alán Aspuru-Guzik, Varinia Bernales</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-28 01:28:33</h6>
+<p class='card-text'>Multireference calculations often require substantial human expertise and time to choose and refine an active space for the electronic states or chemical process of interest. This involves selecting which orbitals to include, verifying that the calculation describes the intended excited state, and deciding whether the results have converged. Here, we ask whether scientific agentic systems (harnesses) can make these decisions reliably. We use the El Agente Quntur multi-agent harness, with GPT-5.6 Sol and GPT-5.6 Terra as the underlying LLM components, to explore 32 diverse singlet excitations at fixed molecular geometries. The agents planned and executed calculations, choosing and refining active spaces under prompts that specified equal-weight two-singlet state-averaged CASSCF followed by strongly contracted NEVPT2 with def2-TZVPD. We evaluate excitation energies against published CASPT2 reference values at matching geometries and compare performance with six deterministic Active Space Finder protocols. Within the El Agente Quntur system, agents detect missing active orbitals, compare candidate excited states, and revise state assignments as calculations progress. Agentic execution reduced mean absolute error by 48\% relative to the state-of-the-art Active Space Finder protocol. We note that computational traces vary substantially across runs in both active space selection strategies and cost, even for the same molecule. Our results underscore the advantage of agentic active space selection over fixed workflows, yet leave room to improve efficiency through runtime-aware decision-making, reduced inter-agent communication overhead and redundancy, more systematic checks of state identity, and clearer stopping criteria.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.38054v1' target='_blank'>Understanding Post-Quantum Cryptography Adoption: Practices, Challenges, and Evolution in Open-Source Software</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Souhardya Saha Dip, Moshood A. Fakorede, Krishna Upadhyay, Umar Farooq</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-27 23:10:34</h6>
+<p class='card-text'>Post-quantum cryptography (PQC) standards establish algorithms for quantum-safe systems, but empirical evidence about how software projects implement and maintain PQC support remains limited. We investigate this implementation and maintenance work by mining 114,361 commits and 5,713 issues across 179 open-source repositories. We use human annotation and validated LLM classification to identify PQC algorithms in commits, classify their adoption status and deployment mode, and identify technical challenges in issue discussions. The commit classification for PQC algorithms reveals that 90% of commits concern maintenance of existing support. From the issue discussions, we construct an 11-category taxonomy of recurring technical challenges. Build, packaging, and dependency failures, along with functional defects, account for approximately half of categorized issues. To examine how PQC support evolves, we use time-series analysis and first implementations of individual algorithms within repositories around NIST standardization milestones. After the 2024 finalization, standardized algorithm names appeared in more than 80% of the PQC development changes analyzed, although earlier names such as Kyber continued to appear. Development activity increased over the observation period. Our milestone analysis, however, did not find a significant increase in first implementations. Migration plans should therefore account for sustained maintenance, prioritize build reliability and integration testing, and track both standardized and predecessor algorithm names. We make the dataset, taxonomy, annotations, and analysis pipeline publicly available.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.38039v1' target='_blank'>Reusable LLM-Based Plans with Probabilistic Guarantees for Self-Adaptive Systems</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Asher Tempest Arya, Rajan Maghera, Nicholas Wu Jiang, Federico Mora, Aren A. Babikian, Marsha Chechik</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-27 22:50:48</h6>
+<p class='card-text'>Self-adaptive systems are designed to accommodate variants of their environment, which form a family of instances whose uncertainty is captured by probabilistic models, and must meet probabilistic requirements on each instance. Within such a family, changes in size and structure complicate the fundamental adaptation decision: whether to retain, reuse, or construct a new controller, since controllers are often synthesized for and specific to an instance. Large language models (LLMs) have recently been used to write reusable controllers, but existing approaches largely target deterministic domains, and probabilistic model checking of their output remains limited to preliminary single-instance studies. In this paper, we propose a verifier-guided framework for controller reuse with explicit support for families of environments. The framework introduces a novel combination of LLM-written controllers with probabilistic model checking to provide per-instance guarantees for probabilistic requirements. We evaluate our approach using three LLMs on three benchmarks, assessing its effectiveness and cost with respect to baseline implementations, the distribution of adaptation decisions, and the impact of individual framework components. On grid worlds, LLM-written rule lists are verified on about 90% of held-out instances, against at most 77% for the baselines, and verifying a stored rule list is 15 to 103 times faster than per-instance synthesis. Reuse serves most episodes at a small fraction of the cost of generation or per-instance synthesis, and model-checking feedback increases verified coverage over independent restarts.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.37826v1' target='_blank'>DeFT-RAG: Incrementally Decomposing Multi-Hop Questions into Self-Contained Sub-Questions with Reusable Answers</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Dingyi Kang, Bingzhe Li</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-27 18:40:23</h6>
+<p class='card-text'>Retrieval-augmented generation (RAG) lets a large language model (LLM) answer questions by retrieving relevant passages from a large corpus. However, RAG struggles with multi-hop questions, which require chaining facts spread across several documents through intermediate entities that the question never mentions. Graph-based RAG methods retrieve once from the entities a question names and so rarely recover the full evidence chain. Iterative RAG methods recover it step by step, but their accuracy is limited by the many tasks they ask the LLM to perform, such as planning the sub-questions, deciding their dependencies, rewriting them as answers arrive, and keeping track of what is known. We propose DeFT-RAG, a RAG framework built on three components. First, DeFT-RAG generates one self-contained sub-question at a time from the original question and the sub-questions answered so far with their answers (QA pairs). Each sub-question names every entity it asks about, which removes the need to plan, track dependencies or rewrite, and lets the LLM focus on a single fine-grained task at a time. Second, DeFT-RAG moves the remaining LLM work outside the LLM: rule-based updates to a QA table that keeps track of what is known, and yes/no decisions made by a fine-tuned lightweight decision model. Third, DeFT-RAG caches the QA pairs and reuses an answer when a later question asks a sub-question with the same meaning. On MuSiQue, 2WikiMultiHopQA and HotpotQA, DeFT-RAG achieves the best accuracy among thirteen baselines with both gpt-4o-mini and Qwen3.6 as the backbone, while giving the LLM fewer input tokens than any other iterative method. With a QA cache shared across 1,000 MuSiQue questions, 23.1% of sub-questions are answered from the cache, which reduces LLM calls by 12.9% without lowering accuracy.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.37283v1' target='_blank'>BenchMeUp: Building Software Engineering Benchmarks from Natural-Language Specifications</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Islem Bouzenia, Michael Pradel</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-27 14:09:04</h6>
+<p class='card-text'>Software-engineering research relies on benchmarks that evaluate new techniques on a set of problem instances. Unfortunately, manually constructing benchmarks is labor-intensive, as researchers must find suitable instances, prepare execution environments, establish expected outcomes, and validate correctness.
+  This paper presents BenchMeUp, an approach for automatically creating software-engineering benchmarks from natural-language specifications. Given a specification defining the desired instances, data sources, and evaluation procedures, BenchMeUp generates search rules and a construction plan, invokes parallel LLM agents that identify candidate instances and construct executable instances, validates the results in fresh execution environments, and packages the instances behind a unified command-line interface. We evaluate the approach on four tasks: program repair, issue reproduction, compiler autotuning, and fixing static-analysis warnings. Targeting 50 instances per task (200 in total), BenchMeUp constructs 198 instances, of which 196 (99\%) are successfully packaged. Search and construction take 36 minutes and \$0.79 per instance, on average. Evaluating eight existing techniques on the generated benchmarks, we find that 189 of 196 packaged instances (96\%) support end-to-end evaluation, allowing users to study the effectiveness of the techniques. Checking every constructed instance against its source, the specification, and its expected outcome, we find that 180 of 198 (91\%) meet all criteria, compared with 10 of 200 instances delivered by Codex (general-purpose coding agent).
+  Overall, we show that LLM-based agents can automate benchmark construction across diverse software-engineering tasks and produce executable instances that existing techniques can use, while validity beyond execution still needs to be checked.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.37081v1' target='_blank'>OpenGray: a benchmark for evaluating the decisions of radiotherapy planning agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Humza Nusrat, Kundan Thind</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-27 11:42:47</h6>
+<p class='card-text'>Background and purpose: Radiotherapy planning agents based on large language models (LLMs) decide when to submit a plan or request review but are evaluated mainly by dose. This study developed OpenGray, a benchmark of planning tasks with known correct decisions. Materials and methods: OpenGray adds tasks with known answers to the OpenKBP-Opt head-and-neck dataset, including two contradictions with dose goals proven incompatible and a feasible control with a stored plan meeting every hard goal. Four systems, from a rule-based planning script to a full LLM agent, were evaluated on 30 patients, the LLM-based ones with a commercial (Terra) and a local (Ministral 3 8B) LLM. Decisions, achieved dose, problem recognition, and technical failures were recorded and also read from logs of 39 stereotactic radiosurgery runs of SAGE, a clinical LLM agent. Results: With Terra, the script preceded by an LLM review and the full agent had decision accuracies of 95.4% and 92.1%, respectively, yet escalated only 50% (95% confidence interval, 25-75%) and 25% (10-40%) of overlap contradictions, which required arithmetic on the anatomy. All four systems submitted every feasible control, but 24% of these plans missed a hard goal that the stored plan had met. In four SAGE runs, one goal failed at every attempt; the agent identified it in every reply but had no action for stopping. Conclusions: Favorable aggregate scores concealed specific decision failures. Planning agents should be evaluated on their decisions as well as their dose and given an explicit action for stopping and requesting review.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.36952v1' target='_blank'>Does More Thinking Pay Off? Reasoning Cost and Correctness of LLMs in Code Generation and Bug Fixing</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Andie Huang, Ying Pang, Qian Zhang, Yihang Cheng, Lin Ma</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-27 10:12:24</h6>
+<p class='card-text'>Many LLMs now emit an explicit reasoning trace before they write code, but benchmark results for code generation and bug fixing usually report correctness alone. It is therefore unclear how much the extra reasoning contributes relative to the tokens it consumes. We examine this question with 866 Python tasks drawn from HumanEval Pro, MBPP Pro, and BugsInPy under five model settings. We look at the accuracy gain and token overhead of reasoning, the behaviors that appear inside reasoning traces, and whether a shortened trace still leads to a correct solution. Turning reasoning on in Qwen3-32B over five runs improves mean pass@1 on HumanEval Pro from 71.1% to 76.5% and mean tests pass on BugsInPy from 3.5% to 7.9%. On MBPP Pro the improvement from 68.1% to 69.5% is not statistically significant, even though the model uses a median of over 2,000 thinking tokens per task. Across models, a longer median trace does not reliably mean higher accuracy. A qualitative analysis shows that traces mostly choose and check an implementation in code generation, while in bug fixing they mostly locate the fault and plan the repair. We then truncate stored traces offline and ask Qwen3-32B with reasoning off to produce a solution from what remains. Retaining the first half of a trace yields no statistically significant drop in correctness. Stopping when the trace becomes repetitive seldom triggers, and stopping once solution code first appears benefits some models but harms others. Neither rule beats plain fixed truncation. These results suggest that more reasoning is not always better and that studies should report reasoning cost alongside correctness.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.36652v1' target='_blank'>Remembering Is Not Enough: Refining Memories and Learning When to Use Them in Multi-Agent Systems</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yipeng Hao, Yuxuan Cai, Wenkai Ji, Jie Zhou, Liyang Yu, Qin Chen, Zhiguo Yan, Shulei Zheng, Liang He</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-27 05:12:46</h6>
+<p class='card-text'>Memory helps LLM-based multi-agent systems reuse experience, but stored advice can be flawed or applied in the wrong situation. Team-level success or failure alone cannot reliably show whether a memory needs correction or should not have been used. We propose DiscernMem, a training-free framework that improves both memory quality and memory use. To improve quality, Defect-Aware Memory Refinement (DMR) compares team executions with a single memory and with no memory, diagnoses rule defects, and tests repairs on current and earlier tasks to guard against losing previously useful behavior. To guide appropriate use, Boundary-Learning Meta-Memory (BLM) records each memory's past uses and effects, learning when its owner role should apply or avoid it based on task context and incoming messages. Together, these components help teams correct flawed experience while retaining useful rules that were applied incorrectly. Experiments with Qwen3-4B-Instruct-2507 on four benchmarks show that DiscernMem achieves the highest average score on AutoGen, CAMEL, and MacNet, exceeding the strongest reported baselines by 0.51-4.32 points. It leads on code generation and symbolic planning across all three systems, including a PDDL score of 37.71 versus 28.48 on CAMEL.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.36533v1' target='_blank'>RoboAuto: Autonomous Robot Program Search through Multi-Level Physical Understanding</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Buzhao Liu, Jianing Ye, Xiu Yuan, Yangtong Feng, Chengsong Huang, Tyler Dinh, Yevgeniy Vorobeychik, Ning Zhang, Chongjie Zhang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-27 02:41:22</h6>
+<p class='card-text'>Recently, LLM-based autonomous agents have shown strong capabilities in iteratively generating, evaluating, and refining executable solutions. In robotic manipulation, Code-as-Policy lets these agents search over modular and editable robot programs. However, effective program search requires physical understanding: agents must understand how objects can be manipulated, how scene geometry constrains actions, and why interactions succeed or fail. Existing methods rely mainly on execution feedback for program refinement, often leaving these physical questions unresolved. We introduce RoboAuto, a framework for robot program search that explicitly organizes physical understanding at the object, scene, and interaction levels through three components. First, a hierarchical knowledge base combines executable skills with object-centric knowledge of affordances, spatial relations, and action effects, learned from embodied data and online task solving. Second, scene grounding connects this knowledge to the current environment by identifying relevant objects and resolving action-critical quantities. Third, multi-stage planning with self-designed experiments checks whether each stage produces its expected physical effects and actively tests competing hypotheses to resolve physical uncertainties. RoboAuto achieves superior performance across five benchmark families, attaining an 89.1% success rate on short-horizon LIBERO-PRO tasks and more than twice the mean success rate of ASPIRE on LIBERO-PRO Long and LIBERO-Plus. It also outperforms ASPIRE and $π_{0.5}$ on three challenging long-horizon real-robot tasks requiring precise manipulation. We further show that the knowledge base transfers across simulators and embodiments, and that program search performance scales with its size. Project page: https://roboauto-ai.github.io/</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.36433v1' target='_blank'>LM-DSB: A Lightweight Multi-agent System for Automated Daily Safety Bulletin Generation in Construction</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Xianxiang Zhao, Advik Mehta, Falak Sethi, Brian Gue, Qipei Mei, Lingzi Wu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-27 00:29:20</h6>
+<p class='card-text'>Construction safety management still struggles to produce daily safety bulletins (DSBs), structured daily communications that identify site-specific hazards, convey safety protocols, and set preventive measures for workers. Manual DSB creation takes 2-3 hours daily and yields inconsistent quality, with 25% of crews never conducting pretask planning (Olson et al., 2016), diverting safety personnel from field supervision. This study proposes the Lightweight Multi-Agent DSB System (LM-DSB), which integrates retrieval-augmented generation (RAG) with a locally deployable Large Language Model (LLM) to automate DSB generation on consumer-grade personal computers. LM-DSB coordinates specialized planner, researcher, and writer agents in a hierarchical architecture, enhanced by domain-specific fine-tuning on construction safety documentation and RAG grounding in 37 health, safety, and environment (HSE) documents. A two-phase validation assessed feasibility. Phase 1 comparative evaluation showed the multi-agent RAG system (Llama 3-8B) outperformed all alternative configurations, with strong lexical alignment and coherence (TF-IDF: 0.70, BLEU: 0.39, ROUGE-1: 0.66) and near-complete document generation (length ratio: 1.01 vs. 0.39 for single-agent RAG). Phase 2 expert evaluation (N=40) confirmed practical acceptability (mean scores 3.50-4.20 on a 5-point scale), particularly in regulatory compliance (4.20) and factual accuracy (4.10). The findings show that architectural design enables lightweight models to handle safety-critical documentation on consumer-grade hardware, advancing technology democratization in construction safety management. Limitations include knowledge base scope, language constraints, and lack of field deployment validation; future work should address multimodal integration and workflow adoption.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.36420v1' target='_blank'>SO-101 Bench: Accessible Spatial Manipulation</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Truman Hickok</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-27 00:02:28</h6>
+<p class='card-text'>Low-cost arms such as the SO-101 have become the most common entry point to robot learning, yet no released policy performs spatially constrained, language-conditioned tasks on them out of the box, and existing SO-101 benchmarks run only on physical hardware with simple tasks and few held-out objects. We introduce SO-101 Bench, a simulated benchmark for language-conditioned spatial manipulation built on an Isaac Lab digital twin of a real SO-101 setup. It has four tasks scored as five families, 138 objects in seen, unseen-instance and unseen-class splits, 916 evaluation episodes with subsets for held-out appearances, rotate-to-fit planning and occlusion memory, and 3,629 simulated demonstrations on which every learned policy is fine-tuned under an equal compute budget. The twin ranks policies as the real robot does: five policies trained without real data, four VLAs and an LLM agent, keep their exact ranking when the same weights run on the physical arm in an unseen environment with unseen objects (Spearman rho = 1.00, MMRV = 0.000), although simulation overestimates success. Across nine VLAs and world-action models, the best learned policies score near 61%, with spatial placement, unseen object classes and rotate-to-fit planning remaining open. An LLM agent that writes code and hands grasping to a learned policy scores 83.2%, and an ablation shows that this lead comes from the choice of harness and the choice of language model.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.36415v1' target='_blank'>Verifiable Efficiency Limits of Innate LLM Planning in Sliding Puzzles</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yezhou Cheng, Charles Ling</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-26 23:53:23</h6>
+<p class='card-text'>Tool-assisted planning success can reflect external search and verification, leaving a model's unaided planning ability unresolved. We isolate innate planning through complete plans generated in one response without tools or execution feedback. We propose a verifiable framework that decomposes success-weighted plan efficiency as $\mathrm{SPE}=R\times Q\times E$: execution reliability, planning coordination among legal plans, and action economy among completed plans. Trajectory replay and certified optima verify these factors; the joint score includes unsuccessful attempts. We evaluate 8,400 full-plan outputs from seven model conditions on $4\times4$ sliding puzzles, controlling exact horizon and obstacle count in the primary cohort. Models that complete every trial still become less economical at longer horizons, while higher efficiency among completed plans can coexist with poor goal attainment. SPE separates the overall capability hierarchy, while its factors distinguish coordination failure from inefficient completion. The framework makes long-horizon limitations in unaided planning quantitatively verifiable.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2610.36389v1' target='_blank'>MAREval: A Multi-Agent Framework for Evaluating Natural Language Recommendation Explanations</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Reza Yousefi Maragheh, Jayesh Uddhav Kudase, Aysenur Inan, Ramin Giahi, Kai Zhao, Parth Parikh, Jianpeng Xu, Jason Cho, Evren Korpeoglu, Sushant Kumar</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-10-26 23:14:07</h6>
+<p class='card-text'>Evaluating natural language explanations in recommender systems is essential for fostering user trust, transparency, and engagement. However, existing evaluation approaches like human evaluations, while accurate, are resource-intensive and impractical at the scale required by modern recommendation platforms. Also, automated methods using single-agent LLMs suffer from prompt sensitivity and inconsistent outputs. To address these challenges, we propose MAREval, a structured multi-agent framework for evaluating recommendation explanations using large language models. MAREval orchestrates (i) a planner agent that uses a novel Chain of Debate (CoD) prompting strategy to coordinate agent roles and enforce logically consistent evaluation plans; (ii) a moderator agent that regulates discussions by mitigating prompt drift; and (iii) an arbitrator agent that aggregates outputs from multiple evaluation rounds and (iv) a Monte Carlo sampling method, improving robustness and alignment with human judgment. We conduct comprehensive evaluations on both public (TopicalChat) and proprietary recommendation datasets, demonstrating that MAREval outperforms state-of-the-art baselines. Comprehensive experiments on a public benchmark and a proprietary e-commerce dataset show that MAREval improves alignment with human judgments over strong singleand multi-agent baselines. Stability analyses indicate substantially lower variability across repeated trials. In a large human-annotation gate, MAREval meets production quality thresholds where prior evaluators fall short, and online A/B testing demonstrates statistically significant improvements in engagement and revenue metrics. These results establish MAREval as a scalable and reliable solution for human-aligned evaluation of recommendation explanations in real-world systems</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js'></script>
+</body>
+</html>
