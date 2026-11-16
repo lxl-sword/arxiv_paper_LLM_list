@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<title>LLM-planning - 2026-11-16</title>
+<link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap' rel='stylesheet'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'>
+<style>
+body {
+font-family: 'Roboto', sans-serif;
+background-color: #f5f7fa;
+padding: 20px;
+}
+.card {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.card-title {
+    font-weight: 700;
+}
+.card:hover {
+    transform: scale(1.02);
+    transition: 0.3s ease-in-out;
+}
+</style>
+</head>
+<body>
+<div class='container'>
+<h1 class='text-center my-4'><i class='fas fa-book'></i>LLM-planning - 2026-11-16</h1>
+<div class='row'>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.18130v1' target='_blank'>JFinBench: A Continuously Refreshable Japanese Financial Benchmark from the Latest Certification Exams</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Issa Sugiura, Taro Makino, Takashi Ishida</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-13 12:59:12</h6>
+<p class='card-text'>Large language models (LLMs) are increasingly applied to finance, creating a need for benchmarks that evaluate their capabilities across financial systems with different regulations and practices. However, existing financial benchmarks provide limited coverage of country-specific financial systems, and they are difficult to keep up to date as released questions leak into training data. We introduce JFinBench, a Japanese financial benchmark comprising 321 examples from the 2026 editions of six regularly administered certification exams covering accounting, tax, financial planning, and banking. To construct it, we develop a human-in-the-loop agentic pipeline in which a coding agent writes exam-specific conversion code and a review page, while a human verifies every example and feeds corrections back to the agent. This pipeline adapts to heterogeneous exam formats and reduces the effort of incorporating new exam editions, enabling periodic refreshes that mitigate data contamination. Evaluating 12 recent LLMs, we find that Claude Fable 5 and GPT-6 Astra exceed 93% overall, while even the best open-weight model, Kimi K3.1 Pro, trails Claude Fable 5 by 12 percentage points. When models can additionally use a terminal and web access, they retrieve the knowledge they lack and every model improves. The gap narrows but about 4 points remain, and the ranking of models stays largely the same, suggesting that knowledge held in the model itself remains valuable even with tools. We release the dataset, the evaluation code, and the construction pipeline.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.18067v1' target='_blank'>Agent-as-a-Judge</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Runyang You, Hongru Cai, Caiqi Zhang, Qiancheng Xu, Meng Liu, Tiezheng Yu, Yongqi Li, Wenjie Li</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-13 11:50:28</h6>
+<p class='card-text'>Artificial intelligence has progressed from task-specific systems toward general models spanning perception, generation, reasoning, and autonomous interaction, making reliable evaluation essential for comparison, deployment, and post-training feedback. At scale, modern evaluation pipelines increasingly rely on LLM-as-a-Judge to produce scores, preferences, and critiques; in its fixed-context setting, the judge relies on the supplied evaluand and evaluation materials. Yet a reliable verdict may require evidence beyond the supplied evaluand and context---either because critical environmental states remain unrecorded in the static execution log, or because controversial factual claims require external verification. Passive judges cannot obtain that missing evidence before deciding, especially when evaluating agent trajectories, executable artifacts, or domain-specific reports. Recent work therefore develops active evaluators that seek missing evidence and update their grounds for judgment before deciding. We bring these advances together through Agent-as-a-Judge, focusing on how evaluators construct and control checking processes within the broader LLM-based judging landscape. We define the scope through evaluation-directed checks and the use of their results, covering both structured workflows and observation-driven control. We organize the design space by multi-agent collaboration, tool integration, memory, and planning, and show how these mechanisms supply the checks and evidence on which a verdict rests. We consolidate published scores and reproduce missing entries for key agentic judges; the comparison reveals uneven agentic gains and motivates dedicated agentic evaluation. We conclude by characterizing application demands and open challenges in cost, reliability, safety, and governance that condition trusted deployment of agentic judges at scale.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.17933v1' target='_blank'>OutfitterBench: Evaluating LLM Agents on Long-Horizon Resource Allocation and Commitment Coordination</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Jie Huang, Yuecheng Hong, Yao Chen, Shengding Jiao, Xudong Liu, Qiang Ye</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-13 09:11:54</h6>
+<p class='card-text'>In many long-horizon settings, an agent's own choices create future constraints: committing finite capacity establishes future obligations and forecloses later opportunities. Sustaining performance therefore requires both keeping evolving plans feasible and comparing the value of resource allocations with the alternatives they displace. Recent benchmarks increasingly evaluate LLM agents in continuing operations, but give less attention to how agents keep their own commitments feasible while reassessing resource allocations as opportunities change. We introduce OutfitterBench, where agents manage an outdoor-equipment rental business for 200 days, purchasing from a 46-product catalog and handling roughly 1,100 reservation requests. Under a fixed capital ceiling, reservations and uncertain walk-in demand compete for reusable equipment whose availability changes over time. Experiments with seven frontier LLMs show that several agents underperform a simple rule-based baseline, while only the leading agent consistently surpasses it. Trajectory analysis shows that some agents apply known constraints inconsistently and make new decisions that conflict with existing commitments. Agents with more reliable fulfillment can still secure low returns from comparable commitments or delay resource reallocation. The leading agent better connects preparation with economic choices but also misses opportunities for more profitable asset use. These findings highlight limitations in sustaining coherent resource plans and reassessing their value over time. The benchmark code is publicly available at https://github.com/adminblackjack/OutfitterBench.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.17931v1' target='_blank'>MineralExp: Benchmarking LLM Agents for Experimental Design in Real-World Mineral Exploration</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Bing Wang, Mingyang Wang, Yuanhang Mi, Yue Xu, Kaibo Su, Li'ang Xiao, Chunguo Wu, Changchun Li, Ximing Li, Kun-Feng Qiu, Bo Yang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-13 09:10:58</h6>
+<p class='card-text'>In mineral exploration, verifying geological hypotheses relies on designing a variety of geochemical experiments. While large language model (LLM) agents increasingly automate downstream geoscientific data analysis, a crucial upstream capability remains largely unexplored: automated geochemical experimental design, i.e., deciding which experiments to conduct before committing to costly laboratory work. Evaluating this capability of LLM agents is difficult for two reasons. First, geochemical experiments exhibit high methodological diversity and subjectivity: to test the same hypothesis, different geologists may choose different minerals and instruments, so no single protocol can serve as the reference answer. Second, open-ended experimental plans resist representation as structured labels, which makes objective scoring difficult. To address these challenges, we introduce MineralExp, a benchmark that reformulates geochemical experimental design as a hypothesis-based experiment selection problem, i.e., a multi-label classification problem. We abstract concrete instrument names and procedural details into a shared taxonomy of 19 experimental types across five mineral-system processes: Source, Transport, Deposition, Modification, and Preservation. This taxonomy yields deterministic multi-label targets while accommodating diverse experimental protocols. Constructed from published ore-deposit literature and verified by domain experts, MineralExp comprises 277 cases and 1,572 reference experimental plans. Given a geological hypothesis and initial context, an LLM agent selects the relevant tasks and generates concrete experimental plans, which are scored by multi-label classification metrics and an LLM-as-a-Judge metric. The experimental results show that current agents generally achieve high recall but low precision, tending to propose more experiments than are necessary to test the hypothesis.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.17910v1' target='_blank'>Adversarially Attacking Symbolic Vocabulary Vulnerabilities In LLM Planners</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Stephen Obadinma, Xiaodan Zhu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-13 08:51:07</h6>
+<p class='card-text'>As large language models (LLMs) are increasingly deployed as autonomous agents, their abilities in navigating automated planning tasks have become essential. However, despite their strengths, LLMs' planning ability is not robust, particularly when they are not allowed to exploit commonsense cues in the symbolic vocabulary (e.g., names of actions, predicates, and objects) used to define planning tasks. This makes LLMs unreliable compared to symbolic planners. With recent reasoning models showing improved planning performance on tasks with obfuscated symbolic vocabularies, we utilize an adversarial attack framework to reveal to what extent the crucial weaknesses of LLM agents at joint symbolic interpretation and planning remain and whether they can reason properly when presented with severe cases. As such, our main contribution is devising an LLM-based attack model, which we call Symbolic Swapper, to automatically generate obfuscated planning domains with non-standard symbolic vocabularies that systematically break strong reasoning models' ability to plan. In doing so, we reveal how much LLMs' planning abilities can be further degraded under more advanced obfuscation schemes, allowing us to ascertain their success when having to rely on their pure planning ability. We find that attacks can decrease the planning performance of base models and even robust planning frameworks by over 70%. We further analyze the factors behind how LLM planning abilities break down and find that successful obfuscation causes models to appear to significantly degrade in reasoning quality despite them showing some inherent ability to understand the domain, revealing a gap in the perception of a task domain and being able to plan under it.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.17880v1' target='_blank'>Soteria: Formally Verified Planning with Runtime Enforcement for Safe LLM Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Mike He, Ankush Desai, Sharad Malik, Aarti Gupta</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-13 08:14:04</h6>
+<p class='card-text'>LLM agents that execute multi-step tool calls must satisfy two objectives simultaneously: completing the user's task (utility) and conforming to domain policies and correctness constraints (safety). These objectives are in tension -- blocking an unsafe action prevents a violation but can leave the agent stranded with no principled way to recover. Existing approaches sacrifice one objective for the other. We introduce Soteria, a framework that reconciles safety and utility through verified hierarchical planning and runtime enforcement of specifications. Before execution, the agent generates a structured plan that is formally verified against the specifications prior to any tool invocation. During execution, the verified plan serves dual roles: it ensures that the agent takes specification-conformant trajectories and provides guidance when unsafe actions are blocked. Across multiple benchmarks covering a diverse range of tool-use tasks, Soteria achieves 1.7 times the average task success rate of the best baselines, with no violations of policy specifications, demonstrating that safety and utility need not be traded off.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.17850v1' target='_blank'>OrbitWeaver: LLM Agent Planning with Simulation Feedback for Optically Interconnected Orbital GPU Clusters</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Pengcheng Luo, Bowen Zhang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-13 07:33:54</h6>
+<p class='card-text'>Space-based data-center designs increasingly consider GPU computing formations connected by inter-satellite optical links. With limited neighboring connections, jobs assigned disjoint GPUs can still contend on shared relay paths. Rank placement and communication priorities jointly affect this contention and the readiness of downstream computation. We present OrbitWeaver, an offline large language model (LLM) agent planner that jointly optimizes rank placement and communication order. Guided by communication structure, execution dependencies, and simulation feedback, the agent constructs and refines plans that coordinate shared-link access with computation progress. This coordination reduces contention and dependency blocking, shortening mean job completion time (JCT). Simulation experiments on optically interconnected orbital GPU clusters show that OrbitWeaver reduces aggregate mean JCT by 6.2-33.5% relative to the state-of-the-art baselines CASSINI, Crux, and Symphony. These results demonstrate the value of LLM-guided planning for efficient concurrent computing in orbital GPU clusters.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.17780v1' target='_blank'>LuthorSQL: A One-Pass Text-to-SQL Model as System 1 for a Slower LLM Agent</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Ibrahim Memon, Armin Karamzade, M. Hanif Jhaveri, Roy Fox</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-13 05:44:08</h6>
+<p class='card-text'>Frontier LLM agents that query databases with tools are among the most accurate text-to-SQL systems, but per-query calls to a hosted model are slow, costly, and expose sensitive organizational queries to external APIs. For example, a Claude Opus 5.5 agent serving 10,000 queries a day costs over $70,000 a year at list price. To what extent can local hardware already owned by an organization offload this burden without compromising the agent's accuracy? We present LuthorSQL, a non-autoregressive 7B text-to-SQL model that serves as a rapid System 1 gate for a slower LLM agent (System 2), escalating queries only when uncertain. LuthorSQL makes a single forward pass to predict slot scores over a bounded grammar for query plans, compiles and runs up to 32 candidate plans, and chooses an answer using a trained validator. On its own, LuthorSQL reaches 68.03% execution accuracy on BIRD's hidden test set at 0.84 s per question on a single GPU, maintains its accuracy in 9 GB with 8-bit quantized weights, and transfers zero-shot to Snowflake, BigQuery, MySQL, PostgreSQL, and DuckDB within 3.1 points of its native SQLite accuracy. Combined with Claude Opus 5.5 in a pre-registered confidence cascade over 227 questions on databases published after Opus's training cutoff, LuthorSQL answers nearly half of all questions locally and cuts API cost by 33.3% at the same accuracy. Finally, contamination probing shows that Opus reproduces 48-92% of public benchmark gold queries verbatim without seeing the schema; however, its tool-assisted accuracy holds on renamed schemas and reaches 95.6-97.4% on post-cutoff databases. Code and data: https://github.com/IAMIbrahimmemon/luthorsql</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.17549v1' target='_blank'>Talk to Act: A Synthetic Multi-Turn Dialogue Benchmark for Human Intent Extraction and Action Planning in Robotics</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Deepu Krishnareddy, Mohammad Haziq Khan, Michael Danner, Matthias Rätsch</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-12 22:11:38</h6>
+<p class='card-text'>Multi-turn conversational human-robot interaction (HRI) continues to be a challenging problem in robotics, as many existing systems rely on rigid, command-driven interfaces that can be unintuitive for users. Recent advances in Large Language Models (LLMs) provide a promising direction, given their ability to process natural language, generate structured outputs, and support tool-based reasoning, all of which are relevant for interpreting user intent in robotic settings. However, progress in this area is constrained by the limited availability of datasets and benchmarks that capture the nuances of real-world human communication, such as multi-turn dialogue, ambiguity, and context-dependent requests.
+  In this work, we present a synthetically generated multi-turn dialogue dataset for HRI, annotated with action intents, object references, and task plans across a range of scenarios and user personas. Our primary focus is on evaluating the capability of small, open-weight language models for robotic tasks, particularly in settings where local deployment and efficiency are important. To this end, we frame intent extraction as a tool-calling problem where each predicted action corresponds to a structured function call with arguments grounded in the dialogue and benchmark models ranging from 270M to 8B parameters on their ability to perform intent extraction and action planning without task-specific fine-tuning.
+  Our results show that these models can achieve reasonable performance on the task even at relatively small scales and without any task-specific fine-tuning. This suggests that compact, locally deployable models already provide a useful baseline for conversational robotic systems. We expect that task-specific fine-tuning and more realistic training data will enhance performance further and make such models increasingly suitable for real-world robotic applications.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.17267v1' target='_blank'>LiveGeo: Benchmarking Geographic Agents in Continuously Evolving Worlds</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Pengcheng Zhou, Xuanyu Liu, Yanchen Yin, Tianjie Ju, Bobo Li, Shengqiong Wu, Hao Fei, Mong-Li Lee, Wynne Hsu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-12 18:45:58</h6>
+<p class='card-text'>We introduce GeoWorld, a controllable and continuously evolving geographic environment platform for LLM agents, and LiveGeo, a benchmark for evaluating reliable decision-making in real-world geographic environments using GeoWorld. Unlike existing evaluations that largely reason and plan over fixed geographic states, GeoWorld is grounded in real-world geographic structure and allows external world states to evolve along their own temporal processes while preserving verifiable state histories. LiveGeo places geographic tasks within this evolving environment, requiring agents to actively acquire task-relevant information, verify whether the evidence supporting prior decisions remains valid, and revise their plans when necessary. Our results reveal that even frontier LLMs struggle with static tasks, with no model consistently excelling across tasks, while strong static performance does not ensure dynamic reliability. Further analysis identifies a key bottleneck: agents struggle to acquire and translate relevant evidence into valid decisions and maintain their correctness as the world evolves. By releasing LiveGeo together with its GeoWorld platform, we aim to provide the community with a flexible and extensible infrastructure for studying the next generation of agents capable of reliable action in evolving geographic worlds.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.17020v1' target='_blank'>Maximizing LLM Utility While Managing LLM Fallibility</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Ekta U. Samani, Christopher G. Atkeson</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-12 16:09:49</h6>
+<p class='card-text'>Large language models (LLMs) can supply autonomous systems with plans, predictions, and judgments, but these contributions are sometimes wrong. This review asks how a system can maximize an LLM's utility while managing its fallibility. Our answer is to adapt the system's reliance on the LLM as evidence about the LLM's performance accumulates. Systems built from imperfect components, such as noisy sensors and faulty software, have long worked in this way, and the classical methods they use can be applied to LLM-based systems as well. A system can change its reliance on an LLM in several ways, depending on the LLM's role and on the other components in the system. Each change needs an estimate of the LLM's reliability, and the LLM's role and the kind of contribution it makes determine what to estimate. Classical methods from decision theory, estimation, and online learning then turn these estimates into reliance decisions. These decisions can reduce how often LLM errors affect the system. However, some errors matter even when they are rare. An independently verified mechanism can prevent such errors from being executed. Without one, adapting reliance using reliability estimates can still keep their risk within a bound. Studies on adapting reliance on LLMs are emerging but limited, and the reviewed comparisons suggest that adapting reliance can improve system performance.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.16861v1' target='_blank'>Visual Cipher Bench: Benchmarking LLM Agents on Long-Horizon Visual Reasoning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Deyao Hong, Jiayi Jiang, Yuchun Chen, Yixuan Shi, Wenyi Li, Zheng Jiang, Chengxing Xie, Mingyu Su, Qingle Liu, Mingju Gao, Yizhe Chi, Youjie Zheng, Calvin Xiao, Kaisen Yang, Huan-ang Gao</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-12 14:33:46</h6>
+<p class='card-text'>While language-model agents excel at long-horizon coding and terminal tasks, this success relies on two conditions: explicit text specifications and immediate execution feedback. However, neither condition holds in real-world problems where critical information exists only in images, leaving it unclear whether long-horizon capability transfers from text to visual reasoning. In such visual settings, because rules and clues resist text transcription and lack test-case feedback, agents must repeatedly inspect images, simulate spatial transformations, and autonomously cross-check clues. Despite this challenge, existing evaluations fail to capture such capability: visual reasoning benchmarks largely reduce tasks to single-turn, short-chain question answering, whereas agent benchmarks focus on text-based environments or interactive states that permit trial-and-error. To bridge this gap, we introduce Visual Cipher Bench, a collection of 40 original visual puzzles across four categories: spatial manipulation and simulation, logical constraints and planning, rule induction, and knowledge-based decoding. Each puzzle provides only one to three black-and-white line drawings and a minimal submission instruction, requiring agents to discover the underlying solving mechanism entirely from the images. Across 29 reasoning-effort configurations of eight frontier models, even the strongest model, GPT-6 Astra (max), achieves only 26.7% accuracy, while five of the eight models score below 1%. Yet on a ten-task subset, providing a single non-spoiler mechanism hint boosts accuracy from 7.8% to 55.6%. This sharp contrast shows that the primary bottleneck of current agents lies not in executing multi-step plans, but in autonomously discovering rules from visual evidence. Visual Cipher Bench thus provides a rigorous benchmark for measuring long-horizon visual reasoning in agents.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.16806v1' target='_blank'>FlatSeek: LLM-Driven Symbolic Discovery of Flat Outputs via Backward Data Generation</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Zihao Fu, Xingchen Li, Keyou You</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-12 13:43:51</h6>
+<p class='card-text'>Differential flatness enables efficient planning and control, but discovering explicit flat outputs for general nonlinear systems remains difficult due to the lack of general methods and supervised data. We propose FlatSeek, a framework combining backward data generation with task-specific large language model (LLM) training. By reversing the defining reconstruction of flatness, we generate system-flat-output pairs with known certificates, then fine-tune an LLM to propose symbolic flat-output candidates for unseen dynamics. On literature and synthetic benchmarks, FlatSeek outperforms both the traditional symbolic methods and the untuned reference models in flat-output discovery success, and uncovers alternative symbolic flat outputs not reported in the literature.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.15964v1' target='_blank'>COMBS: Concealed Object Multi-modal Bayesian Search</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Taylor Bergeron, Kevin Leahy</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-11 20:05:26</h6>
+<p class='card-text'>This work addresses the problem of finding a concealed object in an environment by unifying formalisms for partially observable environments with multi-modal priors drawn from a mix of ontologies, semantic networks, LLMs, and VLMs. We propose a concealment-adaptive mixed-observability MDP (CA-MOMDP), a Bayes-adaptive setting where uncertainty is over both object locations and which nodes can conceal them, held as a hypothesis with a bounded ontology prior and resolved only by interaction. We define a hierarchical transition system (HTS) to abstract the environment into room and object nodes that can be planned over via our CA-MOMDP. We further propose a COMBS-score: a multi-modal fusion of a human informed semantic network, LLM, and VLM, to initialize the belief over object locations, which grounds our abstractions and reduces reliance on a single model. Belief is maintained via Bayes' rule, which never lets a look rule out a closed container. We prove a present target is found in a bounded number of searches under exact perception and that its location is never ruled out given missed detection under noisy perception. We ablate each component to demonstrate their significance. Across five simulator configurations, from a gridworld to Matterport3D with a real detector, COMBS finds 92-100% of in-distribution and 92-100% of out-of-distribution targets, matches or beats the baselines in processing speed, significantly outperforms a per-step LLM policy at lower cost on the larger scenes, recovers more out-of-distribution placements than a TidyBot ranking, and matches an LLM-only prior at a fraction of its per-decision latency. COMBS is the only standalone method that can declare a target absent at a stated error level, and the per-step LLM policy offered a termination action abandons 12-22% of targets that were present, against 1.6-3.2% for COMBS on the same episodes.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.15372v1' target='_blank'>LLMRunner: Closed Workload Model Performance Testing Framework for LLM Servings</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Arush Upadhyaya, Debadatta Mishra</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-11 11:52:20</h6>
+<p class='card-text'>Performance testing large language model (LLM) serving engines is a crucial requirement considering the criticality of the infrastructure for deploying conversational AI at scale. Most of the benchmarking tools used to carryout performance evaluation of LLM serving do not capture realistic workload orchestration unlike closed workload performance testing infrastructure used in other domains such as web and database engines. For example, state-of-the-art LLM benchmarks for performance testing model traffic as streams of independent single-turn and stand-alone requests omitting the end-user behavior such as think-time between conversational turns. We present LLMRunner, a performance tester for LLM serving that addresses this gap by providing a framework to generate realistic load consisting of multi-turn conversations with configurable end-user parameters such as number of users in the workload loop, think-time distributions etc. Moreover, LLMRunner provides declarative matrix-sweep experiment plans, integrated GPU and KV-cache monitoring, and an automated artifact collection and plotting subsystem.
+  We use LLMRunner to comparatively analyze the performance of LLM serving when NVIDIA CUDA Unified Virtual Memory (UVM) is used as a drop-in replacement memory allocator for the Key-Value cache (KV-Cache). Our test demonstrates that UVM incurs no measurable throughput or latency penalty compared to the baseline memory allocation technique for non-oversubscription scenarios.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.15317v1' target='_blank'>BiPOP: Partial-Order Planning for Long-Horizon Bimanual Robotic Manipulation</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Kun Chu, Xufeng Zhao, Jan-Gerrit Habekost, Cornelius Weber, Stefan Wermter</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-11 10:56:04</h6>
+<p class='card-text'>Bimanual robotic manipulation is versatile, yet its central challenge lies not only in executing dexterous motion with each hand, but also in coordinating the two arms for long-horizon manipulation under coupled spatial and temporal constraints. Prior work has largely focused on endowing robots with human-level manipulation skills, paying less attention to the structure of bimanual behaviour itself: many practical tasks are a coordinated composition of reusable unimanual skills and a small set of synchronous bimanual skills. This makes high-level spatio-temporal coordination, rather than skill acquisition alone, a key bottleneck for efficient bimanual execution. We propose BiPOP, a framework that couples Large Language Models (LLMs) with Temporal Partial-Order Planning for long-horizon bimanual manipulation. At its core is an explicit spatio-temporal model that partitions the workspace by arm reachability and captures inter-arm dependencies, arm assignment, synchronization requirements, and opportunities for safe concurrent execution. Building on this model, an LLM translates natural-language instructions into a formal PDDL specification, while a temporal planner enforces the constraints and schedules actions, yielding plans that are logically consistent at the symbolic level and efficient through parallel execution. On simulated long-horizon tasks of varying complexity, BiPOP outperforms open-loop planning with strong reasoning models and closed-loop ReAct-style planning in success rate, planning time, and plan efficiency, and the full pipeline runs end to end on the real bimanual robot NICOL. A failure analysis further shows that LLM-only planners mainly violate spatial and temporal coordination constraints, which motivates delegating these constraints to a symbolic planner. Code: https://github.com/Kchu/BiPOP</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.15093v1' target='_blank'>Decide Before You Move: Diffusion-Generated Search Reference for Zero-Shot Open-Vocabulary Object Navigation in Semi-Static Environments</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yuxuan Feng, Fujing Xie, Sören Schwertfeger, Hermann Blum</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-11 06:09:53</h6>
+<p class='card-text'>Open-world navigation requires a robot to locate a user-specified target in an indoor scene under open-vocabulary queries. Realistic indoor environments are semi-static: walls and furniture largely persist while smaller objects move, relocate, or vanish between visits. Prior-map systems answer queries from object poses recorded at reconstruction time, which expire as soon as objects move, whereas online methods re-derive where to look from current observations every few steps, often through expensive calls to a vision--language model. Assuming that walls and large furniture do not move, we keep their map to plan paths, but use a target--furniture co-occurrence prior to decide where to search. We present PreNav, an ObjectNav framework on semi-static environments. Rather than invoking a vision-language model at each step, PreNav generates a single global search reference before the robot moves: an LLM converts target--furniture co-occurrence into a spatial prior, a conditional diffusion model turns that prior and the persistent structure into an ordered centerline with a band around it, and the robot approaches the target once it is detected online. Experiments on a Gibson ObjectNav benchmark show that PreNav outperforms a strong online baseline under matched structural priors, using a generator trained only on room-level ScanNet++ scenes and applied to floor-level Gibson without fine-tuning. Real-world experiments under object relocation and open-vocabulary queries further validate the approach.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.14736v1' target='_blank'>When Should Semantic Priors Enter Partially-Identified Causal Discovery?</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Muhammad Ahmed Mohsin, Saad Bin Ather, Valentin Six, Lancelot Da Costa, Tommaso Salvatori, Bernhard Scholkopf</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-10 20:55:34</h6>
+<p class='card-text'>Observational causal discovery often leaves causal di- rections unresolved or unstable. Large language mod- els (LLMs) can provide semantic information to resolve these directions, but incorrect proposals can exclude the true causal graph and invalidate downstream inference. We study three separate decisions: where to allocate semantic queries, which proposals to admit, and which causal graphs to retain. Our framework distinguishes population non-identifiability from finite-sample insta- bility, evaluates semantic orientation against statistical and random controls, and examines calibrated admis- sion and error-tolerant DAG retention. Experiments across benchmark networks show that semantic infor- mation improves recovery over coin-flip orientations, but targeting unstable edges has no established ad- vantage over matched-random allocation. The tested admission certificate cannot support nontrivial admis- sion with the available calibration tasks. Moreover, downstream retention depends on reference adequacy: learned references contain the true DAG in only three of 80 planned tasks. These findings separate the value of semantic information from the reliability of its alloca- tion, admission, and retention, and identify calibration size and reference adequacy as key limitations.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.14724v1' target='_blank'>Harmony: Bridging Audio Understanding and Editing through Agentic Collaboration</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Zhongyi Tong, Yapeng Tian</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-10 20:36:57</h6>
+<p class='card-text'>Natural-language audio editing requires connecting a user's intent to specific sounds and time regions while preserving surrounding content. Complex requests make this connection demanding: an edit may select one occurrence, depend on a temporal relation, or modify a source that overlaps with other sounds. We introduce Harmony, an agentic framework that bridges audio understanding and editing through collaboration among an LLM planner, an audio-language model, and external tools. Harmony combines two mechanisms. Edit-driven collaborative planning uses targeted questions and tool measurements to determine the target, timing, and operation parameters. Evidence-guided execution uses observations of the first separated or generated audio to trigger bounded corrections before final mixing. Together, these mechanisms connect semantic decisions to waveform operations throughout the editing process. Harmony supports addition, removal, replacement, and volume adjustment. On 420 MMAE examples spanning these operations, Harmony achieves an exact match rate of 22.62%, compared with 13.57% for the strongest baseline, and improves aggregate instruction following and context preservation.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.14648v1' target='_blank'>Evaluating the Performance of LLMs in Drafting NIH Data Management Plans</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Nahid Zeinali, James ONeil, Xuebin Dong, Rebecca Hofstein Grady, Maria Praetzellis, Brian Riley, John Chodacki, Bhavesh Patel</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-10 19:01:50</h6>
+<p class='card-text'>Sharing research data is essential to promote transparency, enable reproducibility, and fuel scientific discoveries. To ensure consistent sharing, the National Institutes of Health (NIH) and other funding agencies require applicants to submit data management plans (DMPs) with their proposals. They aim to encourage researchers to consider their data management and sharing strategies early on. However, researchers often face challenges when developing DMPs due to a lack of knowledge about data-sharing practices. Here, we evaluated the performance of Large Language Models (LLMs) in drafting DMPs compliant with the 2023 NIH guidelines. The goal was to investigate whether LLM-supported DMP creation could reduce the burden on researchers and librarians. We compared Llama and GPT performance against NIH-provided DMP samples. We also asked domain experts to evaluate LLM-generated DMPs. Overall, we found that LLMs can accelerate the creation of initial drafts but still require expert review before submission to ensure clarity and completeness. Moreover, open-source LLMs may not be as ready off-the-shelf as commercial ones for drafting funder-compliant DMPs.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.14419v1' target='_blank'>Evaluating LLM-Generated World Models for Neuro-Symbolic Reasoning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Souhaila Djaffal, Amna Jamal, Gagana Madhugiri Devaraja, Anidipta Pal, Jobst Heitzig</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-10 17:58:12</h6>
+<p class='card-text'>Formal world models can support planning, verification, and safety reasoning, but constructing them from open-ended natural-language situations is difficult, particularly in multi-agent settings where several formalizations may be plausible. We study whether five LLMs can generate such world models as partially observable stochastic games and whether mechanical validity is sufficient to establish that the resulting model faithfully represents the intended decision problem. We introduce a benchmark of 44 scenarios spanning game, situational, and cultural settings and evaluate generated world models along three dimensions: mechanical validity, reference-relative structural agreement, and semantic criteria. Across three empirical tracks, we analyze 410 first-pass generations. In the reference-backed game track, 134/135 generated world models pass a strict mechanical audit, yet mean permutation-invariant structural F1 is only 0.366, with just 28/134 mechanically valid models exactly matching the authored reference. In the cultural track, explicitly naming the country changes the generated structural representation for most LLMs while producing only small changes in automated semantic scores. These results show that executability is a necessary but insufficient criterion for LLM-generated world models: models that are mechanically valid can still differ substantially in the structure used by downstream neuro-symbolic reasoning and planning.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.14102v1' target='_blank'>Mobility-Aware Task Offloading in Mobile Edge Computing-Empowered Space-Air-Ground Integrated Internet-of-Things Networks</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Minghao Sun, Jinghuai Xiong, Xiaoli Chu, Zitian Zhang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-10 13:56:46</h6>
+<p class='card-text'>Mobile edge computing (MEC)-empowered spaceair-ground integrated Internet-of-Things (IoT) networks (SAGIINs) provide a promising solution for computation-intensive tasks generated by mobile IoT devices (IDs). However, task offloading in SAGIINs is challenging due to time-varying IDto-unmanned aerial vehicle (UAV) channels, intermittent LEO satellite service availability, and the coupling among UAV trajectory, communication, computation, and energy decisions. This paper investigates an energy-efficient task offloading and UAV trajectory planning problem in an MEC-empowered SAGIIN, where one UAV acts as both an aerial relay and an MEC server, and multiple LEO satellites provide supplementary computing resources. The UAV trajectory planning, task splitting, and computing resource allocation are jointly optimized to minimize the total system energy consumption under task completion, communication, computation, flight region, and satellite service window constraints. The resulting non-convex problem is decomposed into a UAV trajectory planning subproblem and a task splitting and computing resource allocation subproblem. To solve the former, a retrieval-augmented generation (RAG)-assisted large language model (LLM)-enhanced deep deterministic policy gradient (DDPG) algorithm, termed RLD, is proposed. The latter is shown to be convex and can be solved by using CVXPY for a given UAV trajectory. A weighted retrieval score is further designed to balance ID mobility-pattern similarity and historical UAV trajectory energy performance. Simulation results show that RLD completes all computational tasks in previously unseen test scenarios while consuming less total energy than the benchmark algorithms.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.13651v2' target='_blank'>DrugCoding: A Scientific Programming Agent for Drug Discovery</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Junwei Hu, Zhuohao Lin, Kun Li, Hengnan Zhang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-10 06:47:15</h6>
+<p class='card-text'>Drug discovery involves multiple interconnected research stages, including molecular design, property prediction, and virtual screening. These processes are characterized by complex workflows, interdependent computational tasks, and diverse specialized tools, placing substantial demands on the coordination of scientific models and computational resources. However, existing large language model (LLM)-based scientific agents still face challenges in autonomous planning of complex tasks, adaptive selection of specialized models, and reliable execution of multi-stage scientific computations, limiting their effectiveness in automating complex drug discovery workflows. To address these challenges, we propose DrugCoding, a scientific programming agent system that integrates scientific task planning, adaptive model routing, multi-agent collaboration, and programmatic tool execution. DrugCoding enables autonomous task planning and dynamic model adaptation for complex research objectives. It can flexibly invoke specialized scientific models, autonomously generate and execute code according to task requirements, and leverage multi-agent collaboration to support efficient execution and reliable validation of complex scientific tasks. To evaluate DrugCoding's performance in scientific tool invocation and multi-stage task execution, we conduct multi-turn tool-calling experiments across diverse language models and scientific tool interfaces. Experimental results demonstrate that DrugCoding achieves an average session-level Pass@1 of 97.35% on the full benchmark, outperforming the strongest baseline, Codex, by 9.24%. On the challenging subset, DrugCoding achieves 97.92%, exceeding the strongest baseline.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.13292v1' target='_blank'>Large Language Model Explainability for Planning Lunar Rover Trajectories under Uncertainty</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Michelle Ho, Maximilian Adang, Zachary Booth, David E. Astle, Margaret Hansen, Edward Balaban, Mykel J. Kochenderfer</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-09 22:01:15</h6>
+<p class='card-text'>Planning planetary rover trajectories under probabilistic uncertainty is a multi-objective optimization problem that science teams currently iteratively solve and verify by hand. This process becomes impractical when timelines and constraints frequently shift throughout the mission planning phase. Sampling-based planners such as Monte Carlo tree search can speed up this process, but their outputs do not preserve traceability to the science objectives that justify each plan, which the science team needs to verify. We propose an interactive assistant based on a large language model (LLM) that can explain planner trajectories using domain vocabulary and re-run the planner under user-specified conditions to compare alternatives. Previous work has used LLMs inside planner decision-making loops, but we explore using them for post-planning explanation, where they are more likely to be trusted since they do not directly influence planner decisions. Our framework pairs a simulator inspired by the NASA Volatiles Investigating Polar Exploration Rover (VIPER) mission with a ReAct queryable interface that calls curated action tools and retrieval functions. We evaluate the assistant on a query bank consisting of plan comparisons, feasibility, and lookup queries. Experiments show that 90.9% of the assistant's responses are faithful to the planner's outputs, a nearly 65% improvement over zero-shot prompting of the same LLM without tool access, demonstrating the potential for trustworthy explainability of uncertainty-aware traverses with an LLM-based system.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.13241v1' target='_blank'>FlowPlan: Reducing the Token Cost of Coding Agents with Abstraction-Guided Planning and Verification</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Melika Sepidband, Jiho Shin, Song Wang, Hadi Hemmati</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-09 21:11:29</h6>
+<p class='card-text'>LLM-based coding agents such as Claude Code can resolve real-world repository issues, but their iterative interaction loop can be expensive. Existing approaches reduce this cost primarily by limiting, compressing, or selectively avoiding information and actions within the repair process. We investigate a complementary question: Can an agent reason about a repair at an abstract program level, rather than repeatedly operating over raw source code, to reduce both the exploration needed to identify a repair and the repeated checking needed to verify it afterward?
+  We present FlowPlan, an abstraction-guided repair approach that structures localization, planning, and verification around per-function control-flow or data-flow graphs. The agent first localizes the candidate fault location on the program abstraction and expresses the intended repair as explicit graph deltas before modifying the concrete source. After the edit, FlowPlan reconstructs the same abstraction and compares the observed structural change with the planned one. Then, a verification checks the complete repair before termination.
+  Across all six benchmark-model settings, FlowPlan does not significantly change resolution rate relative to the vanilla agent while reducing token consumption in every setting, significantly in five of six settings. With Claude Haiku 4.5, it uses only 0.46-0.47x the baseline tokens on SWE-bench Pro, 0.32-0.35x on SWE-bench Verified, and 0.68-0.74x on SecBench; with Sonnet 5, it uses 0.72-0.76x, 0.73-0.74x, and 0.92-0.94x, respectively. Overall, FlowPlan achieves the largest token reduction among the compared methods in three of the six settings and ties the strongest compared method in a fourth. Trajectory analysis shows that FlowPlan saves tokens by replacing much of the costly post-edit re-reading and testing with explicit verification and reducing per-call context.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.12545v1' target='_blank'>Teamknitt: Configuring, Observing and Intervening in LLM-Agent Teams through the Lens of Dynamical-Systems and Human-Team Theory</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Goran Mitevski</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-09 15:15:39</h6>
+<p class='card-text'>Most frameworks for teams of large language model (LLM) agents fix the team's shape inside the software: who talks to whom, how much is passed along, and what a human can do once a run has started. Human-team research has long asked those questions: where team phenomena live (in members or in their interaction), how team-level properties arise, and what separates what a team does from how a team is. I propose using that theory as the organizing lens for configuring, observing and intervening in LLM-agent teams, without assuming its findings transfer.
+  I introduce teamknitt, a framework and open reference implementation in which a user configures a team of 1-16 AI agents for task completion, solution generation, achieving a goal or a research mission; selects one of fourteen deterministic routing topologies or a custom directed graph; chooses a sharing profile that limits what may travel along permitted routes; and binds sources, representations, work dependencies, handoffs and an expertise directory. The recorded process can be observed through non-system views (member reports and behavior) and system views (distributed problem-solving, differentiated transactive memory, interactive coordination, team dynamics). Interventions are explicit and human-led: reviewed reconfiguration between runs, planned disturbances, and private feedback, pause, resume or stop applied at dependency-wave boundaries, with "queued", "applied", "assembled", "understood" and "improved" kept as separate claims. Emergent states such as trust and shared understanding are declared unmeasured.
+  This is an idea and system-description paper with falsifiable hypotheses on topology, information flow and intervention timing, including whether the fractal scaling of communication output between members, and between members on different models, relates to task and team performance. No comparative result is reported.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.12333v1' target='_blank'>AMSchem: Automated Schematic Visualization of AMS Circuits via Verifiable Agentic Generation</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yichen Shi, Zhiyuan Wang, Jianing Cui, Yao Lai, Jinting Zhang, Zhuofu Tao, Hongyang Wang, Zhiping Yu, Ting Jung Lin, Lei He</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-09 12:52:58</h6>
+<p class='card-text'>For decades, the netlist-to-schematic gap has remained a persistent challenge in design automation, especially for analog and mixed-signal (AMS) circuits. Netlists encode connectivity, not visual presentation, making their manual conversion into readable schematics time-consuming and dependent on expert conventions. The same gap leaves LLM-based design tools without structured visual feedback, forcing them to iterate on circuits they cannot see. We present AMSchem, a training-free, verifier-guided agentic framework that automatically generates human-readable schematics from AMS netlists. AMSchem separates circuit-aware visual planning (DrawingIntent) from executable schematic geometry (SchematicIR), and applies localized visual feedback with bounded, revalidated repair patches. Deterministic validators enforce device preservation, pin-net consistency, and geometric correctness throughout. For evaluation, we construct AMSchem-Bench comprising 64 circuits of 12 types. On the 40-circuit schematic subset, AMSchem with gpt-5.5 achieves 85.0\% validity (vs. 32.5\% direct generation). When integrated as a visual feedback module in LLM-based analog design, AMSchem resolves all 13 previously failed cases from AnalogCoder benchmark across five models, substantially improving the success rate. Our dataset and benchmark are available at https://www.amschem.com/benchmark</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.12296v1' target='_blank'>RecoGEM: A Serving System for Production-Scale Generative Recommendation</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Xiangrui Yang, Yunfeng Zhao, Jiawei Yang, Fangyu Zhang, Enrui Zhao, Liang Zeng, Cheng Peng, Minhui Xie, Jiaqiang Liu, Xiao Liang, Yiming Qiu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-09 12:20:07</h6>
+<p class='card-text'>Generative recommendation (GR) is moving industrial recommender systems (RecSys) from scoring candidate items to autoregressively generating item identifiers. This shift promises higher recommendation quality, but makes serving substantially harder: each request executes a short sequence of dependent decoding steps that explore a large item space and select promising candidates on the latency-critical path. GR not only creates structural mismatches with conventional RecSys pipelines, but also challenges the architectural and optimization assumptions of LLM serving stacks, making direct adoption of existing systems difficult. We present RecoGEM, our production GR serving system. RecoGEM uses a runtime--engine decoupling architecture to move GR-specific serving responsibilities, such as candidate-state transitions and live artifact updates, to a dedicated runtime. Its execution engine exploits GR's short token sequences, large candidate populations, and predictable step shapes to optimize self-attention, candidate selection, and execution planning. RecoGEM has been deployed for over nine months across our production lines, serving applications with hundreds of millions of users and supporting more than ten GR model families. On our OneModel production workloads, RecoGEM reaches over 1,000 QPS per serving instance with P99 latency below 35 ms and a 2.88$\times$ throughput improvement over representative baselines.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.11971v1' target='_blank'>Harness Matters: Measuring and Dissecting Security Resilience in Web Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Xinyi Wu, Jiagui Chen, JiaYi Dong, Geng Hong, Xudong Pan, Jiarun Dai, Mingxuan Liu, Min Yang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-09 06:53:04</h6>
+<p class='card-text'>Web agents extend LLMs from text generation to real-world web interaction by relying on execution harnesses that interpret user goals, perceive webpages, plan actions, and ground model decisions into browser operations. While prior work has recognized that agent security depends on more than the backend model alone, how harness design quantitatively shapes web-agent security remains insufficiently measured.
+  To systematically study web-agent harness security, we first characterize web-agent harnesses as a four-stage execution workflow covering goal interpretation, webpage perception, reasoning and planning, and action execution. Based on this abstraction, we build WebTrap Farm, a systematic and extensible evaluation framework covering three representative attack categories: malicious user prompts, malicious prompt injection, and deceptive web design. To avoid conflating security with task capability, we use paired usability calibration tasks to separate genuine defensive behavior from capability limitations.
+  Our evaluation shows that existing web-agent harnesses remain vulnerable to typical attacks, with some unsafe behaviors occurring even without explicit attack content, revealing harness-intrinsic security failures (RQ1). Statistical analysis further shows that both harness and backend model significantly affect security outcomes, indicating that deployed-agent security is jointly shaped by the harness and backend model (RQ2). Finally, we localize where defensive behavior emerges across workflow stages and identify more secure design mechanisms, providing actionable guidance for building more robust web agents (RQ3). These findings highlight the web-agent harness as an important security boundary and motivate moving beyond model-centric defenses toward harness-level security design.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.11910v1' target='_blank'>Late but Valuable: Why Deadlines Change the Measured Value of LLM Reasoning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Sina Barazandeh, Benjamin E. Lundell, Jose Lugo-Martinez</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-09 05:32:11</h6>
+<p class='card-text'>Large language models (LLMs) increasingly plan and run experiments in automated laboratories. These experiments keep running while the model reasons and run on schedules with hard deadlines. If an LLM-generated answer arrives late, the system executes a safe fallback action instead, such as rejecting a sample. This creates a systems problem that standard serving metrics do not capture. An answer that matches the fallback adds no value, and answers that differ from the fallback may require more reasoning time. Reporting answer quality and latency separately can therefore overstate the value of reasoning. We test this on synthetic sample decisions, where the best choice is known exactly and a runtime enforces the deadline. We compare one LLM's fast mode, which answers directly, with its thinking mode, which reasons first. In a prespecified replay of 1,200 new decisions, thinking answers that missed a deadline were worth about five times as much as on-time ones. Multiplying the on-time rate by the mean answer value predicted about twice the value that thinking delivered. This prediction overstated thinking's advantage over fast mode by 0.0241 per decision, and by 0.0191 in a repeat on 300 new decisions. Both 95% confidence intervals excluded zero. In a single-GPU Qwen3-8B experiment using simultaneous request bursts, raising the number of requests from 8 to 56 reduced the share of thinking answers that met a 45 s deadline from 79.2% to 1.4%, although total output tripled. Evaluations of LLM agents for laboratories should therefore measure each answer's value and arrival time together and score the action that actually runs.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js'></script>
+</body>
+</html>
