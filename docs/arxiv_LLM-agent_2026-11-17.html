@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<title>LLM-agent - 2026-11-17</title>
+<link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap' rel='stylesheet'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'>
+<style>
+body {
+font-family: 'Roboto', sans-serif;
+background-color: #f5f7fa;
+padding: 20px;
+}
+.card {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.card-title {
+    font-weight: 700;
+}
+.card:hover {
+    transform: scale(1.02);
+    transition: 0.3s ease-in-out;
+}
+</style>
+</head>
+<body>
+<div class='container'>
+<h1 class='text-center my-4'><i class='fas fa-book'></i>LLM-agent - 2026-11-17</h1>
+<div class='row'>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.21577v1' target='_blank'>When Tool Names Are Not Identities: Measuring Provider Misbinding in MCP-Based AI Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Zeynab Anbiaee, Sajjad Dadkhah, Ali A. Ghorbani</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-16 18:49:37</h6>
+<p class='card-text'>Large language model (LLM) applications increasingly act as agents that select and invoke external tools. The Model Context Protocol (MCP) standardizes this interaction by allowing clients to compose tools advertised by multiple servers. However, tool metadata used for discovery and selection is not, by itself, necessarily bound to a verified provider identity. This paper studies this gap as tool-provider misbinding: a failure in which a request intended for a legitimate provider is instead resolved to an attacker-controlled tool. The attacker does not compromise the host, LLM, legitimate server, or network channel; it only operates another MCP server that advertises tools with chosen metadata. We formulate tool provider misbinding as an attacker-controlled tool-selection optimization problem and evaluate it in a controlled MCP environment across five LLM-based clients. The results show that interactions drive misbinding. The strongest failures occur when exact-name collision, task-aligned description, and compatible schema reinforce one another, but authority-enhanced descriptions with compatible schema can also cause wrong-provider execution or unresolved provider ambiguity without name collision. Different models expose the same provider-binding weakness differently, including attacker-controlled provider selection, clarification requests, and unstable or inconsistent provider resolution.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.21515v1' target='_blank'>Beyond Leaderboard Ranks: Selecting Software Engineering Agents Under Budget Constraints</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Srinath Srinivasan, Tim Menzies</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-16 18:10:37</h6>
+<p class='card-text'>Teams that adopt LLM agents for issue resolution must decide which agent to pay for, and how much to spend finding out. Leaderboard ranks give weak evidence for this decision. Accuracy differences may be statistically unresolved, reported costs may be inconsistent, and evaluating candidate agents can itself be expensive. We investigate budget-constrained agent selection using 58,197 run--task records extracted from the Holistic Agent Leaderboard (HAL), focusing on SWE-bench and six additional benchmarks.
+  Across seven benchmarks, 27 of 35 steps along the accuracy--cost Pareto frontiers are statistically unresolved. On SWE-bench, a run costing $34.16 trails the $170.78 leader by 14.6 percentage points, but the available tasks cannot statistically distinguish their accuracy. Reported costs also differ from standardized token-based estimates by up to 11.7x, while selective task evaluation can bias estimates of full-benchmark execution cost.
+  We therefore compare evaluation strategies under explicit evaluation budgets and deployment-cost caps. Under advance knowledge of task costs, successive halving reaches our uncertainty-aware selection target on SWE-bench using 6.6% of exhaustive evaluation spend, achieving the lowest cost on six of seven benchmarks and tying on the seventh. Its advantage narrows when task costs are unknown before execution or exact-best selection is required.
+  Our findings motivate decision-oriented agent evaluation that accounts for accuracy uncertainty, validates execution costs, and compares complex selection methods against simple adaptive allocation.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.21408v1' target='_blank'>Do Embedding-Map Distances Guide LLM Ideation? Four Tests Against What Came Next</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Javier Aguilar Martín</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-16 17:00:27</h6>
+<p class='card-text'>A popular ideation recipe treats an embedding map of existing work as a guide: pick points far from everything and decode them into ideas. I test four ways such distances could guide ideation against what appeared later. (1) Far random directions are not text: no later item reaches a raw cosine above about 0.10 with one (after centring or whitening, 22 of 24 cells stay out of reach), and an LLM decoder shown a target's neighbours, with score-only feedback, writes those neighbours in all six target sets. A neighbour-free search writes coherent text at median cosine 0.57 and 0.47 to interior gaps, beating the nearest existing item on 15 and 14 of 20, but only 0.07 and 0.06 to far points. (2) On k-means cells of a past-only map, the registered hole score mostly tracks cell size and position; three density-based gap scores forecast which cells grow fastest at or below chance (AUC 0.30 to 0.66) and add nothing to momentum in Steam and arXiv, with patents inconclusive; more isolated new Steam games are slightly better reviewed. (3) LLM continuations of arXiv papers stay closer to the source than papers that cite it, under three user prompts and against proposal rewrites (gpt-4o) and April-December 2023 papers (OLMo). Critique lengthens this step beyond content-free revision, replicated on 150 new papers. Revealing a real follow-up's title turns the ideas by 0.032 along a follow-up-specific direction beyond revision; reviewer, oracle and distance feedback add 0.13, 0.08 and 0.34 of that turn (upper bounds 0.46, 0.46, 0.70), and their turn is not separable from revision or their longer step. (4) For inspiration material graded by distance, no inverted U was detected, on an anticipation margin that tracks format more than content. Original tests were registered before running, follow-ups (thirteen requested in two AI-agent reviews) after the main results; all are dated only by local git commits.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.21394v1' target='_blank'>Beyond Bilingual: Studying Quadrilingual Code-Switching with Conversational AI</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Annika Bush, Melika Minnaar, Salys Sultan, Tasnimul Hasan Tashin, Ankur Bhatt, Meltem Aksoy</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-16 16:49:54</h6>
+<p class='card-text'>Multilingual speakers choose languages by topic and conversation partner. Large language models (LLMs) support these languages unequally. Research on code-switching with conversational AI has mostly examined bilingual pairs of well-resourced languages. In Curaçao and Aruba, many people use Dutch, English, Spanish, and the low-resource Creole Papiamentu/o. In a preregistered study, 42 university students held two five-minute chatbot conversations, one about university life and one about local food and culture. Surveys assessed language background, AI use, and switching comfort. 20 international students in Curaçao formed a comparison sample. Participants switched between turns and rarely mixed languages within a message. English dominated both conversations. Participants switched more often in the cultural conversation, where Papiamentu/o and Spanish rose from 15% to 24% of messages. Self-reports showed no lower comfort switching with the chatbot than with a person. Conversational agents must follow turn-by-turn language changes and handle local low-resource languages well.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.21376v1' target='_blank'>A Crowd-Audited Atlas of Implicit Bias in LLM-Powered Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Jason Alexander, Yuxuan Li, Michael Licamele, Wesley Hanwen Deng, Sauvik Das</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-16 16:36:47</h6>
+<p class='card-text'>Prior work has shown that large language models (LLMs) express implicit biases in high-publicity, one-off decision scenarios such as hiring and intelligence assessment. However, as people increasingly employ autonomous, LLM-powered AI agents that make decisions on their behalf in doing day-to-day tasks, it is of critical importance that we understand how implicit biases, based on sociodemographic assumptions, emerge across a broad milieu of workaday decision scenarios. We used the 17 domains of daily activity in the American Time Use Survey (ATUS) to generate an atlas of 506 decision scenarios in which LLMs --- endowed with personas representing different races, gender identities, and political ideologies --- expressed significant implicit bias. Next, in a crowdsourced audit, 500 participants made 8,010 binary choices about which implicitly biased decision scenarios most deserved further review. We found that participants prioritized decision scenarios that had broad relevance (e.g., about food choices), were high stakes (e.g., about health), and where all members of a simulated sociodemographic group made unanimous decisions (because it was a clear indication of stereotyping). They were less swayed by the magnitude of an observed disparity or the specific ATUS domain the decision scenario represented. When examining the rationale behind their prioritization choices, we found that participants often interpreted disparities as traits of demographic groups and judged whether those traits seemed plausible, often based on their own internalized stereotypes. We discuss implications for building personalized AI agents, digital twins, social simulations, and for using crowdsourced bias audits.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.21331v1' target='_blank'>TRIAGE-CPG: A Cross-Model Study of Budgeted Static Malware Triage with Large Language Models</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Paul-Andrei Sava, Alexander Küchler, Daniel Kowatsch, Bernhard Grill, Jennifer Pullman, Yanick Fratantonio, Luca Invernizzi</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-16 16:19:01</h6>
+<p class='card-text'>When triaging unknown binaries, security analysts must decide which samples to clear as benign, flag as malicious, or escalate for deeper analysis. Large Language Models (LLMs) could support these decisions by interpreting decompiled code, but a binary can contain hundreds or thousands of functions, making exhaustive LLM analysis impractical. We study how current LLMs behave when static triage is formulated as budgeted evidence acquisition: which functions they inspect and how they trade off benign clearance, malware detection, and escalation. To enable a controlled comparison, we implement TRIAGE-CPG, a fixed pipeline over a code property graph (CPG) of a decompiled binary. An LLM-free heuristic selects seed functions, an agent expands the resulting evidence dossier under a fixed budget, and a reporting stage produces a benign, suspicious, or malicious verdict together with a behavioral report. We evaluate eight closed-source and open-weight models on 1,000 Windows PE binaries, using a 600-sample test split and the same zero-shot protocol for every model. We assess the ternary verdicts under both a strict binary reading and triage balanced accuracy (tBA), which credits malware that is flagged or escalated and benign samples only when cleared. After analyzing about 40 of a mean 1,000 functions per binary, the highest-scoring model reaches a strict balanced accuracy of 0.805 and a tBA of 0.855, flagging 65% of malware, escalating another 12%, and clearing 94% of benign samples. The models implement different triage policies: high-specificity models produce small, malware-rich escalation queues, whereas recall-oriented models escalate or flag much more broadly. Both closed-source and open-weight models appear across this spectrum. Our results identify no universal deployment configuration: model choice itself determines the clear/flag/escalate trade-off under limited static evidence.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.21299v1' target='_blank'>Turing Agent: Agentic Formal Verification for Mathematical Research</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yang Chen, Qianyi Wang, Ronghui Yang, Zhanhao Li, Yu Cong, Chen Zhang, Hangfan Zhang, Shao Zhang, Shuai Li, Toru Takisaka, Chao Xu, Yi Zhou, Zhihao Tang, Xiao Wang, Bo Zhang, Shuyue Hu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-16 16:02:37</h6>
+<p class='card-text'>Large language models (LLMs) are rapidly advancing mathematical discovery, moving beyond benchmark-level problem solving to tackle frontier research problems. This progress is ushering mathematics into an era of proof abundance, raising a fundamental challenge: how can we ensure the correctness of the ever-growing volume of AI-generated proofs and transform them into trustworthy, machine-verified mathematical knowledge? We introduce Turing Agent, an agent harness designed to orchestrate end-to-end formal verification of research-level mathematics. Its wo-scale architecture integrates theorem formalization and proof formalization agents, empowered by structured proof decomposition, parallel verification, accumulated proof experience, and selective semantic review. Leveraging our collaborations with theoretical computer science (TCS) researchers, we focus our evaluation on TCS, a particularly demanding domain characterized by intricate quantification, complex dependencies, and stringent semantic requirements. Against direct generation and general-purpose coding harnesses, including Codex CLI and Claude Code, Turing Agent achieves approximately 57-62% faithful formalization success on Formal TCS Bench and 83% overall pass@1 on a TCS-focused subset of RLMEval, using GLM-5.3 and DeepSeek-V4-Pro. Notably, Turing Agent, built on DeepSeek, successfully completes the formal verification of three previously unresolved TCS tasks from OpenAI's October 2026 collection. One particularly challenging TCS problem required about a hundred formally verified auxiliary claims. Moreover, by actively exploring and refining the formalization process, Turing Agent can uncover simpler alternative proofs, expose unnecessary dependencies in original proofs, and generate reusable mathematical knowledge as a byproduct of verification.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.21298v1' target='_blank'>Agent-Native by Design: A Programming Language for Agentic Applications</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Jayanaka Dantanarayana, Savini Kashmira, Xiaoyu Ma, Malitha, Malitha Prabhashana, Lingjia Tang, Jason Mars</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-16 16:01:06</h6>
+<p class='card-text'>Building agentic applications requires combining large language model (LLM) operations, workflow structure and application state, and model-guided routing. With SDKs and agent frameworks, developers connect these components through supporting code that prepares model inputs, propagates state, and dispatches model-selected steps. Workflow changes can require coordinated updates to this code, increasing development and testing effort. Splitting execution logic between application code and framework internals also limits compiler visibility into control flow and state dependencies, hindering automatic optimization. We introduce Agent-Native Programming, which unifies these three components with shared execution semantics. We realize this approach in Jac, a Python-superset language, through "by llm()" for typed model operations and tool use, Object-Spatial Programming for workflow structure and state, and "visit ... by llm()" for model-guided routing. The routing construct derives the model's choices from executable workflow steps and schedules the selected steps. This explicit connection between model decisions and program execution gives the compiler and runtime a common basis for dependency analysis and automatic optimization. Across five benchmarks and five baselines, Jac achieves a 1.8-8.7x reduction in AI-integration code relative to the OpenAI SDK, with competitive observed task quality and lower coding-agent development effort. Two case studies demonstrate speculative execution and service partitioning through configuration alone, using program analysis and runtime checks to preserve workflow behavior under stated conditions.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.21259v1' target='_blank'>Evaluating Authorization and Trust Boundaries in Agentic Orchestration Frameworks</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Sahaya Jestus Lazer, Kshitiz Aryal, Maanak Gupta, Elisa Bertino</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-16 15:33:50</h6>
+<p class='card-text'>Agentic AI systems extend large language models with tools, memory, and multi-agent collaboration, introducing security risks at orchestration boundaries. These risks depend on how identities are represented, operations are authorized, and instructions or information propagate between components. We evaluate LangChain, LangGraph, AutoGen, and OpenClaw through twelve experiments mapped to the OWASP Top 10 for Agentic Applications using a common LLM (gpt-4o-mini). The experiments cover prompt injection, unauthorized resource access and command execution, memory poisoning, and inter-agent trust and identity attacks. Adversarial inputs induced unauthorized tool invocation, while tool chaining, stale filesystem validation, encoded instructions, and inter-agent delegation exposed weaknesses in authorization across component boundaries. Memory poisoning showed that untrusted state can influence responses, a risk distinct from conventional access-control violations. In the evaluated protected configurations, explicit authorization, controlled capability assignment, filesystem containment, and execution safeguards prevented specific unauthorized operations. The findings emphasize preserving authorization and information-trust boundaries throughout agentic workflows rather than treating framework capabilities or model-level instructions as sufficient security guarantees.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.21176v1' target='_blank'>Scientific Coding with Large Language Models: Evidence from Finite Element Analysis</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Erfan Hamdi, Joel Shor, Emma Lejeune</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-16 14:35:30</h6>
+<p class='card-text'>Large language models (LLMs) offer a potential route to automating scientific programming, but their usefulness depends on consistently producing numerically correct code. We extend FEM-Bench to 17 finite element tasks involving nonlinear and history-dependent mechanics and structural dynamics, and evaluate 15 models on implementation and test generation without execution feedback. The best model succeeds in 87.1% of single-pass implementation trials, but rankings differ between tracks. The leading implementer achieves 49.9% joint test success, while the leading tester reaches 82.6%. For six models, we compare single-pass generation with two agentic harnesses that allow code execution and revision. Agentic execution solves some tasks that never succeeded in single-pass trials and improves consistency on others, but gains vary across models and harnesses, and regressions also occur. Claude Opus 5 with SimpleAgent reaches 96.5% Pass@3, the probability of at least one success in three attempts, but 77.1% Pass$^3$, the probability that all three succeed. No model-harness combination exceeds 78.8% Pass$^3$. To understand why agents submit incorrect code after passing their own checks, we analyze 249 failed agentic trajectories and identify six categories of self-verification failure. The most common are inadequate test coverage (73.1%) and reliance on generic consistency checks (70.3%), and in 28.5% of cases the tests share an error with the implementation. Motivated by these findings, an exploratory configuration with separate coder and tester agents achieves the highest observed scores, with 97.6% Pass@3 and 88.8% Pass$^3$. These results identify consistency across attempts and independent verification as the main obstacles to trusting LLM-generated scientific code.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.21155v1' target='_blank'>Edit Recommendation: Can LLMs Anticipate Edit Requests from Users, and When?</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Daisuke Kikuta</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-16 14:21:54</h6>
+<p class='card-text'>After a large language model (LLM) agent generates an artifact, users often send edit requests for it. This paper studies whether an LLM can anticipate these requests before they are sent. Such anticipation is useful in practice because it reduces the effort of user review and feedback. We formalize this task as edit recommendation and build EditRecBench, a benchmark for evaluating the performance of LLMs on this task, from real-world conversation logs in WildChat-4.8M. Through benchmarking and failure analysis, we identify a practical challenge that some cases are inherently difficult to predict in real-world settings. To address this, we introduce decision model-based gating to filter out cases where predictions are unlikely to be correct before they are presented to the user. Our trained model outperforms existing decision models and raises pass@5 among shown suggestions by 12--25 points at a gating threshold. Our code is available at https://github.com/ntt-dkiku/llm-edit-recommendation.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.21129v1' target='_blank'>Linglong Agent Service: A Runtime for Centralized Agent Reasoning and Distributed Execution</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Hua Zhang, Min Jiang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-16 14:07:45</h6>
+<p class='card-text'>LLM agents can use remote tools and cloud sandboxes, but integrating reasoning, session state, and heterogeneous execution sites remains a runtime design problem. We present Linglong Agent Service (agentsvc), a self-hosted HTTP service and embeddable Python runtime that treats execution site as a configurable dimension alongside model, tools, and context. A parent service retains inference orchestration, tool descriptions, and conversation history; each inference request selects one child environment for file, shell, terminal, and MCP operations. Direct HTTP and child-initiated WebSocket tunnels carry the same application interfaces, including portable request context and centrally managed updates. The normal core path requires no third-party Python packages, with an optional Windows pseudo-terminal dependency. We further present online_debugger as the process-scale special case of execution-site separation: an instrumented program submits exception evidence, executes session-scoped inspection tools inside the incident process, and resumes the same diagnostic session. Its default prompt requires failing-then-passing reproduction evidence for source changes, while runtime patch activation and failed-call recovery remain unimplemented. We explain the design through constrained expected-utility reasoning, compare concrete mechanisms with Hermes Agent, Pi, Codex, and Claude Code, and report implementation and regression-test evidence. The current evidence establishes executable contracts, not performance advantages, repair accuracy, or production recovery. The source code is open source under the MIT license at https://github.com/mz24cn/agents.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.21095v1' target='_blank'>SWE-WhatIf: Simulating Real Users of Coding Agents from Recorded Session</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Tae Soo Kim, Tongshuang Wu, Juho Kim</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-16 13:42:26</h6>
+<p class='card-text'>Recorded sessions between users and coding agents offer a way to evaluate how agents complete real-world tasks and interact with users. However, these sessions cannot simply be replayed with new agents, because recorded user replies may no longer apply when an agent takes a different trajectory. We introduce SWE-WhatIf, which replays recorded sessions with new agents by modeling the user's intents, the criteria for satisfying them, and the conditions under which they arise. Using this model, a user simulator generates replies that adapt to unseen agent turns while remaining grounded in the recording. Across 89 real-world sessions, SWE-WhatIf generated the replies most similar to those of real users and matched the strongest baseline when sessions were rewritten. To test adaptation, we replay sessions with agents instructed to avoid or repeat actions that the recorded user pushed back on. SWE-WhatIf produced the highest win rate for avoiding these actions (66.3%), significantly above chance. We further demonstrate its utility by ranking five LLMs as coding agents, where the highest-ranked model depended on how users specified and developed their intents, and a study with 16 users, where replaying their own sessions changed 14 participants' rankings and informed their future agent use.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.21084v1' target='_blank'>CompCert4Lean: Porting a Verified C Compiler to Lean in Six Weeks with Parallel Coding Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Cong Wang, Zhiyang Chen, Fan Long, Martin Rinard</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-16 13:32:37</h6>
+<p class='card-text'>We present CompCert4Lean, a large-scale port of CompCert 3.17's verified compiler core from Rocq to Lean, completed in approximately six weeks by one expert directing parallel LLM agents. Our migration workflow partitions the development along its dependencies, audits translated definitions and theorem statements before large-scale proof reconstruction, and then reconstructs proofs in parallel against stable interfaces. The resulting compiler covers typed CompCert C through x86-64 assembly, discharges all 4,908 recorded proof obligations without project-specific axioms, and produces executable Linux binaries. The workflow enabled the expert to concentrate on organizing the work rather than supplying technical solutions. Of 1,071 human interactions, 88.8% concerned workflow and coordination, while only three supplied technical direction.
+  Optimization campaigns further demonstrate the benefit of the Lean port for agent-driven verified development. Under matched budgets of 24 active hours, GPT-6-astra produced a Lean candidate with 11.7% lower generated-program runtime across 29 small-tests programs, compared with 2.3% lower for its Rocq candidate, both relative to original CompCert 3.17 and while preserving the end-to-end correctness theorem. These results show that parallel LLM agents can support large-scale migration with limited human technical direction and subsequently improve the migrated compiler while retaining its formal guarantees.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.21053v1' target='_blank'>System 1 agents: a method for local, reliable and fast agentic AI</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Eleftherios Tzanis, Michail E. Klontzas</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-16 13:05:32</h6>
+<p class='card-text'>Agentic artificial intelligence could automate analyses of sensitive clinical data, but current agents depend on large language models (LLMs). Cloud LLMs expose patient data. Local LLMs hallucinate, and an invented value in a tool call propagates through every later step. Here we present a method to build System 1 agents: local agents that call tools without generating text. A deterministic compiler turns each tool's schema and the request into multiple-choice questions whose options come from the request and the schema, then a one-pass decision model answers them. On 1,952 requests to 157 biomedical tools, the best System 1 agent chose the right tool, or correctly declined, for 97.0% of requests, significantly ahead of all 18 local LLM-agent settings (best 95.2%). The System 1 agent filled 97.0% of 6,056 stated argument values. No System 1 call contained invented content, against 5.5-19.7% of LLM calls. The System 1 Agents framework is freely available as open-source software at https://github.com/eltzanis/SystemOneAgents.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.20983v1' target='_blank'>GRACE: Parallel Best-of-N Multi-Agent Analysis of Closed-Form Questions over Dataframes with Guardrail Selection and Adaptive Retry</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Fabio Picariello, Salvatore Cipolla, Susanna Bonura, Vito Morreale</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-16 12:16:45</h6>
+<p class='card-text'>LLM agents answer closed-form questions over a tabular dataframe by writing and executing Python, almost always as a single rollout: one interpretation, one script, one result, accepted without comparison. The few pipelines that produce several candidates reconcile them by answer-agreement voting, which needs a single comparable scalar and always returns one, even when every candidate is wrong. We present GRACE (Generative, Ranked, Adaptive Code Ensemble), a production-oriented pipeline that instead runs parallel best-of-N selection specialised to dataframe code. N agents run concurrently under a strict, machine-checkable output contract, diversified by persona hints, per-retry rotation, and a two-regime temperature schedule. Rather than vote, GRACE judges the executed artefacts: a pairwise tournament pre-filters the pool and a domain-specialised guardrail either selects the best candidate or, when none is defensible, rejects the whole pool and abstains with a diagnosis (an option voting structurally lacks), which in turn drives an adaptive retry with per-agent feedback. On InfiAgent-DABench (DAEval, M = 246), using Qwen3.6-35B-A3B as the backbone, GRACE raises answer match from 39% for a single-rollout baseline to 71% (+32 pp, 1.8x), recovering 53% of previously wrong answers. On the same DAEval task, the smaller dense Qwen3.5-9B lifts answer match from 38% to 63% (+25 pp, 1.7x). A controlled 3 x 3 study that sweeps the number of parallel agents against the retry budget finds, on the 35B backbone, the two levers largely substitutable: once either one is generous, the other adds little, identifying a cheap operating point for deployment. The same directional pattern replicates on the independent DataBench benchmark, again on the Qwen3.6-35B-A3B backbone, where answer match rises by 15 percentage points (from 70% to 85%) across 400 sampled questions.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.20979v1' target='_blank'>Adaptive-Elbow Graph Traversal for Schema Retrieval in Text-to-SQL</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Fabio Picariello, Salvatore Cipolla, Susanna Bonura, Vito Morreale</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-16 12:14:15</h6>
+<p class='card-text'>LLM-based natural-language interfaces to relational databases are gated by a schema-retrieval step: the generator can only be as good as the slice of schema it is shown. On a database with hundreds of tables, that slice must be selected and the selection is two-sided---omit a needed table and the query becomes unrecoverable, include too many and the irrelevant ones act as noise that degrades the model's output. When an agentic retriever that lets the model inspect the schema can be too costly or too slow, the fallback is an embedder that ranks tables by cosine similarity and keeps a top-k. This fallback has two weaknesses: a fixed budget is suboptimal question by question, and embedding similarity overlooks foreign-key-linked tables that are necessary for joins. We present Adaptive-Elbow Graph Traversal (AEGT, ElbowHop for short), a property-graph table retriever that addresses both: an adaptive elbow cutoff replaces the fixed budget with a per-question one under a single aggressiveness parameter, and bidirectional foreign-key traversal deterministically recovers the bridge tables embedding similarity misses. We evaluate the retriever on 3 corpora of increasing candidate-pool size (BIRD Mini-Dev queried per database, 3--13 tables; its eleven schemas merged, 74; and a merged Spider-train graph, 546) and isolate the two mechanisms under a per-question budget-matched protocol. Across these settings the adaptive elbow emerges as the dominant mechanism---at matched recall it roughly doubles precision over a fixed budget on the larger pools, the margin widening as the pool grows---while the foreign-key traversal pays off on the join-critical bridge tables dense retrieval cannot reach, in the single-hop tight-budget case. We characterize the method as a low-cost, recall-robust first stage for schema retrieval on which a downstream selection or generation step can build.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.20915v1' target='_blank'>Multi-LLM Agentic AI at the Edge: Joint Agent Scheduling and Resource Allocation</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yuanyan Song, Kezhi Wang, Xinmian Xu, Yongmin Li</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-16 11:27:01</h6>
+<p class='card-text'>In this paper, an edge-enabled multi-large language model (LLM) agentic AI architecture is proposed, where one supervisor AI agent and multiple worker AI agents cooperatively execute users' requests at the edge. The supervisor AI agent decouples the user request into a series of sub-tasks and dynamically dispatches them to LLM-equipped worker AI agents via two agentic workflows, i.e., parallel and serial workflows, with a two-level retry mechanism to enhance execution reliability. To prolong the service duration of worker AI agents, the energy minimization problems are formulated by jointly considering AI agent selection and resource allocation, subject to task execution latency and quality of service (QoS) constraints. A resource allocation scheme based on alternating optimization (AO) is proposed. Specifically, for the parallel workflow, the scheme decouples the original problem into bandwidth allocation, retrieval selection and AI agent selection sub-problems, which are iteratively solved by the proposed successive convex approximation (SCA), Lagrangian relaxation (LR), and Gale-Shapley (GS) or LLM-based algorithms, respectively. For the serial workflow, the problem is similarly decoupled into service time allocation, retrieval selection and AI agent selection sub-problems; the optimal service time allocation is obtained via Karush-Kuhn-Tucker (KKT) conditions, while the latter two sub-problems are addressed by extending the proposed algorithms to the serial scenario. Simulation results show that the proposed resource allocation scheme can reduce system energy consumption compared with other benchmarks, while experiments on a multi-LLM agentic AI system based on Qwen and Llama demonstrate improved task execution success rates.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.20873v1' target='_blank'>Re-Reading Is Not Free: Token Traces and Cache-Aware Energy Estimation for LLM Agents in Software Engineering</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Tina Vartziotis, Ketevan Peranidze, Rodopi Kosteli, Ezgi Sarikayak, George Dasoulas, Michael Keckeisen, Sotirios Kotsopoulos, Francesca Dominici</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-16 10:48:02</h6>
+<p class='card-text'>As large language models (LLMs) evolve from conversational assistants into autonomous agents embedded in software development workflows, estimating their environmental footprint requires moving beyond conventional token-based accounting. Existing energy estimators focus on isolated request-response interactions, overlooking the repeated processing of accumulated context, cache reuse, and work delegated to subagents. We analyze nearly one billion tokens collected across 42 sessions and 752 task episodes over ten weeks of real-world AI-assisted software development. Cached-context reads make up 94.8% of all API-reported tokens, while uncached input accounts for only 0.017%; for every generated token, approximately 260 cached tokens are read. Context grows 5.3-fold over a session compared with 1.4-fold within individual tasks. To quantify the energy implications, we extend an existing analytical inference-energy model to account for cached-context processing, yielding a cache-aware hybrid estimator. It estimates approximately 250 kWh for the workload, compared with approximately 10 kWh from the output-based estimator EcoLogits, a 25-fold difference largely driven by cached-context reads. Neither estimator has been validated on long cached contexts, but no modeling assumption we varied closes the gap. Starting each task from a fresh context would lower our estimate by about 60%. We also find that parent-session logs report only a subagent's final internal call, undercounting delegated tokens by a factor of ten; for this workload the correction changes the energy estimate by about 5%, but token-volume studies are fully exposed to it. Our findings expose a substantial gap between how current energy estimators and agentic workloads treat context, highlighting the need for workflow-level energy accounting that captures context accumulation, cache reuse, and delegated execution.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.20856v1' target='_blank'>Synapse: Optimizing Natural-Language Agent Skills through Program Repair</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Lijuan Li, Zhenpeng Chen, Chenxi Zhang, Yihao Huang, Yang Liu, Chong Wang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-16 10:29:36</h6>
+<p class='card-text'>Large language model (LLM) agents can improve task performance by optimizing reusable natural-language skills without updating model parameters. Execution feedback reveals failures but does not directly identify which instructions to edit, which related instructions matter, or which tasks an edit may break. We propose Synapse, which casts skill optimization as generate-and-validate repair over a partial program view. A deterministic compiler translates recognized skill constructs into SkIR, a source-linked intermediate representation, while retaining other requirements in the text. Synapse combines execution traces with control-flow and dependence relations to localize faults, propose typed mutations, and select related repair tests, including previously passing ones. Each mutation is written back to its mapped source span and recompiled; validation determines acceptance. Every accepted patch yields a well-formed skill and preserves untargeted instruction spans. Under a one-hop-local execution assumption, selected tests include every test an edit can affect. On DocVQA and LiveMath with three execution models, Synapse improves task success rates over SkillOpt by 3.74-4.54 and 2.40-4.00 percentage points, respectively, and outperforms Trace2Skill and SkillBoost in all six settings. Replacing SkIR-based repair and its test screening with constrained text editing screened only on failing tests lowers DocVQA success rates by 2.40 and 2.67 percentage points for two models. In two recorded repair runs, structural relations add tests for 23 of 37 patches; in one repair, a test added through a control-flow relation exposes a regression missed by coverage of the edited instruction.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.20826v1' target='_blank'>Conversing with a Conversational Agent: A Real Conversation, Not a Simulated One</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Christophe Denis</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-16 10:09:08</h6>
+<p class='card-text'>The claim that interactions with artificial conversational agents merely simulate human conversation rests on a philosophical distinction between reproducing the observable features of an activity and actually performing it. Although this distinction is appropriate for certain physical phenomena, its application to linguistic and symbolic activities is far less straightforward. This article argues that conversations with large language model (LLM)-based agents are genuine conversational activities rather than mere simulations, without thereby attributing consciousness, subjective understanding, or human intentionality to artificial systems. Drawing on the distinction between subjective and objective simulation, the article first examines the limitations of defining conversation exclusively through the intrinsic properties of its participants. It then develops a relational and semiotic account of conversational activity, informed by linguistic pragmatics, Lacan's Conversing with a Conversational Agent theory of the mirror, Baudrillard's concept of the simulacrum, Simondon's philosophy of individuation, and Peirce's semiotics. These perspectives make it possible to distinguish the reality of conversational interaction from the appearance of artificial subjectivity and from the epistemic validity of the meanings produced. The argument culminates in the concept of Hybrid Semiotic Fabrication, which characterizes meaning-making as a distributed process involving human participants, artificial intelligence, corpora, and technical arrangements. Recognizing the reality of human-AI conversation therefore entails neither anthropomorphizing artificial agents nor granting their outputs epistemic authority. Rather, it requires a more precise account of the relational, semiotic, and normative conditions under which conversational meaning is produced and justified.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.20818v1' target='_blank'>Tight PAC-Bayes Generalisation Guarantees for Large Language Model Judges</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Tom A. Lamb, Philip H. S. Torr, Tim G. J. Rudner</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-16 10:00:57</h6>
+<p class='card-text'>Large language model (LLM) judges are increasingly used to monitor the outputs of LLM-based AI agents, yet formal guarantees on the reliability of these judges remain largely absent, limiting confidence in their use for safety-critical oversight. We consider certifying such a judge and define its risk over safety classifications of prompt--response pairs drawn from a deployed generator. We apply a PAC-Bayes framework to this setting, refining existing compression-based methodology with the use of tighter bounds and more efficient coding. We show that standard parameter-efficient fine-tuning can yield non-vacuous and even tight certificates for safety judges, for both classification and Brier risk, without holding out data for validation. We introduce LoRA-GT, which shares a single quantisation scale across layers and achieves the tightest certificates with minimal degradation in predictive performance. Across five guardrail models and four benchmarks, we find that certificate tightness is governed more by adaptation complexity than by base model scale. Finally, we show how far quantisation can be pushed before the resulting increase in risk outweighs the bound tightening gained from shorter descriptions. Together, these results provide a practical route toward certifiable scalable oversight and offer insight into how the complexity of safety adaptations shapes generalisation.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.20772v1' target='_blank'>Building Fully On-Device GUI Agents with Mobile NPUs</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Zhe Dong, Guanyu Cai, Yuchen Jiang, Jiliang Wang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-16 09:21:59</h6>
+<p class='card-text'>Mobile GUI agents are increasingly used to automate everyday smartphone tasks, but most existing systems still rely on cloud-hosted models or remote inference, introducing repeated communication latency, privacy exposure, and dependence on network availability. Modern smartphones integrate neural processing units (NPUs) that provide an attractive substrate for fully on-device LLM inference. However, directly deploying conventional GUI-agent pipelines on mobile NPUs is inefficient. GUI-agent inference is fundamentally a long-input, short-output workload, yet conventional agents spend substantial time on autoregressive reasoning and action generation, while mobile NPUs provide much higher throughput for prompt prefill than token-by-token decoding. Meanwhile, dynamically varying GUI-agent contexts conflict with the fixed context profiles required by statically compiled NPU runtimes.
+  We present DroidPrefill, a prefill-centric inference architecture that reshapes the GUI-agent workload around mobile-NPU execution. DroidPrefill combines Prefill-Centric Inference to reduce unnecessary autoregressive decoding with Efficient Context Management to preserve decision-critical information within a fixed compiled context budget. Experiments on commercial smartphones show that, in controlled comparisons with the autoregressive T3A+ baseline, DroidPrefill reduces per-step inference latency by up to 85.0%, while improving task success rate by up to 24.6%.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.20759v1' target='_blank'>Instant Weight-Space Consolidation for Long-Term Memory in LLMs</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Manan Suri, Dinesh Manocha</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-16 09:09:55</h6>
+<p class='card-text'>Agentic memory systems give LLMs persistent memory by extracting experience into text and retrieving it at query time, but the model itself does not evolve: however many interactions it has had, it starts each query the same. Extraction errors compound, implicit cross-session patterns that no single fragment states cannot be surfaced, and the construction cost grows with every conversation. Fine-tuning on past interactions does change the weights, but requires backpropagation at serving time and degrades on long histories. We introduce CLAM (Carried Latent Adapter Memory), which combines the strengths of both: a recurrent hypernetwork performs parametric consolidation, compiling a stream of session activations into a low-rank adapter in a single forward pass with no gradient steps and no language-model generation calls, while a complementary episodic buffer supplies verbatim detail at inference. A gated latent state carries knowledge across sessions in fixed size, so the parametric memory accumulates without growing. On LoCoMo and LongMemEval-S across three open models (2-7B parameters), CLAM leads all agentic baselines by 1-45 points and all gradient-based parametric methods by 10-45 points, while requiring zero generative LLM calls, zero gradient steps, and 3-151x less wall-clock time than extraction systems to build its memory. The two channels are complementary: the consolidated adapter adds 12-15 accuracy points when the episodic buffer misses the gold evidence, and still adds 4-5 points even with an oracle buffer.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.20753v1' target='_blank'>UIAnchor: Anchoring UI Perception and Action Execution for Reliable Service-Composed Mobile Task Automation with GUI Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Wentao Zhou, Sicong Liu, Zimu Zhou, Yimeng Duan, Yongyan Cai, Weiye Wu, Teng Li, Daqing Zhang, Zhiwen Yu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-16 09:01:47</h6>
+<p class='card-text'>Mobile task automation aims to streamline multi-step, cross-app interactions on smartphones and in-vehicle systems. Recent LLM-based GUI agents have advanced rapidly, yet reliability remains limited because modern mobile workflows are increasingly service-composed (app switching, forms, pop-ups/permissions, copy-paste), requiring fine-grained operations on dense, dynamic, and heterogeneous UIs, often in distraction-sensitive contexts (e.g., hands-busy or attention-limited use). Through an in-the-wild failure analysis of deployable GUI agents, we identify two dominant bottlenecks: agents often miss or misread actionable UI elements, and they execute actions without verifying target correctness or outcomes. We present UIAnchor, a modular multi-agent system that improves mobile GUI automation by anchoring both perception and execution. UIAnchor combines a two-stage UI parser for high-recall element capture and context-aware semantics with a meta-controller that performs pre-action verification, post-action outcome perception, per-step state tracking, and targeted recovery. We further introduce an L1-L5 task taxonomy based on step length, cross-app scope, and UI granularity, showing that L5 remains beyond today's practical frontier. On the hardest practical tier, L4 tasks (20-30 steps, multi-app, targets < 100 x 100 px, ~5 mm on typical phones), UIAnchor improves success by 31.5% over GPT-4o and 16.6% over Mobile-Agent-v3. With edge/cloud assistance, UIAnchor runs at ~2 s per step, comparable to human operation, while reducing per-step latency by up to 75.5% and energy by 52.4%. It also generalizes to unseen apps and cross-platform GUIs.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.20736v1' target='_blank'>GainCtrl: Predicting Remaining Gains for Efficient LLM Agent Execution</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Kangwen Zhao, Jianfeng Cai, Ruopei Sun, Mingxiao Feng, Peng Zhang, Wengang Zhou, Houqiang Li</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-16 08:40:29</h6>
+<p class='card-text'>Large language models (LLMs) are widely used to power agents that interact with tools and environments to solve complex tasks. Repeated attempts improve the quality of tool-using agents, but continued execution incurs additional costs even when it is unlikely to improve the best result ultimately returned. This raises the question of when to stop an attempt to reduce execution cost while preserving task-level Best-of-N quality. To address this question, we introduce GainCtrl, a gain-based execution controller for LLMs. In GainCtrl, a lightweight CPU predictor uses interaction histories to estimate expected positive gains over retained scores, which are then used to guide stopping decisions with calibrated thresholds to limit the loss in mean Best-of-N task quality. We evaluate the controller through trajectory replay across three environments and three LLM actors. Comparisons of interpolated quality-cost Pareto frontiers show that GainCtrl generally uses fewer tokens than baselines at matched target quality. Fixed policies also achieve quality close to that of full execution while substantially reducing token consumption. The predictor runs at millisecond latency on a single CPU thread, supporting repeated monitoring without access to LLM internals.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.20728v1' target='_blank'>ANCHOR: Cluster-Grounded 5W1H Extraction via Large-Small Model Collaboration</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Hongyu Jiang, Chenang Cai, Lei Gao, Zhao Kang, Ling Tian, Jinchuan Zhang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-16 08:33:52</h6>
+<p class='card-text'>Deep semantic understanding of events requires recognizing related events and distinguishing why an event occurs from how it is carried out. 5W1H extraction provides a structured foundation for such understanding by organizing event information around six fundamental questions. However, single-event slot filling provides limited support for these distinctions. We propose ANCHOR, a cluster-grounded framework that combines a large language model (LLM) with a small language model equipped with discriminative heads for accurate 5W1H extraction. The LLM proposes candidate events and generates their initial 4W records, which guide the selection of an event cluster and the subsequent anchoring of its main event. A shared document encoder provides evidence for joint 4W refinement, and two separate sets of boundary and role-scoring heads then extract why and how under event-specific constraints, respectively. Document representations are reused across events and stages, and unsupported roles can remain empty. Following the same principles, an agent-and-skill annotation workflow constructs a benchmark of 26,110 documents from ten source corpora covering three languages and seven domains. We select nine of the resulting datasets to evaluate ANCHOR against strong baselines using four open-weight LLMs. ANCHOR achieves competitive performance. The datasets and code are available at https://github.com/revolution6575/ANCHOR-5W1H.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.20713v1' target='_blank'>Injectra: Retrofitting Extensibility into Web-Based Desktop Applications</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Qin Sun</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-16 08:20:25</h6>
+<p class='card-text'>Large language models can generate code based on natural language prompts, opening up new possibilities for users to customize software and extend its functionality. This paper proposes and implements Injectra, a general-purpose code injection and feature enhancement system for existing desktop clients, suitable for applications whose user interfaces are built using embedded browser engines (such as Electron) or system WebViews (such as Tauri). Injectra decouples the host integration logic from the upper-layer enhancement code. Combining both runtime integration and pre-launch bootstrap mechanisms, it injects JavaScript, HTML, and CSS into the application's internal Web runtime environment through a unified execution channel, thereby enabling modifications to interface rendering, adjustments to interactive behaviors, and client-side functionality extensions. The system uses a command-line interface (CLI) as a unified entry point, allowing external tools, AI agents, and MCP integration layers to reuse its injection and enhancement capabilities. We tested 38 desktop applications already installed on our macOS machine; code injection was successfully completed for all of them. We demonstrated the system's capability to extend functionality through various enhanced use cases and also successfully validated the Windows version. Based on Injectra, we further developed an LLM-powered enhancement tool driven by selection and annotation: users select interface objects within the original application and describe their modification requirements; the large language model then generates the enhancement code, which is injected, executed, and rendered by Injectra. The system's source code has now been released as open source: https://github.com/sqmw/injectra.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.20671v1' target='_blank'>MASTA: A Feedback-Scheduled Multi-Agent System for End-to-End Tamarin Modeling and Analysis</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yongkang Xiao, Qiyi Deng, Jing Chen, Min Shi, Ju Ma, Ruiying Du</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-16 07:33:22</h6>
+<p class='card-text'>Tamarin-based formal verification of security protocols requires expert-authored multiset rewriting rules and temporal-logic lemmas. Translating a natural-language protocol description into a complete formal model with an LLM is hard because syntactic, reachability, and property-level errors compound across the multi-step modeling process, and a single agent that both authors and self-evaluates cannot reliably localize them. We present MASTA, a multi-agent system that addresses these difficulties through three innovations. First, an operational--evaluative role decomposition assigns rule modeling to an Architect, property modeling to an Auditor, and pure dispatch to a dedicated Arbiter that holds no authoring duties. Second, the Arbiter implements a Tamarin-anchored scheduler that dispatches the next agent based on the latest verifier verdict and routes problem-tagged fixes through a modification list, with a six-class problem taxonomy and an LLM deduplication check preventing routing deadlock. Third, we construct a benchmark of 10 protocols paired with 139 mutation variants and five fine-grained metrics that jointly assess model correctness ($M_1$--$M_3$) and completeness ($M_4$--$M_5$). On this benchmark, MASTA on Qwen 3.5-plus improves over OpenCode on the same backbone by up to $+0.27$ on individual metrics and ranks first on both the correctness and completeness averages, surpassing Codex (GPT-5.5) and Claude Code (Opus 4.7) despite using a weaker LLM. Ablations on five protocols confirm that removing the Arbiter collapses property and verification scores to zero.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.20595v1' target='_blank'>Invariant-Aware Harness Enforcement to Protect LLM Agents from Silent API Failures</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Sajib Acharjee Dip, Brian Ouyang, Lala Motlhabi</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-16 06:22:28</h6>
+<p class='card-text'>LLM agents answer questions by calling APIs and trusting the results. An API can fail silently. It ignores part of a request, such as a misnamed filter, yet returns HTTP 200 and a plausible but wrong result. Current fixes, such as checklists, reviewer models and LLM judges, ask the model to catch it. But models often see the problem and answer anyway. We present SilentGuard, which moves the decision from the model to the harness running tool calls. It tests each result against invariants that any correct API must satisfy and withholds values that break one. We find silent failures in 11 of 15 public research APIs, with counts inflated up to 691 times. Current fixes leave over 70% of answers wrong, and agents report 77.4% of counts a judge flags. Across 7 open models, SilentGuard cuts wrong answers on its target faults from 74.0% to 1.7%, with no loss on fault-free tasks. On three frontier models they fall from 70.2% to 0.5%. A warning from the same check leaves 70.1% wrong, so enforcement is the key. On new fault types, the harness alone cuts wrong answers from 61.1% to 24.5%. It avoids wrong answers by abstaining rather than recovering.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js'></script>
+</body>
+</html>
