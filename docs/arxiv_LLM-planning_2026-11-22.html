@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<title>LLM-planning - 2026-11-22</title>
+<link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap' rel='stylesheet'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'>
+<style>
+body {
+font-family: 'Roboto', sans-serif;
+background-color: #f5f7fa;
+padding: 20px;
+}
+.card {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.card-title {
+    font-weight: 700;
+}
+.card:hover {
+    transform: scale(1.02);
+    transition: 0.3s ease-in-out;
+}
+</style>
+</head>
+<body>
+<div class='container'>
+<h1 class='text-center my-4'><i class='fas fa-book'></i>LLM-planning - 2026-11-22</h1>
+<div class='row'>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.25813v1' target='_blank'>Efficient and Robust Drafting with Multi-Token Prediction</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Filippo Galgani, Ziwei Ji, Omri Homburger, Ganesh Jawahar, Michelle Ramanovich, Ivan Korotkov, Luciano Martins, Utku Evci, Edouard Yvinec, Pooja Consul, Vivek Kumar, Tal Schuster</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-19 09:33:39</h6>
+<p class='card-text'>Speculative decoding has emerged as a critical technique for accelerating Large Language Model (LLM) inference by decoupling generation into a drafting phase and a parallel verification phase. A crucial challenge is therefore designing a drafter that is both lightweight and accurate enough to approximate the predictions of the target model. We present a highly optimized Multi-Token Prediction (MTP) architecture that extends existing backbone LLMs to efficiently produce high-quality drafts. Built around a single shared drafting head, our approach features three core architectural optimizations: target activation injection to anchor semantic planning, zero-copy KV-cache cross-attention to bypass prefill compute and reduce memory overhead, and an efficient clustered vocabulary projection to reduce the cost of full-vocabulary decoding. Testing these improvements with the Gemma 4 model family, our G-MTP shows out-of-the-box speedups for both large server-side setups (up to 3.1$\times$) and smaller models targeting memory-constrained on-device environments (up to 2.3$\times$ on H100 and up to 2.2$\times$ on a smartphone GPU). In addition, we present parameter-efficient fine-tuning recipes for G-MTP that keep the drafter aligned with the backbone LLM under domain shift, requiring up to 1.83$\times$ fewer target forward passes than tuning only the backbone.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.25809v1' target='_blank'>ALIoTh: Orchestrating Multi-Agent LLMs for Autonomous IoT Penetration Testing</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Pironti Francesco Aurelio, Arena Luigi, Blefari Francesco, Lupinacci Matteo, Romeo Francesco, Maresca Alessio</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-19 09:31:08</h6>
+<p class='card-text'>Penetration testing in Internet of Things (IoT) environments, especially those composed of various different devices, e.g., smart plugs, smart cameras, and smart doors, presents great challenges across the phases of information gathering, attack surface enumeration, privilege escalation, and lateral movement. This paper introduces ALIoTh, a multi-agent, workflow-driven penetration testing framework that integrates Large Language Models agents within a Self-Retrieval-Augmented Generation (Self-RAG) architecture to autonomously identify and exploit vulnerabilities in IoT and Industrial-IoT (IIoT) environments. By leveraging state-of-the-art language models and orchestrating specialized agents via the LangGraph framework, ALIoTh dynamically plans and executes a full-spectrum offensive pipeline. This includes network, devices, and service enumeration, vulnerability assessment, payload generation, reverse shell deployment, and privilege escalation on each device. The Self-RAG mechanism equips expert agents with contextual access to IoT security knowledge, e.g., related documentation, tool manuals, and known attack techniques, enhancing their reasoning capabilities in scenarios involving multiple device exploitation and group policy manipulation.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.25597v1' target='_blank'>Decision-Focused Reinforcement Learning for LLM Post-Training</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Haotian Zhai, Leqi Liu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-19 06:44:35</h6>
+<p class='card-text'>Large language models (LLMs) have shown promise as predictors across various tasks, benefiting from their ability to use information from unstructured context. However, when predictions serve as parameters of downstream optimization problems, higher prediction accuracy does not necessarily translate into lower decision costs. We propose decision-focused reinforcement learning (DFRL), a framework for post-training LLMs to predict optimization parameters using negative downstream decision regret as reward. DFRL trains LLM predictors to minimize the costs of the decisions induced by their predictions, without requiring downstream convexity or differentiability, and integrates readily into existing RL post-training frameworks. To address expensive reward evaluation, we develop two approaches. Heuristic warm-starting uses inexpensive approximate rewards during an initial phase before switching to refinement with exact rewards. Reward correction combines inexpensive estimates with randomized exact evaluations, preserving the expected policy gradient while reducing the expected number of exact solves per update. Experiments on three synthetic optimization problems demonstrate improvements over prediction-loss baselines, while a larger knapsack experiment shows faster early improvement under short training budgets. On inventory planning with H&M transactions and product descriptions, our best configuration, in which the LLM reasons before predicting, reduces regret by 31.4% relative to the SFT baseline and 12.4% relative to the strongest evaluated conventional forecasting baseline.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.25583v1' target='_blank'>DriftGuard: Online Memory-Drift Detection via Causal Attribution for LLM Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Licheng Pan, Yuzhou Chen, Zhixuan Chu, Yichen Sun, Han Zheng, Zhiyu Wang, Hao Wang, Yan Wang, Bingyu Zhu, Haiwen Hong, Longtao Huang, Kui Ren</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-19 06:26:57</h6>
+<p class='card-text'>Large language model (LLM) agents rely on persistent memory to plan tool calls and complete multi-step tasks, which exposes them to memory drift: an adversarial or misleading memory alters the execution path and final outcome. In this work, we investigate online memory-drift detection, which estimates each retrieved memory's causal contribution to potential drift at serving time. We identify two fundamental challenges. (1) Content-level features are insufficient for causal memory-drift attribution, as perplexity or retrieval relevance alone cannot determine which retrieved memory would change agent behavior if neutralized; (2) Counterfactual attribution is prohibitively expensive for online detection, as it requires replaying downstream agent and tool execution for each candidate memory, exceeding real-time serving budgets. To address these challenges, we propose DriftGuard, a two-stage framework that decouples offline causal supervision from online estimation. Specifically, DriftGuard first constructs causal supervision through repeated paired counterfactual replays, continuing the original and single-memory neutralized trajectory suffixes from a shared pre-action state. The resulting annotations are aggregated by component-wise majority voting into a memory drift score (MDS) that captures action change, attack removal, violation removal, and task recovery. Guided by this supervision, DriftGuard then learns an online risk model that estimates MDS from pre-action information and flags drift-inducing memories via its maximum component risk, without online counterfactual rollouts. Extensive experiments demonstrate that DriftGuard accurately identifies drift-inducing memories and enables efficient online defense. Code is available at https://anonymous.4open.science/r/DriftGuard-7F0B.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.25556v1' target='_blank'>An LLM-Orchestrated Agent Framework for CKM-Assisted Network Deployment Optimization</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yilong Chen, Yuan Guo, Jie Xu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-19 06:03:12</h6>
+<p class='card-text'>Channel knowledge maps (CKMs) offer reusable, site-specific radio priors to facilitate environment-aware network planning. However, deploying heterogeneous network nodes to meet diverse performance requirements in complex environments is challenging and requires executable workflows that coordinate scene preparation, candidate-site specification, CKM construction, optimization, and validation. This paper presents a large language model (LLM)-orchestrated agent framework for CKM-assisted network deployment optimization, where an LLM translates high-level requirements into modular, typed, and reproducible planning workflows. In this framework, an LLM layer interprets intent, selects modules, and populates normalized configurations; physics-grounded modules generate scene, CKM, optimization, and validation artifacts; and a deterministic guarded controller performs validation-guided refinement. A common target-candidate-CKM-optimizer interface supports the registration and composition of compatible planning modules, with CKM backends, samplers, and solvers remaining replaceable. We instantiate the proposed framework for base station (BS) deployment, intelligent reflecting surface (IRS) deployment, and unmanned aerial vehicle (UAV) trajectory planning. An urban-block case study demonstrates automatic scene consistency checks, bounded BS/IRS deployment refinement, and collision- and radio-feasible UAV planning.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.25531v1' target='_blank'>LM-based Personalized Travel Planner</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Amandi Nimasha, Oshadha Wijerathne, Dushan Fernando, Nisansa de Silva, Srinath Perera</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-19 05:30:19</h6>
+<p class='card-text'>Effective travel planning requires handling multiple information sources, managing constraints, and tailoring recommendations to user preferences. While LLMs have introduced dynamic, context-aware decision-making, single-agent models often struggle with complex multi-step reasoning, constraint adherence, and modular execution. To overcome these limitations, we propose a hierarchical multi-agent framework where a supervising chatbot agent coordinates specialized agents for schedule validation, user query formulation, real-time data retrieval, and constraint-aware itinerary generation. By integrating LLM reasoning, external APIs, and iterative refinement mechanisms based on a deterministic, multi-dimensional scoring framework, our approach ensures adaptability, efficiency, and personalization. Evaluations on the well-known TravelPlanner benchmark demonstrate improvements in Budget Constraint planning by 10\%, wider constraints set-based planning by 25\%, and personalized planning results by 45\%. compared to the ReAct baseline. Our code is available at https://github.com/nimashaklaa/TravelPlanner_Research</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.25412v1' target='_blank'>ChainAgent: Automated Chainable Vulnerability Discovery in PHP Web Applications</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Xinyi Wang, Yeting Li, Shizhe Cui, Jiaming Guo, Qin Mai, Yecheng Sun, Hengyu Yang, Yujie Sun, Huina Chao, Yang Xiao, Feng Li, Wei Huo</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-19 02:52:06</h6>
+<p class='card-text'>High-impact attacks on PHP web applications often chain limited-capability vulnerabilities with other flaws or intended behaviors. Discovering these chains requires identifying flaws and the dependencies enabling capability composition. Existing vulnerability discovery techniques analyze flaws in isolation, while attack planning assumes known components. This separation makes it difficult to discover previously unknown components whose security relevance becomes apparent only through their potential roles in an exploit chain.
+  We present ChainAgent, a goal-directed LLM-agent framework that jointly discovers exploit-chain components and their capability dependencies in source code. Guided by an empirical study of 386 real-world web exploit chains, ChainAgent represents vulnerabilities and functional gadgets--intended program behaviors that can be repurposed in attacks--through preconditions and capabilities over security-relevant objects. Instead of discovering vulnerabilities first and constructing attack paths afterward, ChainAgent uses an evolving exploit graph to guide source-code inspection. It searches backward from unmet preconditions for capability producers and forward from discovered capabilities for functional gadgets that consume or amplify them. Object-centered chaining knowledge from our empirical study directs searches toward promising vulnerability classes, functional operations, and object accesses.
+  We evaluate ChainAgent against Codex, a general-purpose coding agent, on 15 PHP applications across three shared LLM backends. ChainAgent achieves 42.02%--44.63% recall for goal-reaching components and recovers up to 4.4 times as many correct goal-reaching dependency edges as Codex. An additional evaluation of 30 real-world PHP applications identifies 20 vulnerabilities and 13 exploit chains, nine of which achieve remote code execution (RCE).</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.25380v1' target='_blank'>Beyond Weight Updates: Evolving Agent Harnesses for Domain Specialization</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:BoHao Chen</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-19 02:20:06</h6>
+<p class='card-text'>Domain specialization of LLM agents is usually framed as a weight-update problem: collect trajectories, run reinforcement learning (RL) or supervised fine-tuning (SFT), and deploy a new checkpoint. We study a complementary axis: evolving the \textbf{agent harness}---the system prompt, tool schemas, skill library, and planning scaffolding---while keeping the policy frozen. We cast harness evolution as an RL-style outer loop and instantiate it with GEPA, a reflective evolutionary optimizer. The resulting harness adapters require no GPU training, are loadable per vertical domain, and compose with weight-based RL. Experiments with Codev, a Claude Code-style coding agent, on SWE-bench Verified, OfficeBench, and Terminal-Bench show a consistent pattern: weight updates give the strongest single-path gains, harness evolution recovers most of those gains at a small fraction of the compute, and combining both paths is best overall. We also analyze a failure mode of SFT-based specialization---shortened reasoning chains and increased truncation---and argue that harness adapters avoid it by construction. Our results position harness evolution as a practical, non-destructive complement to weight updates for vertical agents.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.25363v1' target='_blank'>Stop Going in Circles:Loop-Triggered Routing for System 1 Decision Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Zeming Yu, Huamin Ma, Yingyu Chen, Yuan Sun, Peng Hu, Yang Qin</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-19 02:01:59</h6>
+<p class='card-text'>System 1 decision models (represented by Jev) provide fast, low-cost action selection, but existing agent integrations do not reliably translate these local advantages into task completion. At certain points during execution, an agent may repeatedly select the same actions without making progress toward its goal. LLM-based policies offer strong reasoning capabilities that support planning within an agent, but invoking them at every step incurs substantial overhead. The effective coordination should therefore preserve Jev's fast local action selection while introducing LLM reasoning when execution stalls. We observe that recurring state-action pairs can signal stalled execution. We therefore propose LoopRoute, a simple but effective action router that uses this signal to allocate control within an agent. The decision model acts by default. When a loop is detected, the LLM provides brief, feedback-driven assistance and then returns control to the decision model. Later loops can request further assistance. The rule requires neither additional training nor model-specific confidence calibration. Across three benchmarks and seven LLMs, LoopRoute improves task success over standalone Jev with only limited use of the LLM policy. The mean gains are 21.0%, 60.1%, and 30.1% on ALFWorld, MapReader, and TextWorld cooking, respectively. Compared with full LLM control, LoopRoute also substantially reduces the mean cumulative API time and API-call cost per task. The same rule also improves the success rates of six frozen decision models.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.25252v1' target='_blank'>Moving Generality from Model to Modeler: LLM Agents for PHM on a Deployment-Style Benchmark</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Zhenling Chen, Zhiguo Zeng, Anne Barros</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-18 22:37:26</h6>
+<p class='card-text'>Coding agents built on large language models (LLMs) now help develop many models published as general solutions. Should generality instead reside in the agent that builds a model for each new task? We examine this question in prognostics and health management (PHM), where every model must work on unseen equipment. Our deployment-style benchmark, NextUnit-Bench, covers 24 public datasets split into 58 folds that hold out units or operating conditions; each agent has two hours to deliver an executable predictor, then run on the hidden units. First, frontier agents outperform AutoML, which reaches less than half the best agent's score, and faithful implementations of published methods on four datasets, of which only 6 of 30 beat the strongest agent's own design; published accuracies, where reproducible, rest on the papers' own conventions, and a single convention, capping the remaining life of test engines, can halve the reported error. Second, the agents' advantage is a design made on each machine's data; once made, a plain-text plan of a few hundred words carries most of the gap between two frontier agents, and given a weaker agent's plan, the strongest agent falls to that agent's level, often to identical predictions. Before touching the data, however, it matters little whose plan an agent carries out, and domain toolkits appear to help neither: what sets the strongest apart is how much it learns from the data. Third, such designs reach only implementers that can execute them: given the strongest agent's designs, a locally deployable open-weight model delivers half as often, even when they are lightened, and scores no higher than without them. Generality, we argue, is not disappearing but moving, from the model to the modeler.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.25128v1' target='_blank'>CRAFT: Constrained Route planning with Adaptive Framework and Template-based code generation</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Shahd Elmahallawy, Ahmed Eldawy</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-18 20:05:50</h6>
+<p class='card-text'>Everyday routing requests are rarely a point-to-point shortest path. A driver may need to visit stops, sometimes in a fixed order, under time budgets or distance limits, and perhaps recharge their EV car along the way. Each combination is a distinct routing problem that classically requires its own algorithm, so no fixed solver covers the space of queries users may ask. This paper presents CRAFT, which takes a constrained routing query as free text and returns a route that satisfies the user's requirements on a real road network. An LLM parses the query and generates four search functions, which a generic graph-search engine executes on the road network. We formalize the underlying problem as State-Expanded RCSP (SE-RCSP), which extends resource-constrained shortest paths (RCSP) with non-additive state such as node-dependent resets and discrete progress tracking. We evaluate CRAFT on 2,600 natural-language queries over California road networks against two baselines, analyzing correctness, constraint violations, long-distance scalability, and semantic POI filtering.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.25066v1' target='_blank'>DVBench: End-to-End Benchmark for Real-World UVM Design Verification Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Jiaru Qian, Jiawei Li, Xiaolong Hu, Zheng Shen, LiMing Zhao, Xin Zhang, Siyuan Jiang, Yongqiang Wei, Dong Liu, Jianyang Li, Yihua Chen, Yangxu Liao, Yuxin Wu, Jing Liang, Bin Wen, Junjie Zhang, Yongsheng Han, Yihong Dong, Ge Li</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-18 19:10:37</h6>
+<p class='card-text'>Design verification (DV) remains a major bottleneck in hardware development, with large-scale verification using the Universal Verification Methodology (UVM) being highly labor-intensive. Recent advances in large language models (LLMs) and agentic systems offer new opportunities for DV automation. However, existing benchmarks primarily construct mutually decoupled subtasks, which deviates from the real-world workflow. In this paper, we present DVBench, the first end-to-end benchmark for Real-World UVM design verification agents. DVBench comprises 95 tasks across 9 functional domains and 5 difficulty levels, covering diverse verification scenarios and design scales. Each task requires agents to independently complete the full verification workflow. DVBench evaluates final testbenches via compilation, coverage, and bug detection, while assessing intermediate artifacts including feature lists, test plans, and reference models. We evaluate frontier LLMs (e.g. Claude Opus 5.5, GPT-6 Astra) and agent frameworks (e.g. Claude Code, Codex, OpenCode). Experimental results show that the best LLM-based agent (Codex \& GPT-6 Astra) can only achieve an overall success rate of 21.05\%, revealing substantial room for improvement in complex verification tasks.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.24998v1' target='_blank'>From Industrial Product Documentation to Automated Digital Product Passport Generation: An Experimental Study of Large Language Models</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Marco Buecheler, Grant Richards, Nathan Hartman</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-18 15:57:39</h6>
+<p class='card-text'>Manufacturing companies that are planning to sell certain products in the European Union (EU) will be required to provide mandatory digital product passports (DPPs). The use of DPPs is to provide standardized product information throughout multiple product life cycles in a circular economy. Required passport information, such as technical specifications, material composition, and environmental product footprint, is available in manufacturers' data sources but is scattered across different heterogeneous systems, documents, and data formats. The given paper investigates using large language models (LLMs) to automate the generation of DPPs based on the asset administration shell (AAS). A retrieval-augmented generation (RAG) approach is used to extract product information from industrial documentation and generate populated AAS instances. Product documentation is processed and divided into text chunks. The text chunks are then stored in a persistent ChromaDB vector database using vector embeddings. The retrieval process combines semantic and lexical search to identify relevant information based on standardized AAS submodel template requirements. The retrieved information is provided to five LLMs to generate structured AAS instances. The experiments cover different industrial products and AAS submodels. Four levels of prompt guidance are investigated to assess their influence on generation quality. The generated passports are evaluated against a ground truth. The experimental evaluation includes 4,560 executions across 76 product-submodel combinations. Of the generated passport outputs, 97.4% are valid JSON, while 44.9% pass the full AAS validation procedure. Under deterministic scoring, mean completeness, conditional accuracy, and overall field correctness are 49.6%, 58.3%, and 30.8%, respectively. An LLM-as-a-judge yields better scores of 66.5%, 88.9%, and 60.4% for the same outputs.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.24221v1' target='_blank'>Learning to Coordinate: LLM-Guided Workflow Evolution for Token-Efficient Red Teaming</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Xiaoyang Xing, Wenyu Dai, Xiaoliang Gong, Asoke K Nandi, Anthony Cohn</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-18 10:58:44</h6>
+<p class='card-text'>Automated red teaming is essential for identifying safety failures in large language models (LLMs), but its practical scalability depends on the resources required to discover those failures. Multi-agent systems can combine complementary capabilities, yet repeated planning, redundant exchanges, and ineffective information routing can make their coordination expensive. Moreover, a target model's response indicates the outcome of a test without identifying which collaboration decision should change. We present Learning to Coordinate (L2C), an LLM-guided framework that evolves an executable multi-agent workflow for each red-teaming case. L2C represents agent responsibilities, execution dependencies, and input bindings in a versioned graph, and associates each graph with records of the information actually delivered and produced. A controller trained through supervised fine-tuning integrates these records with target responses, evaluator verdicts, and remaining budget to retain the workflow, refine instructions, restructure collaboration, or lock further editing. This design connects feedback to explicit changes in subsequent execution while allowing a useful organization to continue without repeated controller intervention. The evaluation protocol covers HarmBench with three execution backbones and two target models, together with component ablations, dataset transfer, and evaluator checks. Across the six executor-target configurations, L2C improves ASR over EvoSynth by 1.4 to 4.5 percentage points while reducing mean online tokens by 35.6% to 37.3%. L2C connects adaptive collaboration to the resource requirements of automated security evaluation.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.24168v1' target='_blank'>CounselTraj: Synthesizing Process-Aware Psychological Counseling Dialogues via Dialogue-Act Trajectory Planning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Zhiyang Qi, Michimasa Inaba</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-18 10:10:54</h6>
+<p class='card-text'>The growing demand for psychological counseling has motivated the development of LLM-based systems that support human counselors, but training such systems requires large-scale, high-quality dialogue data. Authentic counseling transcripts are difficult to collect and share because of privacy concerns, making synthetic dialogues an important alternative. However, existing synthetic datasets, despite covering diverse scenarios and client profiles, often consist of brief exchanges and fail to capture session-level counseling processes. We propose CounselTraj, a dialogue-act trajectory planning framework for expanding brief synthetic dialogues into process-aware, session-level psychological counseling dialogues. CounselTraj learns dialogue-act patterns from role-play counseling dialogues produced by human counselors, plans coordinated trajectories for clients and counselors, and uses them as flexible guidance for long-form dialogue generation. Experiments across three Chinese synthetic counseling datasets show that CounselTraj produces more complete and coherent sessions with higher-quality counselor interventions than both direct expansion and expansion with randomly sampled trajectories. Based on CounselTraj, we construct CounselTrajD, a dataset containing over 10K process-guided Chinese psychological counseling dialogues, and use it to train CounselTrajLM for counseling response generation. Evaluations at both the response and session levels show that CounselTrajLM outperforms publicly available Chinese counseling models in response quality, therapeutic understanding and intervention, and counseling-process coherence and progress. Our code and model are publicly available at https://github.com/UEC-InabaLab/CounselTraj.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.24073v1' target='_blank'>3D GameDev Arena: Benchmarking Coding Agents That Plan, Build, and Playtest extreme Long-Horizon Browser Games</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Bizhe Bai, Jiliang Jian, Yuqing Yan, Tao Chen, Ying Wen</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-18 09:03:53</h6>
+<p class='card-text'>Coding agents now resolve repository issues and generate compact playable games, but whether they can build a large 3D game from scratch remains open. Such games tightly couple mechanics, scenes, assets, and interaction logic, and their quality rests on player enjoyment, which existing benchmarks rarely assess. Thus, we introduce 3D GameDev Arena, a first extreme long-horizon benchmark of 108 from-scratch game-development tasks across 14 genres. Given only a text specification and UI/UX reference images, a fully automated plan--implement--test--repair pipeline builds each task into a self-contained browser game. Runs average $\sim$1,000 LLM calls ; the longest uses 14,407 calls, 2.13B tokens, and 608 assets. Evaluation spans (1) objective code-level functional acceptance against the game specification, (2) agent-based QA and playtesting of 3D presentation and playability, and (3) blind pairwise Bradley-Terry human preference in a public arena. The preliminary findings indicate that long-horizon 3D game development remains far from solved, and code-level correctness alone does not dictate player preference. The public arena is hosted online.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.24039v1' target='_blank'>A Capability Framework for Evaluating Agentic AI Platforms in Regulated Enterprises</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Abbas Raza Ali, Muhammad Ajmal Siddiqui, Moona Zahid</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-18 08:28:02</h6>
+<p class='card-text'>Agentic AI platforms-systems in which LLM agents plan, invoke tools, retain memory and coordinate to change the state of enterprise systems-are being procured faster than they can be measured. Public agent benchmarks score models in fixed harnesses; enterprises buy integrated platforms whose orchestration, memory, governance and tooling layers dominate outcomes, and they buy them largely on the strength of vendor demonstrations. We report an industrial evaluation programme ("bakeoff") run by the innovation laboratory of a global bank in which ten platforms-spanning open-source frameworks, proprietary products and hyperscaler ecosystems-were assessed by a cross-functional panel on nine capability dimensions across three financial-services workloads: counterparty credit risk, retrieval-augmented generation and process automation. Scores separate the field into three tiers that are stable under alternative weightings, and surface workload-specific strengths that aggregates hide. A secondary analysis, however, finds Cronbach's alpha = 0.98 across nominally distinct dimensions and rank correlations >= 0.93 with the total for eight of nine: a halo effect indicating that demonstration-based scoring measures presentation as much as capability. From these lessons we propose a gate-then-score evaluation protocol with four layers (capability, execution reliability, governance gates, business value), trace-level reliability metrics estimated over repeated runs, an autonomy-readiness scale and a reproducibility protocol. We state precisely what the present evidence supports, and what a controlled harness must add to turn enterprise platform evaluation from structured judgement into measurement.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.24025v1' target='_blank'>Intent Contracts: Taking Tools Away from Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Ziyuan Wang, Genliang Zhu, Xiaobo Chen, Chu Wang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-18 08:14:22</h6>
+<p class='card-text'>Intent contracts are an authorization interface for tool-using LLM agents in which the planning model holds no tools. For each step it submits a short logged contract: a goal, a verbatim quotation of the user, and scope fields. Code validates the contract, and a small trusted model checks it against the user's words and writes the tool call itself. Provided the validation and dispatch code is correct, every executed call is written by the trusted model, the planner's influence on a call is confined to a contract logged before it, and the trusted side decides how much of a request to carry out. We compare contracts with two reviewers of planner-written commands: one sees only the user's words and the command, the information boundary of a reasoning-blind permission classifier, and one also sees the planner's goal and a checked quotation. With gpt-6.1-terra as planner and GLM-5.3-Flash as the trusted model on three AmPermBench task families, every object changed under contracts is named in the goal of the contract that produced the change; under review the planner names objects in its commands and rarely in its goals. When the planner adds work the user never asked for, contracts complete the user's task in 27/30 runs and the intent-visible reviewer in 16/30, because a reviewer can only refuse a whole command. Contracts do not reduce unauthorized actions. They are indistinguishable from blind review, and once the benchmark's environment terms are clarified, every condition that changes state hits a wrong target in 40-49% of those runs. That error is the planner's choice of objects for an ambiguous reference, which no trusted model here can see the environment to check; telling the executor to decline when unsure does not change it. We evaluate benign over-reach with one pair of models, not adversarial planners. We release the plugin and run records.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.23718v1' target='_blank'>HypoLoop: Revising Weight-Editing Plans from Scientific Feedback</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Mengran Li, Xichen Yan, Bo Li, Chengyang Zhang, Jinfeng Xu, Zheng Lin, Zelin Zang, Zhen Lei, Jiebo Luo, Victor C. M. Leung, Stan Z. Li</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-18 02:20:07</h6>
+<p class='card-text'>Scientific experiments continually reveal prediction errors. Effective updates depend on which parameters change and which errors drive the correction. We introduce HypoLoop, a family of native weight-editing methods that connects these choices to experimental feedback. Fixed, numerically adaptive, and LLM-guided policies produce editing plans; numerical solvers compute weight patches, and internal validation selects the deployed predictor. Successive observations and validation records support revisions to editable locations and fitting rules. Experiments cover 22 scientific tasks and both DeepSeek and Claude. On Burgers, reallocating a matched parameter budget reduces error by 58.80% and 47.72% relative to fixed locations. On DIODE, positive-residual weighting reduces absolute relative error (AbsRel) by 13.35% in internal cross-validation, with the same 33 editable coordinates. Revising the complete plan across rounds lowers final AbsRel by 10.59% relative to keeping the initial plan fixed. SpaceNet7 and Make3D connect accepted edits to improved spatial predictions. These results show how experimental evidence can shape the update problem itself. Code: https://github.com/limengran98/HypoLoop.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.23702v1' target='_blank'>KnowMe Paper Radar: Lightweight Discovery of Promising Papers in the Age of Autoresearch</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Zhuo Chen, Jian Wang, Jinjie Gu, Lijun Wu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-18 01:47:31</h6>
+<p class='card-text'>The growing volume of topically similar papers makes it difficult to identify new work that can offer useful research insights or methodological guidance. We present KnowMe Paper Radar, a lightweight discovery tool that combines multiple sources of evidence into personalized reading priorities. Users specify topics, priorities, exclusions and dates; the system brings together topical relevance, recency, author research histories, collaboration paths and direction-specific institutional context. By exposing each score component and its supporting sources, KnowMe helps readers select promising papers for their current questions and discover relevant work beyond familiar authors. Automatic acquisition, version merging and graph-cache reuse keep this workflow convenient without large language model (LLM) inference during ordinary use. Experiments on 174,640 acquired records show more than threefold faster repeated context preparation, while cached abstracts improve normalized discounted cumulative gain at rank 10 (NDCG@10) from 0.412 to 0.598 on expert-judged retrieval tasks. Complementary analyses examine how the same accumulated records support semantic retrieval, research-history modeling and literature-grounded planning. A browser interface and a structured command-line interface (CLI) make these capabilities available to both researchers and research agents, positioning KnowMe as a practical upstream tool for literature-informed recursive self-improvement (RSI) workflows.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.22415v1' target='_blank'>SpatialMind: Adaptive Multi-Level Geometric Fusion for Spatial Reasoning in Multimodal Large Language Models</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Shibin Zhao, Hao Tan, Fan Yang, Haixin Wang, Feilong Chen, Yidong Ma, Chaoyang Zhao, Ming Tang, Jinqiao Wang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-17 08:51:37</h6>
+<p class='card-text'>Multimodal Large Language Models (MLLMs) demonstrate promising capabilities in 2D visual understanding, yet remain limited in 3D spatial reasoning. Recent studies explore integrating 3D reconstruction models into MLLMs. However, these approaches either use a single geometric granularity across all tasks or adopt a fixed multi-level fusion scheme, regardless of task-specific reasoning requirements. Through systematic experiments on multi-level geometric fusion, we find that spatial tasks at different cognitive levels (e.g., distance estimation vs. route planning) require geometric representations of different granularities, revealing that fixed fusion cannot accommodate diverse spatial reasoning requirements. To bridge this gap, we propose SpatialMind, a task-adaptive framework for dynamically integrating multi-level geometric representations. SpatialMind employs GeoFus, a multi-layer geometric fusion module built around a gating network jointly conditioned on textual instructions, visual semantics, and geometric representations. This network adaptively modulates the contributions of shallow, intermediate, and deep geometric features across the layers of the LLM decoder. Furthermore, we introduce a negative-entropy regularization loss to mitigate gate collapse. Gate visualizations indicate that GeoFus adapts geometric granularity to task requirements. Experiments demonstrate that SpatialMind achieves competitive performance across spatial benchmarks, attaining a state-of-the-art score of 72.3 on VSI-Bench. The source code is publicly available at https://github.com/zhaosb-star/SpatialMind.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.22188v1' target='_blank'>From Imperfective Paradox to Moorean Absurdity: Single-Chain Reasoning Lock-In and Multi-Candidate Verbalization Across Aspectual and Pragmatic Ambiguity</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:An-Sheng Jhang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-17 04:20:45</h6>
+<p class='card-text'>Natural language entailment and coherence judgments often depend on whether an event merely occurred, reached a telic culmination, satisfied a plan, or was evaluated under multiple pragmatic standards. We test observable consequences of the single-chain premature lock-in hypothesis across four preregistered, sealed formal experiments on Qwen3-8B-Q8_0 (16,640 formal units, temperature=0.0): 15 of 16 hypothesis slots retain confirmatory status (12 rejecting H0 under within-experiment Holm control at alpha_fam=0.05; E3_H3 demoted to descriptive status). In Experiment 1, Direct-CoT vs. MCU differs by 25.00 pp on telic high-confidence completion (Holm p=1.31239e-05), while NLI-CoT collapses by -91.25 pp on uninterrupted atelic items (Holm p=1.81805e-21). Multi-Candidate Verbalization (MCV) elicits K=5 weighted estimates in one call, separating the prompt from unweighted (MCU) and self-weighted (MCW) readouts. Mandarin (E2) and English (E3) expose an Interruption-Anchored Realis Paradox under NLI-CoT. In Experiment 4, MCU-CF raises perceived coherence on implicit Moorean sentences by 26.64 pp over Direct-CoT (Holm p=0.0006), alongside Direct-CF - Direct-CoT = 29.15 pp and MCU-CoT - Direct-CoT = 17.31 pp. A 1,800-call OpenAI ablation and a stage="dev" P16.7 cross-model extension (4,240 planned/collected units across five external models: 4,222 valid, 18 format-missing, 0 transport-missing; <2% missing per slice; OpenAI gpt-4o-mini at top_logprobs=20 achieves 1,000/1,000 valid units) show that discrete NLI-CoT and scalar Direct-CoT judgments dissociate across models. Confirmatory effects concern observable prompt-and-readout protocols; internal premature lock-in remains a hypothesis. All code, stimuli, preregistered analysis plans, and verification tools are available at https://github.com/asj252/llm-judgment-studies.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.22171v1' target='_blank'>Readie: Low-Latency Code Sandboxes for AI Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Arjun Sivaraman, Zhaoheng Li, Alan Shi, Sanjay Malisetty, Eugene Wu, Yongjoo Park</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-17 04:04:11</h6>
+<p class='card-text'>From quantitative research to personal assistance, AI agents act by iteratively generating and executing code. To decouple the agent harness from code execution, many agents offload execution to dedicated systems called code sandboxes. However, existing code sandboxes suffer from slow startup. Whether they rely on custom snapshots or a single fat image, the root cause is the same: it is hard to build a compact, pre-warmed snapshot that can be shared across diverse agent-generated code while covering nearly all the artifacts (e.g., packages, datasets) it requires.
+  In this work, we propose learned startup snapshots for low-latency code sandboxes. Our insight is that while it is hard for a single snapshot to be both compact and cover most workloads, a set of snapshots can achieve both. Each snapshot is small, initializes quickly, and covers a fraction of agent-generated code; together, the set covers most of it. We learn this set from a large training workload by formulating snapshot construction as an optimization problem and solving it with an approximation algorithm. Planned on 15K public and LLM-synthesized scripts, our system, Readie, reduces startup latency by 3-22$\times$ and end-to-end runtime by 1.3-3.3$\times$ compared to existing approaches at the same storage budget.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.22027v1' target='_blank'>GauntletScore: Auditable Fact-Checking That Matches the Best Published Checkers on LLM-AggreFact</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Ernie Hobbs, Jim Hinson</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-17 00:38:54</h6>
+<p class='card-text'>Checking whether a generated sentence is supported by its source document is a standard safeguard for AI-written text, and the strongest published checkers are single models. We describe GauntletScore, an evidence engine whose few rules and thresholds were set on the benchmark's development split. It puts typed questions to independent readers from different providers and records each answer as a measurement in an evidence ledger. It combines the measurements with a fixed Bayesian rule that counts a contradiction only when two readers agree. On the full LLM-AggreFact test split (29,320 claims across 11 datasets), following the leaderboard's approach, GauntletScore achieves 79.51 balanced accuracy, above every average published on the leaderboard as of 15 November 2026. That places it level with the best of them, nimble-v4-max (79.45 from its published dataset scores; the engine's 95% interval, 78.47 to 80.53, contains it). On the same claims it beats two of its three readers used alone (Readers A and B) by 1.66 and 2.17 points (95% intervals 0.80 to 2.53 and 1.29 to 3.06). Without AggreFact-CNN, described below, the leads are 0.90 and 1.32 and both intervals stay above zero. The engine also records the evidence behind every verdict, which a single model does not. Its largest margin is on full-length news articles checked against multi-sentence summaries (AggreFact-CNN), a format that resembles much regulated writing. There it scores 76.45, the best on the leaderboard, against 70.1 for the next best and 63.9 to 67.8 for the six systems with the highest averages. The test split was run once, on an engine frozen before the first test claim, under a stopping plan committed in advance. We release per-claim predictions and the scoring script.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.22016v1' target='_blank'>An Explainable Agentic AI Framework for Distribution System Load Restoration</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:S. M. Monzurul Hoque Chowdhury, Qinghua Li</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-17 00:06:48</h6>
+<p class='card-text'>Distribution system load restoration is a sequential decision-making problem in which restoration actions must maximize served load, prioritize critical loads, and preserve power-flow feasibility. This paper proposes an explainable agentic artificial intelligence (AI) framework for distribution system load restoration. The proposed framework uses multiple large language model (LLM) agents for planner guidance, strategic plan generation, decision arbitration, memory-based feedback, and explanation generation. Unlike unconstrained LLM-based control, the proposed method restricts agent decisions to feasible restoration actions and evaluates all candidate plans using deterministic AC power-flow feasibility checks. The framework is evaluated on IEEE 33-bus and 69-bus distribution feeders, as well as a larger IEEE 118-bus test case, and compared against reinforcement learning and planning baselines. The results show that the proposed agentic framework achieves better restoration performance while producing structured explanations for operator-facing decision support. A direct comparison with a Single-LLM-Agent baseline further shows that the proposed multi-agent decomposition improves weighted restored load and critical-load recovery compared with a monolithic LLM decision structure.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.21924v1' target='_blank'>GridDriver: On-Board BEV-Based Language Planning and Reasoning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Katharina Winter, William Engel, Zain A. Alishammat, Fabian B. Flohr</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-16 21:39:07</h6>
+<p class='card-text'>Bird's-Eye-View (BEV)-conditioned large language models (LLMs) enable language-interactive driving, but onboard deployment requires efficient perception and continuous planning alongside autoregressive language generation. We present GridDriver, an efficient BEV-conditioned LLM framework combining trajectory prediction, structured driving indicators, natural-language navigation, driving explanations, and scene question answering. Lightweight spatio-temporal BEV perception and spatially structured tokens provide scene context to a shared LLM, while frame-wise scheduling interleaves trajectory prediction with asynchronous language generation. GridDriver achieves competitive performance on public benchmarks, reaching 87.9% PDMS on NAVSIM and 57.6% accuracy on nuScenes-QA with a shared planning and QA checkpoint. Spatial representation analyses demonstrate improved geometric information retention and trajectory prediction compared with Q-Former compression. The system achieves 32.7 ms standalone planning latency and 9.4 plans/s in an onboard ROS 2 pipeline. We further evaluate planning on our own data recordings and demonstrate open-loop onboard operation on a research vehicle. Across public benchmarks and real-world evaluations, we identify strengths and limitations of the BEV-based approach.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.21105v1' target='_blank'>CivilBench: Benchmarking Vision-Language Models for Multimodal Information Integration in Civil Engineering</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Dan Yuan, Yue Wen, Zhili He, Zhenkui Zhou, Shicen Liu, Ziqiang Zheng</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-16 13:54:06</h6>
+<p class='card-text'>Artificial intelligence (AI), particularly large language models (LLMs) and vision-language models (VLMs), is increasingly applied in civil and structural engineering for disaster assessment, structural analysis, and engineering decision support. However, the extent to which current VLMs possess the reasoning capabilities required for reliable engineering judgments remains unclear. In this work, we introduce CivilBench, a comprehensive benchmark for evaluating VLMs in civil engineering and disaster-related scenarios. CivilBench covers three major task families: Sequential Reasoning, Image-based Structural Understanding, and Open-world Understanding, encompassing numerical reasoning, structural damage assessment, risk inference, causal analysis, and repair planning. The benchmark is constructed through a systematic pipeline of domain-specific data collection, engineering-oriented captioning, expert annotation, question design, and quality verification. Evaluation of representative state-of-the-art VLMs reveals substantial limitations in domain-specific reasoning, with Sequential Reasoning emerging as a major bottleneck, particularly when models must infer numerical relationships from sparse structured observations. Further experiments show that numerical priors and external knowledge can alleviate these limitations, although their effectiveness depends on the model's ability to reliably interpret and use the available evidence. CivilBench provides a capability-oriented testbed for identifying reasoning limitations and evaluating progress toward reliable AI-assisted engineering decision-making. The benchmark will be publicly available at https://huggingface.co/datasets/traceuryuan/CivilBench.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.20702v1' target='_blank'>When the Bill Falls: Reusing the Old Index Defers,Never Avoids, Re-encoding in Complete Embedding-Model Migration</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Nannan Zhao, Jiameng Zhang, Taoyu Zhong, Hao Wang, Bo Wang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-16 08:10:30</h6>
+<p class='card-text'>Upgrading the embedding model behind a vector index requires re-encoding the corpus. Recent work reuses the old index through adapters or window re-ranking. Across sixteen model pairs on passage and code corpora, plus eleven on Natural Questions (NQ), we find three results. First, reuse never avoids re-encoding: if migration must complete, every strategy eventually encodes every document; reuse only changes when that work is paid and the quality served meanwhile. Second, adapters should be compared with the old model, not only the new one. Of five adapter variants, only same-family LLM bridges beat the old model, and only by a negligible margin. Third, window re-ranking cost can be priced from the old index alone; pre-registered replays on all 8,841,823 passages confirmed the prediction on all three tested pairs. Workload skew also matters: across 36 further pre-registered Zipf replays, the planned family matched on 32. These findings yield three pre-migration rules: whether reuse is worthwhile, which strategy to use, and how deep a window to take. The depth rule priced every window that reached target quality to within 4 parts in 10^5 of the corpus. On NQ, a pre-committed plan selected the family on 10 of 11 pairs and priced every window exactly. Quality inputs transferred less reliably across corpus scale, so the model gap and window quality loss must be measured on the serving index.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.20511v1' target='_blank'>Optimizing Query Decomposition for Reliable Validation</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Shuo Zhang, Sudeepa Roy, Jun Yang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-16 04:36:07</h6>
+<p class='card-text'>Large language models (LLMs) have made querying databases more accessible, but cannot guarantee that the SQL they generate is correct. Without a trusted reference query, a validator (human or LLM) must decide whether a generated query answers the intended question. Enterprise questions often require queries with multiple joins, nested subqueries, and multi-level aggregation, and validating such a query in one judgment is error-prone. Decomposition simplifies this task by rewriting a query into smaller queries (blocks) that recompose to the original, each checked against its own sub-question.
+  Decompositions differ, however: smaller blocks make each judgment easier but require more judgments, and the best balance depends on the validator's ability. We formulate validation-aware query decomposition as an optimization problem. Just as a query optimizer chooses among equivalent plans by estimated cost, we choose among decompositions by how reliably a given validator is expected to check them. We model how task difficulty and validator ability jointly affect reliability and define an objective that balances reliability against the number of judgments. Over a space of decompositions derived from logical-plan rewrites, our search finds an optimal one. We implement it in DecoVal, a pipeline that presents each block with its sub-question and input interface, combines local verdicts into a query-level decision, and localizes errors to blocks.
+  A user study shows that decomposition helps human validators catch and locate errors: with DecoVal, participants caught 91% of the errors, up from 36% without decomposition, and located the error in nearly every rejection. Experiments on BEAVER and Spider 2.0 with LLM validators show that DecoVal also raises error-detection recall over whole-query validation while keeping precision high, and that the best granularity depends on the validator.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.20430v1' target='_blank'>TrainExplorer: Autonomous LLM Post-Training via Plan-and-Decouple Exploration</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Xuannan Liu, Tian Lan, Zekun Li, Xing Cui, Zhengfeng Yu, Feihu Jiang, Qianghuai Jia, Longyue Wang, Zhao Xu, Weihua Luo, Peipei Li, Ran He</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-16 02:46:30</h6>
+<p class='card-text'>LLM-based agents can automate model post-training, accelerating progress toward recursive self-improvement. Despite their promise, existing approaches remain under-explored and face two main challenges: (1) strategy lock-in that limits exploration beyond the initial strategy; and (2) coupled execution that obscures the effects of individual modifications. To address these challanges, we propose TrainExplorer, a multi-agent framework for autonomous post-training, that incorporates strategy planning and execution decoupling, to achieve broaden strategy exploration. First, strategy planning draws on scientific literature to construct a candidate search space of training strategies. Then, decoupled execution enables single-component interventions and attribution to guide strategy exploration. Extensive experiments on PostTrainBench demonstrate that TrainExplorer achieves a weighted aggregate score of 39.02, outperforming Claude Code using the same LLM by 7.32 and surpassing GPT-5.6 Sol-powered Codex, which scores 36.23. Code will be available.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js'></script>
+</body>
+</html>

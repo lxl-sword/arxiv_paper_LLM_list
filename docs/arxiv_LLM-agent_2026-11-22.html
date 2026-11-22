@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<title>LLM-agent - 2026-11-22</title>
+<link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap' rel='stylesheet'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'>
+<style>
+body {
+font-family: 'Roboto', sans-serif;
+background-color: #f5f7fa;
+padding: 20px;
+}
+.card {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.card-title {
+    font-weight: 700;
+}
+.card:hover {
+    transform: scale(1.02);
+    transition: 0.3s ease-in-out;
+}
+</style>
+</head>
+<body>
+<div class='container'>
+<h1 class='text-center my-4'><i class='fas fa-book'></i>LLM-agent - 2026-11-22</h1>
+<div class='row'>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.26619v1' target='_blank'>TideCache: Efficient Hybrid LLM Serving with Transparent Cache Management and Layer-Wise Streaming</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Jinbin Luo, Xiaozhe Yao, Shang Yang, Zhijian Liu, Song Han, Qinghao Hu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-19 18:58:31</h6>
+<p class='card-text'>Hybrid architectures have become mainstream among open-weight language models. Their global-attention and bounded-state layers maintain heterogeneous caches whose demands vary with context length and concurrency. We present TideCache, a serving system on CPU--GPU superchips with three components for allocating GPU memory among caches and managing their residency across GPU and host memory. The Transparent Cache Pool redistributes physical pages among cache components behind fixed virtual addresses, preserving cache layouts and backend interfaces. The Cache Streamer uses computation intervals provided by bounded-state layers to prefetch the next global-attention layer's prefix into GPU slots shared across global-attention layers, reducing GPU residency while overlapping layer-wise transfers with computation. Generated KV remains resident. The Request Scheduler selects resident or streamed execution and triggers capacity adjustments according to request size and queue state. Together, they let HBM released by streaming accommodate other cache components and additional requests. Implemented in SGLang and evaluated on GB300 and GH200 across seven model/platform configurations, TideCache completes up to 2.04x as many agent turns, reduces overall P50 per-token latency by 20--59%, and improves agent P50 TTFT by 1.40--3.05x compared with SGLang with HiCache.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.26601v1' target='_blank'>SoK: Assessing the Evolution of LLM Capability in Software Vulnerability Research</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Amine Lbath, Manan Suri, Aurelien Delaitre, Vadim Okun, Massih-Reza Amini, Dinesh Manocha</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-19 18:54:19</h6>
+<p class='card-text'>LLM-based agents are becoming increasingly capable at discovering, validating and patching vulnerabilities in real software, and vendors and researchers report that this is already changing how vulnerabilities are found and fixed. These claims, however, are scattered across papers, vendor reports and disclosures and are rarely comparable. We introduce a framework that rates these capabilities on an autonomy scale modeled on the levels of driving automation, and qualifies each claim by its correctness, its availability and the strength of its evidence. We use this framework to systematize the published evidence on LLM capability in vulnerability research. We find that agents discovered, validated, and patched vulnerabilities in real-world software without human intervention before the restricted frontier models of 2026, and that open-weight models subsequently attained comparable autonomy for discovery and validation. We then measure the consequences of evolving LLM security capabilities in a decade of public vulnerability records, advisories and exploitation data. In 2026 the number of disclosed vulnerabilities more than doubled, with an increasing share rated critical or high, and severe bugs that had survived a decade or more in widely used code were reported several times more often than before. Yet the time between the stages of a vulnerability's life, from report to fix and from disclosure to attack, has not shifted noticeably so far. We grade the mitigations proposed in the literature with an explicit rubric and draw guidance for each group of stakeholders from the best-supported ones.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.26553v1' target='_blank'>Replication of Agentic Security Events: Audit and Investigation (ROGUE-AI)</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Mengxiao Wang, Mahbub Alam, Kalyan Nakka, Nitesh Saxena</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-19 18:23:35</h6>
+<p class='card-text'>Agents based on large language models (LLMs) can now delete files and send payments on behalf of their users. News media reports routinely describe failures of these agents (e.g., Replit's coding agent deleting a production database), but a report often only says what went wrong and rarely (in)validates the incident or finds its root cause. Incident catalogs collect these reports, and benchmarks record whether agents fail, but neither replicates an incident nor tests the cause its report might identify. In this paper, we present ROGUE-AI (Replication of Agentic Security Events: Audit and Investigation), a multi-agent framework that closes the above gap and rebuilds each reported incident offline together with a matched control that lacks only the blamed cause, and runs agents on both. Our results suggest that ROGUE-AI is able to reproduce the reported harm in 89% of its 108 attempted replications. Agents built on five current GPT, Claude, Gemini and DeepSeek models made the reported mistake in 18% to 33% of runs, against at most 1% without the blamed cause. Of the 72 incidents with real-world harm, 62 had no underlying attacker, and in these, agents did what their task asked for but missed an ordinary hazard, such as a database shared with the live site. Replications without an attacker caused more harm than replications of prompt injection for all five models. Defenses against prompt injection look for injected instructions, but these replications contain none. Further, a warning after each tool output that names the hazard and its consequence lowered harm for all five models, whereas a note of the same length that does not mention the hazard left most of the harm in place. Built from real incidents, the ROGUE-AI replications form a reusable audit framework that vendors can rerun before each new release.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.26531v1' target='_blank'>Cost-Aware Agentic Feature Optimization System for Fleet-Scale Ranking Models</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Chang Yang, Yao Xuan, Wendan Yan, Nhat Le, Jiang Liu, Longhao Jin, Zhen Peggy Yao, Alireza Vahdatpour, Djordje Gligorijevic</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-19 18:12:04</h6>
+<p class='card-text'>Large Web platforms operate large fleets of ranking models, each selecting features from a shared pool of tens of thousands. We present an end-to-end agentic system that optimizes features across the fleet under resource constraints shared across models and those set per model, such as feature pipeline cost and serving throughput (QPS), respectively. In this system, LLM agents propose hypotheses, and deterministic tools execute experiments and verify them. For each model, an LLM generates and shortlists cross features from a combinatorial candidate space, and all features are then ranked by several importance methods. Feature blending mixes these rankings into a single selection, using Pareto fronts across tasks for multi-task models. An LLM Researcher agent then tunes the feature selection in 10--25 asynchronous trials under resource caps, and a trimming step keeps the pipeline cost within budget. Across production models, the system improves normalized entropy by 0.31% on average within each model's budget, and the trimming step cuts pipeline cost by 2.3% with no regression beyond measurement noise. The optimized models were launched, and in online A/B tests they improved a primary online metric by 0.20%.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.26517v1' target='_blank'>From Seed to BLOOM: Autonomously Growing a Better Out-of-Order Core</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Angela Cui, Ferran Hermida-Rivera, Jack Toubes, Jim Fang, Chengyi Lux Zhang, Borivoje Nikolić, Christopher W. Fletcher, Sagar Karandikar</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-19 17:59:02</h6>
+<p class='card-text'>Improving microprocessor performance while meeting ASIC implementation constraints like area and frequency is a complex and labor-intensive task that requires expertise across computer architecture, hardware design, and performance analysis and profiling. While large teams in industry can afford the engineering resources to target this problem across performance modeling, RTL design, and ASIC implementations, small teams of researchers and engineers cannot take on this huge engineering burden while keeping up with the pace of advancement in processor microarchitecture. Recent advancements in large language model (LLM) agents present a promising substrate to accelerate this traditionally human-intensive process.
+  In this work, we build and evaluate MiracleGro, an agentic AI-based system that, without human intervention, analyzes cycle-level RTL behavior and synthesis results, identifies performance bottlenecks, and translates architectural ideas into RTL implementation in a leading open-source out-of-order superscalar application core, the Berkeley Out-of-Order Machine (BOOM). Taking into account cycle-exact performance, area, and critical path, MiracleGro automatically produces improved BOOM designs that drastically increase the human-optimized BOOM's performance on substantial workload suites such as SPEC CPU2017 with full reference inputs.
+  MiracleGro achieves an 85% IPC speedup and a frequency improvement of 27% in SkyWater 130nm, resulting in a 2.34x wall-clock time speedup on the full SPEC CPU2017 intspeed benchmarks (30 trillion instructions). This result demonstrates the enormous opportunity to harness frontier models to improve state-of-the-art RTL-driven platforms for implementation-grounded microarchitecture research across hardware designs.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.26510v1' target='_blank'>AutoMaster: Autonomous Post-Training by Making the Same Model a Better Teacher</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Guoxin Chen, Shuang Sun, Fanzhe Meng, Xinyu Tang, Ruihua Song, Wayne Xin Zhao</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-19 17:57:59</h6>
+<p class='card-text'>Task success alone does not specify which behaviors post-training should reinforce. Even successful teacher trajectories can contain unsupported assumptions, unproductive repetition, or superficial verification. We propose Skill-FT (Skill-Guided Fine-Tuning), which uses natural-language skills to suppress undesirable habits and elicit underrepresented effective behaviors during teacher rollouts, then fine-tunes a target model on the resulting trajectories. We introduce AutoMaster, an autonomous post-training system in which an LLM agent develops these interventions through trajectory analysis, skill design, data selection, and feedback from rollouts and target-model evaluation. Across Terminal, Search, and software engineering tasks with 4B and 9B target models, AutoMaster improves mean performance over Vanilla SFT on successful unguided teacher trajectories by 1.42-8.99 percentage points, with the teacher, task pool, training set size, and SFT recipe held fixed. Together with the ablations and trajectory analyses, these results suggest that behavioral shaping can make a fixed model a more effective teacher. We further find that retaining skill instructions during SFT yields higher mean performance than removing them across all six settings, despite their absence at evaluation and identical supervised outputs. These findings suggest that preserving skill context as part of a training demonstration can support better behavioral internalization.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.26480v1' target='_blank'>Held While Waiting: What LLM Agent Sessions Reserve on Serverless and Agent Runtimes</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Mekhala Hithyshini Sreenivasa</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-19 17:40:09</h6>
+<p class='card-text'>LLM agents spend nearly all their time waiting for the model. On Amazon Bedrock AgentCore, our agents waited a median of 2.7 seconds for each model reply, then computed for an estimated 5 to 40 milliseconds. AgentCore does not charge for CPU during the wait. But it reserves a separate environment, a virtual machine with its own memory, for every conversation, and keeps it reserved until the conversation is closed. So 1,000 conversations reserve 1,000 environments to do the work of 2 to 15 processor cores. A service runs out of environments long before it runs out of processing power.
+  The shortage has two causes, and each has a fix. An environment stays reserved after its conversation ends: in the customer-service benchmark we ran, a conversation lasts 33 seconds on average, but its environment is held for 15 minutes more unless the client closes it. And an environment serves only one conversation, which is mostly waiting: in our simulation, 64 conversations sharing one environment need 59 times fewer environments, and 99 of every 100 replies are delayed by at most 40 milliseconds.
+  The milliseconds are an estimate because they are hard to measure: a stubbed model, a timer around the model call, and steps run back to back each gave a plausible number that was too low. We show how to avoid all three. Of the two fixes, closing needs only the client. Sharing needs the platform, and of the agent runtimes we surveyed only one allows it, in part. They keep conversations apart because an agent runs tools, and sometimes code, chosen by a model. The open problem is to keep them apart without reserving an environment for each while it waits.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.26435v1' target='_blank'>Aggron: Aggressive Compression of Agentic KV Caches during Head-of-Line Stalls in the Request Queue</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Rishabh Ravi, Tony Hong, Chen Wang, Yue Zhu, Mengmei Ye, Hubertus Franke, Fan Lai, Josep Torrellas</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-19 17:09:37</h6>
+<p class='card-text'>LLM agents run long, multi-turn programs whose contexts grow at every step, and serving them is limited by KV cache capacity. To alleviate this limitation, systems use context compression techniques, which typically wait until the KV cache crosses a large threshold and then summarize large spans of history at once, either in the background while the agent progresses or on the critical path. These summarizations can be done using the same model running on the same engine, or using the same or a different model running on extra hardware. When running on the same engine, summarization competes with the requests being served for both compute and memory capacity.
+  To maximize the cost-effectiveness of summarization, this paper presents a new serving system called {\em Aggron}. Aggron summarizes agentic requests at every turn and selectively summarizes only certain parts of the KV cache. As a result, Aggron retains accuracy and keeps summarization requests lightweight. Moreover, Aggron launches summarization requests from a separate {\em Summarization Queue} while the corresponding agentic request whose KV cache we want to compress is stalled in the main request queue due to head-of-line stalls. The Summarization queue utilizes compute and memory capacity left over by the head-of-line stalls in the main queue. Further, to maximize efficiency, the server issues summarizations only when it predicts that they can complete before the corresponding agentic request will finally execute. In our evaluation, we compare Aggron to state-of-the-art asynchronous summarization. At high load, Aggron reduces P99 program latency by $27$--$31\%$, and raises throughput by $1.34$--$1.40\times$.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.26361v1' target='_blank'>How Much Should an Agent Remember? Deployment Lessons from Self-Distilled Memory for LLM Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:K. R. Jayaram, Vatche Isahagian, Aswath Vaithinathan Aravindan, Vinod Muthusamy, Punleuk Oum, Gaodan Fang, Michal Ulewicz, Gegi Thomas, Evelyn Duesterwald</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-19 16:29:16</h6>
+<p class='card-text'>LLM agents on long-horizon tasks fail in recurring, procedural ways. They mis-paginate an API, resolve the wrong entity, or answer when no answer was asked. We built a pipeline that lets an agent learn from its own history. It first mines short \emph{lessons} from the agent's own trajectories, one to three per episode. It then consolidates those lessons into a smaller set of \emph{guidelines}, where each guideline records how many lessons it merged. At inference the agent receives either all guidelines or a selected subset. The pipeline ships in the open-source altk-evolve library and is deployed in IBM's CUGA agent and watsonx Orchestrate platform. We report what we learned building, measuring, and productizing it. Our primary instrument is the AppWorld benchmark, across models spanning 40--92\% baseline task completion. The central finding is that the right amount of memory is a property of the model, not the memory. A strong model keeps improving as guidelines are added. DeepSeek-V3.2 gains +9.5 points of task completion and +16.1 points of scenario completion with its full 191-guideline set. A weak model gains less from the same full set than from a small selected subset. gpt-oss-120b starts at 39.9\% task completion. It reaches 51.2\% with all 199 of its guidelines but 55.4\% (mean of two runs) with a selected subset of about 29. Around that result we report what went wrong: a high-support guideline that backfired, provenance silently dropped during consolidation, a swallowed API error that failed every task while producing a plausible log, and a baseline confound that nearly produced a misleading comparison with a prior method. We distill these into recommendations for teams deploying agent memory.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.26335v1' target='_blank'>ClosureBench: A Benchmark for Reasoning under Closure Assumptions</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Francesco Belardinelli, Flavio Corradini, Matteo Leonesi</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-19 16:15:04</h6>
+<p class='card-text'>AI agents built on large language models (LLMs) often answer questions from incomplete records. Missing information might be interpreted as unknown or false, depending on the completeness of the source. Current evaluations fail to distinguish these two aspects, as they are usually interwoven with other reasoning demands. We present ClosureBench, a benchmark that tests whether LLMs follow the stated rules for dealing with missing information. Every base scenario is tested under OWA, CWA, and LCWA, and only the treatment of missing information changes between variants. ClosureBench provides a verified base benchmark as well as agent extensions for action choice, source scope, and updates. A model is considered correct on a base scenario only if it provides correct answers in all of its closure variants. Across 960 instances, overall accuracy can mask substantial closure mistakes. Models achieve overall accuracy from 71.18% to 99.86% across replicated runs, but their core switch accuracy, measured on the scenarios whose gold label actually changes with the contract, varies between 18.23% and 99.31%. Large discrepancies emerge under LCWA. For example, some agents choose unknown despite the prompt indicating that missing information should be treated as false. Our findings demonstrate that evaluations of AI agents should not only measure whether agents can reason over existing facts but also whether they use the appropriate assumption when information is absent.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.26296v1' target='_blank'>SKILL.PNG: Learning Agent Skills in Pixel Space</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Maximilian Seeth, Chengzhi Martin Hu, Marie Kempkes, Paul Röttger, Leo Schwinn</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-19 15:51:03</h6>
+<p class='card-text'>AI agents are commonly specialized for new tasks and domains using skills, i.e. natural language instructions placed in their context. However, the discrete nature of textual skills prevents continuous optimization. Gradient-based approaches such as finetuning, on the other hand, are typically model-specific, preventing skill transfer across different agents. Since many agents today are built on vision-language models (VLMs), we can address these limitations by introducing Skill.png: a method for obtaining skill-like image inputs whose pixels are optimized with gradient descent through the vision encoder of a frozen VLM. Image skills are compatible with any VLM, and a single image can be optimized jointly for an ensemble of models. We show that Skill.png significantly outperforms state-of-the-art textual skills optimized using frontier LLMs in 9 of 16 settings (across 4 VLMs and 4 benchmarks) while requiring only 64 to 256 image tokens instead of roughly 900 to 2000 text tokens at inference time. Hybrid skills, i.e. text and image skills jointly optimized, further improve agent performance. Moreover, an image optimized with an ensemble of VLMs can successfully transfer across the models in the ensemble. Skill.png thus presents the first agent skill that can be optimized with gradient descent while retaining transfer benefits of text skills. Our code is available at: https://github.com/omseeth/skill.png</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.26256v1' target='_blank'>SkillBridge: Cost-Aware Diagnosis and Repair of Cross-OS Compatibility Defects in Agent Skills</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Anjie Xu, Zixing Wang, Yifeng Cai, Leye Wang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-19 15:30:28</h6>
+<p class='card-text'>LLM agents increasingly reuse executable capabilities through skills, but a skill that works on one OS may fail on another because OS assumptions are spread across guide text, scripts, metadata, install contracts, and local entrypoints. Diagnosing such failures by running every skill on every OS is expensive: many executions spend model tokens, runner time, and review effort before revealing whether the failure is truly OS-related. We present SkillBridge, a contract-based workflow with three stages: static analysis, dynamic validation, and repair. SkillBridge first screens 3,270 skill-target-OS cases, covering 1,090 skills across Linux, macOS, and Windows, to find OS-sensitive contract evidence. It then runs dynamic tasks and root-cause review on selected cases to confirm whether a failure is caused by an OS assumption, and repairs the contract field that caused the failure, such as guide text, package scripts, dependencies, or platform declarations. Repair raises the reviewer-judged target-task pass rate from 30.6% to 38.4%, a gain of 7.8 percentage points. A retrospective Linux/macOS budget analysis further shows the efficiency effect: SkillBridge reaches 38 confirmed OS issues with 185 dynamic validations, where uniform random selection would require about 865 validations in expectation.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.26248v1' target='_blank'>TwinLab-Bench: Evaluating AI Scientists in Agentic Twins of Real Labs</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yang Wan, Linchao Zhu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-19 15:25:34</h6>
+<p class='card-text'>AI agents are increasingly expected to act as AI scientists, which requires three increasingly open abilities: carrying out a given computational workflow correctly, choosing the next measurements from a given design space, and designing their own experiments. Existing benchmarks mainly evaluate the first two abilities, in a terminal or in a closed loop that selects from predefined candidates. Evaluating the third ability requires reliably executing an experiment that an agent designs, with readings grounded in a real laboratory. We introduce TwinLab-Bench, which evaluates AI scientists on self-designed experiments in 52 tasks from laboratories in the physical sciences, the life sciences, and engineering. The benchmark supports more than 100 experimental action types, and the agent's report is scored by comparison with a hidden answer taken from real laboratory records. Each task has its own TwinLab agent, an agent that serves as the environment and executes the experiments that the tested agent designs, reading the raw materials of the laboratory and calling calculators that are built from its records. Compared with a language model that sees only the task description, the TwinLab agent almost eliminates readings that deviate from the real records and inconsistent answers to a repeated request, and closed-book probes control for answers recalled from memory. We find that these tasks remain hard for frontier models: the strongest, Claude Fable 5.2, averages a score of only 45.0, and we conduct an empirical study of where it fails.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.26221v1' target='_blank'>Sightline: Calibrated Data-Flow Summaries for LLM-Integrated Applications</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Zihao Xu, Yuekang Li, Ruitao Feng, Haifeng Shen</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-19 15:00:25</h6>
+<p class='card-text'>Programs increasingly call large language models (LLMs), filling prompt placeholders with program values and consuming the output. Such a call crosses the boundary between natural language and programming language (NL/PL). To follow data across it, an analysis needs a data-flow summary of which placeholders the output uses, but no code describes what the model does. Analyses of these LLM-integrated applications therefore taint every output with every input, creating spurious flows, or ask a second model to label each call, which is costly. We prove, and mechanize in Lean 4, that a placeholder flows to the output of a transformer, to first order, only through the attention that reads it (no reading, no flow), and that a faint reading or sensitivity cannot certify that a placeholder does not flow. Unlike reading, the log-probability gradients and Fisher signals of existing methods vanish on confident outputs, and single-span removal fails on duplicated content. Our tool, Sightline, reads a recorded call in one forward pass, learns from labels which reads are uses, and calibrates the pruning to miss at most a chosen fraction $α$ of true flows, on average over call sites, when deployment is exchangeable with calibration. On 2,103 unseen repository families and four models, Sightline is the most accurate summary against the seven closest methods and a hidden-state probe. Calibrated at $α$ = 1%, it misses about 1% of true flows and prunes 43.9-65.6% of spurious flows, 1.6 to 2.6 times as many as the best baseline, and still 43.8-60.1% when calibrated on another collection. Through an open surrogate, it reads models treated as closed about as accurately as they read themselves, without their labels. In the information-flow control of an LLM agent, it removes about half of the labels from inputs that do not flow.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.26171v1' target='_blank'>The FrontierOR Challenge: Agentic Algorithm Design for Operations Research</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Hai Wang, Bretislav Hajek, Chonghe Jiang, Minwei Kong, Ao Qu, Huatian Gong, Bo Dong, Cynthia Barnhart, Jinhua Zhao</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-19 14:20:27</h6>
+<p class='card-text'>Operations research (OR) relies on algorithms that experts tailor to each problem: a new routing, scheduling or network design problem can take weeks of specialist work before it is solved well at scale. Large language model (LLM) agents now write, test and improve code, but whether they can design algorithms that scale to realistic instances is open: in the FrontierOR benchmark's one-shot evaluation, the strongest model matches Gurobi, with an objective within 1% of Gurobi's and no slower, on only 39% of the large instances. The FrontierOR Challenge asks teams to build agentic workflows that design, test, and improve algorithms for many optimization problems at once. Stage 1 releases 60 of the benchmark's 180 audited problems, spanning six application categories and five formulation types, in weekly rounds of 15; Stage 2 introduces new problems outside the benchmark, with unseen instances. Two tracks are ranked separately: in the Main track we run the submitted algorithms in a network-isolated sandbox with open-source dependencies only; in the Self-hosted track teams solve the instances on their own machines, with any software, within a timed window. Every solution is checked for feasibility, and a feasible solution scores the ratio of its objective to a frozen known reference, averaged over hidden instances.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.26131v1' target='_blank'>SCARVA: Interpretable Agentic Reasoning in Software Supply-Chain Analysis</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Tim Barsch, Bruno Nogueira, Tobias Wienand, Jan Fopma, Flavio Toffalini</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-19 13:52:24</h6>
+<p class='card-text'>Complex applications may inherit security vulnerabilities from their dependencies, though a vulnerable dependency does not necessarily endanger the application. Existing tools flag dependencies associated with public vulnerabilities, and more advanced ones analyze the call graph to assess whether the vulnerable code is reachable. However, these approaches are limited to specific programming languages and ecosystems. LLM agents are promising candidates for this task, yet they hallucinate, take shortcuts, and reward hack. As these behaviors are opaque, the agents' conclusions may not be trusted.
+  We present SCARVA a framework designed to produce interpretable reports. SCARVA combines advanced agent reasoning with an evidence-collection methodology that assesses the agent's analysis and improves its trustworthiness. Specifically, the ANALYST performs a software security assessment while SCARVA records every tool call, file access, and web request. Then, one or more independent JUDGE agents inspect the ANALYST's result and produce an evidence-backed report. We evaluate SCARVA on 54 manually curated cases, balanced across exploitable, non-exploitable, and vulnerability-free projects, using both open-weight and frontier models. The best ANALYST model, Qwen 3.8, reaches 82% balanced accuracy and surpasses the evaluated proprietary models. Human annotation validates the JUDGE findings: Claude Opus 5.5 performs best, agreeing with annotators in 94% of claim checks. Finally, we discuss the most common failure modes of agents on supply-chain vulnerability assessment.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.26069v1' target='_blank'>SheetAlign: Grounded Interaction and Stage-Isolated Learning for Spreadsheet Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yuxiang Wang, Junhao Gan, Jianzhong Qi</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-19 13:13:12</h6>
+<p class='card-text'>Spreadsheets are widely used for data analysis and supporting decision-making. Automating spreadsheet analysis while protecting sensitive data and controlling deployment costs motivates locally deployed open-weight large language models (LLMs). Meanwhile, complex spreadsheet tasks require both task reasoning and workbook understanding, while predefined operation interfaces impose additional tool-selection and invocation demands. We introduce SheetAlign, a spreadsheet manipulation framework with stage-isolated policy learning, organized around where to operate, what to change, and how to implement transformations. Task-guided inspection and API grounding anchor code generation in workbook observations and available operations, while stage-isolated learning optimizes program generation and review using edit-progress rewards. At inference, execution consistency selects programs through agreement among workbook states. On SpreadsheetBench, our grounded task interface improves Qwen3-4B's accuracy from 13.5% to 29.2% on average without training. With learning and execution consistency, SheetAlign achieves 32.8% accuracy on average on SpreadsheetBench and 30.1% on Domain-Spreadsheet, outperforming comparable baselines. The code will be made publicly available upon publication.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.26003v1' target='_blank'>AI agents can redesign engineering parts with more than a thousand CAD parameters and nonlinear simulations</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Alexandra Starostina, Alexander Hermann, Mahish Guru, Kartik Bali, Roland Aydin, Christian C. Cyron</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-19 12:21:21</h6>
+<p class='card-text'>Simulation-driven design of real engineering components has to meet three conditions at once. It runs on few solves, since a nonlinear finite-element simulation of a 3D part takes hours; its design space has many values, the hundreds to thousands of values of the part's CAD model; and a better design often needs a redesign, coordinated changes of the part's proportions rather than local polishing of its surface. Automated optimisers meet at most two of these conditions. Classical optimisers, Bayesian or derivative-free, need a person to cut the design down to a few parameters, and on all the values they need far more solves; industrial shape optimisers move every surface node of the mesh in one solve per cycle, but only in small steps that polish rather than redesign. We ask whether a general-purpose large language model (LLM) can meet all three by joining what it knows with what the simulation shows. GPT-6 Astra edits a magnesium stent through a CAD geometry parametrisation of about 1,650 values, with a budget of 15 simulations; every proposal is built in CAD, meshed and simulated with large-deformation plasticity and contact, and the LLM reads the full results of every solve. Within that budget it lowered the objective, a high percentile of the strains in the stent's bends, by 32%; on the same budget, the industrial shape optimiser Tosca improved the original design by a tenth and then stopped improving. An earlier GPT-6 Astra design, 25% lower in the same objective, was checked in an independent, higher-fidelity model of the full deployment with crimping and damage: it was 14% less strained than the original after the full chain, and its most damaged spot began to fail later and carried 63% less damage at full expansion. LLMs can thus join their learned knowledge with simulation data to adjust more than a thousand design values and reach valid designs with real improvements.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.25908v1' target='_blank'>CRAFT: Analog Circuit Design by Reasoning LLM Agents from Pre-Computed Lookup Tables</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Hyunjun Park, Seungyub Han, Jason Jaesung Lee, Kahyun Kim, Soohyun Kim, Inwoo Nam, Sunmin Kim, Wooyoung Choi, Junhyung Kim</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-19 10:55:46</h6>
+<p class='card-text'>Automated analog circuit sizing methods, from black-box optimizers to recent large language model (LLM) agents, typically search the design space with a SPICE simulator in the loop, whereas an experienced designer works out a design by hand analysis. This paper presents CRAFT, a flow in which an LLM agent designs a given topology by calculation, as a designer does, and without an initial sizing. The agent works only through DeX, a service that uses pre-computed lookup tables to provide device characteristics and to solve the whole netlist for its operating point and small-signal response. It thus designs without SPICE, and every final design is verified independently in HSPICE. We test CRAFT on four circuits in a commercial 28 nm process; the largest is a 37-transistor three-stage amplifier with 53 design variables, 20 specifications and 74 saturation constraints. With Claude Opus 5.5, CRAFT meets every specification and constraint in all 20 runs, five per circuit. On that amplifier, with DeX in place of HSPICE and an identical request for both, the same agent passes in 10 of 10 runs instead of 6 of 10 within an hour and is 2.0x faster at the median.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.25905v1' target='_blank'>Validation-driven Deployment of LLM Inference Platforms for Agentic Workloads</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Shai Gretz, Alon Halfon, Yoav Katz, Lena Dankin, Michal Jacovi, Rachel Tzoref-Brill, Kfir Toledo, Elron Bandel, Natan Ergas, Michal Malka, Pravein Govindan Kannan, Maroon Ayoub, Michal Shmueli-Scheuer</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-19 10:54:57</h6>
+<p class='card-text'>Enterprises are moving agentic workloads from closed APIs to their own open-weight model deployments. For this reason, lifecycle-wide validation, from small-scale testing through sizing and pre-production to production, becomes all the more important. Typically, rollouts are evaluated with ad hoc tools whose accuracy is rarely checked. We present an end-to-end evaluation pipeline for agentic LLM serving and empirically ground the design choices that connect its stages. Our experiments show that replaying captured traces reproduces the per-session load of the original agent sessions: at the 95th percentile replay stays within 1.18x of the recorded input tokens while live re-runs reach 4.98x, so a small set of recorded sessions yields a repeatable per-session token load. A code-coverage analysis of vLLM further shows that the evaluated live, replayed, and synthetic workloads are complementary in this configuration: each exercises Python serving paths not reached in the measured runs of the others. In a case study rolling out four large mixture-of-experts (MoE) models on llm-d, experiments show that the target models reached about half the optimal concurrency, and correspondingly about 60% of the throughput, on captured workloads compared with public traces. We open-source the relevant tools and release a trace dataset.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.25898v1' target='_blank'>Verifiable Logic in Medical LLMs: A Critical Review of Agentic Clinical Reasoning Optimization and Neuro-Symbolic Grounding</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Youssef ElNahas, Adel Ammar, Soumaya Chaffar, Wadii Boulila</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-19 10:49:23</h6>
+<p class='card-text'>Clinical large language models are usually judged by whether the final answer is right. Yet a model can reach a fluent, plausible output through invalid reasoning that static benchmarks do not detect, and confident hallucination, causally invalid inference, and spurious demographic shortcuts can pass conventional evaluation. This critical review covers four paradigms in turn: how clinical hallucination arises and why static metrics miss it; the agentic hallucination cascade, in which multi-agent and tool-augmented systems propagate and amplify early reasoning errors; process reward modeling as step-level supervision; and neuro-symbolic grounding, in which formal logic engines, ontology reasoners, and knowledge graphs place verifiable constraints on neural output. Within their encoded domains, systems with symbolic veto layers offer guarantees that hold relative to their encoded knowledge, and they report large gains on the safety measures they use. These results come from single studies, mostly in simulated or small-sample settings, and are not directly comparable with neural baselines. Process reward models remain bounded by the statistics of their training data. We propose a conceptual framework that maps each agentic failure mode to a symbolic intervention point, and we argue that clinical AI safety depends substantially on system architecture. Because current regulation emphasizes performance and does not require verification of reasoning steps, we argue that responsible certification should also audit reasoning trajectories alongside accuracy on static benchmarks.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.25855v1' target='_blank'>HabitusMem: Belief Memory over Evolving User Preferences for LLM Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yifan Lu, Gaoyang Guo, Wen Chen, Ziyun Zou, Jian Wu, Han Zhu, Imran Razzak</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-19 10:08:26</h6>
+<p class='card-text'>Personalized LLM agents must act on a user's current preferences, which change across interactions and are rarely stated in full. Existing memory systems store and retrieve content from the interaction history and leave the agent to work out which preferences still hold and where they apply. Such content does not indicate whether a preference is still current or where it applies, so agents often act on outdated or misapplied preferences. We instead treat memory as the assistant's belief about the user. Following Bourdieu's account of habitus as durable but revisable dispositions, we model the user as a latent preference state that every interaction, including the current request, both reveals and updates. The belief summarizes what the history supports about this state, and memory consists of the individual beliefs that bear on the agent's current decision, each with its evidence, scope, and status. We implement this view in HabitusMem, a trained writer that states these beliefs as text records for a frozen agent. Across two agent families, HabitusMem achieves the best results among memory systems on both PersonaMem-v2 and VitaBench 2.0. Controlled analyses show that learned request conditioning drives the answering gain, while auxiliary training tasks improve tool use.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.25839v1' target='_blank'>Self-Replicating Language Models</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Arend Hintze</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-19 09:55:02</h6>
+<p class='card-text'>Whether large language models (LLMs) and LLM-based agents are a form of life is a scientifically interesting question. Under the Darwinian definition of life, it is also a practical one, because a system capable of Darwinian Evolution can adapt. We therefore test several modes in which a language model can reproduce itself: by emitting a genome that trains its offspring, by copying and mutating its own weights, and by teaching a child from its own samples. In principle, small language models can replicate and evolve: selection improves them, and they adapt to narrow niches. Selection also lowers mutation rates, and a language model, unlike any organism, can lower its own to zero, which may limit its evolution. Flagship LLMs can write such replicators, but for a large LLM to replicate by teaching its offspring remains, for now, technically and economically infeasible.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.25809v1' target='_blank'>ALIoTh: Orchestrating Multi-Agent LLMs for Autonomous IoT Penetration Testing</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Pironti Francesco Aurelio, Arena Luigi, Blefari Francesco, Lupinacci Matteo, Romeo Francesco, Maresca Alessio</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-19 09:31:08</h6>
+<p class='card-text'>Penetration testing in Internet of Things (IoT) environments, especially those composed of various different devices, e.g., smart plugs, smart cameras, and smart doors, presents great challenges across the phases of information gathering, attack surface enumeration, privilege escalation, and lateral movement. This paper introduces ALIoTh, a multi-agent, workflow-driven penetration testing framework that integrates Large Language Models agents within a Self-Retrieval-Augmented Generation (Self-RAG) architecture to autonomously identify and exploit vulnerabilities in IoT and Industrial-IoT (IIoT) environments. By leveraging state-of-the-art language models and orchestrating specialized agents via the LangGraph framework, ALIoTh dynamically plans and executes a full-spectrum offensive pipeline. This includes network, devices, and service enumeration, vulnerability assessment, payload generation, reverse shell deployment, and privilege escalation on each device. The Self-RAG mechanism equips expert agents with contextual access to IoT security knowledge, e.g., related documentation, tool manuals, and known attack techniques, enhancing their reasoning capabilities in scenarios involving multiple device exploitation and group policy manipulation.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.25774v1' target='_blank'>DS2Agent: Holistic Device Agents for Accelerated Embedded Board-Level Design</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Hongbin Yang, Chi Zhang, Yinhao Xiao, Runyu Pan, Yanni Yang, Xiuzhen Cheng</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-19 09:09:58</h6>
+<p class='card-text'>Embedded board-level development demands extensive expertise, from component selection and device characteristics to interface configuration, driver writing, and system composition. Recently, LLM-based agents have shown strong capabilities, raising the prospect of automating board-level design tasks. However, existing agents either target chip-level design or treat datasheets as static text, offering little guidance on whether a specific component should---or even could---be used for a given board-level design. Moreover, without touching real hardware, they hallucinate incorrect details.
+  To fill this gap, we present {\setlength{\fboxsep}{1pt}\href{https://anonymous.4open.science/r/DS2Agent-9FE8/}{\fcolorbox{blue}{white}{DS2Agent}}}, an open-source framework that constructs interactive agents from device datasheets. Each agent comprises three models: a knowledge model supporting retrieval and question answering; a digital-twin model capturing the physical functionality of the device; and an interface model supporting driver development and system integration. To suppress hallucinations, we also allow optional connections to real devices, so that the agent can calibrate its internalized knowledge against the device. We evaluate DS2Agent on ten devices spanning seven functional categories. Compared with the baseline, the DS2Agent-augmented agent improves the question-answering score from 87 to 97 out of 100 while using 44.8\% fewer tokens. For driver generation, it reduces average token usage per device by 72.9\%. For system integration, it reduces total token usage across three FreeRTOS applications by 29.7\%.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.25742v1' target='_blank'>Goal-Guided Reinforcement Learning via Fine-Tuning Vision-Language Models</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yajie Qi, Wei Wei, Lin Li, Lijun Zhang, Jianye Hao</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-19 08:50:19</h6>
+<p class='card-text'>Exploration remains a major challenge for reinforcement learning (RL) agents in Craftax-style environments due to sparse rewards and long horizons. Large language models (LLMs) can guide exploration by generating high-level goals, but methods using models without explicit task adaptation often rely on carefully designed prompts and may produce inconsistent or contextually inappropriate goals. We introduce CCGP-2M, a multimodal goal-preference dataset constructed from interaction trajectories in Craftax-Classic, and propose a vision-language model (VLM)-guided RL framework that learns environment-specific goal guidance from this dataset. The framework consists of two stages: offline VLM fine-tuning and online goal-guided RL. In the offline stage, we align the VLM with goal preferences using Kullback-Leibler Token-level Direct Preference Optimization (KLTDPO), which combines token-level KL regularization with distributionally robust reweighting. Experiments on Craftax-Classic show that our method collects diamonds earlier than state-of-the-art baselines, achieves the highest score and reward, and attains the highest success rates on most achievements.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.25726v1' target='_blank'>A closed-loop agentic research environment for MRI development within Siemens IDEA platform</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Zimu Huo, Zachary Shah, Adam B Kerr, Kawin Setsompop</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-19 08:42:06</h6>
+<p class='card-text'>Motivation: Testing new ideas in MRI can require substantial effort to learn sequence programming and reconstruction tools and to debug implementations before the scientific question can be addressed. Goals: Reduce the implementation and debugging burden of testing MRI ideas while retaining researcher control of scientific decisions. Approach: We developed an environment where LLM agents develop sequences in the native Siemens IDEA platform, evaluate them through Bloch simulation and reconstruction, and further iteratively refine them using scanner feedback. Results: As test cases, the agentic environment was used to implement and validate a GIRF-based gradient-calibration sequence and reconstruction in approximately 4 hours, and to develop and optimize a rapid 3-second multichannel calibration scan in approximately 12 hours of researcher-guided iteration.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.25718v1' target='_blank'>Hardening JavaScript Programs against LLM-Based Vulnerability Detection</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Zhenhao Tian, Jintong Yu, Jingwei Feng, Jianwei Zhuge, Penghui Li</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-19 08:31:31</h6>
+<p class='card-text'>JavaScript programs are often distributed as source code, so attackers can analyze them for vulnerabilities. LLM-based vulnerability detection agents now make this analysis much easier. To mitigate this emerging threat, we present AntiAgent, a defense that lets developers harden their programs against such detection agents. AntiAgent transforms a program before release to impede an agent's analysis. To find effective transformations, AntiAgent evolves a corpus of programs with known vulnerabilities and traces how a detection agent analyzes each evolved version. It keeps the versions on which the agent misses or misreports the vulnerability and extracts their transformations into reusable rules. To protect a new program, AntiAgent carefully divides the task between an LLM and the rules, so that the transformations adapt to the program while preserving its semantics.
+  We evaluate AntiAgent on real-world JavaScript applications against four detection agents, including Claude Code and Codex. AntiAgent reduces the number of vulnerabilities that each agent detects by 52.0-60.7%, outperforming the conventional obfuscator JS-Obfuscator and the LLM-based transformation method FPA on every agent. The transformed programs pass all project tests, indicating that AntiAgent preserves the original program semantics. The transformation rules also remain effective on vulnerability types absent from the corpus and on programs written in another language like Python.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.25705v1' target='_blank'>STARK: Moving towards Personalized Agents That Truly Learn and Remember</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Aryan Jain, Abhishek Jha, Anish Nediyanchath, Promod Yenigalla</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-19 08:19:28</h6>
+<p class='card-text'>Long-term memory is essential for personalized agentic systems that interact with users over long time periods, yet current architectures only capture what happened while leaving the reasoning of why it happened to be derived later by underlying LLMs.%, and silo knowledge within individual users. These events can, however, convey not only what a user experienced but also how that experience shaped their behavioral patterns. We introduce STARK, a dual-graph memory architecture which treats these events not just as nodes but also as edges between behavioral insights. STARK maintains an Episodic Graph which records interactions as temporally, causally, and semantically linked episodes; and an Insight Graph which represents LLM-extracted behavioral signals scored by how many events support them, connected by the very events that led to them. At inference, behavioral knowledge is retrieved directly from insight nodes grounded by event-as-edges, eliminating repeated episodic traversal. The event-as-edge structure also naturally enables projecting the knowledge graph into a relational embedding space where cross-user transfer becomes possible under shared contextual circumstances, allowing the system to infer missing insights for cold-start users. Evaluations show that STARK improves by 1.48 judge score on LongMemEval information extraction and 0.93 on LoCoMo open domain questions over state of the art. On the public LongLaMP abstract-generation benchmark, cross-user transfer improves open-ended judge scores by 0.7 points and ROUGE-L by 3 at 5% graph sparsity.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.25673v1' target='_blank'>CompAct-Bench: A Benchmark for Working-Context Compaction in Long-Horizon Agent Tasks</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Jiayi Chen, Lizhe Chen, Yujia Chen, Shihan Dou, Ming Zhang, Chendi Ge, Shiguang Ni, Tao Gui, Qi Zhang, Xuanjing Huang, Maxm Pan</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-19 07:49:37</h6>
+<p class='card-text'>As language-model agents are applied to increasingly extended tasks, their working context continuously accumulates interaction history, tool observations, intermediate decisions, and task progress. Context compaction offers a practical way to reduce this growing history while allowing execution to continue, yet the compaction ability of modern LLMs remains insufficiently understood. We introduce CompAct-Bench, a benchmark for evaluating working-context compaction through its downstream effect on agent task completion. Starting from successful agent trajectories, we insert compaction boundaries at different stages of execution, compress the preceding working context with the model under evaluation, and let the same executor continue the original task. To enable fair comparison across compactors, we evaluate them under controlled retention ratios using a lightweight iterative ratio-adjustment procedure. CompAct-Bench covers information-seeking, software-engineering, and workspace-oriented tasks through BrowseComp, SWE-bench, and an internal CompanyBench evaluation. Our experiments show that working-context compaction remains highly lossy even for frontier models: Claude- and GPT-family models perform strongest overall, yet substantial degradation in downstream task accuracy persists under aggressive compaction. Further analysis reveals that failures are often caused not only by omitted information, but also by distorted task state, such as turning unresolved issues into apparent conclusions or forgetting previously established results, which can lead to incorrect decisions or redundant execution. These findings highlight working-context compaction as a distinct and still challenging ability for LLMs operating in extended agent tasks.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js'></script>
+</body>
+</html>
