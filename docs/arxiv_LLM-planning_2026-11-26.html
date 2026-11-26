@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<title>LLM-planning - 2026-11-26</title>
+<link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap' rel='stylesheet'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'>
+<style>
+body {
+font-family: 'Roboto', sans-serif;
+background-color: #f5f7fa;
+padding: 20px;
+}
+.card {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.card-title {
+    font-weight: 700;
+}
+.card:hover {
+    transform: scale(1.02);
+    transition: 0.3s ease-in-out;
+}
+</style>
+</head>
+<body>
+<div class='container'>
+<h1 class='text-center my-4'><i class='fas fa-book'></i>LLM-planning - 2026-11-26</h1>
+<div class='row'>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.34925v1' target='_blank'>One Ocean, Many Tasks: A Data-Grounded Simulation Suite and Benchmark for Marine Robotics</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Shuaijun Liu, Qifu Wen, Xingwei Chen, Xinwen Hu, Feiyang You, Sijia Chen, Ningxin Su</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-25 18:58:56</h6>
+<p class='card-text'>Simulation is essential for marine robotics, yet existing platforms often trade off between visually realistic worlds, high-throughput experimentation, and ocean-condition realism grounded in real data. We present OneOcean, a data-grounded simulation suite and benchmark built around a unified spatiotemporal ocean-environment product that harmonizes bathymetry with data-driven currents and tides, with optional pollution fields for cleanup-related evaluation. On top of this environment representation, OneOcean defines a task ladder spanning navigation and station-keeping under currents, waypoint and route following, depth-profile tracking, area scanning, pipeline inspection, and multi-agent coordination, including formation transit, fish protection and patrol (herding), and surface pollution localization, containment, and cleanup. The suite supports multi-agent settings with 2-10 vehicles. Our simulator supports three to six Degrees of Freedom (DoF) and produces standardized metrics and reproducible run manifests, enabling consistent aggregation across tasks, difficulties, and scaling settings. Experiments across dataset variants and scenes systematically stress planning and control under data-grounded disturbances and reveal trade-offs among heuristic baselines, Behavior Cloning (BC), and a Large Language Model (LLM)-based planner.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.34907v1' target='_blank'>Agentic LongLive: Asynchronous Agentic Memory for Long Video Generation</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Shaoteng Liu, Shuai Yang, Wei Huang, Luozhou Wang, Song Han, Yukang Chen</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-25 18:54:03</h6>
+<p class='card-text'>Real-time autoregressive video generators stream minutes of video and accept new prompts on the fly, but struggle to keep people, objects, and places consistent over a long interactive story. Agent systems provide such memory for offline multi-shot generation, yet they read the whole script in advance, plan each shot before generating it, and regenerate failed shots, which a live stream does not allow. We present Agentic LongLive, an asynchronous agentic memory for long video generation. A memory agent on separate GPUs reads only the prompts revealed so far, never the generated video, and keeps a text state and evolving images for every person, object, and scene. From this entity memory it composes a global image and a per-shot memory image, which an auxiliary GPU prefills into the generator's attention sink before the next shot starts, and writes entity cards for the prompts that name them, so the video never waits for memory and video errors are not written back. A small language model, trained with reinforcement learning and an image reward calibrated using downstream video outcomes, decides what to remember before the next prompt is known. On LongStory-Online, a new benchmark of 25 stories (857 shots) revealed one shot at a time, Agentic LongLive improves persistent-state accuracy of LongLive-2.0, its base generator, by 26.3 points, protagonist identity by 44.9, and revisited-place consistency by 40.4, at about 1% extra generation time on H100. The full system streams faster than real time on one 8xB200 node with the generator in BF16 (34.3 FPS), keeps image quality stable over 14-minute stories, and improves identity on two MiniMax-H3 generators, one of which, LongLive-H3, also runs in real time with it. To our knowledge, it is the first real-time video generator with text and image memory kept by an LLM agent.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.34656v1' target='_blank'>Do We Still Need Reinforcement Learning When We Can Read the World Model?</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Mingchao Zhang, Miduo Cui, Kangze He, Yuanjun Li, Dapeng Li, Ce Zhang, Chuanchen Luo, Xue Yan, Mingzhe Xing, Zhumin Chen, Hangyu Mao, Bin Zhang, Zhiwei Xu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-25 16:29:37</h6>
+<p class='card-text'>Reinforcement learning has achieved remarkable success in sequential decision-making, but learning effective policies often requires substantial interaction experience. Model-based reinforcement learning alleviates this dependence by leveraging world models, which are typically used to support planning or policy optimization. In this paper, we investigate an alternative paradigm in which autonomous LLM-based coding agents directly synthesize control policies by reasoning over readable world models. By examining environment source code, these agents translate environmental knowledge into executable decision rules and iteratively refine their policies using online feedback or offline data, without task-specific RL training. Experiments across diverse decision-making benchmarks show that synthesized policies match or outperform conventional RL methods while requiring substantially less experience. Further analyses reveal interpretable decision rules and how they evolve through feedback-driven refinement. Comparisons with policies generated without source code access and experiments under challenging conditions further demonstrate the benefits of readable world models. These findings suggest that direct policy synthesis can reduce reliance on trial and error, challenging the necessity of task-specific RL training.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.34254v1' target='_blank'>Crucible: Evaluating LLM Agents in Executable Chemistry Research Environments</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yinjun Liu, Xinye Li, Ruisen Peng, Lang Gao, Zixiang Xu, Zirui Song, Xiuying Chen</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-25 12:18:29</h6>
+<p class='card-text'>Large language models (LLMs) perform well on chemistry knowledge benchmarks, which mainly assess question answering and isolated tasks. Chemical research, however, requires using specialized tools and interpreting their outputs to obtain chemically valid results. To address this gap, we introduce Crucible Bench to evaluate this ability across all four stages of the design-make-test-analyze (DMTA) cycle. The benchmark contains 1,078 tasks in 12 task families curated from 18 published datasets, covering molecular design, synthesis planning, experimental execution, closed-loop optimization, simulation, and analytical characterization. Agents access 75 domain-specific tools through the Model Context Protocol in seven isolated environments. Sandboxed graders verify the resulting synthesis routes, experimental protocols, and other outputs. Laboratory tasks use robotic simulators or previously measured experimental data. We evaluate 14 LLMs as agents and find that the best achieves an overall score of 0.545, with synthesis planning and closed-loop optimization emerging as the hardest domains. Overall performance does not predict optimization performance well: the model ranked twelfth overall achieves the highest score in closed-loop optimization. Error analysis also shows that agents often submit chemically invalid results despite running their tools successfully. Stronger models benefit more from tool access, but reliable use of chemical software remains a challenge that Crucible Bench can track as models improve.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.34161v1' target='_blank'>CoordRoute: Coordinated Multi-Model Routing for Maximum Compute-Budget Utility</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Boning Huangfu, Boxiao Du, Chen Chen</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-25 10:54:23</h6>
+<p class='card-text'>Model routing sends each request to one of several large language models (LLMs) of different sizes. In practice, requests share a fixed compute budget: a spending cap on rented model APIs or the capacity of a private GPU cluster. Most existing routers do not account for the total budget: each decides a request on its own, so per-request optima are not optimal overall. We advocate coordinated routing, which allocates the budget across requests to maximize its utility, their total satisfaction, along a predict-plan-rectify route: predict what each model would give and cost, plan the choice against later requests, and rectify it during generation. Each step faces a challenge: a request's gain from each model is uncertain before generation, later arrivals are unknown when a request must start, and observing answers during generation consumes the budget itself. CoordRoute addresses them with relative demand prediction, which compares candidate models through past requests that lead to the same routing choices; a lookahead solver, which charges each choice for what its compute could earn for later requests; and budget-aware runtime correction, which drops or upgrades in-flight requests at the same price, inspecting answers only when it pays off. On Azure Conversation and BurstGPT traces, CoordRoute improves total satisfaction by 18.72% over the strongest existing router.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.34152v1' target='_blank'>Lost in the Grid: Where Multimodal LLMs Fail Between Seeing and Planning</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Luoxi Zhang, Tianyi Tan, Jiawei Liu, Xingyu Zeng, Min Yang, Shiwen Ni</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-25 10:46:43</h6>
+<p class='card-text'>Multimodal large language models (MLLMs) excel at static visual understanding and are increasingly applied to spatial planning, where a model interprets a visual layout and outputs an action sequence to reach a goal. Grid games are a common testbed for this ability because their rules are explicit and a solver can verify every move. Yet existing benchmarks mostly report end-to-end success rates, which hide whether a failure stems from visual perception, rule application, or multi-step planning. We introduce GridProbe, a diagnostic benchmark that 1) locates the failing stage between visual perception and planning and 2) verifies the diagnosis by targeted fine-tuning. On Sokoban, GridProbe pairs end-to-end solving with four probes (recognition, localization, single-step prediction, and state tracking) and gives every board both as an image and as an equivalent text grid. Evaluating seven MLLMs on Sokoban and a maze game reveals distinct bottlenecks behind similar success rates: proprietary models are limited by multi-step planning, whereas open-source models are limited by rule application or by visual grid indexing, i.e., counting rows and columns. Planning failures also hide perception failures: when planning is easier, the visual cost of the same model grows from 7.6 to 37.7 points. The diagnosis identifies what to train: fine-tuning only the vision module of the perception-limited model on board reading raises its interactive Sokoban success 3.5-fold (5.8% to 20.4%) and transfers zero-shot to the unseen maze game (single-turn success 13.8% to 67.1%), whereas the same data does not help a rule-limited model and training on solver solutions brings no gain. We will release the benchmark and code at https://github.com/suat-llm/GridProbe.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.33961v1' target='_blank'>AI Buckingham: Agentic Discovery of Dimensionless Scaling Laws Across Physical Regimes</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Ao Cheng, Lei Zhang, Guowei He</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-25 08:24:47</h6>
+<p class='card-text'>Classical dimensional analysis defines admissible dimensionless representations but does not determine which combinations capture the dominant physical dependence, whether it changes across physical regimes, or when dependent-variable rescaling is required. We present AI Buckingham, an agentic framework for autonomous dimensionless discovery from natural-language descriptions of physical problems and observational data. It couples reasoning and planning by a large language model (LLM) with predefined symbolic and numerical tools. Literature-based knowledge retrieval supports dimensional checking, gradient-based clustering identifies physical regimes, and mutual information provides an objective, reparameterization-invariant criterion for identifying dominant dimensionless groups. Explicit numerical criteria determine the group count and assess simplification. Across ten physical systems spanning fluid dynamics, magnetohydrodynamics, thermal convection and additive manufacturing, AI Buckingham recovers established similarity representations and resolves regime-dependent scalings. For the longstanding challenge of predicting turbulent drag on rough surfaces, it identifies informative reparameterizations of surface statistics that improve equivalent sand-grain roughness estimates for engineering-oriented drag modelling.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.33911v1' target='_blank'>CoTAMP: Cooperative Task and Motion Planning for Quadruped Robots with Large Language Models</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Woojin Kim, Jemin Hwangbo</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-25 07:29:12</h6>
+<p class='card-text'>Some environments cannot be traversed by a single quadruped robot, for example a ledge that one robot can climb only from its partner's back or a gap that must be bridged with boxes. Solving them requires cooperative task and motion planning (TAMP). Previous works are limited to the motions of a single robot or only select actions from a predefined set of skills. We propose a framework with two parts: task planning that invents motions not defined in advance, and motion generation that realizes the invented motions. Both parts consist of large language model (LLM)-based modules and code-based modules. Task planning divides the trajectory of the whole task into steps and fixes the robot poses at the step boundaries. Motion generation produces keyframes that describe the motion of each step and turns them into a continuous trajectory through kinematic synthesis. The code-based modules check every plan and motion and return failures to the LLM-based modules for correction. The whole trajectory is then refined by trajectory optimization to satisfy the dynamics. On three simulated courses with two RAIBO2 robot models, our framework produced kinematically valid references in all 30 trials, all of which converged in trajectory optimization. Compared with several baselines, our framework showed advantages in success rate, dynamic feasibility, execution time, and generation time and cost. Project page: https://woojin8098.github.io/CoTAMP/</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.33848v1' target='_blank'>ChemDeduce: Benchmarking LLMs for Unknown Chemical Identification through Interactive Simulated Experiments</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Hengyi Cai, Yuqi Tang, Zichang Li, Huajun chen, Qiang Zhang, Keyan Ding</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-25 06:19:38</h6>
+<p class='card-text'>Large language models (LLMs) have shown strong performance in chemical knowledge and reasoning, yet it remains unclear whether they can solve problems whose answers must be discovered through experimentation. We investigate this question through Unknown Chemical Identification, where a model must actively design experiments, interpret observations, update hypotheses, and ultimately identify a hidden substance. We introduce ChemDeduce, an interactive evaluation framework for assessing LLMs through simulated experiments. ChemDeduce formulates chemical identification as a sequential decision process and provides a stateful simulated laboratory with explicit instrument and operational constraints, enabling scalable and reproducible evaluation of iterative experimental reasoning. We benchmark eight frontier LLMs on 200 chemicals, yielding 1600 model--target pairs and 4800 episodes over three independent repetitions, and evaluate identification accuracy, operational compliance, interaction efficiency, and trajectory-level reasoning quality. Despite generating seemingly plausible experimental plans, current models achieve an average identification accuracy ranging from 23.83% to 67.33%, revealing substantial limitations in experiment selection, evidence interpretation, and sequential hypothesis refinement.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.33821v1' target='_blank'>RadOncGym: An Agent-Based Framework for Radiotherapy Dose-Mimicking Optimization</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Tong Miao, Shupeng Cheng, Xiwen Chen, Ruishan Liu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-25 05:50:03</h6>
+<p class='card-text'>AI dose-prediction models generate patient-specific 3D dose distributions from patient anatomy, providing an important intermediate representation for automated radiotherapy planning. However, an AI-predicted dose must undergo downstream optimization to produce a physically constrained treatment plan, a process that requires balancing competing planning objectives. We present RadOncGym, an agent-based framework that enables an LLM agent to iteratively tune 12 planning-objective weights for dose-mimicking optimization. To reduce iterative evaluation cost, RadOncGym incorporates a surrogate verifier that provides rapid feedback while allowing the agent to decide when to request a full planning solve within a fixed solve budget. We evaluate RadOncGym on 60 OpenKBP head-and-neck patients, each paired with 10 predictions from OpenKBP-Opt dose-prediction sets, yielding 600 patient-prediction contexts per experimental configuration. Under RadOncGym's 16-turn setting with a three-solve budget, a GPT-5.6 Sol agent reduces mean clinical-criterion violation by 0.6131 Gy and improves DVH and dose scores by 0.5986 and 0.2204 Gy relative to leaving all 12 weights fixed at 1, outperforming all evaluated non-agent weight-tuning methods under the same solve budget. It remains competitive with the 16-solve variants of these methods while requiring 75.0-77.6% less normalized runtime. RadOncGym demonstrates the potential of LLM agents as optimization planners in downstream radiotherapy plan optimization and provides a public testbed for their systematic evaluation. Code and configurations are available at https://github.com/miaot-usc/RadOncGym.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.33622v1' target='_blank'>How Many Sources, Not Just How Many Problems: Planning the Precision of LLM Evaluations from Earlier Results</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Guang Qiu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-25 01:53:37</h6>
+<p class='card-text'>When benchmark problems share sources, such as variants of one template or tasks from one repository, an evaluation budget must fix the number of sources as well as the number of problems. We ask whether pilot data or earlier evaluation results can predict, before an evaluation is run, how much the standard deviation (SD) of the score grows when the same budget is concentrated on fewer sources. We use the classical design effect with an intraclass correlation estimated on data disjoint from those used to check the prediction. On GSM-Symbolic, 100 problems drawn as 10 templates x 10 variants have an SD of 9.2 pp against 2.7 pp from 100 templates; pilot data on 15 other questions predict the ratio as 3.49 against 3.52 measured on held-out questions (medians over 20 splits; single splits err by -13% to +16%), once the actual sampling plan is included. On SWE-bench Verified, 10 randomly selected public submissions predict the median ratio for 119 other submissions within 3% for 2 or more repositories, and 3 submissions are nearly as good. Dropping the finite-population terms from the design prediction gives errors of 13-21% on GSM-Symbolic, where it reduces to the textbook formula, and 25-35% on SWE-bench. Widening iid intervals by the square root of the pilot design effect brings pass@1 coverage on concentrated designs to 0.93-0.98, but not pass@16 (0.85, 0.76). We also report two lessons for anyone validating such predictions: split pilot and held-out data by question source, not by difficulty version, and do not read a good fit of the formula as evidence of source clustering (MATH-500). The method is not new; we contribute a held-out test of its advance predictions and a recipe for using them. Code: https://github.com/Guang627/deff-eval</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.33605v1' target='_blank'>The Detour Is the Danger: Preserving Security During LLM Agent Recovery</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Boyang Ma, Jinku Li, Hao Wu, Sheng Gao, Man Zhou, Minghui Xu, Yue Zhang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-25 01:23:57</h6>
+<p class='card-text'>LLM agents increasingly rely on external tools and reusable Skills to execute complex workflows, autonomously replanning when operations fail. However, such recovery may preserve task functionality while silently discarding the security protections required by the original workflow. In this paper, we investigate workflow security downgrade, a failure-induced security threat in which agents execute sensitive operations without satisfying their original protection requirements. Unlike prompt injection, this threat exploits autonomous recovery decisions triggered by execution failures, without modifying instructions or tool definitions. We systematically evaluate this behavior through fault injection in an executable MCP/Skill environment spanning seven LLMs, twelve task templates, and three security-sensitive domains. To address this threat, we propose ARGUS, an obligation-preserving recovery framework that combines resource-bound security evidence, isolated recovery-plan validation, and execution-time enforcement. In a separate 864-run evaluation, ARGUS prevents all observed protection-loss events under enforcement, while recovery assistance yields model-dependent improvements in protected task completion over blocking alone. Our findings demonstrate that secure agent recovery requires preserving security obligations across workflow changes, rather than merely restoring task functionality.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.32939v1' target='_blank'>One Style Fits All? Cultural Values Embedded in Conversational AI via a People-Pleasing Lens</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yi-Jun Chen, I-Tsen Hsieh, Li-Wun Chang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-24 16:45:37</h6>
+<p class='card-text'>Conversational AI systems trained on large-scale web corpora inevitably encode the cultural values and interactional norms embedded in their training data, yet our understanding of how deployed LLMs reflect or reinforce culture-specific social expectations remains limited. This study examined how supportive versus challenging chatbot interaction styles shape user experience and continuance intention, and whether people-pleasing tendency (PPT) moderates these effects across cultures. Taiwanese (N = 49) and Korean (N = 52) participants completed a collaborative tourism-planning task. Results showed that: (1) supportive chatbots consistently led to higher continuance intention, satisfaction, and trust; (2) PPT did not moderate these effects; and (3) cultural variation emerged only in perceived threat, where higher PPT was associated with greater baseline threat in the Taiwanese but not the Korean sample. These findings reveal how a general-purpose LLM style may differentially activate culturally situated social scripts, raising implications for culturally inclusive conversational AI design.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.32868v1' target='_blank'>Sound Distributed Runtime Verification under Incomplete Evidence</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Nikolaos Kekatos, Antonio Anastasio Bruto da Costa, Alexios Lekidis, Pabitra Mitra, Hosein Nazarpour, Priyanka Sinha</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-24 16:03:22</h6>
+<p class='card-text'>Distributed runtime verification often requires combining evidence from several nodes to check properties that cannot be evaluated locally. However, when messages are delayed, lost, or deliberately suppressed, the verifier may not know whether a violation occurred or whether the relevant evidence is missing. This creates a risk of incorrectly reporting compliance. We study the requirements for sound monitoring under these conditions. We first show that a deadline-bounded monitor cannot be simultaneously sound, decisive, and available when an adversary can suppress evidence. The monitor must therefore be able to abstain. We then distinguish two sources of incomplete evidence. Sequence numbers and periodic reports can identify missing events, whereas detecting silent streams requires timing assumptions. We also examine how membership changes and coordinator failures affect verdict soundness and recovery. We implement these mechanisms in a three-tier monitoring architecture using MQTT and NATS JetStream. Experiments with an LLM-planned robot swarm demonstrate the failure modes, show how the proposed mechanisms prevent unsupported compliance verdicts, and measure their runtime and communication costs.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.32663v1' target='_blank'>Economic World Model</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Qirui Mi, Yujia Ming, Bo Li, Haifeng Zhang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-24 14:14:40</h6>
+<p class='card-text'>Can artificial intelligence reproduce the economic dynamics that emerge as households, firms and governments interact and adapt through markets and institutions? To answer this question, we define an economic world model (EWM) as an agent's internal representation of how an economic system works, enabling counterfactual simulation and decision-making under resource constraints. We then propose a general framework for studying EWMs that links three tasks: simulating agent behaviour, learning economic transitions and systematically evaluating the dynamics. As an initial implementation, we learn household policies from microeconomic data and calibrate a structural economic transition model using macroeconomic data, linking individual decisions to aggregate dynamics. Our micro-to-macro evaluation framework compares simulated individual actions and group distributions with observed microdata and assesses macroeconomic dynamics through forecasting and counterfactual experiments. Results show that simulated and observed household consumption distributions overlap by 94.9%, while EWM forecasts closely track real GDP and several other aggregate levels. In government-borrowing counterfactuals, the EWM reproduces the benchmark life-cycle model's short-run transmission from borrowing to consumption. For ex ante planning, the EWM enables an LLM agent to achieve 10.29% higher simulated GDP under the epidemic shock than direct LLM decisions. This initial EWM is only a starting point. We invite economists and AI researchers to build a stronger EWM together. Economists can contribute richer economic models and knowledge, while AI researchers can develop stronger data-driven methods for simulating agent behaviour and learning economic transitions. Together, we aim not only to reproduce real economic dynamics, but also to discover and test new mechanisms that support better decisions and benefit society.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.32295v1' target='_blank'>Norn: Context-Length-Aware Optimization of Weight and KV Cache Placement for Offloaded LLM Inference</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Naoto Sugiura, Hiroki Matsutani</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-24 09:55:02</h6>
+<p class='card-text'>Offloading model weights and the key-value (KV) cache to host memory enables large language models (LLMs) to run on a single memory-constrained GPU. As the KV cache grows during decoding, GPU memory requirements and the costs of KV cache transfers and attention computation change. However, existing offloading methods generally use static computation assignments and placements of model weights and the KV cache, preventing them from adapting to these changes and degrading inference performance. We propose Norn, a context-length-aware offloaded LLM inference method. Based on offline profiling, Norn co-optimizes computation assignments and placements at the sublayer level, precomputing multiple execution plans and their switching points. During decoding, Norn switches plans as context length increases, overlapping computation and data transfers without knowing the output length in advance. For prefill, Norn employs operator-major chunked prefill to avoid repeated weight transfers and automatically selects the chunk size. Experiments with Qwen3-14B and Qwen3-32B on two single-GPU systems show up to a 16.8$\times$ speedup in end-to-end latency over Pipelined Sharding and a 4.2$\times$ speedup over its oracle variant with known input and output lengths.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.32245v1' target='_blank'>VLAs Execute, Code Recovers: 3D Skill Envelopes Bridge the Compositional Gap in Agentic Manipulation</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Jiajie Zhang, Yankai Xiang, Changhao Chen</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-24 09:21:57</h6>
+<p class='card-text'>Composing frozen Vision-Language-Action (VLA) skills under an agentic planner promises scalable long-horizon manipulation without long-horizon demonstrations, yet strong atomic skills routinely fail at seams even under a correct plan. Standard remedies reset the robot's pose or draft entry conditions in language, missing the physical cause we uncover via causal interventions: even after re-homing, a frozen VLA rigidly retraces its habitual trajectory and collides with displaced scene residue, whether or not it can see it. We propose the Skill Envelope, a policy-measured 3D geometric precondition capturing the volume a frozen skill sweeps during successful executions. Exploiting the insight that the rigidity making a frozen skill fragile at seams also makes its trajectory predictable in advance, we expose each envelope as two classical 3D tools (CHECK to detect blocking residue and FREE to locate safe placement regions), establishing a division of labor where VLAs execute in-distribution manipulation and code repairs out-of-distribution states. On LIBERO-Goal with frozen $π_{0.5}$, our zero-failure envelope predicts collisions at 0.946 AUROC (0.944 from one RGB-D view) and beats frontier VLMs on seam readiness (0.902 vs. 0.793); using it for skill ordering and code repair lifts success from 82.8% to 92.3% on two-step seams and from 29.7% to 93.8% on drawer-bearing 3-4 step chains, matching privileged world reset. Together, these results show that reliable VLA composition hinges on measuring a policy's physical workspace rather than guessing preconditions in language. Ongoing work closes the loop with autonomous LLM orchestration, synthesized free-object recovery, and cross-policy evaluation on cluttered benchmarks and real hardware.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.32089v1' target='_blank'>Automated Smoke Testing for Multi-ending Game Quests via Large Language Models</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Jinyu Cai, Mingyue Zhang, Nianyu Li, Jinglue Xu, Tianshui Li, Jialong Li, Hitoshi Iba, Kenji Tei</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-24 07:12:39</h6>
+<p class='card-text'>Modern game quests are increasingly trending toward high freedom and multiple endings, making their design and testing more complex. Smoke testing in games aims to rapidly validate quest functionality, but existing automated testing approaches face critical limitations when handling quests with branching narratives, and multiple possible endings. These challenges result in insufficient exploration of endings, redundant action sequences, and prohibitively high interaction costs. To address these challenges, we propose EndWeaver, an automated smoke testing framework specifically designed for multi-ending game tasks. EndWeaver leverages LLMs to interpret quest descriptions and game environments, generating high-level methods to guide global exploration, complemented by the generated primitive task sequences for fine-grained planning. By combining this multi-level planning structure with the dynamic construction of state-transition graphs, EndWeaver ensures comprehensive coverage of all possible endings and enables efficient testing. We evaluated EndWeaver on four game environments---Mini RPG, Overcooked Plus, Minecraft, and PySC2 against baseline methods. In all environments, EndWeaver achieved stable quest completion with high reliability, significantly outperforming the baselines. In terms of testing cost, EndWeaver required only a few thousand steps, while baseline methods required millions of steps, all while ensuring comprehensive coverage of all possible quest endings. Ablation studies further demonstrated the critical contributions of each framework component, validating the effectiveness and robustness of our approach.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.31771v1' target='_blank'>SPARQL-Planned Single-Hop Traversal over a Live Knowledge Graph for Multi-Hop Question Answering</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Priyesh Vakharia, Masud Moshtaghi, Pratyay Banerjee, Nicholas Jedema, Amita Misra, Ankit Chadha</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-24 01:24:00</h6>
+<p class='card-text'>Semantic retrieval struggles with multi-hop question answering on both recall and precision: gold passages are buried among distractors that degrade the reader's answer, and retrieving them requires reasoning over the query rather than matching it. GraphRAG techniques expand semantic retrieval by connecting passages to graph nodes and performing one or more hops of expansion after initial retrieval. This improves recall, but multi-hop expansion becomes expensive and brings additional noise into the retrieved set. We break this tradeoff by \emph{interleaving} dense retrieval with knowledge-graph traversal for complex multi-hop questions. Dense retrieval locates the first relevant regions of the search space at good recall, while traversal of a pre-existing external KG (Wikidata) restores precision and improves recall by confirming retrieved passages against a reasoning path through the KG. To keep traversal both question-adaptive and reliable, we have an LLM plan it as code generation task for graph traversal in SPARQL format but \emph{parse rather than execute} the query. On full 1{,}000-question splits under a shared corpus and reader, and with a single configuration applied identically to every dataset, we reach \textbf{62.5 / 75.1} EM/F1 on HotpotQA, \textbf{73.5 / 81.0} on 2WikiMultiHopQA, and \textbf{37.1 / 50.0} on MuSiQue, ahead of reproduced HippoRAG2, T\textsuperscript{2}RAG, and IRCoT on all three benchmarks. A second, token-matched setting stays ahead of T\textsuperscript{2}RAG on HotpotQA and 2Wiki while spending roughly its per-query budget. Executing the generated SPARQL instead of parsing it costs up to 11.4 EM, mostly because raw queries return empty results, not because of syntax errors.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.31671v1' target='_blank'>AeroPoint: Agentic AI for Intent-Driven Point Cloud Inspection in UAV-Edge Systems</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Reza Farahani, Zoha Azimi, Naser Hossein Motlagh, Christian Timmerer, Arda Goknil, Sagar Sen, Schahram Dustdar</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-23 23:02:03</h6>
+<p class='card-text'>Unmanned Aerial Vehicle (UAV)-based Light Detection and Ranging (LiDAR) inspection generates dense point clouds that strain onboard computing and wireless bandwidth. Intent-based inspection allows operators to request objects, attributes, and spatial relationships through natural language. Answering these requests requires trans- lating intent into spatial queries and retrieving relevant evidence under UAV processing and communication constraints. This article presents AeroPoint, an agentic AI system combining onboard point cloud processing and knowledge graph construction with Large Language Model (LLM)-based retrieval planning at a ground edge server. The LLM translates inspection questions into structured requests, which the UAV executes to return selected graph evidence for answer generation. We evaluate the prototype in a power line inspection case study using 150 TS40K UAV LiDAR scenes and profile processing costs on NVIDIA Jetson Nano hardware. Retrieval experiments use graphs constructed from dataset-provided ground-truth semantic labels. Experimental results show that transmitted payload decreases from 3700 KB for complete point clouds to 3.1 KB for retrieval responses, while evaluated LLM routers achieve the highest graph retrieval completeness for relational queries.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.31347v1' target='_blank'>Antares-Smaug: Adversarial Names, Tokens and Attack Rewrites: Sanitisers Miss Unseen Generalisations</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Mohammed Nayeem Khan, Akhil P</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-23 18:04:59</h6>
+<p class='card-text'>Laya is an open decision model: given a text, a question and K named options with descriptions, it returns one probability per option in a single pass, and software may act on the answer unseen. We attack six Laya models with 81 programmatic edits of 566 synthetic items (injected sentences, label leaks, edited descriptions, decoy options, invisible and look-alike characters, floods) and report the share of correctly answered items hijacked or lost, with bootstrap intervals. Attack wordings that no defence was built from win the attacker's option on 59% of items for released Laya and 36% for fine-tune v1 (trained on 109 written injections). An injection works through the option name: a sentence naming an option steers the released model even when negated (32%), while an imperative naming no option does not (5%). Option descriptions barely matter (2%). Character edits alone cost v1 up to 72% of right answers. A sanitiser frozen before any held-out result cuts the attacks it was built from by 72% but held-out sentence attacks by 27%, and an attacker who picks the best of 34 held-out strings per item restores success to 84% (mean string 18%). The same oracle takes the model fine-tuned on the four build families of injected sentences from 5% (mean string) to 58%. Fine-tuning on build families only (against an unchanged-rows control) cuts held-out sentence attacks (three held-out families) from 33% to 3% but character edits only from 25% to 20%. A label-free check that deletes the option names and measures the shift flags held-out sentence attacks (AUROC 0.95) but not character edits (0.46), and thresholds set on dev schemas for 5% false alarms gave 8% to 18% on an unseen schema and other languages. All data are synthetic with LLM labels, on one backbone. Several planned runs (other checkpoints, a second seed, some fine-tunes) were not run.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.30247v1' target='_blank'>Software-Engineering-as-an-Artifact: From Engines to Systems That Build Themselves</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Julian Frattini, Robert Feldt, Per Lenberg</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-23 08:15:45</h6>
+<p class='card-text'>Software engineering (SE) is evolving rapidly as generative AI and LLM-based agents grow more capable. Yet, as a community, we risk using these new tools to solve problems that a changing SE process may no longer pose. We consider how AI may transform, and in part already is transforming, both the SE process and the systems it produces. Drawing on scenario planning methods from futures studies, we extrapolate from observed trends to a deliberately extreme scenario in which the SE process fully materializes in artifacts (like context documentation and executable skills). Such a process would culminate in SE engines that autonomously produce and update systems directly from requirements and user requests. The work of human engineers would then shift from the product to the process: they would maintain the artifacts of these engines, while the engines produce and evolve the software. We probe this scenario in scenario-validation interviews with four SE industry practitioners. The interviewees found the scenario largely plausible and desirable, and two reported that parts of industry are already moving this way; one questioned whether tacit engineering knowledge can ever be fully captured in artifacts. Even if this end state is reached only in part, we argue that reasoning about it can inform the intermediate stages. SE research should therefore take such futures into account when choosing its research directions.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.29802v1' target='_blank'>Relativising Integrity and Robustness: Prompt Injection and Partitioned Enclaves</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Brijesh Dongol</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-22 22:05:22</h6>
+<p class='card-text'>Relative security (RS) judges a system against a reference system, but has only been applied to confidentiality. We introduce relative integrity (RI), which states that every behaviour a system exhibits under an attacker's influence must be one the reference can exhibit for the same trusted inputs. RS and RI each choose their own reference runs, so together they accept attacks whose leak and effects the reference reproduces only in different runs. We therefore develop a further property, relative robustness (RR), which asks the same runs to reproduce both and is strictly stronger than RS and RI together.
+  We give proof methods for RI and RR and a disproof method for RI, and apply them in two domains: (1) LLM agents under prompt injection, where the reference runs the same plan with a model that never obeys untrusted content, and (2) C programs partitioned across an SGX or TrustZone enclave boundary, where the reference keeps every function inside. We evaluate the properties on models of five published attacks, a support desk, an OP-TEE HOTP token and common agent defences. Two cases pass RS and RI but fail RR: an injection that makes the support desk's model accept any customer, as one input did in the Tensor Trust game, and the simulation step of the attack on Secret Network, in which an SGX enclave reveals a transfer's outcome without committing it. Our work is fully mechanised in Isabelle/HOL, with the enclave programs verified in C using AutoCorres2.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.29716v1' target='_blank'>Fin-RSI: A Unified Library of Financial Skills, Checks, and Self-Improvement for LLM Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Wanghao Ye, Shwai He, Sihan Chen, Yiting Wang, Bowei Tian, Guoheng Sun, Ziyi Wang, Ziyao Wang, Yexiao He, Zheyu Shen, Meng Liu, Yuning Zhang, Meng Feng, Yifei Dong, Yanhong Qian, Yang Wang, Siyuan Peng, Yilong Dai, Zhenle Duan, Joshua Liu, Lang Xiong, Aarosh Das, Zhaoyi Liu, Daeun Jung, Aditya Sarkar, Parastoo Pilevar, Xiaochuan Gong, Yancheng Zhu, Yingying Fan, Qiong Wang, Ang Li</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-22 19:28:28</h6>
+<p class='card-text'>As large language models (LLMs) become more capable, financial agents need tools they can readily discover and use. Yet financial software is fragmented across libraries with different interfaces and conventions, making it difficult to build reliable agent workflows. We present Fin-RSI, a unified Python library of financial skills, checks, and self-improvement designed for LLM agents. It brings together tools for market analysis, forecasting, portfolio construction, and trading research through shared interfaces across models and agent frameworks. Agents can find suitable tools from natural-language requests, reuse tested implementations, and improve generated programs through checking and feedback. Developers can extend the library with new tools without rebuilding integrations for each model. Across 20 open-weight models on six trading-position tasks, tool discovery increased the proportion of episodes producing valid programs from 9.7% to 29.2%; for models with at least 14 billion parameters, it rose from 23.6% to 64.6%. We release the library and benchmark as a shared resource for the community and plan to expand its tools and task coverage as financial agents evolve.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.29612v1' target='_blank'>Subsurface Model Programming: Frontier Large Language Models Natively Interpret and Edit Dynamic Reservoir Models</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Yanchen Song, Huizhu Xiang, Zhengdong Lei, Yuezhong Wang, Xingbang Liu</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-22 17:11:16</h6>
+<p class='card-text'>Multiphase flow simulation in heterogeneous porous media supports decisions in hydrocarbon recovery, geological carbon sequestration, and geothermal extraction. We introduce Subsurface Model Programming, a workflow in which large language models (LLMs) read and edit reservoir simulation decks directly without numerical gradients or external optimization algorithms. We evaluate four benchmarks using geometric checks for connectivity and open-source simulators for dynamic tasks. In one text-only response, the LLM correctly classified all six reservoir-layer well-pair labels and all three flow-path labels between open completions. On PUNQ-S3, a single proposal modified 54 of 1,761 active cells (3.1%) and reduced well-balanced water-cut RMSE by 71.9%. On the SPE10 sector model, the best of five LLM proposals yielded 1.795 million standard cubic meters of cumulative oil over ten years, 8.9% more than the best plan from 25 particle swarm optimization evaluations. On the 533,403-cell UNISIM-IV-2026 compositional model, five rounds of script-based editing reduced combined field-and-well NRMSE from 37.98% to 11.62% (a 69.4% reduction) and field production error by 73.9%. Replacing exhaustive stochastic search with physically auditable causal interventions in just one to five runs provides a generalizable foundation for autonomous reservoir development, rapid history matching, legacy model diagnosis, and coupled multiphysics engineering.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.29546v1' target='_blank'>ParseGap: Testing What Coding Agents Authorize and What Shells Execute</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Jieyu Li</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-22 15:16:01</h6>
+<p class='card-text'>LLM coding agents authorize shell commands by parsing a command string against a policy and passing the raw string to a system shell, so the gate adjudicates one reading while the shell executes another. We present ParseGap, a differential testing framework that runs each command through an unmodified vendor checker and GNU Bash 5.2 in an isolated container, flagging a violation whenever an approved command produces policy-violating runtime effects. Across eight production coding agents, ParseGap identifies 17 root causes across three divergence boundaries: at the parse, where an upstream tree-sitter-bash defect hides a second command from Mistral Vibe and Gemini CLI; at the utility, where every checker permits read-only binaries whose arguments write files or launch programs (9-47 of 55 cases); and at confinement, where an allow rule in OpenAI Codex CLI disables its read-only OS sandbox. Live trials across two frontier models triggered policy violations in all 16 agent-model pairs (14 under configured restrictions). To eliminate the second reading, we design ShellPlan, which compiles a strict Bash subset once into a typed execution plan, validates utility arguments against positive capability specifications, and dispatches approved plans directly via execve without a shell. Over a formal operational model, we prove single-interpretation dispatch and bound touched programs and files under audited assumptions. ShellPlan admitted 0/4,174 active attacks across six static suites and 0/90 hits in a ten-model agent benchmark (62/90 unguarded) at 1.28 ms median gate latency, preserving 36/36 (100%) frontier standard-dev completion (74/100 overall) and 0/348 external over-allows outside modeled exceptions.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.29467v1' target='_blank'>Beyond Accuracy: A Diagnostic Benchmark for Hypothesis-Driven Experiment Planning in LLM Agents</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Ryo Kuroki, Amin Mansouri, Philippe Schwaller</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-22 13:13:12</h6>
+<p class='card-text'>Evaluating large language model (LLM) agents on scientific tasks typically reduces to final-task accuracy, which obscures where reasoning succeeds or breaks down. We introduce a benchmark and diagnostic evaluation framework for hypothesis-driven adaptive experimental planning in closed-world system identification, instantiated in kinetic mechanism identification. The framework goes beyond final accuracy in two ways. First, we evaluate exploration behavior by quantifying the extent to which agents exhibit space-filling or corner-seeking patterns in the experimental design space. Second, we decompose the reasoning process into four interpretable steps: belief update, hypothesis discrimination, discriminative experiment design, and predictive reasoning under interventions, each scored separately on reasoning traces. Across ten LLM agents, we find that stronger agents outperform both adaptive (Bayesian optimization) and non-adaptive (Latin hypercube) baselines and exhibit exploration patterns inconsistent with naive heuristics. Decomposing reasoning reveals that the stronger agents score consistently well across all four steps, whereas weaker agents often succeed at belief update and hypothesis discrimination but are less reliable at translating them into actionable designs and sharp contrastive predictions. Independent expert annotations support predictive reasoning under our stated validation criteria, while evidence for discriminative experiment design is positive but less consistent. The results suggest a gap between recognizing plausible hypotheses and translating them into contrastive predictions, with more tentative evidence for a corresponding experiment-design bottleneck. The benchmark website is available at https://schwallergroup.github.io/beyond-accuracy/.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.29372v1' target='_blank'>Emotion-Aware and Context-Grounded Dialogue Agents for Personalized Video Game Interactions</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Michael Adjeisah, Jin Zhang, Pierluigi Vito Amadori, Ryan Spick, Eshani Kawshika Fernando, Kwame Omono Asamoah, Huiwen Zhao, Jian Jun Zhang, Guy Moss, Jian Chang</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-22 10:24:58</h6>
+<p class='card-text'>We present ChatNPC, a game companion that dynamically personalizes its responses in real time based on players' emotional shifts to enhance user immersion. The model integrates sequential data, leveraging the dynamic nature of streams to benefit from player information, spoken lines, and in-game context. We leverage recent progress in LLMs' tool-calling capabilities to extract vital information from memory and recognize potential constraints for accurate reasoning, thereby tackling the complexity of NPC conversation scenarios. The task is divided into a game sentinel-guided agent (SeGent), a memory capability, and a chat planning tool for reasoning instantiation. The approach uses a lightweight game template as an information framework, with relevant details and a thorough reasoning layout. We conduct extensive experiments on a newly developed game dataset for in-game context NPC dialogue and demonstrate that ChatNPC sequentially captures players' emotional shifts over time; responses are more naturalistic and human-like with appropriate conversational cues, pauses, and sighs; and utterances remain faithful to the dynamics of in-game context and player actions, supporting narrative continuity.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.29368v1' target='_blank'>SAE-Audit: Clinical-Trial Prediction via Inference-Time Optimization of Black-Box LLMs Audited by Sparse Autoencoder Evidence</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Junbo Shen</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-22 10:13:45</h6>
+<p class='card-text'>Clinical trials are costly and often take years to complete, making early outcome prediction valuable for trial planning. Large language models (LLMs) are increasingly used to forecast clinical-trial outcomes, yet their predictions remain unreliable and their rationales may not faithfully reflect the evidence underlying their answers. On tasks such as predicting whether a registered clinical trial will complete or terminate early, frontier LLMs perform only modestly above chance in our experiments. We introduce SAE-Audit, which optimizes a black-box LLM at inference time with evidence obtained from a deployable open model. A frozen sparse autoencoder (SAE) on Llama-3.1-8B-Instruct is converted into a vocabulary of clinical concepts. Sparse probes fitted on past trials determine which concepts are associated with the outcome. For a new protocol, the concepts detected by the probe are written as evidence, each with the direction and strength of its association with the outcome, and the LLM being audited optimizes its answer in the light of this evidence. Without additional training, SAE-Audit raises balanced accuracy of deepseek-v4-flash by 9.6--12.0 points on five clinical-trial prediction tasks and raises GPT-5.6-terra by 8.0 points on trial completion, exceeding other agentic inference-time optimization methods by a large margin. As an auxiliary, SAE probes module within SAE-Audit is itself accurate and auditable, providing natural-language explanations directly derived from verified concept contributions and protocol evidence, without requiring additional LLMs at inference time. SAE-Audit provides verifiable, concept-level evidence for more accurate and auditable clinical-trial prediction. It can also be embedded into biomedical AI agents such as Biomni to optimize their performance.</p>
+</div>
+</div>
+</div>
+<div class='col-md-6 mb-4'>
+<div class='card'>
+<div class='card-body'>
+<h4 class='card-title'><a href='https://arxiv.org/abs/2611.29367v1' target='_blank'>BenchMint: From Real-World Tasks to Executable Benchmarks</a></h5>
+<h5 class='card-subtitle mb-2 text-muted'>Authors:Zining Huang, Zuo Wang, Mengyao Zhang, Yilan Piao, Zhe Wang, Shuohan Wang, Ruiying Wang, Huicong Yi, Qianyu Yang, Zilong Pan, Wenlong Wu, Jiajun Shi, Shen Yan, Xingyu Pan, Houxuan Chen, Yuan Xu, Jinzhao Li</h6>
+<h6 class='card-subtitle mb-2 text-muted'>Date:2026-11-22 10:13:31</h6>
+<p class='card-text'>Large language models (LLMs) need evaluations of everyday reasoning and tool use, such as planning itineraries under user constraints and grounding numerical answers in evidence. We introduce BenchMint, an automated benchmark-construction workflow, and Daily-Life, its collection of 100 selected tasks across 11 real-world domains. BenchMint jointly constructs tasks and scoring criteria from the same source documents. Language-model judges assess possible answers against these criteria using tool traces and private evidence. We report 26 model/harness configurations, including GPT, Claude and Gemini families; 17 have complete domain profiles. These are descriptive configuration results, not a controlled model ranking. In one selected travel task, we corrected the reference total from 320 to 380 minutes while keeping both answers unchanged. The incorrect answer's arithmetic verdict switched from pass to fail; the correct answer's switched from fail to pass. With one ballot per cell, this exposes a reference error without establishing repeatability or collection-wide validity. Incomplete construction comparisons establish no general advantage of joint authoring or feedback-guided revision.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js'></script>
+</body>
+</html>
